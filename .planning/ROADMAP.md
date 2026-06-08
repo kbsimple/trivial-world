@@ -117,14 +117,14 @@ Plans:
   1. QuestionPack schema exists with categories, questions, metadata, and version field
   2. TypeScript types derived from Zod schemas for mobile and web apps
   3. WatermelonDB tables store question packs offline with lazy loading
-  4. Existing 120 hardcoded questions migrated to database
+  4. Migration infrastructure ready for existing questions (deferred per D-02)
   5. JSON Schema export available for non-TypeScript validation
 **Plans**: 3 plans
 
 Plans:
-- [ ] 06-01: Zod schemas and TypeScript types
-- [ ] 06-02: WatermelonDB schema and migration
-- [ ] 06-03: Question data migration
+- [ ] 06-01-PLAN.md — Monorepo structure and Zod schemas (Wave 1)
+- [ ] 06-02-PLAN.md — WatermelonDB models and schema (Wave 2)
+- [ ] 06-03-PLAN.md — Type re-exports and migration infrastructure (Wave 3)
 
 #### Phase 7: Question Generator Web App
 **Goal**: Web app generates trivia questions via AI and deploys packs to cloud
@@ -185,3 +185,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 
 *Roadmap created: 2026-06-08*
 *v2.0 phases added: 2026-06-08*
+*Phase 6 plans created: 2026-06-08*
