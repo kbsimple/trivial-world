@@ -1,0 +1,30 @@
+{
+  "name": "@trivial-world/generator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "ai": "^6.0.0",
+    "ollama-ai-provider-v2": "^1.5.0",
+    "zod": "^4.0.0",
+    "@trivial-world/types": "workspace:*",
+    "tamagui": "^2.0.0",
+    "@tamagui/config": "^2.0.0",
+    "@tamagui/font-inter": "^2.0.0",
+    "react-hook-form": "^7.0.0",
+    "@hookform/resolvers": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3",
+    "@types/react": "^19.0.0",
+    "@types/node": "^22.0.0"
+  }
+}
