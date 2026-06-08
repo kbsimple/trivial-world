@@ -4,6 +4,7 @@ import { useState } from 'react';
 import type { Category } from '@trivial-world/types';
 import { CATEGORY_NAMES } from '@trivial-world/types';
 import type { ProgressState } from '@/hooks/useGenerator';
+import { VerificationProgress } from './VerificationProgress';
 
 /**
  * Generator form props
@@ -126,28 +127,6 @@ export function GeneratorForm({ isGenerating, progress, onGenerate }: GeneratorF
         </p>
       </div>
 
-      {/* Progress indicator */}
-      {progress && (
-        <div className="p-4 bg-card rounded-lg">
-          <p className="text-sm">
-            {progress.status === 'generating' && `Generating question ${progress.currentQuestion}/${progress.totalQuestions}...`}
-            {progress.status === 'verifying' && `Question ${progress.currentQuestion}/${progress.totalQuestions} — Verifying (${progress.currentPass}/3)`}
-            {progress.status === 'complete' && 'Complete'}
-          </p>
-          <div className="mt-2 h-2 bg-background rounded-full overflow-hidden">
-            <div
-              className="h-full bg-primary transition-all duration-300"
-              style={{
-                width: `${progress.status === 'complete'
-                  ? 100
-                  : ((progress.currentQuestion - 1) / progress.totalQuestions) * 100 +
-                    (progress.currentPass / 3 / progress.totalQuestions) * 100}%`,
-              }}
-            />
-          </div>
-        </div>
-      )}
-
       {/* Generate button */}
       <button
         type="button"
@@ -167,6 +146,16 @@ export function GeneratorForm({ isGenerating, progress, onGenerate }: GeneratorF
         <p className="text-xs text-muted text-center">
           Enter a topic (min 3 characters) and select a category to generate questions
         </p>
+      )}
+
+      {/* Progress indicator - Per D-14, D-15 */}
+      {progress && (
+        <div className="mt-4 p-4 bg-card rounded-lg border border-card">
+          <h3 className="text-sm font-medium text-muted mb-3">
+            Generation Progress
+          </h3>
+          <VerificationProgress progress={progress} />
+        </div>
       )}
     </div>
   );
