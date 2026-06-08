@@ -53,9 +53,43 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **STAT-03**: Game conductor can pause and resume game
 - [ ] **STAT-04**: App handles app background/foreground transitions gracefully
 
-## v2 Requirements
+## v2.0 Requirements: Question Packs & Game Configuration
 
-Deferred to future release. Tracked but not in current roadmap.
+**Milestone:** Active development
+**Added:** 2026-06-08
+
+### Question Pack Data Structure (PACK)
+
+- [ ] **PACK-01**: Define QuestionPack schema with Zod including categories, questions, metadata, and version field
+- [ ] **PACK-02**: Create TypeScript types from Zod schemas for shared use between mobile and web apps
+- [ ] **PACK-03**: Add JSON Schema export for validation in non-TypeScript environments
+- [ ] **PACK-04**: Create WatermelonDB tables for offline pack caching (question_packs, questions)
+- [ ] **PACK-05**: Migrate existing hardcoded questions (6 categories, 120 questions) to database
+
+### AI Question Generation (AI)
+
+- [ ] **AI-01**: Generate trivia questions from topic + category + guidance using LLM
+- [ ] **AI-02**: Generate questions from source material (movies, books, TV shows, sports seasons)
+- [ ] **AI-03**: Implement multi-model fact-checking pipeline for quality validation
+- [ ] **AI-04**: Calculate quality score for generated questions (confidence, distractor quality)
+- [ ] **AI-05**: Build human review UI for editing and approving generated questions before publishing
+
+### Game Configuration (CONF)
+
+- [ ] **CONF-01**: Pack selection UI in game setup showing available packs with metadata
+- [ ] **CONF-02**: Game settings including time limits per question, difficulty levels, and game variants
+- [ ] **CONF-03**: Category filtering allowing conductors to enable/disable specific categories within a pack
+- [ ] **CONF-04**: Pack details view showing category distribution, question count, and difficulty breakdown
+
+### Cloud Infrastructure (CLOUD)
+
+- [ ] **CLOUD-01**: Deploy pack files and generator web app on Netlify
+- [ ] **CLOUD-02**: Build pack download service with checksum verification for integrity
+- [ ] **CLOUD-03**: Track pack versions for update notifications and migration handling
+
+## v2+ Future Requirements
+
+Deferred to v2.x+. Tracked but not in current milestone.
 
 ### Content Management (CONT)
 
@@ -75,6 +109,12 @@ Deferred to future release. Tracked but not in current roadmap.
 - **ACCT-01**: Users can create accounts to track game history
 - **ACCT-02**: Users can view past game results and statistics
 - **ACCT-03**: Users can save favorite question sets
+
+### Pack Marketplace (MKT)
+
+- **MKT-01**: Cloud pack repository (central marketplace for packs)
+- **MKT-02**: Pack discovery and sharing
+- **MKT-03**: Pack ownership and user accounts
 
 ## Out of Scope
 
@@ -123,9 +163,28 @@ Which phases cover which requirements. Updated during roadmap creation.
 | STAT-03 | Phase 5: State Persistence | Pending |
 | STAT-04 | Phase 5: State Persistence | Pending |
 
+| PACK-01 | Phase 6: Question Pack Structure | Pending |
+| PACK-02 | Phase 6: Question Pack Structure | Pending |
+| PACK-03 | Phase 6: Question Pack Structure | Pending |
+| PACK-04 | Phase 6: Question Pack Structure | Pending |
+| PACK-05 | Phase 6: Question Pack Structure | Pending |
+| AI-01 | Phase 7: Question Generator | Pending |
+| AI-02 | Phase 7: Question Generator | Pending |
+| AI-03 | Phase 7: Question Generator | Pending |
+| AI-04 | Phase 7: Question Generator | Pending |
+| AI-05 | Phase 7: Question Generator | Pending |
+| CONF-01 | Phase 8: Game Configuration | Pending |
+| CONF-02 | Phase 8: Game Configuration | Pending |
+| CONF-03 | Phase 8: Game Configuration | Pending |
+| CONF-04 | Phase 8: Game Configuration | Pending |
+| CLOUD-01 | Phase 7: Question Generator | Pending |
+| CLOUD-02 | Phase 8: Game Configuration | Pending |
+| CLOUD-03 | Phase 8: Game Configuration | Pending |
+
 **Coverage:**
-- v1 requirements: 28 total
-- Mapped to phases: 28
+- v1.0 requirements: 28 total (v1.0 complete)
+- v2.0 requirements: 17 total
+- Mapped to phases: 17
 - Unmapped: 0 ✓
 
 ---
