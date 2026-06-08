@@ -2,17 +2,17 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Question Packs & Game Configuration
-status: researching
+status: ready_to_plan
 stopped_at: null
-last_updated: "2026-06-08T19:45:00.000Z"
-last_activity: 2026-06-08 — Milestone v2.0 started, researching domain
+last_updated: "2026-06-08T20:00:00.000Z"
+last_activity: 2026-06-08 — Roadmap created for v2.0, ready for Phase 6 planning
 resume_file: null
 progress:
-  total_phases: 0
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  total_phases: 8
+  completed_phases: 5
+  total_plans: 18
+  completed_plans: 10
+  percent: 56
 ---
 
 # Project State
@@ -22,16 +22,39 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** v2.0: Question Packs & Game Configuration
+**Current focus:** Phase 6: Question Pack Structure
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 6 of 8 (Question Pack Structure)
 Plan: —
-Status: Researching domain
-Last activity: 2026-06-08 — Milestone v2.0 started, researching domain
+Status: Ready to plan
+Last activity: 2026-06-08 — Roadmap created for v2.0, ready for Phase 6 planning
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [████████░░] 56%
+
+## Performance Metrics
+
+**Velocity:**
+- Total plans completed: 10
+- Average duration: — (v1.0 complete)
+- Total execution time: — (v1.0 complete)
+
+**By Phase:**
+
+| Phase | Plans | Total | Avg/Plan |
+|-------|-------|-------|----------|
+| 1. Game Setup & Conductor Interface | 2 | — | — |
+| 2. Game Loop & Turn Management | 2 | — | — |
+| 3. Question System | 2 | — | — |
+| 4. Scoring & Win Condition | 2 | — | — |
+| 5. State Persistence | 2 | — | — |
+
+**Recent Trend:**
+- Last 5 plans: —
+- Trend: — (starting fresh milestone)
+
+*Updated after each plan completion*
 
 ## Accumulated Context
 
@@ -44,11 +67,13 @@ Progress: [░░░░░░░░░░] 0%
 - Zustand persist middleware for offline-first storage
 - No user accounts (friction kills social gameplay)
 
-### v2.0 Planning Decisions
-
-**Structure approach:**
+**v2.0 Planning Decisions:**
 - Contract-first development: structure → generator → consumer
-- Three phases: Question Pack Structure, Generator Web App, Game Configuration
+- Three-phase approach: Pack Structure → Generator → Configuration
+- Zod schemas with versioning from day one (prevent migration failures)
+- WatermelonDB for offline pack caching
+- Netlify for generator web app deployment
+- Multi-model fact-checking for AI question quality
 
 ### Pending Todos
 
@@ -68,6 +93,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-06-08T19:30:00Z
+Last session: 2026-06-08T20:00:00Z
 Stopped at: null
 Resume file: None

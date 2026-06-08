@@ -132,61 +132,68 @@ Explicitly excluded. Documented to prevent scope creep.
 
 Which phases cover which requirements. Updated during roadmap creation.
 
+### v1.0 Requirements (Complete)
+
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SETUP-01 | Phase 1: Game Setup & Conductor Interface | Pending |
-| SETUP-02 | Phase 1: Game Setup & Conductor Interface | Pending |
-| SETUP-03 | Phase 1: Game Setup & Conductor Interface | Pending |
-| SETUP-04 | Phase 1: Game Setup & Conductor Interface | Pending |
-| SETUP-05 | Phase 1: Game Setup & Conductor Interface | Pending |
-| COND-01 | Phase 1: Game Setup & Conductor Interface | Pending |
-| COND-02 | Phase 1: Game Setup & Conductor Interface | Pending |
-| COND-03 | Phase 1: Game Setup & Conductor Interface | Pending |
-| COND-04 | Phase 1: Game Setup & Conductor Interface | Pending |
-| COND-05 | Phase 1: Game Setup & Conductor Interface | Pending |
-| LOOP-01 | Phase 2: Game Loop & Turn Management | Pending |
-| LOOP-02 | Phase 2: Game Loop & Turn Management | Pending |
-| LOOP-03 | Phase 2: Game Loop & Turn Management | Pending |
-| LOOP-04 | Phase 2: Game Loop & Turn Management | Pending |
-| LOOP-05 | Phase 2: Game Loop & Turn Management | Pending |
-| QSTN-01 | Phase 3: Question System | Pending |
-| QSTN-02 | Phase 3: Question System | Pending |
-| QSTN-03 | Phase 3: Question System | Pending |
-| QSTN-04 | Phase 3: Question System | Pending |
-| QSTN-05 | Phase 3: Question System | Pending |
+| SETUP-01 | Phase 1: Game Setup & Conductor Interface | Complete |
+| SETUP-02 | Phase 1: Game Setup & Conductor Interface | Complete |
+| SETUP-03 | Phase 1: Game Setup & Conductor Interface | Complete |
+| SETUP-04 | Phase 1: Game Setup & Conductor Interface | Complete |
+| SETUP-05 | Phase 1: Game Setup & Conductor Interface | Complete |
+| COND-01 | Phase 1: Game Setup & Conductor Interface | Complete |
+| COND-02 | Phase 1: Game Setup & Conductor Interface | Complete |
+| COND-03 | Phase 1: Game Setup & Conductor Interface | Complete |
+| COND-04 | Phase 1: Game Setup & Conductor Interface | Complete |
+| COND-05 | Phase 1: Game Setup & Conductor Interface | Complete |
+| LOOP-01 | Phase 2: Game Loop & Turn Management | Complete |
+| LOOP-02 | Phase 2: Game Loop & Turn Management | Complete |
+| LOOP-03 | Phase 2: Game Loop & Turn Management | Complete |
+| LOOP-04 | Phase 2: Game Loop & Turn Management | Complete |
+| LOOP-05 | Phase 2: Game Loop & Turn Management | Complete |
+| QSTN-01 | Phase 3: Question System | Complete |
+| QSTN-02 | Phase 3: Question System | Complete |
+| QSTN-03 | Phase 3: Question System | Complete |
+| QSTN-04 | Phase 3: Question System | Complete |
+| QSTN-05 | Phase 3: Question System | Complete |
 | SCOR-01 | Phase 4: Scoring & Win Condition | Complete |
 | SCOR-02 | Phase 4: Scoring & Win Condition | Complete |
 | SCOR-03 | Phase 4: Scoring & Win Condition | Complete |
-| SCOR-04 | Phase 4: Scoring & Win Condition | Pending |
-| STAT-01 | Phase 5: State Persistence | Pending |
-| STAT-02 | Phase 5: State Persistence | Pending |
-| STAT-03 | Phase 5: State Persistence | Pending |
-| STAT-04 | Phase 5: State Persistence | Pending |
+| SCOR-04 | Phase 4: Scoring & Win Condition | Complete |
+| STAT-01 | Phase 5: State Persistence | Complete |
+| STAT-02 | Phase 5: State Persistence | Complete |
+| STAT-03 | Phase 5: State Persistence | Complete |
+| STAT-04 | Phase 5: State Persistence | Complete |
 
+### v2.0 Requirements (In Progress)
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
 | PACK-01 | Phase 6: Question Pack Structure | Pending |
 | PACK-02 | Phase 6: Question Pack Structure | Pending |
 | PACK-03 | Phase 6: Question Pack Structure | Pending |
 | PACK-04 | Phase 6: Question Pack Structure | Pending |
 | PACK-05 | Phase 6: Question Pack Structure | Pending |
-| AI-01 | Phase 7: Question Generator | Pending |
-| AI-02 | Phase 7: Question Generator | Pending |
-| AI-03 | Phase 7: Question Generator | Pending |
-| AI-04 | Phase 7: Question Generator | Pending |
-| AI-05 | Phase 7: Question Generator | Pending |
+| AI-01 | Phase 7: Question Generator Web App | Pending |
+| AI-02 | Phase 7: Question Generator Web App | Pending |
+| AI-03 | Phase 7: Question Generator Web App | Pending |
+| AI-04 | Phase 7: Question Generator Web App | Pending |
+| AI-05 | Phase 7: Question Generator Web App | Pending |
 | CONF-01 | Phase 8: Game Configuration | Pending |
 | CONF-02 | Phase 8: Game Configuration | Pending |
 | CONF-03 | Phase 8: Game Configuration | Pending |
 | CONF-04 | Phase 8: Game Configuration | Pending |
-| CLOUD-01 | Phase 7: Question Generator | Pending |
+| CLOUD-01 | Phase 7: Question Generator Web App | Pending |
 | CLOUD-02 | Phase 8: Game Configuration | Pending |
 | CLOUD-03 | Phase 8: Game Configuration | Pending |
 
 **Coverage:**
-- v1.0 requirements: 28 total (v1.0 complete)
+- v1.0 requirements: 28 total (Complete)
 - v2.0 requirements: 17 total
 - Mapped to phases: 17
-- Unmapped: 0 ✓
+- Unmapped: 0
 
 ---
+
 *Requirements defined: 2026-06-08*
-*Last updated: 2026-06-08 after roadmap creation*
+*Last updated: 2026-06-08 after v2.0 roadmap creation*
