@@ -141,10 +141,10 @@ Plans:
 **UI hint**: yes
 
 Plans:
-- [ ] 07-01: Generator web app foundation
-- [ ] 07-02: AI question generation endpoints
-- [ ] 07-03: Fact-checking and quality scoring
-- [ ] 07-04: Human review and publishing workflow
+- [ ] 07-01-PLAN.md — Next.js app foundation, Tamagui config, Ollama client, Generator page (Wave 1)
+- [ ] 07-02-PLAN.md — 3-pass verification pipeline, confidence scoring, progress display (Wave 2)
+- [ ] 07-03-PLAN.md — LocalStorage persistence, review UI, approval/rejection workflow (Wave 3)
+- [ ] 07-04-PLAN.md — Pack metadata editor, category distribution, JSON export, download (Wave 4)
 
 #### Phase 8: Game Configuration
 **Goal**: Game conductors can select packs and configure game settings
