@@ -1,8 +1,8 @@
 # Feature Research
 
-**Domain:** Mobile trivia/party game for in-person group play
+**Domain:** Question Pack System for Mobile Trivia Game
 **Researched:** 2026-06-08
-**Confidence:** HIGH
+**Confidence:** HIGH (multiple sources, production patterns documented)
 
 ## Feature Landscape
 
@@ -12,15 +12,11 @@ Features users assume exist. Missing these = product feels incomplete.
 
 | Feature | Why Expected | Complexity | Notes |
 |---------|--------------|------------|-------|
-| Question display with categories | Core mechanic of any trivia game | LOW | Must support 6 categories with clear visual distinction |
-| Pass-and-play support | Standard for in-person party games | LOW | Single-device multiplayer is expected baseline |
-| Score tracking | Players need to know who's winning | LOW | Running tally visible during gameplay |
-| Game state persistence | Players expect to resume if interrupted | MEDIUM | Save game progress locally; restore on app reopen |
-| Clear turn indicators | Essential for pass-and-play flow | LOW | Whose turn, what phase, what to do next |
-| Multiple-choice questions | Industry standard format | LOW | 4-answer format most common |
-| Category visual identity | Trivial Pursuit heritage (colored wedges) | LOW | Color-coded categories, progress wedges |
-| Basic statistics | Post-game summary expected | MEDIUM | Accuracy %, category performance, streak info |
-| No account required for play | Frictionless start is table stakes | LOW | Guest mode essential for social/party context |
+| **Question Pack Selection** | Users expect to choose what content to play, similar to selecting quiz topics in other apps | LOW | Simple list UI. Already have category system in place. Depends on: pack storage model |
+| **Category Organization** | Trivia apps organize by categories (history, science, pop culture) - this is universal | LOW | Already implemented with 6 categories. Packs should respect or extend this |
+| **Pack Metadata Display** | Users want to know pack name, description, question count before selecting | LOW | Standard card/list UI with pack details |
+| **Basic Difficulty Levels** | Easy/Medium/Hard is the standard trivia difficulty pattern | MEDIUM | Affects question generation prompts and pack filtering |
+| **Question Accuracy** | Incorrect questions damage trust rapidly; users notice factual errors immediately | HIGH | 19% of AI question failures are factual hallucinations (2026 study) |
 
 ### Differentiators (Competitive Advantage)
 
@@ -28,18 +24,11 @@ Features that set the product apart. Not required, but valuable.
 
 | Feature | Value Proposition | Complexity | Notes |
 |---------|-------------------|------------|-------|
-| **Game Conductor mode** | Enables one-person-controls-screen model, everyone else plays analog | MEDIUM | Core differentiator - app handles logistics, humans handle social |
-| **Simulated die roll with valid moves** | Removes physical components while maintaining game feel | LOW | Haptic + animation for tactile satisfaction |
-| **Question read-along interface** | Large, readable text for game conductor | LOW | Designed for reading aloud, not just tap-to-reveal |
-| **Progressive difficulty within categories** | Keeps games interesting across skill levels | MEDIUM | Easy questions early, harder as game progresses |
-| **Session history & shareable results** | "Remember that game?" social moment | LOW | Screenshot-ready summary for sharing |
-| **Custom game duration options** | Adapts to party time constraints | LOW | Quick game (15 min) vs. full game modes |
-| **Offline-first design** | Works anywhere - camping, travel, no WiFi | MEDIUM | No internet dependency after initial download |
-| **Cohort-specific question packs** | Tailored content for different groups | MEDIUM | "90s kids pack", "Family reunion pack", etc. |
-| **AI question generation** | Infinite content without manual curation | HIGH | Future differentiator; v1 uses curated questions |
-| **Haptic feedback for key moments** | Satisfying tactile responses | LOW | Die roll, correct answer, wedge earned |
-| **Built-in timer with voice countdown** | Adds excitement for timed questions | MEDIUM | Optional feature for competitive rounds |
-| **Question quality indicators** | Trust in content accuracy | LOW | "Verified" badge, difficulty rating visible |
+| **AI-Powered Generation from Topics** | Users create custom packs from any topic ("80s movies", "local history", "my company") - unique vs. static content competitors | MEDIUM | Prompt engineering critical. Study shows 69% AI questions usable with minor edits, 31% need revision |
+| **Question Explanations** | Show why an answer is correct - educational value, builds trust, reduces post-question disputes in social play | MEDIUM | Adds ~50% content size, significant value for social trivia where conductor reads explanation |
+| **Quality Score Indicators** | Visual confidence scores help conductors decide if pack is "game night ready" | MEDIUM | Combine: factual verification pass rate, question variety, source citations |
+| **Cross-Session No-Repeat** | Remember questions asked across game sessions - prevents "we just did this question" frustration | MEDIUM | Requires persistent tracking with pack-scoped IDs. Already have game state persistence |
+| **Custom Question Packs (CRUD)** | Hosts create their own question packs for events (corporate events, parties, classrooms) | HIGH | Full CRUD interface. Higher value for conductor-led social play |
 
 ### Anti-Features (Commonly Requested, Often Problematic)
 
@@ -47,186 +36,398 @@ Features that seem good but create problems.
 
 | Feature | Why Requested | Why Problematic | Alternative |
 |---------|---------------|-----------------|-------------|
-| **Online multiplayer** | "Let friends play remotely!" | Breaks core value (in-person social); doubles scope; latency issues; matchmaking complexity | Stay focused on in-person first; online as future v2 |
-| **User accounts/profiles** | "Track progress across sessions!" | Adds friction; breaks casual party use case; data privacy concerns | Local-only game history; optional profile without auth |
-| **Real-time competitive buzzer** | "Who answered first?" | Requires everyone to have devices; breaks single-device model | Turn-based play with game conductor calling on players |
-| **Leaderboards/rankings** | "Global competition!" | Requires accounts; infrastructure cost; irrelevant for party games | Local session statistics; personal best tracking |
-| **Aggressive ad placement** | "Monetize immediately!" | #1 churn driver in trivia games; kills party vibe | Premium one-time purchase or optional ad-free tier |
-| **Complex onboarding tutorial** | "Teach all features upfront!" | Kills momentum; party games need instant play | Learn-as-you-play; inline help; context-sensitive tips |
-| **Daily challenges/streaks** | "Increase retention!" | Designed for solo play; doesn't fit social party use case | Session-based progression within a game night |
-| **Microtransactions for content** | "Sell question packs!" | Breaks trust; feels exploitative in party context | One-time purchase for themed packs; transparent pricing |
-| **AI host voice** | "Hands-free question reading!" | Removes game conductor role; less personal; tech complexity | Game conductor reads; maintains social dynamic |
-| **Complex scoring multipliers** | "Rewards for streaks/bonuses!" | Confuses casual players; slows game; adds math overhead | Simple wedge collection (Trivial Pursuit model) |
+| **Real-Time Multiplayer Sync** | "Everyone should see the app simultaneously" | Undermines conductor model, adds 10x complexity, requires accounts and networking infrastructure | Conductor reads aloud (current model) - eyes-up social design |
+| **User Accounts for Pack Sync** | "Save my packs across devices" | Friction kills social gameplay - adds onboarding barrier, breaks spontaneous play | Local-first storage, optional cloud backup later |
+| **Community Question Submission** | "Let users submit questions" | Quality control nightmare, moderation overhead, legal liability | AI generation with human review is more scalable |
+| **Real-Time Fact Checking** | "Verify every question during generation" | 6.7-34s latency per question (OpenAI Guardrails), high cost, breaks generation flow | Generate batch, validate offline, flag low-confidence for human review |
+| **Infinite Question Generation** | "Never run out of questions" | Without deduplication, AI generates similar questions; 43% of failures are weak distractors | Semantic deduplication (FAISS embeddings) + explicit uniqueness tracking |
 
 ## Feature Dependencies
 
 ```
-Game Conductor Mode
-    └──requires──> Clear Turn Indicators
-                       └──requires──> Score Tracking
+Question Pack Selection
+    └──requires──> Pack Storage Model (local-first)
+    └──requires──> Pack Metadata Schema
 
-Die Roll Simulation
-    └──requires──> Valid Move Calculation
-                       └──requires──> Game Board State
+AI-Powered Generation
+    └──requires──> Pack Metadata Schema
+    └──requires──> Question Schema with Validation
+    └──requires──> Generation Prompt Templates
+    └──enhances──> Question Explanations
 
-Question Display
-    └──requires──> Question Database
-                       └──requires──> Category System
+Question Validation
+    └──requires──> Quality Score Framework
+    └──enhances──> AI-Powered Generation (feedback loop)
 
-Progressive Difficulty
-    └──requires──> Question Metadata (difficulty ratings)
-                       └──requires──> Question Database
+Pack Download (Cloud)
+    └──requires──> Pack Storage Model
+    └──requires──> Version Tracking (migrations)
+    └──requires──> Integrity Verification (checksums)
 
-Session History
-    └──requires──> Game State Persistence
-                       └──requires──> Local Storage
+Game Configuration
+    └──requires──> Pack Selection (config applies to selected pack)
+    └──requires──> Configuration Schema
+    └──independent──> Question Generation
 
-Custom Question Packs
-    └──conflicts──> Offline-First Design (if requiring download)
-    └──resolves──> Bundle packs with app; unlock as needed
+Custom Question Packs (CRUD)
+    └──requires──> Question Validation
+    └──requires──> AI-Powered Generation
+    └──requires──> Question Explanations
+    └──conflicts──> Real-Time Multiplayer (different UX model)
 ```
 
 ### Dependency Notes
 
-- **Game Conductor Mode requires Clear Turn Indicators:** The conductor needs to know when to read, when to pass device, when to advance. Without clear indicators, the social flow breaks.
-- **Die Roll Simulation requires Valid Move Calculation:** A die roll is meaningless without showing what spaces the player can reach. This keeps game pace moving.
-- **Progressive Difficulty requires Question Metadata:** Questions must have difficulty ratings to enable smart progression. This is curated content work, not just engineering.
-- **Custom Question Packs conflicts with Offline-First:** If packs require internet download, offline promise breaks. Bundle packs with initial download, unlock via configuration.
+- **Pack Storage Model is foundational:** All pack features depend on this. Design schema first.
+- **AI Generation depends on Question Schema:** Cannot generate without knowing the output format.
+- **Validation is separate from Generation:** Validation can run offline, asynchronously after batch generation.
+- **Pack Download conflicts with Offline-First philosophy:** Must maintain local-first capability; cloud is enhancement, not replacement.
+
+## Question Pack Schema (Recommended)
+
+Based on analysis of [trivia-schema](https://github.com/gaufqwi/trivia-schema) and [JSON Quiz Format](https://json-quiz.github.io/json-quiz):
+
+```typescript
+// Core types
+interface QuestionPack {
+  id: string;                    // UUID v4
+  version: string;               // SemVer (e.g., "1.2.0")
+  schemaVersion: string;         // Schema version for migrations
+  name: string;                  // Display name
+  description: string;           // Short description
+  author: string;                // Creator name or "Trivial World"
+  createdAt: string;             // ISO 8601
+  updatedAt: string;             // ISO 8601
+
+  categories: CategoryConfig[];  // Categories in this pack
+  questions: Question[];          // All questions
+  metadata: PackMetadata;        // Generation info, quality scores
+
+  checksum: string;              // SHA-256 of content for integrity
+}
+
+interface Question {
+  id: string;                    // UUID v4
+  category: string;              // References category ID
+  text: string;                  // Question text
+  type: 'multiple-choice';       // Future: 'true-false', 'open'
+  options: string[];             // 4 options for multiple choice
+  correctIndex: number;          // 0-3
+  difficulty: 'easy' | 'medium' | 'hard';
+  explanation?: string;          // Why answer is correct
+  source?: string;               // Citation or "AI Generated"
+  lastVerified?: string;         // ISO 8601, when last fact-checked
+  tags?: string[];               // For search/filter
+}
+
+interface PackMetadata {
+  generatedBy: 'human' | 'ai' | 'hybrid';
+  aiModel?: string;              // e.g., "gpt-4o-mini"
+  promptTemplate?: string;       // Template ID used
+  qualityScore?: number;         // 0-100
+  validationStatus: 'pending' | 'validated' | 'flagged';
+  estimatedPlayTime?: number;    // Minutes
+}
+
+interface CategoryConfig {
+  id: string;                    // Matches existing category IDs
+  color: string;                 // Hex color
+  name: string;                  // Display name
+  questionCount: number;         // Questions in this category
+}
+```
+
+### Schema Rationale
+
+- **Version + SchemaVersion separate:** Content versioning (1.0.0 to 1.1.0) separate from schema migrations (v1 to v2)
+- **Checksum for offline integrity:** Detects corruption after iOS app updates or failed downloads
+- **Quality metadata:** Enables filtering by validation status before game use
+- **Explanation optional:** Reduces storage for packs without explanations, but highly recommended
+
+## AI Question Generation Patterns
+
+### Prompt Template (Recommended Structure)
+
+Based on analysis of [Maastricht University Prompt Library](https://library.maastrichtuniversity.nl/apps-tools/ai-prompt-library/create-multiple-choice-questions/), [QuizGPT Package](https://pypi.org/project/quizgpt/), and [MCQ Creation Assistant](https://github.com/linexjlin/GPTs/blob/main/prompts/MCQ%20Creation%20Assistant.md):
+
+```typescript
+interface GenerationPrompt {
+  // Input
+  topic: string;                  // "Marvel Cinematic Universe"
+  category: string;               // Maps to category ID
+  difficulty: 'easy' | 'medium' | 'hard';
+  questionCount: number;          // Target count
+  context?: string;               // Additional guidance
+
+  // Constraints (embedded in prompt)
+  outputFormat: 'json';           // Enforce JSON output
+  distractorQuality: 'high';      // Generate plausible wrong answers
+  includeExplanation: boolean;
+  includeSource: boolean;
+}
+
+// Prompt template
+const buildPrompt = (config: GenerationPrompt): string => `
+Generate ${config.questionCount} trivia questions about "${config.topic}".
+
+**Category:** ${config.category}
+**Difficulty:** ${config.difficulty}
+
+**Rules:**
+1. Each question has exactly 4 options, exactly 1 correct answer
+2. Distractors must be plausible but clearly incorrect to someone who knows the topic
+3. Avoid "All of the above" and "None of the above"
+4. Questions should test ${difficultyDepthMap[config.difficulty]}
+5. Include a brief explanation for the correct answer
+6. Include a citation or source reference
+
+**Output Format (JSON only, no markdown, no explanation):**
+${JSON.stringify(exampleQuestionSchema, null, 2)}
+
+**Topic Context:**
+${config.context || 'No additional context provided'}
+
+Generate now. Return ONLY valid JSON array.
+`;
+```
+
+### Quality Control Pipeline
+
+Based on [2026 AI Quiz Generation Study](https://simplequizmaker.com/blog/ai-quiz-generation-data-study-2026) findings:
+
+```
+1. GENERATE BATCH (5-10 questions per request)
+   +-- Use temperature 0.2-0.3 for consistency
+   +-- Force JSON output with response_format: {"type": "json_object"}
+
+2. SCHEMA VALIDATION
+   +-- Parse JSON, validate against Question schema
+   +-- Reject malformed questions
+   +-- Retry up to 2 times
+
+3. DEDUPLICATION CHECK
+   +-- Compute semantic embeddings (FAISS/bge-small)
+   +-- Compare against existing questions in pack
+   +-- Flag duplicates for removal
+
+4. FACTUAL VERIFICATION (Batch)
+   +-- Run offline or async, not during generation
+   +-- Use NLI-based checker (Provenance/FactLens) for speed
+   +-- Flag low-confidence items for human review
+
+5. HUMAN REVIEW QUEUE
+   +-- Questions with qualityScore < 70
+   +-- Questions with validationStatus: 'flagged'
+   +-- First-time generated questions
+```
+
+### Difficulty Calibration
+
+Per [PolarNotes MCQ Prompts](https://www.polarnotesai.com/prompts/multiple-choice-chatgpt-difficulty-control/):
+
+| Difficulty | Bloom's Level | Prompt Guidance | Quality Rate |
+|------------|---------------|-----------------|--------------|
+| Easy | 1-2 (Recall/Understand) | "Test basic recognition and recall" | 89% match |
+| Medium | 3-4 (Apply/Analyze) | "Require application of concepts" | Drifts toward easy |
+| Hard | 5-6 (Evaluate/Create) | "Require synthesis and evaluation" | Often appears hard but is not |
+
+**Recommendation:** Generate with hard prompts, manually elevate 30-40% for true difficulty.
+
+## Game Configuration Schema
+
+```typescript
+interface GameConfiguration {
+  // Pack Settings
+  selectedPackIds: string[];        // Which packs to use
+  categoryFilter?: string[];        // Subset of categories (null = all)
+
+  // Difficulty
+  difficultyMode: 'mixed' | 'fixed';
+  fixedDifficulty?: 'easy' | 'medium' | 'hard';
+
+  // Timing
+  timeLimitMode: 'off' | 'per-question' | 'per-turn';
+  timeLimitSeconds?: number;        // If per-question or per-turn
+
+  // Gameplay Variants
+  wedgeRequirement: number;         // Wedges needed to win (default: 6)
+  allowRollAgainOnCorrect: boolean; // Bonus roll after correct answer
+
+  // Accessibility
+  showTimer: boolean;
+  showDifficulty: boolean;
+  autoAdvance: boolean;             // Auto-advance after answer
+
+  // AI Generation (for custom packs)
+  generationSettings?: {
+    model: 'gpt-4o-mini' | 'gpt-4o';
+    temperature: number;
+    includeExplanations: boolean;
+  };
+}
+```
+
+### Configuration UI Patterns
+
+Based on [Mobile Game Settings UX](https://reactnative.live/designing-emulation-like-config-uis-for-mobile-games-lessons):
+
+1. **Presets First:** Quick Game (defaults), Custom Game (full config), Custom Pack (AI generation)
+2. **Inline Explanations:** "Time limit adds pressure for competitive play"
+3. **Defaults for Social Play:**
+   - Time limit: OFF (conductor reads at group pace)
+   - Difficulty: MIXED (mixed skill levels in social groups)
+   - Auto-advance: OFF (conductor controls pacing)
+
+## Pack Download Architecture
+
+Based on [Kuratour Case Study](https://expo.dev/blog/the-offline-first-multilingual-audio-tour-app-built-with-expo) and [WatermelonDB Patterns](https://github.com/FastheDeveloper/watermelondb-expo-offline-demo):
+
+```typescript
+interface PackDownloadManager {
+  // Core operations
+  downloadPack(packId: string): Promise<QuestionPack>;
+  verifyIntegrity(pack: QuestionPack): Promise<boolean>;
+  storeLocally(pack: QuestionPack): Promise<void>;
+
+  // Version management
+  checkForUpdates(packId: string): Promise<VersionInfo>;
+  migratePack(pack: QuestionPack, fromVersion: string): Promise<QuestionPack>;
+}
+
+// Key patterns:
+// 1. Download to temp location, verify checksum, then move to storage
+// 2. Store schema version alongside pack for migration handling
+// 3. Keep last-known-good version as rollback
+// 4. Use expo-file-system for downloads, expo-sqlite for metadata
+```
+
+### Download Flow
+
+```
+[Cloud Pack Repository]
+        |
+        v downloadPack()
+[Temporary Storage] --verifyIntegrity()--> [Fail: Delete temp, retry]
+        |
+        v (on success)
+[Local Pack Storage] --updateIndex()--> [Pack List UI]
+        |
+        +--keepPreviousVersion()--> [Rollback Available]
+```
+
+## Validation Patterns
+
+Based on [RefChecker](https://arxiv.org/pdf/2405.14486), [Provenance](https://arxiv.org/html/2411.01022), and [OpenAI Guardrails](https://openai.github.io/openai-guardrails-python/ref/checks/hallucination_detection/):
+
+| Validation Type | When to Use | Latency | Cost |
+|-----------------|-------------|---------|------|
+| **Schema Validation** | Every generated question | <10ms | Free |
+| **Semantic Deduplication** | During pack creation | ~50ms/question | Low |
+| **NLI Fact Checking** | Batch validation (Provenance) | ~100ms/question | Low |
+| **LLM-as-Judge** | Flagged questions only | 5-30s/question | High |
+| **Human Review** | Final quality gate | Variable | Manual |
+
+**Recommendation:**
+- Schema validation: Always (inline during generation)
+- Deduplication: Always (inline)
+- NLI checking: Batch after generation (async)
+- LLM judge: Only for flagged items (low volume)
+- Human review: Only for packs marked for public distribution
 
 ## MVP Definition
 
-### Launch With (v1)
+### Launch With (v2.0)
 
-Minimum viable product — what's needed to validate the concept.
+Minimum viable product - what is needed to validate the question pack concept.
 
-- [x] **Question display with categories** — Core mechanic; game doesn't exist without this
-- [x] **Game conductor interface** — Differentiator; large text for reading aloud, clear controls
-- [x] **Participant management** — Add/remove players, assign colors, track whose turn
-- [x] **Simulated die roll** — Removes physical die requirement; visual + haptic feedback
-- [x] **Valid move calculation** — Shows where player can move based on roll
-- [x] **Score tracking (wedge collection)** — Track progress toward winning; visual pie piece display
-- [x] **Pass-and-play flow** — Single device, clear handoff moments
-- [x] **Game state persistence** — Resume if interrupted; don't lose mid-game progress
-- [x] **No account required** — Frictionless start; essential for party context
-- [x] **Basic statistics** — End-game summary; answer accuracy, category breakdown
+- [ ] **Question Pack Storage Model** - Local-first schema with versioning
+- [ ] **Pack Selection UI** - List, select, view metadata
+- [ ] **Basic Game Configuration** - Pack selection, difficulty filter
+- [ ] **Pack Metadata Display** - Name, description, question count, categories
+- [ ] **Schema Validation for Questions** - JSON schema validation on import
 
-### Add After Validation (v1.x)
+### Add After Validation (v2.1)
 
-Features to add once core is working.
+Features to add once pack storage is validated.
 
-- [ ] **Progressive difficulty** — Requires question metadata; keeps games interesting over time
-- [ ] **Session history** — Browse past games; "remember when" social moments
-- [ ] **Custom game duration** — Quick game mode for time-constrained groups
-- [ ] **Shareable results** — Screenshot-ready game summary
-- [ ] **Question quality indicators** — Trust signals for content accuracy
-- [ ] **Built-in timer (optional)** — For competitive timed rounds
+- [ ] **AI Question Generation** - Topic input, category selection, batch generation
+- [ ] **Generation Prompts** - Template library for different subjects
+- [ ] **Question Explanations** - Include in generation, display after answer
 
-### Future Consideration (v2+)
+### Future Consideration (v2.x+)
 
-Features to defer until product-market fit is established.
+Features to defer until pack system is stable.
 
-- [ ] **Custom question packs** — Requires content pipeline; licensing considerations
-- [ ] **AI question generation** — High complexity; content quality concerns
-- [ ] **Online multiplayer** — Major scope expansion; breaks core in-person value
-- [ ] **Cohort-specific content** — Requires segmentation; content curation at scale
-- [ ] **Voice read-along** — Accessibility feature; adds complexity
+- [ ] **Cloud Pack Repository** - Download packs from central server
+- [ ] **Quality Score System** - Aggregate validation results into pack quality score
+- [ ] **Custom Pack CRUD** - Full create/edit/delete for user packs
+- [ ] **Cross-Session No-Repeat** - Track asked questions across game sessions
 
 ## Feature Prioritization Matrix
 
 | Feature | User Value | Implementation Cost | Priority |
 |---------|------------|---------------------|----------|
-| Question display with categories | HIGH | LOW | P1 |
-| Game conductor interface | HIGH | MEDIUM | P1 |
-| Participant management | HIGH | LOW | P1 |
-| Simulated die roll | HIGH | LOW | P1 |
-| Valid move calculation | HIGH | MEDIUM | P1 |
-| Score tracking (wedges) | HIGH | LOW | P1 |
-| Pass-and-play flow | HIGH | MEDIUM | P1 |
-| Game state persistence | MEDIUM | MEDIUM | P1 |
-| No account required | HIGH | LOW | P1 |
-| Basic statistics | MEDIUM | LOW | P2 |
-| Progressive difficulty | MEDIUM | MEDIUM | P2 |
-| Session history | LOW | LOW | P2 |
-| Custom game duration | MEDIUM | LOW | P2 |
-| Shareable results | LOW | LOW | P3 |
-| Question quality indicators | LOW | LOW | P3 |
-| Built-in timer | MEDIUM | MEDIUM | P3 |
-| Custom question packs | MEDIUM | HIGH | Future |
-| AI question generation | MEDIUM | HIGH | Future |
-| Online multiplayer | LOW | HIGH | Future |
+| Pack Storage Model | HIGH | MEDIUM | P1 |
+| Pack Selection UI | HIGH | LOW | P1 |
+| Schema Validation | HIGH | LOW | P1 |
+| Game Configuration | MEDIUM | LOW | P1 |
+| AI Generation | HIGH | MEDIUM | P2 |
+| Question Explanations | MEDIUM | LOW | P2 |
+| Quality Scoring | MEDIUM | MEDIUM | P3 |
+| Cloud Download | MEDIUM | HIGH | P3 |
+| Custom Pack CRUD | LOW | HIGH | P3 |
 
 **Priority key:**
-- P1: Must have for launch
-- P2: Should have, add when possible
+- P1: Must have for v2.0 launch
+- P2: Should have, add when core is working
 - P3: Nice to have, future consideration
 
 ## Competitor Feature Analysis
 
-| Feature | Trivial Pursuit Mobile | Jackbox | Party Game Apps | Our Approach |
-|---------|------------------------|---------|-----------------|--------------|
-| Platform | Mobile app | TV + phone controllers | Mobile app | Mobile app |
-| Players per device | 4-6 (pass-and-play) | 1-100 (shared screen) | 3-20 (single device) | 1 conductor + unlimited participants |
-| Offline play | Partial | No | Full | Full |
-| Accounts required | No | No | No | No |
-| Physical components | No | No | No | No (die simulated) |
-| Question reading | Self-read | Host reads | Pass-and-read | **Conductor reads aloud** |
-| Social design | Turn-based solo | Everyone on devices | Pass-and-play | **One device, group focus** |
-| Game modes | Classic + variants | Mini-game packs | Multiple games | Focused board game experience |
-
-### Key Differentiation: Game Conductor Model
-
-Most trivia apps are designed for:
-1. **Solo play** (single player vs. questions)
-2. **Everyone on devices** (each person answers on their phone)
-
-Trivial World is designed for:
-- **One device, one conductor, many participants**
-- The conductor reads questions aloud to the group
-- Participants answer verbally or by consensus
-- The app handles logistics (die roll, valid moves, scoring)
-- Humans handle the social experience
-
-This is the core differentiator: **The app supports social play, it doesn't replace it.**
+| Feature | Kahoot! | Quizlet | Sporcle | Trivial World Approach |
+|---------|---------|---------|---------|------------------------|
+| Custom Content | User-created quizzes | Flashcard sets | User-created games | AI-generated packs |
+| Difficulty Levels | Yes (easy/hard) | Yes (study modes) | Varies by creator | Yes (easy/medium/hard) |
+| Explanations | Limited | Yes (flashcard) | Varies | Yes (AI-generated) |
+| Offline Mode | No | Premium only | No | Yes (offline-first) |
+| AI Generation | Quiz AI (premium) | Magic Notes (limited) | No | Yes (core feature) |
+| Social Play | Live host mode | Share links | Solo only | Conductor model (unique) |
 
 ## Sources
 
-### Mobile Trivia Game Features (2025-2026)
-- [Trivia Crack: Brain Quiz Review 2026](https://marlvel.ai/intel-report/games/trivia-crack-brain-quiz-games) — Sentiment analysis on current trivia game expectations
-- [Guess Their Answer: Case Study](https://www.tap-nation.io/blog/guess-their-answer-a-case-study-of-a-top-trivia-mobile-game/) — Top trivia game analysis
-- [QuizVerse Product](https://quizverse.world/product) — Modern trivia platform features
-- [Sol Trivia V2 Review](https://solanaradar.com/2026/02/23/sol-trivia-v2-review-win-sol-in-1v1-duels-and-custom-games-on-solana-mainnet/) — Emerging real-money trivia mechanics
+### AI Question Generation
+- [2026 AI Quiz Generation Study](https://simplequizmaker.com/blog/ai-quiz-generation-data-study-2026) - Quality metrics, failure modes, subject-specific rates
+- [Maastricht University Prompt Library](https://library.maastrichtuniversity.nl/apps-tools/ai-prompt-library/create-multiple-choice-questions/) - MCQ generation templates
+- [QuizGPT Package](https://pypi.org/project/quizgpt/) - Production-scale question generation with deduplication
+- [MCQ Creation Assistant](https://github.com/linexjlin/GPTs/blob/main/prompts/MCQ%20Creation%20Assistant.md) - 4-step prompt engineering pattern
+- [PolarNotes MCQ Prompts](https://www.polarnotesai.com/prompts/multiple-choice-chatgpt-difficulty-control/) - Difficulty calibration patterns
+- [Python AI Quiz Generator Tutorial](https://aicodewithharitha.com/python-ai/ai-quiz-generator-python-excel/) - JSON structured output patterns
 
-### Party Game Apps for In-Person Play
-- [Imposter & Party Games - BAM! App Store](https://apps.apple.com/us/app/imposter-game-bam/id6751252728) — 15 games, single device, offline
-- [PartyPass: Group Games App Store](https://apps.apple.com/us/app/partypass-group-games/id6754407474) — Pass-and-play design patterns
-- [Imposter Party](https://imposterparty.app/) — Viral social deduction game features
-- [Pass&Play: Classic Party Games](https://mwm.ai/apps/pass-play-classic-party-games/6745311128) — Offline-first party game design
+### Schema and Content Formats
+- [Trivia Schema](https://github.com/gaufqwi/trivia-schema) - JSON schema for pub quiz questions
+- [JSON Quiz Format](https://json-quiz.github.io/json-quiz) - Extensible quiz format specification
 
-### Trivial Pursuit Digital Implementations
-- [Trivial Pursuit & Friends (Gameloft/Hasbro)](https://hasbro.gcs-web.com/news-releases/news-release-details/gameloft-and-hasbro-announce-trivial-pursuit-friends-mobile-game) — Official mobile adaptation features
-- [Trivial Pursuit Master Edition (EA)](https://web.archive.org/web/20111101014850/http:/www.ea.com/trivial-pursuit-master-edition-ipad) — Pass-and-play implementation
-- [Trivial Pursuit Review (Pocket Gamer)](https://www.pocketgamer.com/trivial-pursuit/review/) — Critical analysis of digital adaptation
+### Content Pack Architecture
+- [SwiftDataPacks](https://github.com/CircuitProApp/SwiftDataPacks) - Read-only content pack architecture
+- [Sutra Content Pack Design](https://github.com/Mahalp/Sutra/commit/b8734249e26f29c1bbb9e73f71567aa5f75c47df) - Offline-first pack patterns
+- [Kuratour Case Study](https://expo.dev/blog/the-offline-first-multilingual-audio-tour-app-built-with-expo) - Offline-first Expo patterns
+- [WatermelonDB Offline Demo](https://github.com/FastheDeveloper/watermelondb-expo-offline-demo) - Observable queries, sync patterns
+- [Supastash](https://github.com/0xZekeA/supastash) - Supabase + SQLite sync engine
 
-### Jackbox Party Games
-- [Jackbox for Game Night](https://www.jackboxgames.com/jackbox-for-game-night) — Party game design philosophy
-- [How to Play Jackbox Remotely](https://www.jackboxgames.com/blog/how-to-play-jackbox-games-with-friends-and-family-remotely) — Remote play adaptations
-- [Jackbox Party Pack on Steam](https://store.steampowered.com/app/331670/The_Jackbox_Party_Pack/) — Feature set and user reviews
+### Game Configuration UI
+- [Mobile Game Settings UX](https://reactnative.live/designing-emulation-like-config-uis-for-mobile-games-lessons) - Settings UI patterns
+- [UX StackExchange Difficulty Picker](https://ux.stackexchange.com/questions/119456/best-way-to-make-an-easy-medium-hard-picker) - Multi-select patterns
 
-### Game Design Anti-Patterns
-- [Common Quiz Design Mistakes (Estha.ai)](https://estha.ai/blog/common-quiz-design-mistakes-and-how-to-avoid-them/) — Quiz UX best practices
-- [10 Common Mobile Game Design Mistakes](https://www.tap-nation.io/blog/10-common-mistakes-to-avoid-in-mobile-game-design/) — Mobile game anti-patterns
-- [7 Rookie Mobile Game Mistakes](https://gamings.site/from-prototype-to-playstore-the-top-7-rookie-mistakes-when-landing) — Growth-killing patterns
-- [Trivia Question Design (Woobox)](https://woobox.com/articles/trivia-quiz-question-design) — Difficulty curves and engagement
+### Content Versioning
+- [React Native Versioned State](https://dev.to/sebastianthiebaud/a-simple-pattern-for-versioned-persisted-state-in-react-native-ll6) - Schema versioning pattern
+- [SwiftData Migrations](https://www.donnywals.com/a-deep-dive-into-swiftdata-migrations/) - iOS migration strategies
 
-### In-Person Multiplayer Architecture
-- [Air Jam Blog](https://airjam.io/blog/every-phone-a-game-controller) — Host + controller architecture patterns
-- [Open Party Lab (GitHub)](https://github.com/hartwich/open-party-lab) — Browser party game infrastructure
-- [Werwolf GameMaster](https://www.7wolf.de/en/werwolf-gamemaster/) — Game master role in party games
-
-### Session & State Management
-- [Google Play Games Saved Games](https://developer.android.com/games/pgs/android/saved-games) — Cloud save patterns
-- [Apple GKGameSession](https://developer.apple.com/documentation/gamekit/gkgamesession) — iOS session management
+### Validation and Fact-Checking
+- [RefChecker](https://arxiv.org/pdf/2405.14486) - Fine-grained hallucination detection
+- [Provenance](https://arxiv.org/html/2411.01022) - Lightweight NLI fact-checker
+- [OpenAI Guardrails](https://openai.github.io/openai-guardrails-python/ref/checks/hallucination_detection/) - Hallucination detection API
+- [FactLens](https://github.com/factlens/factlens) - Geometric hallucination detection
 
 ---
-*Feature research for: Mobile trivia/party game for in-person group play*
+*Feature research for: Question Pack System*
 *Researched: 2026-06-08*
