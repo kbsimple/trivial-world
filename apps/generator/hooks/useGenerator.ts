@@ -226,6 +226,25 @@ export function useGenerator() {
     return queue.filter((q) => q.status === 'approved');
   }, [queue]);
 
+  /**
+   * Get queue statistics
+   * Returns total, pending, and needs-review counts
+   */
+  const getQueueStats = useCallback(() => {
+    const total = queue.length;
+    const pending = queue.filter((q) => q.status === 'pending').length;
+    const needsReview = queue.filter((q) => q.verification.needsReview).length;
+    return { total, pending, needsReview };
+  }, [queue]);
+
+  /**
+   * Set current index directly
+   * Useful for navigation after approve/reject
+   */
+  const setCurrentIndexDirect = useCallback((index: number) => {
+    setCurrentIndex(index);
+  }, []);
+
   return {
     queue,
     currentQuestion: queue[currentIndex],
@@ -241,6 +260,8 @@ export function useGenerator() {
     clearQueue,
     getPendingQuestions,
     getApprovedQuestions,
+    getQueueStats,
+    setCurrentIndex: setCurrentIndexDirect,
     next: () => setCurrentIndex((i) => Math.min(i + 1, queue.length - 1)),
     prev: () => setCurrentIndex((i) => Math.max(i - 1, 0)),
   };
