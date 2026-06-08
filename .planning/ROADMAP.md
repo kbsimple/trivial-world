@@ -80,10 +80,10 @@ Plans:
   2. App awards category wedge when answering correctly on category space
   3. App detects win condition (all 6 wedges + center question correct)
   4. App displays final scores and winner at game end
-**Plans**: 2 plans
+**Plans**: 2 plans (1 complete)
 
 Plans:
-- [ ] 04-01-PLAN.md — Wedge tracking and win condition detection (Wave 1)
+- [x] 04-01-PLAN.md — Wedge tracking and win condition detection (Wave 1) ✓
 - [ ] 04-02-PLAN.md — Wedge display and results screen (Wave 2)
 
 ### Phase 5: State Persistence
@@ -111,5 +111,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Game Setup & Conductor Interface | 2/2 | Complete | 2026-06-08 |
 | 2. Game Loop & Turn Management | 2/2 | Complete | 2026-06-08 |
 | 3. Question System | 2/2 | Complete | 2026-06-08 |
-| 4. Scoring & Win Condition | 0/TBD | Not started | - |
+| 4. Scoring & Win Condition | 1/2 | In progress | - |
 | 5. State Persistence | 0/TBD | Not started | - |

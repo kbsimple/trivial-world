@@ -41,9 +41,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Scoring (SCOR)
 
-- [ ] **SCOR-01**: App tracks each participant's score and wedge collection
-- [ ] **SCOR-02**: App awards category wedge when participant answers correctly on category space
-- [ ] **SCOR-03**: App detects win condition (all 6 wedges + center)
+- [x] **SCOR-01**: App tracks each participant's score and wedge collection
+- [x] **SCOR-02**: App awards category wedge when participant answers correctly on category space
+- [x] **SCOR-03**: App detects win condition (all 6 wedges + center)
 - [ ] **SCOR-04**: App displays final scores and winner at game end
 
 ### State Management (STAT)
@@ -114,9 +114,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | QSTN-03 | Phase 3: Question System | Pending |
 | QSTN-04 | Phase 3: Question System | Pending |
 | QSTN-05 | Phase 3: Question System | Pending |
-| SCOR-01 | Phase 4: Scoring & Win Condition | Pending |
-| SCOR-02 | Phase 4: Scoring & Win Condition | Pending |
-| SCOR-03 | Phase 4: Scoring & Win Condition | Pending |
+| SCOR-01 | Phase 4: Scoring & Win Condition | Complete |
+| SCOR-02 | Phase 4: Scoring & Win Condition | Complete |
+| SCOR-03 | Phase 4: Scoring & Win Condition | Complete |
 | SCOR-04 | Phase 4: Scoring & Win Condition | Pending |
 | STAT-01 | Phase 5: State Persistence | Pending |
 | STAT-02 | Phase 5: State Persistence | Pending |
