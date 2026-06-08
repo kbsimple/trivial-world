@@ -13,7 +13,7 @@ Build a mobile trivia game for in-person social play. The game conductor reads q
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Game Setup & Conductor Interface** - Create games, manage participants, display questions to conductor (2026-06-08)
-- [ ] **Phase 2: Game Loop & Turn Management** - Die rolls, move choices, turn cycling
+- [x] **Phase 2: Game Loop & Turn Management** - Die rolls, move choices, turn cycling (2026-06-08)
 - [ ] **Phase 3: Question System** - Category-based selection, no-repeat tracking, offline storage
 - [ ] **Phase 4: Scoring & Win Condition** - Wedges, win detection, final results
 - [ ] **Phase 5: State Persistence** - Save/resume, pause handling, app lifecycle
@@ -37,21 +37,22 @@ Plans:
 - [x] 01-01-PLAN.md — Foundation, stores, and game setup flow (Wave 1) ✓
 - [x] 01-02-PLAN.md — Question display and conductor actions (Wave 2) ✓
 
-### Phase 2: Game Loop & Turn Management
+### Phase 2: Game Loop & Turn Management ✓
 **Goal**: Players can take turns with die rolls and move through the game
 **Depends on**: Phase 1
 **Requirements**: LOOP-01, LOOP-02, LOOP-03, LOOP-04, LOOP-05
 **Success Criteria** (what must be TRUE):
-  1. App simulates die roll with visual animation and displays result
-  2. App shows valid move choices based on die roll
-  3. Game conductor can select whose turn it is
-  4. App automatically advances to next player after each question
-  5. App cycles through all participants in correct turn order
-**Plans**: 2 plans
+  1. App simulates die roll with visual animation and displays result ✓
+  2. App shows valid move choices based on die roll ✓
+  3. Game conductor can select whose turn it is ✓
+  4. App automatically advances to next player after each question ✓
+  5. App cycles through all participants in correct turn order ✓
+**Plans**: 2 plans (complete)
+**Completed**: 2026-06-08
 
 Plans:
-- [ ] 02-01-PLAN.md — Die roll animation and turn state (Wave 1)
-- [ ] 02-02-PLAN.md — Move selection and turn cycling (Wave 2)
+- [x] 02-01-PLAN.md — Die roll animation and turn state (Wave 1) ✓
+- [x] 02-02-PLAN.md — Move selection and turn cycling (Wave 2) ✓
 
 ### Phase 3: Question System
 **Goal**: Questions are presented from correct categories without repetition
@@ -95,7 +96,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Game Setup & Conductor Interface | 2/2 | Complete | 2026-06-08 |
-| 2. Game Loop & Turn Management | 0/2 | Not started | - |
+| 2. Game Loop & Turn Management | 2/2 | Complete | 2026-06-08 |
 | 3. Question System | 0/TBD | Not started | - |
 | 4. Scoring & Win Condition | 0/TBD | Not started | - |
 | 5. State Persistence | 0/TBD | Not started | - |
