@@ -1,4 +1,5 @@
 import { PlayerColor } from '../constants/categories';
+import { Player } from './player';
 
 /**
  * Game phase state machine
@@ -15,13 +16,14 @@ export type GamePhase =
 /**
  * Valid phase transitions
  * Ensures game progresses in correct order
+ * SCOR-03: 'scoring' can transition to 'finished' on win
  */
 export const VALID_TRANSITIONS: Record<GamePhase, GamePhase[]> = {
   setup: ['rolling'],
   rolling: ['moving'],
   moving: ['answering'],
   answering: ['scoring'],
-  scoring: ['rolling', 'finished'],
+  scoring: ['rolling', 'finished'], // Can go to finished on win
   finished: [],
 };
 
@@ -40,6 +42,10 @@ export interface GameState {
   answerRevealed: boolean;
   /** Result of die roll (1-6) or null if not rolled yet */
   dieResult: number | null;
+  /** Whether current question is a center question (win attempt) - SCOR-03 */
+  isCenterQuestion: boolean;
+  /** Player who won (null if game ongoing) - SCOR-03 */
+  winner: Player | null;
 
   // Actions
   /** Start game from setup phase */
