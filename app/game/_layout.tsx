@@ -5,7 +5,8 @@ import { Stack } from 'expo-router';
  * Nested layout for game screens
  * Inherits dark theme from parent layout
  *
- * Flow: setup -> roll -> move -> question (repeat)
+ * Flow: setup -> roll -> move -> question -> (repeat or results)
+ * SCOR-04: Results screen shown when phase === 'finished'
  */
 export default function GameLayout() {
   return (
@@ -14,6 +15,7 @@ export default function GameLayout() {
       <Stack.Screen name="roll" />
       <Stack.Screen name="move" />
       <Stack.Screen name="question" />
+      <Stack.Screen name="results" />
     </Stack>
   );
 }

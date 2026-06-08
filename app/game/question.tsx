@@ -42,11 +42,15 @@ export default function QuestionScreen() {
     // Mark the answer (resets answerRevealed, increments questionNumber)
     markAnswer(correct);
 
-    // Note: markAnswer now includes nextTurn() call with 500ms delay
-    // After the delay, phase will be 'rolling' and we navigate to roll screen
+    // Check if game finished after marking
     setTimeout(() => {
-      router.replace('/game/roll');
-    }, 600); // Slightly longer than the delay in markAnswer
+      const currentPhase = useGameStore.getState().phase;
+      if (currentPhase === 'finished') {
+        router.replace('/game/results');
+      } else {
+        router.replace('/game/roll');
+      }
+    }, 600);
   };
 
   return (
