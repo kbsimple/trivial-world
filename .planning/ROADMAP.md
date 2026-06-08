@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Game Setup & Conductor Interface** - Create games, manage participants, display questions to conductor (2026-06-08)
 - [x] **Phase 2: Game Loop & Turn Management** - Die rolls, move choices, turn cycling (2026-06-08)
 - [x] **Phase 3: Question System** - Category-based selection, no-repeat tracking, offline storage (2026-06-08)
-- [ ] **Phase 4: Scoring & Win Condition** - Wedges, win detection, final results
+- [x] **Phase 4: Scoring & Win Condition** - Wedges, win detection, final results (2026-06-08)
 - [ ] **Phase 5: State Persistence** - Save/resume, pause handling, app lifecycle
 
 ## Phase Details
@@ -71,20 +71,21 @@ Plans:
 - [x] 03-01-PLAN.md — Question type system and data files (Wave 1) ✓
 - [x] 03-02-PLAN.md — Question store with asked tracking (Wave 2) ✓
 
-### Phase 4: Scoring & Win Condition
+### Phase 4: Scoring & Win Condition ✓
 **Goal**: Players earn wedges and the game detects a winner
 **Depends on**: Phase 3
 **Requirements**: SCOR-01, SCOR-02, SCOR-03, SCOR-04
 **Success Criteria** (what must be TRUE):
-  1. App tracks each participant's score and wedge collection
-  2. App awards category wedge when answering correctly on category space
-  3. App detects win condition (all 6 wedges + center question correct)
-  4. App displays final scores and winner at game end
-**Plans**: 2 plans (1 complete)
+  1. App tracks each participant's score and wedge collection ✓
+  2. App awards category wedge when answering correctly on category space ✓
+  3. App detects win condition (all 6 wedges + center question correct) ✓
+  4. App displays final scores and winner at game end ✓
+**Plans**: 2 plans (complete)
+**Completed**: 2026-06-08
 
 Plans:
 - [x] 04-01-PLAN.md — Wedge tracking and win condition detection (Wave 1) ✓
-- [ ] 04-02-PLAN.md — Wedge display and results screen (Wave 2)
+- [x] 04-02-PLAN.md — Wedge display and results screen (Wave 2) ✓
 
 ### Phase 5: State Persistence
 **Goal**: Games can be paused, resumed, and survive app interruptions
@@ -95,11 +96,11 @@ Plans:
   2. Game can be resumed from where it left off after app close
   3. Game conductor can pause and resume game explicitly
   4. App handles background/foreground transitions without data loss
-**Plans**: 2 plans
+**Plans**: 2 plans (planned)
 
 Plans:
-- [ ] 04-01-PLAN.md — Wedge tracking and win condition detection (Wave 1)
-- [ ] 04-02-PLAN.md — Wedge display and results screen (Wave 2)
+- [ ] 05-01-PLAN.md — State persistence and recovery (Wave 1)
+- [ ] 05-02-PLAN.md — Pause/resume and app lifecycle (Wave 2)
 
 ## Progress
 
@@ -111,5 +112,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Game Setup & Conductor Interface | 2/2 | Complete | 2026-06-08 |
 | 2. Game Loop & Turn Management | 2/2 | Complete | 2026-06-08 |
 | 3. Question System | 2/2 | Complete | 2026-06-08 |
-| 4. Scoring & Win Condition | 1/2 | In progress | - |
+| 4. Scoring & Win Condition | 2/2 | Complete | 2026-06-08 |
 | 5. State Persistence | 0/TBD | Not started | - |

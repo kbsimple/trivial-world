@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
+status: ready_to_plan
 stopped_at: null
-last_updated: "2026-06-08T15:12:16Z"
-last_activity: 2026-06-08 — Phase 4 Plan 1 complete
+last_updated: "2026-06-08T16:30:00.000Z"
+last_activity: 2026-06-08 — Phase 4 complete, ready for Phase 5
 progress:
   total_phases: 5
-  completed_phases: 3
-  total_plans: 8
-  completed_plans: 7
-  percent: 70
+  completed_phases: 4
+  total_plans: 10
+  completed_plans: 8
+  percent: 80
 ---
 
 # Project State
@@ -21,24 +21,24 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** Phase 4: Scoring & Win Condition
+**Current focus:** Phase 5: State Persistence
 
 ## Current Position
 
-Phase: 4 of 5 (Scoring & Win Condition)
-Plan: 1 of 2 complete
-Status: Executing
-Last activity: 2026-06-08 — Plan 01 (Scoring State Infrastructure) complete
+Phase: 5 of 5 (State Persistence)
+Plan: 0 of 2 complete
+Status: Ready to plan
+Last activity: 2026-06-08 — Phase 4 complete, ready for Phase 5
 
-Progress: [████████░░] 70%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: ~8 minutes per plan
-- Total execution time: ~55 minutes
+- Total execution time: ~65 minutes
 
 **By Phase:**
 
@@ -47,14 +47,15 @@ Progress: [████████░░] 70%
 | 1. Game Setup & Conductor Interface | 2 | ~20 min | ~10 min |
 | 2. Game Loop & Turn Management | 2 | ~15 min | ~7.5 min |
 | 3. Question System | 2 | ~15 min | ~7.5 min |
-| 4. Scoring & Win Condition | 1 | ~4 min | ~4 min (in progress) |
+| 4. Scoring & Win Condition | 2 | ~8 min | ~4 min |
 | 5. State Persistence | 0 | -- | -- |
 
 **Recent Trend:**
 
-- Phase 4 Plan 1 completed efficiently (4 minutes)
+- Phase 4 completed efficiently (8 minutes total)
 - Wedge tracking and win condition infrastructure in place
-- Ready for Plan 2 (UI integration)
+- Results screen with sorted players and winner display
+- Ready for Phase 5 (State Persistence)
 
 *Updated after each plan completion*
 
@@ -85,11 +86,14 @@ Decisions are logged in PROJECT.md Key Decisions table and phase CONTEXT.md file
 - Pool reset on exhaustion with console warning
 - Integration hook for board-based category selection (Phase 4)
 
-**Phase 4 Plan 1 Completed (2026-06-08):**
+**Phase 4 Completed (2026-06-08):**
 - PlayerColor[] for wedge collection (same type as category)
 - hasAllWedges checks exactly 6 wedges
 - Win condition: correct center answer + all 6 wedges
 - Wedges only awarded on non-center correct answers
+- WedgeBadge/WedgeCollection/PlayerScoreCard components for visual wedge display
+- Results screen with sorted players and winner highlight
+- Navigation to results on win condition
 
 ### Pending Todos
 
@@ -109,6 +113,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-06-08T15:12:16Z
+Last session: 2026-06-08T16:30:00Z
 Stopped at: null
 Resume file: None
