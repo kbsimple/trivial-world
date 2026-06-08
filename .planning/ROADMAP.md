@@ -30,7 +30,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Game conductor can start the game when ready
   4. Game conductor sees questions in large, readable text with category and question number
   5. Game conductor can reveal answers and mark them correct/incorrect
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Foundation, stores, and game setup flow (Wave 1)
+- [ ] 01-02-PLAN.md — Question display and conductor actions (Wave 2)
 
 ### Phase 2: Game Loop & Turn Management
 **Goal**: Players can take turns with die rolls and move through the game
@@ -85,7 +89,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Game Setup & Conductor Interface | 0/TBD | Not started | - |
+| 1. Game Setup & Conductor Interface | 0/2 | Ready to execute | - |
 | 2. Game Loop & Turn Management | 0/TBD | Not started | - |
 | 3. Question System | 0/TBD | Not started | - |
 | 4. Scoring & Win Condition | 0/TBD | Not started | - |
