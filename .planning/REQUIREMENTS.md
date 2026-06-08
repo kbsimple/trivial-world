@@ -94,34 +94,34 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SETUP-01 | Phase 1 | Pending |
-| SETUP-02 | Phase 1 | Pending |
-| SETUP-03 | Phase 1 | Pending |
-| SETUP-04 | Phase 1 | Pending |
-| SETUP-05 | Phase 1 | Pending |
-| COND-01 | Phase 1 | Pending |
-| COND-02 | Phase 1 | Pending |
-| COND-03 | Phase 1 | Pending |
-| COND-04 | Phase 1 | Pending |
-| COND-05 | Phase 1 | Pending |
-| LOOP-01 | Phase 2 | Pending |
-| LOOP-02 | Phase 2 | Pending |
-| LOOP-03 | Phase 2 | Pending |
-| LOOP-04 | Phase 2 | Pending |
-| LOOP-05 | Phase 2 | Pending |
-| QSTN-01 | Phase 3 | Pending |
-| QSTN-02 | Phase 3 | Pending |
-| QSTN-03 | Phase 3 | Pending |
-| QSTN-04 | Phase 3 | Pending |
-| QSTN-05 | Phase 3 | Pending |
-| SCOR-01 | Phase 4 | Pending |
-| SCOR-02 | Phase 4 | Pending |
-| SCOR-03 | Phase 4 | Pending |
-| SCOR-04 | Phase 4 | Pending |
-| STAT-01 | Phase 5 | Pending |
-| STAT-02 | Phase 5 | Pending |
-| STAT-03 | Phase 5 | Pending |
-| STAT-04 | Phase 5 | Pending |
+| SETUP-01 | Phase 1: Game Setup & Conductor Interface | Pending |
+| SETUP-02 | Phase 1: Game Setup & Conductor Interface | Pending |
+| SETUP-03 | Phase 1: Game Setup & Conductor Interface | Pending |
+| SETUP-04 | Phase 1: Game Setup & Conductor Interface | Pending |
+| SETUP-05 | Phase 1: Game Setup & Conductor Interface | Pending |
+| COND-01 | Phase 1: Game Setup & Conductor Interface | Pending |
+| COND-02 | Phase 1: Game Setup & Conductor Interface | Pending |
+| COND-03 | Phase 1: Game Setup & Conductor Interface | Pending |
+| COND-04 | Phase 1: Game Setup & Conductor Interface | Pending |
+| COND-05 | Phase 1: Game Setup & Conductor Interface | Pending |
+| LOOP-01 | Phase 2: Game Loop & Turn Management | Pending |
+| LOOP-02 | Phase 2: Game Loop & Turn Management | Pending |
+| LOOP-03 | Phase 2: Game Loop & Turn Management | Pending |
+| LOOP-04 | Phase 2: Game Loop & Turn Management | Pending |
+| LOOP-05 | Phase 2: Game Loop & Turn Management | Pending |
+| QSTN-01 | Phase 3: Question System | Pending |
+| QSTN-02 | Phase 3: Question System | Pending |
+| QSTN-03 | Phase 3: Question System | Pending |
+| QSTN-04 | Phase 3: Question System | Pending |
+| QSTN-05 | Phase 3: Question System | Pending |
+| SCOR-01 | Phase 4: Scoring & Win Condition | Pending |
+| SCOR-02 | Phase 4: Scoring & Win Condition | Pending |
+| SCOR-03 | Phase 4: Scoring & Win Condition | Pending |
+| SCOR-04 | Phase 4: Scoring & Win Condition | Pending |
+| STAT-01 | Phase 5: State Persistence | Pending |
+| STAT-02 | Phase 5: State Persistence | Pending |
+| STAT-03 | Phase 5: State Persistence | Pending |
+| STAT-04 | Phase 5: State Persistence | Pending |
 
 **Coverage:**
 - v1 requirements: 28 total
@@ -130,4 +130,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-06-08*
-*Last updated: 2026-06-08 after initial definition*
+*Last updated: 2026-06-08 after roadmap creation*
