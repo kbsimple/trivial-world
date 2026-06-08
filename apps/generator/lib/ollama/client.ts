@@ -1,7 +1,11 @@
 import { createOllama } from 'ollama-ai-provider-v2';
-import { generateObject, generateText } from 'ai';
+import { generateObject } from 'ai';
 import { QuestionSchema, type Question, type Category } from '@trivial-world/types';
-import { buildQuestionPrompt, VERIFICATION_PROMPTS, evaluatePassResult } from './prompts';
+import { buildQuestionPrompt } from './prompts';
+import { verifyQuestion, type ConfidenceScore, type VerificationResult } from './verification';
+
+// Re-export verification types for convenience
+export { verifyQuestion, type ConfidenceScore, type VerificationResult } from './verification';
 
 /**
  * Default model for question generation
@@ -27,34 +31,6 @@ export function getOllamaClient(baseUrl?: string) {
   return createOllama({
     baseURL: baseUrl || DEFAULT_OLLAMA_URL,
   });
-}
-
-/**
- * Result from a single verification pass
- */
-export interface VerificationResult {
-  /** Pass number (1, 2, or 3) */
-  pass: number;
-  /** Name of the verification prompt used */
-  prompt: string;
-  /** Raw LLM response */
-  response: string;
-  /** Whether the pass indicates correctness */
-  passed: boolean;
-}
-
-/**
- * Confidence score from 3-pass verification
- */
-export interface ConfidenceScore {
-  /** Score percentage (0-100) */
-  score: number;
-  /** Number of passes that passed */
-  passes: number;
-  /** Total verification results */
-  results: VerificationResult[];
-  /** Whether the question needs human review */
-  needsReview: boolean;
 }
 
 /**
@@ -88,59 +64,6 @@ export async function generateQuestion(
   });
 
   return result.object;
-}
-
-/**
- * Verify a question with 3-pass verification
- * Per D-07: Multi-pass verification with different phrasings
- * Per D-08: Confidence scoring based on pass agreement
- *
- * @param question - The question to verify
- * @param model - Model to use (default: llama3.2)
- * @param ollamaUrl - Optional Ollama endpoint override
- * @returns Confidence score with verification results
- */
-export async function verifyQuestion(
-  question: Question,
-  model: string = DEFAULT_MODEL,
-  ollamaUrl?: string
-): Promise<ConfidenceScore> {
-  const ollama = getOllamaClient(ollamaUrl);
-  const results: VerificationResult[] = [];
-
-  // Sequential verification passes (D-14: fast batch processing)
-  const prompts = [
-    { name: 'factualAccuracy', prompt: VERIFICATION_PROMPTS.factualAccuracy },
-    { name: 'alternatePhrasing', prompt: VERIFICATION_PROMPTS.alternatePhrasing },
-    { name: 'reverseVerification', prompt: VERIFICATION_PROMPTS.reverseVerification },
-  ];
-
-  for (const [index, { name, prompt: promptBuilder }] of prompts.entries()) {
-    const prompt = promptBuilder(question.questionText, question.answerText);
-
-    const result = await generateText({
-      model: ollama(model),
-      prompt,
-    });
-
-    results.push({
-      pass: index + 1,
-      prompt: name,
-      response: result.text,
-      passed: evaluatePassResult(result.text),
-    });
-  }
-
-  const passes = results.filter((r) => r.passed).length;
-  const score = Math.round((passes / 3) * 100);
-
-  return {
-    score,
-    passes,
-    results,
-    // D-10: Questions marked "needs review" when passes disagree
-    needsReview: passes < 3,
-  };
 }
 
 /**
