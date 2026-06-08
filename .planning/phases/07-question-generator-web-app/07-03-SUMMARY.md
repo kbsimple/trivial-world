@@ -79,6 +79,10 @@ No new threat surfaces introduced beyond plan's threat model.
 - [x] pnpm --filter @trivial-world/generator build succeeds
 - [x] pnpm --filter @trivial-world/generator typecheck passes
 
+## Self-Check: PASSED
+
+All files created and commits verified.
+
 ## Files Created/Modified
 
 ### New Files (apps/generator/)
