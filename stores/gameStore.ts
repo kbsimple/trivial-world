@@ -6,6 +6,7 @@ import { PlayerColor } from '../constants/categories';
 import { Question } from '../types/question';
 import { useQuestionStore } from './questionStore';
 import { usePlayerStore } from './playerStore';
+import { Player } from '../types/player';
 
 interface GameStore extends GameState {
   /** Current question being displayed */
@@ -39,11 +40,15 @@ export const useGameStore = create<GameStore>()(
       currentQuestion: null,
       currentCategory: null,
       dieResult: null,
+      isCenterQuestion: false, // SCOR-03
+      winner: null, // SCOR-03
 
       // Actions
       startGame: () => {
         // Reset asked questions for new game (QSTN-03)
         useQuestionStore.getState().resetAskedQuestions();
+        // Reset wedges for new game (SCOR-01)
+        usePlayerStore.getState().resetWedges();
 
         // Select first question (default category 'blue' for now)
         const question = useQuestionStore.getState().selectQuestion('blue');
@@ -56,6 +61,8 @@ export const useGameStore = create<GameStore>()(
           questionNumber: 1,
           answerRevealed: false,
           dieResult: null,
+          isCenterQuestion: false, // Reset center question flag
+          winner: null, // Reset winner
         });
       },
 
@@ -90,27 +97,54 @@ export const useGameStore = create<GameStore>()(
           currentCategory: question?.category ?? category,
           phase: 'rolling',
           questionNumber: get().questionNumber + 1,
+          isCenterQuestion: false, // Reset center question flag
         });
       },
 
       revealAnswer: () => set({ answerRevealed: true }),
 
-      markAnswer: (_correct: boolean) => {
+      // SCOR-02, SCOR-03: Award wedge and check win condition
+      markAnswer: (correct: boolean) => {
         const { players } = usePlayerStore.getState();
-        const { currentQuestion } = get();
+        const { currentQuestion, isCenterQuestion, currentPlayerIndex } = get();
 
         if (players.length === 0) {
           console.error('markAnswer called with no players');
           return;
         }
 
+        const currentPlayer = players[currentPlayerIndex];
+
         // Mark question as asked (QSTN-03)
         if (currentQuestion) {
           useQuestionStore.getState().markAsked(currentQuestion.id);
         }
 
+        // SCOR-02: Award wedge on correct answer (not on center question)
+        if (correct && !isCenterQuestion && currentQuestion) {
+          const category = currentQuestion.category;
+          usePlayerStore.getState().awardWedge(currentPlayer.id, category);
+        }
+
+        // SCOR-03: Check win condition
+        if (correct && isCenterQuestion) {
+          // Center question requires all 6 wedges + correct answer
+          const hasAllWedges = usePlayerStore.getState().hasAllWedges(currentPlayer.id);
+
+          if (hasAllWedges) {
+            // Winner! Game over
+            set({
+              phase: 'finished',
+              winner: currentPlayer as Player,
+              answerRevealed: false,
+            });
+            return; // Don't advance to next turn
+          }
+          // Not all wedges or wrong answer: continue game (fall through)
+        }
+
         // Reset for next question
-        set({ answerRevealed: false, questionNumber: get().questionNumber + 1 });
+        set({ answerRevealed: false });
 
         // Trigger next turn after delay for visual feedback
         setTimeout(() => {
@@ -132,6 +166,21 @@ export const useGameStore = create<GameStore>()(
         set({
           currentCategory: category,
           currentQuestion: question,
+        });
+      },
+
+      // SCOR-03: Helper to set center question mode (called from board position logic)
+      startCenterQuestion: () => {
+        // Center question uses random category (or could use player's choice)
+        const categories: PlayerColor[] = ['blue', 'pink', 'yellow', 'purple', 'green', 'orange'];
+        const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+        const question = useQuestionStore.getState().selectQuestion(randomCategory);
+
+        set({
+          currentQuestion: question,
+          currentCategory: question?.category ?? randomCategory,
+          isCenterQuestion: true,
+          phase: 'answering',
         });
       },
     }),
