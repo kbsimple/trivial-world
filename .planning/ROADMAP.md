@@ -80,7 +80,11 @@ Plans:
   2. App awards category wedge when answering correctly on category space
   3. App detects win condition (all 6 wedges + center question correct)
   4. App displays final scores and winner at game end
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Wedge tracking and win condition detection (Wave 1)
+- [ ] 04-02-PLAN.md — Wedge display and results screen (Wave 2)
 
 ### Phase 5: State Persistence
 **Goal**: Games can be paused, resumed, and survive app interruptions
@@ -91,7 +95,11 @@ Plans:
   2. Game can be resumed from where it left off after app close
   3. Game conductor can pause and resume game explicitly
   4. App handles background/foreground transitions without data loss
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Wedge tracking and win condition detection (Wave 1)
+- [ ] 04-02-PLAN.md — Wedge display and results screen (Wave 2)
 
 ## Progress
 
