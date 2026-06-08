@@ -40,7 +40,7 @@ export default function SetupScreen() {
   const handleStartGame = () => {
     if (players.length > 0) {
       startGame();
-      router.push('/game/question');
+      router.replace('/game/roll');
     }
   };
 
