@@ -4,15 +4,15 @@ milestone: v2.0
 milestone_name: Question Packs & Game Configuration
 status: ready_to_plan
 stopped_at: null
-last_updated: "2026-06-08T20:00:00.000Z"
-last_activity: 2026-06-08 — Roadmap created for v2.0, ready for Phase 6 planning
-resume_file: null
+last_updated: "2026-06-08T22:45:00.000Z"
+last_activity: 2026-06-08 — Phase 7 context gathered for Question Generator Web App
+resume_file: .planning/phases/07-question-generator-web-app/07-CONTEXT.md
 progress:
   total_phases: 8
-  completed_phases: 5
+  completed_phases: 6
   total_plans: 18
-  completed_plans: 10
-  percent: 56
+  completed_plans: 13
+  percent: 75
 ---
 
 # Project State
@@ -22,21 +22,21 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** Phase 6: Question Pack Structure
+**Current focus:** Phase 7: Question Pack Generator
 
 ## Current Position
 
-Phase: 6 of 8 (Question Pack Structure)
+Phase: 7 of 8 (Question Generator Web App)
 Plan: —
 Status: Ready to plan
-Last activity: 2026-06-08 — Roadmap created for v2.0, ready for Phase 6 planning
+Last activity: 2026-06-08 — Phase 7 context gathered for Question Generator Web App
 
-Progress: [████████░░] 56%
+Progress: [████████░░] 75%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
+- Total plans completed: 13
 - Average duration: — (v1.0 complete)
 - Total execution time: — (v1.0 complete)
 
@@ -49,6 +49,7 @@ Progress: [████████░░] 56%
 | 3. Question System | 2 | — | — |
 | 4. Scoring & Win Condition | 2 | — | — |
 | 5. State Persistence | 2 | — | — |
+| 6. Question Pack Structure | 3 | — | — |
 
 **Recent Trend:**
 - Last 5 plans: —
@@ -75,6 +76,29 @@ Progress: [████████░░] 56%
 - Netlify for generator web app deployment
 - Multi-model fact-checking for AI question quality
 
+**Phase 6 Decisions (2026-06-08):**
+- D-01: Full monorepo with Turborepo, pnpm workspaces, shared @trivial-world/types package
+- D-02: Defer migration of existing 120 questions until user reviews them
+- D-03: UUID-based pack identifiers
+- D-04: Single active pack per game session
+- D-05: Schema versioning with additive-only changes
+
+**Phase 6 Implementation (2026-06-08):**
+- WatermelonDB v0.28.x (not v6.x)
+- Database factory pattern: `createDatabase(adapter)` instead of passing schema to constructor
+- Babel decorators plugin required for WatermelonDB model decorators
+- `createTable` (not `addTables`) for migrations
+
+**Phase 7 Decisions (2026-06-08):**
+- D-01: Ollama-only for question generation (single provider)
+- D-02: Vercel AI SDK for provider abstraction (future swap capability)
+- D-03: Next.js App Router for generator web app (apps/generator/)
+- D-04: 3-page flow: Generator, Review, Packs (settings on Generator page)
+- D-05: Multi-pass verification (3 Ollama calls, confidence scoring)
+- D-06: Single-question focus review UI with full edit capability
+- D-07: Pipeline automation with fast batch processing (semi-synchronous)
+- D-08: Static export to Netlify, manual JSON download
+
 ### Pending Todos
 
 None yet.
@@ -89,10 +113,12 @@ Items acknowledged and carried forward from previous milestone close:
 
 | Category | Item | Status | Deferred At |
 |----------|------|--------|-------------|
-| *(none)* | | | |
+| Data Migration | 120 existing hardcoded questions | Deferred | Phase 6 (D-02) |
+| Cloud Hosting | Pack hosting and discovery | Deferred | Phase 7 (D-18) |
+| Multi-Provider AI | OpenAI, Anthropic, Google Gemini support | Deferred | Phase 7 (future) |
 
 ## Session Continuity
 
-Last session: 2026-06-08T20:00:00Z
+Last session: 2026-06-08T22:45:00Z
 Stopped at: null
-Resume file: None
+Resume file: .planning/phases/07-question-generator-web-app/07-CONTEXT.md
