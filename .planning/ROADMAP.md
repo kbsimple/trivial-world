@@ -96,11 +96,11 @@ Plans:
   2. Game can be resumed from where it left off after app close
   3. Game conductor can pause and resume game explicitly
   4. App handles background/foreground transitions without data loss
-**Plans**: 2 plans (planned)
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — State persistence and recovery (Wave 1)
-- [ ] 05-02-PLAN.md — Pause/resume and app lifecycle (Wave 2)
+- [ ] 05-01-PLAN.md — Add persist middleware to playerStore and resume detection on home screen
+- [ ] 05-02-PLAN.md — Pause overlay and back button confirmation for game screens
 
 ## Progress
 
