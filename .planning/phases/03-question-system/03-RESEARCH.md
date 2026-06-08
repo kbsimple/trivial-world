@@ -577,22 +577,13 @@ nextTurn: () => {
 | A3 | Asked questions reset per game session (not persisted across games) | Pattern 1 | UX differs if asked questions persist across sessions |
 | A4 | Custom games disable entire categories, not individual questions | Pattern 3 | Implementation differs if filtering is more granular |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **Question Count Per Category**
-   - What we know: Placeholder has 3 per category, REQUIREMENTS doesn't specify
-   - What's unclear: Minimum viable question count for v1
-   - Recommendation: Start with 20-30 per category (enough for 5-6 games without repeats), expand in v1.x
+1. **Question Count Per Category** — RESOLVED: Start with 20-30 per category (enough for 5-6 games without repeats), expand in v1.x
 
-2. **Category Exhaustion UX**
-   - What we know: Must handle exhausted pools gracefully
-   - What's unclear: What message/experience to show when pool exhausted
-   - Recommendation: Reset pool silently with console warning; no user-facing message for v1
+2. **Category Exhaustion UX** — RESOLVED: Reset pool silently with console warning; no user-facing message for v1
 
-3. **Custom Game Category Selection UI**
-   - What we know: QSTN-04 requires category filtering support
-   - What's unclear: Where in the game setup flow this UI lives
-   - Recommendation: Defer UI to Phase 1 enhancement; backend support in Phase 3
+3. **Custom Game Category Selection UI** — RESOLVED: Defer UI to Phase 1 enhancement; backend support in Phase 3
 
 ## Environment Availability
 
