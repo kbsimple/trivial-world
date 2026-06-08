@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Game Loop & Turn Management** - Die rolls, move choices, turn cycling (2026-06-08)
 - [x] **Phase 3: Question System** - Category-based selection, no-repeat tracking, offline storage (2026-06-08)
 - [x] **Phase 4: Scoring & Win Condition** - Wedges, win detection, final results (2026-06-08)
-- [ ] **Phase 5: State Persistence** - Save/resume, pause handling, app lifecycle
+- [x] **Phase 5: State Persistence** - Save/resume, pause handling, app lifecycle (2026-06-08)
 
 ## Phase Details
 
@@ -87,20 +87,21 @@ Plans:
 - [x] 04-01-PLAN.md — Wedge tracking and win condition detection (Wave 1) ✓
 - [x] 04-02-PLAN.md — Wedge display and results screen (Wave 2) ✓
 
-### Phase 5: State Persistence
+### Phase 5: State Persistence ✓
 **Goal**: Games can be paused, resumed, and survive app interruptions
 **Depends on**: Phase 4
 **Requirements**: STAT-01, STAT-02, STAT-03, STAT-04
 **Success Criteria** (what must be TRUE):
-  1. App persists game state to local storage automatically
-  2. Game can be resumed from where it left off after app close
-  3. Game conductor can pause and resume game explicitly
-  4. App handles background/foreground transitions without data loss
-**Plans**: 2 plans
+  1. App persists game state to local storage automatically ✓
+  2. Game can be resumed from where it left off after app close ✓
+  3. Game conductor can pause and resume game explicitly ✓
+  4. App handles background/foreground transitions without data loss ✓
+**Plans**: 2 plans (complete)
+**Completed**: 2026-06-08
 
 Plans:
-- [ ] 05-01-PLAN.md — Add persist middleware to playerStore and resume detection on home screen
-- [ ] 05-02-PLAN.md — Pause overlay and back button confirmation for game screens
+- [x] 05-01-PLAN.md — Add persist middleware to playerStore and resume detection on home screen (Wave 1) ✓
+- [x] 05-02-PLAN.md — Pause overlay and back button confirmation for game screens (Wave 2) ✓
 
 ## Progress
 
@@ -113,4 +114,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Game Loop & Turn Management | 2/2 | Complete | 2026-06-08 |
 | 3. Question System | 2/2 | Complete | 2026-06-08 |
 | 4. Scoring & Win Condition | 2/2 | Complete | 2026-06-08 |
-| 5. State Persistence | 0/TBD | Not started | - |
+| 5. State Persistence | 2/2 | Complete | 2026-06-08 |

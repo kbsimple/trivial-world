@@ -2,17 +2,17 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: ready_to_plan
+status: verifying
 stopped_at: null
-last_updated: "2026-06-08T17:00:00.000Z"
-last_activity: 2026-06-08 — Phase 5 context gathered, ready for planning
-resume_file: .planning/phases/05-state-persistence/05-CONTEXT.md
+last_updated: "2026-06-08T19:20:00.000Z"
+last_activity: 2026-06-08 — Phase 5 executed, ready for verification
+resume_file: null
 progress:
   total_phases: 5
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 10
-  completed_plans: 8
-  percent: 80
+  completed_plans: 10
+  percent: 100
 ---
 
 # Project State
@@ -27,11 +27,11 @@ See: .planning/PROJECT.md (updated 2026-06-08)
 ## Current Position
 
 Phase: 5 of 5 (State Persistence)
-Plan: 0 of 2 complete
-Status: Ready to plan
-Last activity: 2026-06-08 — Phase 4 complete, ready for Phase 5
+Plan: 2 of 2 complete
+Status: Ready for verification
+Last activity: 2026-06-08 — Phase 5 executed, verifying completion
 
-Progress: [████████░░] 80%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -49,14 +49,15 @@ Progress: [████████░░] 80%
 | 2. Game Loop & Turn Management | 2 | ~15 min | ~7.5 min |
 | 3. Question System | 2 | ~15 min | ~7.5 min |
 | 4. Scoring & Win Condition | 2 | ~8 min | ~4 min |
-| 5. State Persistence | 0 | -- | -- |
+| 5. State Persistence | 2 | ~13 min | ~6.5 min |
 
 **Recent Trend:**
 
-- Phase 4 completed efficiently (8 minutes total)
-- Wedge tracking and win condition infrastructure in place
-- Results screen with sorted players and winner display
-- Ready for Phase 5 (State Persistence)
+- Phase 5 completed (13 minutes total)
+- Persist middleware added to playerStore
+- Resume/New Game buttons on home screen
+- Pause overlay and back button handling for game screens
+- All STAT requirements implemented
 
 *Updated after each plan completion*
 
@@ -95,6 +96,15 @@ Decisions are logged in PROJECT.md Key Decisions table and phase CONTEXT.md file
 - WedgeBadge/WedgeCollection/PlayerScoreCard components for visual wedge display
 - Results screen with sorted players and winner highlight
 - Navigation to results on win condition
+
+**Phase 5 Completed (2026-06-08):**
+- Persist middleware added to playerStore (AsyncStorage)
+- Home screen Resume/New Game buttons when game in progress
+- Phase-based routing for resume (rolling→/game/roll, answering→/game/question)
+- Pause overlay with Tamagui Sheet (Resume/End buttons)
+- Back button interception during active game phases
+- End Game resets players and navigates home
+- No AppState listener needed (persist middleware handles auto-save)
 
 ### Pending Todos
 
