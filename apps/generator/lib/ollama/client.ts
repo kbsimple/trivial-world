@@ -1,7 +1,7 @@
 import { createOllama } from 'ollama-ai-provider-v2';
 import { generateObject, generateText } from 'ai';
 import { QuestionSchema, type Question, type Category } from '@trivial-world/types';
-import { buildQuestionPrompt, VERIFICATION_PROMPTS, evaluatePassResult } from './prompts.js';
+import { buildQuestionPrompt, VERIFICATION_PROMPTS, evaluatePassResult } from './prompts';
 
 /**
  * Default model for question generation
