@@ -38,6 +38,8 @@ export interface GameState {
   questionNumber: number;
   /** Whether answer is currently visible */
   answerRevealed: boolean;
+  /** Result of die roll (1-6) or null if not rolled yet */
+  dieResult: number | null;
 
   // Actions
   /** Start game from setup phase */
