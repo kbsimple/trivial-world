@@ -12,7 +12,7 @@ Build a mobile trivia game for in-person social play. The game conductor reads q
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Game Setup & Conductor Interface** - Create games, manage participants, display questions to conductor
+- [x] **Phase 1: Game Setup & Conductor Interface** - Create games, manage participants, display questions to conductor (2026-06-08)
 - [ ] **Phase 2: Game Loop & Turn Management** - Die rolls, move choices, turn cycling
 - [ ] **Phase 3: Question System** - Category-based selection, no-repeat tracking, offline storage
 - [ ] **Phase 4: Scoring & Win Condition** - Wedges, win detection, final results
@@ -20,21 +20,22 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 ## Phase Details
 
-### Phase 1: Game Setup & Conductor Interface
+### Phase 1: Game Setup & Conductor Interface ✓
 **Goal**: Game conductor can set up a new game and see questions clearly displayed
 **Depends on**: Nothing (first phase)
 **Requirements**: SETUP-01, SETUP-02, SETUP-03, SETUP-04, SETUP-05, COND-01, COND-02, COND-03, COND-04, COND-05
 **Success Criteria** (what must be TRUE):
-  1. Game conductor can create a new game session from the main screen
-  2. Game conductor can add, name, and remove participants before starting
-  3. Game conductor can start the game when ready
-  4. Game conductor sees questions in large, readable text with category and question number
-  5. Game conductor can reveal answers and mark them correct/incorrect
-**Plans**: 2 plans
+  1. Game conductor can create a new game session from the main screen ✓
+  2. Game conductor can add, name, and remove participants before starting ✓
+  3. Game conductor can start the game when ready ✓
+  4. Game conductor sees questions in large, readable text with category and question number ✓
+  5. Game conductor can reveal answers and mark them correct/incorrect ✓
+**Plans**: 2 plans (complete)
+**Completed**: 2026-06-08
 
 Plans:
-- [ ] 01-01-PLAN.md — Foundation, stores, and game setup flow (Wave 1)
-- [ ] 01-02-PLAN.md — Question display and conductor actions (Wave 2)
+- [x] 01-01-PLAN.md — Foundation, stores, and game setup flow (Wave 1) ✓
+- [x] 01-02-PLAN.md — Question display and conductor actions (Wave 2) ✓
 
 ### Phase 2: Game Loop & Turn Management
 **Goal**: Players can take turns with die rolls and move through the game
@@ -89,7 +90,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Game Setup & Conductor Interface | 0/2 | Ready to execute | - |
+| 1. Game Setup & Conductor Interface | 2/2 | Complete | 2026-06-08 |
 | 2. Game Loop & Turn Management | 0/TBD | Not started | - |
 | 3. Question System | 0/TBD | Not started | - |
 | 4. Scoring & Win Condition | 0/TBD | Not started | - |
