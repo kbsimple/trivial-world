@@ -18,6 +18,17 @@ const config = createTamagui({
       greenCategory: '#228b22',
       orangeCategory: '#ff8c00',
     },
+    light: {
+      background: '#ffffff',
+      color: '#1a1a2e',
+      // Category colors for light theme
+      blueCategory: '#0066cc',
+      pinkCategory: '#ff69b4',
+      yellowCategory: '#ffd700',
+      purpleCategory: '#9932cc',
+      greenCategory: '#228b22',
+      orangeCategory: '#ff8c00',
+    },
   },
 });
 
