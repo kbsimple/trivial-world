@@ -144,7 +144,7 @@ Plans:
 - [x] 07-01-PLAN.md — Next.js app foundation, Tailwind CSS, Ollama client, Generator page (Wave 1)
 - [x] 07-02-PLAN.md — 3-pass verification pipeline, confidence scoring, progress display (Wave 2)
 - [x] 07-03-PLAN.md — LocalStorage persistence, review UI, approval/rejection workflow (Wave 3)
-- [ ] 07-04-PLAN.md — Pack metadata editor, category distribution, JSON export, download (Wave 4)
+- [x] 07-04-PLAN.md — Pack metadata editor, category distribution, JSON export, download (Wave 4)
 
 #### Phase 8: Game Configuration
 **Goal**: Game conductors can select packs and configure game settings
@@ -178,7 +178,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | 4. Scoring & Win Condition | v1.0 | 2/2 | Complete | 2026-06-08 |
 | 5. State Persistence | v1.0 | 2/2 | Complete | 2026-06-08 |
 | 6. Question Pack Structure | v2.0 | 3/3 | Complete | 2026-06-08 |
-| 7. Question Generator Web App | v2.0 | 3/4 | In progress | - |
+| 7. Question Generator Web App | v2.0 | 4/4 | Complete | 2026-06-08 |
 | 8. Game Configuration | v2.0 | 0/3 | Not started | - |
 
 ---
