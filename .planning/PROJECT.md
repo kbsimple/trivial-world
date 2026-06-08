@@ -62,7 +62,20 @@ Enable in-person social trivia gameplay where the app supports (not replaces) hu
 | 6 adapted categories | Familiar structure from Trivial Pursuit, themed for modern interests | — Pending |
 
 ---
-*Last updated: 2026-06-08 after initialization*
+*Last updated: 2026-06-08 after v1.0 completion*
+
+## Current Milestone: v2.0 Question Packs & Game Configuration
+
+**Goal:** Enable custom question packs with AI generation and game configuration
+
+**Target features:**
+- Question pack data structure and TypeScript contracts
+- Question generator web app with AI integration
+- Cloud storage endpoint for question packs
+- Game configuration in mobile app (settings, pack selection)
+- AI-powered question generation from topics/guidance
+
+**Architecture:** Contract-first — structure → generator → consumer
 
 ## Evolution
 
