@@ -41,6 +41,7 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
           id: generateId(),
           name: playerName,
           color: nextColor,
+          wedges: [], // Initialize empty wedges array
         },
       ],
     };
@@ -65,4 +66,50 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   })),
 
   resetPlayers: () => set({ players: [] }),
+
+  // SCOR-01: Award wedge to player
+  awardWedge: (playerId: string, category: PlayerColor) => set((state) => {
+    const player = state.players.find(p => p.id === playerId);
+    if (!player) {
+      console.warn(`Player ${playerId} not found`);
+      return state;
+    }
+
+    // Check if already has this wedge (prevent duplicates)
+    if (player.wedges.includes(category)) {
+      console.warn(`Player ${playerId} already has ${category} wedge`);
+      return state;
+    }
+
+    // Check wedge limit (max 6)
+    if (player.wedges.length >= 6) {
+      console.warn(`Player ${playerId} already has 6 wedges`);
+      return state;
+    }
+
+    return {
+      players: state.players.map(p =>
+        p.id === playerId
+          ? { ...p, wedges: [...p.wedges, category] }
+          : p
+      ),
+    };
+  }),
+
+  // Get wedge count for player
+  getWedgeCount: (playerId: string) => {
+    const player = get().players.find(p => p.id === playerId);
+    return player?.wedges.length ?? 0;
+  },
+
+  // Check if player has all 6 wedges
+  hasAllWedges: (playerId: string) => {
+    const player = get().players.find(p => p.id === playerId);
+    return player?.wedges.length === 6;
+  },
+
+  // Reset wedges for all players (new game)
+  resetWedges: () => set((state) => ({
+    players: state.players.map(p => ({ ...p, wedges: [] })),
+  })),
 }));
