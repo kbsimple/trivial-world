@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-06-08)
 Phase: 1 of 5 (Game Setup & Conductor Interface)
 Plan: 0 of TBD
 Status: Ready to plan
-Last activity: 2026-06-08 — Roadmap created, awaiting planning
+Last activity: 2026-06-08 — Context gathered, ready for planning
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -42,8 +42,16 @@ Progress: [░░░░░░░░░░] 0%
 
 ### Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
-No decisions recorded yet.
+Decisions are logged in PROJECT.md Key Decisions table and phase CONTEXT.md files.
+
+**Phase 1 Context:** `.planning/phases/01-game-setup-conductor-interface/01-CONTEXT.md`
+
+Key decisions from Phase 1:
+- Quick start flow (no setup wizard)
+- Inline participant entry with auto-assigned colors
+- Large centered question text for reading aloud
+- Dark theme default for readability
+- Simplified position indicator (no full board yet)
 
 ### Pending Todos
 
@@ -64,5 +72,5 @@ Items acknowledged and carried forward from previous milestone close:
 ## Session Continuity
 
 Last session: 2026-06-08
-Stopped at: Roadmap creation complete
-Resume file: None
+Stopped at: Context gathered, ready for planning
+Resume file: .planning/phases/01-game-setup-conductor-interface/01-CONTEXT.md
