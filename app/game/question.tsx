@@ -1,5 +1,6 @@
 import { View, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
+import { useRouter } from 'expo-router';
 import { useGameStore } from '../../stores/gameStore';
 import { usePlayerStore } from '../../stores/playerStore';
 import { QuestionCard } from '../../components/QuestionCard';
@@ -12,18 +13,41 @@ import { PlayerIndicator } from '../../components/PlayerIndicator';
  *
  * Per D-14: Minimal chrome - no scores, no player list, no board
  * Per D-15: Conductor mode implicit (person holding phone)
- * Per D-16: Auto-advance after marking (Phase 2 will implement turn cycling)
+ * Per D-16: Auto-advance after marking to next player
+ * Per LOOP-04: Advance turn after question
+ * Per LOOP-05: Turn cycling through all participants
  */
 export default function QuestionScreen() {
   const theme = useTheme();
-  const { answerRevealed, revealAnswer, markAnswer, currentQuestion, currentCategory, questionNumber, currentPlayerIndex } = useGameStore();
+  const router = useRouter();
+  const {
+    answerRevealed,
+    revealAnswer,
+    markAnswer,
+    currentQuestion,
+    currentCategory,
+    questionNumber,
+    currentPlayerIndex,
+  } = useGameStore();
   const { players } = usePlayerStore();
 
   // Get current player for indicator
   const currentPlayer = players[currentPlayerIndex];
 
-  // Default category to blue if no question yet (shouldn't happen in normal flow)
+  // Default category to blue if no question yet
   const category = currentCategory || currentQuestion?.category || 'blue';
+
+  // Handle answer marking
+  const handleMarkAnswer = (correct: boolean) => {
+    // Mark the answer (resets answerRevealed, increments questionNumber)
+    markAnswer(correct);
+
+    // Note: markAnswer now includes nextTurn() call with 500ms delay
+    // After the delay, phase will be 'rolling' and we navigate to roll screen
+    setTimeout(() => {
+      router.replace('/game/roll');
+    }, 600); // Slightly longer than the delay in markAnswer
+  };
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background?.val as string }]}>
@@ -49,7 +73,6 @@ export default function QuestionScreen() {
             onReveal={() => revealAnswer()}
           />
         ) : (
-          // Fallback if no question (shouldn't happen in normal flow)
           <QuestionCard
             questionNumber={questionNumber}
             category="blue"
@@ -65,10 +88,7 @@ export default function QuestionScreen() {
       <View style={styles.answerButtons}>
         <AnswerButtons
           visible={answerRevealed}
-          onMark={(correct) => {
-            markAnswer(correct);
-            // Phase 2 will handle turn cycling and navigation
-          }}
+          onMark={handleMarkAnswer}
         />
       </View>
     </View>
