@@ -11,6 +11,8 @@ export interface Player {
   name: string;
   /** Auto-assigned color matching category */
   color: PlayerColor;
+  /** Wedges earned (max 6, one per category) - SCOR-01 */
+  wedges: PlayerColor[];
 }
 
 /**
@@ -30,4 +32,14 @@ export interface PlayerState {
   updatePlayerName: (id: string, name: string) => void;
   /** Clear all players */
   resetPlayers: () => void;
+
+  // Scoring actions (SCOR-01)
+  /** Award a wedge to a player for correct answer on category space */
+  awardWedge: (playerId: string, category: PlayerColor) => void;
+  /** Get count of wedges for a player */
+  getWedgeCount: (playerId: string) => number;
+  /** Check if player has all 6 wedges */
+  hasAllWedges: (playerId: string) => boolean;
+  /** Reset wedges for all players (new game) */
+  resetWedges: () => void;
 }
