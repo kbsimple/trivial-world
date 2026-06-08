@@ -64,7 +64,11 @@ Plans:
   3. Questions are stored locally for offline play
   4. Game conductor can filter categories for custom games
   5. Each category has sufficient questions for a full game
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Question type system and data files (Wave 1)
+- [ ] 03-02-PLAN.md — Question store with asked tracking (Wave 2)
 
 ### Phase 4: Scoring & Win Condition
 **Goal**: Players earn wedges and the game detects a winner
@@ -97,6 +101,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Game Setup & Conductor Interface | 2/2 | Complete | 2026-06-08 |
 | 2. Game Loop & Turn Management | 2/2 | Complete | 2026-06-08 |
-| 3. Question System | 0/TBD | Not started | - |
+| 3. Question System | 0/2 | Not started | - |
 | 4. Scoring & Win Condition | 0/TBD | Not started | - |
 | 5. State Persistence | 0/TBD | Not started | - |
