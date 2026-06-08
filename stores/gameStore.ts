@@ -3,17 +3,18 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { GamePhase, GameState, VALID_TRANSITIONS } from '../types/game';
 import { PlayerColor } from '../constants/categories';
-import { getRandomQuestion, PlaceholderQuestion } from '../data/questions/placeholder';
+import { Question } from '../types/question';
+import { useQuestionStore } from './questionStore';
 import { usePlayerStore } from './playerStore';
 
 interface GameStore extends GameState {
   /** Current question being displayed */
-  currentQuestion: PlaceholderQuestion | null;
+  currentQuestion: Question | null;
   /** Current category (derived from question or selected) */
   currentCategory: PlayerColor | null;
   /** Transition to a new phase (validates transition) */
   transitionTo: (newPhase: GamePhase) => void;
-  /** Select a category and get a random question from it */
+  /** Select a category and get a question from it */
   selectCategory: (category: PlayerColor) => void;
   /** Roll the die and return result (1-6) */
   rollDie: () => number;
@@ -23,6 +24,9 @@ interface GameStore extends GameState {
  * Game store
  * Manages game phase, current player, and question state
  * Persisted to AsyncStorage for session resume
+ *
+ * Per QSTN-02/03: Uses questionStore for category-based selection
+ * Per QSTN-03: Marks questions as asked to avoid repeats
  */
 export const useGameStore = create<GameStore>()(
   persist(
@@ -38,11 +42,16 @@ export const useGameStore = create<GameStore>()(
 
       // Actions
       startGame: () => {
-        const question = getRandomQuestion();
+        // Reset asked questions for new game (QSTN-03)
+        useQuestionStore.getState().resetAskedQuestions();
+
+        // Select first question (default category 'blue' for now)
+        const question = useQuestionStore.getState().selectQuestion('blue');
+
         set({
           phase: 'rolling',
           currentQuestion: question,
-          currentCategory: question.category,
+          currentCategory: question?.category ?? 'blue',
           currentPlayerIndex: 0,
           questionNumber: 1,
           answerRevealed: false,
@@ -58,19 +67,27 @@ export const useGameStore = create<GameStore>()(
 
       nextTurn: () => {
         const { players } = usePlayerStore.getState();
+        const { selectQuestion } = useQuestionStore.getState();
+
         if (players.length === 0) {
           console.error('nextTurn called with no players');
           set({ phase: 'setup' });
           return;
         }
+
         const nextIndex = (get().currentPlayerIndex + 1) % players.length;
-        const question = getRandomQuestion();
+
+        // Category from board position (Phase 4 integration)
+        // For now, use current category or default
+        const category = get().currentCategory || 'blue';
+        const question = selectQuestion(category);
+
         set({
           currentPlayerIndex: nextIndex,
           dieResult: null,
           answerRevealed: false,
           currentQuestion: question,
-          currentCategory: question.category,
+          currentCategory: question?.category ?? category,
           phase: 'rolling',
           questionNumber: get().questionNumber + 1,
         });
@@ -80,13 +97,22 @@ export const useGameStore = create<GameStore>()(
 
       markAnswer: (_correct: boolean) => {
         const { players } = usePlayerStore.getState();
+        const { currentQuestion } = get();
+
         if (players.length === 0) {
           console.error('markAnswer called with no players');
           return;
         }
+
+        // Mark question as asked (QSTN-03)
+        if (currentQuestion) {
+          useQuestionStore.getState().markAsked(currentQuestion.id);
+        }
+
         // Reset for next question
         set({ answerRevealed: false, questionNumber: get().questionNumber + 1 });
-        // Trigger next turn after short delay for visual feedback
+
+        // Trigger next turn after delay for visual feedback
         setTimeout(() => {
           get().nextTurn();
         }, 500);
@@ -102,7 +128,7 @@ export const useGameStore = create<GameStore>()(
       },
 
       selectCategory: (category: PlayerColor) => {
-        const question = getRandomQuestion(category);
+        const question = useQuestionStore.getState().selectQuestion(category);
         set({
           currentCategory: category,
           currentQuestion: question,

@@ -4,35 +4,36 @@ import { useRouter } from 'expo-router';
 import { useGameStore } from '../../stores/gameStore';
 import { usePlayerStore } from '../../stores/playerStore';
 import { PlayerIndicator } from '../../components/PlayerIndicator';
+import { PlayerColor, PLAYER_COLORS } from '../../constants/categories';
 
 /**
  * Move Screen
  * Displays die roll result and move options
  *
- * Per RESEARCH.md: Placeholder for Phase 3 board position logic
- * Currently shows die result and "Continue" button
- * Will be enhanced in Phase 3 to show actual board positions
- *
- * Per LOOP-02: Displays valid move choices (simplified for Phase 2)
+ * Per QSTN-02: Category is determined by board position (Phase 4 integration)
+ * Per QSTN-03: Questions selected without repeating via questionStore
  */
 export default function MoveScreen() {
   const theme = useTheme();
   const router = useRouter();
   const { dieResult, transitionTo, currentPlayerIndex, selectCategory } = useGameStore();
-  const { players } = usePlayerStore();
+  const { players } = usePlayerStore.getState();
 
   const currentPlayer = players[currentPlayerIndex];
 
-  // Placeholder: Select random category for question
-  // Phase 3 will add board-based category selection
-  const handleMoveSelected = () => {
-    // Categories are blue, pink, yellow, purple, green, orange
-    // Random selection for testing purposes
-    const categories = ['blue', 'pink', 'yellow', 'purple', 'green', 'orange'] as const;
-    const randomCategory = categories[Math.floor(Math.random() * 6)];
+  /**
+   * Handle move selection
+   * QSTN-02: Category is determined by board position (Phase 4 integration)
+   * For Phase 3: Accept category parameter or use default
+   * Phase 4 will replace this with actual board position logic
+   */
+  const handleMoveSelected = (category?: PlayerColor) => {
+    // Phase 4 TODO: Determine category from board position
+    // For now, accept parameter or use random (for testing)
+    const selectedCategory = category || PLAYER_COLORS[Math.floor(Math.random() * PLAYER_COLORS.length)];
 
     // Set category and load question
-    selectCategory(randomCategory);
+    selectCategory(selectedCategory);
 
     // Transition to answering phase
     transitionTo('answering');
@@ -43,7 +44,7 @@ export default function MoveScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background?.val as string }]}>
-      {/* Current player indicator - D-17 */}
+      {/* Current player indicator */}
       {currentPlayer && (
         <View style={styles.playerIndicator}>
           <PlayerIndicator
@@ -69,14 +70,14 @@ export default function MoveScreen() {
           Select your move
         </Text>
         <Text style={[styles.placeholderText, { color: theme.color?.val as string, opacity: 0.6 }]}>
-          (Board positions coming in Phase 3)
+          (Board positions coming in Phase 4)
         </Text>
       </View>
 
-      {/* Continue button - placeholder for move selection */}
+      {/* Continue button */}
       <Pressable
         style={[styles.continueButton, { backgroundColor: theme.accent?.val as string }]}
-        onPress={handleMoveSelected}
+        onPress={() => handleMoveSelected()}
       >
         <Text style={styles.continueButtonText}>
           Continue
