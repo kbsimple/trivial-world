@@ -47,7 +47,11 @@ Plans:
   3. Game conductor can select whose turn it is
   4. App automatically advances to next player after each question
   5. App cycles through all participants in correct turn order
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Die roll animation and turn state (Wave 1)
+- [ ] 02-02-PLAN.md — Move selection and turn cycling (Wave 2)
 
 ### Phase 3: Question System
 **Goal**: Questions are presented from correct categories without repetition
@@ -91,7 +95,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Game Setup & Conductor Interface | 2/2 | Complete | 2026-06-08 |
-| 2. Game Loop & Turn Management | 0/TBD | Not started | - |
+| 2. Game Loop & Turn Management | 0/2 | Not started | - |
 | 3. Question System | 0/TBD | Not started | - |
 | 4. Scoring & Win Condition | 0/TBD | Not started | - |
 | 5. State Persistence | 0/TBD | Not started | - |
