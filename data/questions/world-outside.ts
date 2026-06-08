@@ -1,0 +1,148 @@
+import { Question } from '../../types/question';
+
+/**
+ * Blue category: The World Outside
+ * Questions about game maps, landmarks, anime settings, geography
+ */
+export const WORLD_OUTSIDE_QUESTIONS: Question[] = [
+  {
+    id: 'blue-001',
+    category: 'blue',
+    questionText: 'What is the capital city of Japan, known for its mix of modern and traditional architecture?',
+    answerText: 'Tokyo',
+    difficulty: 'easy',
+  },
+  {
+    id: 'blue-002',
+    category: 'blue',
+    questionText: 'In the anime "Attack on Titan", what are the three walls that protect humanity called?',
+    answerText: 'Wall Maria, Wall Rose, and Wall Sheena (Wall Sina)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'blue-003',
+    category: 'blue',
+    questionText: 'Which famous landmark in India was built by Mughal Emperor Shah Jahan as a tomb for his wife?',
+    answerText: 'Taj Mahal',
+    difficulty: 'easy',
+  },
+  {
+    id: 'blue-004',
+    category: 'blue',
+    questionText: 'What is the largest desert in the world by area?',
+    answerText: 'The Antarctic Desert (5.5 million square miles)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'blue-005',
+    category: 'blue',
+    questionText: 'In the video game "The Legend of Zelda: Breath of the Wild", what is the name of the kingdom where the game takes place?',
+    answerText: 'Hyrule',
+    difficulty: 'easy',
+  },
+  {
+    id: 'blue-006',
+    category: 'blue',
+    questionText: 'Which river is the longest in the world?',
+    answerText: 'The Nile River (approximately 4,100 miles)',
+    difficulty: 'easy',
+  },
+  {
+    id: 'blue-007',
+    category: 'blue',
+    questionText: 'In the anime "One Piece", what is the name of the vast ocean where most of the story takes place?',
+    answerText: 'The Grand Line',
+    difficulty: 'medium',
+  },
+  {
+    id: 'blue-008',
+    category: 'blue',
+    questionText: 'What country is home to the ancient city of Petra, carved into rose-colored cliffs?',
+    answerText: 'Jordan',
+    difficulty: 'medium',
+  },
+  {
+    id: 'blue-009',
+    category: 'blue',
+    questionText: 'In the game "Elden Ring", what is the name of the realm where players begin their journey?',
+    answerText: 'The Lands Between',
+    difficulty: 'hard',
+  },
+  {
+    id: 'blue-010',
+    category: 'blue',
+    questionText: 'Which mountain range contains the highest peak in the world?',
+    answerText: 'The Himalayas',
+    difficulty: 'easy',
+  },
+  {
+    id: 'blue-011',
+    category: 'blue',
+    questionText: 'In the anime "Naruto", what is the name of the hidden village where Naruto Uzumaki grew up?',
+    answerText: 'Konohagakure (Hidden Leaf Village)',
+    difficulty: 'easy',
+  },
+  {
+    id: 'blue-012',
+    category: 'blue',
+    questionText: 'What is the capital of Australia?',
+    answerText: 'Canberra',
+    difficulty: 'medium',
+  },
+  {
+    id: 'blue-013',
+    category: 'blue',
+    questionText: 'In "Game of Thrones", what is the name of the continent where most of the story takes place?',
+    answerText: 'Westeros',
+    difficulty: 'easy',
+  },
+  {
+    id: 'blue-014',
+    category: 'blue',
+    questionText: 'Which African country has the largest population?',
+    answerText: 'Nigeria',
+    difficulty: 'medium',
+  },
+  {
+    id: 'blue-015',
+    category: 'blue',
+    questionText: 'In the anime "Demon Slayer", what period of Japanese history serves as the setting?',
+    answerText: 'Taisho period (1912-1926)',
+    difficulty: 'hard',
+  },
+  {
+    id: 'blue-016',
+    category: 'blue',
+    questionText: 'What is the smallest country in the world by land area?',
+    answerText: 'Vatican City',
+    difficulty: 'easy',
+  },
+  {
+    id: 'blue-017',
+    category: 'blue',
+    questionText: 'In the "Harry Potter" series, what is the name of the hidden train platform that students use to board the Hogwarts Express?',
+    answerText: 'Platform 9 3/4',
+    difficulty: 'easy',
+  },
+  {
+    id: 'blue-018',
+    category: 'blue',
+    questionText: 'Which strait separates Europe from Asia?',
+    answerText: 'The Bosphorus Strait',
+    difficulty: 'hard',
+  },
+  {
+    id: 'blue-019',
+    category: 'blue',
+    questionText: 'In the game "Skyrim", what is the name of the province where the main story takes place?',
+    answerText: 'Skyrim',
+    difficulty: 'easy',
+  },
+  {
+    id: 'blue-020',
+    category: 'blue',
+    questionText: 'What is the deepest lake in the world?',
+    answerText: 'Lake Baikal (in Siberia, Russia)',
+    difficulty: 'medium',
+  },
+];

@@ -1,0 +1,148 @@
+import { Question } from '../../types/question';
+
+/**
+ * Yellow category: Milestones & Myths
+ * Questions about tech history, ancient warriors, battles
+ */
+export const MILESTONES_MYTHS_QUESTIONS: Question[] = [
+  {
+    id: 'yellow-001',
+    category: 'yellow',
+    questionText: 'In what year did Apple release the first iPhone?',
+    answerText: '2007',
+    difficulty: 'easy',
+  },
+  {
+    id: 'yellow-002',
+    category: 'yellow',
+    questionText: 'Which ancient warrior queen of the Iceni tribe led a revolt against Roman rule in Britain?',
+    answerText: 'Boudica',
+    difficulty: 'medium',
+  },
+  {
+    id: 'yellow-003',
+    category: 'yellow',
+    questionText: 'What famous battle in 1066 resulted in the Norman conquest of England?',
+    answerText: 'Battle of Hastings',
+    difficulty: 'easy',
+  },
+  {
+    id: 'yellow-004',
+    category: 'yellow',
+    questionText: 'In what year did Amazon.com launch as an online bookstore?',
+    answerText: '1995',
+    difficulty: 'medium',
+  },
+  {
+    id: 'yellow-005',
+    category: 'yellow',
+    questionText: 'Which Japanese samurai is famous for his dual-wielding sword style and his "Book of Five Rings"?',
+    answerText: 'Miyamoto Musashi',
+    difficulty: 'hard',
+  },
+  {
+    id: 'yellow-006',
+    category: 'yellow',
+    questionText: 'What was the first message sent over ARPANET, the precursor to the internet?',
+    answerText: '"LO" (the system crashed before completing "LOGIN")',
+    difficulty: 'hard',
+  },
+  {
+    id: 'yellow-007',
+    category: 'yellow',
+    questionText: 'Which battle in 490 BC is famous for the long-distance running event it inspired?',
+    answerText: 'Battle of Marathon',
+    difficulty: 'medium',
+  },
+  {
+    id: 'yellow-008',
+    category: 'yellow',
+    questionText: 'In what year was the World Wide Web invented by Tim Berners-Lee?',
+    answerText: '1989',
+    difficulty: 'medium',
+  },
+  {
+    id: 'yellow-009',
+    category: 'yellow',
+    questionText: 'Which Carthaginian general famously crossed the Alps with war elephants?',
+    answerText: 'Hannibal',
+    difficulty: 'easy',
+  },
+  {
+    id: 'yellow-010',
+    category: 'yellow',
+    questionText: 'What was the first video game console released for home use?',
+    answerText: 'Magnavox Odyssey (1972)',
+    difficulty: 'hard',
+  },
+  {
+    id: 'yellow-011',
+    category: 'yellow',
+    questionText: 'In what year did the Berlin Wall fall?',
+    answerText: '1989',
+    difficulty: 'easy',
+  },
+  {
+    id: 'yellow-012',
+    category: 'yellow',
+    questionText: 'Which Greek warrior is famous for his role in the Trojan War and his heel vulnerability?',
+    answerText: 'Achilles',
+    difficulty: 'easy',
+  },
+  {
+    id: 'yellow-013',
+    category: 'yellow',
+    questionText: 'What company founded the first social network to reach 1 billion users?',
+    answerText: 'Facebook (Meta)',
+    difficulty: 'easy',
+  },
+  {
+    id: 'yellow-014',
+    category: 'yellow',
+    questionText: 'Which Viking king became the first to unite Norway?',
+    answerText: 'Harald Fairhair (Harald I)',
+    difficulty: 'hard',
+  },
+  {
+    id: 'yellow-015',
+    category: 'yellow',
+    questionText: 'In what year was Google founded?',
+    answerText: '1998',
+    difficulty: 'medium',
+  },
+  {
+    id: 'yellow-016',
+    category: 'yellow',
+    questionText: 'Which ancient wonder was located in Alexandria, Egypt?',
+    answerText: 'The Lighthouse of Alexandria (Pharos)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'yellow-017',
+    category: 'yellow',
+    questionText: 'What was the first personal computer released by Apple?',
+    answerText: 'Apple I (1976)',
+    difficulty: 'hard',
+  },
+  {
+    id: 'yellow-018',
+    category: 'yellow',
+    questionText: 'Which battle marked the end of Napoleon\'s rule in 1815?',
+    answerText: 'Battle of Waterloo',
+    difficulty: 'easy',
+  },
+  {
+    id: 'yellow-019',
+    category: 'yellow',
+    questionText: 'In Greek mythology, what is the name of the multi-headed serpent defeated by Heracles?',
+    answerText: 'Hydra',
+    difficulty: 'medium',
+  },
+  {
+    id: 'yellow-020',
+    category: 'yellow',
+    questionText: 'Which company launched the first successful commercial email service?',
+    answerText: 'CompuServe (with MCI Mail as another early option)',
+    difficulty: 'hard',
+  },
+];

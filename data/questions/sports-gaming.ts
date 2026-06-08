@@ -1,0 +1,148 @@
+import { Question } from '../../types/question';
+
+/**
+ * Orange category: Sports & Gaming
+ * Questions about pro sports, college sports, esports
+ */
+export const SPORTS_GAMING_QUESTIONS: Question[] = [
+  {
+    id: 'orange-001',
+    category: 'orange',
+    questionText: 'How many points is a touchdown worth in American football?',
+    answerText: '6 points',
+    difficulty: 'easy',
+  },
+  {
+    id: 'orange-002',
+    category: 'orange',
+    questionText: 'Which country has won the most FIFA World Cup titles?',
+    answerText: 'Brazil (5 titles)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'orange-003',
+    category: 'orange',
+    questionText: 'In professional League of Legends, which team won the 2023 World Championship?',
+    answerText: 'T1 (formerly SK Telecom T1)',
+    difficulty: 'hard',
+  },
+  {
+    id: 'orange-004',
+    category: 'orange',
+    questionText: 'What sport is known as "America\'s pastime"?',
+    answerText: 'Baseball',
+    difficulty: 'easy',
+  },
+  {
+    id: 'orange-005',
+    category: 'orange',
+    questionText: 'Which NBA player is known for "The Shot" against the Cleveland Cavaliers in 1989?',
+    answerText: 'Michael Jordan',
+    difficulty: 'medium',
+  },
+  {
+    id: 'orange-006',
+    category: 'orange',
+    questionText: 'In esports, what game is played on a map called "Summoner\'s Rift"?',
+    answerText: 'League of Legends',
+    difficulty: 'easy',
+  },
+  {
+    id: 'orange-007',
+    category: 'orange',
+    questionText: 'How many players are on a standard basketball team on the court at one time?',
+    answerText: '5 players',
+    difficulty: 'easy',
+  },
+  {
+    id: 'orange-008',
+    category: 'orange',
+    questionText: 'Which university won the NCAA basketball tournament (March Madness) in 2023?',
+    answerText: 'University of Connecticut (UConn)',
+    difficulty: 'hard',
+  },
+  {
+    id: 'orange-009',
+    category: 'orange',
+    questionText: 'In tennis, what is a score of zero called?',
+    answerText: 'Love',
+    difficulty: 'easy',
+  },
+  {
+    id: 'orange-010',
+    category: 'orange',
+    questionText: 'What is the name of the annual championship for professional Counter-Strike?',
+    answerText: 'Major (or CS:GO Major / CS2 Major)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'orange-011',
+    category: 'orange',
+    questionText: 'Which NFL team has won the most Super Bowls?',
+    answerText: 'New England Patriots (6) or Pittsburgh Steelers (6)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'orange-012',
+    category: 'orange',
+    questionText: 'In golf, what is a score of one under par on a hole called?',
+    answerText: 'Birdie',
+    difficulty: 'easy',
+  },
+  {
+    id: 'orange-013',
+    category: 'orange',
+    questionText: 'What is the highest level of professional Overwatch competition called?',
+    answerText: 'Overwatch League',
+    difficulty: 'medium',
+  },
+  {
+    id: 'orange-014',
+    category: 'orange',
+    questionText: 'How many periods are in a standard NHL hockey game?',
+    answerText: '3 periods',
+    difficulty: 'easy',
+  },
+  {
+    id: 'orange-015',
+    category: 'orange',
+    questionText: 'Which country won the 2022 FIFA World Cup?',
+    answerText: 'Argentina',
+    difficulty: 'medium',
+  },
+  {
+    id: 'orange-016',
+    category: 'orange',
+    questionText: 'In the video game "Valorant", what are the two sides called?',
+    answerText: 'Attackers and Defenders',
+    difficulty: 'easy',
+  },
+  {
+    id: 'orange-017',
+    category: 'orange',
+    questionText: 'What is the maximum number of clubs a golfer can carry in their bag?',
+    answerText: '14 clubs',
+    difficulty: 'medium',
+  },
+  {
+    id: 'orange-018',
+    category: 'orange',
+    questionText: 'Which team has won the most League of Legends World Championships?',
+    answerText: 'T1/SK Telecom T1 (4+ titles)',
+    difficulty: 'hard',
+  },
+  {
+    id: 'orange-019',
+    category: 'orange',
+    questionText: 'In baseball, what is it called when a batter hits the ball out of the park?',
+    answerText: 'Home run',
+    difficulty: 'easy',
+  },
+  {
+    id: 'orange-020',
+    category: 'orange',
+    questionText: 'What is the name of the fighting game tournament series featuring games like Street Fighter and Tekken?',
+    answerText: 'EVO (Evolution Championship Series)',
+    difficulty: 'medium',
+  },
+];

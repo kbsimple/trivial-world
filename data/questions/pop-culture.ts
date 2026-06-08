@@ -1,0 +1,148 @@
+import { Question } from '../../types/question';
+
+/**
+ * Pink category: Pop Culture & Streaming
+ * Questions about streamers, memes, Marvel, YouTubers, music
+ */
+export const POP_CULTURE_QUESTIONS: Question[] = [
+  {
+    id: 'pink-001',
+    category: 'pink',
+    questionText: 'What is the real name of the streamer known as "Pokimane"?',
+    answerText: 'Imane Anys',
+    difficulty: 'medium',
+  },
+  {
+    id: 'pink-002',
+    category: 'pink',
+    questionText: 'In the Marvel Cinematic Universe, what is the name of Thor\'s hammer?',
+    answerText: 'Mjolnir',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-003',
+    category: 'pink',
+    questionText: 'Which YouTuber became famous for "Minecraft" videos and was the most-subscribed individual creator for many years?',
+    answerText: 'PewDiePie (Felix Kjellberg)',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-004',
+    category: 'pink',
+    questionText: 'In the Marvel Cinematic Universe, what are the six Infinity Stones?',
+    answerText: 'Space, Mind, Reality, Power, Soul, and Time',
+    difficulty: 'hard',
+  },
+  {
+    id: 'pink-005',
+    category: 'pink',
+    questionText: 'Which Twitch streamer is known for the "Minecraft" series "Oneblock" and for popularizing speedrunning content?',
+    answerText: 'Dream (or DreamXD)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'pink-006',
+    category: 'pink',
+    questionText: 'What is the name of the fictional country ruled by Black Panther in the Marvel universe?',
+    answerText: 'Wakanda',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-007',
+    category: 'pink',
+    questionText: 'Which musician released the album "Midnights" in 2022?',
+    answerText: 'Taylor Swift',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-008',
+    category: 'pink',
+    questionText: 'In the Marvel Cinematic Universe, who plays Tony Stark/Iron Man?',
+    answerText: 'Robert Downey Jr.',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-009',
+    category: 'pink',
+    questionText: 'What internet meme features a Shiba Inu dog with comic sans text in multiple colors?',
+    answerText: 'Doge',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-010',
+    category: 'pink',
+    questionText: 'Which streamer is known for the "Epic NPC Man" series and roleplay content on YouTube?',
+    answerText: 'Viva La Dirt League (VLDL)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'pink-011',
+    category: 'pink',
+    questionText: 'In the Marvel Cinematic Universe, what is the real name of Spider-Man?',
+    answerText: 'Peter Parker',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-012',
+    category: 'pink',
+    questionText: 'Which K-pop group released the hit song "Dynamite" in 2020?',
+    answerText: 'BTS',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-013',
+    category: 'pink',
+    questionText: 'What is the name of the streaming platform acquired by Amazon in 2014?',
+    answerText: 'Twitch',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-014',
+    category: 'pink',
+    questionText: 'In Marvel comics, what is the name of Wolverine\'s mutant team?',
+    answerText: 'X-Men',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-015',
+    category: 'pink',
+    questionText: 'Which YouTuber is known for challenge videos involving "Last to" competitions and elaborate stunts?',
+    answerText: 'MrBeast (Jimmy Donaldson)',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-016',
+    category: 'pink',
+    questionText: 'In the Marvel Cinematic Universe, what is the name of the AI assistant created by Tony Stark?',
+    answerText: 'J.A.R.V.I.S. (Just A Rather Very Intelligent System)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'pink-017',
+    category: 'pink',
+    questionText: 'Which video game series features a character named Master Chief?',
+    answerText: 'Halo',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-018',
+    category: 'pink',
+    questionText: 'What is the name of the Netflix series about a chess prodigy that won multiple Emmy Awards?',
+    answerText: 'The Queen\'s Gambit',
+    difficulty: 'medium',
+  },
+  {
+    id: 'pink-019',
+    category: 'pink',
+    questionText: 'In the Marvel Cinematic Universe, what is the name of the villain who seeks to balance the universe by eliminating half of all life?',
+    answerText: 'Thanos',
+    difficulty: 'easy',
+  },
+  {
+    id: 'pink-020',
+    category: 'pink',
+    questionText: 'Which musician collaborated with Travis Scott on the song "Hollywood\'s Bleeding"?',
+    answerText: 'Post Malone',
+    difficulty: 'hard',
+  },
+];

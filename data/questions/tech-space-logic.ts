@@ -1,0 +1,148 @@
+import { Question } from '../../types/question';
+
+/**
+ * Green category: Tech, Space & Logic
+ * Questions about AI, astronomy, apex predators, science
+ */
+export const TECH_SPACE_LOGIC_QUESTIONS: Question[] = [
+  {
+    id: 'green-001',
+    category: 'green',
+    questionText: 'What is the largest planet in our solar system?',
+    answerText: 'Jupiter',
+    difficulty: 'easy',
+  },
+  {
+    id: 'green-002',
+    category: 'green',
+    questionText: 'What type of AI is designed to simulate human conversation through text or voice?',
+    answerText: 'Chatbot or Conversational AI',
+    difficulty: 'easy',
+  },
+  {
+    id: 'green-003',
+    category: 'green',
+    questionText: 'What is the only big cat that cannot roar but can purr continuously?',
+    answerText: 'Cheetah',
+    difficulty: 'medium',
+  },
+  {
+    id: 'green-004',
+    category: 'green',
+    questionText: 'What is the closest star to Earth?',
+    answerText: 'The Sun',
+    difficulty: 'easy',
+  },
+  {
+    id: 'green-005',
+    category: 'green',
+    questionText: 'What is the name of the AI that defeated world champion Lee Sedol in Go?',
+    answerText: 'AlphaGo (by DeepMind)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'green-006',
+    category: 'green',
+    questionText: 'Which planet is known as the "Red Planet"?',
+    answerText: 'Mars',
+    difficulty: 'easy',
+  },
+  {
+    id: 'green-007',
+    category: 'green',
+    questionText: 'What is the largest predatory shark species?',
+    answerText: 'Great White Shark',
+    difficulty: 'easy',
+  },
+  {
+    id: 'green-008',
+    category: 'green',
+    questionText: 'What does "LLM" stand for in artificial intelligence?',
+    answerText: 'Large Language Model',
+    difficulty: 'easy',
+  },
+  {
+    id: 'green-009',
+    category: 'green',
+    questionText: 'What is the phenomenon where light bends around massive objects like black holes called?',
+    answerText: 'Gravitational lensing',
+    difficulty: 'hard',
+  },
+  {
+    id: 'green-010',
+    category: 'green',
+    questionText: 'Which animal has the strongest bite force of any living animal?',
+    answerText: 'Saltwater crocodile',
+    difficulty: 'medium',
+  },
+  {
+    id: 'green-011',
+    category: 'green',
+    questionText: 'What is the name of the galaxy that contains our solar system?',
+    answerText: 'The Milky Way',
+    difficulty: 'easy',
+  },
+  {
+    id: 'green-012',
+    category: 'green',
+    questionText: 'In computing, what does "GPU" stand for?',
+    answerText: 'Graphics Processing Unit',
+    difficulty: 'easy',
+  },
+  {
+    id: 'green-013',
+    category: 'green',
+    questionText: 'What is the fastest land animal?',
+    answerText: 'Cheetah',
+    difficulty: 'easy',
+  },
+  {
+    id: 'green-014',
+    category: 'green',
+    questionText: 'What is the theoretical boundary around a black hole called, beyond which nothing can escape?',
+    answerText: 'Event horizon',
+    difficulty: 'medium',
+  },
+  {
+    id: 'green-015',
+    category: 'green',
+    questionText: 'What machine learning technique uses neural networks with multiple layers?',
+    answerText: 'Deep learning',
+    difficulty: 'easy',
+  },
+  {
+    id: 'green-016',
+    category: 'green',
+    questionText: 'Which planet in our solar system has the most moons?',
+    answerText: 'Saturn (over 140 known moons)',
+    difficulty: 'hard',
+  },
+  {
+    id: 'green-017',
+    category: 'green',
+    questionText: 'What is the largest species of bear?',
+    answerText: 'Polar bear (or Kodiak brown bear, depending on measurement)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'green-018',
+    category: 'green',
+    questionText: 'What is the name of the first artificial satellite launched into orbit?',
+    answerText: 'Sputnik 1',
+    difficulty: 'easy',
+  },
+  {
+    id: 'green-019',
+    category: 'green',
+    questionText: 'In AI, what is the term for when an AI system\'s output is unexpected or unexplainable?',
+    answerText: 'Hallucination (or black box problem)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'green-020',
+    category: 'green',
+    questionText: 'What is the name of the supermassive black hole at the center of the Milky Way?',
+    answerText: 'Sagittarius A* (pronounced "Sagittarius A-star")',
+    difficulty: 'hard',
+  },
+];

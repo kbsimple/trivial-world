@@ -1,0 +1,148 @@
+import { Question } from '../../types/question';
+
+/**
+ * Purple category: Animation and Artwork
+ * Questions about comics, graphic novels, artists, video game characters
+ */
+export const ANIMATION_ARTWORK_QUESTIONS: Question[] = [
+  {
+    id: 'purple-001',
+    category: 'purple',
+    questionText: 'What is the real name of the superhero Batman?',
+    answerText: 'Bruce Wayne',
+    difficulty: 'easy',
+  },
+  {
+    id: 'purple-002',
+    category: 'purple',
+    questionText: 'Which Japanese animation studio created "Spirited Away" and "My Neighbor Totoro"?',
+    answerText: 'Studio Ghibli',
+    difficulty: 'easy',
+  },
+  {
+    id: 'purple-003',
+    category: 'purple',
+    questionText: 'What is the name of the fictional metal alloy that makes up Wolverine\'s skeleton and claws?',
+    answerText: 'Adamantium',
+    difficulty: 'medium',
+  },
+  {
+    id: 'purple-004',
+    category: 'purple',
+    questionText: 'In the anime "Dragon Ball Z", what is the name of Goku\'s signature energy attack?',
+    answerText: 'Kamehameha',
+    difficulty: 'easy',
+  },
+  {
+    id: 'purple-005',
+    category: 'purple',
+    questionText: 'Which comic book artist created "The Sandman" series for DC Comics?',
+    answerText: 'Neil Gaiman (writer), with artists including Sam Kieth, Mike Dringenberg, and others',
+    difficulty: 'hard',
+  },
+  {
+    id: 'purple-006',
+    category: 'purple',
+    questionText: 'In the "Avatar: The Last Airbender" series, what are the four nations?',
+    answerText: 'Water Tribes, Earth Kingdom, Fire Nation, and Air Nomads',
+    difficulty: 'medium',
+  },
+  {
+    id: 'purple-007',
+    category: 'purple',
+    questionText: 'What is the name of the main protagonist in the "Zelda" video game series?',
+    answerText: 'Link',
+    difficulty: 'easy',
+  },
+  {
+    id: 'purple-008',
+    category: 'purple',
+    questionText: 'Which artist painted "The Starry Night"?',
+    answerText: 'Vincent van Gogh',
+    difficulty: 'easy',
+  },
+  {
+    id: 'purple-009',
+    category: 'purple',
+    questionText: 'In the Marvel universe, what is the name of the team including Iron Man, Captain America, and Thor?',
+    answerText: 'The Avengers',
+    difficulty: 'easy',
+  },
+  {
+    id: 'purple-010',
+    category: 'purple',
+    questionText: 'Which anime features a protagonist named Light Yagami who possesses a supernatural notebook?',
+    answerText: 'Death Note',
+    difficulty: 'easy',
+  },
+  {
+    id: 'purple-011',
+    category: 'purple',
+    questionText: 'What is the name of the fictional metal that Captain America\'s shield is made of?',
+    answerText: 'Vibranium',
+    difficulty: 'medium',
+  },
+  {
+    id: 'purple-012',
+    category: 'purple',
+    questionText: 'In the "Final Fantasy" series, what is the name of the recurring giant chicken-like creature used as transportation?',
+    answerText: 'Chocobo',
+    difficulty: 'easy',
+  },
+  {
+    id: 'purple-013',
+    category: 'purple',
+    questionText: 'Which Japanese manga artist created "One Piece"?',
+    answerText: 'Eiichiro Oda',
+    difficulty: 'medium',
+  },
+  {
+    id: 'purple-014',
+    category: 'purple',
+    questionText: 'In the DC universe, what is the name of Superman\'s home planet?',
+    answerText: 'Krypton',
+    difficulty: 'easy',
+  },
+  {
+    id: 'purple-015',
+    category: 'purple',
+    questionText: 'What is the name of the video game character known for his blue spines and red shoes?',
+    answerText: 'Sonic the Hedgehog',
+    difficulty: 'easy',
+  },
+  {
+    id: 'purple-016',
+    category: 'purple',
+    questionText: 'Which graphic novel by Frank Miller features a dystopian version of Batman?',
+    answerText: 'The Dark Knight Returns',
+    difficulty: 'hard',
+  },
+  {
+    id: 'purple-017',
+    category: 'purple',
+    questionText: 'In the anime "Naruto", what is the name of the demon fox sealed inside Naruto?',
+    answerText: 'Kurama (Nine-Tailed Fox)',
+    difficulty: 'medium',
+  },
+  {
+    id: 'purple-018',
+    category: 'purple',
+    questionText: 'What art movement is Pablo Picasso most associated with?',
+    answerText: 'Cubism',
+    difficulty: 'easy',
+  },
+  {
+    id: 'purple-019',
+    category: 'purple',
+    questionText: 'In the video game "Portal", what is the name of the AI antagonist?',
+    answerText: 'GLaDOS',
+    difficulty: 'medium',
+  },
+  {
+    id: 'purple-020',
+    category: 'purple',
+    questionText: 'Which graphic novel by Alan Moore features a dystopian version of Britain ruled by a fascist party?',
+    answerText: 'V for Vendetta',
+    difficulty: 'hard',
+  },
+];
