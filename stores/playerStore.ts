@@ -58,5 +58,11 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
     return { players: reassigned };
   }),
 
+  updatePlayerName: (id: string, name: string) => set((state) => ({
+    players: state.players.map(p =>
+      p.id === id ? { ...p, name } : p
+    ),
+  })),
+
   resetPlayers: () => set({ players: [] }),
 }));

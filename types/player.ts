@@ -26,6 +26,8 @@ export interface PlayerState {
   addPlayer: (name?: string) => void;
   /** Remove player by ID and reassign colors */
   removePlayer: (id: string) => void;
+  /** Update player name */
+  updatePlayerName: (id: string, name: string) => void;
   /** Clear all players */
   resetPlayers: () => void;
 }
