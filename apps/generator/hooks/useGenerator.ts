@@ -1,6 +1,8 @@
 import { useState, useCallback } from 'react';
 import type { Question, Category } from '@trivial-world/types';
-import { generateQuestion, verifyQuestion, type ConfidenceScore, DEFAULT_MODEL } from '@/lib/ollama/client';
+import { generateQuestion } from '@/lib/ollama/client';
+import { verifyQuestion, type ConfidenceScore, type VerificationResult } from '@/lib/ollama/verification';
+import { DEFAULT_MODEL } from '@/lib/ollama/client';
 
 /**
  * Question with verification metadata
@@ -18,6 +20,26 @@ export interface QuestionWithVerification {
 }
 
 /**
+ * Progress status during generation
+ */
+export type ProgressStatus = 'generating' | 'verifying' | 'complete';
+
+/**
+ * Progress state for VerificationProgress component
+ * Per D-14: Show progress to maintain UX during generation
+ */
+export interface ProgressState {
+  /** Current question number (1-indexed) */
+  currentQuestion: number;
+  /** Total questions in batch */
+  totalQuestions: number;
+  /** Current verification pass (0 = generating, 1-3 = verifying) */
+  currentPass: number;
+  /** Overall status */
+  status: ProgressStatus;
+}
+
+/**
  * Generator state hook
  * Per RESEARCH.md Pattern 4: React state management for question queue
  * Per D-14: Pipeline automation with fast batch processing
@@ -28,7 +50,7 @@ export function useGenerator() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [progress, setProgress] = useState<{ current: number; total: number; pass: number } | null>(null);
+  const [progress, setProgress] = useState<ProgressState | null>(null);
 
   /**
    * Generate a batch of questions
@@ -56,13 +78,14 @@ export function useGenerator() {
     const batchSize = Math.min(count, 10);
     setIsGenerating(true);
     setError(null);
-    setProgress({ current: 0, total: batchSize, pass: 0 });
+    setProgress({ currentQuestion: 0, totalQuestions: batchSize, currentPass: 0, status: 'generating' });
 
     try {
       const newQuestions: QuestionWithVerification[] = [];
 
       for (let i = 0; i < batchSize; i++) {
-        setProgress({ current: i + 1, total: batchSize, pass: 0 });
+        // Generation phase
+        setProgress({ currentQuestion: i + 1, totalQuestions: batchSize, currentPass: 0, status: 'generating' });
 
         // Generate question with source material (AI-02)
         const question = await generateQuestion(
@@ -74,8 +97,9 @@ export function useGenerator() {
           ollamaUrl
         );
 
-        // Verify with 3 passes
-        setProgress({ current: i + 1, total: batchSize, pass: 1 });
+        // Verification phase - 3 passes
+        // Per D-07: Multi-pass verification with different phrasings
+        setProgress({ currentQuestion: i + 1, totalQuestions: batchSize, currentPass: 1, status: 'verifying' });
         const verification = await verifyQuestion(question, model, ollamaUrl);
 
         newQuestions.push({
@@ -96,11 +120,15 @@ export function useGenerator() {
       }
 
       setQueue((prev) => [...prev, ...newQuestions]);
+
+      // Mark as complete
+      setProgress({ currentQuestion: batchSize, totalQuestions: batchSize, currentPass: 3, status: 'complete' });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Generation failed');
     } finally {
       setIsGenerating(false);
-      setProgress(null);
+      // Clear progress after a brief delay to show "Complete"
+      setTimeout(() => setProgress(null), 500);
     }
   }, []);
 

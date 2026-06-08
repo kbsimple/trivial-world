@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import type { Category } from '@trivial-world/types';
 import { CATEGORY_NAMES } from '@trivial-world/types';
+import type { ProgressState } from '@/hooks/useGenerator';
 
 /**
  * Generator form props
@@ -11,7 +12,7 @@ interface GeneratorFormProps {
   /** Whether generation is in progress */
   isGenerating: boolean;
   /** Progress information during generation */
-  progress: { current: number; total: number; pass: number } | null;
+  progress: ProgressState | null;
   /** Callback when generate is clicked */
   onGenerate: (topic: string, category: Category, guidance?: string, sourceMaterial?: string) => void;
 }
@@ -129,14 +130,18 @@ export function GeneratorForm({ isGenerating, progress, onGenerate }: GeneratorF
       {progress && (
         <div className="p-4 bg-card rounded-lg">
           <p className="text-sm">
-            Generating question {progress.current}/{progress.total}
-            {progress.pass > 0 && ` — Verifying (${progress.pass}/3)`}
+            {progress.status === 'generating' && `Generating question ${progress.currentQuestion}/${progress.totalQuestions}...`}
+            {progress.status === 'verifying' && `Question ${progress.currentQuestion}/${progress.totalQuestions} — Verifying (${progress.currentPass}/3)`}
+            {progress.status === 'complete' && 'Complete'}
           </p>
           <div className="mt-2 h-2 bg-background rounded-full overflow-hidden">
             <div
               className="h-full bg-primary transition-all duration-300"
               style={{
-                width: `${((progress.current - 1) / progress.total) * 100 + (progress.pass / 3 / progress.total) * 100}%`,
+                width: `${progress.status === 'complete'
+                  ? 100
+                  : ((progress.currentQuestion - 1) / progress.totalQuestions) * 100 +
+                    (progress.currentPass / 3 / progress.totalQuestions) * 100}%`,
               }}
             />
           </div>
