@@ -9,7 +9,8 @@ import Animated, {
   runOnJS,
 } from 'react-native-reanimated';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import * as Haptics from 'expo-haptics';
+import { ImpactFeedbackStyle } from 'expo-haptics';
+import { impactAsync } from '../utils/haptics';
 import { DieFace } from './DieFace';
 
 // IN-01: Animation configuration constants
@@ -52,8 +53,8 @@ export function Die({ result, onRoll, isRolling = false }: DieProps) {
     // Prevent multiple taps during animation
     if (isRolling) return;
 
-    // Haptic feedback
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    // Haptic feedback (D-10: platform-aware wrapper)
+    impactAsync(ImpactFeedbackStyle.Medium);
 
     // CR-01: Get the roll result synchronously from parent
     // Parent calls rollDie() and returns the result immediately
