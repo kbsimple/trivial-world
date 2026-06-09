@@ -21,6 +21,8 @@
 [build.environment]
   # Node version for build (20 LTS)
   NODE_VERSION = "20"
+  # Skip Next.js plugin - game site uses Expo, not Next.js
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 # Production context (main branch)
 [context.production]
