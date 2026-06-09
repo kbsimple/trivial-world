@@ -19,9 +19,13 @@ interface GameStore extends GameState {
   /** Transition to a new phase (validates transition) */
   transitionTo: (newPhase: GamePhase) => void;
   /** Select a category and get a question from it */
-  selectCategory: (category: PlayerColor) => void;
+  selectCategory: (category: PlayerColor) => Promise<void>;
   /** Roll the die and return result (1-6) */
   rollDie: () => number;
+  /** Start the game */
+  startGame: () => Promise<void>;
+  /** Next turn */
+  nextTurn: () => Promise<void>;
 }
 
 /**
@@ -48,7 +52,7 @@ export const useGameStore = create<GameStore>()(
       activePackId: null, // D-15: Track active pack for game session
 
       // Actions
-      startGame: () => {
+      startGame: async () => {
         // Get active pack from packStore (D-15)
         const { activePackId } = usePackStore.getState();
         if (!activePackId) {
@@ -57,12 +61,12 @@ export const useGameStore = create<GameStore>()(
         }
 
         // Reset asked questions for new game (QSTN-03)
-        useQuestionStore.getState().resetAskedQuestions();
+        await useQuestionStore.getState().resetAskedQuestions();
         // Reset wedges for new game (SCOR-01)
         usePlayerStore.getState().resetWedges();
 
         // Select first question (default category 'blue' for now)
-        const question = useQuestionStore.getState().selectQuestion('blue');
+        const question = await useQuestionStore.getState().selectQuestion('blue');
 
         set({
           phase: 'rolling',
@@ -84,7 +88,7 @@ export const useGameStore = create<GameStore>()(
         return result;
       },
 
-      nextTurn: () => {
+      nextTurn: async () => {
         const { players } = usePlayerStore.getState();
         const { selectQuestion } = useQuestionStore.getState();
 
@@ -99,7 +103,7 @@ export const useGameStore = create<GameStore>()(
         // Category from board position (Phase 4 integration)
         // For now, use current category or default
         const category = get().currentCategory || 'blue';
-        const question = selectQuestion(category);
+        const question = await selectQuestion(category);
 
         set({
           currentPlayerIndex: nextIndex,
@@ -168,14 +172,14 @@ export const useGameStore = create<GameStore>()(
       transitionTo: (newPhase: GamePhase) => {
         const current = get().phase;
         if (!VALID_TRANSITIONS[current].includes(newPhase)) {
-          console.error(`Invalid transition: ${current} -> ${newPhase}`);
+          console.error(`Invalid transition: ${current} -> {newPhase}`);
           return;
         }
         set({ phase: newPhase });
       },
 
-      selectCategory: (category: PlayerColor) => {
-        const question = useQuestionStore.getState().selectQuestion(category);
+      selectCategory: async (category: PlayerColor) => {
+        const question = await useQuestionStore.getState().selectQuestion(category);
         set({
           currentCategory: category,
           currentQuestion: question,
@@ -183,11 +187,11 @@ export const useGameStore = create<GameStore>()(
       },
 
       // SCOR-03: Helper to set center question mode (called from board position logic)
-      startCenterQuestion: () => {
+      startCenterQuestion: async () => {
         // Center question uses random category (or could use player's choice)
         const categories: PlayerColor[] = ['blue', 'pink', 'yellow', 'purple', 'green', 'orange'];
         const randomCategory = categories[Math.floor(Math.random() * categories.length)];
-        const question = useQuestionStore.getState().selectQuestion(randomCategory);
+        const question = await useQuestionStore.getState().selectQuestion(randomCategory);
 
         set({
           currentQuestion: question,
