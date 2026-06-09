@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { PlayerColor } from '../constants/categories';
 import { Category, Difficulty } from '@trivial-world/types';
 import { usePackStore } from './packStore';
+import { logger } from '../utils/logger';
 
 // Note: Question type imported from types/question for local use
 // WatermelonDB queries return QuestionModel objects that are converted to Question type
@@ -35,8 +36,8 @@ interface QuestionState {
   // Actions
   /** Select a question from active pack's category pool */
   selectQuestion: (category: PlayerColor) => Promise<Question | null>;
-  /** Mark a question as asked (call after answer) */
-  markAsked: (questionId: string) => Promise<void>;
+  /** Mark a question as asked (call after answer). Returns true if successful. */
+  markAsked: (questionId: string) => Promise<boolean>;
   /** Reset asked questions for new game */
   resetAskedQuestions: () => Promise<void>;
 }
@@ -68,13 +69,13 @@ export const useQuestionStore = create<QuestionState>()(
         const { activePackId, enabledCategories, enabledDifficulties } = usePackStore.getState();
 
         if (!activePackId) {
-          console.error('No active pack selected');
+          logger.error('No active pack selected');
           return null;
         }
 
         // D-05: Check if category is enabled
         if (enabledCategories && !enabledCategories.includes(category as Category)) {
-          console.warn(`Category ${category} is disabled`);
+          logger.warn(`Category ${category} is disabled`);
           return null;
         }
 
@@ -85,13 +86,12 @@ export const useQuestionStore = create<QuestionState>()(
             .fetch();
 
           if (packs.length === 0) {
-            console.error('Active pack not found in database');
+            logger.error('Active pack not found in database');
             return null;
           }
 
           // Build query for available questions
           // D-06: Apply category and difficulty filters
-          let questions: any[] = [];
 
           // Query questions for this pack and category, not yet asked
           const query = database.get('questions')
@@ -101,25 +101,26 @@ export const useQuestionStore = create<QuestionState>()(
               Q.where('asked_at', null)
             );
 
-          questions = await query.fetch();
+          const rawQuestions = await query.fetch();
+          const questions = rawQuestions as QuestionModelType[];
 
           // D-06: Apply difficulty filter if set
-          if (enabledDifficulties && enabledDifficulties.length > 0) {
-            questions = questions.filter(q => {
-              const qDifficulty = (q as any).difficulty;
-              return qDifficulty && enabledDifficulties.includes(qDifficulty as Difficulty);
-            });
-          }
+          const filteredQuestions = enabledDifficulties && enabledDifficulties.length > 0
+            ? questions.filter(q => {
+                const qDifficulty = q.difficulty;
+                return qDifficulty && enabledDifficulties.includes(qDifficulty as Difficulty);
+              })
+            : questions;
 
           // If all questions exhausted, warn and return null
-          if (questions.length === 0) {
-            console.warn(`All questions exhausted for category ${category}`);
+          if (filteredQuestions.length === 0) {
+            logger.warn(`All questions exhausted for category ${category}`);
             return null;
           }
 
           // Random selection from available questions
-          const randomIndex = Math.floor(Math.random() * questions.length);
-          const selected = questions[randomIndex] as QuestionModelType;
+          const randomIndex = Math.floor(Math.random() * filteredQuestions.length);
+          const selected = filteredQuestions[randomIndex];
 
           // Convert to Question type for UI
           const question: Question = {
@@ -137,12 +138,12 @@ export const useQuestionStore = create<QuestionState>()(
 
           return question;
         } catch (error) {
-          console.error('Error selecting question:', error);
+          logger.error('Error selecting question:', error);
           return null;
         }
       },
 
-      markAsked: async (questionId: string) => {
+      markAsked: async (questionId: string): Promise<boolean> => {
         // Dynamic import to avoid circular dependency
         const { getDatabase } = await import('../database');
         const { QuestionModel } = await import('../database/models/Question');
@@ -157,13 +158,18 @@ export const useQuestionStore = create<QuestionState>()(
             .query(Q.where('question_id', questionId))
             .fetch();
 
-          if (questions.length > 0) {
-            await database.write(async () => {
-              await (questions[0] as QuestionModelType).markAsAsked();
-            });
+          if (questions.length === 0) {
+            logger.warn(`Question ${questionId} not found when attempting to mark as asked`);
+            return false;
           }
+
+          await database.write(async () => {
+            await (questions[0] as QuestionModelType).markAsAsked();
+          });
+          return true;
         } catch (error) {
-          console.error('Error marking question as asked:', error);
+          logger.error('Error marking question as asked:', error);
+          return false;
         }
       },
 
@@ -194,13 +200,20 @@ export const useQuestionStore = create<QuestionState>()(
 
           await database.write(async () => {
             for (const q of allQuestions) {
-              await (q as QuestionModelType).update((question: any) => {
-                question.askedAt = undefined;
-              });
+              try {
+                // IN-01: Use proper type instead of any
+                // IN-02: Set askedAt to null for WatermelonDB nullable field
+                await (q as QuestionModelType).update((question) => {
+                  question.askedAt = null;
+                });
+              } catch (error) {
+                logger.error(`Failed to reset question ${(q as QuestionModelType).questionId}:`, error);
+                // Continue with other questions
+              }
             }
           });
         } catch (error) {
-          console.error('Error resetting asked questions:', error);
+          logger.error('Error resetting asked questions:', error);
         }
       },
     }),
