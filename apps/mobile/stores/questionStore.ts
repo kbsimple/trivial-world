@@ -58,9 +58,12 @@ export const useQuestionStore = create<QuestionState>()(
 
       selectQuestion: async (category: PlayerColor) => {
         // Dynamic import to avoid circular dependency
-        const { database } = await import('../database');
+        const { getDatabase } = await import('../database');
         const { QuestionModel } = await import('../database/models/Question');
         const { Q } = await import('@nozbe/watermelondb');
+        type QuestionModelType = InstanceType<typeof QuestionModel>;
+
+        const database = getDatabase();
 
         const { activePackId, enabledCategories, enabledDifficulties } = usePackStore.getState();
 
@@ -116,7 +119,7 @@ export const useQuestionStore = create<QuestionState>()(
 
           // Random selection from available questions
           const randomIndex = Math.floor(Math.random() * questions.length);
-          const selected = questions[randomIndex] as QuestionModel;
+          const selected = questions[randomIndex] as QuestionModelType;
 
           // Convert to Question type for UI
           const question: Question = {
@@ -141,9 +144,12 @@ export const useQuestionStore = create<QuestionState>()(
 
       markAsked: async (questionId: string) => {
         // Dynamic import to avoid circular dependency
-        const { database } = await import('../database');
+        const { getDatabase } = await import('../database');
         const { QuestionModel } = await import('../database/models/Question');
         const { Q } = await import('@nozbe/watermelondb');
+        type QuestionModelType = InstanceType<typeof QuestionModel>;
+
+        const database = getDatabase();
 
         try {
           // Find and mark question as asked in WatermelonDB
@@ -153,7 +159,7 @@ export const useQuestionStore = create<QuestionState>()(
 
           if (questions.length > 0) {
             await database.write(async () => {
-              await (questions[0] as QuestionModel).markAsAsked();
+              await (questions[0] as QuestionModelType).markAsAsked();
             });
           }
         } catch (error) {
@@ -163,9 +169,12 @@ export const useQuestionStore = create<QuestionState>()(
 
       resetAskedQuestions: async () => {
         // Dynamic import to avoid circular dependency
-        const { database } = await import('../database');
+        const { getDatabase } = await import('../database');
         const { QuestionModel } = await import('../database/models/Question');
         const { Q } = await import('@nozbe/watermelondb');
+        type QuestionModelType = InstanceType<typeof QuestionModel>;
+
+        const database = getDatabase();
 
         const { activePackId } = usePackStore.getState();
         if (!activePackId) return;
@@ -185,8 +194,8 @@ export const useQuestionStore = create<QuestionState>()(
 
           await database.write(async () => {
             for (const q of allQuestions) {
-              await (q as QuestionModel).update((question: any) => {
-                question.askedAt = null;
+              await (q as QuestionModelType).update((question: any) => {
+                question.askedAt = undefined;
               });
             }
           });
