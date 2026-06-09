@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  // Transpile workspace packages for Turbopack compatibility
+  transpilePackages: ['@trivial-world/types'],
 };
 
 export default nextConfig;
