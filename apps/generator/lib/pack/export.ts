@@ -9,6 +9,7 @@
 import type { Question, QuestionPack, PackMetadata, Category } from '@trivial-world/types';
 import { QuestionPackSchema } from '@trivial-world/types';
 import { getApprovedQuestions, getApprovedCountByCategory } from '../storage/local';
+import { MIN_PACK_QUESTIONS } from '../constants';
 
 /**
  * Calculate SHA-256 checksum for content
@@ -75,8 +76,8 @@ export async function exportPack(
   // Get approved questions from LocalStorage
   const approvedQuestions = getApprovedQuestions();
 
-  if (approvedQuestions.length < 20) {
-    throw new Error(`Pack must have at least 20 questions. Currently have ${approvedQuestions.length}.`);
+  if (approvedQuestions.length < MIN_PACK_QUESTIONS) {
+    throw new Error(`Pack must have at least ${MIN_PACK_QUESTIONS} questions. Currently have ${approvedQuestions.length}.`);
   }
 
   // Extract questions from approved items

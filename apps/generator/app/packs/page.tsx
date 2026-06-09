@@ -14,6 +14,7 @@ import { getApprovedCountByCategory } from '@/lib/storage/local';
 import { CategoryDistribution } from '@/components/CategoryDistribution';
 import { PackMetadataForm } from '@/components/PackMetadataForm';
 import { DownloadPackButton } from '@/components/DownloadPackButton';
+import { MIN_PACK_QUESTIONS } from '@/lib/constants';
 
 /**
  * Category order for consistent display
@@ -48,12 +49,11 @@ export default function PacksPage() {
   // Handle successful export
   const handleExportSuccess = () => {
     // Optionally: Show success message or clear approved questions
-    console.log('Pack exported successfully');
   };
 
   // Handle export error
-  const handleExportError = (error: string) => {
-    console.error('Export error:', error);
+  const handleExportError = (_error: string) => {
+    // Error is handled by DownloadPackButton component
   };
 
   return (
@@ -113,10 +113,10 @@ export default function PacksPage() {
           </div>
 
           {/* Minimum questions warning */}
-          {totalQuestions < 20 && (
+          {totalQuestions < MIN_PACK_QUESTIONS && (
             <div className="p-4 bg-yellow-500/10 border border-yellow-500 rounded-lg">
               <p className="text-yellow-500 font-medium">
-                Need at least 20 questions to create a pack ({totalQuestions}/20)
+                Need at least {MIN_PACK_QUESTIONS} questions to create a pack ({totalQuestions}/{MIN_PACK_QUESTIONS})
               </p>
               <p className="text-sm text-muted mt-1">
                 Approve more questions in the Review page
@@ -130,7 +130,7 @@ export default function PacksPage() {
               name={name}
               description={description}
               author={author}
-              isValid={isValid && totalQuestions >= 20}
+              isValid={isValid && totalQuestions >= MIN_PACK_QUESTIONS}
               onExportSuccess={handleExportSuccess}
               onExportError={handleExportError}
             />
