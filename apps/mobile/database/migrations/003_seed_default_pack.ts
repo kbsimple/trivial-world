@@ -41,12 +41,17 @@ export async function seedDefaultPack(): Promise<void> {
   for (const category of categories) {
     const questions = getQuestionsByCategory(category);
     for (const q of questions) {
+      // WR-04: Validate each question has required fields
+      if (!q.id || !q.category || !q.questionText || !q.answerText) {
+        console.warn(`Skipping malformed question: ${JSON.stringify(q)}`);
+        continue;
+      }
       allQuestions.push({
         id: q.id,
         category: q.category,
         questionText: q.questionText,
         answerText: q.answerText,
-        difficulty: q.difficulty,
+        difficulty: q.difficulty ?? 'medium', // Explicit null coalescing
       });
       categoryCounts[category]++;
     }
