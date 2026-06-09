@@ -4,8 +4,8 @@ milestone: v2.0
 milestone_name: Question Packs & Game Configuration
 status: ready_to_plan
 stopped_at: null
-last_updated: "2026-06-08T17:00:00.000Z"
-last_activity: 2026-06-08 — Phase 7 complete, ready for Phase 8 planning
+last_updated: "2026-06-08T23:55:00.000Z"
+last_activity: 2026-06-08 — Phase 8 context gathered, ready for planning
 resume_file: .planning/phases/08-game-configuration/08-CONTEXT.md
 progress:
   total_phases: 8
@@ -22,16 +22,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** Phase 7: Question Pack Generator
+**Current focus:** Phase 8: Game Configuration
 
 ## Current Position
 
 Phase: 8 of 8 (Game Configuration)
 Plan: —
 Status: Ready to plan
-Last activity: 2026-06-08 — Phase 7 complete, ready for Phase 8 planning
+Last activity: 2026-06-08 — Phase 8 context gathered, ready for planning
 
-Progress: [████████░░] 83%
+Progress: [████████░░] 85%
 
 ## Performance Metrics
 
@@ -108,6 +108,24 @@ Progress: [████████░░] 83%
 - D-22: Extract verification logic into separate verification.ts module
 - D-23: Use inline React styles for ConfidenceBadge and VerificationProgress
 
+**Phase 8 Decisions (2026-06-08):**
+- D-01: Pack selection screen BEFORE setup screen (home → pack → setup → game)
+- D-02: Built-in default pack with 120 existing questions bundled in app
+- D-03: Hardcoded generator URL in code (not user-configurable)
+- D-04: No time limits per question (conductor controls pacing)
+- D-05: Category filtering before game start (on pack selection screen)
+- D-06: Difficulty filtering as optional pre-game setting
+- D-07: No game variants for v2.0
+- D-08: Modal overlay for pack details (not separate screen)
+- D-09: Pack details show: category distribution, counts, difficulty, metadata
+- D-10: Progress bar during pack download
+- D-11: Alert with retry on download failure
+- D-12: Silent checksum verification on success
+- D-13: Badge on pack for available updates
+- D-14: Version comparison uses semver
+- D-15: Only one active pack at a time (per D-04 from Phase 6)
+- D-16: Downloaded packs persist in WatermelonDB
+
 ### Pending Todos
 
 None yet.
@@ -125,9 +143,11 @@ Items acknowledged and carried forward from previous milestone close:
 | Data Migration | 120 existing hardcoded questions | Deferred | Phase 6 (D-02) |
 | Cloud Hosting | Pack hosting and discovery | Deferred | Phase 7 (D-18) |
 | Multi-Provider AI | OpenAI, Anthropic, Google Gemini support | Deferred | Phase 7 (future) |
+| Time Limits | Per-question countdown timers | Deferred | Phase 8 (D-04) |
+| Game Variants | Short game, custom win conditions | Deferred | Phase 8 (D-07) |
 
 ## Session Continuity
 
-Last session: 2026-06-08T23:50:00Z
+Last session: 2026-06-08T23:55:00Z
 Stopped at: null
-Resume file: .planning/phases/07-question-generator-web-app/07-03-PLAN.md
+Resume file: .planning/phases/08-game-configuration/08-CONTEXT.md
