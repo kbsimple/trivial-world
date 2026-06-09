@@ -1,8 +1,10 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
-import { Category } from '@trivial-world/types';
-import { CATEGORY_COLORS, CATEGORY_NAMES, PLAYER_COLORS } from '../constants/categories';
-import type { PlayerColor } from '../constants/categories';
+import { Category, CategorySchema } from '@trivial-world/types';
+import { CATEGORY_COLORS, CATEGORY_NAMES } from '../constants/categories';
+
+// IN-03: Derive category list from schema to avoid type casting
+const ALL_CATEGORIES = CategorySchema.options;
 
 interface CategoryFilterProps {
   enabledCategories: Category[] | null; // null = all enabled
@@ -38,28 +40,28 @@ export function CategoryFilter({
 
       {/* Category toggles */}
       <View style={styles.row}>
-        {PLAYER_COLORS.map((color) => {
-          const isEnabled = isCategoryEnabled(color);
+        {ALL_CATEGORIES.map((category) => {
+          const isEnabled = isCategoryEnabled(category);
           return (
             <Pressable
-              key={color}
+              key={category}
               style={[
                 styles.categoryButton,
                 {
                   backgroundColor: isEnabled
-                    ? CATEGORY_COLORS[color]
+                    ? CATEGORY_COLORS[category]
                     : 'rgba(255, 255, 255, 0.2)',
                   opacity: isEnabled ? 1 : 0.5,
                 },
               ]}
-              onPress={() => onToggle(color)}
+              onPress={() => onToggle(category)}
             >
               {/* Filled circle for enabled, empty for disabled */}
               <Text style={[styles.categoryText, { color: isEnabled ? '#fff' : theme.color?.val as string }]}>
                 {isEnabled ? '●' : '○'}
               </Text>
               <Text style={[styles.categoryName, { color: isEnabled ? '#fff' : theme.color?.val as string }]}>
-                {CATEGORY_NAMES[color]}
+                {CATEGORY_NAMES[category]}
               </Text>
             </Pressable>
           );
