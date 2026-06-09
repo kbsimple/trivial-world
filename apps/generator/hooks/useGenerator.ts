@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import type { Question, Category } from '@trivial-world/types';
 import { generateQuestion } from '@/lib/ollama/client';
 import { verifyQuestion, type ConfidenceScore, type VerificationResult } from '@/lib/ollama/verification';
@@ -51,6 +51,18 @@ export function useGenerator() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState<ProgressState | null>(null);
+
+  // Per WR-05: Track timeout for cleanup on unmount
+  const progressTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (progressTimeoutRef.current) {
+        clearTimeout(progressTimeoutRef.current);
+      }
+    };
+  }, []);
 
   /**
    * Generate a batch of questions
@@ -110,6 +122,7 @@ export function useGenerator() {
       }
 
       // Save to localStorage per RESEARCH.md Pattern 4
+      // Per WR-02: Race condition safe - isGenerating prevents concurrent batches
       if (typeof window !== 'undefined') {
         const stored = localStorage.getItem('trivial-world-generator-queue');
         const existing = stored ? JSON.parse(stored) : [];
@@ -128,7 +141,11 @@ export function useGenerator() {
     } finally {
       setIsGenerating(false);
       // Clear progress after a brief delay to show "Complete"
-      setTimeout(() => setProgress(null), 500);
+      // Per WR-05: Use ref to track timeout for cleanup
+      if (progressTimeoutRef.current) {
+        clearTimeout(progressTimeoutRef.current);
+      }
+      progressTimeoutRef.current = setTimeout(() => setProgress(null), 500);
     }
   }, []);
 
@@ -159,9 +176,13 @@ export function useGenerator() {
       const updated = prev.map((q) =>
         q.question.id === id ? { ...q, status: 'approved' as const } : q
       );
-      // Update localStorage
+      // Update localStorage with error handling
       if (typeof window !== 'undefined') {
-        localStorage.setItem('trivial-world-generator-queue', JSON.stringify(updated));
+        try {
+          localStorage.setItem('trivial-world-generator-queue', JSON.stringify(updated));
+        } catch (err) {
+          console.error('Failed to save queue state:', err);
+        }
       }
       return updated;
     });
@@ -176,9 +197,13 @@ export function useGenerator() {
       const updated = prev.map((q) =>
         q.question.id === id ? { ...q, status: 'rejected' as const } : q
       );
-      // Update localStorage
+      // Update localStorage with error handling
       if (typeof window !== 'undefined') {
-        localStorage.setItem('trivial-world-generator-queue', JSON.stringify(updated));
+        try {
+          localStorage.setItem('trivial-world-generator-queue', JSON.stringify(updated));
+        } catch (err) {
+          console.error('Failed to save queue state:', err);
+        }
       }
       return updated;
     });
@@ -193,9 +218,13 @@ export function useGenerator() {
       const updated = prev.map((q) =>
         q.question.id === id ? { ...q, editedQuestion: edited } : q
       );
-      // Update localStorage
+      // Update localStorage with error handling
       if (typeof window !== 'undefined') {
-        localStorage.setItem('trivial-world-generator-queue', JSON.stringify(updated));
+        try {
+          localStorage.setItem('trivial-world-generator-queue', JSON.stringify(updated));
+        } catch (err) {
+          console.error('Failed to save queue state:', err);
+        }
       }
       return updated;
     });
@@ -214,23 +243,28 @@ export function useGenerator() {
 
   /**
    * Get pending questions (awaiting review)
+   * Per IN-04: Use useMemo to avoid unnecessary re-renders
    */
-  const getPendingQuestions = useCallback(() => {
-    return queue.filter((q) => q.status === 'pending');
-  }, [queue]);
+  const pendingQuestions = useMemo(() =>
+    queue.filter((q) => q.status === 'pending'),
+    [queue]
+  );
 
   /**
    * Get approved questions (ready for pack)
+   * Per IN-04: Use useMemo to avoid unnecessary re-renders
    */
-  const getApprovedQuestions = useCallback(() => {
-    return queue.filter((q) => q.status === 'approved');
-  }, [queue]);
+  const approvedQuestions = useMemo(() =>
+    queue.filter((q) => q.status === 'approved'),
+    [queue]
+  );
 
   /**
    * Get queue statistics
    * Returns total, pending, and needs-review counts
+   * Per IN-04: Use useMemo to avoid unnecessary re-renders
    */
-  const getQueueStats = useCallback(() => {
+  const queueStats = useMemo(() => {
     const total = queue.length;
     const pending = queue.filter((q) => q.status === 'pending').length;
     const needsReview = queue.filter((q) => q.verification.needsReview).length;
@@ -258,9 +292,9 @@ export function useGenerator() {
     reject,
     edit,
     clearQueue,
-    getPendingQuestions,
-    getApprovedQuestions,
-    getQueueStats,
+    pendingQuestions,
+    approvedQuestions,
+    queueStats,
     setCurrentIndex: setCurrentIndexDirect,
     next: () => setCurrentIndex((i) => Math.min(i + 1, queue.length - 1)),
     prev: () => setCurrentIndex((i) => Math.max(i - 1, 0)),
