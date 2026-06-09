@@ -161,9 +161,12 @@ Plans:
 **UI hint**: yes
 
 Plans:
-- [ ] 08-01-PLAN.md — Pack state management, download service, checksum verification (Wave 1)
-- [ ] 08-02-PLAN.md — Pack selection UI, pack details modal, category/difficulty filters (Wave 2)
-- [ ] 08-03-PLAN.md — Home screen integration, game flow, WatermelonDB queries (Wave 3)
+- [x] 08-01-PLAN.md — Pack state management, download service, checksum verification (Wave 1)
+- [x] 08-02-PLAN.md — Pack selection UI, pack details modal, category/difficulty filters (Wave 2)
+- [x] 08-03-PLAN.md — Home screen integration, game flow, WatermelonDB queries (Wave 3)
+- [x] 08-04-PLAN.md — Gap closure: database export, TypeScript fixes, async handling (Wave 4)
+
+**Completed**: 2026-06-08
 
 ## Progress
 
@@ -179,7 +182,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | 5. State Persistence | v1.0 | 2/2 | Complete | 2026-06-08 |
 | 6. Question Pack Structure | v2.0 | 3/3 | Complete | 2026-06-08 |
 | 7. Question Generator Web App | v2.0 | 4/4 | Complete | 2026-06-08 |
-| 8. Game Configuration | v2.0 | 0/3 | Not started | - |
+| 8. Game Configuration | v2.0 | 4/4 | Complete | 2026-06-08 |
 
 ---
 
