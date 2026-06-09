@@ -147,7 +147,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. Visual parity between mobile app and web browser
 **Plans**: 5 plans
 Plans:
-- [ ] 09-01-PLAN.md — Configure Expo web export and create platform adapters
+- [x] 09-01-PLAN.md — Configure Expo web export and create platform adapters (complete 2026-06-09)
 - [ ] 09-02-PLAN.md — Update all Zustand stores to use platform storage
 - [ ] 09-03-PLAN.md — Create question provider and guard database initialization
 - [ ] 09-04-PLAN.md — Migrate haptics and skip pack selection on web
@@ -189,7 +189,7 @@ Plans:
 | 6. Question Pack Structure | 3/3 | Complete | 2026-06-08 |
 | 7. Question Generator Web App | 4/4 | Complete | 2026-06-08 |
 | 8. Game Configuration | 4/4 | Complete | 2026-06-08 |
-| 9. Mobile Web Export | 0/5 | Not started | - |
+| 9. Mobile Web Export | 1/5 | In progress | - |
 | 10. Netlify Deployment | 0/6 | Not started | - |
 | 11. PWA Manifest | 0/3 | Not started | - |
 

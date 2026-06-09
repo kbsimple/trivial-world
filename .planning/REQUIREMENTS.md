@@ -100,9 +100,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Game Web App (WEBG)
 
-- [ ] **WEBG-01**: Game renders in web browser via Expo static export
+- [x] **WEBG-01**: Game renders in web browser via Expo static export
 - [ ] **WEBG-02**: Session storage persists game state during browser session (no IndexedDB)
-- [ ] **WEBG-03**: Native modules (haptics, orientation) degrade gracefully on web
+- [x] **WEBG-03**: Native modules (haptics, orientation) degrade gracefully on web
 - [ ] **WEBG-04**: Visual parity between mobile and web (React Native Web CSS adjustments)
 
 ### Generator Web App (GEN)
@@ -228,9 +228,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| WEBG-01 | Phase 9: Mobile Web Export | Pending |
+| WEBG-01 | Phase 9: Mobile Web Export | Complete |
 | WEBG-02 | Phase 9: Mobile Web Export | Pending |
-| WEBG-03 | Phase 9: Mobile Web Export | Pending |
+| WEBG-03 | Phase 9: Mobile Web Export | Complete |
 | WEBG-04 | Phase 9: Mobile Web Export | Pending |
 | GEN-01 | Phase 10: Netlify Deployment | Pending |
 | GEN-02 | Phase 10: Netlify Deployment | Pending |
