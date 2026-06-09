@@ -1,5 +1,4 @@
 import { Database, DatabaseAdapter } from '@nozbe/watermelondb';
-import SQLiteAdapter from '@nozbe/watermelondb/adapters/sqlite';
 import { schema } from './schema';
 import { modelClasses } from './models';
 import { migrations } from './migrations';
@@ -14,11 +13,14 @@ import { ensureDefaultPack } from './migrations/003_seed_default_pack';
  * handles schema and migration management.
  *
  * This module exports all database components for app initialization:
- * - `database`: Database singleton instance (lazily initialized)
+ * - `database`: Database singleton instance (lazily initialized - MOBILE ONLY)
  * - `schema`: App schema for adapter initialization
  * - `migrations`: Migration definitions for adapter initialization
  * - `modelClasses`: Model classes for the database
  * - `initializeDatabase`: Seeds default pack on first launch (D-02)
+ *
+ * IMPORTANT: This module should only be imported on mobile (Platform.OS !== 'web').
+ * Web uses bundled questions from services/questionProvider.ts
  */
 
 let _database: Database | null = null;
@@ -27,24 +29,57 @@ let _database: Database | null = null;
  * Get the database singleton instance.
  * Creates the database on first access using SQLiteAdapter.
  *
+ * IMPORTANT: Only call this on mobile (Platform.OS !== 'web').
+ * The database must be initialized before calling this function.
+ *
  * @returns Database instance
  */
 export function getDatabase(): Database {
   if (!_database) {
-    const adapter = new SQLiteAdapter({
-      schema,
-      migrations,
-      jsi: true, // Use JSI for better performance
-      onSetUpError: (error: Error) => {
-        console.error('Database setup failed:', error);
-      },
-    });
-    _database = new Database({
-      adapter,
-      modelClasses,
-    });
+    throw new Error('Database not initialized. Call initializeDatabase() first.');
   }
   return _database;
+}
+
+/**
+ * Initialize the database with the provided adapter.
+ * Must be called before getDatabase().
+ *
+ * @param adapter - Database adapter (e.g., SQLiteAdapter)
+ */
+export function initializeDatabaseWithAdapter(adapter: DatabaseAdapter): void {
+  _database = new Database({
+    adapter,
+    modelClasses,
+  });
+}
+
+/**
+ * Async initialization for lazy loading SQLiteAdapter.
+ * Used by app layout to avoid bundling SQLite on web.
+ *
+ * @returns Promise that resolves when initialization is complete
+ */
+export async function initializeDatabaseAsync(): Promise<void> {
+  // Dynamic import to avoid bundling SQLiteAdapter on web
+  const SQLiteAdapter = (await import('@nozbe/watermelondb/adapters/sqlite')).default;
+
+  const adapter = new SQLiteAdapter({
+    schema,
+    migrations,
+    jsi: true, // Use JSI for better performance
+    onSetUpError: (error: Error) => {
+      console.error('Database setup failed:', error);
+    },
+  });
+
+  _database = new Database({
+    adapter,
+    modelClasses,
+  });
+
+  // Initialize database - seeds default pack if needed
+  await initializeDatabase();
 }
 
 /**
@@ -88,12 +123,15 @@ export const createDatabase = (adapter: DatabaseAdapter) => {
  * Initialize database with default pack seeding
  * Per D-02: Built-in default pack with 120 questions bundled in app
  *
- * Call this after database adapter is configured.
+ * Call this after database is initialized via initializeDatabaseAsync().
  * Seeds the default pack if no packs exist.
  *
- * @returns Promise that resolves when initialization is complete
+ * @returns Promise that resolves when seeding is complete
  */
 export async function initializeDatabase(): Promise<void> {
+  if (!_database) {
+    throw new Error('Database not initialized. Call initializeDatabaseAsync() first.');
+  }
   try {
     await ensureDefaultPack();
   } catch (error) {
@@ -112,6 +150,8 @@ export { QuestionPackModel, QuestionModel } from './models';
 export default {
   getDatabase,
   database,
+  initializeDatabaseAsync,
+  initializeDatabaseWithAdapter,
   createDatabase,
   initializeDatabase,
   schema,

@@ -3,9 +3,8 @@ import { Platform } from 'react-native';
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { TamaguiProvider, Theme } from 'tamagui';
-import SQLiteAdapter from '@nozbe/watermelondb/adapters/sqlite';
 import config from '../tamagui.config';
-import { createDatabase, initializeDatabase, schema, migrations } from '../database';
+import { initializeDatabaseAsync, getDatabase } from '../database';
 
 /**
  * Root layout
@@ -18,19 +17,9 @@ import { createDatabase, initializeDatabase, schema, migrations } from '../datab
  *   - Web: Skipped - uses bundled questions only (D-08)
  */
 
-// Create database adapter and instance (mobile only per D-07)
-const adapter = Platform.OS !== 'web'
-  ? new SQLiteAdapter({
-      schema,
-      migrations,
-      jsi: true, // Use JSI for better performance
-      onSetUpError: (error: Error) => {
-        console.error('Database setup failed:', error);
-      },
-    })
-  : null;
-
-export const database = Platform.OS !== 'web' ? createDatabase(adapter!) : null;
+// Export database getter for use in other modules
+// Only valid on mobile after initializeDatabaseAsync() completes
+export { getDatabase as database };
 
 export default function RootLayout() {
   const [isInitialized, setIsInitialized] = useState(false);
@@ -43,7 +32,8 @@ export default function RootLayout() {
     }
 
     // Mobile: Initialize database and seed default pack (D-02)
-    initializeDatabase()
+    // Uses async dynamic import to avoid bundling SQLite on web
+    initializeDatabaseAsync()
       .then(() => {
         setIsInitialized(true);
       })
