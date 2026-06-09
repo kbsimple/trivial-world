@@ -1,4 +1,4 @@
-import { database } from '../index';
+import { getDatabase } from '../index';
 import { QuestionPackModel } from '../models/QuestionPack';
 import { QuestionModel } from '../models/Question';
 import { DEFAULT_PACK_ID } from '../../constants/packConfig';
@@ -15,6 +15,7 @@ import { PlayerColor } from '../../constants/categories';
  */
 export async function seedDefaultPack(): Promise<void> {
   // Check if any packs exist
+  const database = getDatabase();
   const existingPacks = await database.get('question_packs').query().fetch();
 
   if (existingPacks.length > 0) {
@@ -53,30 +54,32 @@ export async function seedDefaultPack(): Promise<void> {
 
   // Create default pack in WatermelonDB
   await database.write(async () => {
-    const pack = await database.get('question_packs').create((p: QuestionPackModel) => {
-      p.packId = DEFAULT_PACK_ID;
-      p.name = 'Trivial World Classic';
-      p.description = 'The classic Trivial World question pack with 120 questions across all 6 categories.';
-      p.version = '1.0.0';
-      p.author = 'Trivial World';
-      p.downloadedAt = Date.now();
-      p.checksum = 'default-pack-bundled'; // Not downloaded, so no checksum
-      p.isActive = true; // Default pack starts active (D-15)
-      p.categoryCounts = JSON.stringify(categoryCounts);
-      p.totalQuestions = allQuestions.length;
-      p.schemaVersion = '1.0.0';
+    const pack = await database.get('question_packs').create((p) => {
+      const packModel = p as QuestionPackModel;
+      packModel.packId = DEFAULT_PACK_ID;
+      packModel.name = 'Trivial World Classic';
+      packModel.description = 'The classic Trivial World question pack with 120 questions across all 6 categories.';
+      packModel.version = '1.0.0';
+      packModel.author = 'Trivial World';
+      packModel.downloadedAt = Date.now();
+      packModel.checksum = 'default-pack-bundled'; // Not downloaded, so no checksum
+      packModel.isActive = true; // Default pack starts active (D-15)
+      packModel.categoryCounts = JSON.stringify(categoryCounts);
+      packModel.totalQuestions = allQuestions.length;
+      packModel.schemaVersion = '1.0.0';
     });
 
     // Insert all questions
     for (const q of allQuestions) {
-      await database.get('questions').create((question: QuestionModel) => {
-        question.questionPackId = pack.id;
-        question.questionId = q.id;
-        question.category = q.category;
-        question.questionText = q.questionText;
-        question.answerText = q.answerText;
-        question.difficulty = q.difficulty || 'medium';
-        question.askedAt = null;
+      await database.get('questions').create((question) => {
+        const qModel = question as QuestionModel;
+        qModel.questionPackId = pack.id;
+        qModel.questionId = q.id;
+        qModel.category = q.category;
+        qModel.questionText = q.questionText;
+        qModel.answerText = q.answerText;
+        qModel.difficulty = q.difficulty || 'medium';
+        qModel.askedAt = undefined;
       });
     }
   });

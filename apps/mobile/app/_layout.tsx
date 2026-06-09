@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { TamaguiProvider, Theme } from 'tamagui';
-import { SQLiteAdapter } from '@nozbe/watermelondb/adapters/sqlite';
+import SQLiteAdapter from '@nozbe/watermelondb/adapters/sqlite';
 import config from '../tamagui.config';
 import { createDatabase, initializeDatabase, schema, migrations } from '../database';
 
@@ -20,7 +20,7 @@ const adapter = new SQLiteAdapter({
   schema,
   migrations,
   jsi: true, // Use JSI for better performance
-  onSetUpError: (error) => {
+  onSetUpError: (error: Error) => {
     console.error('Database setup failed:', error);
   },
 });
