@@ -2,12 +2,12 @@
 
 ## Overview
 
-Trivial World is a mobile trivia game for in-person social play. v1.0 (Phases 1-5) delivered core gameplay: game setup, conductor interface, die rolls, question management, scoring, and state persistence. v2.0 (Phases 6-8) adds question packs, AI generation, and game configuration — enabling custom content and cloud-delivered question packs.
+Trivial World is a mobile trivia game for in-person social play. v1.0 (Phases 1-5) delivered core gameplay: game setup, conductor interface, die rolls, question management, scoring, and state persistence. v2.0 (Phases 6-8) added question packs, AI generation, and game configuration — enabling custom content and cloud-delivered question packs.
 
 ## Milestones
 
 - ✅ **v1.0 Core Gameplay** - Phases 1-5 (shipped 2026-06-08)
-- 🚧 **v2.0 Question Packs & Game Configuration** - Phases 6-8 (in progress)
+- ✅ **v2.0 Question Packs & Game Configuration** - Phases 6-8 (shipped 2026-06-08)
 
 ## Phases
 
@@ -105,11 +105,10 @@ Plans:
 
 </details>
 
-### 🚧 v2.0 Question Packs & Game Configuration (In Progress)
+<details>
+<summary>✅ v2.0 Question Packs & Game Configuration (Phases 6-8) - SHIPPED 2026-06-08</summary>
 
-**Milestone Goal:** Enable custom question packs with AI generation and game configuration
-
-#### Phase 6: Question Pack Structure
+### Phase 6: Question Pack Structure ✓
 **Goal**: Define and implement the question pack data structure with versioning and validation
 **Depends on**: Phase 5
 **Requirements**: PACK-01, PACK-02, PACK-03, PACK-04, PACK-05
@@ -119,14 +118,15 @@ Plans:
   3. WatermelonDB tables store question packs offline with lazy loading
   4. Migration infrastructure ready for existing questions (deferred per D-02)
   5. JSON Schema export available for non-TypeScript validation
-**Plans**: 3 plans
+**Plans**: 3 plans (complete)
+**Completed**: 2026-06-08
 
 Plans:
 - [x] 06-01-PLAN.md — Monorepo structure and Zod schemas (Wave 1)
 - [x] 06-02-PLAN.md — WatermelonDB models and schema (Wave 2)
 - [x] 06-03-PLAN.md — Type re-exports and migration infrastructure (Wave 3)
 
-#### Phase 7: Question Generator Web App
+### Phase 7: Question Generator Web App ✓
 **Goal**: Web app generates trivia questions via AI and deploys packs to cloud
 **Depends on**: Phase 6
 **Requirements**: AI-01, AI-02, AI-03, AI-04, AI-05, CLOUD-01
@@ -137,8 +137,8 @@ Plans:
   4. Quality score calculated for each generated question
   5. Human review UI allows editing and approving before publishing
   6. Pack files deploy to Netlify with checksum verification
-**Plans**: 4 plans
-**UI hint**: yes
+**Plans**: 4 plans (complete)
+**Completed**: 2026-06-08
 
 Plans:
 - [x] 07-01-PLAN.md — Next.js app foundation, Tailwind CSS, Ollama client, Generator page (Wave 1)
@@ -146,7 +146,7 @@ Plans:
 - [x] 07-03-PLAN.md — LocalStorage persistence, review UI, approval/rejection workflow (Wave 3)
 - [x] 07-04-PLAN.md — Pack metadata editor, category distribution, JSON export, download (Wave 4)
 
-#### Phase 8: Game Configuration
+### Phase 8: Game Configuration ✓
 **Goal**: Game conductors can select packs and configure game settings
 **Depends on**: Phase 7
 **Requirements**: CONF-01, CONF-02, CONF-03, CONF-04, CLOUD-02, CLOUD-03
@@ -157,8 +157,8 @@ Plans:
   4. Pack details view shows category distribution and question count
   5. Pack downloads include checksum verification for integrity
   6. Pack versions tracked for update notifications
-**Plans**: 3 plans
-**UI hint**: yes
+**Plans**: 4 plans (complete)
+**Completed**: 2026-06-08
 
 Plans:
 - [x] 08-01-PLAN.md — Pack state management, download service, checksum verification (Wave 1)
@@ -166,26 +166,18 @@ Plans:
 - [x] 08-03-PLAN.md — Home screen integration, game flow, WatermelonDB queries (Wave 3)
 - [x] 08-04-PLAN.md — Gap closure: database export, TypeScript fixes, async handling (Wave 4)
 
-**Completed**: 2026-06-08
+</details>
 
-## Progress
+---
 
-**Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
+## Next Milestone
 
-| Phase | Milestone | Plans Complete | Status | Completed |
-|-------|-----------|----------------|--------|-----------|
-| 1. Game Setup & Conductor Interface | v1.0 | 2/2 | Complete | 2026-06-08 |
-| 2. Game Loop & Turn Management | v1.0 | 2/2 | Complete | 2026-06-08 |
-| 3. Question System | v1.0 | 2/2 | Complete | 2026-06-08 |
-| 4. Scoring & Win Condition | v1.0 | 2/2 | Complete | 2026-06-08 |
-| 5. State Persistence | v1.0 | 2/2 | Complete | 2026-06-08 |
-| 6. Question Pack Structure | v2.0 | 3/3 | Complete | 2026-06-08 |
-| 7. Question Generator Web App | v2.0 | 4/4 | Complete | 2026-06-08 |
-| 8. Game Configuration | v2.0 | 4/4 | Complete | 2026-06-08 |
+**Status:** Ready for planning
+
+Run `/gsd-new-milestone` to define the next milestone (v3.0 or v2.1).
 
 ---
 
 *Roadmap created: 2026-06-08*
-*v2.0 phases added: 2026-06-08*
-*Phase 6 plans created: 2026-06-08*
+*v1.0 shipped: 2026-06-08*
+*v2.0 shipped: 2026-06-08*

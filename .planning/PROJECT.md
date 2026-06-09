@@ -2,7 +2,7 @@
 
 ## What This Is
 
-Trivial World is a mobile trivia game inspired by Trivial Pursuit, designed for social play. One person acts as the **game conductor**, reading questions from the app to 1 or more participants. The app handles die rolls, move options, and question management, while players engage in a shared physical space around the mobile device.
+Trivial World is a mobile trivia game for in-person social play, with a web-based question generator for creating custom question packs. One person acts as the **game conductor**, reading questions from the app to participants. The mobile app handles die rolls, move choices, question management, and scoring, while players engage in a shared physical space around the mobile device.
 
 ## Core Value
 
@@ -12,23 +12,34 @@ Enable in-person social trivia gameplay where the app supports (not replaces) hu
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Game conductor can start a new game session — v1.0
+- ✓ Game conductor can add 1 or more participants to the game — v1.0
+- ✓ App simulates die roll and displays result — v1.0
+- ✓ App indicates valid move choices based on die roll — v1.0
+- ✓ App presents questions from 6 categories to game conductor — v1.0
+- ✓ Questions are created electronically with category metadata — v2.0
+- ✓ Game tracks scoring progress per participant — v1.0
+- ✓ Question pack data structure with versioning and validation — v2.0
+- ✓ AI-powered question generation from topics and source material — v2.0
+- ✓ Pack selection UI with category/difficulty filtering — v2.0
+- ✓ Pack download with checksum verification — v2.0
 
 ### Active
 
-- [ ] Game conductor can start a new game session
-- [ ] Game conductor can add 1 or more participants to the game
-- [ ] App simulates die roll and displays result
-- [ ] App indicates valid move choices based on die roll
-- [ ] App presents questions from 6 categories to game conductor
-- [ ] Questions are created electronically with category metadata
-- [ ] Game tracks scoring progress per participant
+(None — milestone complete, ready for next milestone planning)
 
 ### Out of Scope
 
-- Online multiplayer (remote play) — initial version is in-person only
-- User accounts/authentication — no player profiles for v1
-- AI-generated questions — questions are manually curated initially
+| Feature | Reason |
+|---------|--------|
+| Online multiplayer (remote play) | Initial version is in-person only — breaks core social value |
+| User accounts/authentication | No player profiles for v1 — friction kills social gameplay |
+| Real-time leaderboards | Not needed for in-person play — adds complexity without value |
+| In-app purchases | Free-to-play model not planned for v1 |
+| Time limits per question | Conductor controls pacing (D-04) |
+| Game variants | Deferred for future (D-07) |
+| Cloud pack hosting | Manual JSON download for v2.0 (D-18) |
+| Multi-provider AI | Ollama-only for v2.0 |
 
 ## Context
 
@@ -45,51 +56,31 @@ Enable in-person social trivia gameplay where the app supports (not replaces) hu
 | Green | Science & Nature | Tech, Space & Logic | AI, astronomy, apex predators, desert tortoise |
 | Orange | Sports & Leisure | Sports & Gaming | Pro sports, college sports, competitive gaming |
 
-**Target Platform:** Mobile (iOS/Android) with potential web companion.
+**Target Platform:** Mobile (iOS/Android) with web companion (question generator).
+
+**Architecture:** Monorepo with Turborepo — `apps/mobile` (Expo), `apps/generator` (Next.js), `packages/types` (shared Zod schemas).
+
+## Key Decisions
+
+| Decision | Rationale | Outcome |
+|----------|-----------|---------|
+| Game conductor model | Enables social, screen-sharing gameplay without everyone having a device | ✓ Good |
+| Simulated die roll | Removes physical die requirement, keeps randomness element | ✓ Good |
+| 6 adapted categories | Familiar structure from Trivial Pursuit, themed for modern interests | ✓ Good |
+| Monorepo structure | Contract-first development, shared types between mobile and web | ✓ Good |
+| Zod-first schemas | Single source of truth for validation, TypeScript types derived automatically | ✓ Good |
+| WatermelonDB for packs | Offline-first pack caching, lazy-loading queries | ✓ Good |
+| Ollama-only generation | Simple single-provider setup for v2.0, AI SDK for future swap | ✓ Good |
+| Static export for generator | Netlify deployment without server infrastructure | ✓ Good |
+| Pack selection before setup | Clear flow: home → pack → setup → game | ✓ Good |
+| Built-in default pack | 120 questions bundled, no download required to start | ✓ Good |
 
 ## Constraints
 
 - **Platform:** Mobile-first design (phone screen size)
 - **Social:** Designed for in-person group play, not solo or remote play
 - **Simplicity:** Low friction to start playing — minimal setup
-
-## Key Decisions
-
-| Decision | Rationale | Outcome |
-|----------|-----------|---------|
-| Game conductor model | Enables social, screen-sharing gameplay without每人 having a device | — Pending |
-| Simulated die roll | Removes physical die requirement, keeps randomness element | — Pending |
-| 6 adapted categories | Familiar structure from Trivial Pursuit, themed for modern interests | — Pending |
+- **Offline-first:** No network dependency for core gameplay
 
 ---
-*Last updated: 2026-06-08 after v1.0 completion*
-
-## Current Milestone: v2.0 Question Packs & Game Configuration
-
-**Goal:** Enable custom question packs with AI generation and game configuration
-
-**Target features:**
-- Question pack data structure and TypeScript contracts
-- Question generator web app with AI integration
-- Cloud storage endpoint for question packs
-- Game configuration in mobile app (settings, pack selection)
-- AI-powered question generation from topics/guidance
-
-**Architecture:** Contract-first — structure → generator → consumer
-
-## Evolution
-
-This document evolves at phase transitions and milestone boundaries.
-
-**After each phase transition** (via `/gsd-transition`):
-1. Requirements invalidated? → Move to Out of Scope with reason
-2. Requirements validated? → Move to Validated with phase reference
-3. New requirements emerged? → Add to Active
-4. Decisions to log? → Add to Key Decisions
-5. "What This Is" still accurate? → Update if drifted
-
-**After each milestone** (via `/gsd-complete-milestone`):
-1. Full review of all sections
-2. Core Value check — still the right priority?
-3. Audit Out of Scope — reasons still valid?
-4. Update Context with current state
+*Last updated: 2026-06-08 after v2.0 milestone*
