@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { platformStorage } from '../services/platformStorage';
 import { PLAYER_COLORS, PlayerColor } from '../constants/categories';
 import { Player, PlayerState } from '../types/player';
 
@@ -21,7 +21,7 @@ function generateId(): string {
  * Player store
  * Manages participant list with auto-assigned colors
  * Max 6 players (limited by category colors)
- * Persisted to AsyncStorage for game resume (STAT-01, STAT-02)
+ * Persisted via platformStorage (AsyncStorage mobile, sessionStorage web)
  */
 export const usePlayerStore = create<PlayerState>()(
   persist(
@@ -121,7 +121,7 @@ export const usePlayerStore = create<PlayerState>()(
     }),
     {
       name: 'trivial-world-players',
-      storage: createJSONStorage(() => AsyncStorage),
+      storage: createJSONStorage(() => platformStorage),
     }
   )
 );
