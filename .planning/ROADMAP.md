@@ -157,7 +157,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Generator app deploys to Netlify from main branch automatically on push
   3. Deep linking works on both sites (SPA redirects configured)
   4. HTTPS enforced on both sites (Netlify default)
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 10-01-PLAN.md — Create deployment configuration files
+- [ ] 10-02-PLAN.md — Netlify site creation and deployment verification
 
 ### Phase 11: PWA Manifest
 **Goal**: Game app is installable on mobile devices via Add to Home Screen
@@ -185,7 +188,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 | 7. Question Generator Web App | 4/4 | Complete | 2026-06-08 |
 | 8. Game Configuration | 4/4 | Complete | 2026-06-08 |
 | 9. Mobile Web Export | 5/5 | Complete | 2026-06-09 |
-| 10. Netlify Deployment | 0/6 | Not started | - |
+| 10. Netlify Deployment | 0/2 | Ready | - |
 | 11. PWA Manifest | 0/3 | Not started | - |
 
 ---
