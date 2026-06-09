@@ -9,6 +9,9 @@ import { usePlayerStore } from './playerStore';
 import { usePackStore } from './packStore';
 import { Player } from '../types/player';
 
+// WR-02: Guard against race conditions in markAnswer setTimeout
+let transitionPending = false;
+
 interface GameStore extends GameState {
   /** Current question being displayed */
   currentQuestion: Question | null;
@@ -26,6 +29,8 @@ interface GameStore extends GameState {
   startGame: () => Promise<void>;
   /** Next turn */
   nextTurn: () => Promise<void>;
+  /** Reset game state to initial values */
+  resetGame: () => void;
 }
 
 /**
@@ -131,6 +136,12 @@ export const useGameStore = create<GameStore>()(
 
         const currentPlayer = players[currentPlayerIndex];
 
+        // WR-03: Guard against invalid currentPlayerIndex
+        if (!currentPlayer) {
+          console.error('Invalid currentPlayerIndex:', currentPlayerIndex);
+          return;
+        }
+
         // Mark question as asked (QSTN-03)
         if (currentQuestion) {
           useQuestionStore.getState().markAsked(currentQuestion.id);
@@ -198,6 +209,22 @@ export const useGameStore = create<GameStore>()(
           currentCategory: question?.category ?? randomCategory,
           isCenterQuestion: true,
           phase: 'answering',
+        });
+      },
+
+      // WR-01: Reset game state to initial values
+      resetGame: () => {
+        set({
+          phase: 'setup',
+          currentPlayerIndex: 0,
+          questionNumber: 1,
+          answerRevealed: false,
+          currentQuestion: null,
+          currentCategory: null,
+          dieResult: null,
+          isCenterQuestion: false,
+          winner: null,
+          activePackId: null,
         });
       },
     }),

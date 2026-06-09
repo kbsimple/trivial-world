@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { View, Text, FlatList, Pressable, ActivityIndicator, StyleSheet, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from 'tamagui';
@@ -48,6 +48,8 @@ export default function PackSelectionScreen() {
   const [modalVisible, setModalVisible] = useState(false);
   // D-14: Downloaded pack versions for semver comparison
   const [downloadedPackVersions, setDownloadedPackVersions] = useState<Record<string, string>>({});
+  // WR-01: Track pack that caused download error for retry
+  const errorPackRef = useRef<PackIndexEntry | null>(null);
 
   // Fetch available packs on mount
   useEffect(() => {
@@ -86,14 +88,21 @@ export default function PackSelectionScreen() {
   }, [downloadedPackIds]);
 
   // Show download error alert (D-11)
+  // WR-01: Use ref to avoid stale closure in retry handler
   useEffect(() => {
     if (downloadError) {
+      const packToRetry = errorPackRef.current;
       Alert.alert(
         'Download Failed',
         `${downloadError}\n\nTap "Retry" to try again.`,
         [
-          { text: 'Cancel', style: 'cancel', onPress: clearDownloadError },
-          { text: 'Retry', onPress: () => selectedPack && handleDownload(selectedPack) },
+          { text: 'Cancel', style: 'cancel', onPress: () => {
+            clearDownloadError();
+            errorPackRef.current = null;
+          }},
+          { text: 'Retry', onPress: () => {
+            if (packToRetry) handleDownload(packToRetry);
+          }},
         ]
       );
     }
@@ -106,6 +115,8 @@ export default function PackSelectionScreen() {
 
   const handleDownload = async (pack: PackIndexEntry) => {
     setModalVisible(false);
+    // WR-01: Store pack reference for retry
+    errorPackRef.current = pack;
     try {
       await downloadPack(pack);
       Alert.alert('Success', `${pack.name} downloaded successfully!`);
