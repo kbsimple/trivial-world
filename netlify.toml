@@ -4,6 +4,11 @@
 # Setup in Netlify UI:
 #   - Game site: Publish directory = apps/mobile/dist
 #   - Generator site: Publish directory = apps/generator/out
+#
+# IMPORTANT: Both apps use static export (not Next.js runtime)
+# - Generator: Next.js static export (output: 'export')
+# - Mobile: Expo web export
+# Disable the Next.js runtime plugin to prevent conflicts
 
 [build]
   # Build both apps with Turborepo
@@ -13,6 +18,13 @@
 [build.environment]
   # Node version for build (20 LTS)
   NODE_VERSION = "20"
+
+# Disable Next.js runtime plugin - both apps use static export
+# The auto-detected Next.js plugin is incompatible with static exports
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  [plugins.inputs]
+    skip = true
 
 # Production context (main branch)
 [context.production]
