@@ -8,7 +8,9 @@
 # IMPORTANT: Both apps use static export (not Next.js runtime)
 # - Generator: Next.js static export (output: 'export')
 # - Mobile: Expo web export
-# Disable the Next.js runtime plugin to prevent conflicts
+#
+# To disable the Next.js runtime plugin for static exports:
+# Netlify > Site settings > Build & deploy > Post processing > Disable "Next.js Runtime"
 
 [build]
   # Build both apps with Turborepo
@@ -18,13 +20,6 @@
 [build.environment]
   # Node version for build (20 LTS)
   NODE_VERSION = "20"
-
-# Disable Next.js runtime plugin - both apps use static export
-# The auto-detected Next.js plugin is incompatible with static exports
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    skip = true
 
 # Production context (main branch)
 [context.production]
