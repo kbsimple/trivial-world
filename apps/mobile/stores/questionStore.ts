@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { platformStorage } from '../services/platformStorage';
 import { PlayerColor } from '../constants/categories';
 import { Category, Difficulty } from '@trivial-world/types';
 import { usePackStore } from './packStore';
@@ -219,7 +219,7 @@ export const useQuestionStore = create<QuestionState>()(
     }),
     {
       name: 'trivial-world-questions',
-      storage: createJSONStorage(() => AsyncStorage),
+      storage: createJSONStorage(() => platformStorage),
       // Only persist currentQuestion and currentCategory
       // askedQuestions now tracked in WatermelonDB
       partialize: (state) => ({
