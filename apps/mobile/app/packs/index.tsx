@@ -32,6 +32,7 @@ export default function PackSelectionScreen() {
     isLoading,
     isDownloading,
     downloadProgress,
+    downloadBytesWritten,
     downloadError,
     fetchAvailablePacks,
     downloadPack,
@@ -68,7 +69,8 @@ export default function PackSelectionScreen() {
       }
 
       try {
-        const { database } = await import('../../database');
+        const { getDatabase } = await import('../../database');
+        const database = getDatabase();
         const packs = await database.get('question_packs').query().fetch();
         const versions: Record<string, string> = {};
         for (const pack of packs) {
@@ -192,7 +194,7 @@ export default function PackSelectionScreen() {
         <DownloadProgress
           packName={selectedPack.name}
           progress={downloadProgress}
-          bytesWritten={0} // Placeholder - would need actual bytes
+          bytesWritten={downloadBytesWritten}
           bytesTotal={selectedPack.size}
         />
       )}

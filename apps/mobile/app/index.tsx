@@ -34,8 +34,9 @@ export default function HomeScreen() {
     const loadPackName = async () => {
       if (activePackId) {
         try {
-          const { database } = await import('../database');
+          const { getDatabase } = await import('../database');
           const { Q } = await import('@nozbe/watermelondb');
+          const database = getDatabase();
           const packs = await database.get('question_packs')
             .query(Q.where('pack_id', activePackId))
             .fetch();

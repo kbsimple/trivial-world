@@ -24,6 +24,7 @@ interface PackState {
   isLoading: boolean;
   isDownloading: boolean;
   downloadProgress: number; // 0-100
+  downloadBytesWritten: number; // Actual bytes downloaded
   downloadError: string | null;
 
   // Actions
@@ -48,6 +49,7 @@ export const usePackStore = create<PackState>()(
       isLoading: false,
       isDownloading: false,
       downloadProgress: 0,
+      downloadBytesWritten: 0,
       downloadError: null,
 
       fetchAvailablePacks: async () => {
@@ -63,10 +65,10 @@ export const usePackStore = create<PackState>()(
       },
 
       downloadPack: async (entry: PackIndexEntry) => {
-        set({ isDownloading: true, downloadProgress: 0, downloadError: null });
+        set({ isDownloading: true, downloadProgress: 0, downloadBytesWritten: 0, downloadError: null });
         try {
           await downloadPackWithProgress(entry, (progress) => {
-            set({ downloadProgress: progress.percent });
+            set({ downloadProgress: progress.percent, downloadBytesWritten: progress.bytesWritten });
           });
 
           // Refresh downloaded pack IDs
@@ -82,6 +84,7 @@ export const usePackStore = create<PackState>()(
           set({
             isDownloading: false,
             downloadProgress: 0,
+            downloadBytesWritten: 0,
             downloadError: errorMessage,
           });
           throw error;
