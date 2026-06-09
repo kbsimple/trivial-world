@@ -68,26 +68,33 @@ export const useGameStore = create<GameStore>()(
           return;
         }
 
-        // Reset asked questions for new game (QSTN-03)
-        await useQuestionStore.getState().resetAskedQuestions();
-        // Reset wedges for new game (SCOR-01)
-        usePlayerStore.getState().resetWedges();
+        try {
+          // IN-04: Wrap async operations in try/catch for error handling
+          // Reset asked questions for new game (QSTN-03)
+          await useQuestionStore.getState().resetAskedQuestions();
+          // Reset wedges for new game (SCOR-01)
+          usePlayerStore.getState().resetWedges();
 
-        // Select first question (IN-02: uses DEFAULT_CATEGORY constant)
-        const question = await useQuestionStore.getState().selectQuestion(DEFAULT_CATEGORY);
+          // Select first question (IN-02: uses DEFAULT_CATEGORY constant)
+          const question = await useQuestionStore.getState().selectQuestion(DEFAULT_CATEGORY);
 
-        set({
-          phase: 'rolling',
-          currentQuestion: question,
-          currentCategory: question?.category ?? DEFAULT_CATEGORY,
-          currentPlayerIndex: 0,
-          questionNumber: 1,
-          answerRevealed: false,
-          dieResult: null,
-          isCenterQuestion: false, // Reset center question flag
-          winner: null, // Reset winner
-          activePackId, // Track for this game session
-        });
+          set({
+            phase: 'rolling',
+            currentQuestion: question,
+            currentCategory: question?.category ?? DEFAULT_CATEGORY,
+            currentPlayerIndex: 0,
+            questionNumber: 1,
+            answerRevealed: false,
+            dieResult: null,
+            isCenterQuestion: false, // Reset center question flag
+            winner: null, // Reset winner
+            activePackId, // Track for this game session
+          });
+        } catch (error) {
+          console.error('Error starting game:', error);
+          // Reset to setup state on error
+          set({ phase: 'setup' });
+        }
       },
 
       rollDie: () => {
