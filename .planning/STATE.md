@@ -5,14 +5,14 @@ milestone_name: Web Deployment
 status: executing
 stopped_at: null
 last_updated: "2026-06-09T18:10:00.000Z"
-last_activity: 2026-06-09 — Phase 9 Plan 3 complete (Question Provider)
-resume_file: .planning/phases/09-mobile-web-export/09-04-PLAN.md
+last_activity: 2026-06-09 — Phase 9 Plan 4 complete (Haptics Migration)
+resume_file: .planning/phases/09-mobile-web-export/09-05-PLAN.md
 progress:
   total_phases: 3
   completed_phases: 0
   total_plans: 5
-  completed_plans: 3
-  percent: 60
+  completed_plans: 4
+  percent: 80
 ---
 
 # Project State
@@ -27,20 +27,20 @@ See: .planning/PROJECT.md (updated 2026-06-09)
 ## Current Position
 
 Phase: 9 (Mobile Web Export)
-Plan: 09-03 complete, next: 09-04
+Plan: 09-04 complete, next: 09-05
 Status: Executing
-Last activity: 2026-06-09 — Plan 09-03 complete (Question Provider)
+Last activity: 2026-06-09 — Plan 09-04 complete (Haptics Migration)
 
-Progress: [########  ] 40%
+Progress: [##########] 80%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 31
+- Total plans completed: 32
 - v1.0: 10 plans (~65 min execution)
 - v2.0: 11 plans (~48 hours)
-- v3.0: 2 plans (~6 min execution)
-- Total execution time: ~206 minutes
+- v3.0: 4 plans (~8 min execution)
+- Total execution time: ~208 minutes
 
 **By Phase:**
 
@@ -54,7 +54,7 @@ Progress: [########  ] 40%
 | 6. Question Pack Structure | 3 | ~30 min |
 | 7. Question Generator Web App | 4 | ~32 min |
 | 8. Game Configuration | 4 | ~30 min |
-| 9. Mobile Web Export | 3 | ~11 min (in progress) |
+| 9. Mobile Web Export | 4 | ~13 min (in progress) |
 
 ## Accumulated Context
 
@@ -84,6 +84,7 @@ Progress: [########  ] 40%
 - D-03: Two separate Netlify sites (game + generator)
 - D-07: Question provider abstraction (bundled web, WatermelonDB mobile)
 - D-08: Bundled default pack questions for web
+- D-09: Web skips pack selection (uses bundled default)
 - D-10: Haptics no-op on web (no vibration API fallback)
 - D-04/D-06: Platform storage adapter (AsyncStorage mobile, sessionStorage web)
 
@@ -112,4 +113,4 @@ Items acknowledged and carried forward for future milestones:
 
 Last session: 2026-06-09T18:10:00Z
 Stopped at: null
-Resume file: .planning/phases/09-mobile-web-export/09-04-PLAN.md
+Resume file: .planning/phases/09-mobile-web-export/09-05-PLAN.md
