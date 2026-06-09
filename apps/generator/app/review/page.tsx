@@ -37,17 +37,8 @@ export default function ReviewPage() {
     setIsLoading(false);
   }, [loadQueue]);
 
-  // Redirect to generator if queue is empty after loading
-  useEffect(() => {
-    if (!isLoading && queue.length === 0) {
-      // Check if there are any pending questions
-      const pendingQuestions = queue.filter((q) => q.status === 'pending');
-      if (pendingQuestions.length === 0) {
-        // Show empty state instead of redirecting
-        // User may have approved/rejected all questions
-      }
-    }
-  }, [isLoading, queue]);
+  // Note: Empty queue state is handled in render below
+  // No redirect needed - the UI shows appropriate empty state
 
   // Handle approve action
   const handleApprove = (id: string) => {
