@@ -1,6 +1,7 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
 import { PackIndexEntry } from '@trivial-world/types';
+import { SEMANTIC_COLORS } from '../constants/theme';
 
 interface PackCardProps {
   pack: PackIndexEntry;
@@ -60,14 +61,14 @@ export function PackCard({
 
         {/* Downloaded indicator */}
         {isDownloaded && !hasUpdate && (
-          <Text style={[styles.downloadedText, { color: '#228b22' }]}>
+          <Text style={[styles.downloadedText, { color: SEMANTIC_COLORS.success }]}>
             Downloaded
           </Text>
         )}
 
         {/* Active indicator */}
         {isActive && (
-          <Text style={[styles.activeText, { color: '#228b22' }]}>
+          <Text style={[styles.activeText, { color: SEMANTIC_COLORS.success }]}>
             Active
           </Text>
         )}
@@ -76,7 +77,7 @@ export function PackCard({
       {/* Select button (for downloaded packs) */}
       {isDownloaded && onSelect && (
         <Pressable
-          style={[styles.selectButton, { backgroundColor: '#228b22' }]}
+          style={[styles.selectButton, { backgroundColor: SEMANTIC_COLORS.success }]}
           onPress={onSelect}
         >
           <Text style={styles.selectButtonText}>Select</Text>
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
   },
   activeContainer: {
     borderWidth: 2,
-    borderColor: '#228b22',
+    borderColor: SEMANTIC_COLORS.success,
   },
   infoContainer: {
     flex: 1,

@@ -2,6 +2,7 @@ import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
 import { Category, CategorySchema } from '@trivial-world/types';
 import { CATEGORY_COLORS, CATEGORY_NAMES } from '../constants/categories';
+import { SEMANTIC_COLORS } from '../constants/theme';
 
 // IN-03: Derive category list from schema to avoid type casting
 const ALL_CATEGORIES = CategorySchema.options;
@@ -71,7 +72,7 @@ export function CategoryFilter({
       {/* Select/Clear all buttons */}
       <View style={styles.buttonRow}>
         <Pressable style={styles.textButton} onPress={onSelectAll}>
-          <Text style={[styles.textButtonText, { color: '#228b22' }]}>
+          <Text style={[styles.textButtonText, { color: SEMANTIC_COLORS.success }]}>
             Select All
           </Text>
         </Pressable>

@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
+import { SEMANTIC_COLORS } from '../constants/theme';
 
 interface DownloadProgressProps {
   packName: string;
@@ -40,7 +41,7 @@ export function DownloadProgress({
             styles.progressBar,
             {
               width: `${progress}%`,
-              backgroundColor: '#228b22',
+              backgroundColor: SEMANTIC_COLORS.success,
             },
           ]}
         />
