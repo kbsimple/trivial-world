@@ -1,0 +1,34 @@
+# Netlify configuration for Trivial World monorepo
+# Two sites: trivial-world-game and trivial-world-generator
+#
+# Setup in Netlify UI:
+#   - Game site: Publish directory = apps/mobile/dist
+#   - Generator site: Publish directory = apps/generator/out
+
+[build]
+  # Build both apps with Turborepo
+  command = "pnpm install && pnpm build"
+  # Publish directory set per-site in Netlify UI
+
+[build.environment]
+  # Node version for build (20 LTS)
+  NODE_VERSION = "20"
+
+# Production context (main branch)
+[context.production]
+  command = "pnpm install && pnpm build"
+
+# Deploy preview context (pull requests)
+[context.deploy-preview]
+  command = "pnpm install && pnpm build"
+
+# Branch deploy context (other branches)
+[context.branch-deploy]
+  command = "pnpm install && pnpm build"
+
+# Security headers for all routes
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
