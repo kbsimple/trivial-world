@@ -155,11 +155,10 @@ This phase delivers **a web application for AI-powered trivia question generatio
 - Pack version management
 - Phase 8 scope
 
-### Advanced Generation Features
-- Question from source material (movies, books, TV shows)
+### Difficulty Calibration (AI-04)
 - Difficulty calibration testing
 - Distractor quality scoring
-- These are AI-02, AI-04 requirements but can be implemented incrementally after core generation works
+- Deferred to future phase after core generation works
 
 </deferred>
 

@@ -1,40 +1,15 @@
 {
-  "name": "trivial-world",
-  "version": "1.0.0",
-  "main": "expo-router/entry",
+  "name": "trivial-world-monorepo",
+  "private": true,
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "test": "vitest",
-    "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "expo": "~56.0.9",
-    "expo-status-bar": "~56.0.4",
-    "expo-router": "~4.0.19",
-    "expo-haptics": "~56.0.3",
-    "expo-screen-orientation": "~56.0.2",
-    "react": "19.2.3",
-    "react-native": "0.85.3",
-    "react-native-reanimated": "~3.17.4",
-    "react-native-gesture-handler": "~2.24.0",
-    "react-native-safe-area-context": "5.2.0",
-    "react-native-screens": "~4.4.0",
-    "zustand": "^5.0.14",
-    "@react-native-async-storage/async-storage": "^2.1.0",
-    "tamagui": "^2.1.0",
-    "@tamagui/config": "^2.1.0",
-    "@tamagui/font-inter": "^2.1.0"
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@types/react": "~19.2.2",
-    "typescript": "~6.0.3",
-    "vitest": "^3.0.0",
-    "@tamagui/babel-plugin": "^2.1.0"
+    "turbo": "^2.0.0",
+    "typescript": "~6.0.3"
   },
-  "private": true
+  "packageManager": "pnpm@9.0.0"
 }
