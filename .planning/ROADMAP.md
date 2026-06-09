@@ -2,12 +2,13 @@
 
 ## Overview
 
-Trivial World is a mobile trivia game for in-person social play. v1.0 (Phases 1-5) delivered core gameplay: game setup, conductor interface, die rolls, question management, scoring, and state persistence. v2.0 (Phases 6-8) added question packs, AI generation, and game configuration — enabling custom content and cloud-delivered question packs.
+Trivial World is a mobile trivia game for in-person social play. v1.0 (Phases 1-5) delivered core gameplay: game setup, conductor interface, die rolls, question management, scoring, and state persistence. v2.0 (Phases 6-8) added question packs, AI generation, and game configuration — enabling custom content and cloud-delivered question packs. v3.0 (Phases 9-11) adds web deployment with PWA installability.
 
 ## Milestones
 
-- ✅ **v1.0 Core Gameplay** - Phases 1-5 (shipped 2026-06-08)
-- ✅ **v2.0 Question Packs & Game Configuration** - Phases 6-8 (shipped 2026-06-08)
+- **v1.0 Core Gameplay** - Phases 1-5 (shipped 2026-06-08)
+- **v2.0 Question Packs & Game Configuration** - Phases 6-8 (shipped 2026-06-08)
+- **v3.0 Web Deployment** - Phases 9-11 (in progress)
 
 ## Phases
 
@@ -18,9 +19,9 @@ Trivial World is a mobile trivia game for in-person social play. v1.0 (Phases 1-
 Decimal phases appear between their surrounding integers in numeric order.
 
 <details>
-<summary>✅ v1.0 Core Gameplay (Phases 1-5) - SHIPPED 2026-06-08</summary>
+<summary>v1.0 Core Gameplay (Phases 1-5) - SHIPPED 2026-06-08</summary>
 
-### Phase 1: Game Setup & Conductor Interface ✓
+### Phase 1: Game Setup & Conductor Interface
 **Goal**: Game conductor can set up a new game and see questions clearly displayed
 **Depends on**: Nothing (first phase)
 **Requirements**: SETUP-01, SETUP-02, SETUP-03, SETUP-04, SETUP-05, COND-01, COND-02, COND-03, COND-04, COND-05
@@ -33,11 +34,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans (complete)
 **Completed**: 2026-06-08
 
-Plans:
-- [x] 01-01-PLAN.md — Foundation, stores, and game setup flow (Wave 1)
-- [x] 01-02-PLAN.md — Question display and conductor actions (Wave 2)
-
-### Phase 2: Game Loop & Turn Management ✓
+### Phase 2: Game Loop & Turn Management
 **Goal**: Players can take turns with die rolls and move through the game
 **Depends on**: Phase 1
 **Requirements**: LOOP-01, LOOP-02, LOOP-03, LOOP-04, LOOP-05
@@ -50,11 +47,7 @@ Plans:
 **Plans**: 2 plans (complete)
 **Completed**: 2026-06-08
 
-Plans:
-- [x] 02-01-PLAN.md — Die roll animation and turn state (Wave 1)
-- [x] 02-02-PLAN.md — Move selection and turn cycling (Wave 2)
-
-### Phase 3: Question System ✓
+### Phase 3: Question System
 **Goal**: Questions are presented from correct categories without repetition
 **Depends on**: Phase 2
 **Requirements**: QSTN-01, QSTN-02, QSTN-03, QSTN-04, QSTN-05
@@ -67,11 +60,7 @@ Plans:
 **Plans**: 2 plans (complete)
 **Completed**: 2026-06-08
 
-Plans:
-- [x] 03-01-PLAN.md — Question type system and data files (Wave 1)
-- [x] 03-02-PLAN.md — Question store with asked tracking (Wave 2)
-
-### Phase 4: Scoring & Win Condition ✓
+### Phase 4: Scoring & Win Condition
 **Goal**: Players earn wedges and the game detects a winner
 **Depends on**: Phase 3
 **Requirements**: SCOR-01, SCOR-02, SCOR-03, SCOR-04
@@ -83,11 +72,7 @@ Plans:
 **Plans**: 2 plans (complete)
 **Completed**: 2026-06-08
 
-Plans:
-- [x] 04-01-PLAN.md — Wedge tracking and win condition detection (Wave 1)
-- [x] 04-02-PLAN.md — Wedge display and results screen (Wave 2)
-
-### Phase 5: State Persistence ✓
+### Phase 5: State Persistence
 **Goal**: Games can be paused, resumed, and survive app interruptions
 **Depends on**: Phase 4
 **Requirements**: STAT-01, STAT-02, STAT-03, STAT-04
@@ -99,16 +84,12 @@ Plans:
 **Plans**: 2 plans (complete)
 **Completed**: 2026-06-08
 
-Plans:
-- [x] 05-01-PLAN.md — Add persist middleware to playerStore and resume detection on home screen (Wave 1)
-- [x] 05-02-PLAN.md — Pause overlay and back button confirmation for game screens (Wave 2)
-
 </details>
 
 <details>
-<summary>✅ v2.0 Question Packs & Game Configuration (Phases 6-8) - SHIPPED 2026-06-08</summary>
+<summary>v2.0 Question Packs & Game Configuration (Phases 6-8) - SHIPPED 2026-06-08</summary>
 
-### Phase 6: Question Pack Structure ✓
+### Phase 6: Question Pack Structure
 **Goal**: Define and implement the question pack data structure with versioning and validation
 **Depends on**: Phase 5
 **Requirements**: PACK-01, PACK-02, PACK-03, PACK-04, PACK-05
@@ -121,12 +102,7 @@ Plans:
 **Plans**: 3 plans (complete)
 **Completed**: 2026-06-08
 
-Plans:
-- [x] 06-01-PLAN.md — Monorepo structure and Zod schemas (Wave 1)
-- [x] 06-02-PLAN.md — WatermelonDB models and schema (Wave 2)
-- [x] 06-03-PLAN.md — Type re-exports and migration infrastructure (Wave 3)
-
-### Phase 7: Question Generator Web App ✓
+### Phase 7: Question Generator Web App
 **Goal**: Web app generates trivia questions via AI and deploys packs to cloud
 **Depends on**: Phase 6
 **Requirements**: AI-01, AI-02, AI-03, AI-04, AI-05, CLOUD-01
@@ -140,13 +116,7 @@ Plans:
 **Plans**: 4 plans (complete)
 **Completed**: 2026-06-08
 
-Plans:
-- [x] 07-01-PLAN.md — Next.js app foundation, Tailwind CSS, Ollama client, Generator page (Wave 1)
-- [x] 07-02-PLAN.md — 3-pass verification pipeline, confidence scoring, progress display (Wave 2)
-- [x] 07-03-PLAN.md — LocalStorage persistence, review UI, approval/rejection workflow (Wave 3)
-- [x] 07-04-PLAN.md — Pack metadata editor, category distribution, JSON export, download (Wave 4)
-
-### Phase 8: Game Configuration ✓
+### Phase 8: Game Configuration
 **Goal**: Game conductors can select packs and configure game settings
 **Depends on**: Phase 7
 **Requirements**: CONF-01, CONF-02, CONF-03, CONF-04, CLOUD-02, CLOUD-03
@@ -160,24 +130,67 @@ Plans:
 **Plans**: 4 plans (complete)
 **Completed**: 2026-06-08
 
-Plans:
-- [x] 08-01-PLAN.md — Pack state management, download service, checksum verification (Wave 1)
-- [x] 08-02-PLAN.md — Pack selection UI, pack details modal, category/difficulty filters (Wave 2)
-- [x] 08-03-PLAN.md — Home screen integration, game flow, WatermelonDB queries (Wave 3)
-- [x] 08-04-PLAN.md — Gap closure: database export, TypeScript fixes, async handling (Wave 4)
-
 </details>
 
 ---
 
-## Next Milestone
+## v3.0 Web Deployment (Phases 9-11) - IN PROGRESS
 
-**Status:** Ready for planning
+### Phase 9: Mobile Web Export
+**Goal**: Game app renders in web browser via Expo static export with session-only storage
+**Depends on**: Phase 8
+**Requirements**: WEBG-01, WEBG-02, WEBG-03, WEBG-04
+**Success Criteria** (what must be TRUE):
+  1. User can access game app in web browser via static export
+  2. Game state persists during browser session (no IndexedDB, sessionStorage only)
+  3. Native modules (haptics, orientation) degrade gracefully on web
+  4. Visual parity between mobile app and web browser
+**Plans**: TBD
+**UI hint**: yes
 
-Run `/gsd-new-milestone` to define the next milestone (v3.0 or v2.1).
+### Phase 10: Netlify Deployment
+**Goal**: Both apps deploy automatically from main branch to separate Netlify sites
+**Depends on**: Phase 9
+**Requirements**: GEN-01, GEN-02, NETL-01, NETL-02, NETL-03, PWA-02
+**Success Criteria** (what must be TRUE):
+  1. Game app deploys to Netlify from main branch automatically on push
+  2. Generator app deploys to Netlify from main branch automatically on push
+  3. Deep linking works on both sites (SPA redirects configured)
+  4. HTTPS enforced on both sites (Netlify default)
+**Plans**: TBD
+
+### Phase 11: PWA Manifest
+**Goal**: Game app is installable on mobile devices via Add to Home Screen
+**Depends on**: Phase 10
+**Requirements**: PWA-01, PWA-03
+**Success Criteria** (what must be TRUE):
+  1. PWA manifest includes required icons (192px, 512px)
+  2. Add to Home Screen works on Android Chrome
+  3. Add to Home Screen works on iOS Safari
+**Plans**: TBD
+**UI hint**: yes
+
+---
+
+## Progress
+
+| Phase | Plans Complete | Status | Completed |
+|-------|----------------|--------|-----------|
+| 1. Game Setup & Conductor Interface | 2/2 | Complete | 2026-06-08 |
+| 2. Game Loop & Turn Management | 2/2 | Complete | 2026-06-08 |
+| 3. Question System | 2/2 | Complete | 2026-06-08 |
+| 4. Scoring & Win Condition | 2/2 | Complete | 2026-06-08 |
+| 5. State Persistence | 2/2 | Complete | 2026-06-08 |
+| 6. Question Pack Structure | 3/3 | Complete | 2026-06-08 |
+| 7. Question Generator Web App | 4/4 | Complete | 2026-06-08 |
+| 8. Game Configuration | 4/4 | Complete | 2026-06-08 |
+| 9. Mobile Web Export | 0/4 | Not started | - |
+| 10. Netlify Deployment | 0/6 | Not started | - |
+| 11. PWA Manifest | 0/3 | Not started | - |
 
 ---
 
 *Roadmap created: 2026-06-08*
 *v1.0 shipped: 2026-06-08*
 *v2.0 shipped: 2026-06-08*
+*v3.0 milestone started: 2026-06-09*
