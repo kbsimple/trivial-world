@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { platformStorage } from '../services/platformStorage';
 import { GamePhase, GameState, VALID_TRANSITIONS } from '../types/game';
 import { PlayerColor } from '../constants/categories';
 import { Question } from '../types/question';
@@ -39,7 +39,7 @@ interface GameStore extends GameState {
 /**
  * Game store
  * Manages game phase, current player, and question state
- * Persisted to AsyncStorage for session resume
+ * Persisted via platformStorage (AsyncStorage mobile, sessionStorage web)
  *
  * Per QSTN-02/03: Uses questionStore for category-based selection
  * Per QSTN-03: Marks questions as asked to avoid repeats
@@ -246,7 +246,7 @@ export const useGameStore = create<GameStore>()(
     }),
     {
       name: 'trivial-world-game',
-      storage: createJSONStorage(() => AsyncStorage),
+      storage: createJSONStorage(() => platformStorage),
       // Persist active pack for session resume
       partialize: (state) => ({
         activePackId: state.activePackId,
