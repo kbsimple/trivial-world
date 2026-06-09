@@ -37,13 +37,24 @@ export async function fetchPackIndex(): Promise<PackIndexEntry[]> {
     const data: PackIndexResponse = await response.json();
 
     // Validate each pack entry with Zod
+    // IN-02: Track invalid entries for debugging
     const validPacks: PackIndexEntry[] = [];
+    const invalidPacks: { pack: unknown; error: string }[] = [];
+
     for (const pack of data.packs) {
       const result = PackIndexEntrySchema.safeParse(pack);
       if (result.success) {
         validPacks.push(result.data);
       } else {
-        console.warn(`Invalid pack entry: ${result.error.message}`);
+        invalidPacks.push({ pack, error: result.error.message });
+      }
+    }
+
+    if (invalidPacks.length > 0) {
+      console.warn(`${invalidPacks.length} invalid pack entries skipped`);
+      // Log details for debugging
+      for (const { pack, error } of invalidPacks) {
+        console.warn(`Invalid pack entry: ${error}`, pack);
       }
     }
 
