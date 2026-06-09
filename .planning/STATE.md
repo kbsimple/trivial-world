@@ -2,17 +2,17 @@
 gsd_state_version: 1.0
 milestone: v3.0
 milestone_name: Web Deployment
-status: executing
+status: ready
 stopped_at: null
-last_updated: "2026-06-09T18:21:35.000Z"
-last_activity: 2026-06-09 — Phase 9 Plan 5 complete (Web Export Verification)
-resume_file: .planning/phases/09-mobile-web-export/09-05-SUMMARY.md
+last_updated: "2026-06-09T18:35:00.000Z"
+last_activity: 2026-06-09 — Phase 9 complete, ready for Phase 10
+resume_file: null
 progress:
   total_phases: 3
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 5
   completed_plans: 5
-  percent: 100
+  percent: 33
 ---
 
 # Project State
@@ -26,21 +26,21 @@ See: .planning/PROJECT.md (updated 2026-06-09)
 
 ## Current Position
 
-Phase: 9 (Mobile Web Export)
-Plan: 09-05 complete
-Status: Executing
-Last activity: 2026-06-09 — Plan 09-05 complete (Web Export Verification)
+Phase: 10 (Netlify Deployment)
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-06-09 — Phase 9 complete (Mobile Web Export)
 
-Progress: [##########] 100%
+Progress: [####      ] 33%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 33
+- Total plans completed: 35
 - v1.0: 10 plans (~65 min execution)
 - v2.0: 11 plans (~48 hours)
-- v3.0: 5 plans (~14 min execution)
-- Total execution time: ~213 minutes
+- v3.0: 5 plans (~18 min execution)
+- Total execution time: ~219 minutes
 
 **By Phase:**
 
@@ -54,7 +54,7 @@ Progress: [##########] 100%
 | 6. Question Pack Structure | 3 | ~30 min |
 | 7. Question Generator Web App | 4 | ~32 min |
 | 8. Game Configuration | 4 | ~30 min |
-| 9. Mobile Web Export | 5 | ~18 min (complete) |
+| 9. Mobile Web Export | 5 | ~18 min |
 
 ## Accumulated Context
 
@@ -78,19 +78,23 @@ Progress: [##########] 100%
 - Built-in default pack with 120 questions
 - Semver version comparison for pack updates
 
-**v3.0 In Progress:**
+**v3.0 Completed (2026-06-09):**
 - D-01: AI generation stays dev-only (Ollama local)
 - D-02: Game storage is session-only (no IndexedDB)
 - D-03: Two separate Netlify sites (game + generator)
-- D-07: Question provider abstraction (bundled web, WatermelonDB mobile)
+- D-04/D-06: Platform storage adapter (AsyncStorage mobile, sessionStorage web)
+- D-07: Question provider abstraction (WatermelonDB mobile, bundled questions web)
 - D-08: Bundled default pack questions for web
 - D-09: Web skips pack selection (uses bundled default)
 - D-10: Haptics no-op on web (no vibration API fallback)
-- D-04/D-06: Platform storage adapter (AsyncStorage mobile, sessionStorage web)
+- D-11: Screen orientation mobile-only (web-agnostic)
+- Expo static export for web (dist/ folder)
+- Tamagui with disabled static extraction for web builds
+- Metro resolver config to mock SQLite adapter for web
 
 ### Pending Todos
 
-None — continue Phase 9 execution.
+None — ready to plan Phase 10.
 
 ### Blockers/Concerns
 
@@ -107,10 +111,10 @@ Items acknowledged and carried forward for future milestones:
 | Multi-Provider AI | OpenAI, Anthropic, Google Gemini support | Deferred | Phase 7 (future) |
 | Time Limits | Per-question countdown timers | Deferred | Phase 8 (D-04) |
 | Game Variants | Short game, custom win conditions | Deferred | Phase 8 (D-07) |
-| Offline Web | IndexedDB persistence for web game | Deferred | v3.0 (D-02) |
+| Offline Web | IndexedDB persistence for web game | Deferred | v4.0 |
 
 ## Session Continuity
 
-Last session: 2026-06-09T18:21:35Z
+Last session: 2026-06-09T18:35:00Z
 Stopped at: null
-Resume file: .planning/phases/09-mobile-web-export/09-05-SUMMARY.md
+Resume file: null
