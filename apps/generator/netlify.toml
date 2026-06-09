@@ -1,0 +1,20 @@
+# Netlify configuration for the Generator app (Next.js static export)
+# This file is only used when deploying the generator site.
+
+[build]
+  command = "pnpm install && pnpm build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Next.js plugin for static export
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"

@@ -2,12 +2,16 @@
 # Two sites: trivial-world-game and trivial-world-generator
 #
 # Setup in Netlify UI:
-#   - Game site: Publish directory = apps/mobile/dist
-#   - Generator site: Publish directory = apps/generator/out
+#   - Game site (trivial-world.netlify.app): Publish directory = apps/mobile/dist
+#   - Generator site (trivial-world-generator.netlify.app): Publish directory = apps/generator/out
 #
 # IMPORTANT: Both apps use static export (not Next.js runtime)
 # - Generator: Next.js static export (output: 'export')
 # - Mobile: Expo web export
+#
+# NOTE: The Next.js plugin is NOT included here because the game site uses Expo.
+# If the generator site needs the Next.js plugin, create a separate netlify.toml
+# in apps/generator/ with the plugin configuration.
 
 [build]
   # Build both apps with Turborepo
@@ -17,10 +21,6 @@
 [build.environment]
   # Node version for build (20 LTS)
   NODE_VERSION = "20"
-
-# Next.js plugin for static export detection
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
 # Production context (main branch)
 [context.production]
