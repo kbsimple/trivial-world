@@ -172,7 +172,7 @@ export const useGameStore = create<GameStore>()(
       transitionTo: (newPhase: GamePhase) => {
         const current = get().phase;
         if (!VALID_TRANSITIONS[current].includes(newPhase)) {
-          console.error(`Invalid transition: ${current} -> {newPhase}`);
+          console.error(`Invalid transition: ${current} -> ${newPhase}`);
           return;
         }
         set({ phase: newPhase });
