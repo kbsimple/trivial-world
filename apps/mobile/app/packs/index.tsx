@@ -9,6 +9,7 @@ import { DownloadProgress } from '../../components/DownloadProgress';
 import { CategoryFilter } from '../../components/CategoryFilter';
 import { DifficultyFilter } from '../../components/DifficultyFilter';
 import { Category, Difficulty, PackIndexEntry } from '@trivial-world/types';
+import { hasUpdateAvailable } from '../../utils/versionCompare';
 
 /**
  * Pack selection screen
@@ -44,6 +45,8 @@ export default function PackSelectionScreen() {
   // Local state
   const [selectedPack, setSelectedPack] = useState<PackIndexEntry | null>(null);
   const [modalVisible, setModalVisible] = useState(false);
+  // D-14: Downloaded pack versions for semver comparison
+  const [downloadedPackVersions, setDownloadedPackVersions] = useState<Record<string, string>>({});
 
   // Fetch available packs on mount
   useEffect(() => {
@@ -55,6 +58,30 @@ export default function PackSelectionScreen() {
     // Refresh downloaded packs from database
     refreshDownloadedPacks();
   }, []);
+
+  // Load downloaded pack versions from WatermelonDB (D-14)
+  useEffect(() => {
+    const loadDownloadedVersions = async () => {
+      if (downloadedPackIds.length === 0) {
+        setDownloadedPackVersions({});
+        return;
+      }
+
+      try {
+        const { database } = await import('../../database');
+        const packs = await database.get('question_packs').query().fetch();
+        const versions: Record<string, string> = {};
+        for (const pack of packs) {
+          const p = pack as any;
+          versions[p.packId] = p.version;
+        }
+        setDownloadedPackVersions(versions);
+      } catch (error) {
+        console.error('Error loading downloaded versions:', error);
+      }
+    };
+    loadDownloadedVersions();
+  }, [downloadedPackIds]);
 
   // Show download error alert (D-11)
   useEffect(() => {
@@ -127,14 +154,22 @@ export default function PackSelectionScreen() {
     setEnabledDifficulties(null); // null = all
   };
 
-  // Check if pack has update available (D-13/D-14)
-  // Stub function - semver comparison implemented in 08-03 Plan Task 7
-  // The actual implementation loads downloaded versions from WatermelonDB
-  // and uses utils/versionCompare.ts for semver comparison
-  const hasUpdateAvailable = (pack: PackIndexEntry): boolean => {
-    // Placeholder - returns false until version comparison is implemented
-    // 08-03 Plan Task 7 completes this implementation
-    return false;
+  // Check if pack has update available (D-13, D-14)
+  // Uses semver comparison between pack index version and downloaded version
+  const checkHasUpdateAvailable = (pack: PackIndexEntry): boolean => {
+    // If pack is not downloaded, no update available
+    if (!downloadedPackIds.includes(pack.id)) {
+      return false;
+    }
+
+    // Get downloaded version from loaded versions
+    const downloadedVersion = downloadedPackVersions[pack.id];
+    if (!downloadedVersion) {
+      return false;
+    }
+
+    // Use semver comparison (D-14)
+    return hasUpdateAvailable(pack.version, downloadedVersion);
   };
 
   if (isLoading) {
@@ -186,7 +221,7 @@ export default function PackSelectionScreen() {
           <PackCard
             pack={item}
             isDownloaded={downloadedPackIds.includes(item.id)}
-            hasUpdate={hasUpdateAvailable(item)}
+            hasUpdate={checkHasUpdateAvailable(item)}
             isActive={activePackId === item.id}
             onPress={() => handlePackPress(item)}
             onSelect={
