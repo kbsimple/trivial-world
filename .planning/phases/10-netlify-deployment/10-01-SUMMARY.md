@@ -142,15 +142,23 @@ Each task was committed atomically:
 **4. [Rule 3 - Blocking] Netlify Next.js plugin incompatible with static export**
 - **Found during:** Netlify build (Wave 2 checkpoint)
 - **Issue:** Netlify auto-detected `@netlify/plugin-nextjs` which is incompatible with Next.js static exports. Both apps use static export (generator: `output: 'export'`, mobile: Expo web export). The plugin caused build failure with error: "Your publish directory was not found at: apps/mobile/dist"
-- **Fix:** Added `[[plugins]]` section to netlify.toml with `skip = true` to disable the Next.js runtime plugin
+- **Fix:** Added `[[plugins]]` section to netlify.toml to declare the Next.js plugin without invalid inputs
 - **Files modified:** netlify.toml
 - **Verification:** Push triggered new build
-- **Committed in:** `3ab4f2e`
+- **Committed in:** `0bf8798`
+
+**5. [Rule 3 - Blocking] Metro bundler cannot resolve @tamagui/core**
+- **Found during:** Netlify build (after plugin fix)
+- **Issue:** Metro bundler (Expo) couldn't resolve `@tamagui/core` from hoisted node_modules in pnpm workspaces. Tamagui's static extraction process requires `@tamagui/core` and `@tamagui/static` as direct dependencies to properly process tokens and themes.
+- **Fix:** Added `@tamagui/core` and `@tamagui/static` as direct dependencies in `apps/mobile/package.json`
+- **Files modified:** apps/mobile/package.json, pnpm-lock.yaml
+- **Verification:** Local build succeeds with `pnpm build`
+- **Committed in:** `43ccc83`
 
 ---
 
-**Total deviations:** 4 auto-fixed (3 blocking, 1 critical)
-**Impact on plan:** All auto-fixes essential for deployment correctness. Mobile build script is required for Netlify to build both apps. Next.js plugin skip is required for static exports. No scope creep.
+**Total deviations:** 5 auto-fixed (3 blocking, 2 critical)
+**Impact on plan:** All auto-fixes essential for deployment correctness. Mobile build script is required for Netlify to build both apps. Next.js plugin fix required for static exports. Tamagui dependencies required for Metro bundler. No scope creep.
 
 ## Issues Encountered
 
