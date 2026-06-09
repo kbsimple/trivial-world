@@ -4,6 +4,10 @@
  * Per D-11: Single-question focus review UI
  * Per D-12: Full edit capability for question text, answer, difficulty
  * Per D-13: Three actions - Approve, Edit, Reject
+ *
+ * Security note (WR-04): Question text and answer are rendered directly.
+ * React's default escaping provides XSS protection. LLM-generated content
+ * is considered trusted input for display purposes.
  */
 
 'use client';
