@@ -128,13 +128,9 @@ describe('evaluatePassResult', () => {
       expect(evaluatePassResult('This is not accurate.')).toBe(false);
     });
 
-    // BUG: "incorrect" contains "correct" as a substring, so this incorrectly returns true
-    // The implementation only checks for "not accurate" exclusion, not "incorrect" or "not correct"
-    it('POTENTIAL BUG: "incorrect" incorrectly returns true due to substring match', () => {
-      // This test documents the current buggy behavior
-      // Expected: false (it's a negative response)
-      // Actual: true (because "incorrect" includes "correct")
-      expect(evaluatePassResult('This is incorrect.')).toBe(true);
+    it('returns false when response contains "incorrect"', () => {
+      // Fixed: now properly excludes "incorrect" from matching "correct"
+      expect(evaluatePassResult('This is incorrect.')).toBe(false);
     });
 
     it('returns false when response contains "false"', () => {
@@ -146,8 +142,8 @@ describe('evaluatePassResult', () => {
     });
 
     it('returns false when response contains "not correct"', () => {
-      // BUG: This also incorrectly returns true due to "correct" substring match
-      expect(evaluatePassResult('This is not correct.')).toBe(true);
+      // Fixed: now properly excludes "not correct" from matching "correct"
+      expect(evaluatePassResult('This is not correct.')).toBe(false);
     });
   });
 
@@ -178,25 +174,29 @@ describe('evaluatePassResult', () => {
     });
   });
 
-  describe('documented bugs in implementation', () => {
-    // These tests document known issues with evaluatePassResult
-    // The function only checks for "not accurate" but not "incorrect" or "not correct"
+  describe('fixed bugs in implementation', () => {
+    // These tests verify that previously buggy behavior is now fixed
 
-    it('BUG: "incorrect" matches because it contains "correct" substring', () => {
-      // Expected behavior: should return false
-      // Actual behavior: returns true (bug)
-      expect(evaluatePassResult('incorrect')).toBe(true);
+    it('FIXED: "incorrect" no longer matches "correct" substring', () => {
+      // Previously: returned true (bug) because "incorrect" contains "correct"
+      // Now: returns false (correct) - properly excludes negations
+      expect(evaluatePassResult('incorrect')).toBe(false);
     });
 
-    it('BUG: "not correct" matches because "correct" substring exists', () => {
-      // Expected behavior: should return false
-      // Actual behavior: returns true (bug)
-      expect(evaluatePassResult('This is not correct.')).toBe(true);
+    it('FIXED: "not correct" no longer matches "correct" substring', () => {
+      // Previously: returned true (bug)
+      // Now: returns false (correct) - properly excludes "not correct"
+      expect(evaluatePassResult('This is not correct.')).toBe(false);
     });
 
-    it('correctly handles "not accurate" (this works)', () => {
-      // This is the only negative form properly handled
+    it('correctly handles "not accurate"', () => {
       expect(evaluatePassResult('This is not accurate.')).toBe(false);
+    });
+
+    it('FIXED: "not true" no longer matches "true" substring', () => {
+      // Previously: returned true (bug)
+      // Now: returns false (correct) - properly excludes "not true"
+      expect(evaluatePassResult('This is not true.')).toBe(false);
     });
   });
 

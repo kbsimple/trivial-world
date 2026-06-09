@@ -87,10 +87,15 @@ export interface ConfidenceScore {
 export function evaluatePassResult(response: string): boolean {
   const lowerResponse = response.toLowerCase();
   // Look for clear affirmative indicators
-  // Per D-07: 'correct', 'true', 'yes', or 'accurate' (without 'not')
+  // Per D-07: 'correct', 'true', 'yes', or 'accurate' (without negations)
+  // Must exclude negations like "incorrect", "not correct", "not true", "false"
   return (
-    lowerResponse.includes('correct') ||
-    lowerResponse.includes('true') ||
+    (lowerResponse.includes('correct') &&
+      !lowerResponse.includes('incorrect') &&
+      !lowerResponse.includes('not correct')) ||
+    (lowerResponse.includes('true') &&
+      !lowerResponse.includes('not true') &&
+      !lowerResponse.includes('false')) ||
     lowerResponse.includes('yes') ||
     (lowerResponse.includes('accurate') && !lowerResponse.includes('not accurate'))
   );
