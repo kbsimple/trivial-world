@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Platform } from 'react-native';
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { TamaguiProvider, Theme } from 'tamagui';
@@ -13,25 +14,35 @@ import { createDatabase, initializeDatabase, schema, migrations } from '../datab
  * - TamaguiProvider: Provides Tamagui theme and tokens
  * - Theme: Dark theme default (D-18)
  * - Database initialization: Seeds default pack on first launch (D-02)
+ *   - Mobile: WatermelonDB with pack downloads (D-07)
+ *   - Web: Skipped - uses bundled questions only (D-08)
  */
 
-// Create database adapter and instance
-const adapter = new SQLiteAdapter({
-  schema,
-  migrations,
-  jsi: true, // Use JSI for better performance
-  onSetUpError: (error: Error) => {
-    console.error('Database setup failed:', error);
-  },
-});
+// Create database adapter and instance (mobile only per D-07)
+const adapter = Platform.OS !== 'web'
+  ? new SQLiteAdapter({
+      schema,
+      migrations,
+      jsi: true, // Use JSI for better performance
+      onSetUpError: (error: Error) => {
+        console.error('Database setup failed:', error);
+      },
+    })
+  : null;
 
-export const database = createDatabase(adapter);
+export const database = Platform.OS !== 'web' ? createDatabase(adapter!) : null;
 
 export default function RootLayout() {
   const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    // Initialize database and seed default pack (D-02)
+    if (Platform.OS === 'web') {
+      // Web doesn't use database - bundled questions only (D-07)
+      setIsInitialized(true);
+      return;
+    }
+
+    // Mobile: Initialize database and seed default pack (D-02)
     initializeDatabase()
       .then(() => {
         setIsInitialized(true);
