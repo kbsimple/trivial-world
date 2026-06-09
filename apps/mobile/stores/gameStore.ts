@@ -174,10 +174,14 @@ export const useGameStore = create<GameStore>()(
         // Reset for next question
         set({ answerRevealed: false });
 
-        // Trigger next turn after delay for visual feedback
-        setTimeout(() => {
-          get().nextTurn();
-        }, 500);
+        // WR-02: Guard against race conditions in setTimeout
+        if (!transitionPending) {
+          transitionPending = true;
+          setTimeout(() => {
+            transitionPending = false;
+            get().nextTurn();
+          }, 500);
+        }
       },
 
       transitionTo: (newPhase: GamePhase) => {
