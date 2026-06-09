@@ -161,9 +161,9 @@ Plans:
 **UI hint**: yes
 
 Plans:
-- [ ] 08-01: Pack selection and download
-- [ ] 08-02: Game settings UI
-- [ ] 08-03: Category filtering and pack details
+- [ ] 08-01-PLAN.md — Pack state management, download service, checksum verification (Wave 1)
+- [ ] 08-02-PLAN.md — Pack selection UI, pack details modal, category/difficulty filters (Wave 2)
+- [ ] 08-03-PLAN.md — Home screen integration, game flow, WatermelonDB queries (Wave 3)
 
 ## Progress
 
