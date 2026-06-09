@@ -9,8 +9,11 @@ import { usePlayerStore } from './playerStore';
 import { usePackStore } from './packStore';
 import { Player } from '../types/player';
 
-// WR-02: Guard against race conditions in markAnswer setTimeout
-let transitionPending = false;
+// IN-02: Default category for first question (Phase 2 integration pending)
+const DEFAULT_CATEGORY: PlayerColor = 'blue';
+
+// WR-03: Store timeout ID for cleanup in markAnswer
+let nextTurnTimeout: ReturnType<typeof setTimeout> | null = null;
 
 interface GameStore extends GameState {
   /** Current question being displayed */
@@ -70,13 +73,13 @@ export const useGameStore = create<GameStore>()(
         // Reset wedges for new game (SCOR-01)
         usePlayerStore.getState().resetWedges();
 
-        // Select first question (default category 'blue' for now)
-        const question = await useQuestionStore.getState().selectQuestion('blue');
+        // Select first question (IN-02: uses DEFAULT_CATEGORY constant)
+        const question = await useQuestionStore.getState().selectQuestion(DEFAULT_CATEGORY);
 
         set({
           phase: 'rolling',
           currentQuestion: question,
-          currentCategory: question?.category ?? 'blue',
+          currentCategory: question?.category ?? DEFAULT_CATEGORY,
           currentPlayerIndex: 0,
           questionNumber: 1,
           answerRevealed: false,
@@ -106,8 +109,8 @@ export const useGameStore = create<GameStore>()(
         const nextIndex = (get().currentPlayerIndex + 1) % players.length;
 
         // Category from board position (Phase 4 integration)
-        // For now, use current category or default
-        const category = get().currentCategory || 'blue';
+        // For now, use current category or default (IN-02)
+        const category = get().currentCategory || DEFAULT_CATEGORY;
         const question = await selectQuestion(category);
 
         set({
@@ -118,7 +121,8 @@ export const useGameStore = create<GameStore>()(
           currentCategory: question?.category ?? category,
           phase: 'rolling',
           questionNumber: get().questionNumber + 1,
-          isCenterQuestion: false, // Reset center question flag
+          // IN-01: Reset center question flag for normal turn (was set by board position logic)
+          isCenterQuestion: false,
         });
       },
 
@@ -174,14 +178,15 @@ export const useGameStore = create<GameStore>()(
         // Reset for next question
         set({ answerRevealed: false });
 
-        // WR-02: Guard against race conditions in setTimeout
-        if (!transitionPending) {
-          transitionPending = true;
-          setTimeout(() => {
-            transitionPending = false;
-            get().nextTurn();
-          }, 500);
+        // WR-03: Clear any pending timeout before scheduling new one
+        if (nextTurnTimeout) {
+          clearTimeout(nextTurnTimeout);
         }
+
+        // Trigger next turn after delay for visual feedback
+        nextTurnTimeout = setTimeout(() => {
+          get().nextTurn();
+        }, 500);
       },
 
       transitionTo: (newPhase: GamePhase) => {
