@@ -4,15 +4,15 @@ milestone: v3.0
 milestone_name: Web Deployment
 status: executing
 stopped_at: null
-last_updated: "2026-06-09T18:05:00.000Z"
-last_activity: 2026-06-09 — Phase 9 Plan 2 complete (Store Platform Storage)
-resume_file: .planning/phases/09-mobile-web-export/09-03-PLAN.md
+last_updated: "2026-06-09T18:10:00.000Z"
+last_activity: 2026-06-09 — Phase 9 Plan 3 complete (Question Provider)
+resume_file: .planning/phases/09-mobile-web-export/09-04-PLAN.md
 progress:
   total_phases: 3
   completed_phases: 0
   total_plans: 5
-  completed_plans: 2
-  percent: 40
+  completed_plans: 3
+  percent: 60
 ---
 
 # Project State
@@ -27,9 +27,9 @@ See: .planning/PROJECT.md (updated 2026-06-09)
 ## Current Position
 
 Phase: 9 (Mobile Web Export)
-Plan: 09-02 complete, next: 09-03
+Plan: 09-03 complete, next: 09-04
 Status: Executing
-Last activity: 2026-06-09 — Plan 09-02 complete (Store Platform Storage)
+Last activity: 2026-06-09 — Plan 09-03 complete (Question Provider)
 
 Progress: [########  ] 40%
 
@@ -54,7 +54,7 @@ Progress: [########  ] 40%
 | 6. Question Pack Structure | 3 | ~30 min |
 | 7. Question Generator Web App | 4 | ~32 min |
 | 8. Game Configuration | 4 | ~30 min |
-| 9. Mobile Web Export | 2 | ~6 min (in progress) |
+| 9. Mobile Web Export | 3 | ~11 min (in progress) |
 
 ## Accumulated Context
 
@@ -82,6 +82,8 @@ Progress: [########  ] 40%
 - D-01: AI generation stays dev-only (Ollama local)
 - D-02: Game storage is session-only (no IndexedDB)
 - D-03: Two separate Netlify sites (game + generator)
+- D-07: Question provider abstraction (bundled web, WatermelonDB mobile)
+- D-08: Bundled default pack questions for web
 - D-10: Haptics no-op on web (no vibration API fallback)
 - D-04/D-06: Platform storage adapter (AsyncStorage mobile, sessionStorage web)
 
@@ -108,6 +110,6 @@ Items acknowledged and carried forward for future milestones:
 
 ## Session Continuity
 
-Last session: 2026-06-09T17:58:00Z
+Last session: 2026-06-09T18:10:00Z
 Stopped at: null
-Resume file: .planning/phases/09-mobile-web-export/09-02-PLAN.md
+Resume file: .planning/phases/09-mobile-web-export/09-04-PLAN.md
