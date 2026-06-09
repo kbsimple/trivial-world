@@ -1,7 +1,7 @@
 # Stack Research
 
-**Domain:** Mobile trivia game with offline-first capability + Question Pack System
-**Researched:** 2026-06-08
+**Domain:** Mobile trivia game with offline-first capability + Question Pack System + Web Deployment
+**Researched:** 2026-06-09 (web deployment additions)
 **Confidence:** HIGH
 
 ---
@@ -14,17 +14,17 @@ The following stack is already implemented for the core mobile trivia game.
 
 | Technology | Version | Purpose | Why Recommended |
 |------------|---------|---------|-----------------|
-| **Expo SDK** | 55.x | Mobile app framework | Best DX for React Native; managed workflow simplifies iOS/Android deployment; built-in OTA updates via EAS; SDK 55 includes React Native 0.83 with New Architecture mandatory (better performance). Offline-capable out of the box. |
-| **React Native** | 0.83 (via Expo 55) | Cross-platform mobile runtime | Industry standard for cross-platform mobile; excellent gesture/animation support; large ecosystem. Hermes V1 default in RN 0.84+ but SDK 55 ships with optimized Hermes. |
+| **Expo SDK** | 56.x | Mobile app framework | Best DX for React Native; managed workflow simplifies iOS/Android/web deployment; SDK 56 includes React Native 0.85 with New Architecture mandatory (better performance). Offline-capable out of the box. |
+| **React Native** | 0.85 (via Expo 56) | Cross-platform mobile runtime | Industry standard for cross-platform mobile; excellent gesture/animation support; large ecosystem. Hermes V1 default. |
 | **TypeScript** | 5.x | Type safety | Required by Tamagui; catches bugs at compile time; excellent IDE support; essential for game state logic. |
-| **Expo Router** | 4.x (bundled with SDK 55) | File-based navigation | Automatic deep linking; type-safe routes; universal (iOS/Android/Web); integrates with New Architecture. Simplifies game flow navigation. |
+| **Expo Router** | 4.x (bundled with SDK 56) | File-based navigation | Automatic deep linking; type-safe routes; universal (iOS/Android/Web); integrates with New Architecture. Simplifies game flow navigation. |
 
 ### Database & Offline-First
 
 | Technology | Version | Purpose | Why Recommended |
 |------------|---------|---------|-----------------|
 | **WatermelonDB** | 0.28.x | Offline-first database | Purpose-built for offline-first; lazy loading (only queried records in memory); observable queries for reactive UI; sync protocol for future cloud backup; scales to 50k+ records without performance degradation. Excellent for storing questions locally. |
-| **expo-sqlite** | ~55.0.0 | SQLite adapter (bundled) | Powers WatermelonDB on native; also available as standalone key-value store for simple settings. Part of Expo SDK, no extra installation. |
+| **expo-sqlite** | ~56.0.0 | SQLite adapter (bundled) | Powers WatermelonDB on native; also available as standalone key-value store for simple settings. Part of Expo SDK, no extra installation. |
 
 ### State Management
 
@@ -37,22 +37,22 @@ The following stack is already implemented for the core mobile trivia game.
 | Technology | Version | Purpose | Why Recommended |
 |------------|---------|---------|-----------------|
 | **Tamagui** | 2.x | UI component library | Best performance (compiler extracts static styles at build time); includes 80+ components (Button, Sheet, Dialog, etc.); universal (web + native); token-based theming perfect for game UI. Smaller bundle than alternatives. |
-| **react-native-reanimated** | 4.x | Animations | Runs on UI thread (no JS bridge overhead); 60fps guaranteed; works with Gesture Handler for dice roll interactions; Layout animations for score updates. Industry standard. |
+| **react-native-reanimated** | 3.x | Animations | Runs on UI thread (no JS bridge overhead); 60fps guaranteed; works with Gesture Handler for dice roll interactions; Layout animations for score updates. Industry standard. |
 | **react-native-gesture-handler** | 2.x | Touch gestures | Required for dice roll swipe/tap; native gesture recognition; integrates with Reanimated for smooth 60fps animations. |
 
 ### Audio
 
 | Technology | Version | Purpose | Why Recommended |
 |------------|---------|---------|-----------------|
-| **expo-av** | ~55.0.0 | Sound effects | Official Expo audio; simple API for dice roll sounds, correct/incorrect answer sounds; preloading supported; works in Expo Go. Bundled with SDK 55. |
+| **expo-av** | ~56.0.0 | Sound effects | Official Expo audio; simple API for dice roll sounds, correct/incorrect answer sounds; preloading supported; works in Expo Go. Bundled with SDK 56. |
 
 ### Supporting Libraries (Mobile)
 
 | Library | Version | Purpose | When to Use |
 |---------|---------|---------|-------------|
-| **@react-native-async-storage/async-storage** | 1.x | Key-value storage | Zustand persist middleware; simple settings (sound on/off). |
-| **expo-haptics** | ~55.0.0 | Haptic feedback | Dice roll vibration; correct/incorrect answer feedback; enhances in-person social gameplay. Bundled with Expo SDK. |
-| **expo-screen-orientation** | ~55.0.0 | Lock orientation | Lock to portrait for consistent game conductor experience. Bundled with Expo SDK. |
+| **@react-native-async-storage/async-storage** | 2.x | Key-value storage | Zustand persist middleware; simple settings (sound on/off). |
+| **expo-haptics** | ~56.0.0 | Haptic feedback | Dice roll vibration; correct/incorrect answer feedback; enhances in-person social gameplay. Bundled with Expo SDK. |
+| **expo-screen-orientation** | ~56.0.0 | Lock orientation | Lock to portrait for consistent game conductor experience. Bundled with Expo SDK. |
 
 ### Development Tools
 
@@ -65,7 +65,7 @@ The following stack is already implemented for the core mobile trivia game.
 ## Installation (Mobile App)
 
 ```bash
-# Create project with Expo SDK 55
+# Create project with Expo SDK 56
 npx create-expo-app@latest trivial-world --template blank-typescript
 
 # Core dependencies
@@ -107,7 +107,7 @@ module.exports = function (api) {
 
 | Recommended | Alternative | When to Use Alternative |
 |-------------|-------------|-------------------------|
-| **Expo SDK 55** | React Native CLI | Only if you need native modules not supported by Expo (rare). Expo now has excellent native module support via config plugins. |
+| **Expo SDK 56** | React Native CLI | Only if you need native modules not supported by Expo (rare). Expo now has excellent native module support via config plugins. |
 | **WatermelonDB** | expo-sqlite direct | Only if data model is extremely simple (<5 tables) and you don't need sync. WatermelonDB handles complexity well. |
 | **Zustand** | Jotai | Only if state is highly derived/atomic (like canvas-based games). For game state (scores, turns), Zustand's store model is more intuitive. |
 | **Tamagui** | NativeWind | If team already knows Tailwind CSS and wants zero learning curve. Tamagui's component library and compiler optimization make it better for game UI. |
@@ -124,362 +124,303 @@ module.exports = function (api) {
 
 ---
 
-## Part 2: Question Pack System (NEW)
+## Part 2: Question Pack System (Existing)
 
 The following additions are needed for the question pack milestone: question pack data structure, AI question generation web app, and cloud storage for pack sync.
 
-### Core Technologies (NEW)
+### Core Technologies (Question Pack)
 
 | Technology | Version | Purpose | Why Recommended |
 |------------|---------|---------|-----------------|
-| **Zod** | 4.4.x | Schema validation for question packs | TypeScript-first; shared types between mobile and web; JSON Schema export for API contracts; Zod 4 has 14x faster parsing and 2.3x smaller bundle than Zod 3. |
+| **Zod** | 4.x | Schema validation for question packs | TypeScript-first; shared types between mobile and web; JSON Schema export for API contracts; Zod 4 has 14x faster parsing and 2.3x smaller bundle than Zod 3. |
 | **Vercel AI SDK** | 6.0.x | LLM abstraction layer | Provider-agnostic (switch between OpenAI/Anthropic); built-in structured output with Zod; streaming support; best DX for AI features. |
 | **@ai-sdk/openai** | 3.0.x | OpenAI provider for AI SDK | Direct integration with Vercel AI SDK; GPT-4o access; provider can be swapped with one import change. |
 | **Next.js** | 16.x | Question generator web app | App Router with Server Actions for secure LLM calls; deployed separately from mobile app; Edge runtime for AI SDK streaming. |
 | **Supabase JS SDK** | 2.108.x | Cloud backend for question packs | Postgres for pack metadata; Storage for JSON pack files; works with Expo Go without config plugins; relational model fits pack/category/question hierarchy. |
 
-### Supporting Libraries (NEW)
+### Supporting Libraries (Question Pack)
 
 | Library | Version | Purpose | When to Use |
 |---------|---------|---------|-------------|
-| **expo-file-system** | 55.0.x | Local pack storage | Mobile app: download packs to device, cache management, store JSON files locally. |
+| **expo-file-system** | 56.0.x | Local pack storage | Mobile app: download packs to device, cache management, store JSON files locally. |
 | **react-native-url-polyfill** | 2.0.x | URL polyfill for Supabase | Mobile app: required for Supabase client in React Native environment. |
 | **@ai-sdk/anthropic** | (optional) | Anthropic provider alternative | Optional: swap providers by changing one import if preferring Claude. |
 
-### Development Dependencies (NEW)
+---
 
-| Tool | Purpose | Notes |
-|------|---------|-------|
-| TypeScript 5.x | Type safety | Already in project; Zod 4 has excellent TS inference. |
+## Part 3: Web Deployment (NEW)
 
-## Integration Points
+The following additions are needed for web deployment of both mobile app and generator app to Netlify.
 
-### Mobile App Integration
+### No New Runtime Dependencies
 
-**Existing Stack (Unchanged):**
-- Expo SDK 55 + React Native 0.83
-- Zustand 5.x with persist middleware
-- WatermelonDB for offline data
-- Tamagui 2.x for UI
-- Expo Router for navigation
+Web deployment requires **configuration changes only** — no new packages to install.
 
-**New Additions:**
+### Expo Web Export (Mobile App)
 
-```
-Mobile App Architecture:
+| Configuration | Setting | Purpose |
+|---------------|---------|---------|
+| `app.json` → `web.output` | `"static"` | Generate static HTML files for each route |
+| `app.json` → `web.favicon` | `"./assets/favicon.png"` | Browser tab icon (already exists) |
+| `public/manifest.json` | (new file) | PWA manifest for Add to Home Screen |
+| `public/icons/icon-192.png` | (new file) | Android home screen icon |
+| `public/icons/icon-512.png` | (new file) | Android large icon, splash screen |
 
-+---------------------------------------------------+
-|  Pack Management Layer (NEW)                      |
-|  +-----------------+  +-------------------------+ |
-|  | Zod Schema      |  | Supabase Client         | |
-|  | (shared types)  |  | (pack downloads)        | |
-|  +-----------------+  +-------------------------+ |
-|  +-----------------------------------------------+ |
-|  | expo-file-system                              | |
-|  | (local pack storage in documentDirectory)     | |
-|  +-----------------------------------------------+ |
-+---------------------------------------------------+
-```
+**Why static export:** Expo Router supports three web output modes:
+- `"single"` (default) — SPA with client-side routing, single HTML file
+- `"static"` — Pre-rendered HTML for each route, works on any static host
+- `"server"` — Node.js server for API routes
 
-### Web App Integration (NEW)
+**Recommendation:** Use `"static"` because:
+1. Netlify static hosting is free
+2. No server-side runtime needed for game app
+3. Faster CDN distribution
+4. PWA support works better with static files
 
-**New Application - Question Generator:**
+### Next.js Static Export (Generator App)
 
-```
-Web App Architecture:
+| Configuration | Setting | Purpose |
+|---------------|---------|---------|
+| `next.config.ts` → `output` | `"export"` | Already configured — static site generation |
+| `next.config.ts` → `images.unoptimized` | `true` | Already configured — required for static export |
+| `next.config.ts` → `trailingSlash` | `true` | Already configured — clean URLs without `.html` |
+| `next.config.ts` → `distDir` | `"out"` | Already configured — output directory |
 
-+---------------------------------------------------+
-|  Next.js 16 App Router                            |
-|  +-----------------------------------------------+ |
-|  | Server Actions (secure LLM calls)             | |
-|  | - generateQuestions()                        | |
-|  | - validatePack()                              | |
-|  +-----------------------------------------------+ |
-|  +-----------------------------------------------+ |
-|  | Vercel AI SDK + @ai-sdk/openai               | |
-|  | - generateObject with Zod schema              | |
-|  | - Structured question output                  | |
-|  +-----------------------------------------------+ |
-|  +-----------------------------------------------+ |
-|  | Supabase Client                               | |
-|  | - Pack CRUD operations                        | |
-|  | - Storage for pack JSON files                 | |
-|  +-----------------------------------------------+ |
-+---------------------------------------------------+
-```
+**Why static export:** Generator app needs no server-side features:
+- AI generation runs locally via Ollama (dev-only)
+- No API routes in production
+- Static site can be deployed to any CDN
 
-### Shared Code: Zod Schemas
+**Current configuration is correct** — no changes needed.
 
-**Shared between mobile and web:**
+### Turborepo Build Configuration
 
-```typescript
-// shared/schemas/question-pack.ts
-import { z } from 'zod';
+Update `turbo.json` to include web build outputs:
 
-export const QuestionSchema = z.object({
-  id: z.string().uuid(),
-  text: z.string().min(10).max(500),
-  correctAnswer: z.string(),
-  wrongAnswers: z.array(z.string()).length(3),
-  difficulty: z.enum(['easy', 'medium', 'hard']),
-  category: z.enum(['blue', 'pink', 'yellow', 'purple', 'green', 'orange']),
-  metadata: z.object({
-    source: z.string().optional(),
-    createdAt: z.string().datetime(),
-    generatedBy: z.enum(['human', 'ai']).optional(),
-  }).optional(),
-});
-
-export const QuestionPackSchema = z.object({
-  id: z.string().uuid(),
-  name: z.string().min(1).max(100),
-  description: z.string().max(500).optional(),
-  version: z.string().regex(/^\d+\.\d+\.\d+$/),
-  category: z.enum(['blue', 'pink', 'yellow', 'purple', 'green', 'orange', 'mixed']),
-  questions: z.array(QuestionSchema).min(10).max(200),
-  createdAt: z.string().datetime(),
-  updatedAt: z.string().datetime(),
-});
-
-export type Question = z.infer<typeof QuestionSchema>;
-export type QuestionPack = z.infer<typeof QuestionPackSchema>;
-```
-
-## LLM Provider Comparison
-
-### OpenAI vs Anthropic for Question Generation
-
-| Criterion | OpenAI (GPT-4o) | Anthropic (Claude) |
-|-----------|-----------------|-------------------|
-| Structured output | Native JSON mode, function calling | Tool use for JSON |
-| Cost efficiency | Moderate | Competitive with prompt caching |
-| Vercel AI SDK support | First-class | First-class |
-| Question quality | Excellent for trivia | Excellent for nuanced questions |
-| Speed | Fast (GPT-4o-mini even faster) | Comparable |
-
-**Recommendation:** Start with **OpenAI GPT-4o** via Vercel AI SDK. The AI SDK makes switching trivial:
-
-```typescript
-// Swap provider with one line change
-import { openai } from '@ai-sdk/openai';
-// import { anthropic } from '@ai-sdk/anthropic';
-
-const model = openai('gpt-4o'); // or anthropic('claude-sonnet-4')
-```
-
-## Cloud Storage Comparison
-
-### Supabase vs Firebase for Question Packs
-
-| Criterion | Supabase | Firebase |
-|-----------|----------|----------|
-| Data model | Postgres (relational) | Firestore (document) |
-| Expo Go support | Yes (JS SDK works) | No (requires dev build) |
-| Pricing predictability | Tiered ($25/mo base) | Usage-based (can spike) |
-| Offline support | Less integrated | Battle-tested |
-| Storage for files | Built-in Storage bucket | Cloud Storage |
-| Query power | Full SQL | Limited |
-
-**Recommendation:** **Supabase** for this use case because:
-1. Works in Expo Go without config plugins (Firebase requires dev build)
-2. Relational data model fits pack/category/question structure
-3. Predictable pricing for small-scale hobby project
-4. Storage buckets for JSON pack files
-
-**Integration pattern:**
-
-```typescript
-// Mobile: Download packs from Supabase Storage
-import { createClient } from '@supabase/supabase-js';
-import { File, Paths } from 'expo-file-system';
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-async function downloadPack(packId: string) {
-  // Get pack metadata from Postgres
-  const { data: pack } = await supabase
-    .from('question_packs')
-    .select('*')
-    .eq('id', packId)
-    .single();
-
-  // Download JSON file from Storage
-  const { data: file } = await supabase
-    .storage
-    .from('packs')
-    .download(pack.storage_path);
-
-  // Save to local file system
-  const localFile = new File(Paths.document, `pack-${packId}.json`);
-  await localFile.write(await file.text());
-
-  return pack;
+```json
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".expo/**", "out/**", ".next/**", "!.next/cache/**"]
+    },
+    "mobile#build": {
+      "outputs": ["dist/**"]
+    },
+    "generator#build": {
+      "outputs": ["out/**"]
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"]
+    },
+    "test": {
+      "dependsOn": ["build"]
+    },
+    "lint": {}
+  }
 }
 ```
 
-## Installation (Question Pack System)
+### Netlify Deployment Configuration
 
-```bash
-# === MOBILE APP (Expo) ===
+#### apps/mobile/netlify.toml (NEW)
 
-# Core additions
-npx expo install @supabase/supabase-js react-native-url-polyfill expo-file-system
+```toml
+[build]
+  # Build from monorepo root
+  base = ""
+  command = "pnpm turbo run build --filter=@trivial-world/mobile"
+  publish = "apps/mobile/dist"
 
-# Zod for shared schemas (if not sharing as monorepo package)
-npm install zod
+[build.environment]
+  NODE_VERSION = "20"
 
-# === WEB APP (Next.js - NEW PROJECT) ===
+# PWA headers for manifest
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Content-Type = "application/manifest+json"
 
-# Create Next.js app
-npx create-next-app@latest question-generator --typescript --tailwind --app
+# Cache static assets aggressively
+[[headers]]
+  for = "/_expo/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
-# AI SDK for LLM integration
-npm install ai @ai-sdk/openai
+# Cache images and fonts
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
-# Zod for schemas
-npm install zod
-
-# Supabase for pack storage
-npm install @supabase/supabase-js
-
-# Optional: Anthropic provider
-npm install @ai-sdk/anthropic
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 ```
 
-## Alternatives Considered (Question Pack)
+#### apps/generator/netlify.toml (NEW)
 
-| Recommended | Alternative | When to Use Alternative |
-|-------------|-------------|-------------------------|
-| Vercel AI SDK | OpenAI SDK directly | Need embeddings API, fine-tuning, or Node.js runtime (not Edge) |
-| Supabase | Firebase | Need battle-tested offline sync, building chat/collab app |
-| Next.js | Remix | Preference for progressive enhancement patterns |
-| Zod | TypeBox/Valibot | Need smaller bundle for client-heavy validation |
+```toml
+[build]
+  # Build from monorepo root
+  command = "pnpm turbo run build --filter=@trivial-world/generator"
+  publish = "apps/generator/out"
 
-## What NOT to Use (Question Pack)
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback for client-side routing (if needed)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cache static assets aggressively
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+```
+
+### PWA Manifest (apps/mobile/public/manifest.json)
+
+```json
+{
+  "name": "Trivial World",
+  "short_name": "Trivial",
+  "description": "Mobile trivia game for in-person social play",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+```
+
+### PWA Icon Requirements
+
+| Size | File | Purpose |
+|------|------|---------|
+| 192x192 | `public/icons/icon-192.png` | Android home screen icon |
+| 512x512 | `public/icons/icon-512.png` | Android large icon, splash screen |
+| 180x180 | `public/apple-touch-icon.png` | iOS home screen (optional) |
+| 32x32 | `assets/favicon.png` | Browser tab (already exists) |
+
+**Note:** PWA icons should match the existing mobile app icons for consistency.
+
+### Development Dependencies
+
+```bash
+# Install Netlify CLI for local testing (workspace root)
+pnpm add -D -w netlify-cli
+```
+
+**Why at workspace root:** Single CLI installation can be used for both apps.
+
+## What NOT to Use (Web Deployment)
 
 | Avoid | Why | Use Instead |
 |-------|-----|-------------|
-| **OpenAI Assistants API** | Deprecated, shutting down August 2026 | Vercel AI SDK agent patterns |
-| **Firebase JS SDK with Expo** | Requires config plugins, breaks Expo Go | Supabase JS SDK |
-| **Expo CloudKit** | iOS-only, no Android support | Supabase (cross-platform) |
-| **React Native Firebase** | Requires development build, native code | Supabase JS SDK |
-| **Valibot** | Smaller ecosystem, less TypeScript integration | Zod 4 |
+| **@netlify/plugin-nextjs** | Plugin designed for SSR/ISR, conflicts with static export; adds unnecessary build time | No plugin needed |
+| **Netlify Functions** | Generator is fully static in production; AI runs locally in dev | Static export only |
+| **next/image optimization** | Requires server runtime, not available in static export | `unoptimized: true` (already set) |
+| **WatermelonDB on web (session-only)** | Per PROJECT.md WEB-01: session-only storage, no IndexedDB persistence needed | Zustand without persist middleware |
+| **Zustand persist on web** | Project requirement: session-only storage for game state | Plain Zustand store |
+| **Vercel deployment** | Monorepo with two separate sites is cleaner on Netlify | Two Netlify sites from one repo |
 
-## Version Compatibility (Question Pack)
+## Storage Strategy
+
+### Mobile App (Native — Already Implemented)
+- **Packs:** WatermelonDB with SQLite adapter
+- **Game State:** Zustand with AsyncStorage persist
+
+### Mobile App (Web — Session Only)
+- **Packs:** WatermelonDB with LokiJS adapter + IndexedDB
+  - **Caveat:** [Issue #1920](https://github.com/nozbe/watermelondb/issues/1920) reports data persistence bugs (June 2025)
+  - **Mitigation:** Pack data is read-only during gameplay; load on app start
+  - **Alternative:** For session-only, could skip WatermelonDB entirely and load packs from bundled JSON
+- **Game State:** Zustand without persist (session-only per WEB-01)
+
+### Generator App (Web Only)
+- **Form State:** React Hook Form (already installed)
+- **No persistence needed** — AI generation runs locally via Ollama in development
+
+## Build Commands
+
+```bash
+# Mobile web build (from monorepo root)
+pnpm turbo run build --filter=@trivial-world/mobile
+# Output: apps/mobile/dist/
+
+# Generator web build (from monorepo root)
+pnpm turbo run build --filter=@trivial-world/generator
+# Output: apps/generator/out/
+
+# Build both apps
+pnpm build
+# Outputs: apps/mobile/dist/ and apps/generator/out/
+
+# Local preview with Netlify CLI
+npx netlify dev --filter=@trivial-world/mobile
+npx netlify dev --filter=@trivial-world/generator
+```
+
+## Netlify Site Configuration
+
+Create **two Netlify sites** pointing to the same GitHub repository:
+
+| Site Name | Base Directory | Build Command | Publish Directory |
+|-----------|---------------|---------------|-------------------|
+| trivial-world-game | (root) | `pnpm turbo run build --filter=@trivial-world/mobile` | `apps/mobile/dist` |
+| trivial-world-generator | (root) | `pnpm turbo run build --filter=@trivial-world/generator` | `apps/generator/out` |
+
+**Branch:** Deploy from `main` branch
+
+**Environment Variables:**
+- `NODE_VERSION=20` — Required for Next.js 16 and Expo SDK 56
+
+**Note:** Netlify auto-detects pnpm from `pnpm-lock.yaml` in the repo root. No additional configuration needed.
+
+## Version Compatibility
 
 | Package | Version | Compatible With | Notes |
 |---------|---------|-----------------|-------|
-| zod | 4.4.x | Vercel AI SDK 6.x | Zod 4 supported for structured output |
-| ai | 6.0.x | Next.js 16.x | Works with App Router Server Actions |
-| @ai-sdk/openai | 3.0.x | ai 6.x | Peer dependency |
-| @supabase/supabase-js | 2.108.x | expo-file-system 55.x | No conflicts, separate concerns |
-| expo-file-system | 55.0.x | Expo SDK 55 | Native module, version locked to SDK |
+| Expo SDK | 56.0.0 | React Native 0.85, React 19.2.3 | Current in project |
+| Next.js | 16.0.0 | React 19 | Current in project (16.2.7 available) |
+| Node.js | 20+ | Next.js 16, Expo SDK 56 | Netlify default, required |
+| pnpm | 9.0.0 | Turborepo 2.0 | Current in project, Netlify auto-detects |
+| Turborepo | 2.0.x | pnpm workspaces | Current in project |
 
-## Architecture for Offline-First Trivia Game
+## Verification Commands
 
-```
-+-------------------------------------------------------------+
-|                    UI Layer (Tamagui)                        |
-|  +---------------+ +---------------+ +----------------------+ |
-|  | Game Screen   | | Question Card | | Die Roll Animation   | |
-|  +---------------+ +---------------+ +----------------------+ |
-+-------------------------------------------------------------+
-                              |
-                              v
-+-------------------------------------------------------------+
-|              State Layer (Zustand)                           |
-|  +----------------------------------------------------------+|
-|  | Game Store: currentPlayer, scores, dieResult, gamePhase ||
-|  | Settings Store: soundEnabled, hapticsEnabled            ||
-|  +----------------------------------------------------------+|
-+-------------------------------------------------------------+
-                              |
-                              v
-+-------------------------------------------------------------+
-|           Data Layer (WatermelonDB)                          |
-|  +---------------+ +---------------+ +----------------------+ |
-|  | Questions     | | Participants  | | Game Sessions        | |
-|  | (6 categories)| | (players)     | | (game history)       | |
-|  +---------------+ +---------------+ +----------------------+ |
-|                     Local SQLite                              |
-+-------------------------------------------------------------+
+```bash
+# Verify mobile web build works
+cd apps/mobile && pnpm expo export --platform web
+# Check: apps/mobile/dist/index.html exists
+
+# Verify generator web build works
+cd apps/generator && pnpm next build
+# Check: apps/generator/out/index.html exists
+
+# Local Netlify preview
+npx netlify dev --filter=@trivial-world/mobile
+npx netlify dev --filter=@trivial-world/generator
 ```
 
-### Data Model (WatermelonDB Schema)
-
-```typescript
-// model/schema.ts
-import { appSchema, tableSchema } from '@nozbe/watermelondb';
-
-export const schema = appSchema({
-  version: 1,
-  tables: [
-    tableSchema({
-      name: 'questions',
-      columns: [
-        { name: 'category', type: 'string' },      // 6 categories
-        { name: 'question_text', type: 'string' },
-        { name: 'correct_answer', type: 'string' },
-        { name: 'incorrect_answers', type: 'string' }, // JSON array
-        { name: 'difficulty', type: 'string' },
-      ],
-    }),
-    tableSchema({
-      name: 'participants',
-      columns: [
-        { name: 'name', type: 'string' },
-        { name: 'color', type: 'string' },         // Player piece color
-        { name: 'game_id', type: 'string' },
-      ],
-    }),
-    tableSchema({
-      name: 'games',
-      columns: [
-        { name: 'created_at', type: 'number' },
-        { name: 'completed_at', type: 'number' },
-        { name: 'winner_id', type: 'string' },
-      ],
-    }),
-  ],
-});
-```
-
-### Zustand Store (Game State)
-
-```typescript
-// stores/gameStore.ts
-import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-interface GameState {
-  currentParticipantId: string | null;
-  dieResult: number | null;
-  gamePhase: 'setup' | 'playing' | 'gameOver';
-  // Actions
-  setDieResult: (result: number) => void;
-  rollDie: () => number;
-  nextTurn: () => void;
-}
-
-export const useGameStore = create<GameState>()(
-  persist(
-    (set) => ({
-      currentParticipantId: null,
-      dieResult: null,
-      gamePhase: 'setup',
-      setDieResult: (result) => set({ dieResult: result }),
-      rollDie: () => {
-        const result = Math.floor(Math.random() * 6) + 1;
-        set({ dieResult: result });
-        return result;
-      },
-      nextTurn: () => set({ dieResult: null }),
-    }),
-    { name: 'game-state', storage: createJSONStorage(() => AsyncStorage) }
-  )
-);
-```
+---
 
 ## Architecture Decision Records
 
@@ -534,27 +475,88 @@ export const useGameStore = create<GameState>()(
 - Can use Vercel free tier for web app
 - React Server Components for non-interactive parts
 
+### ADR-004: Two Netlify Sites from One Monorepo (Web Deployment)
+
+**Context:** Need to deploy mobile app and generator app independently from same repo.
+
+**Decision:** Create two Netlify sites, each with its own `netlify.toml` in the app directory.
+
+**Rationale:**
+1. **Independent deploys:** Changes to one app don't trigger rebuild of the other
+2. **Separate domains:** Can use different subdomains (game.trivial.world, generator.trivial.world)
+3. **Monorepo support:** Netlify's enhanced monorepo experience (2025) supports this natively
+4. **Turborepo caching:** Build filtering (`--filter`) ensures only changed app is built
+
+**Consequences:**
+- Two Netlify site entries to manage
+- Single `pnpm-lock.yaml` ensures dependency consistency
+- Both sites deploy from `main` branch
+
+### ADR-005: Static Export Only, No Server Runtime (Web Deployment)
+
+**Context:** Both apps can be deployed as static sites.
+
+**Decision:** Use static export for both apps, no server-side features.
+
+**Rationale:**
+1. **Game app:** Session-only storage (WEB-01), no API routes needed, PWA for offline
+2. **Generator app:** AI runs locally in development (Ollama), production is static pack viewing
+3. **Cost:** Free tier on Netlify for static sites
+4. **Performance:** CDN edge caching, no cold starts
+
+**Consequences:**
+- No server-side features (API routes, ISR, SSR)
+- PWA manifest required for Add to Home Screen on mobile
+- Image optimization disabled (already set in next.config.ts)
+
+### ADR-006: Zustand Without Persist for Web Game State
+
+**Context:** Game state on web should be session-only per WEB-01.
+
+**Decision:** Use Zustand without persist middleware for web game state.
+
+**Rationale:**
+1. **Project requirement:** WEB-01 specifies session-only storage
+2. **Simplicity:** No IndexedDB complexity, no data persistence bugs
+3. **Privacy:** No game data stored on device between sessions
+4. **Consistency:** Native app continues to use AsyncStorage persist
+
+**Consequences:**
+- Game state lost on tab close/refresh (intentional)
+- Pack data still available (bundled or loaded on start)
+- Simpler web implementation
+
 ## Sources
 
 ### Mobile Stack
-- [Expo SDK 55 Changelog](https://expo.dev/changelog/sdk-55) — SDK versions, React Native compatibility
-- [WatermelonDB Documentation](https://watermelondb.dev/docs/Setup) — Offline-first patterns, schema, sync
-- [Zustand v5 Release](https://github.com/pmndrs/zustand/releases/tag/v5.0.0) — v5 changes, React 18 minimum
-- [Tamagui Installation Guide](https://tamagui.dev/docs/intro/installation) — Setup, config, components
-- [React Native Database Comparison 2026](https://www.pkgpulse.com/guides/expo-sqlite-vs-watermelondb-vs-realm-react-native-local-2026) — Performance benchmarks
-- [Reanimated 3 Documentation](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/handling-gestures) — Animation performance
+- [Expo SDK 56 Documentation](https://docs.expo.dev/versions/latest/) — SDK versions, React Native 0.85 compatibility (HIGH)
+- [WatermelonDB Documentation](https://watermelondb.dev/docs/Setup) — Offline-first patterns, schema, sync (HIGH)
+- [Zustand v5 Release](https://github.com/pmndrs/zustand/releases/tag/v5.0.0) — v5 changes, React 19 minimum (HIGH)
+- [Tamagui Installation Guide](https://tamagui.dev/docs/intro/installation) — Setup, config, components (HIGH)
+- [React Native Database Comparison 2026](https://www.pkgpulse.com/guides/expo-sqlite-vs-watermelondb-vs-realm-react-native-local-2026) — Performance benchmarks (MEDIUM)
+- [Reanimated 3 Documentation](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/handling-gestures) — Animation performance (HIGH)
 
 ### Question Pack System
-- [Zod 4 Documentation](https://zod.dev/v4) — Schema validation features, TypeScript integration
-- [Vercel AI SDK](https://ai-sdk.dev) — LLM integration patterns, structured output
-- [OpenAI Node SDK](https://github.com/openai/openai-node) — Direct API access
-- [Expo Firebase Guide](https://docs.expo.dev/guides/using-firebase) — Expo compatibility, Expo Go limitations
-- [Supabase Expo Quickstart](https://supabase.com/docs/guides/getting-started/quickstarts/expo-react-native) — Integration patterns
-- [Next.js 16 Release](https://github.com/vercel/next.js/releases/tag/v16.0.0) — App Router features
-- [AI SDK Comparison](https://strapi.io/blog/openai-sdk-vs-vercel-ai-sdk-comparison) — Provider flexibility analysis
-- [Supabase vs Firebase](https://www.shipnative.dev/blog/supabase-vs-firebase-react-native-2026) — Expo integration comparison
-- [expo-file-system Documentation](https://docs.expo.dev/versions/latest/sdk/filesystem-next/) — Modern file API for pack storage
+- [Zod 4 Documentation](https://zod.dev/v4) — Schema validation features, TypeScript integration (HIGH)
+- [Vercel AI SDK](https://ai-sdk.dev) — LLM integration patterns, structured output (HIGH)
+- [OpenAI Node SDK](https://github.com/openai/openai-node) — Direct API access (MEDIUM)
+- [Expo Firebase Guide](https://docs.expo.dev/guides/using-firebase) — Expo compatibility, Expo Go limitations (HIGH)
+- [Supabase Expo Quickstart](https://supabase.com/docs/guides/getting-started/quickstarts/expo-react-native) — Integration patterns (HIGH)
+- [Next.js 16 Release](https://github.com/vercel/next.js/releases/tag/v16.0.0) — App Router features (HIGH)
+
+### Web Deployment
+- [Expo Web Export](https://github.com/expo/expo/blob/main/docs/pages/deploy/web.mdx) — Static export configuration, Netlify deployment (HIGH — Context7 `/expo/expo`)
+- [Expo Router Static Rendering](https://github.com/expo/expo/blob/main/docs/pages/router/web/static-rendering.mdx) — `web.output: "static"` configuration (HIGH — Context7 `/expo/expo`)
+- [Expo PWA Guide](https://github.com/expo/expo/blob/main/docs/pages/guides/progressive-web-apps.mdx) — Manifest file, icons, installation (HIGH — Context7 `/expo/expo`)
+- [Next.js Static Export](https://nextjs.org/docs/pages/guides/static-exports) — `output: 'export'` configuration, limitations (HIGH — Context7 `/vercel/next.js`)
+- [Netlify Monorepo Deployment](https://netli.fyi/blog/netlify-monorepo-deploys) — Multiple sites from one repo (HIGH)
+- [Netlify pnpm Support](https://docs.netlify.com/build/configure-builds/manage-dependencies/) — Automatic pnpm detection (HIGH)
+- [Turborepo Build Configuration](https://github.com/vercel/turborepo/blob/main/apps/docs/content/docs/reference/package-configurations.mdx) — Task outputs, monorepo caching (HIGH — Context7 `/vercel/turborepo`)
+- [Zustand Persist Middleware](https://github.com/pmndrs/zustand/blob/main/docs/reference/middlewares/persist.md) — Session storage alternative (HIGH — Context7 `/pmndrs/zustand`)
+- [WatermelonDB Database Adapters](https://watermelondb.dev/docs/Implementation/DatabaseAdapters) — LokiJS adapter for web (MEDIUM)
+- [WatermelonDB Issue #1920](https://github.com/nozbe/watermelondb/issues/1920) — LokiJS data persistence bug (LOW — needs monitoring)
+- [Next.js v16.2.7 Release](https://github.com/vercel/next.js/releases/tag/v16.2.7) — Current stable version (HIGH)
 
 ---
-*Stack research for: Trivial World mobile app + Question Pack System*
-*Researched: 2026-06-08*
+*Stack research for: Trivial World mobile app + Question Pack System + Web Deployment*
+*Researched: 2026-06-08 (mobile), 2026-06-09 (web deployment)*

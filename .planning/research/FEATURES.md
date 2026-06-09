@@ -1,433 +1,269 @@
 # Feature Research
 
-**Domain:** Question Pack System for Mobile Trivia Game
-**Researched:** 2026-06-08
-**Confidence:** HIGH (multiple sources, production patterns documented)
+**Domain:** PWA Web Deployment for Mobile-First Trivia Game
+**Researched:** 2026-06-09
+**Confidence:** HIGH (official documentation, multiple verified sources)
 
 ## Feature Landscape
 
 ### Table Stakes (Users Expect These)
 
-Features users assume exist. Missing these = product feels incomplete.
+Features users assume exist for a PWA. Missing these = app cannot be installed or feels broken.
 
 | Feature | Why Expected | Complexity | Notes |
 |---------|--------------|------------|-------|
-| **Question Pack Selection** | Users expect to choose what content to play, similar to selecting quiz topics in other apps | LOW | Simple list UI. Already have category system in place. Depends on: pack storage model |
-| **Category Organization** | Trivia apps organize by categories (history, science, pop culture) - this is universal | LOW | Already implemented with 6 categories. Packs should respect or extend this |
-| **Pack Metadata Display** | Users want to know pack name, description, question count before selecting | LOW | Standard card/list UI with pack details |
-| **Basic Difficulty Levels** | Easy/Medium/Hard is the standard trivia difficulty pattern | MEDIUM | Affects question generation prompts and pack filtering |
-| **Question Accuracy** | Incorrect questions damage trust rapidly; users notice factual errors immediately | HIGH | 19% of AI question failures are factual hallucinations (2026 study) |
+| Web App Manifest | Required for PWA installability — browsers check for this | LOW | JSON file with name, icons (192px and 512px), start_url, display mode |
+| HTTPS Deployment | Required for service workers and PWA installation | LOW | Netlify provides by default |
+| Installable on Mobile | Users expect "Add to Home Screen" to work | LOW | Manifest + icons + HTTPS triggers install prompt |
+| Proper Icons (192px, 512px) | Browsers require specific sizes for installability | LOW | Must include both sizes; maskable icons recommended for Android |
+| Basic Offline Support | Users expect cached app to load without network | MEDIUM | Service worker with appropriate caching strategy |
+| Mobile-Responsive Layout | PWA on phone must display correctly | LOW | Already mobile-first in existing app |
 
 ### Differentiators (Competitive Advantage)
 
-Features that set the product apart. Not required, but valuable.
+Features that improve the experience beyond basic PWA requirements.
 
 | Feature | Value Proposition | Complexity | Notes |
 |---------|-------------------|------------|-------|
-| **AI-Powered Generation from Topics** | Users create custom packs from any topic ("80s movies", "local history", "my company") - unique vs. static content competitors | MEDIUM | Prompt engineering critical. Study shows 69% AI questions usable with minor edits, 31% need revision |
-| **Question Explanations** | Show why an answer is correct - educational value, builds trust, reduces post-question disputes in social play | MEDIUM | Adds ~50% content size, significant value for social trivia where conductor reads explanation |
-| **Quality Score Indicators** | Visual confidence scores help conductors decide if pack is "game night ready" | MEDIUM | Combine: factual verification pass rate, question variety, source citations |
-| **Cross-Session No-Repeat** | Remember questions asked across game sessions - prevents "we just did this question" frustration | MEDIUM | Requires persistent tracking with pack-scoped IDs. Already have game state persistence |
-| **Custom Question Packs (CRUD)** | Hosts create their own question packs for events (corporate events, parties, classrooms) | HIGH | Full CRUD interface. Higher value for conductor-led social play |
+| Maskable Icons (Android) | Adaptive icons that look native on Android home screen | LOW | Additional icon variant with safe zone padding |
+| App Shell Caching | Instant load of UI shell even on slow networks | MEDIUM | Cache-first for static assets, network-first for HTML |
+| iOS-Specific Meta Tags | Better splash screens and status bar integration on iOS | LOW | apple-mobile-web-app-capable, theme-color, touch icons |
+| Install Prompt Handling | Custom "Install App" button instead of browser default | MEDIUM | Intercept beforeinstallprompt event for better UX |
+| Session Storage Persistence | Game state survives tab refresh during play | MEDIUM | Already in scope: session-only storage, not IndexedDB |
+| Share Intent Handling | Launch from share sheet with pack data | HIGH | Deferred — requires deep link handling |
 
 ### Anti-Features (Commonly Requested, Often Problematic)
 
-Features that seem good but create problems.
+Features that seem good for PWAs but create problems for this use case.
 
 | Feature | Why Requested | Why Problematic | Alternative |
 |---------|---------------|-----------------|-------------|
-| **Real-Time Multiplayer Sync** | "Everyone should see the app simultaneously" | Undermines conductor model, adds 10x complexity, requires accounts and networking infrastructure | Conductor reads aloud (current model) - eyes-up social design |
-| **User Accounts for Pack Sync** | "Save my packs across devices" | Friction kills social gameplay - adds onboarding barrier, breaks spontaneous play | Local-first storage, optional cloud backup later |
-| **Community Question Submission** | "Let users submit questions" | Quality control nightmare, moderation overhead, legal liability | AI generation with human review is more scalable |
-| **Real-Time Fact Checking** | "Verify every question during generation" | 6.7-34s latency per question (OpenAI Guardrails), high cost, breaks generation flow | Generate batch, validate offline, flag low-confidence for human review |
-| **Infinite Question Generation** | "Never run out of questions" | Without deduplication, AI generates similar questions; 43% of failures are weak distractors | Semantic deduplication (FAISS embeddings) + explicit uniqueness tracking |
+| Aggressive Offline Caching | "Works offline" sounds essential | Service worker bugs can brick the app; updates require all tabs closed; complex debugging | Cache shell only; rely on session storage for game state |
+| Precaching All Questions | "Load everything for offline play" | Bundle size explosion; precaching 30+ seconds on slow connections; defeats lazy-loading | Keep existing lazy-load approach; cache pack JSON after selection |
+| IndexedDB for Game State | "Persistent game saves" | iOS clears after 7 days of inactivity; quota limits unpredictable; overkill for session-only | Session storage as documented in PROJECT.md |
+| Background Sync | "Sync packs in background" | Safari doesn't support; only Chromium browsers; adds complexity | Manual refresh button; explicit user action |
+| Push Notifications | "Notify players about updates" | Requires user permission (high rejection rate); iOS Web Push requires install first; not useful for in-person game | Not applicable to social gameplay model |
+| Full Offline Mode | "Play without any network" | Question packs need download; AI generator requires Ollama local | Online-first for pack loading; cached pack for gameplay |
 
 ## Feature Dependencies
 
 ```
-Question Pack Selection
-    └──requires──> Pack Storage Model (local-first)
-    └──requires──> Pack Metadata Schema
+[PWA Manifest]
+    └──requires──> [Icons (192px, 512px)]
+    └──requires──> [HTTPS Deployment]
 
-AI-Powered Generation
-    └──requires──> Pack Metadata Schema
-    └──requires──> Question Schema with Validation
-    └──requires──> Generation Prompt Templates
-    └──enhances──> Question Explanations
+[Service Worker]
+    └──requires──> [HTTPS Deployment]
+    └──conflicts──> [Session-Only Storage] (if caching aggressively)
 
-Question Validation
-    └──requires──> Quality Score Framework
-    └──enhances──> AI-Powered Generation (feedback loop)
+[Install Prompt Handling]
+    └──requires──> [PWA Manifest]
+    └──requires──> [Service Worker]
+    └──requires──> [HTTPS Deployment]
 
-Pack Download (Cloud)
-    └──requires──> Pack Storage Model
-    └──requires──> Version Tracking (migrations)
-    └──requires──> Integrity Verification (checksums)
+[iOS Meta Tags]
+    └──requires──> [Touch Icon (180px)]
+    └──requires──> [Splash Screen Images] (optional)
 
-Game Configuration
-    └──requires──> Pack Selection (config applies to selected pack)
-    └──requires──> Configuration Schema
-    └──independent──> Question Generation
-
-Custom Question Packs (CRUD)
-    └──requires──> Question Validation
-    └──requires──> AI-Powered Generation
-    └──requires──> Question Explanations
-    └──conflicts──> Real-Time Multiplayer (different UX model)
+[Session Storage Persistence]
+    └──conflicts──> [IndexedDB Offline Cache] (choose one approach)
 ```
 
 ### Dependency Notes
 
-- **Pack Storage Model is foundational:** All pack features depend on this. Design schema first.
-- **AI Generation depends on Question Schema:** Cannot generate without knowing the output format.
-- **Validation is separate from Generation:** Validation can run offline, asynchronously after batch generation.
-- **Pack Download conflicts with Offline-First philosophy:** Must maintain local-first capability; cloud is enhancement, not replacement.
+- **PWA Manifest requires Icons:** Browsers reject installation without both 192px and 512px icons. These must be generated from existing app icons.
+- **Service Worker requires HTTPS:** Netlify provides this by default. Service workers are disabled in development (localhost exemption).
+- **Service Worker conflicts with Session-Only Storage goal:** If SW caches aggressively, it undermines the session-only simplicity. Cache shell only, not game state.
+- **Install Prompt Handling requires all PWA basics:** Before customizing the install prompt, all installability criteria must be met (manifest, SW, HTTPS, engagement heuristics).
+- **iOS Meta Tags require iOS-specific assets:** Apple has unique requirements (180px touch icon, splash screens per device). Optional but improves iOS experience significantly.
 
-## Question Pack Schema (Recommended)
+## Platform-Specific Considerations
 
-Based on analysis of [trivia-schema](https://github.com/gaufqwi/trivia-schema) and [JSON Quiz Format](https://json-quiz.github.io/json-quiz):
+### Android (Chrome)
 
-```typescript
-// Core types
-interface QuestionPack {
-  id: string;                    // UUID v4
-  version: string;               // SemVer (e.g., "1.2.0")
-  schemaVersion: string;         // Schema version for migrations
-  name: string;                  // Display name
-  description: string;           // Short description
-  author: string;                // Creator name or "Trivial World"
-  createdAt: string;             // ISO 8601
-  updatedAt: string;             // ISO 8601
+| Requirement | Status | Notes |
+|-------------|--------|-------|
+| Manifest with icons | Required | 192px and 512px minimum |
+| Service worker | Required | For installability |
+| HTTPS | Required | Netlify provides |
+| Install prompt | Auto-triggered | After engagement heuristics (30s view, click) |
+| Maskable icons | Recommended | Adaptive icon support |
 
-  categories: CategoryConfig[];  // Categories in this pack
-  questions: Question[];          // All questions
-  metadata: PackMetadata;        // Generation info, quality scores
+### iOS (Safari 16.4+)
 
-  checksum: string;              // SHA-256 of content for integrity
-}
+| Requirement | Status | Notes |
+|-------------|--------|-------|
+| Manifest with icons | Required | Same as Android |
+| Service worker | Required | For installability |
+| HTTPS | Required | Netlify provides |
+| Install prompt | Manual | User must use Share → Add to Home Screen |
+| Touch icon (180px) | Recommended | apple-touch-icon meta tag |
+| apple-mobile-web-app-capable | Recommended | Enables standalone mode |
+| Background Sync | NOT SUPPORTED | Must design fallbacks |
+| IndexedDB | UNRELIABLE | Cleared after 7 days inactive |
 
-interface Question {
-  id: string;                    // UUID v4
-  category: string;              // References category ID
-  text: string;                  // Question text
-  type: 'multiple-choice';       // Future: 'true-false', 'open'
-  options: string[];             // 4 options for multiple choice
-  correctIndex: number;          // 0-3
-  difficulty: 'easy' | 'medium' | 'hard';
-  explanation?: string;          // Why answer is correct
-  source?: string;               // Citation or "AI Generated"
-  lastVerified?: string;         // ISO 8601, when last fact-checked
-  tags?: string[];               // For search/filter
-}
+### iOS (Safari 16.3 and earlier)
 
-interface PackMetadata {
-  generatedBy: 'human' | 'ai' | 'hybrid';
-  aiModel?: string;              // e.g., "gpt-4o-mini"
-  promptTemplate?: string;       // Template ID used
-  qualityScore?: number;         // 0-100
-  validationStatus: 'pending' | 'validated' | 'flagged';
-  estimatedPlayTime?: number;    // Minutes
-}
+| Requirement | Status | Notes |
+|-------------|--------|-------|
+| PWA Installation | Safari only | Chrome/Firefox cannot install PWAs |
+| Web Push | NOT SUPPORTED | N/A for this app |
+| Storage | UNRELIABLE | High risk of data loss |
 
-interface CategoryConfig {
-  id: string;                    // Matches existing category IDs
-  color: string;                 // Hex color
-  name: string;                  // Display name
-  questionCount: number;         // Questions in this category
-}
+## Service Worker Strategy
+
+### Recommended Approach: Shell-Only Caching
+
+**What to cache:**
+- HTML shell (index.html) — network-first with 3-5s timeout
+- Versioned static assets (hashed JS/CSS) — cache-first (hash invalidates)
+- Fonts — cache-first with long expiry
+- Core images (logo, icons) — cache-first
+
+**What NOT to cache:**
+- API responses — network-only
+- Question pack JSON — network-first (may want latest)
+- Game state — session storage, not SW cache
+
+### Expiration Configuration
+
+```javascript
+// Recommended Workbox configuration
+new CacheFirst({
+  cacheName: 'static-assets',
+  plugins: [
+    new ExpirationPlugin({
+      maxEntries: 100,
+      maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
+    })
+  ]
+})
 ```
 
-### Schema Rationale
+### Anti-Pattern to Avoid
 
-- **Version + SchemaVersion separate:** Content versioning (1.0.0 to 1.1.0) separate from schema migrations (v1 to v2)
-- **Checksum for offline integrity:** Detects corruption after iOS app updates or failed downloads
-- **Quality metadata:** Enables filtering by validation status before game use
-- **Explanation optional:** Reduces storage for packs without explanations, but highly recommended
+**Precaching everything:** This causes 30+ second delays on mid-range phones over 3G. Only precache the shell; use runtime caching for everything else.
 
-## AI Question Generation Patterns
+## Netlify Deployment Configuration
 
-### Prompt Template (Recommended Structure)
+### Required netlify.toml
 
-Based on analysis of [Maastricht University Prompt Library](https://library.maastrichtuniversity.nl/apps-tools/ai-prompt-library/create-multiple-choice-questions/), [QuizGPT Package](https://pypi.org/project/quizgpt/), and [MCQ Creation Assistant](https://github.com/linexjlin/GPTs/blob/main/prompts/MCQ%20Creation%20Assistant.md):
+```toml
+[build]
+  command = "npx expo export --platform web"
+  publish = "dist"
 
-```typescript
-interface GenerationPrompt {
-  // Input
-  topic: string;                  // "Marvel Cinematic Universe"
-  category: string;               // Maps to category ID
-  difficulty: 'easy' | 'medium' | 'hard';
-  questionCount: number;          // Target count
-  context?: string;               // Additional guidance
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
-  // Constraints (embedded in prompt)
-  outputFormat: 'json';           // Enforce JSON output
-  distractorQuality: 'high';      // Generate plausible wrong answers
-  includeExplanation: boolean;
-  includeSource: boolean;
-}
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
 
-// Prompt template
-const buildPrompt = (config: GenerationPrompt): string => `
-Generate ${config.questionCount} trivia questions about "${config.topic}".
-
-**Category:** ${config.category}
-**Difficulty:** ${config.difficulty}
-
-**Rules:**
-1. Each question has exactly 4 options, exactly 1 correct answer
-2. Distractors must be plausible but clearly incorrect to someone who knows the topic
-3. Avoid "All of the above" and "None of the above"
-4. Questions should test ${difficultyDepthMap[config.difficulty]}
-5. Include a brief explanation for the correct answer
-6. Include a citation or source reference
-
-**Output Format (JSON only, no markdown, no explanation):**
-${JSON.stringify(exampleQuestionSchema, null, 2)}
-
-**Topic Context:**
-${config.context || 'No additional context provided'}
-
-Generate now. Return ONLY valid JSON array.
-`;
+[[headers]]
+  for = "/_expo/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 ```
 
-### Quality Control Pipeline
+### Critical Note: Build Output Directory
 
-Based on [2026 AI Quiz Generation Study](https://simplequizmaker.com/blog/ai-quiz-generation-data-study-2026) findings:
-
-```
-1. GENERATE BATCH (5-10 questions per request)
-   +-- Use temperature 0.2-0.3 for consistency
-   +-- Force JSON output with response_format: {"type": "json_object"}
-
-2. SCHEMA VALIDATION
-   +-- Parse JSON, validate against Question schema
-   +-- Reject malformed questions
-   +-- Retry up to 2 times
-
-3. DEDUPLICATION CHECK
-   +-- Compute semantic embeddings (FAISS/bge-small)
-   +-- Compare against existing questions in pack
-   +-- Flag duplicates for removal
-
-4. FACTUAL VERIFICATION (Batch)
-   +-- Run offline or async, not during generation
-   +-- Use NLI-based checker (Provenance/FactLens) for speed
-   +-- Flag low-confidence items for human review
-
-5. HUMAN REVIEW QUEUE
-   +-- Questions with qualityScore < 70
-   +-- Questions with validationStatus: 'flagged'
-   +-- First-time generated questions
-```
-
-### Difficulty Calibration
-
-Per [PolarNotes MCQ Prompts](https://www.polarnotesai.com/prompts/multiple-choice-chatgpt-difficulty-control/):
-
-| Difficulty | Bloom's Level | Prompt Guidance | Quality Rate |
-|------------|---------------|-----------------|--------------|
-| Easy | 1-2 (Recall/Understand) | "Test basic recognition and recall" | 89% match |
-| Medium | 3-4 (Apply/Analyze) | "Require application of concepts" | Drifts toward easy |
-| Hard | 5-6 (Evaluate/Create) | "Require synthesis and evaluation" | Often appears hard but is not |
-
-**Recommendation:** Generate with hard prompts, manually elevate 30-40% for true difficulty.
-
-## Game Configuration Schema
-
-```typescript
-interface GameConfiguration {
-  // Pack Settings
-  selectedPackIds: string[];        // Which packs to use
-  categoryFilter?: string[];        // Subset of categories (null = all)
-
-  // Difficulty
-  difficultyMode: 'mixed' | 'fixed';
-  fixedDifficulty?: 'easy' | 'medium' | 'hard';
-
-  // Timing
-  timeLimitMode: 'off' | 'per-question' | 'per-turn';
-  timeLimitSeconds?: number;        // If per-question or per-turn
-
-  // Gameplay Variants
-  wedgeRequirement: number;         // Wedges needed to win (default: 6)
-  allowRollAgainOnCorrect: boolean; // Bonus roll after correct answer
-
-  // Accessibility
-  showTimer: boolean;
-  showDifficulty: boolean;
-  autoAdvance: boolean;             // Auto-advance after answer
-
-  // AI Generation (for custom packs)
-  generationSettings?: {
-    model: 'gpt-4o-mini' | 'gpt-4o';
-    temperature: number;
-    includeExplanations: boolean;
-  };
-}
-```
-
-### Configuration UI Patterns
-
-Based on [Mobile Game Settings UX](https://reactnative.live/designing-emulation-like-config-uis-for-mobile-games-lessons):
-
-1. **Presets First:** Quick Game (defaults), Custom Game (full config), Custom Pack (AI generation)
-2. **Inline Explanations:** "Time limit adds pressure for competitive play"
-3. **Defaults for Social Play:**
-   - Time limit: OFF (conductor reads at group pace)
-   - Difficulty: MIXED (mixed skill levels in social groups)
-   - Auto-advance: OFF (conductor controls pacing)
-
-## Pack Download Architecture
-
-Based on [Kuratour Case Study](https://expo.dev/blog/the-offline-first-multilingual-audio-tour-app-built-with-expo) and [WatermelonDB Patterns](https://github.com/FastheDeveloper/watermelondb-expo-offline-demo):
-
-```typescript
-interface PackDownloadManager {
-  // Core operations
-  downloadPack(packId: string): Promise<QuestionPack>;
-  verifyIntegrity(pack: QuestionPack): Promise<boolean>;
-  storeLocally(pack: QuestionPack): Promise<void>;
-
-  // Version management
-  checkForUpdates(packId: string): Promise<VersionInfo>;
-  migratePack(pack: QuestionPack, fromVersion: string): Promise<QuestionPack>;
-}
-
-// Key patterns:
-// 1. Download to temp location, verify checksum, then move to storage
-// 2. Store schema version alongside pack for migration handling
-// 3. Keep last-known-good version as rollback
-// 4. Use expo-file-system for downloads, expo-sqlite for metadata
-```
-
-### Download Flow
-
-```
-[Cloud Pack Repository]
-        |
-        v downloadPack()
-[Temporary Storage] --verifyIntegrity()--> [Fail: Delete temp, retry]
-        |
-        v (on success)
-[Local Pack Storage] --updateIndex()--> [Pack List UI]
-        |
-        +--keepPreviousVersion()--> [Rollback Available]
-```
-
-## Validation Patterns
-
-Based on [RefChecker](https://arxiv.org/pdf/2405.14486), [Provenance](https://arxiv.org/html/2411.01022), and [OpenAI Guardrails](https://openai.github.io/openai-guardrails-python/ref/checks/hallucination_detection/):
-
-| Validation Type | When to Use | Latency | Cost |
-|-----------------|-------------|---------|------|
-| **Schema Validation** | Every generated question | <10ms | Free |
-| **Semantic Deduplication** | During pack creation | ~50ms/question | Low |
-| **NLI Fact Checking** | Batch validation (Provenance) | ~100ms/question | Low |
-| **LLM-as-Judge** | Flagged questions only | 5-30s/question | High |
-| **Human Review** | Final quality gate | Variable | Manual |
-
-**Recommendation:**
-- Schema validation: Always (inline during generation)
-- Deduplication: Always (inline)
-- NLI checking: Batch after generation (async)
-- LLM judge: Only for flagged items (low volume)
-- Human review: Only for packs marked for public distribution
+Expo SDK 55 changed the output directory from `web-build` to `dist`. Many tutorials still reference the old directory. Use:
+- Build command: `npx expo export --platform web`
+- Publish directory: `dist`
 
 ## MVP Definition
 
-### Launch With (v2.0)
+### Launch With (v3.0 — Web Deployment)
 
-Minimum viable product - what is needed to validate the question pack concept.
+Minimum viable web deployment — what's needed to deploy and be installable.
 
-- [ ] **Question Pack Storage Model** - Local-first schema with versioning
-- [ ] **Pack Selection UI** - List, select, view metadata
-- [ ] **Basic Game Configuration** - Pack selection, difficulty filter
-- [ ] **Pack Metadata Display** - Name, description, question count, categories
-- [ ] **Schema Validation for Questions** - JSON schema validation on import
+- [x] Manifest file with required fields — Without this, app cannot be installed
+- [x] Icons at 192px and 512px — Required by browser installability checks
+- [x] HTTPS deployment via Netlify — Required for service workers
+- [x] Service worker for shell caching — Prevents blank screen on reload; caches static assets
+- [x] Mobile-responsive web layout — Already achieved via Expo web export
+- [x] Netlify redirects for SPA routing — Prevents 404 on direct route access
+- [x] Session-only storage — No IndexedDB complexity; simpler than full offline
 
-### Add After Validation (v2.1)
+### Add After Validation (v3.x)
 
-Features to add once pack storage is validated.
+Features to add once basic web deployment works.
 
-- [ ] **AI Question Generation** - Topic input, category selection, batch generation
-- [ ] **Generation Prompts** - Template library for different subjects
-- [ ] **Question Explanations** - Include in generation, display after answer
+- [ ] Maskable icon for Android — Improves home screen appearance
+- [ ] iOS-specific meta tags — Better iOS integration (apple-mobile-web-app-capable, etc.)
+- [ ] iOS touch icon (180px) — Required for iOS Add to Home Screen
+- [ ] Custom install prompt UX — Intercept beforeinstallprompt for better user flow
+- [ ] Cache versioning with cleanup — Prevent old cache accumulation
 
-### Future Consideration (v2.x+)
+### Future Consideration (v4+)
 
-Features to defer until pack system is stable.
+Features to defer until web deployment proves stable.
 
-- [ ] **Cloud Pack Repository** - Download packs from central server
-- [ ] **Quality Score System** - Aggregate validation results into pack quality score
-- [ ] **Custom Pack CRUD** - Full create/edit/delete for user packs
-- [ ] **Cross-Session No-Repeat** - Track asked questions across game sessions
+- [ ] iOS splash screen images — Per-device images for launch screen; many variants
+- [ ] Share intent handling — Launch with pack data from share
+- [ ] Offline pack caching — Download once, play offline with that pack
+- [ ] Lighthouse PWA score >90 — Quality metric, not essential for launch
 
 ## Feature Prioritization Matrix
 
 | Feature | User Value | Implementation Cost | Priority |
 |---------|------------|---------------------|----------|
-| Pack Storage Model | HIGH | MEDIUM | P1 |
-| Pack Selection UI | HIGH | LOW | P1 |
-| Schema Validation | HIGH | LOW | P1 |
-| Game Configuration | MEDIUM | LOW | P1 |
-| AI Generation | HIGH | MEDIUM | P2 |
-| Question Explanations | MEDIUM | LOW | P2 |
-| Quality Scoring | MEDIUM | MEDIUM | P3 |
-| Cloud Download | MEDIUM | HIGH | P3 |
-| Custom Pack CRUD | LOW | HIGH | P3 |
+| Manifest + Icons | HIGH | LOW | P1 |
+| HTTPS (Netlify) | HIGH | LOW | P1 |
+| Service Worker (shell only) | HIGH | MEDIUM | P1 |
+| SPA Redirects | HIGH | LOW | P1 |
+| Session Storage | HIGH | LOW | P1 |
+| Maskable Icons | MEDIUM | LOW | P2 |
+| iOS Meta Tags | MEDIUM | LOW | P2 |
+| Custom Install Prompt | MEDIUM | MEDIUM | P2 |
+| iOS Touch Icon | MEDIUM | LOW | P2 |
+| iOS Splash Screens | LOW | HIGH | P3 |
+| Full Offline Mode | LOW | HIGH | P3 |
+| Background Sync | LOW | HIGH | P3 |
+| Push Notifications | NONE | HIGH | Exclude |
 
 **Priority key:**
-- P1: Must have for v2.0 launch
-- P2: Should have, add when core is working
+- P1: Must have for launch (web app must be installable and functional)
+- P2: Should have, improves experience significantly
 - P3: Nice to have, future consideration
+- Exclude: Not applicable or actively harmful
 
-## Competitor Feature Analysis
+## Dependency on Existing Features
 
-| Feature | Kahoot! | Quizlet | Sporcle | Trivial World Approach |
-|---------|---------|---------|---------|------------------------|
-| Custom Content | User-created quizzes | Flashcard sets | User-created games | AI-generated packs |
-| Difficulty Levels | Yes (easy/hard) | Yes (study modes) | Varies by creator | Yes (easy/medium/hard) |
-| Explanations | Limited | Yes (flashcard) | Varies | Yes (AI-generated) |
-| Offline Mode | No | Premium only | No | Yes (offline-first) |
-| AI Generation | Quiz AI (premium) | Magic Notes (limited) | No | Yes (core feature) |
-| Social Play | Live host mode | Share links | Solo only | Conductor model (unique) |
+This web deployment milestone depends on the following already-built features from v1.0 and v2.0:
+
+| Existing Feature | Web Dependency | Notes |
+|------------------|----------------|-------|
+| Mobile game (Expo) | HIGH | Web export requires working mobile app |
+| Pack selection UI | MEDIUM | Must render correctly in web browser |
+| Question generator (Ollama) | LOW | Generator stays dev-only; production is static export |
+| Built-in default pack | HIGH | Must load in web environment |
+| Game state management | MEDIUM | Session storage must work in browser context |
+| Expo Router navigation | HIGH | Must work with static export routing |
+
+### Web-Specific Adjustments Needed
+
+1. **Navigation:** Verify Expo Router works with static export (no dynamic routes without generateStaticParams)
+2. **Storage:** Replace WatermelonDB with session storage for web (already planned per PROJECT.md)
+3. **Haptics:** expo-haptics not available on web — graceful degradation needed
+4. **Screen Orientation:** expo-screen-orientation not applicable on web — ignore or conditional
 
 ## Sources
 
-### AI Question Generation
-- [2026 AI Quiz Generation Study](https://simplequizmaker.com/blog/ai-quiz-generation-data-study-2026) - Quality metrics, failure modes, subject-specific rates
-- [Maastricht University Prompt Library](https://library.maastrichtuniversity.nl/apps-tools/ai-prompt-library/create-multiple-choice-questions/) - MCQ generation templates
-- [QuizGPT Package](https://pypi.org/project/quizgpt/) - Production-scale question generation with deduplication
-- [MCQ Creation Assistant](https://github.com/linexjlin/GPTs/blob/main/prompts/MCQ%20Creation%20Assistant.md) - 4-step prompt engineering pattern
-- [PolarNotes MCQ Prompts](https://www.polarnotesai.com/prompts/multiple-choice-chatgpt-difficulty-control/) - Difficulty calibration patterns
-- [Python AI Quiz Generator Tutorial](https://aicodewithharitha.com/python-ai/ai-quiz-generator-python-excel/) - JSON structured output patterns
-
-### Schema and Content Formats
-- [Trivia Schema](https://github.com/gaufqwi/trivia-schema) - JSON schema for pub quiz questions
-- [JSON Quiz Format](https://json-quiz.github.io/json-quiz) - Extensible quiz format specification
-
-### Content Pack Architecture
-- [SwiftDataPacks](https://github.com/CircuitProApp/SwiftDataPacks) - Read-only content pack architecture
-- [Sutra Content Pack Design](https://github.com/Mahalp/Sutra/commit/b8734249e26f29c1bbb9e73f71567aa5f75c47df) - Offline-first pack patterns
-- [Kuratour Case Study](https://expo.dev/blog/the-offline-first-multilingual-audio-tour-app-built-with-expo) - Offline-first Expo patterns
-- [WatermelonDB Offline Demo](https://github.com/FastheDeveloper/watermelondb-expo-offline-demo) - Observable queries, sync patterns
-- [Supastash](https://github.com/0xZekeA/supastash) - Supabase + SQLite sync engine
-
-### Game Configuration UI
-- [Mobile Game Settings UX](https://reactnative.live/designing-emulation-like-config-uis-for-mobile-games-lessons) - Settings UI patterns
-- [UX StackExchange Difficulty Picker](https://ux.stackexchange.com/questions/119456/best-way-to-make-an-easy-medium-hard-picker) - Multi-select patterns
-
-### Content Versioning
-- [React Native Versioned State](https://dev.to/sebastianthiebaud/a-simple-pattern-for-versioned-persisted-state-in-react-native-ll6) - Schema versioning pattern
-- [SwiftData Migrations](https://www.donnywals.com/a-deep-dive-into-swiftdata-migrations/) - iOS migration strategies
-
-### Validation and Fact-Checking
-- [RefChecker](https://arxiv.org/pdf/2405.14486) - Fine-grained hallucination detection
-- [Provenance](https://arxiv.org/html/2411.01022) - Lightweight NLI fact-checker
-- [OpenAI Guardrails](https://openai.github.io/openai-guardrails-python/ref/checks/hallucination_detection/) - Hallucination detection API
-- [FactLens](https://github.com/factlens/factlens) - Geometric hallucination detection
+- [Expo PWA Documentation](https://docs.expo.dev/guides/progressive-web-apps/) — Official Expo PWA setup guide (HIGH confidence)
+- [web.dev Install Criteria](https://web.dev/articles/install-criteria) — Browser installability requirements (HIGH confidence)
+- [MDN Making PWAs Installable](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable) — PWA manifest requirements (HIGH confidence)
+- [Expo Web Hosting Providers](https://expo-expo.mintlify.app/deployment/hosting-providers) — Netlify deployment configuration (HIGH confidence)
+- [Expo Static Rendering](https://docs.expo.dev/router/web/static-rendering/) — Static export documentation (HIGH confidence)
+- [PWA 2025 Field Guide](https://gothar.com/en/insights/pwa-2025) — Anti-patterns and production considerations (MEDIUM confidence)
+- [Netlify Redirects Documentation](https://docs.netlify.com/manage/routing/redirects/rewrites-proxies/) — SPA routing configuration (HIGH confidence)
 
 ---
-*Feature research for: Question Pack System*
-*Researched: 2026-06-08*
+*Feature research for: PWA Web Deployment*
+*Researched: 2026-06-09*

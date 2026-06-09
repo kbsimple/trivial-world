@@ -1,157 +1,221 @@
 # Project Research Summary
 
 **Project:** Trivial World
-**Domain:** Mobile trivia game with offline-first capability + Question Pack System
-**Researched:** 2026-06-08
+**Domain:** Mobile trivia game with offline-first capability + Question Pack System + Web Deployment
+**Researched:** 2026-06-09 (web deployment additions)
 **Confidence:** HIGH
 
 ## Executive Summary
 
-Trivial World is a mobile trivia game designed for in-person social play, where a game conductor reads questions aloud to a group. The v2.0 milestone adds a question pack system enabling users to download custom question packs and generate new questions via AI. This research covers the technical architecture for connecting a mobile app (Expo SDK 55, React Native) with a new web-based question generator (Next.js 16) through cloud storage and shared TypeScript types.
+Trivial World is a mobile trivia game designed for in-person social play, extending to web deployment via Expo static export and Netlify. The v2.0 milestone added a question pack system with AI generation, and v3.0 adds PWA web deployment with session-only storage. The research confirms a well-established tech stack: Expo SDK 56 with React Native 0.85, WatermelonDB for offline-first storage on mobile, Zustand for state management, and Tamagui for UI.
 
-The recommended approach uses a monorepo structure with a shared `@trivial-world/types` package defining Zod schemas that both apps consume. Question packs are stored in WatermelonDB on mobile (offline-first) and S3-compatible cloud storage with presigned URLs. AI question generation uses Vercel AI SDK with OpenAI, with multi-model fact-checking to address the 20-45% hallucination rate identified in research. Schema versioning from day one prevents migration failures that commonly break offline apps.
+The recommended architecture uses platform-specific adapters: WatermelonDB + AsyncStorage for mobile, bundled questions + sessionStorage for web. The monorepo deploys to two separate Netlify sites: the game app exports as a static PWA, while the generator app (Next.js static export) remains unchanged. Key decisions include using Platform.OS checks to guard native modules, Zustand without persist middleware for web game state, and shell-only service worker caching.
 
-Key risks include AI hallucination (20-45% of generated content has factual issues), prompt injection attacks (#1 OWASP LLM risk), and API cost abuse from unrestricted generation endpoints. Mitigation requires multi-model validation pipelines, token-based rate limiting, and content moderation layers. The architecture prioritizes offline-first gameplay, ensuring no network dependency for core game functionality.
+The primary risks for web deployment are: (1) SPA routing 404s without proper netlify.toml redirects, (2) Zustand hydration mismatches on static export, and (3) React Native Web CSS property differences. For question packs, key risks are AI hallucination (20-45% factual issues), prompt injection attacks, and schema migration breaking local packs. All have documented mitigation strategies.
 
 ## Key Findings
 
 ### Recommended Stack
 
-The mobile app uses Expo SDK 55 with React Native 0.83, Zustand 5.x for state, WatermelonDB for offline-first data, and Tamagui 2.x for UI. This stack is already implemented for v1.0. For the v2.0 question pack milestone, the research recommends adding: Zod 4.x for shared schema validation between apps, Vercel AI SDK 6.x with OpenAI for question generation, Next.js 16 for the generator web app, and Supabase for cloud storage (works with Expo Go without config plugins).
+The mobile app uses Expo SDK 56 with React Native 0.85, Zustand 5.x for state, WatermelonDB for offline-first data, and Tamagui 2.x for UI. Web deployment requires configuration changes rather than new packages. The monorepo uses pnpm workspaces with Turborepo for build orchestration.
 
 **Core technologies:**
-- **Expo SDK 55**: Mobile framework — managed workflow, OTA updates, React Native 0.83 with New Architecture
-- **WatermelonDB**: Offline-first database — lazy loading, observable queries, sync protocol for future cloud backup
-- **Zustand 5.x**: Client state — minimal bundle (1.2KB), persist middleware, simple store model
-- **Zod 4.x**: Schema validation — shared types between mobile and web, 14x faster parsing than Zod 3
-- **Vercel AI SDK**: LLM abstraction — provider-agnostic, structured output with Zod, streaming support
-- **Supabase**: Cloud backend — Postgres for pack metadata, Storage for JSON files, Expo Go compatible
-- **Next.js 16**: Generator web app — App Router, Server Actions for secure LLM calls, Edge runtime
+- **Expo SDK 56**: Mobile framework with static web export — best DX, managed workflow, New Architecture mandatory
+- **React Native 0.85**: Cross-platform runtime — Hermes V1 default, excellent gesture/animation support
+- **WatermelonDB**: Offline-first database (mobile only) — lazy loading, observable queries, scales to 50k+ records
+- **Zustand 5.x**: State management — session-only storage for web via sessionStorage, AsyncStorage persist for mobile
+- **Tamagui 2.x**: UI components — universal (web + native), compiler optimization, 80+ components
+- **Next.js 16**: Generator app — already configured for static export, App Router with Server Actions
+- **Zod 4.x**: Schema validation — shared types between mobile and web, JSON Schema export
+- **Vercel AI SDK**: LLM abstraction — provider-agnostic, structured output, fact-checking pipeline
+- **Supabase**: Cloud backend — Postgres for pack metadata, Storage for JSON files
+- **Netlify**: Deployment platform — two sites from one monorepo, static hosting
+
+**Critical version requirements:**
+- Node.js 20+ required for Next.js 16 and Expo SDK 56
+- expo-router >= 3.5.17 for grouped routes web support (bug fix)
+- Next.js >= 16.1.2 if RSC path issues occur (or use adapter)
 
 ### Expected Features
 
-Research identified table stakes features (users expect these), differentiators (competitive advantage), and anti-features (seem good but create problems). For v2.0, the MVP focuses on pack storage, selection, and basic configuration — AI generation comes in v2.1 after the core system is validated.
+**Must have (table stakes for PWA):**
+- Web app manifest with 192px/512px icons — required for installability
+- HTTPS deployment — Netlify provides by default
+- SPA redirects — prevents 404 on direct route access
+- Service worker for shell caching — prevents blank screen on reload
+- Session-only storage — sessionStorage for game state, no IndexedDB complexity
+- Question Pack Storage Model — Local-first schema with versioning
+- Pack Selection UI — List, select, view metadata
+- Schema Validation — JSON schema validation on import
 
-**Must have (table stakes):**
-- **Question Pack Storage Model** — Local-first schema with versioning, foundation for all pack features
-- **Pack Selection UI** — List, select, view metadata — universal expectation in trivia apps
-- **Schema Validation** — JSON schema validation on import — prevents corrupted packs from crashing the app
-- **Question Accuracy** — Users notice factual errors immediately; 19% of AI failures are hallucinations
+**Should have (differentiators):**
+- Maskable icons for Android — adaptive icons look native on home screen
+- iOS-specific meta tags — better splash screens and status bar integration
+- Custom install prompt UX — intercept beforeinstallprompt for better user flow
+- AI-Powered Generation — Users create custom packs from any topic
+- Question Explanations — Show why an answer is correct
+- Quality Score Indicators — Visual confidence scores for packs
 
-**Should have (competitive):**
-- **AI-Powered Generation** — Users create custom packs from any topic — unique vs. static content competitors
-- **Question Explanations** — Show why an answer is correct — educational value, builds trust in social play
-- **Quality Score Indicators** — Visual confidence scores help conductors decide if pack is "game night ready"
-
-**Defer (v2.x+):**
-- **Cloud Pack Repository** — Download packs from central server — enhances but not core to gameplay
-- **Custom Pack CRUD** — Full create/edit/delete — higher complexity, add after pack system is stable
-- **Real-Time Multiplayer Sync** — Undermines conductor model, adds 10x complexity — anti-feature
+**Defer (v4+):**
+- iOS splash screen images — many device variants, high implementation cost
+- Share intent handling — requires deep link handling
+- Full offline mode — question packs need download, not essential for web MVP
+- Cloud Pack Repository — Download packs from central server
+- Real-Time Multiplayer Sync — Undermines conductor model, anti-feature
 
 ### Architecture Approach
 
-The architecture uses a monorepo with shared types, enabling the mobile app and generator web app to share a single source of truth for question pack schemas. This contract-first development ensures the generator produces exactly what the mobile app expects. Question packs flow from generator (web) to consumer (mobile) via cloud storage with presigned URLs, while the mobile app maintains offline-first gameplay through WatermelonDB caching.
+The architecture uses platform-specific adapters: WatermelonDB + AsyncStorage for mobile, bundled questions + sessionStorage for web. The monorepo structure separates concerns with shared types in `@trivial-world/types`.
 
 **Major components:**
-1. **Shared Types Package (`@trivial-world/types`)** — Zod schemas for question packs, categories, validation; JSON Schema export for non-Zod environments
-2. **Mobile App (Expo)** — Pack browser, download service, WatermelonDB cache, game integration with existing question flow
-3. **Generator Web App (Next.js)** — AI-powered question generation, pack management UI, REST API for pack CRUD, S3 upload
-4. **Cloud Storage (Supabase/S3)** — Pack files with checksums, presigned URLs for secure downloads, Postgres for metadata
+1. **Platform storage layer** (`services/platformStorage.ts`) — abstracts AsyncStorage (mobile) vs sessionStorage (web)
+2. **Question provider** (`services/questionProvider.ts`) — database queries on mobile, in-memory bundle on web
+3. **App layout initialization** — conditional WatermelonDB initialization (mobile only)
+4. **Shared Types Package** (`@trivial-world/types`) — Zod schemas for question packs, categories, validation
+5. **Generator Web App** (Next.js) — AI-powered question generation, pack management, static export
+6. **Two Netlify sites** — independent deployment from shared monorepo
 
 ### Critical Pitfalls
 
-Research identified nine critical pitfalls, with the top four requiring immediate attention during architecture and planning:
+**Web Deployment (v3.0):**
 
-1. **AI Hallucination** — 20-45% of AI-generated content has factual issues. Prevent with multi-model fact-checking (Gemini + GPT-4 + Perplexity consensus), confidence scoring in schema, human review queue for flagged items. Address in Phase 1 (schema) and Phase 3 (generation).
+1. **Missing SPA redirects** — Netlify serves static files; without redirect rules, direct navigation to `/game/setup` returns 404. Create `netlify.toml` with `from = "/*"` to `/index.html` before deployment.
 
-2. **Prompt Injection** — #1 OWASP LLM security risk. Prevent with input sanitization (100 char limit), structured output enforcement, separate system prompts from user input, content moderation layer. Address in Phase 3.
+2. **Expo grouped routes 404** — Routes under `(group)` folders threw 404 in production before expo-router v3.5.17. Verify version and test grouped routes after export.
 
-3. **Schema Migration Breaking Packs** — JSON schema changes break local cached packs. Prevent with version field in every payload, additive-only changes, upcaster pattern for runtime migration. Design from day one in Phase 1.
+3. **Native modules without web fallbacks** — `expo-haptics` works on web after SDK 55 (Web Vibration API), but wrap calls in `Platform.OS !== 'web'` checks. Screen orientation is no-op on web.
 
-4. **Large Pack Performance** — Loading entire packs into memory causes crashes. Prevent with WatermelonDB lazy loading, database indexes, pagination (never load > 50 questions at once). Address in Phase 1 design.
+4. **Zustand hydration mismatch** — On static export, server renders initial state while client hydrates from storage. Use `skipHydration: true` and call `persist.rehydrate()` in `useEffect`.
+
+5. **Outdated Expo export commands** — Use `npx expo export --platform web` (output to `dist/`), not deprecated `expo build:web`.
+
+**Question Pack System (v2.0):**
+
+6. **AI Hallucination** — 20-45% of AI-generated content has factual issues. Prevent with multi-model fact-checking, confidence scoring, human review queue.
+
+7. **Prompt Injection** — #1 OWASP LLM security risk. Prevent with input sanitization, structured output enforcement, content moderation layer.
+
+8. **Schema Migration Breaking Packs** — JSON schema changes break local cached packs. Prevent with version field in every payload, additive-only changes.
 
 ## Implications for Roadmap
 
-Based on research, the v2.0 milestone should be structured in three phases:
+Based on research combining both v2.0 (Question Pack) and v3.0 (Web Deployment), suggested phase structure:
 
-### Phase 1: Question Pack Data Structure
-**Rationale:** Foundation for all subsequent work. Must exist before generator can produce packs or mobile app can consume them. Research emphasizes versioning from day one to prevent migration failures.
-**Delivers:** Zod schemas, JSON Schema export, WatermelonDB schema, pack validation service
-**Addresses:** Pack Storage Model, Schema Validation (FEATURES.md)
-**Avoids:** Schema Migration Breaking Packs (PITFALLS.md), Large Pack Performance
+### Phase 1: Mobile Web Export Configuration
+**Rationale:** Foundation for web deployment — configuration changes only, no new packages. Must establish correct build process before adding features.
+**Delivers:** Working static export of mobile app with proper output directory.
+**Addresses:** WEB-01 foundation
+**Avoids:** Pitfall 5 (outdated commands), Pitfall 2 (grouped routes with correct version)
+**Key tasks:**
+- Update `app.json` with `web.output: "static"`
+- Add `build:web` script to package.json
+- Verify expo-router >= 3.5.17
+- Test `npx expo export --platform web` produces `dist/` directory
 
-### Phase 2: Cloud Storage & Pack Download
-**Rationale:** Once data structure exists, mobile app needs infrastructure to fetch packs. Presigned URLs enable secure downloads without user accounts, maintaining the no-auth frictionless design.
-**Delivers:** Pack index API, presigned URL generation, download service, checksum verification, pack caching
-**Uses:** Supabase client, expo-file-system, Zod validation
-**Implements:** Pack Download Architecture (ARCHITECTURE.md)
+### Phase 2: Platform-Specific Storage Layer
+**Rationale:** Core architectural change for web. Must separate mobile (WatermelonDB) from web (sessionStorage + bundled questions) before testing.
+**Delivers:** Platform-aware storage that works on both mobile and web.
+**Addresses:** WEB-01 storage requirement, PROJECT.md WEB-01 session-only
+**Avoids:** Pitfall 3 (native module fallbacks), Pitfall 4 (Zustand hydration)
+**Key tasks:**
+- Create `services/platformStorage.ts` with Platform.OS detection
+- Create `services/questionProvider.ts` with conditional database/bundle
+- Update `_layout.tsx` with conditional WatermelonDB initialization
+- Update game stores to use platform storage adapter
 
-### Phase 3: AI Question Generation
-**Rationale:** Requires complete data structure and working storage. Most complex phase with highest risk. Research shows this needs multi-model validation, content moderation, and human review queue.
-**Delivers:** Generator web app, AI generation endpoint, quality scoring, fact-checking pipeline, human review UI
-**Uses:** Vercel AI SDK, OpenAI, Next.js 16
-**Avoids:** AI Hallucination, Prompt Injection, Content Moderation Gaps (PITFALLS.md)
+### Phase 3: Netlify Deployment Configuration
+**Rationale:** Deploy both apps to production. Requires correct monorepo configuration.
+**Delivers:** Two live Netlify sites (game and generator) from one repo.
+**Addresses:** WEB-03 deployment
+**Avoids:** Pitfall 1 (SPA redirects), Pitfall 7 (monorepo configuration)
+**Key tasks:**
+- Create `apps/mobile/netlify.toml` with SPA redirects
+- Create `apps/generator/netlify.toml` (already static export ready)
+- Configure two Netlify sites from GitHub repo
+- Set correct base/package directories for monorepo
+
+### Phase 4: PWA Manifest and Icons
+**Rationale:** Enable "Add to Home Screen" functionality. Required for installability.
+**Delivers:** PWA manifest with proper icons, enabling mobile installation.
+**Addresses:** WEB-04 PWA features
+**Avoids:** Pitfall 8 (service worker blocking updates) — skip aggressive caching
+**Key tasks:**
+- Create `web/manifest.json` with name, icons, theme colors
+- Generate 192px and 512px icons from existing app icons
+- Add manifest link to HTML template
+- Test install prompt on Android Chrome and iOS Safari
+
+### Phase 5: Web UI Polish and Testing
+**Rationale:** Verify all screens render correctly on web. Address React Native Web CSS differences.
+**Delivers:** Fully functional web app with proper layout on desktop browsers.
+**Addresses:** Full user experience validation
+**Avoids:** Pitfall 9 (CSS property differences)
+**Key tasks:**
+- Test all routes on web (direct URL entry, refresh, navigation)
+- Verify text is wrapped in `<Text>` components
+- Add Platform.select for web-specific styles where needed
+- Test native module fallbacks (haptics, orientation)
 
 ### Phase Ordering Rationale
 
-- **Phase 1 first:** Data structure is the contract between generator and consumer. Cannot build either without it. Versioning prevents future breaking changes.
-- **Phase 2 second:** Mobile app needs working download pipeline before generator produces content to download. Validates the end-to-end flow with placeholder content.
-- **Phase 3 last:** AI generation is highest complexity and risk. Having infrastructure in place allows focused development on quality and safety.
+- **Configuration first (Phase 1-2):** Cannot test web without correct export and storage setup. These are prerequisites.
+- **Deployment before polish (Phase 3-4):** Get working deployment early, then add PWA features. Deploying reveals integration issues.
+- **Testing last (Phase 5):** Comprehensive web testing after all pieces in place. Earlier testing on broken builds wastes time.
+- **PWA after basic deployment:** Manifest and icons are additive. Core functionality works without them.
 
 ### Research Flags
 
 Phases likely needing deeper research during planning:
-- **Phase 3 (AI Generation):** Complex integration with multiple validation layers. Multi-model fact-checking API patterns need investigation. Content moderation API selection (OpenAI Moderation vs. Perspective API) needs comparison.
-- **Phase 3 (Prompt Engineering):** Difficulty calibration research shows 30-40% of "hard" questions are actually medium. Prompt templates need testing with real category content.
+- **Phase 2:** Platform-specific storage implementation — Zustand persist behavior on web needs careful testing with skipHydration
+- **Phase 4:** Service worker caching strategy — research recommends shell-only caching, but implementation details may need verification
 
 Phases with standard patterns (skip research-phase):
-- **Phase 1 (Data Structure):** Well-documented Zod and WatermelonDB patterns. Standard schema versioning approaches.
-- **Phase 2 (Cloud Storage):** Presigned URL patterns are established. Supabase has comprehensive documentation.
+- **Phase 1:** Well-documented Expo export configuration, follow official docs
+- **Phase 3:** Standard Netlify monorepo deployment, documented in Netlify guides
+- **Phase 5:** React Native Web CSS differences are known patterns
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | Multiple official sources verified. Expo SDK 55, WatermelonDB, Zustand, Zod all have current documentation. Supabase + Expo Go compatibility confirmed. |
-| Features | HIGH | AI question generation research includes 2026 study data on failure rates. Schema patterns from established trivia formats. Competitive analysis covers Kahoot, Quizlet, Sporcle. |
-| Architecture | HIGH | Monorepo pattern well-documented. Contract-first development is established practice. Offline-first patterns from Kuratour case study and WatermelonDB docs. |
-| Pitfalls | HIGH | Academic research (BBC/EBU, NAACL 2025, ICLR 2025) on AI hallucination. OWASP Top 10 for LLM security. WatermelonDB performance patterns from official docs. |
+| Stack | HIGH | Official Expo docs, verified version compatibility, existing project uses proven stack |
+| Features | HIGH | PWA requirements well-documented, clear distinction between table stakes and differentiators |
+| Architecture | HIGH | Platform-specific storage pattern is standard, monorepo deployment well-documented |
+| Pitfalls | HIGH | All pitfalls have official GitHub issues or documentation with solutions |
 
 **Overall confidence:** HIGH
 
 ### Gaps to Address
 
-- **Difficulty calibration specifics:** Research shows "hard" questions often aren't truly hard. Need prompt engineering testing during Phase 3 planning to calibrate difficulty.
-- **Distractor quality validation:** 57% of AI questions have implausible distractors. Need specific validation logic for distractor plausibility. Address in Phase 3 generation pipeline.
-- **Human review workflow UX:** Research recommends human review queue but doesn't specify UX patterns. Need to design review interface during Phase 3 planning.
-- **Cost projections for AI:** Token-based pricing depends on usage patterns. Need volume estimates before Phase 3 implementation to set rate limits.
+- **WatermelonDB LokiJS adapter on web:** Issue #1920 reports data persistence bugs. Mitigation is session-only storage (bundled questions) instead of IndexedDB. This is already the recommended approach per PROJECT.md WEB-01.
+- **Next.js 16.1.2 RSC path fix:** Monitor for release if RSC path errors occur. Current workaround is adapter or downgrade to Next.js 15 for static exports.
+- **iOS Safari PWA limitations:** Background sync not supported, IndexedDB unreliable after 7 days. Design assumes session-only storage, so this gap is acceptable.
+- **AI hallucination calibration:** Need prompt engineering testing during question generation to calibrate difficulty and fact-check quality.
 
 ## Sources
 
 ### Primary (HIGH confidence)
-- Expo SDK 55 Changelog — SDK versions, React Native compatibility
-- WatermelonDB Documentation — Offline-first patterns, schema, sync
+- `/expo/expo` (Context7) — Expo Web Export, PWA Guide, Static Rendering, Grouped Routes
+- `/vercel/next.js` (Context7) — Next.js Static Export documentation
+- `/pmndrs/zustand` (Context7) — Zustand Persist Middleware
+- Expo SDK 56 Documentation — React Native 0.85 compatibility, New Architecture
+- WatermelonDB Documentation — Offline-first patterns, database adapters
+- Tamagui Installation Guide — Setup, config, components
+- Netlify Monorepo Deployment Guide — Multiple sites from one repo
 - Vercel AI SDK Documentation — LLM integration patterns, structured output
 - Zod 4 Documentation — Schema validation, TypeScript integration
-- Supabase Expo Quickstart — Integration patterns
 - OWASP Top 10 for LLM Applications 2025 — Security risks, prompt injection
-- BBC/EBU News Integrity Study (October 2025) — AI hallucination rates
-- NAACL 2025 Semantic Leakage paper — Category leakage in generated content
-- 2026 AI Quiz Generation Study — Quality metrics, failure modes
 
 ### Secondary (MEDIUM confidence)
-- Maastricht University Prompt Library — MCQ generation templates
-- QuizGPT Package — Production-scale question generation
-- WatermelonDB Offline Demo — Observable queries, sync patterns
-- JSON Schema Migration Best Practices — Versioning, upcasters
-- University of Michigan L@S '24 — Distractor quality research
-- Google Cloud Quizaic Case Study — Multi-model fact-checking pipeline
+- PWA 2025 Field Guide — Anti-patterns and production considerations
+- WatermelonDB Issue #1920 — LokiJS data persistence bug (needs monitoring)
+- Expo Router Web Best Practices (community article) — Lessons from mobile-to-web conversion
+- BBC/EBU News Integrity Study (October 2025) — AI hallucination rates
+- NAACL 2025 Semantic Leakage paper — Category leakage in generated content
 
 ### Tertiary (LOW confidence)
-- React Native Database Comparison 2026 — Performance benchmarks (third-party)
-- Mobile Game Settings UX — Settings UI patterns (blog post)
-- UX StackExchange Difficulty Picker — Multi-select patterns (community)
+- None identified — all critical sources are official documentation or verified GitHub issues
 
 ---
-*Research completed: 2026-06-08*
+*Research completed: 2026-06-09*
 *Ready for roadmap: yes*
