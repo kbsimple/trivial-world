@@ -29,7 +29,8 @@ export default function HomeScreen() {
   const [activePackName, setActivePackName] = useState<string | null>(null);
 
   // D-02: Game resumable if in progress and has players
-  const hasActiveGame = phase !== 'setup' && phase !== 'finished' && players.length > 0;
+  // IN-05: Explicit check for active game phases
+  const hasActiveGame = ['rolling', 'moving', 'answering', 'scoring'].includes(phase) && players.length > 0;
 
   // Load active pack name on mount
   useEffect(() => {
