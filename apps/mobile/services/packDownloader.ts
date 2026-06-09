@@ -98,8 +98,14 @@ export async function downloadPackWithProgress(
     // D-12: Checksum verification (silent on success, throws on mismatch)
     await verifyChecksum(content, entry.checksum);
 
-    // Parse and validate with Zod
-    const json = JSON.parse(content);
+    // WR-03: Wrap JSON.parse in try-catch before Zod validation
+    let json: unknown;
+    try {
+      json = JSON.parse(content);
+    } catch (error) {
+      throw new Error('Invalid pack: content is not valid JSON');
+    }
+
     const result = QuestionPackSchema.safeParse(json);
 
     if (!result.success) {
