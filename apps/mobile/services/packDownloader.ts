@@ -53,6 +53,11 @@ export async function downloadPackWithProgress(
     const contentLength = response.headers.get('content-length');
     const totalBytes = contentLength ? parseInt(contentLength, 10) : entry.size;
 
+    // WR-02: Validate totalBytes to prevent division by zero
+    if (!totalBytes || totalBytes <= 0) {
+      throw new Error('Invalid pack: missing or invalid size information');
+    }
+
     // Read response body with progress
     const reader = response.body?.getReader();
     if (!reader) {
@@ -69,11 +74,11 @@ export async function downloadPackWithProgress(
       chunks.push(value);
       bytesWritten += value.length;
 
-      if (onProgress) {
+      if (onProgress && totalBytes > 0) {
         onProgress({
           bytesWritten,
           bytesTotal: totalBytes,
-          percent: Math.round((bytesWritten / totalBytes) * 100),
+          percent: Math.min(100, Math.round((bytesWritten / totalBytes) * 100)),
         });
       }
     }
