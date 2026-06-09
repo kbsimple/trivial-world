@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { platformStorage } from '../services/platformStorage';
 import { PackIndexEntry, Category, Difficulty } from '@trivial-world/types';
 import { fetchPackIndex } from '../services/packIndex';
 import { downloadPackWithProgress, getDownloadedPackIds, setActivePack } from '../services/packDownloader';
@@ -120,7 +120,7 @@ export const usePackStore = create<PackState>()(
     }),
     {
       name: 'trivial-world-packs',
-      storage: createJSONStorage(() => AsyncStorage),
+      storage: createJSONStorage(() => platformStorage),
       partialize: (state) => ({
         downloadedPackIds: state.downloadedPackIds,
         activePackId: state.activePackId,
