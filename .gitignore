@@ -38,3 +38,9 @@ coverage/
 
 # Turborepo
 .turbo/
+
+# Expo
+.expo/
+
+# Tamagui
+.tamagui/
