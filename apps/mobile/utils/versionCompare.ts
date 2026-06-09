@@ -3,6 +3,9 @@ import { compare, gt, major, minor, patch } from 'semver';
 /**
  * Version comparison utility for pack updates
  * Per D-14: Uses semver for version comparison
+ *
+ * Note: `compare` is kept for potential future use cases where
+ * full version comparison (-1, 0, 1) is needed instead of just gt.
  */
 
 /**
@@ -72,6 +75,9 @@ export function getVersionDifference(indexVersion: string, downloadedVersion: st
 
 /**
  * Compare two versions
+ * Note: This function is kept for potential future use cases where
+ * full version ordering is needed. Currently not used in production code
+ * but tested for completeness and available for pack management features.
  * @returns -1 if a < b, 0 if a == b, 1 if a > b
  */
 export function compareVersions(a: string, b: string): -1 | 0 | 1 {
