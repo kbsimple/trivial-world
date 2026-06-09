@@ -89,7 +89,7 @@ export function PackMetadataForm({
     if (formIsValid !== isValid) {
       onValidityChange(formIsValid);
     }
-  }, [formValues.name, formValues.description, formValues.author, formIsValid]);
+  }, [formValues, formIsValid, isValid, name, description, author, onNameChange, onDescriptionChange, onAuthorChange, onValidityChange]);
 
   return (
     <div
