@@ -8,7 +8,7 @@ import { usePackStore } from '../../stores/packStore';
 import { AddPlayerButton } from '../../components/AddPlayerButton';
 import { CATEGORY_COLORS } from '../../constants/categories';
 import type { PlayerColor } from '../../constants/categories';
-import { QuestionPackModel } from '../../database/models';
+import type { QuestionPackModel } from '../../database/models';
 import { SEMANTIC_COLORS } from '../../constants/theme';
 
 /**

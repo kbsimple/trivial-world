@@ -4,7 +4,6 @@ import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { TamaguiProvider, Theme } from 'tamagui';
 import config from '../tamagui.config';
-import { initializeDatabaseAsync, getDatabase } from '../database';
 
 /**
  * Root layout
@@ -15,11 +14,11 @@ import { initializeDatabaseAsync, getDatabase } from '../database';
  * - Database initialization: Seeds default pack on first launch (D-02)
  *   - Mobile: WatermelonDB with pack downloads (D-07)
  *   - Web: Skipped - uses bundled questions only (D-08)
+ *
+ * NOTE: Database module is NOT imported at top level to avoid bundling
+ * native modules (WatermelonDB/SQLite) on web. Use getDatabase() from
+ * services/database.ts instead, which handles platform detection.
  */
-
-// Export database getter for use in other modules
-// Only valid on mobile after initializeDatabaseAsync() completes
-export { getDatabase as database };
 
 export default function RootLayout() {
   const [isInitialized, setIsInitialized] = useState(false);
@@ -32,8 +31,9 @@ export default function RootLayout() {
     }
 
     // Mobile: Initialize database and seed default pack (D-02)
-    // Uses async dynamic import to avoid bundling SQLite on web
-    initializeDatabaseAsync()
+    // Dynamic import to avoid bundling WatermelonDB/SQLite on web
+    import('../database')
+      .then(({ initializeDatabaseAsync }) => initializeDatabaseAsync())
       .then(() => {
         setIsInitialized(true);
       })

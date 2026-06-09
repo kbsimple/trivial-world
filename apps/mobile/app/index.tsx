@@ -5,7 +5,7 @@ import { useTheme } from 'tamagui';
 import { useGameStore } from '../stores/gameStore';
 import { usePlayerStore } from '../stores/playerStore';
 import { usePackStore } from '../stores/packStore';
-import { QuestionPackModel } from '../database/models';
+import type { QuestionPackModel } from '../database/models';
 import { SEMANTIC_COLORS } from '../constants/theme';
 
 /**

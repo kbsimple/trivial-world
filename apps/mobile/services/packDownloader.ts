@@ -1,7 +1,4 @@
 import { QuestionPackSchema, QuestionPack, PackIndexEntry, Category } from '@trivial-world/types';
-import { getDatabase } from '../database';
-import { QuestionPackModel } from '../database/models/QuestionPack';
-import { QuestionModel } from '../database/models/Question';
 import { verifyChecksum } from './checksum';
 import { PACK_DOWNLOAD_TIMEOUT_MS } from '../constants/packConfig';
 
@@ -27,6 +24,9 @@ export type ProgressCallback = (progress: DownloadProgress) => void;
  * Per D-12: Checksum verification
  * Per D-16: Store in WatermelonDB
  *
+ * NOTE: This function uses dynamic imports to avoid bundling WatermelonDB on web.
+ * Mobile-only functionality - web uses bundled questions.
+ *
  * @param entry - Pack index entry with download URL and checksum
  * @param onProgress - Optional callback for progress updates
  * @returns Promise resolving to validated QuestionPack
@@ -36,6 +36,8 @@ export async function downloadPackWithProgress(
   entry: PackIndexEntry,
   onProgress?: ProgressCallback
 ): Promise<QuestionPack> {
+  // Dynamic import to avoid bundling database on web
+  const { getDatabase } = await import('../database');
   const database = getDatabase();
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), PACK_DOWNLOAD_TIMEOUT_MS);
@@ -114,11 +116,15 @@ export async function downloadPackWithProgress(
 
     const pack = result.data;
 
+    // Dynamic import for model types
+    const { QuestionPackModel } = await import('../database/models/QuestionPack');
+    const { QuestionModel } = await import('../database/models/Question');
+
     // D-16: Store in WatermelonDB
     await database.write(async () => {
       // Create pack record
       const packRecord = await database.get('question_packs').create((p) => {
-        const packModel = p as QuestionPackModel;
+        const packModel = p as typeof QuestionPackModel.prototype;
         packModel.packId = pack.metadata.id;
         packModel.name = pack.metadata.name;
         packModel.description = pack.metadata.description || '';
@@ -135,7 +141,7 @@ export async function downloadPackWithProgress(
       // Bulk insert questions
       for (const q of pack.questions) {
         await database.get('questions').create((question) => {
-          const qModel = question as QuestionModel;
+          const qModel = question as typeof QuestionModel.prototype;
           qModel.questionPackId = packRecord.id;
           qModel.questionId = q.id;
           qModel.category = q.category;
@@ -161,42 +167,54 @@ export async function downloadPackWithProgress(
 /**
  * Get downloaded pack IDs from database
  *
+ * NOTE: Uses dynamic import to avoid bundling database on web.
+ * Mobile-only functionality.
+ *
  * @returns Promise resolving to array of pack IDs
  */
 export async function getDownloadedPackIds(): Promise<string[]> {
+  const { getDatabase } = await import('../database');
   const database = getDatabase();
   const packs = await database.get('question_packs').query().fetch();
-  return packs.map((p) => (p as QuestionPackModel).packId);
+  return packs.map((p) => (p as any).packId);
 }
 
 /**
  * Get active pack from database (D-15: only one active at a time)
  *
+ * NOTE: Uses dynamic import to avoid bundling database on web.
+ * Mobile-only functionality.
+ *
  * @returns Promise resolving to active pack model or null
  */
-export async function getActivePack(): Promise<QuestionPackModel | null> {
-  const database = getDatabase();
+export async function getActivePack(): Promise<any | null> {
+  const { getDatabase } = await import('../database');
   const { Q } = await import('@nozbe/watermelondb');
+  const database = getDatabase();
   const packs = await database.get('question_packs')
     .query(Q.where('is_active', true))
     .fetch();
-  return packs.length > 0 ? (packs[0] as QuestionPackModel) : null;
+  return packs.length > 0 ? packs[0] : null;
 }
 
 /**
  * Set active pack (deactivates others per D-15)
  *
+ * NOTE: Uses dynamic import to avoid bundling database on web.
+ * Mobile-only functionality.
+ *
  * @param packId - The pack ID to activate
  */
 export async function setActivePack(packId: string): Promise<void> {
-  const database = getDatabase();
+  const { getDatabase } = await import('../database');
   const { Q } = await import('@nozbe/watermelondb');
+  const database = getDatabase();
 
   await database.write(async () => {
     // Deactivate all packs
     const allPacks = await database.get('question_packs').query().fetch();
     for (const pack of allPacks) {
-      await (pack as QuestionPackModel).update((p) => {
+      await (pack as any).update((p: any) => {
         p.isActive = false;
       });
     }
@@ -207,7 +225,7 @@ export async function setActivePack(packId: string): Promise<void> {
       .fetch();
 
     if (targetPacks.length > 0) {
-      await (targetPacks[0] as QuestionPackModel).update((p) => {
+      await (targetPacks[0] as any).update((p: any) => {
         p.isActive = true;
       });
     }
