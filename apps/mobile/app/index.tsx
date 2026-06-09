@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'expo-router';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, Pressable, StyleSheet, Platform } from 'react-native';
 import { useTheme } from 'tamagui';
 import { useGameStore } from '../stores/gameStore';
 import { usePlayerStore } from '../stores/playerStore';
@@ -18,6 +18,9 @@ import { SEMANTIC_COLORS } from '../constants/theme';
  *
  * Per D-01: Pack selection BEFORE setup screen
  * Flow: Home -> Pack Selection -> Setup -> Game
+ *
+ * Per D-09: Web skips pack selection, uses bundled default pack
+ * Flow (web): Home -> Setup -> Game
  */
 export default function HomeScreen() {
   const router = useRouter();
@@ -27,6 +30,14 @@ export default function HomeScreen() {
   const resetPlayers = usePlayerStore((state) => state.resetPlayers);
   const activePackId = usePackStore((state) => state.activePackId);
   const [activePackName, setActivePackName] = useState<string | null>(null);
+
+  // D-09: Web skips pack selection, navigates directly to setup
+  useEffect(() => {
+    if (Platform.OS === 'web') {
+      // Use bundled default pack on web, skip pack selection
+      router.replace('/game/setup');
+    }
+  }, []);
 
   // D-02: Game resumable if in progress and has players
   // IN-05: Explicit check for active game phases
