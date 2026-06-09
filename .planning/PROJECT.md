@@ -8,6 +8,21 @@ Trivial World is a mobile trivia game for in-person social play, with a web-base
 
 Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
 
+## Current Milestone: v3.0 Web Deployment
+
+**Goal:** Deploy both apps to Netlify with GitHub sync from main branch
+
+**Target features:**
+- WEB-01: Game web app — Expo web export with session-only storage
+- WEB-02: Generator web app — Next.js static export for Netlify
+- WEB-03: Netlify deployment — Two separate sites, GitHub sync from main
+- WEB-04: PWA manifest — Add to Home Screen, app icons
+
+**Key decisions:**
+- AI generation stays dev-only (Ollama local) — production generator deploys as static site
+- Game storage is session-only — no IndexedDB, simpler than full offline
+- Two separate Netlify sites — game and generator deploy independently
+
 ## Requirements
 
 ### Validated
@@ -26,7 +41,10 @@ Enable in-person social trivia gameplay where the app supports (not replaces) hu
 
 ### Active
 
-(None — milestone complete, ready for next milestone planning)
+- [ ] WEB-01: Game runs in web browser via Expo export
+- [ ] WEB-02: Generator accessible as static web app
+- [ ] WEB-03: Both apps deploy automatically from main branch
+- [ ] WEB-04: Game installable as PWA on mobile devices
 
 ### Out of Scope
 
@@ -83,4 +101,4 @@ Enable in-person social trivia gameplay where the app supports (not replaces) hu
 - **Offline-first:** No network dependency for core gameplay
 
 ---
-*Last updated: 2026-06-08 after v2.0 milestone*
+*Last updated: 2026-06-09 for v3.0 milestone*
