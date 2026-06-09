@@ -1,0 +1,46 @@
+{
+  "name": "@trivial-world/mobile",
+  "version": "1.0.0",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "test": "vitest",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nozbe/watermelondb": "^0.28.0",
+    "@react-native-async-storage/async-storage": "^2.1.0",
+    "@tamagui/config": "^2.1.0",
+    "@tamagui/font-inter": "^2.1.0",
+    "@trivial-world/types": "workspace:*",
+    "expo": "~56.0.9",
+    "expo-haptics": "~56.0.3",
+    "expo-router": "~4.0.19",
+    "expo-screen-orientation": "~56.0.2",
+    "expo-status-bar": "~56.0.4",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "react-native-gesture-handler": "~2.24.0",
+    "react-native-reanimated": "~3.17.4",
+    "react-native-safe-area-context": "5.2.0",
+    "react-native-screens": "~4.4.0",
+    "semver": "^7.8.3",
+    "tamagui": "^2.1.0",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-proposal-decorators": "^7.29.7",
+    "@babel/plugin-transform-class-properties": "^7.29.7",
+    "@tamagui/babel-plugin": "^2.1.0",
+    "@types/react": "~19.2.2",
+    "@types/semver": "^7.7.1",
+    "typescript": "~6.0.3",
+    "vitest": "^3.0.0"
+  },
+  "private": true
+}
