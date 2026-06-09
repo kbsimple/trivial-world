@@ -8,6 +8,8 @@ import { usePackStore } from '../../stores/packStore';
 import { AddPlayerButton } from '../../components/AddPlayerButton';
 import { CATEGORY_COLORS } from '../../constants/categories';
 import type { PlayerColor } from '../../constants/categories';
+import { QuestionPackModel } from '../../database/models';
+import { SEMANTIC_COLORS } from '../../constants/theme';
 
 /**
  * Game setup screen
@@ -30,26 +32,36 @@ export default function SetupScreen() {
 
   // Load pack name on mount (D-01: Setup receives selected pack from packStore)
   useEffect(() => {
+    let cancelled = false;
+
     const loadPackName = async () => {
       if (activePackId) {
         try {
           const { getDatabase } = await import('../../database');
           const { Q } = await import('@nozbe/watermelondb');
           const database = getDatabase();
-          const packs = await database.get('question_packs')
+          const packs = await database.get<QuestionPackModel>('question_packs')
             .query(Q.where('pack_id', activePackId))
             .fetch();
-          if (packs.length > 0) {
-            setPackName((packs[0] as any).name);
+          if (!cancelled && packs.length > 0) {
+            setPackName(packs[0].name);
           }
         } catch (error) {
-          console.error('Error loading pack name:', error);
+          if (!cancelled) {
+            console.error('Error loading pack name:', error);
+          }
         }
       } else {
-        setPackName(null);
+        if (!cancelled) {
+          setPackName(null);
+        }
       }
     };
     loadPackName();
+
+    return () => {
+      cancelled = true;
+    };
   }, [activePackId]);
 
   const handleAddPlayer = () => {
@@ -168,7 +180,7 @@ export default function SetupScreen() {
             {
               backgroundColor: players.length === 0 || !activePackId
                 ? (theme.color?.val as string) + '40'
-                : '#228b22', // Green for Start Game
+                : SEMANTIC_COLORS.success,
               opacity: players.length === 0 || !activePackId ? 0.5 : 1,
             },
           ]}
@@ -256,7 +268,7 @@ const styles = StyleSheet.create({
   },
   removeButtonText: {
     fontSize: 24,
-    color: '#ff6b6b',
+    color: SEMANTIC_COLORS.remove,
   },
   addButtonContainer: {
     alignItems: 'center',
