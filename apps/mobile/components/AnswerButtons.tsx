@@ -1,5 +1,6 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
-import * as Haptics from 'expo-haptics';
+import { NotificationFeedbackType } from 'expo-haptics';
+import { notificationAsync } from '../utils/haptics';
 import { SEMANTIC_COLORS } from '../constants/theme';
 
 interface AnswerButtonsProps {
@@ -22,14 +23,14 @@ export function AnswerButtons({ onMark, visible = true }: AnswerButtonsProps) {
   }
 
   const handleCorrect = async () => {
-    // D-20: Haptic feedback for correct answer
-    await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    // D-20: Haptic feedback for correct answer (D-10: platform-aware)
+    await notificationAsync(NotificationFeedbackType.Success);
     onMark(true);
   };
 
   const handleIncorrect = async () => {
-    // D-20: Haptic feedback for incorrect answer
-    await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+    // D-20: Haptic feedback for incorrect answer (D-10: platform-aware)
+    await notificationAsync(NotificationFeedbackType.Error);
     onMark(false);
   };
 
