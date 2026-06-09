@@ -1,5 +1,5 @@
 import { QuestionPackSchema, QuestionPack, PackIndexEntry, Category } from '@trivial-world/types';
-import { database } from '../database';
+import { getDatabase } from '../database';
 import { QuestionPackModel } from '../database/models/QuestionPack';
 import { QuestionModel } from '../database/models/Question';
 import { verifyChecksum } from './checksum';
@@ -36,6 +36,7 @@ export async function downloadPackWithProgress(
   entry: PackIndexEntry,
   onProgress?: ProgressCallback
 ): Promise<QuestionPack> {
+  const database = getDatabase();
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), PACK_DOWNLOAD_TIMEOUT_MS);
 
@@ -105,32 +106,34 @@ export async function downloadPackWithProgress(
     // D-16: Store in WatermelonDB
     await database.write(async () => {
       // Create pack record
-      const packRecord = await database.get('question_packs').create((p: QuestionPackModel) => {
-        p.packId = pack.metadata.id;
-        p.name = pack.metadata.name;
-        p.description = pack.metadata.description || '';
-        p.version = pack.metadata.version;
-        p.author = pack.metadata.author;
-        p.downloadedAt = Date.now();
-        p.checksum = entry.checksum;
-        p.isActive = false;
-        p.categoryCounts = JSON.stringify(pack.metadata.categoryCounts);
-        p.totalQuestions = pack.metadata.totalQuestions;
-        p.schemaVersion = pack.metadata.schemaVersion;
+      const packRecord = await database.get('question_packs').create((p) => {
+        const packModel = p as QuestionPackModel;
+        packModel.packId = pack.metadata.id;
+        packModel.name = pack.metadata.name;
+        packModel.description = pack.metadata.description || '';
+        packModel.version = pack.metadata.version;
+        packModel.author = pack.metadata.author;
+        packModel.downloadedAt = Date.now();
+        packModel.checksum = entry.checksum;
+        packModel.isActive = false;
+        packModel.categoryCounts = JSON.stringify(pack.metadata.categoryCounts);
+        packModel.totalQuestions = pack.metadata.totalQuestions;
+        packModel.schemaVersion = pack.metadata.schemaVersion;
       });
 
       // Bulk insert questions
       for (const q of pack.questions) {
-        await database.get('questions').create((question: QuestionModel) => {
-          question.questionPackId = packRecord.id;
-          question.questionId = q.id;
-          question.category = q.category;
-          question.questionText = q.questionText;
-          question.answerText = q.answerText;
-          question.difficulty = q.difficulty || 'medium';
-          question.choices = q.choices ? JSON.stringify(q.choices) : null;
-          question.correctChoiceIndex = q.correctChoiceIndex || null;
-          question.askedAt = null;
+        await database.get('questions').create((question) => {
+          const qModel = question as QuestionModel;
+          qModel.questionPackId = packRecord.id;
+          qModel.questionId = q.id;
+          qModel.category = q.category;
+          qModel.questionText = q.questionText;
+          qModel.answerText = q.answerText;
+          qModel.difficulty = q.difficulty || 'medium';
+          qModel.choices = q.choices ? JSON.stringify(q.choices) : undefined;
+          qModel.correctChoiceIndex = q.correctChoiceIndex ?? undefined;
+          qModel.askedAt = undefined;
         });
       }
     });
@@ -150,8 +153,9 @@ export async function downloadPackWithProgress(
  * @returns Promise resolving to array of pack IDs
  */
 export async function getDownloadedPackIds(): Promise<string[]> {
+  const database = getDatabase();
   const packs = await database.get('question_packs').query().fetch();
-  return packs.map((p: QuestionPackModel) => p.packId);
+  return packs.map((p) => (p as QuestionPackModel).packId);
 }
 
 /**
@@ -160,6 +164,7 @@ export async function getDownloadedPackIds(): Promise<string[]> {
  * @returns Promise resolving to active pack model or null
  */
 export async function getActivePack(): Promise<QuestionPackModel | null> {
+  const database = getDatabase();
   const { Q } = await import('@nozbe/watermelondb');
   const packs = await database.get('question_packs')
     .query(Q.where('is_active', true))
@@ -173,6 +178,7 @@ export async function getActivePack(): Promise<QuestionPackModel | null> {
  * @param packId - The pack ID to activate
  */
 export async function setActivePack(packId: string): Promise<void> {
+  const database = getDatabase();
   const { Q } = await import('@nozbe/watermelondb');
 
   await database.write(async () => {
