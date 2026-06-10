@@ -7,42 +7,54 @@ import { test, expect } from '@playwright/test';
  */
 
 test.describe('Mobile App - Trivial World Game', () => {
-  test.beforeEach(async ({ page }) => {
-    // Navigate to the mobile app
-    await page.goto('/');
-    // Wait for the app to fully load
-    await page.waitForLoadState('networkidle', { timeout: 30000 });
-  });
-
   test('should load the app without critical console errors', async ({ page }) => {
     const errors: string[] = [];
 
-    // Capture console errors
+    // IMPORTANT: Set up console listener BEFORE navigating to the page
+    // The __fbBatchedBridgeConfig error happens during initial JS evaluation
     page.on('console', (msg) => {
       if (msg.type() === 'error') {
         errors.push(msg.text());
       }
     });
 
-    // Wait for page to settle
+    // Also capture page errors (uncaught exceptions)
+    page.on('pageerror', (error) => {
+      errors.push(error.message);
+    });
+
+    // Navigate to the mobile app
+    await page.goto('/');
+
+    // Wait for the app to fully load
+    await page.waitForLoadState('networkidle', { timeout: 30000 });
+
+    // Additional wait for any async errors
     await page.waitForTimeout(2000);
 
     // Check for the React Native bridge error (critical)
     const hasBridgeError = errors.some(e =>
       e.includes('__fbBatchedBridgeConfig') ||
       e.includes('cannot invoke native modules') ||
-      e.includes('WatermelonDB')
+      e.includes('WatermelonDB') ||
+      e.includes('SQLite')
     );
 
     expect(hasBridgeError).toBe(false);
   });
 
   test('should have correct page title', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle', { timeout: 30000 });
+
     const title = await page.title();
     expect(title).toContain('Trivial World');
   });
 
   test('should load without native module errors', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle', { timeout: 30000 });
+
     // Get page content to verify it's not blank
     const content = await page.content();
     expect(content.length).toBeGreaterThan(1000); // Page should have content
@@ -53,6 +65,9 @@ test.describe('Mobile App - Trivial World Game', () => {
   });
 
   test('should render React Native Web app', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle', { timeout: 30000 });
+
     // Check that React Native Web styles are applied
     const html = await page.content();
 

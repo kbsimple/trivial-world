@@ -6,6 +6,12 @@ import { defineConfig, devices } from '@playwright/test';
  * Tests both apps:
  * - Mobile app (Expo web export) - served from dist/
  * - Generator app (Next.js static export) - served from out/
+ *
+ * Run tests with: pnpm test:e2e
+ *
+ * Prerequisites: Start servers manually before running tests:
+ *   npx serve apps/mobile/dist -l 3001 &
+ *   npx serve apps/generator/out -l 3002 &
  */
 
 export default defineConfig({
@@ -28,12 +34,8 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         baseURL: 'http://localhost:3001',
       },
-      webServer: {
-        command: 'npx -y serve apps/mobile/dist -l 3001 -s',
-        url: 'http://localhost:3001',
-        reuseExistingServer: true,
-        timeout: 60 * 1000,
-      },
+      // Assumes server is already running at localhost:3001
+      // Start with: npx serve apps/mobile/dist -l 3001
     },
     {
       name: 'generator',
@@ -42,12 +44,8 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         baseURL: 'http://localhost:3002',
       },
-      webServer: {
-        command: 'npx -y serve apps/generator/out -l 3002 -s',
-        url: 'http://localhost:3002',
-        reuseExistingServer: true,
-        timeout: 60 * 1000,
-      },
+      // Assumes server is already running at localhost:3002
+      // Start with: npx serve apps/generator/out -l 3002
     },
   ],
 });
