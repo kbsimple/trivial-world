@@ -44,4 +44,7 @@ coverage/
 
 # Tamagui
 .tamagui/test-results/
+
+# Playwright output (local only)
 playwright-report/
+test-results/
