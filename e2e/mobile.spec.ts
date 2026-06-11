@@ -75,3 +75,33 @@ test.describe('Mobile App - Trivial World Game', () => {
     expect(html).toContain('expo-reset');
   });
 });
+
+test.describe('Mobile App - SPA Routing', () => {
+  test('should serve app on non-root routes (SPA redirect)', async ({ page }) => {
+    // Navigate directly to a deep route — SPA mode must serve index.html (not 404)
+    const response = await page.goto('/game');
+    expect(response?.status()).not.toBe(404);
+
+    await page.waitForLoadState('networkidle', { timeout: 30000 });
+
+    // App shell should still load
+    const rootDiv = await page.locator('#root');
+    await expect(rootDiv).toBeVisible();
+  });
+
+  test('should serve app on /setup route', async ({ page }) => {
+    const response = await page.goto('/setup');
+    expect(response?.status()).not.toBe(404);
+
+    await page.waitForLoadState('networkidle', { timeout: 30000 });
+
+    const content = await page.content();
+    expect(content.length).toBeGreaterThan(1000);
+  });
+
+  test('should serve static assets correctly', async ({ page }) => {
+    // index.html must be accessible from root
+    const response = await page.goto('/');
+    expect(response?.status()).toBe(200);
+  });
+});

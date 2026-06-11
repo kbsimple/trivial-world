@@ -111,3 +111,36 @@ test.describe('Generator App - Static export', () => {
     expect(content).toContain('Question Generator');
   });
 });
+
+test.describe('Generator App - SPA Routing', () => {
+  test('should serve /review route directly (no 404)', async ({ page }) => {
+    // Navigate directly to a static route — must return 200, not 404
+    const response = await page.goto('/review');
+    expect(response?.status()).not.toBe(404);
+
+    await page.waitForLoadState('networkidle', { timeout: 15000 });
+
+    const content = await page.content();
+    expect(content.length).toBeGreaterThan(500);
+  });
+
+  test('should serve /packs route directly (no 404)', async ({ page }) => {
+    const response = await page.goto('/packs');
+    expect(response?.status()).not.toBe(404);
+
+    await page.waitForLoadState('networkidle', { timeout: 15000 });
+
+    const content = await page.content();
+    expect(content.length).toBeGreaterThan(500);
+  });
+
+  test('root route / is the generator app', async ({ page }) => {
+    const response = await page.goto('/');
+    expect(response?.status()).toBe(200);
+
+    await page.waitForLoadState('networkidle', { timeout: 15000 });
+
+    const content = await page.content();
+    expect(content).toContain('Question Generator');
+  });
+});

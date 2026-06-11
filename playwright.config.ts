@@ -1,19 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
 
-/**
- * Playwright E2E test configuration for Trivial World
- *
- * Tests both apps:
- * - Mobile app (Expo web export) - served from dist/
- * - Generator app (Next.js static export) - served from out/
- *
- * Run tests with: pnpm test:e2e
- *
- * Prerequisites: Start servers manually before running tests:
- *   npx serve apps/mobile/dist -l 3001 &
- *   npx serve apps/generator/out -l 3002 &
- */
-
 export default defineConfig({
   testDir: './e2e',
   fullyParallel: true,
@@ -26,6 +12,21 @@ export default defineConfig({
     screenshot: 'only-on-failure',
   },
 
+  webServer: [
+    {
+      command: 'npx serve apps/mobile/dist -l 3001 --single',
+      url: 'http://localhost:3001',
+      reuseExistingServer: !process.env.CI,
+      timeout: 30000,
+    },
+    {
+      command: 'npx serve apps/generator/out -l 3002 --single',
+      url: 'http://localhost:3002',
+      reuseExistingServer: !process.env.CI,
+      timeout: 30000,
+    },
+  ],
+
   projects: [
     {
       name: 'mobile',
@@ -34,8 +35,6 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         baseURL: 'http://localhost:3001',
       },
-      // Assumes server is already running at localhost:3001
-      // Start with: npx serve apps/mobile/dist -l 3001
     },
     {
       name: 'generator',
@@ -44,8 +43,6 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         baseURL: 'http://localhost:3002',
       },
-      // Assumes server is already running at localhost:3002
-      // Start with: npx serve apps/generator/out -l 3002
     },
   ],
 });
