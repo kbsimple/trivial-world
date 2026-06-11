@@ -8,9 +8,9 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Next.js plugin for static export
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# No Next.js plugin needed — app uses output: 'export' (fully static).
+# The @netlify/plugin-nextjs plugin is for SSR/ISR only and is not
+# installed in package.json. Static files are served directly from out/.
 
 # Security headers
 [[headers]]
