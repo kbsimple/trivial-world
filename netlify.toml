@@ -16,7 +16,10 @@
 [build]
   # Build both apps with Turborepo
   command = "pnpm install && pnpm build"
-  # Publish directory set per-site in Netlify UI
+  # REQUIRED: Set publish directory in Netlify UI per site:
+  #   trivial-world-game site      → publish = "apps/mobile/dist"
+  #   trivial-world-generator site → publish = "apps/generator/out"
+  # (Cannot be set here because this toml is shared by both sites.)
 
 [build.environment]
   # Node version for build (20 LTS)
