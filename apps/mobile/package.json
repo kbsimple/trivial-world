@@ -24,7 +24,6 @@
     "expo": "~56.0.9",
     "expo-haptics": "~56.0.3",
     "expo-router": "~4.0.19",
-    "expo-screen-orientation": "~56.0.2",
     "expo-status-bar": "~56.0.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",

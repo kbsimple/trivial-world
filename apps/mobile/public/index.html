@@ -33,40 +33,51 @@
     </style>
     <!-- Polyfill for React Native NativeModules on web -->
     <script>
-      // React Native's NativeModules expects nativeModuleProxy or __fbBatchedBridgeConfig
-      // On web, neither exists by default, causing "__fbBatchedBridgeConfig is not set" error
-      // This must run before React Native's bundle evaluates
+      // React Native's NativeModules expects nativeModuleProxy on web.
+      // This must run before React Native's bundle evaluates.
       if (typeof window.nativeModuleProxy === 'undefined') {
-        // Create a proxy that returns objects with default values
-        // This prevents destructuring errors when code expects specific properties
         const createNoopModule = () => {
-          const handler = {
-            get: (target, prop) => {
-              // Return a function that resolves to an empty object with common properties
-              return (...args) => {
-                // Check if last arg is a callback (old-style)
-                const lastArg = args[args.length - 1];
-                if (typeof lastArg === 'function') {
-                  // Call callback with null error and default result
-                  lastArg(null, {});
-                  return;
-                }
-                // Return Promise resolving to empty object
-                return Promise.resolve({});
-              };
+          return new Proxy({}, {
+            get: (_, prop) => (...args) => {
+              const last = args[args.length - 1];
+              if (typeof last === 'function') { last(null, {}); return; }
+              return Promise.resolve({});
             }
-          };
-          return new Proxy({}, handler);
+          });
         };
 
-        // Handler for nativeModuleProxy - returns a new module proxy for any property access
-        const proxyHandler = {
-          get: (target, moduleName) => {
+        // DeviceInfo.getConstants() must return synchronously with real screen dimensions.
+        // React Native's Dimensions module calls this at startup and destructures
+        // { screen, window } from the result — returning a Promise causes a fatal crash.
+        const scale = window.devicePixelRatio || 1;
+        const deviceInfoModule = {
+          getConstants: () => ({
+            Dimensions: {
+              screen: {
+                width: window.screen.width,
+                height: window.screen.height,
+                scale: scale,
+                fontScale: 1,
+              },
+              window: {
+                width: window.innerWidth,
+                height: window.innerHeight,
+                scale: scale,
+                fontScale: 1,
+              },
+            },
+            ServerHost: null,
+            isTesting: false,
+            reactNativeVersion: { major: 0, minor: 85, patch: 3 },
+          }),
+        };
+
+        window.nativeModuleProxy = new Proxy({}, {
+          get: (_, moduleName) => {
+            if (moduleName === 'DeviceInfo') return deviceInfoModule;
             return createNoopModule();
           }
-        };
-
-        window.nativeModuleProxy = new Proxy({}, proxyHandler);
+        });
       }
     </script>
   </head>

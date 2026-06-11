@@ -38,6 +38,14 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
         type: 'empty',
       };
     }
+
+    // Mock expo-screen-orientation (mobile-only; its web module crashes during
+    // auto-registration because expo-modules-core calls its setter with undefined)
+    if (moduleName === 'expo-screen-orientation' || moduleName.startsWith('expo-screen-orientation/')) {
+      return {
+        type: 'empty',
+      };
+    }
   }
 
   // Default resolution for all other cases
