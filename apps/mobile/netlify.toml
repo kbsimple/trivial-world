@@ -1,0 +1,16 @@
+# Netlify configuration for the Game app (Expo web export)
+# This file is only used when deploying the game site.
+
+[build]
+  command = "pnpm install && pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"

@@ -44,5 +44,12 @@ export default defineConfig({
         baseURL: 'http://localhost:3002',
       },
     },
+    {
+      // Run against live Netlify sites: pnpm test:e2e:production
+      // Requires sites to be deployed. Uses env vars to override default URLs.
+      name: 'production',
+      testMatch: 'production.spec.ts',
+      use: { ...devices['Desktop Chrome'] },
+    },
   ],
 });
