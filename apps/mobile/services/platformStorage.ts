@@ -1,45 +1,18 @@
-import { Platform } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
 /**
- * Platform-aware storage interface for Zustand persist middleware
- * Per D-04: AsyncStorage on mobile, sessionStorage on web
- * Per D-06: Session-only storage on web (no IndexedDB)
+ * Platform-specific storage for web
+ * Uses sessionStorage for session-only persistence (D-06)
+ *
+ * NOTE: This file is used ONLY on web. React Native uses platformStorage.native.ts
+ * which imports AsyncStorage. This separation prevents bundling native modules on web.
  */
-interface Storage {
-  getItem: (name: string) => Promise<string | null>;
-  setItem: (name: string, value: string) => Promise<void>;
-  removeItem: (name: string) => Promise<void>;
-}
-
-/**
- * Create platform-specific storage adapter
- * - Mobile: AsyncStorage (persistent)
- * - Web: sessionStorage (session-only, clears on tab close per D-06)
- */
-function createPlatformStorage(): Storage {
-  if (Platform.OS === 'web') {
-    // Web: Use sessionStorage for session-only persistence (D-06)
-    return {
-      getItem: async (name: string) => {
-        return sessionStorage.getItem(name);
-      },
-      setItem: async (name: string, value: string) => {
-        sessionStorage.setItem(name, value);
-      },
-      removeItem: async (name: string) => {
-        sessionStorage.removeItem(name);
-      },
-    };
-  }
-
-  // Mobile: Use AsyncStorage (persistent)
-  return AsyncStorage;
-}
-
-/**
- * Singleton storage instance
- * Use with Zustand's createJSONStorage:
- * storage: createJSONStorage(() => platformStorage)
- */
-export const platformStorage = createPlatformStorage();
+export const platformStorage = {
+  getItem: async (name: string): Promise<string | null> => {
+    return sessionStorage.getItem(name);
+  },
+  setItem: async (name: string, value: string): Promise<void> => {
+    sessionStorage.setItem(name, value);
+  },
+  removeItem: async (name: string): Promise<void> => {
+    sessionStorage.removeItem(name);
+  },
+};
