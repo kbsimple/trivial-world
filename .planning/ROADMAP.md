@@ -188,8 +188,8 @@ Plans:
 | 7. Question Generator Web App | 4/4 | Complete | 2026-06-08 |
 | 8. Game Configuration | 4/4 | Complete | 2026-06-08 |
 | 9. Mobile Web Export | 5/5 | Complete | 2026-06-09 |
-| 10. Netlify Deployment | 0/2 | Ready | - |
-| 11. PWA Manifest | 0/3 | Not started | - |
+| 10. Netlify Deployment | 2/2 | Complete | 2026-06-11 |
+| 11. PWA Manifest | 1/1 | Complete | 2026-06-11 |
 
 ---
 
@@ -197,3 +197,4 @@ Plans:
 *v1.0 shipped: 2026-06-08*
 *v2.0 shipped: 2026-06-08*
 *v3.0 milestone started: 2026-06-09*
+*v3.0 shipped: 2026-06-11*
