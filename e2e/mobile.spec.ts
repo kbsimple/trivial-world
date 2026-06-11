@@ -105,3 +105,38 @@ test.describe('Mobile App - SPA Routing', () => {
     expect(response?.status()).toBe(200);
   });
 });
+
+test.describe('Mobile App - PWA Manifest', () => {
+  test('manifest.webmanifest is accessible with correct MIME type', async ({ page }) => {
+    const response = await page.goto('/manifest.webmanifest');
+    expect(response?.status()).toBe(200);
+    const contentType = response?.headers()['content-type'] ?? '';
+    // Should NOT be served as text/html (which would indicate the SPA catch-all fired)
+    expect(contentType).not.toContain('text/html');
+  });
+
+  test('manifest link is present in index.html', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle', { timeout: 30000 });
+    const manifestLink = page.locator('link[rel="manifest"]');
+    await expect(manifestLink).toHaveCount(1);
+    const href = await manifestLink.getAttribute('href');
+    expect(href).toBe('/manifest.webmanifest');
+  });
+
+  test('PWA icons are accessible (192px and 512px)', async ({ page }) => {
+    const icon192 = await page.goto('/icons/icon-192.png');
+    expect(icon192?.status()).toBe(200);
+    expect(icon192?.headers()['content-type']).toContain('image/png');
+
+    const icon512 = await page.goto('/icons/icon-512.png');
+    expect(icon512?.status()).toBe(200);
+    expect(icon512?.headers()['content-type']).toContain('image/png');
+  });
+
+  test('apple-touch-icon is accessible', async ({ page }) => {
+    const response = await page.goto('/apple-touch-icon.png');
+    expect(response?.status()).toBe(200);
+    expect(response?.headers()['content-type']).toContain('image/png');
+  });
+});
