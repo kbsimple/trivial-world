@@ -29,7 +29,36 @@
       // On web, neither exists by default, causing "__fbBatchedBridgeConfig is not set" error
       // This must run before React Native's bundle evaluates
       if (typeof window.nativeModuleProxy === 'undefined') {
-        window.nativeModuleProxy = {};
+        // Create a proxy that returns objects with default values
+        // This prevents destructuring errors when code expects specific properties
+        const createNoopModule = () => {
+          const handler = {
+            get: (target, prop) => {
+              // Return a function that resolves to an empty object with common properties
+              return (...args) => {
+                // Check if last arg is a callback (old-style)
+                const lastArg = args[args.length - 1];
+                if (typeof lastArg === 'function') {
+                  // Call callback with null error and default result
+                  lastArg(null, {});
+                  return;
+                }
+                // Return Promise resolving to empty object
+                return Promise.resolve({});
+              };
+            }
+          };
+          return new Proxy({}, handler);
+        };
+
+        // Handler for nativeModuleProxy - returns a new module proxy for any property access
+        const proxyHandler = {
+          get: (target, moduleName) => {
+            return createNoopModule();
+          }
+        };
+
+        window.nativeModuleProxy = new Proxy({}, proxyHandler);
       }
     </script>
   </head>
@@ -41,5 +70,6 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  </body>
+  <script src="/_expo/static/js/web/__expo-metro-runtime-1f8f5d3ca6b7f58204d51e14506d73fb.js" defer></script><script src="/_expo/static/js/web/__common-145622aa5621c4cb82844cbc56731705.js" defer></script><script src="/_expo/static/js/web/entry-eeedc9d0c977c390fb3f68fed033b390.js" defer></script>
+</body>
 </html>
