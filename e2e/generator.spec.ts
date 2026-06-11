@@ -8,19 +8,24 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Generator App - Question Generator', () => {
   test.beforeEach(async ({ page }) => {
-    // Navigate to the generator app
+    // Navigate to the generator app (not used by the console-error test below,
+    // which must set up its listener before navigating)
     await page.goto('/');
   });
 
   test('should load the app without critical console errors', async ({ page }) => {
     const errors: string[] = [];
 
-    // Capture console errors
+    // IMPORTANT: Register listener BEFORE navigating so errors that fire
+    // during initial JS evaluation are captured (matches mobile.spec.ts pattern)
     page.on('console', (msg) => {
       if (msg.type() === 'error') {
         errors.push(msg.text());
       }
     });
+
+    // Navigate after the listener is in place
+    await page.goto('/');
 
     // Wait for the app to load
     await page.waitForLoadState('networkidle', { timeout: 15000 });
