@@ -74,8 +74,8 @@ export function PackCard({
         )}
       </View>
 
-      {/* Select button (for downloaded packs) */}
-      {isDownloaded && onSelect && (
+      {/* Select button */}
+      {onSelect && (
         <Pressable
           style={[styles.selectButton, { backgroundColor: SEMANTIC_COLORS.success }]}
           onPress={onSelect}

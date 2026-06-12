@@ -27,33 +27,41 @@ export default function SetupScreen() {
   const { players, addPlayer, removePlayer, updatePlayerName } = usePlayerStore();
   const { startGame } = useGameStore();
   const activePackId = usePackStore((state) => state.activePackId);
+  const availablePacks = usePackStore((state) => state.availablePacks);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [packName, setPackName] = useState<string | null>(null);
 
-  // Load pack name on mount (D-01: Setup receives selected pack from packStore)
+  // Load pack name — check the in-memory index first (web-safe), then WatermelonDB
   useEffect(() => {
     let cancelled = false;
 
+    if (!activePackId) {
+      setPackName(null);
+      return;
+    }
+
+    // Quick lookup from the pack index already in memory (works on web without DB)
+    const fromIndex = availablePacks.find((p) => p.id === activePackId);
+    if (fromIndex) {
+      setPackName(fromIndex.name);
+      return;
+    }
+
+    // Mobile fallback: load from WatermelonDB
     const loadPackName = async () => {
-      if (activePackId) {
-        try {
-          const { getDatabase } = await import('../../database');
-          const { Q } = await import('@nozbe/watermelondb');
-          const database = getDatabase();
-          const packs = await database.get<QuestionPackModel>('question_packs')
-            .query(Q.where('pack_id', activePackId))
-            .fetch();
-          if (!cancelled && packs.length > 0) {
-            setPackName(packs[0].name);
-          }
-        } catch (error) {
-          if (!cancelled) {
-            console.error('Error loading pack name:', error);
-          }
+      try {
+        const { getDatabase } = await import('../../database');
+        const { Q } = await import('@nozbe/watermelondb');
+        const database = getDatabase();
+        const packs = await database.get<QuestionPackModel>('question_packs')
+          .query(Q.where('pack_id', activePackId))
+          .fetch();
+        if (!cancelled && packs.length > 0) {
+          setPackName(packs[0].name);
         }
-      } else {
+      } catch (error) {
         if (!cancelled) {
-          setPackName(null);
+          console.error('Error loading pack name:', error);
         }
       }
     };
@@ -62,7 +70,7 @@ export default function SetupScreen() {
     return () => {
       cancelled = true;
     };
-  }, [activePackId]);
+  }, [activePackId, availablePacks]);
 
   const handleAddPlayer = () => {
     if (players.length < 6) {

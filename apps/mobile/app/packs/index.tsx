@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { View, Text, FlatList, Pressable, ActivityIndicator, StyleSheet, Alert } from 'react-native';
+import { View, Text, FlatList, Pressable, ActivityIndicator, StyleSheet, Alert, Platform } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from 'tamagui';
 import { usePackStore } from '../../stores/packStore';
@@ -238,7 +238,7 @@ export default function PackSelectionScreen() {
             isActive={activePackId === item.id}
             onPress={() => handlePackPress(item)}
             onSelect={
-              downloadedPackIds.includes(item.id)
+              (downloadedPackIds.includes(item.id) || Platform.OS === 'web')
                 ? () => handleSelectPack(item.id)
                 : undefined
             }
@@ -259,12 +259,12 @@ export default function PackSelectionScreen() {
         isDownloaded={selectedPack ? downloadedPackIds.includes(selectedPack.id) : false}
         onClose={() => setModalVisible(false)}
         onDownload={
-          selectedPack && !downloadedPackIds.includes(selectedPack.id)
+          selectedPack && !downloadedPackIds.includes(selectedPack.id) && Platform.OS !== 'web'
             ? () => handleDownload(selectedPack)
             : undefined
         }
         onSelect={
-          selectedPack && downloadedPackIds.includes(selectedPack.id)
+          selectedPack && (downloadedPackIds.includes(selectedPack.id) || Platform.OS === 'web')
             ? () => handleSelectPack(selectedPack.id)
             : undefined
         }

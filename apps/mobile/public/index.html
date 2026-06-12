@@ -33,6 +33,17 @@
     </style>
     <!-- Polyfill for React Native NativeModules on web -->
     <script>
+      // Suppress "Failed to set polyfill" warnings emitted by React Native's polyfillGlobal()
+      // when it tries to overwrite properties we've locked as non-configurable below.
+      // The locks are intentional — this just keeps the console clean.
+      (function() {
+        var _warn = console.warn.bind(console);
+        console.warn = function() {
+          if (typeof arguments[0] === 'string' && arguments[0].startsWith('Failed to set polyfill')) return;
+          _warn.apply(console, arguments);
+        };
+      })();
+
       // React Native's NativeModules expects nativeModuleProxy on web.
       // This MUST run before the bundle: React Native's initializeCore replaces
       // window.setTimeout with a version that calls NativeTiming.createTimer().

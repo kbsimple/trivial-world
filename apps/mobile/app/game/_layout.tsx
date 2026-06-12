@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
 import { useState, useEffect } from 'react';
-import { BackHandler, Pressable, Text, StyleSheet } from 'react-native';
+import { BackHandler, Platform, Pressable, Text, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
 import { PauseOverlay } from '../../components/PauseOverlay';
 import { useGameStore } from '../../stores/gameStore';
@@ -37,17 +37,16 @@ export default function GameLayout() {
     setPauseOpen(false);
   };
 
-  // D-03: Back button confirmation during active game
+  // D-03: Back button confirmation during active game (Android only)
   useEffect(() => {
+    if (Platform.OS === 'web') return;
     const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-      // Only intercept during active game (not setup or finished)
       if (phase !== 'setup' && phase !== 'finished') {
         setPauseOpen(true);
-        return true; // Prevent default back behavior
+        return true;
       }
-      return false; // Allow default back behavior
+      return false;
     });
-
     return () => backHandler.remove();
   }, [phase]);
 
