@@ -1,1 +1,5 @@
+# /statusz is a proxy alias for the generated statusz.json file.
+# Must appear before the SPA catch-all so Netlify matches it first.
+/statusz  /statusz.json  200
+
 /*  /index.html  200

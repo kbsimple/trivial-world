@@ -58,6 +58,40 @@ test.describe('Production - Game app (trivial-world.netlify.app)', () => {
     const content = await page.content();
     expect(content.length).toBeGreaterThan(1000);
   });
+
+  test('/statusz.json returns valid deployment status JSON with no-store cache header', async ({ page }) => {
+    const response = await page.goto(`${GAME_URL}/statusz.json`);
+    expect(response?.status()).toBe(200);
+
+    const contentType = response?.headers()['content-type'] ?? '';
+    expect(contentType).toContain('application/json');
+
+    const cacheControl = response?.headers()['cache-control'] ?? '';
+    expect(cacheControl).toContain('no-store');
+
+    const body = await response?.text();
+    const data = JSON.parse(body ?? '{}');
+
+    expect(data.service).toBe('trivial-world');
+    expect(data.status).toBe('ok');
+    expect(typeof data.version).toBe('string');
+    expect(typeof data.commit).toBe('string');
+    expect(data.commit).toHaveLength(40);
+    expect(typeof data.builtAt).toBe('string');
+    expect(() => new Date(data.builtAt).toISOString()).not.toThrow();
+  });
+
+  test('/statusz proxies to statusz.json (same content)', async ({ page }) => {
+    const jsonResp = await page.goto(`${GAME_URL}/statusz.json`);
+    const jsonBody = await jsonResp?.text();
+
+    const proxyResp = await page.goto(`${GAME_URL}/statusz`);
+    expect(proxyResp?.status()).toBe(200);
+    const proxyBody = await proxyResp?.text();
+
+    // Both endpoints serve the same JSON payload
+    expect(JSON.parse(proxyBody ?? '{}')).toEqual(JSON.parse(jsonBody ?? 'null'));
+  });
 });
 
 test.describe('Production - Generator app (trivial-world-generator.netlify.app)', () => {

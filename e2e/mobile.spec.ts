@@ -164,3 +164,32 @@ test.describe('Mobile App - PWA Manifest', () => {
     expect(response?.headers()['content-type']).toContain('image/png');
   });
 });
+
+test.describe('Mobile App - Deployment Status', () => {
+  test('/statusz.json is accessible with correct MIME type', async ({ page }) => {
+    const response = await page.goto('/statusz.json');
+    expect(response?.status()).toBe(200);
+    const contentType = response?.headers()['content-type'] ?? '';
+    expect(contentType).toContain('application/json');
+  });
+
+  test('/statusz.json contains required status fields', async ({ page }) => {
+    const response = await page.goto('/statusz.json');
+    expect(response?.status()).toBe(200);
+
+    const body = await response?.text();
+    const data = JSON.parse(body ?? '{}');
+
+    expect(data.service).toBe('trivial-world');
+    expect(data.status).toBe('ok');
+    expect(typeof data.version).toBe('string');
+    expect(typeof data.commit).toBe('string');
+    expect(data.commit).toHaveLength(40); // full SHA
+    expect(typeof data.commitShort).toBe('string');
+    expect(data.commitShort).toHaveLength(8);
+    expect(typeof data.builtAt).toBe('string');
+    // builtAt must be a valid ISO date
+    expect(() => new Date(data.builtAt).toISOString()).not.toThrow();
+  });
+
+});
