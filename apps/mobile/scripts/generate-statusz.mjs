@@ -34,13 +34,24 @@ const commit =
   git('git rev-parse HEAD') ||
   'unknown';
 
-// Netlify provides BRANCH (not HEAD) for the source branch name.
-// git rev-parse returns "HEAD" in detached-HEAD CI clones so we discard that.
+// Netlify CI checks out a detached HEAD, so git rev-parse returns "HEAD".
+// Fall back to the ref annotation in the latest commit log entry.
 const rawBranch = git('git rev-parse --abbrev-ref HEAD');
+function branchFromRefAnnotation() {
+  const refs = git('git log --oneline -1 --pretty=format:%D');
+  if (!refs) return null;
+  // "HEAD -> main, origin/main" → extract the local branch after "->"
+  const m = refs.match(/HEAD\s*->\s*([^,\s]+)/);
+  if (m) return m[1];
+  // "origin/main" → strip origin/ prefix
+  const o = refs.match(/origin\/([^,\s]+)/);
+  return o ? o[1] : null;
+}
 const branch =
   process.env.BRANCH ||
   process.env.HEAD ||
   (rawBranch !== 'HEAD' ? rawBranch : null) ||
+  branchFromRefAnnotation() ||
   'unknown';
 
 const status = {
