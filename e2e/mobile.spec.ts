@@ -6,41 +6,65 @@ import { test, expect } from '@playwright/test';
  * Tests that the game can be loaded and basic functionality works
  */
 
+// Metro's ErrorUtils.reportFatalError silently swallows module-init crashes
+// (e.g. Dimensions.set(undefined)) — they never reach page.on('pageerror').
+// Intercept it before the bundle runs so fatal errors surface as page errors.
+async function interceptFatalErrors(page: any) {
+  await page.addInitScript(() => {
+    (window as any).__fatalErrors = [];
+    (window as any).__interceptErrorUtils = () => {
+      const eu = (window as any).ErrorUtils;
+      if (eu && eu.reportFatalError) {
+        const orig = eu.reportFatalError.bind(eu);
+        eu.reportFatalError = (err: unknown) => {
+          (window as any).__fatalErrors.push(err instanceof Error ? err.message : String(err));
+          orig(err);
+        };
+      }
+    };
+    // Try immediately and also after the bundle loads via MutationObserver
+    (window as any).__interceptErrorUtils();
+    // Guard against document.head being null during addInitScript execution
+    const target = document.head || document.documentElement;
+    if (target) {
+      const observer = new MutationObserver(() => (window as any).__interceptErrorUtils());
+      observer.observe(target, { childList: true, subtree: true });
+    }
+  });
+}
+
 test.describe('Mobile App - Trivial World Game', () => {
   test('should load the app without critical console errors', async ({ page }) => {
+    await interceptFatalErrors(page);
     const errors: string[] = [];
 
     // IMPORTANT: Set up console listener BEFORE navigating to the page
-    // The __fbBatchedBridgeConfig error happens during initial JS evaluation
     page.on('console', (msg) => {
       if (msg.type() === 'error') {
         errors.push(msg.text());
       }
     });
-
-    // Also capture page errors (uncaught exceptions)
     page.on('pageerror', (error) => {
       errors.push(error.message);
     });
 
-    // Navigate to the mobile app
     await page.goto('/');
-
-    // Wait for the app to fully load
     await page.waitForLoadState('networkidle', { timeout: 30000 });
-
-    // Additional wait for any async errors
     await page.waitForTimeout(2000);
 
-    // Check for the React Native bridge error (critical)
-    const hasBridgeError = errors.some(e =>
+    const fatalErrors: string[] = await page.evaluate(() => (window as any).__fatalErrors ?? []);
+    const allErrors = [...errors, ...fatalErrors];
+
+    const hasCriticalError = allErrors.some(e =>
       e.includes('__fbBatchedBridgeConfig') ||
       e.includes('cannot invoke native modules') ||
       e.includes('WatermelonDB') ||
-      e.includes('SQLite')
+      e.includes('SQLite') ||
+      e.includes('Cannot destructure') ||
+      e.includes('Dimensions')
     );
 
-    expect(hasBridgeError).toBe(false);
+    expect(hasCriticalError, `Fatal/console errors: ${allErrors.join('; ')}`).toBe(false);
   });
 
   test('should have correct page title', async ({ page }) => {
@@ -51,27 +75,27 @@ test.describe('Mobile App - Trivial World Game', () => {
     expect(title).toContain('Trivial World');
   });
 
-  test('should load without native module errors', async ({ page }) => {
+  test('should render the setup screen UI (not a blank page)', async ({ page }) => {
+    await interceptFatalErrors(page);
+
     await page.goto('/');
+    // On web, the app auto-redirects from / to /game/setup (D-09)
+    await page.waitForURL('**/game/setup', { timeout: 10000 });
     await page.waitForLoadState('networkidle', { timeout: 30000 });
 
-    // Get page content to verify it's not blank
-    const content = await page.content();
-    expect(content.length).toBeGreaterThan(1000); // Page should have content
+    // Verify the React app rendered actual UI, not just an empty shell
+    await expect(page.getByText('Setup Game')).toBeVisible({ timeout: 10000 });
+    await expect(page.getByText('Start Game')).toBeVisible({ timeout: 10000 });
 
-    // Check that the root element exists
-    const rootDiv = await page.locator('#root');
-    await expect(rootDiv).toBeVisible();
+    const fatalErrors: string[] = await page.evaluate(() => (window as any).__fatalErrors ?? []);
+    expect(fatalErrors, `Silent fatal errors: ${fatalErrors.join('; ')}`).toHaveLength(0);
   });
 
   test('should render React Native Web app', async ({ page }) => {
     await page.goto('/');
     await page.waitForLoadState('networkidle', { timeout: 30000 });
 
-    // Check that React Native Web styles are applied
     const html = await page.content();
-
-    // Should have the expo-reset style (from React Native Web)
     expect(html).toContain('expo-reset');
   });
 });

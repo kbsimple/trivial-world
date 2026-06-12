@@ -21,12 +21,13 @@ import config from '../tamagui.config';
  */
 
 export default function RootLayout() {
-  const [isInitialized, setIsInitialized] = useState(false);
+  // On web there's no database to initialize, so start ready immediately.
+  // Expo Router requires the Root Layout to render a navigator on the first render —
+  // returning null prevents route mounting and causes a navigation error.
+  const [isInitialized, setIsInitialized] = useState(Platform.OS === 'web');
 
   useEffect(() => {
     if (Platform.OS === 'web') {
-      // Web doesn't use database - bundled questions only (D-07)
-      setIsInitialized(true);
       return;
     }
 

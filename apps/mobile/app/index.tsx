@@ -32,10 +32,13 @@ export default function HomeScreen() {
   const [activePackName, setActivePackName] = useState<string | null>(null);
 
   // D-09: Web skips pack selection, navigates directly to setup
+  // Deferred with setTimeout so the Stack navigator in _layout.tsx finishes
+  // mounting before we call router.replace (React runs child effects before parents,
+  // so without the defer the navigator isn't registered yet and Expo Router throws).
   useEffect(() => {
     if (Platform.OS === 'web') {
-      // Use bundled default pack on web, skip pack selection
-      router.replace('/game/setup');
+      const id = setTimeout(() => router.replace('/game/setup'), 0);
+      return () => clearTimeout(id);
     }
   }, []);
 

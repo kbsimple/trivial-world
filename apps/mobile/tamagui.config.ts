@@ -1,7 +1,12 @@
 import { createTamagui } from 'tamagui';
 import { createInterFont } from '@tamagui/font-inter';
+import { tokens, shorthands, media, animations } from '@tamagui/config/v4';
 
 const config = createTamagui({
+  tokens,
+  media,
+  shorthands,
+  animations,
   fonts: {
     heading: createInterFont(),
     body: createInterFont(),
@@ -10,7 +15,6 @@ const config = createTamagui({
     dark: {
       background: '#1a1a2e',
       color: '#ffffff',
-      // Category colors match Trivial World branding
       blueCategory: '#0066cc',
       pinkCategory: '#ff69b4',
       yellowCategory: '#ffd700',
@@ -21,7 +25,6 @@ const config = createTamagui({
     light: {
       background: '#ffffff',
       color: '#1a1a2e',
-      // Category colors for light theme
       blueCategory: '#0066cc',
       pinkCategory: '#ff69b4',
       yellowCategory: '#ffd700',

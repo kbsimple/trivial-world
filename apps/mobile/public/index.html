@@ -34,8 +34,104 @@
     <!-- Polyfill for React Native NativeModules on web -->
     <script>
       // React Native's NativeModules expects nativeModuleProxy on web.
-      // This must run before React Native's bundle evaluates.
+      // This MUST run before the bundle: React Native's initializeCore replaces
+      // window.setTimeout with a version that calls NativeTiming.createTimer().
+      // Without a real Timing module, all timers silently do nothing — React
+      // Scheduler never runs, the app never renders.
       if (typeof window.nativeModuleProxy === 'undefined') {
+        // Capture browser timers NOW before React Native overwrites them.
+        const _setTimeout = window.setTimeout.bind(window);
+        const _clearTimeout = window.clearTimeout.bind(window);
+        const _setInterval = window.setInterval.bind(window);
+        const _clearInterval = window.clearInterval.bind(window);
+
+        // Prevent React Native from replacing window.performance with its async polyfill.
+        // RN's polyfill installs g.performance = new PerformanceClass() where .now()
+        // returns a Promise — this completely breaks React Scheduler timing comparisons
+        // (expirationTime ends up as "[object Object]5000", q() spins forever).
+        // A no-op setter keeps the real synchronous performance.now() in place.
+        (function() {
+          const _realPerf = window.performance;
+          Object.defineProperty(window, 'performance', {
+            get: function() { return _realPerf; },
+            set: function() { /* block RN async polyfill */ },
+            configurable: false, enumerable: true,
+          });
+        })();
+
+        // Prevent React DOM from crashing when it receives an array-form style prop
+        // (e.g. style={[s1, s2]}) on a DOM element. React Native supports array styles;
+        // React DOM does not — it tries element.style['0'] = obj which throws
+        // "Failed to set an indexed property [0] on 'CSSStyleDeclaration'".
+        // This happens when RN-Web styled components (Tamagui, gesture-handler) pass
+        // array styles to underlying DOM elements. The fix silently ignores numeric
+        // CSSStyleDeclaration property sets so React can continue rendering.
+        (function() {
+          const origStyleGetter = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'style');
+          if (!origStyleGetter) return;
+          Object.defineProperty(HTMLElement.prototype, 'style', {
+            get: function() {
+              const realStyle = origStyleGetter.get.call(this);
+              return new Proxy(realStyle, {
+                set: function(target, prop, value) {
+                  if (typeof prop === 'string' && /^\d+$/.test(prop)) {
+                    return true; // silently drop numeric index set
+                  }
+                  target[prop] = value;
+                  return true;
+                }
+              });
+            },
+            configurable: true, enumerable: true,
+          });
+        })();
+
+        // Lock IntersectionObserver to the browser's native version before RN replaces it.
+        // React Native 0.85 ships a custom IntersectionObserver polyfill that requires
+        // elements to be ReactNativeElement instances. Third-party libraries like
+        // @floating-ui (used by React Navigation) call .observe(domElement) with a plain
+        // HTMLElement, which throws "parameter 1 is not of type 'ReactNativeElement'",
+        // causing React to unmount the entire tree.
+        (function() {
+          if (window.IntersectionObserver) {
+            Object.defineProperty(window, 'IntersectionObserver', {
+              value: window.IntersectionObserver,
+              configurable: false, writable: false, enumerable: true,
+            });
+          }
+        })();
+
+        // Install setImmediate as a real browser macrotask before React Native can
+        // replace it with queueReactNativeMicrotask. React Scheduler calls setImmediate
+        // to schedule 5ms work slices; if it maps to an RN microtask, the
+        // callReactNativeMicrotasks for-loop spins forever (q re-schedules itself
+        // into the same queue being drained). Making it non-configurable prevents
+        // polyfillGlobal from overriding it ("Failed to set polyfill" error is harmless).
+        if (typeof window.setImmediate === 'undefined') {
+          let _immId = 0;
+          const _immMap = new Map();
+          Object.defineProperty(window, 'setImmediate', {
+            value: function setImmediate(fn) {
+              const id = ++_immId;
+              const args = Array.prototype.slice.call(arguments, 1);
+              const tid = _setTimeout(function() {
+                _immMap.delete(id);
+                fn.apply(null, args);
+              }, 0);
+              _immMap.set(id, tid);
+              return id;
+            },
+            configurable: false, writable: false, enumerable: false,
+          });
+          Object.defineProperty(window, 'clearImmediate', {
+            value: function clearImmediate(id) {
+              const tid = _immMap.get(id);
+              if (tid !== undefined) { _clearTimeout(tid); _immMap.delete(id); }
+            },
+            configurable: false, writable: false, enumerable: false,
+          });
+        }
+
         const createNoopModule = () => {
           return new Proxy({}, {
             get: (_, prop) => (...args) => {
@@ -44,6 +140,39 @@
               return Promise.resolve({});
             }
           });
+        };
+
+        // Timing module: React Native routes setTimeout/setInterval through this.
+        // We use bridge.getCallableModule('JSTimers').callTimers([id]) rather than
+        // callFunctionReturnFlushedQueue because the latter calls flushedQueue() which
+        // calls callReactNativeMicrotasks() — a for(;q();) loop that spins forever on web.
+        const timerMap = new Map();
+        const timingModule = {
+          createTimer: (callbackID, duration, jsSchedulingTime, repeats) => {
+            const fire = () => {
+              const bridge = window.__fbBatchedBridge;
+              if (!bridge) return;
+              try {
+                const JSTimers = bridge.getCallableModule('JSTimers');
+                if (JSTimers && JSTimers.callTimers) {
+                  JSTimers.callTimers([callbackID]);
+                }
+              } catch (e) {}
+            };
+            const id = repeats
+              ? _setInterval(fire, duration)
+              : _setTimeout(fire, Math.max(0, duration));
+            timerMap.set(callbackID, { id, repeats: !!repeats });
+          },
+          deleteTimer: (callbackID) => {
+            const entry = timerMap.get(callbackID);
+            if (entry) {
+              entry.repeats ? _clearInterval(entry.id) : _clearTimeout(entry.id);
+              timerMap.delete(callbackID);
+            }
+          },
+          setSendIdleEvents: () => {},
+          getConstants: () => ({}),
         };
 
         // DeviceInfo.getConstants() must return synchronously with real screen dimensions.
@@ -75,6 +204,7 @@
         window.nativeModuleProxy = new Proxy({}, {
           get: (_, moduleName) => {
             if (moduleName === 'DeviceInfo') return deviceInfoModule;
+            if (moduleName === 'Timing') return timingModule;
             return createNoopModule();
           }
         });
