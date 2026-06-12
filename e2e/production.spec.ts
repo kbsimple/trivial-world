@@ -94,6 +94,46 @@ test.describe('Production - Game app (trivial-world.netlify.app)', () => {
   });
 });
 
+test.describe('Production - Pack API (served from game site)', () => {
+  test('/api/v1/packs.json returns valid pack index with correct content-type', async ({ request }) => {
+    const response = await request.get(`${GAME_URL}/api/v1/packs.json`);
+    expect(response.status()).toBe(200);
+
+    const contentType = response.headers()['content-type'] ?? '';
+    expect(contentType).toContain('application/json');
+
+    const data = await response.json();
+    expect(Array.isArray(data.packs)).toBe(true);
+    expect(data.packs.length).toBeGreaterThan(0);
+
+    const pack = data.packs[0];
+    expect(typeof pack.id).toBe('string');
+    expect(typeof pack.name).toBe('string');
+    expect(typeof pack.version).toBe('string');
+    expect(typeof pack.downloadUrl).toBe('string');
+    expect(pack.downloadUrl).toMatch(/^https:/);
+  });
+
+  test('pack download URL resolves to valid pack data', async ({ request }) => {
+    const indexResp = await request.get(`${GAME_URL}/api/v1/packs.json`);
+    const { packs } = await indexResp.json();
+    const downloadUrl: string = packs[0].downloadUrl;
+
+    const packResp = await request.get(downloadUrl);
+    expect(packResp.status()).toBe(200);
+
+    const contentType = packResp.headers()['content-type'] ?? '';
+    expect(contentType).toContain('application/json');
+
+    const pack = await packResp.json();
+    expect(typeof pack.metadata).toBe('object');
+    expect(Array.isArray(pack.questions)).toBe(true);
+    expect(pack.questions.length).toBeGreaterThan(0);
+    expect(typeof pack.questions[0].questionText).toBe('string');
+    expect(typeof pack.questions[0].answerText).toBe('string');
+  });
+});
+
 test.describe('Production - Generator app (trivial-world-generator.netlify.app)', () => {
   test('should load over HTTPS', async ({ page }) => {
     const response = await page.goto(GENERATOR_URL);
