@@ -6,6 +6,7 @@ import { PlayerColor } from '../constants/categories';
 import { Category, Difficulty } from '@trivial-world/types';
 import { usePackStore } from './packStore';
 import { logger } from '../utils/logger';
+import { getNextQuestion } from '../services/questionProvider';
 
 // Note: Question type imported from types/question for local use
 // WatermelonDB queries return QuestionModel objects that are converted to Question type
@@ -33,6 +34,8 @@ interface QuestionState {
   currentQuestion: Question | null;
   /** Current category */
   currentCategory: PlayerColor | null;
+  /** Web-only: IDs of questions already asked this game (replaces WatermelonDB asked_at) */
+  askedQuestionIds: string[];
 
   // Actions
   /** Select a question from active pack's category pool */
@@ -57,9 +60,16 @@ export const useQuestionStore = create<QuestionState>()(
     (set, get) => ({
       currentQuestion: null,
       currentCategory: null,
+      askedQuestionIds: [],
 
       selectQuestion: async (category: PlayerColor) => {
-        if (Platform.OS === 'web') return null;
+        if (Platform.OS === 'web') {
+          const question = await getNextQuestion(category, get().askedQuestionIds);
+          if (question) {
+            set({ currentQuestion: question, currentCategory: category });
+          }
+          return question;
+        }
         // Dynamic import to avoid circular dependency
         const { getDatabase } = await import('../database');
         const { QuestionModel } = await import('../database/models/Question');
@@ -146,7 +156,10 @@ export const useQuestionStore = create<QuestionState>()(
       },
 
       markAsked: async (questionId: string): Promise<boolean> => {
-        if (Platform.OS === 'web') return false;
+        if (Platform.OS === 'web') {
+          set((state) => ({ askedQuestionIds: [...state.askedQuestionIds, questionId] }));
+          return true;
+        }
         // Dynamic import to avoid circular dependency
         const { getDatabase } = await import('../database');
         const { QuestionModel } = await import('../database/models/Question');
@@ -177,7 +190,10 @@ export const useQuestionStore = create<QuestionState>()(
       },
 
       resetAskedQuestions: async () => {
-        if (Platform.OS === 'web') return;
+        if (Platform.OS === 'web') {
+          set({ askedQuestionIds: [] });
+          return;
+        }
         // Dynamic import to avoid circular dependency
         const { getDatabase } = await import('../database');
         const { QuestionModel } = await import('../database/models/Question');
@@ -224,11 +240,10 @@ export const useQuestionStore = create<QuestionState>()(
     {
       name: 'trivial-world-questions',
       storage: createJSONStorage(() => platformStorage),
-      // Only persist currentQuestion and currentCategory
-      // askedQuestions now tracked in WatermelonDB
       partialize: (state) => ({
         currentQuestion: state.currentQuestion,
         currentCategory: state.currentCategory,
+        askedQuestionIds: state.askedQuestionIds,
       }),
     }
   )
