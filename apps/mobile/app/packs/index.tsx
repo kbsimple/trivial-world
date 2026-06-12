@@ -65,7 +65,7 @@ export default function PackSelectionScreen() {
   // Load downloaded pack versions from WatermelonDB (D-14)
   useEffect(() => {
     const loadDownloadedVersions = async () => {
-      if (downloadedPackIds.length === 0) {
+      if (Platform.OS === 'web' || downloadedPackIds.length === 0) {
         setDownloadedPackVersions({});
         return;
       }

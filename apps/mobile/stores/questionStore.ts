@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { platformStorage } from '../services/platformStorage';
@@ -58,6 +59,7 @@ export const useQuestionStore = create<QuestionState>()(
       currentCategory: null,
 
       selectQuestion: async (category: PlayerColor) => {
+        if (Platform.OS === 'web') return null;
         // Dynamic import to avoid circular dependency
         const { getDatabase } = await import('../database');
         const { QuestionModel } = await import('../database/models/Question');
@@ -144,6 +146,7 @@ export const useQuestionStore = create<QuestionState>()(
       },
 
       markAsked: async (questionId: string): Promise<boolean> => {
+        if (Platform.OS === 'web') return false;
         // Dynamic import to avoid circular dependency
         const { getDatabase } = await import('../database');
         const { QuestionModel } = await import('../database/models/Question');
@@ -174,6 +177,7 @@ export const useQuestionStore = create<QuestionState>()(
       },
 
       resetAskedQuestions: async () => {
+        if (Platform.OS === 'web') return;
         // Dynamic import to avoid circular dependency
         const { getDatabase } = await import('../database');
         const { QuestionModel } = await import('../database/models/Question');

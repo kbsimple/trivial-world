@@ -125,7 +125,7 @@ export function Die({ result, onRoll, isRolling = false }: DieProps) {
 
   return (
     <GestureDetector gesture={tap}>
-      <Animated.View style={[styles.container, animatedStyle]}>
+      <Animated.View style={[styles.container, animatedStyle]} testID="die">
         <DieFace value={displayValue} size={140} />
       </Animated.View>
     </GestureDetector>

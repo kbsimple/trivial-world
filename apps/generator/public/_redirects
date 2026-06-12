@@ -1,1 +1,6 @@
+# Pack API — serve static JSON files at extensionless URLs
+# Must appear before the SPA catch-all.
+/api/v1/packs    /api/v1/packs.json    200
+/packs/:file     /packs/:file.json     200
+
 /*    /index.html   200

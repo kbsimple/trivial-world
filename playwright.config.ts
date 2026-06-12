@@ -37,6 +37,14 @@ export default defineConfig({
       },
     },
     {
+      name: 'flows',
+      testMatch: 'flows.spec.ts',
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: 'http://localhost:3001',
+      },
+    },
+    {
       name: 'generator',
       testMatch: 'generator.spec.ts',
       use: {

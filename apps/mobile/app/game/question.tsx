@@ -82,8 +82,8 @@ export default function QuestionScreen() {
             category="blue"
             questionText="No question loaded. Please start a new game."
             answerText="N/A"
-            revealed={false}
-            onReveal={() => {}}
+            revealed={answerRevealed}
+            onReveal={() => revealAnswer()}
           />
         )}
       </View>

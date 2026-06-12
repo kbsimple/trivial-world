@@ -2,4 +2,11 @@
 # Must appear before the SPA catch-all so Netlify matches it first.
 /statusz  /statusz.json  200
 
+# Catch Metro chunk requests that arrive at a wrong base path (e.g. /game/setup/_expo/...)
+# and transparently serve the correct chunk from the root.
+# This guards against browsers that resolved a relative chunk URL against a deep page URL
+# before <base href="/"> was added.
+/*/_expo/static/js/web/:filename.js  /_expo/static/js/web/:filename.js  200
+/*/_expo/static/js/web/:filename.map  /_expo/static/js/web/:filename.map  200
+
 /*  /index.html  200

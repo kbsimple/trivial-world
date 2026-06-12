@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <base href="/" />
     <title>Trivial World</title>
     <meta name="description" content="In-person social trivia game for groups" />
     <meta name="theme-color" content="#1a1a2e" />
@@ -33,15 +34,34 @@
     </style>
     <!-- Polyfill for React Native NativeModules on web -->
     <script>
-      // Suppress "Failed to set polyfill" warnings emitted by React Native's polyfillGlobal()
+      // React Native bundles an XHR-based fetch polyfill (whatwg-fetch over XHR).
+      // On Chromium the XHR constructor throws "Cannot assign to read only property 'NONE'"
+      // because Event.prototype.NONE is non-configurable and the RN Event class tries
+      // this.NONE = void 0 in strict mode.  Preserving the native browser fetch as a
+      // non-overridable getter prevents the bundle from replacing it, so all fetch() calls
+      // use the browser's native implementation instead.
+      (function() {
+        var _nativeFetch = window.fetch && window.fetch.bind(window);
+        if (_nativeFetch) {
+          Object.defineProperty(window, 'fetch', {
+            get: function() { return _nativeFetch; },
+            set: function() { /* block RN XHR-based polyfill replacement */ },
+            configurable: false, enumerable: true,
+          });
+        }
+      })();
+    </script>
+    <script>
+      // Suppress "Failed to set polyfill" messages emitted by React Native's polyfillGlobal()
       // when it tries to overwrite properties we've locked as non-configurable below.
       // The locks are intentional — this just keeps the console clean.
+      // Suppress both console.warn and console.error since RN logs these on both channels.
       (function() {
         var _warn = console.warn.bind(console);
-        console.warn = function() {
-          if (typeof arguments[0] === 'string' && arguments[0].startsWith('Failed to set polyfill')) return;
-          _warn.apply(console, arguments);
-        };
+        var _error = console.error.bind(console);
+        var _isFailed = function(m) { return typeof m === 'string' && m.startsWith('Failed to set polyfill'); };
+        console.warn = function() { if (_isFailed(arguments[0])) return; _warn.apply(console, arguments); };
+        console.error = function() { if (_isFailed(arguments[0])) return; _error.apply(console, arguments); };
       })();
 
       // React Native's NativeModules expects nativeModuleProxy on web.

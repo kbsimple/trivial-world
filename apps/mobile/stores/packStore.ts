@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { platformStorage } from '../services/platformStorage';
@@ -92,13 +93,17 @@ export const usePackStore = create<PackState>()(
       },
 
       refreshDownloadedPacks: async () => {
+        if (Platform.OS === 'web') return;
         const downloadedIds = await getDownloadedPackIds();
         set({ downloadedPackIds: downloadedIds });
       },
 
       selectPack: async (packId: string) => {
         // D-15: Only one active pack at a time
-        await setActivePack(packId);
+        // On web, Zustand's persist middleware handles storage; WatermelonDB is mobile-only
+        if (Platform.OS !== 'web') {
+          await setActivePack(packId);
+        }
         set({ activePackId: packId });
       },
 
