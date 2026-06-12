@@ -91,6 +91,37 @@ test.describe('Mobile App - Trivial World Game', () => {
     expect(fatalErrors, `Silent fatal errors: ${fatalErrors.join('; ')}`).toHaveLength(0);
   });
 
+  test('Add Participant renders TextInput without crashing', async ({ page }) => {
+    await interceptFatalErrors(page);
+    const errors: string[] = [];
+    page.on('pageerror', (err) => errors.push(err.message));
+
+    await page.goto('/');
+    await page.waitForURL('**/game/setup', { timeout: 10000 });
+    await page.waitForLoadState('networkidle', { timeout: 30000 });
+
+    // Click Add Participant — this renders a TextInput which exercises
+    // the CSSStyleDeclaration Proxy get trap (Illegal invocation regression)
+    const addBtn = page.getByRole('button', { name: /add participant/i })
+      .or(page.getByText(/add participant/i));
+    await expect(addBtn).toBeVisible({ timeout: 5000 });
+    await addBtn.click();
+
+    // Wait for the player row / name input to appear
+    await page.waitForTimeout(500);
+
+    const fatalErrors: string[] = await page.evaluate(() => (window as any).__fatalErrors ?? []);
+    const allErrors = [...errors, ...fatalErrors];
+    expect(
+      allErrors.filter(e => e.includes('Illegal invocation') || e.includes('Cannot read')),
+      `Crash after Add Participant: ${allErrors.join('; ')}`
+    ).toHaveLength(0);
+
+    // A TextInput placeholder should be visible
+    const input = page.locator('input').first();
+    await expect(input).toBeVisible({ timeout: 5000 });
+  });
+
   test('should render React Native Web app', async ({ page }) => {
     await page.goto('/');
     await page.waitForLoadState('networkidle', { timeout: 30000 });

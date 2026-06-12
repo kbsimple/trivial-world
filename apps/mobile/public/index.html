@@ -73,6 +73,14 @@
             get: function() {
               const realStyle = origStyleGetter.get.call(this);
               return new Proxy(realStyle, {
+                // Must use `target` (not `receiver`/proxy) for all reads so native
+                // CSSStyleDeclaration getters and methods receive the correct `this`.
+                // Without this, `proxy.cssText` or `proxy.setProperty(...)` would call
+                // the native function with `this = proxy` → "Illegal invocation".
+                get: function(target, prop) {
+                  const value = target[prop];
+                  return typeof value === 'function' ? value.bind(target) : value;
+                },
                 set: function(target, prop, value) {
                   if (typeof prop === 'string' && /^\d+$/.test(prop)) {
                     return true; // silently drop numeric index set
