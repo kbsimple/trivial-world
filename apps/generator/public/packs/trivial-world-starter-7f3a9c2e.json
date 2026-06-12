@@ -1,0 +1,446 @@
+{
+  "metadata": {
+    "id": "7f3a9c2e-1b4d-4f8a-9e6c-3d2a1b5f8e7d",
+    "name": "Trivial World Starter Pack",
+    "description": "A sample trivia pack covering all six categories: geography, pop culture, history, art, science, and sports.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-12T00:00:00.000Z",
+    "updatedAt": "2026-06-12T00:00:00.000Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "7bc32580c033d78e18fa7ea854ad17f9ba076cbd8a1fb28de451457a55210c51",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 10437
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In which country is the city of Istanbul located?",
+      "answerText": "Turkey"
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the tallest mountain in Africa?",
+      "answerText": "Mount Kilimanjaro"
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In Neon Genesis Evangelion, what is the name of the futuristic city built over the Geofront?",
+      "answerText": "Tokyo-3"
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the capital city of Brazil?",
+      "answerText": "Brasília"
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In which US state is the Grand Canyon located?",
+      "answerText": "Arizona"
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What sea lies between Italy and Croatia?",
+      "answerText": "The Adriatic Sea"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In Elden Ring, what is the name of the starting region of the Lands Between?",
+      "answerText": "Limgrave"
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the largest desert in the world by area?",
+      "answerText": "Antarctica (the Antarctic Desert)"
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In Attack on Titan, what is the name of the outermost wall protecting humanity?",
+      "answerText": "Wall Maria"
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the only country in the world that is also a continent?",
+      "answerText": "Australia"
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which Marvel superhero is known as the God of Thunder and wields Mjölnir?",
+      "answerText": "Thor"
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "On which platform did PewDiePie become the most subscribed individual creator?",
+      "answerText": "YouTube"
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who plays Tony Stark / Iron Man in the Marvel Cinematic Universe?",
+      "answerText": "Robert Downey Jr."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "On which streaming platform can you watch Stranger Things?",
+      "answerText": "Netflix"
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of the popular internet meme featuring a dog sitting calmly in a burning room?",
+      "answerText": "This is Fine"
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is the real name of the streamer known as Ninja?",
+      "answerText": "Tyler Blevins"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "In the MCU, what Infinity Stone was hidden on the planet Vormir?",
+      "answerText": "Soul Stone"
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which YouTuber is famous for the series \"It's Everyday Bro\" and became one of the most subscribed channels?",
+      "answerText": "Jake Paul"
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is the name of the viral TikTok dance that was originally choreographed for the song Lottery by K CAMP?",
+      "answerText": "The Renegade"
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "In which year did Fortnite: Battle Royale first launch?",
+      "answerText": "2017"
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year was the first iPhone released by Apple?",
+      "answerText": "2007"
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Who is widely credited as the world's first computer programmer?",
+      "answerText": "Ada Lovelace"
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What ancient Greek city-state was renowned for its warrior culture and military training?",
+      "answerText": "Sparta"
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In which battle did Napoleon Bonaparte suffer his final defeat in 1815?",
+      "answerText": "The Battle of Waterloo"
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Who invented the World Wide Web in 1989?",
+      "answerText": "Tim Berners-Lee"
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What Japanese warrior class followed the code of Bushido?",
+      "answerText": "Samurai"
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year did the first crewed Moon landing occur?",
+      "answerText": "1969"
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Which computer scientist coined the term \"bug\" for a computing error after finding an actual insect in a computer?",
+      "answerText": "Grace Hopper"
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What ancient wonder of the world stood at the entrance to the harbor of Rhodes?",
+      "answerText": "The Colossus of Rhodes"
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In which year did the Berlin Wall fall?",
+      "answerText": "1989"
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Who created Batman — originally appearing in Detective Comics #27 in 1939?",
+      "answerText": "Bob Kane and Bill Finger"
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is Spider-Man's real name?",
+      "answerText": "Peter Parker"
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Who painted the Mona Lisa?",
+      "answerText": "Leonardo da Vinci"
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "In which country did manga (Japanese comics) originate?",
+      "answerText": "Japan"
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What art movement, characterized by bold imagery from popular culture, includes artists like Andy Warhol and Roy Lichtenstein?",
+      "answerText": "Pop Art"
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Who wrote the graphic novel Watchmen, published by DC Comics in 1986?",
+      "answerText": "Alan Moore"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which superhero is known as the Man of Steel and comes from the planet Krypton?",
+      "answerText": "Superman"
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Who created the X-Men for Marvel Comics?",
+      "answerText": "Stan Lee and Jack Kirby"
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What animation studio produced the films Spirited Away and My Neighbor Totoro?",
+      "answerText": "Studio Ghibli"
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the name of the underground city where the Teenage Mutant Ninja Turtles originally lived?",
+      "answerText": "The sewers of New York City"
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What does the abbreviation \"AI\" stand for?",
+      "answerText": "Artificial Intelligence"
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "How many planets are currently recognized in our solar system?",
+      "answerText": "8"
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What animal is considered the apex predator of the ocean?",
+      "answerText": "Orca (killer whale)"
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What company created and released ChatGPT?",
+      "answerText": "OpenAI"
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the name of NASA's Mars rover that landed in Jezero Crater in February 2021?",
+      "answerText": "Perseverance"
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What boundary surrounds a black hole beyond which nothing — not even light — can escape?",
+      "answerText": "Event horizon"
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the fastest land animal in the world?",
+      "answerText": "Cheetah"
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Who proposed the \"Turing Test\" as a way to measure machine intelligence?",
+      "answerText": "Alan Turing"
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What type of star is our Sun classified as on the Hertzsprung-Russell diagram?",
+      "answerText": "Yellow dwarf (G-type main-sequence star)"
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the name of the neural network architecture that introduced the \"attention\" mechanism and became the foundation of modern LLMs?",
+      "answerText": "Transformer"
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which esports game features the annual championship tournament called \"The International\"?",
+      "answerText": "Dota 2"
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How many players from each team are on the court at the same time in basketball?",
+      "answerText": "5"
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which college football team is nicknamed the Fighting Irish?",
+      "answerText": "Notre Dame"
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In which competitive first-person shooter game is the ESL Pro League a major tournament?",
+      "answerText": "Counter-Strike"
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How many holes make up a standard round of golf?",
+      "answerText": "18"
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Which country won the first-ever FIFA World Cup in 1930?",
+      "answerText": "Uruguay"
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What is the name of the annual championship game of the NFL?",
+      "answerText": "Super Bowl"
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In esports, what does the term \"clutch\" typically mean?",
+      "answerText": "Winning a round or match despite being outnumbered or in a disadvantaged position"
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Which NBA player is nicknamed \"The Beard\" and was famous for his step-back three-pointer?",
+      "answerText": "James Harden"
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In professional sports, what does \"G.O.A.T.\" stand for?",
+      "answerText": "Greatest Of All Time"
+    }
+  ]
+}
