@@ -57,9 +57,8 @@ export default function RootLayout() {
         <Theme name="dark">
           <Stack screenOptions={{ headerShown: false }}>
             <Stack.Screen name="index" />
-            <Stack.Screen name="game/setup" />
-            <Stack.Screen name="game/question" />
-            <Stack.Screen name="packs" options={{ headerShown: false }} />
+            <Stack.Screen name="game" />
+            <Stack.Screen name="packs" />
           </Stack>
         </Theme>
       </TamaguiProvider>
