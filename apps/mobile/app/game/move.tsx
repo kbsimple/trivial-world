@@ -47,6 +47,7 @@ export default function MoveScreen() {
         {PLAYER_COLORS.map((color) => (
           <Pressable
             key={color}
+            testID={`category-button-${color}`}
             style={({ pressed }) => [
               styles.categoryButton,
               { backgroundColor: CATEGORY_COLORS[color], opacity: pressed ? 0.8 : 1 },

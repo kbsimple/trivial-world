@@ -161,9 +161,9 @@ async function playOneTurn(page: Page): Promise<void> {
   await expect(page.getByText('Tap the die to roll')).toBeVisible({ timeout: 10_000 });
   await page.getByTestId('die').click();
 
-  // Move screen (die animation takes ~1.5 s before navigation)
+  // Move screen — select any category to advance
   await page.waitForURL('**/game/move', { timeout: 8_000 });
-  await page.getByText('Continue', { exact: true }).click();
+  await page.getByTestId('category-button-blue').click();
 
   // Question screen
   await page.waitForURL('**/game/question', { timeout: 10_000 });
@@ -352,12 +352,12 @@ test.describe('Flow: Play a Game Turn', () => {
     expect(Number(resultText)).toBeLessThanOrEqual(6);
   });
 
-  test('Continue on move screen navigates to the question screen', async ({ page }) => {
+  test('Selecting a category on move screen navigates to the question screen', async ({ page }) => {
     await page.waitForURL('**/game/roll', { timeout: 10_000 });
     await page.getByTestId('die').click();
 
     await page.waitForURL('**/game/move', { timeout: 8_000 });
-    await page.getByText('Continue', { exact: true }).click();
+    await page.getByTestId('category-button-blue').click();
 
     await page.waitForURL('**/game/question', { timeout: 10_000 });
     await expect(page.getByText('Reveal Answer')).toBeVisible({ timeout: 10_000 });
@@ -432,7 +432,7 @@ test.describe('Flow: Full Turn Sequence', () => {
     await page.waitForURL('**/game/move', { timeout: 8_000 });
     await expect(page.getByText(/you rolled/i)).toBeVisible({ timeout: 5_000 });
 
-    await page.getByText('Continue', { exact: true }).click();
+    await page.getByTestId('category-button-blue').click();
     await page.waitForURL('**/game/question', { timeout: 10_000 });
     await expect(page.getByText('Q1')).toBeVisible({ timeout: 5_000 });
 
