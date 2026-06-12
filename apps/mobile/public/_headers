@@ -1,3 +1,12 @@
+# Pack API — served from mobile site (same-origin, no CORS needed)
+/api/v1/*.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/packs/*.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=86400, immutable
+
 # Deployment status endpoint — no caching so it always reflects current deploy
 /statusz.json
   Content-Type: application/json; charset=utf-8

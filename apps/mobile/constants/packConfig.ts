@@ -7,7 +7,7 @@
  * Generator pack index URL
  * Endpoint for fetching available pack metadata
  */
-export const GENERATOR_PACK_INDEX_URL = 'https://trivial-world-generator.netlify.app/api/v1/packs';
+export const GENERATOR_PACK_INDEX_URL = 'https://trivial-world.netlify.app/api/v1/packs.json';
 
 /**
  * Default pack ID
