@@ -114,18 +114,23 @@ export default function SetupScreen() {
         </Text>
       </View>
 
-      {/* Pack info display (D-01: shows selected pack) */}
-      <View style={styles.packInfo}>
+      {/* Pack info display — tap to navigate to pack selection (D-01) */}
+      <Pressable style={styles.packInfo} onPress={() => router.push('/packs')}>
         {packName ? (
-          <Text style={[styles.packText, { color: theme.color?.val as string }]}>
-            Playing: {packName}
-          </Text>
+          <>
+            <Text style={[styles.packText, { color: theme.color?.val as string }]}>
+              Pack: {packName}
+            </Text>
+            <Text style={[styles.packChange, { color: theme.color?.val as string }]}>
+              Change
+            </Text>
+          </>
         ) : (
           <Text style={[styles.packWarning, { color: '#ffa500' }]}>
-            No pack selected - please select a pack first
+            Tap to select a question pack
           </Text>
         )}
-      </View>
+      </Pressable>
 
       {/* Participant list */}
       <View style={styles.playerList}>
@@ -198,7 +203,7 @@ export default function SetupScreen() {
         )}
         {!activePackId && players.length > 0 && (
           <Text style={[styles.minPlayersHint, { color: '#ffa500' }]}>
-            Select a pack from the home screen
+            Select a pack above to start
           </Text>
         )}
       </View>
@@ -231,10 +236,18 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
     alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 8,
   },
   packText: {
     fontSize: 16,
     fontWeight: '500',
+  },
+  packChange: {
+    fontSize: 14,
+    opacity: 0.6,
+    textDecorationLine: 'underline',
   },
   packWarning: {
     fontSize: 14,
