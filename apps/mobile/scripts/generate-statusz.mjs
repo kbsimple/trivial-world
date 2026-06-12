@@ -34,9 +34,13 @@ const commit =
   git('git rev-parse HEAD') ||
   'unknown';
 
+// Netlify provides BRANCH (not HEAD) for the source branch name.
+// git rev-parse returns "HEAD" in detached-HEAD CI clones so we discard that.
+const rawBranch = git('git rev-parse --abbrev-ref HEAD');
 const branch =
+  process.env.BRANCH ||
   process.env.HEAD ||
-  git('git rev-parse --abbrev-ref HEAD') ||
+  (rawBranch !== 'HEAD' ? rawBranch : null) ||
   'unknown';
 
 const status = {
@@ -46,7 +50,7 @@ const status = {
   commit,
   commitShort: commit !== 'unknown' ? commit.slice(0, 8) : 'unknown',
   branch,
-  context: process.env.CONTEXT || 'local',
+  context: process.env.CONTEXT || (process.env.NETLIFY === 'true' ? 'netlify' : 'local'),
   builtAt: new Date().toISOString(),
   // Netlify-specific: present in CI, null locally
   buildId: process.env.BUILD_ID || null,
