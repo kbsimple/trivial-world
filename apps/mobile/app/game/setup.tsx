@@ -24,16 +24,19 @@ import { SEMANTIC_COLORS } from '../../constants/theme';
 export default function SetupScreen() {
   const router = useRouter();
   const theme = useTheme();
-  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack, updatePlayerCombo, updatePlayerDifficulty, clearPlayerPackSources } = usePlayerStore();
+  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack, updatePlayerCombo, updatePlayerDifficulty } = usePlayerStore();
   const { startGame } = useGameStore();
   const activePackId = usePackStore((state) => state.activePackId);
   const availablePacks = usePackStore((state) => state.availablePacks);
   const downloadedPackIds = usePackStore((state) => state.downloadedPackIds);
   const savedCombos = usePackStore((state) => state.savedCombos);
-  const packMode = usePackStore((state) => state.packMode);
-  const setPackMode = usePackStore((state) => state.setPackMode);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [packName, setPackName] = useState<string | null>(null);
+
+  const allPlayersCustom =
+    players.length > 0 &&
+    players.every((p) => p.packId !== null || p.comboId !== null);
+
   const [webPicker, setWebPicker] = useState<{
     title: string;
     options: { label: string; onPress: () => void }[];
@@ -143,16 +146,9 @@ export default function SetupScreen() {
     }
   };
 
-  const handleSetPackMode = (mode: 'shared' | 'custom') => {
-    if (mode === 'shared') {
-      clearPlayerPackSources();
-    }
-    setPackMode(mode);
-  };
-
   const handleStartGame = async () => {
-    // CONF-01: Prevent starting without pack selection
-    if (!activePackId) {
+    // CONF-01: Prevent starting without pack selection unless all players have custom packs
+    if (!activePackId && !allPlayersCustom) {
       Alert.alert(
         'No Pack Selected',
         'Please select a question pack before starting the game.',
@@ -204,32 +200,16 @@ export default function SetupScreen() {
               Change
             </Text>
           </>
+        ) : allPlayersCustom ? (
+          <Text style={[styles.packText, { color: theme.color?.val as string, opacity: 0.6 }]}>
+            Shared pack (optional — all players have custom packs)
+          </Text>
         ) : (
           <Text style={[styles.packWarning, { color: '#ffa500' }]}>
             Tap to select a question pack
           </Text>
         )}
       </Pressable>
-
-      {/* Pack mode toggle — Shared Pack vs Per Player (v7.0) */}
-      <View style={styles.segmentedControl}>
-        <Pressable
-          style={[styles.segment, packMode === 'shared' && styles.segmentActive]}
-          onPress={() => handleSetPackMode('shared')}
-        >
-          <Text style={[styles.segmentText, packMode === 'shared' && styles.segmentTextActive]}>
-            Shared Pack
-          </Text>
-        </Pressable>
-        <Pressable
-          style={[styles.segment, packMode === 'custom' && styles.segmentActive]}
-          onPress={() => handleSetPackMode('custom')}
-        >
-          <Text style={[styles.segmentText, packMode === 'custom' && styles.segmentTextActive]}>
-            Per Player
-          </Text>
-        </Pressable>
-      </View>
 
       {/* Participant list */}
       <View style={styles.playerList}>
@@ -273,33 +253,31 @@ export default function SetupScreen() {
                 </Pressable>
               </View>
 
-              {/* Row 2 (custom mode only): full-width source row + difficulty chip */}
-              {packMode === 'custom' && (
-                <>
-                  <Pressable
-                    style={styles.playerSourceRow}
-                    onPress={() => handlePickSource(player.id)}
-                  >
-                    <Text style={styles.playerSourceLabel} numberOfLines={1}>
-                      {displayName ? `Pack: ${displayName}` : 'Pack: Default (game pack)'}
-                    </Text>
-                    <Text style={styles.playerSourceChevron}>{'→'}</Text>
-                  </Pressable>
-                  <View style={styles.packChipRow}>
-                    <Pressable
-                      style={[
-                        styles.packChip,
-                        player.difficultyPreference ? styles.packChipActive : styles.packChipDefault,
-                      ]}
-                      onPress={() => handlePickDifficulty(player.id)}
-                    >
-                      <Text style={styles.packChipText} numberOfLines={1}>
-                        {difficultyLabel}
-                      </Text>
-                    </Pressable>
-                  </View>
-                </>
-              )}
+              {/* Row 2: per-player pack chip + difficulty chip (always visible) */}
+              <View style={styles.packChipRow}>
+                <Pressable
+                  style={[
+                    styles.packChip,
+                    displayName ? styles.packChipActive : styles.packChipDefault,
+                  ]}
+                  onPress={() => handlePickSource(player.id)}
+                >
+                  <Text style={styles.packChipText} numberOfLines={1}>
+                    {chipLabel}
+                  </Text>
+                </Pressable>
+                <Pressable
+                  style={[
+                    styles.packChip,
+                    player.difficultyPreference ? styles.packChipActive : styles.packChipDefault,
+                  ]}
+                  onPress={() => handlePickDifficulty(player.id)}
+                >
+                  <Text style={styles.packChipText} numberOfLines={1}>
+                    {difficultyLabel}
+                  </Text>
+                </Pressable>
+              </View>
             </View>
           );
         })}
@@ -324,14 +302,14 @@ export default function SetupScreen() {
           style={[
             styles.startButton,
             {
-              backgroundColor: players.length === 0 || !activePackId
+              backgroundColor: players.length === 0 || (!activePackId && !allPlayersCustom)
                 ? (theme.color?.val as string) + '40'
                 : SEMANTIC_COLORS.success,
-              opacity: players.length === 0 || !activePackId ? 0.5 : 1,
+              opacity: players.length === 0 || (!activePackId && !allPlayersCustom) ? 0.5 : 1,
             },
           ]}
           onPress={handleStartGame}
-          disabled={players.length === 0 || !activePackId}
+          disabled={players.length === 0 || (!activePackId && !allPlayersCustom)}
         >
           <Text style={[styles.startButtonText, { color: theme.background?.val as string }]}>
             Start Game
@@ -342,7 +320,7 @@ export default function SetupScreen() {
             Add at least 1 participant
           </Text>
         )}
-        {!activePackId && players.length > 0 && (
+        {!activePackId && !allPlayersCustom && players.length > 0 && (
           <Text style={[styles.minPlayersHint, { color: '#ffa500' }]}>
             Select a pack above to start
           </Text>
@@ -546,49 +524,5 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 16,
     textAlign: 'center',
-  },
-  segmentedControl: {
-    flexDirection: 'row',
-    backgroundColor: 'rgba(255,255,255,0.1)',
-    borderRadius: 8,
-    marginBottom: 16,
-    padding: 3,
-  },
-  segment: {
-    flex: 1,
-    paddingVertical: 8,
-    borderRadius: 6,
-    alignItems: 'center',
-  },
-  segmentActive: {
-    backgroundColor: 'rgba(255,255,255,0.9)',
-  },
-  segmentText: {
-    fontSize: 14,
-    fontWeight: '500',
-    color: '#aaa',
-  },
-  segmentTextActive: {
-    color: '#111',
-  },
-  playerSourceRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderRadius: 8,
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    marginTop: 4,
-  },
-  playerSourceLabel: {
-    fontSize: 14,
-    color: '#ccc',
-    flex: 1,
-  },
-  playerSourceChevron: {
-    fontSize: 14,
-    color: '#ccc',
-    marginLeft: 8,
   },
 });
