@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
 import { useRouter } from 'expo-router';
@@ -28,8 +29,14 @@ export default function QuestionScreen() {
   } = useGameStore();
   const { players } = usePlayerStore();
 
+  // markAnswer clears currentQuestion before navigation fires (600ms later).
+  // Hold the last non-null question so the card doesn't flash the fallback.
+  const lastQuestionRef = useRef(currentQuestion);
+  if (currentQuestion) lastQuestionRef.current = currentQuestion;
+  const displayQuestion = currentQuestion ?? lastQuestionRef.current;
+
   const currentPlayer = players[currentPlayerIndex];
-  const category = currentCategory || currentQuestion?.category || 'blue';
+  const category = currentCategory || displayQuestion?.category || 'blue';
   const inChampionship = isChampionshipMode[currentPlayerIndex] ?? false;
 
   const handleMarkAnswer = (correct: boolean) => {
@@ -63,27 +70,18 @@ export default function QuestionScreen() {
       )}
 
       <View style={styles.questionContainer}>
-        {currentQuestion ? (
+        {displayQuestion ? (
           <QuestionCard
             questionNumber={questionNumber}
             category={category}
-            questionText={currentQuestion.questionText}
-            answerText={currentQuestion.answerText}
+            questionText={displayQuestion.questionText}
+            answerText={displayQuestion.answerText}
             revealed={answerRevealed}
             onReveal={() => revealAnswer()}
-            choices={currentQuestion.choices}
-            correctChoiceIndex={currentQuestion.correctChoiceIndex}
+            choices={displayQuestion.choices}
+            correctChoiceIndex={displayQuestion.correctChoiceIndex}
           />
-        ) : (
-          <QuestionCard
-            questionNumber={questionNumber}
-            category="blue"
-            questionText="No question loaded. Please start a new game."
-            answerText="N/A"
-            revealed={answerRevealed}
-            onReveal={() => revealAnswer()}
-          />
-        )}
+        ) : null}
       </View>
 
       <View style={styles.answerButtons}>
