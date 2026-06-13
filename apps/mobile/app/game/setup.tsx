@@ -109,7 +109,7 @@ export default function SetupScreen() {
     );
   };
 
-  const handleStartGame = () => {
+  const handleStartGame = async () => {
     // CONF-01: Prevent starting without pack selection
     if (!activePackId) {
       Alert.alert(
@@ -129,8 +129,15 @@ export default function SetupScreen() {
       return;
     }
 
-    startGame();
-    router.replace('/game/turn');
+    await startGame();
+
+    // Only navigate if the game actually started — startGame catches errors internally
+    // and resets phase to 'setup' on failure.
+    if (useGameStore.getState().phase === 'selecting') {
+      router.replace('/game/turn');
+    } else {
+      Alert.alert('Error', 'Failed to start game. Please try again.');
+    }
   };
 
   return (
