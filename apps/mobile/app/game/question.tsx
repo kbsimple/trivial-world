@@ -84,13 +84,13 @@ export default function QuestionScreen() {
           />
         ) : null}
 
-        {answerRevealed && currentQuestion && (
+        {/* answerZone: non-MC only — MC questions show the green bar + tidbits inside QuestionCard */}
+        {answerRevealed && currentQuestion && !(currentQuestion.choices && currentQuestion.choices.length > 0) && (
           <View style={styles.answerZone}>
             <Text style={[styles.answerText, { color: theme.color?.val as string }]}>
               {currentQuestion.answerText}
             </Text>
-            {/* tidbits for non-MC only — MC questions render them inside QuestionCard below the choices */}
-            {currentQuestion.tidbits && !(currentQuestion.choices && currentQuestion.choices.length > 0) && (
+            {currentQuestion.tidbits && (
               <Text style={[styles.tidbitsText, { color: theme.color?.val as string }]}>
                 {currentQuestion.tidbits}
               </Text>

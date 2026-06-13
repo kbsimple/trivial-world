@@ -182,14 +182,14 @@ const styles = StyleSheet.create({
     borderColor: '#444',
   },
   choiceCorrect: {
-    backgroundColor: '#1a6b2a',
+    backgroundColor: '#16a34a',
     borderWidth: 2,
-    borderColor: '#2d9e40',
+    borderColor: '#22c55e',
   },
   choiceWrong: {
     borderWidth: 2,
     borderColor: '#333',
-    opacity: 0.45,
+    opacity: 0.4,
   },
   choiceLabel: {
     fontSize: 16,
