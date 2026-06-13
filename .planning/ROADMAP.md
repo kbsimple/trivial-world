@@ -8,6 +8,7 @@
 - ✅ **v4.0 Simplified Gameplay** — Phases 12–17 (shipped 2026-06-12 → 2026-06-13)
 - ✅ **v5.0 Content Generation Tooling** — Phases 16–17 (shipped 2026-06-13)
 - ✅ **v6.0 Pack Combos** — Phase 18 (shipped 2026-06-13)
+- 🔄 **v7.0 Per-Player Pack Customization** — Phase 19 (in progress)
 
 ## Phases
 
@@ -86,6 +87,14 @@ Wave structure:
 
 </details>
 
+### Phase 19: Per-Player Pack Customization
+
+**Goal:** Introduce a top-level game option — "Shared Pack" or "Custom Per Player" — that controls whether all players draw from the same pool or each player picks their own. When "Custom Per Player" is selected, each player gets a dedicated pack/combo selector in the setup screen. When "Shared" is selected, no per-player pack UI is shown. This replaces the existing small per-player chips with a clearer, intentional flow.
+
+**Depends on:** Phase 18 (Pack Combos)
+
+**Plans:** TBD
+
 ---
 
 ## Progress
@@ -110,6 +119,7 @@ Wave structure:
 | 16. CLI Bulk Question Generation | v5.0 | 4/4 | Complete | 2026-06-13 |
 | 17. Per-Player Pack and Difficulty | v5.0 | 2/2 | Complete | 2026-06-13 |
 | 18. Pack Combos | v6.0 | 4/4 | Complete | 2026-06-13 |
+| 19. Per-Player Pack Customization | v7.0 | 0/? | Not planned | — |
 
 ---
 

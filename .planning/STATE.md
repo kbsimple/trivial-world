@@ -47,6 +47,7 @@ Progress: [████████████████████] 100%
 
 - Phase 18 added: Pack Combos — allow mixing and matching multiple question packs; a combo is a named blend selectable at game or per-player level
 - Phase 18 completed 2026-06-13
+- Phase 19 added: Per-Player Pack Customization — top-level "Shared Pack" vs "Custom Per Player" toggle; replaces implicit per-player chips with an explicit intentional flow
 
 ### Key Architectural Decisions
 
