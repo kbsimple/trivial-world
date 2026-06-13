@@ -63,14 +63,14 @@ All sizes are raw `fontSize` values in `StyleSheet.create` — Tamagui token equ
 
 | Role | Size | Weight | Line Height | Usage |
 |------|------|--------|-------------|-------|
-| Chip label | 11px | regular (400) | 1.4 | Pack chip text, difficulty chip text (same style as existing `packChipText`) |
-| Progress strip secondary | 11px | regular (400) | 1.4 | Difficulty label in progress strip (same as existing `progressPack` at 11px) |
-| Progress strip primary | 13px | regular (400) | 1.4 | Player name and count in progress strip (existing `progressName`, `progressCount`) |
+| Chip / strip label | 11px | regular (400) | 1.4 | Pack chip text, difficulty chip text, difficulty label in progress strip, player name and count in progress strip (all small secondary labels in dense strip context) |
 | Body | 16px | medium (500) | 1.5 | Pack info row text (existing `packText`) |
 | Name input | 18px | regular (400) | 1.4 | Player name field (existing `nameInput`) |
-| Screen title | 28px | bold (700) | 1.2 | "Setup Game" header (existing `title`) |
+| Screen title | 28px | medium (500) | 1.2 | "Setup Game" header (existing `title`) |
 
-No new sizes introduced. Difficulty chip and difficulty progress label reuse existing 11px weight-400 chip/secondary style.
+Typography scale: 4 sizes (11px, 16px, 18px, 28px). Typography weights: 2 (regular 400, medium 500).
+
+No new sizes introduced. Difficulty chip and difficulty progress label reuse existing 11px weight-400 chip/secondary style. The existing `progressName` and `progressCount` styles (previously 13px) are consolidated to 11px — no functional change, same visual tier as other dense strip labels.
 
 Source: `apps/mobile/app/game/setup.tsx` lines 276-398, `apps/mobile/app/game/turn.tsx` lines 142-255 (verified).
 
@@ -237,7 +237,7 @@ No new destructive actions in this phase. Removing a player (existing × button)
 
 - Difficulty label appears only when `playerDifficulties[idx] != null`.
 - Pack name appears only when player has a custom pack (unchanged behavior).
-- Entry is a single flex row with `gap: 8`; all text is 11-13px.
+- Entry is a single flex row with `gap: 8`; all text is 11px.
 
 ---
 
