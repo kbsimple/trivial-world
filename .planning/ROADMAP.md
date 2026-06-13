@@ -237,6 +237,22 @@ Plans:
 
 ---
 
+## v5.0 Content Generation Tooling (Phase 16+) — PLANNED
+
+### Phase 16: CLI Bulk Question Generation
+**Goal**: Scalable CLI pipeline to generate question packs in bulk, with decoupled review and per-question tidbits in the answer reveal
+**Depends on**: Phase 15
+**Success Criteria**:
+  1. CLI script generates a full pack (all 6 categories) from a `--topic` argument without requiring the web generator UI
+  2. Generated questions are saved immediately as a draft JSON file — generation does not block on review
+  3. Each question has a `tidbits` field (interesting explanation/context shown at answer reveal time)
+  4. A separate review command lets editors inspect and approve/edit draft questions before publishing
+  5. Published packs are independent JSON files registered in the pack index and downloadable by the mobile app
+  6. The `tidbits` field is displayed in the question reveal screen of the mobile app
+**Plans**: TBD
+
+---
+
 ## Progress
 
 | Phase | Plans Complete | Status | Completed |
@@ -256,6 +272,7 @@ Plans:
 | 13. Turn Flow UI | 1/1 | Complete | 2026-06-12 |
 | 14. Championship Mode & Polish | 1/1 | Complete | 2026-06-12 |
 | 15. Per-Player Pack Selection | 3/3 | Complete | 2026-06-12 |
+| 16. CLI Bulk Question Generation | 0/? | Not started | — |
 
 ---
 

@@ -80,6 +80,7 @@ Progress: [██████████] 100%
 ### Roadmap Evolution
 
 - Phase 15 added: Per-Player Pack Selection (allow each player to use a different question pack)
+- Phase 16 added: CLI Bulk Question Generation — scalable CLI pipeline, decoupled review, tidbits field in answer reveals
 
 ### Pending Todos
 
