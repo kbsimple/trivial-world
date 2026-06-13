@@ -24,7 +24,7 @@ import { SEMANTIC_COLORS } from '../../constants/theme';
 export default function SetupScreen() {
   const router = useRouter();
   const theme = useTheme();
-  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack } = usePlayerStore();
+  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack, updatePlayerDifficulty } = usePlayerStore();
   const { startGame } = useGameStore();
   const activePackId = usePackStore((state) => state.activePackId);
   const availablePacks = usePackStore((state) => state.availablePacks);
@@ -109,6 +109,21 @@ export default function SetupScreen() {
     );
   };
 
+  const handlePickDifficulty = (playerId: string) => {
+    if (Platform.OS === 'web') return;
+    Alert.alert(
+      'Select Difficulty',
+      undefined,
+      [
+        { text: 'Any Difficulty', onPress: () => updatePlayerDifficulty(playerId, null) },
+        { text: 'Easy', onPress: () => updatePlayerDifficulty(playerId, 'easy') },
+        { text: 'Medium', onPress: () => updatePlayerDifficulty(playerId, 'medium') },
+        { text: 'Hard', onPress: () => updatePlayerDifficulty(playerId, 'hard') },
+        { text: 'Cancel', style: 'cancel' as const },
+      ]
+    );
+  };
+
   const handleStartGame = async () => {
     // CONF-01: Prevent starting without pack selection
     if (!activePackId) {
@@ -179,6 +194,9 @@ export default function SetupScreen() {
           const chipLabel = playerPackName
             ? (playerPackName.length > 12 ? playerPackName.slice(0, 12) + '...' : playerPackName)
             : 'Default';
+          const difficultyLabel = player.difficultyPreference
+            ? player.difficultyPreference.charAt(0).toUpperCase() + player.difficultyPreference.slice(1)
+            : 'Any Difficulty';
 
           return (
             <View key={player.id} style={styles.playerRowOuter}>
@@ -205,7 +223,7 @@ export default function SetupScreen() {
                 </Pressable>
               </View>
 
-              {/* Row 2: pack chip — below the name input, native only */}
+              {/* Row 2: pack chip and difficulty chip — below the name input, native only */}
               {Platform.OS !== 'web' && (
                 <View style={styles.packChipRow}>
                   <Pressable
@@ -217,6 +235,17 @@ export default function SetupScreen() {
                   >
                     <Text style={styles.packChipText} numberOfLines={1}>
                       {chipLabel}
+                    </Text>
+                  </Pressable>
+                  <Pressable
+                    style={[
+                      styles.packChip,
+                      player.difficultyPreference ? styles.packChipActive : styles.packChipDefault,
+                    ]}
+                    onPress={() => handlePickDifficulty(player.id)}
+                  >
+                    <Text style={styles.packChipText} numberOfLines={1}>
+                      {difficultyLabel}
                     </Text>
                   </Pressable>
                 </View>
@@ -352,6 +381,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingLeft: 36,
     marginTop: 4,
+    gap: 4,
   },
   packChip: {
     paddingHorizontal: 8,
