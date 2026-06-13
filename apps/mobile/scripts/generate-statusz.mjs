@@ -28,6 +28,20 @@ function git(cmd) {
 
 const pkg = JSON.parse(readFileSync(resolve(rootDir, 'package.json'), 'utf8'));
 
+// Read pack index from dist (already copied from public/ before this script runs)
+let packs = [];
+try {
+  const packIndex = JSON.parse(readFileSync(resolve(rootDir, 'dist', 'api', 'v1', 'packs.json'), 'utf8'));
+  packs = (packIndex.packs || []).map(p => ({
+    id: p.id,
+    name: p.name,
+    version: p.version,
+    totalQuestions: p.totalQuestions,
+  }));
+} catch {
+  // Pack index not present (e.g. running outside of full build) — omit
+}
+
 // Netlify CI env vars are more reliable than git in detached-HEAD CI clones.
 const commit =
   process.env.COMMIT_REF ||
@@ -67,6 +81,7 @@ const status = {
   buildId: process.env.BUILD_ID || null,
   deployId: process.env.DEPLOY_ID || null,
   node: process.version,
+  packs: { count: packs.length, entries: packs },
 };
 
 const outPath = resolve(rootDir, 'dist', 'statusz.json');
