@@ -136,6 +136,7 @@ export const useGameStore = create<GameStore>()(
           completedCategories,
           isChampionshipMode,
           questionNumber,
+          playerCategories,
         } = get();
 
         if (players.length === 0) return;
@@ -173,7 +174,6 @@ export const useGameStore = create<GameStore>()(
           );
 
           // Check if all required categories (per player's own pack) are now done
-          const { playerCategories } = get();
           const thisPlayerCategories = playerCategories[currentPlayerIndex] ?? ALL_CATEGORIES;
           const allDone = thisPlayerCategories.every(c => newCompleted.includes(c));
           const updatedChampionship = isChampionshipMode.map((val, i) =>
