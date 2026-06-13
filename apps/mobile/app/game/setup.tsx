@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Platform, View, Text, TextInput, Pressable, ScrollView, StyleSheet, Alert, Modal, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TextInput, Pressable, ScrollView, StyleSheet, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from 'tamagui';
 import { usePlayerStore } from '../../stores/playerStore';
@@ -24,7 +24,7 @@ import { SEMANTIC_COLORS } from '../../constants/theme';
 export default function SetupScreen() {
   const router = useRouter();
   const theme = useTheme();
-  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack, updatePlayerCombo, updatePlayerDifficulty } = usePlayerStore();
+  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack, updatePlayerCombo } = usePlayerStore();
   const { startGame } = useGameStore();
   const activePackId = usePackStore((state) => state.activePackId);
   const availablePacks = usePackStore((state) => state.availablePacks);
@@ -36,11 +36,6 @@ export default function SetupScreen() {
   const allPlayersCustom =
     players.length > 0 &&
     players.every((p) => p.packId !== null || p.comboId !== null);
-
-  const [webPicker, setWebPicker] = useState<{
-    title: string;
-    options: { label: string; onPress: () => void }[];
-  } | null>(null);
 
   // Load pack name — check the in-memory index first (web-safe), then WatermelonDB
   useEffect(() => {
@@ -97,53 +92,13 @@ export default function SetupScreen() {
     updatePlayerName(id, name);
   };
 
-  const handlePickSource = (playerId: string) => {
-    // On web, all packs are available (no download step); on native, filter to downloaded only.
-    const selectablePacks = Platform.OS === 'web'
-      ? availablePacks
-      : availablePacks.filter(p => downloadedPackIds.includes(p.id));
-
-    const options = [
-      {
-        label: 'Default (game source)',
-        onPress: () => { updatePlayerPack(playerId, null); updatePlayerCombo(playerId, null); },
-      },
-      ...selectablePacks.map(p => ({
-        label: p.name.length > 28 ? p.name.slice(0, 25) + '...' : p.name,
-        onPress: () => { updatePlayerPack(playerId, p.id); },
-      })),
-      ...savedCombos.map(c => ({
-        label: `Combo: ${c.name.length > 22 ? c.name.slice(0, 19) + '...' : c.name}`,
-        onPress: () => { updatePlayerCombo(playerId, c.id); },
-      })),
-    ];
-
-    if (Platform.OS === 'web') {
-      setWebPicker({ title: 'Select Pack or Combo', options });
-    } else {
-      Alert.alert('Select Pack or Combo', undefined, [
-        ...options.map(o => ({ text: o.label, onPress: o.onPress })),
-        { text: 'Cancel', style: 'cancel' as const },
-      ]);
-    }
+  const handleCustomPack = (playerId: string) => {
+    router.push({ pathname: '/packs', params: { targetPlayerId: playerId } });
   };
 
-  const handlePickDifficulty = (playerId: string) => {
-    const options = [
-      { label: 'Any Difficulty', onPress: () => updatePlayerDifficulty(playerId, null) },
-      { label: 'Easy', onPress: () => updatePlayerDifficulty(playerId, 'easy') },
-      { label: 'Medium', onPress: () => updatePlayerDifficulty(playerId, 'medium') },
-      { label: 'Hard', onPress: () => updatePlayerDifficulty(playerId, 'hard') },
-    ];
-
-    if (Platform.OS === 'web') {
-      setWebPicker({ title: 'Select Difficulty', options });
-    } else {
-      Alert.alert('Select Difficulty', undefined, [
-        ...options.map(o => ({ text: o.label, onPress: o.onPress })),
-        { text: 'Cancel', style: 'cancel' as const },
-      ]);
-    }
+  const handleRevertToShared = (playerId: string) => {
+    updatePlayerPack(playerId, null);
+    updatePlayerCombo(playerId, null);
   };
 
   const handleStartGame = async () => {
@@ -221,12 +176,12 @@ export default function SetupScreen() {
             ? (availablePacks.find(p => p.id === player.packId)?.name ?? 'Custom Pack')
             : null;
           const displayName = playerComboName ?? playerPackName;
-          const chipLabel = displayName
-            ? (displayName.length > 12 ? displayName.slice(0, 12) + '...' : displayName)
-            : 'Default';
-          const difficultyLabel = player.difficultyPreference
-            ? player.difficultyPreference.charAt(0).toUpperCase() + player.difficultyPreference.slice(1)
-            : 'Any Difficulty';
+          const isCustom = player.packId !== null || player.comboId !== null;
+          const chipLabel = isCustom
+            ? (displayName
+                ? `Custom: ${displayName.length > 12 ? displayName.slice(0, 12) + '…' : displayName}`
+                : 'Custom')
+            : 'Shared';
 
           return (
             <View key={player.id} style={styles.playerRowOuter}>
@@ -253,28 +208,20 @@ export default function SetupScreen() {
                 </Pressable>
               </View>
 
-              {/* Row 2: per-player pack chip + difficulty chip (always visible) */}
+              {/* Row 2: Shared/Custom toggle chip */}
               <View style={styles.packChipRow}>
                 <Pressable
                   style={[
                     styles.packChip,
-                    displayName ? styles.packChipActive : styles.packChipDefault,
+                    isCustom ? styles.packChipActive : styles.packChipDefault,
                   ]}
-                  onPress={() => handlePickSource(player.id)}
+                  onPress={() => isCustom
+                    ? handleRevertToShared(player.id)
+                    : handleCustomPack(player.id)
+                  }
                 >
                   <Text style={styles.packChipText} numberOfLines={1}>
                     {chipLabel}
-                  </Text>
-                </Pressable>
-                <Pressable
-                  style={[
-                    styles.packChip,
-                    player.difficultyPreference ? styles.packChipActive : styles.packChipDefault,
-                  ]}
-                  onPress={() => handlePickDifficulty(player.id)}
-                >
-                  <Text style={styles.packChipText} numberOfLines={1}>
-                    {difficultyLabel}
                   </Text>
                 </Pressable>
               </View>
@@ -326,40 +273,6 @@ export default function SetupScreen() {
           </Text>
         )}
       </View>
-      {/* Web picker modal — replaces Alert.alert for source/difficulty selection */}
-      {Platform.OS === 'web' && webPicker && (
-        <Modal transparent visible onRequestClose={() => setWebPicker(null)}>
-          <TouchableWithoutFeedback onPress={() => setWebPicker(null)}>
-            <View style={styles.webPickerBackdrop}>
-              <TouchableWithoutFeedback>
-                <View style={styles.webPickerCard}>
-                  <Text style={styles.webPickerTitle}>{webPicker.title}</Text>
-                  <View style={styles.webPickerDivider} />
-                  {webPicker.options.map((opt, i) => (
-                    <Pressable
-                      key={i}
-                      style={({ pressed }) => [
-                        styles.webPickerItem,
-                        pressed && styles.webPickerItemPressed,
-                      ]}
-                      onPress={() => { opt.onPress(); setWebPicker(null); }}
-                    >
-                      <Text style={styles.webPickerItemText}>{opt.label}</Text>
-                    </Pressable>
-                  ))}
-                  <View style={styles.webPickerDivider} />
-                  <Pressable
-                    style={({ pressed }) => [styles.webPickerItem, pressed && styles.webPickerItemPressed]}
-                    onPress={() => setWebPicker(null)}
-                  >
-                    <Text style={[styles.webPickerItemText, { opacity: 0.5 }]}>Cancel</Text>
-                  </Pressable>
-                </View>
-              </TouchableWithoutFeedback>
-            </View>
-          </TouchableWithoutFeedback>
-        </Modal>
-      )}
     </ScrollView>
   );
 }
@@ -487,42 +400,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 8,
     opacity: 0.7,
-  },
-  webPickerBackdrop: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  webPickerCard: {
-    backgroundColor: '#1c1c1e',
-    borderRadius: 12,
-    width: 280,
-    overflow: 'hidden',
-  },
-  webPickerTitle: {
-    color: '#aaa',
-    fontSize: 13,
-    fontWeight: '600',
-    textAlign: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    letterSpacing: 0.3,
-  },
-  webPickerDivider: {
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: 'rgba(255,255,255,0.15)',
-  },
-  webPickerItem: {
-    paddingVertical: 14,
-    paddingHorizontal: 20,
-  },
-  webPickerItemPressed: {
-    backgroundColor: 'rgba(255,255,255,0.08)',
-  },
-  webPickerItemText: {
-    color: '#ffffff',
-    fontSize: 16,
-    textAlign: 'center',
   },
 });
