@@ -9,6 +9,7 @@
 - ✅ **v5.0 Content Generation Tooling** — Phases 16–17 (shipped 2026-06-13)
 - ✅ **v6.0 Pack Combos** — Phase 18 (shipped 2026-06-13)
 - ✅ **v7.0 Per-Player Pack Customization** — Phase 19 (shipped 2026-06-13)
+- 🔄 **v8.0 Pack Selection UX Overhaul** — Phase 20 (in progress)
 
 ## Phases
 
@@ -83,6 +84,18 @@ Archive: `.planning/milestones/v7.0-ROADMAP.md`
 
 </details>
 
+### Phase 20: Pack Selection UX Overhaul
+
+**Goal:** Streamline the pack selection experience so each player clearly sees whether they're using a shared or custom pack. Introduce a "Shared Pack" / "Custom Pack" chip on each player row in setup. Custom Pack uses the same picker flow as the game-level shared pack. If all players select Custom Pack, no shared pack is required; otherwise a shared pack must be set.
+
+**Depends on:** Phase 19 (Per-Player Pack Customization)
+
+**Plans:** 2 plans
+
+Plans:
+- [ ] 20-01-PLAN.md — Remove packMode from packStore; add all-custom bypass to gameStore.startGame()
+- [ ] 20-02-PLAN.md — Rewrite setup.tsx: per-player pack chips, remove segmented control, dynamic "Optional" header
+
 ---
 
 ## Progress
@@ -108,6 +121,7 @@ Archive: `.planning/milestones/v7.0-ROADMAP.md`
 | 17. Per-Player Pack and Difficulty | v5.0 | 2/2 | Complete | 2026-06-13 |
 | 18. Pack Combos | v6.0 | 4/4 | Complete | 2026-06-13 |
 | 19. Per-Player Pack Customization | v7.0 | 1/1 | Complete | 2026-06-13 |
+| 20. Pack Selection UX Overhaul | v8.0 | 0/2 | Not started | - |
 
 ---
 
