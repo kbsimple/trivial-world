@@ -192,6 +192,13 @@ export const useQuestionStore = create<QuestionState>()(
 
       resetAskedQuestions: async () => {
         if (Platform.OS === 'web') {
+          // Web platform limitation: askedQuestionIds is a single flat array shared
+          // across all packs — it is not keyed by packId. Resetting it clears all
+          // previously-asked IDs regardless of which pack they belonged to. This is
+          // an accepted limitation: web always uses the bundled question pool (no
+          // downloaded packs), so per-player packId assignments have no effect here.
+          // If a second game starts with different packs the slate is wiped cleanly,
+          // which is correct behaviour for the single shared pool.
           set({ askedQuestionIds: [] });
           return;
         }
