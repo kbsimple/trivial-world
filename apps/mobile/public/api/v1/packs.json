@@ -125,6 +125,24 @@
       "downloadUrl": "https://trivial-world.netlify.app/packs/year-of-2025-a2025e00.json",
       "checksum": "a7bd073e7218b6d8b2885143d3d0007080b35237810140e36ac42f2d0b6f788d",
       "size": 53956
+    },
+    {
+      "id": "c1c1p1ec-0001-4000-8000-0pece0000001",
+      "name": "One Piece",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/one-piece-c1c1p1ec.json",
+      "checksum": "8301d919b93ad7526775051ad16fc0e3919f92376b452d5813660601c93803ca",
+      "size": 46054
     }
   ]
 }
