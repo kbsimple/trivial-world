@@ -16,10 +16,10 @@
       "orange": 13
     },
     "totalQuestions": 78,
-    "checksum": "7bc32580c033d78e18fa7ea854ad17f9ba076cbd8a1fb28de451457a55210c51",
+    "checksum": "7e7aeeac3cf11eea06c375faa3dc6d5c985655cf416dc4cf5aac1fb151651c64",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 10437
+    "size": 15801
   },
   "questions": [
     {
@@ -159,15 +159,15 @@
       "id": "pink-010",
       "category": "pink",
       "difficulty": "medium",
-      "questionText": "In which year did Fortnite: Battle Royale first launch?",
-      "answerText": "2017"
+      "questionText": "In which year did Fortnite: Battle Royale first launch? A) 2015, B) 2016, C) 2017, D) 2018",
+      "answerText": "2017 (C)"
     },
     {
       "id": "yellow-001",
       "category": "yellow",
       "difficulty": "easy",
-      "questionText": "In what year was the first iPhone released by Apple?",
-      "answerText": "2007"
+      "questionText": "In what year was the first iPhone released by Apple? A) 2005, B) 2006, C) 2007, D) 2008",
+      "answerText": "2007 (C)"
     },
     {
       "id": "yellow-002",
@@ -208,8 +208,8 @@
       "id": "yellow-007",
       "category": "yellow",
       "difficulty": "easy",
-      "questionText": "In what year did the first crewed Moon landing occur?",
-      "answerText": "1969"
+      "questionText": "In what year did the first crewed Moon landing occur? A) 1965, B) 1967, C) 1969, D) 1972",
+      "answerText": "1969 (C)"
     },
     {
       "id": "yellow-008",
@@ -229,8 +229,8 @@
       "id": "yellow-010",
       "category": "yellow",
       "difficulty": "easy",
-      "questionText": "In which year did the Berlin Wall fall?",
-      "answerText": "1989"
+      "questionText": "In which year did the Berlin Wall fall? A) 1987, B) 1988, C) 1990, D) 1989",
+      "answerText": "1989 (D)"
     },
     {
       "id": "purple-001",
@@ -313,8 +313,8 @@
       "id": "green-002",
       "category": "green",
       "difficulty": "easy",
-      "questionText": "How many planets are currently recognized in our solar system?",
-      "answerText": "8"
+      "questionText": "How many planets are currently recognized in our solar system? A) 7, B) 8, C) 9, D) 10",
+      "answerText": "8 (B)"
     },
     {
       "id": "green-003",
@@ -383,8 +383,8 @@
       "id": "orange-002",
       "category": "orange",
       "difficulty": "easy",
-      "questionText": "How many players from each team are on the court at the same time in basketball?",
-      "answerText": "5"
+      "questionText": "How many players from each team are on the court at the same time in basketball? A) 4, B) 5, C) 6, D) 7",
+      "answerText": "5 (B)"
     },
     {
       "id": "orange-003",
@@ -404,8 +404,8 @@
       "id": "orange-005",
       "category": "orange",
       "difficulty": "easy",
-      "questionText": "How many holes make up a standard round of golf?",
-      "answerText": "18"
+      "questionText": "How many holes make up a standard round of golf? A) 9, B) 12, C) 18, D) 24",
+      "answerText": "18 (C)"
     },
     {
       "id": "orange-006",
@@ -448,7 +448,12 @@
       "difficulty": "medium",
       "questionText": "Which country has the most natural UNESCO World Heritage Sites?",
       "answerText": "China",
-      "choices": ["Brazil", "Italy", "China", "India"],
+      "choices": [
+        "Brazil",
+        "Italy",
+        "China",
+        "India"
+      ],
       "correctChoiceIndex": 2
     },
     {
@@ -457,7 +462,12 @@
       "difficulty": "easy",
       "questionText": "In the video game \"The Legend of Zelda: Breath of the Wild\", which region contains the main castle?",
       "answerText": "Hyrule",
-      "choices": ["Akkala", "Faron", "Lanayru", "Hyrule Field"],
+      "choices": [
+        "Akkala",
+        "Faron",
+        "Lanayru",
+        "Hyrule Field"
+      ],
       "correctChoiceIndex": 3
     },
     {
@@ -466,7 +476,12 @@
       "difficulty": "easy",
       "questionText": "The Amazon River flows through which continent?",
       "answerText": "South America",
-      "choices": ["Africa", "South America", "Asia", "North America"],
+      "choices": [
+        "Africa",
+        "South America",
+        "Asia",
+        "North America"
+      ],
       "correctChoiceIndex": 1
     },
     {
@@ -475,7 +490,12 @@
       "difficulty": "easy",
       "questionText": "Which streaming platform released \"Stranger Things\"?",
       "answerText": "Netflix",
-      "choices": ["Hulu", "Disney+", "Netflix", "HBO Max"],
+      "choices": [
+        "Hulu",
+        "Disney+",
+        "Netflix",
+        "HBO Max"
+      ],
       "correctChoiceIndex": 2
     },
     {
@@ -484,7 +504,12 @@
       "difficulty": "easy",
       "questionText": "What is the name of the fictional kingdom in the movie \"Frozen\"?",
       "answerText": "Arendelle",
-      "choices": ["Arendelle", "Narnia", "Eldorado", "Zootopia"],
+      "choices": [
+        "Arendelle",
+        "Narnia",
+        "Eldorado",
+        "Zootopia"
+      ],
       "correctChoiceIndex": 0
     },
     {
@@ -493,7 +518,12 @@
       "difficulty": "medium",
       "questionText": "Which social media platform invented the \"Stories\" format that others later copied?",
       "answerText": "Snapchat",
-      "choices": ["Instagram", "TikTok", "Snapchat", "Twitter"],
+      "choices": [
+        "Instagram",
+        "TikTok",
+        "Snapchat",
+        "Twitter"
+      ],
       "correctChoiceIndex": 2
     },
     {
@@ -502,7 +532,12 @@
       "difficulty": "medium",
       "questionText": "In which year did the Berlin Wall fall?",
       "answerText": "1989",
-      "choices": ["1985", "1989", "1991", "1993"],
+      "choices": [
+        "1985",
+        "1989",
+        "1991",
+        "1993"
+      ],
       "correctChoiceIndex": 1
     },
     {
@@ -511,7 +546,12 @@
       "difficulty": "hard",
       "questionText": "Which ancient wonder of the world was located in Alexandria, Egypt?",
       "answerText": "The Lighthouse of Alexandria",
-      "choices": ["The Colossus of Rhodes", "The Hanging Gardens", "The Lighthouse of Alexandria", "The Temple of Artemis"],
+      "choices": [
+        "The Colossus of Rhodes",
+        "The Hanging Gardens",
+        "The Lighthouse of Alexandria",
+        "The Temple of Artemis"
+      ],
       "correctChoiceIndex": 2
     },
     {
@@ -520,7 +560,12 @@
       "difficulty": "easy",
       "questionText": "Who invented the World Wide Web?",
       "answerText": "Tim Berners-Lee",
-      "choices": ["Bill Gates", "Tim Berners-Lee", "Vint Cerf", "Steve Jobs"],
+      "choices": [
+        "Bill Gates",
+        "Tim Berners-Lee",
+        "Vint Cerf",
+        "Steve Jobs"
+      ],
       "correctChoiceIndex": 1
     },
     {
@@ -529,7 +574,12 @@
       "difficulty": "easy",
       "questionText": "Which studio produced the animated film \"Spirited Away\"?",
       "answerText": "Studio Ghibli",
-      "choices": ["Pixar", "Studio Ghibli", "DreamWorks", "Madhouse"],
+      "choices": [
+        "Pixar",
+        "Studio Ghibli",
+        "DreamWorks",
+        "Madhouse"
+      ],
       "correctChoiceIndex": 1
     },
     {
@@ -538,7 +588,12 @@
       "difficulty": "medium",
       "questionText": "What art movement is Salvador Dalí most associated with?",
       "answerText": "Surrealism",
-      "choices": ["Cubism", "Impressionism", "Surrealism", "Abstract Expressionism"],
+      "choices": [
+        "Cubism",
+        "Impressionism",
+        "Surrealism",
+        "Abstract Expressionism"
+      ],
       "correctChoiceIndex": 2
     },
     {
@@ -547,7 +602,12 @@
       "difficulty": "hard",
       "questionText": "In \"Spider-Man: Into the Spider-Verse\", what is Miles Morales's home dimension?",
       "answerText": "Earth-1610",
-      "choices": ["Earth-616", "Earth-1610", "Earth-65", "Earth-928"],
+      "choices": [
+        "Earth-616",
+        "Earth-1610",
+        "Earth-65",
+        "Earth-928"
+      ],
       "correctChoiceIndex": 1
     },
     {
@@ -556,7 +616,12 @@
       "difficulty": "easy",
       "questionText": "How many planets are in our solar system?",
       "answerText": "8",
-      "choices": ["7", "8", "9", "10"],
+      "choices": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
       "correctChoiceIndex": 1
     },
     {
@@ -565,7 +630,12 @@
       "difficulty": "medium",
       "questionText": "Which programming language was created by Guido van Rossum?",
       "answerText": "Python",
-      "choices": ["Ruby", "Java", "Python", "Perl"],
+      "choices": [
+        "Ruby",
+        "Java",
+        "Python",
+        "Perl"
+      ],
       "correctChoiceIndex": 2
     },
     {
@@ -574,7 +644,12 @@
       "difficulty": "medium",
       "questionText": "What is the speed of light in a vacuum, approximately?",
       "answerText": "300,000 km/s",
-      "choices": ["150,000 km/s", "300,000 km/s", "500,000 km/s", "1,000,000 km/s"],
+      "choices": [
+        "150,000 km/s",
+        "300,000 km/s",
+        "500,000 km/s",
+        "1,000,000 km/s"
+      ],
       "correctChoiceIndex": 1
     },
     {
@@ -583,7 +658,12 @@
       "difficulty": "easy",
       "questionText": "How many players are on a standard basketball team on the court at one time?",
       "answerText": "5",
-      "choices": ["4", "5", "6", "7"],
+      "choices": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
       "correctChoiceIndex": 1
     },
     {
@@ -592,7 +672,12 @@
       "difficulty": "hard",
       "questionText": "Which esports organization won the first League of Legends World Championship in 2011?",
       "answerText": "Fnatic",
-      "choices": ["Team SoloMid", "Cloud9", "Fnatic", "SK Telecom T1"],
+      "choices": [
+        "Team SoloMid",
+        "Cloud9",
+        "Fnatic",
+        "SK Telecom T1"
+      ],
       "correctChoiceIndex": 2
     },
     {
@@ -601,7 +686,12 @@
       "difficulty": "easy",
       "questionText": "In FIFA, what does the abbreviation \"VAR\" stand for?",
       "answerText": "Video Assistant Referee",
-      "choices": ["Video Action Replay", "Virtual Assistant Review", "Video Assistant Referee", "Visual Aid Referee"],
+      "choices": [
+        "Video Action Replay",
+        "Virtual Assistant Review",
+        "Video Assistant Referee",
+        "Visual Aid Referee"
+      ],
       "correctChoiceIndex": 2
     }
   ]

@@ -16,10 +16,10 @@
       "orange": 10
     },
     "totalQuestions": 60,
-    "checksum": "576a9ac6a708d6c97767c0fbb49104f707523a96d721e331aeda5e45391a7ca0",
+    "checksum": "d15b2a8c0985f63b5e0f0fb5d0f2dd525376b9fdb793e967d5e2b89ad38ff3e4",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 15793
+    "size": 12897
   },
   "questions": [
     {
@@ -166,8 +166,8 @@
       "id": "yellow-001",
       "category": "yellow",
       "difficulty": "easy",
-      "questionText": "In what year was the Declaration of Independence adopted?",
-      "answerText": "1776"
+      "questionText": "In what year was the Declaration of Independence adopted? A) 1774, B) 1775, C) 1776, D) 1778",
+      "answerText": "1776 (C)"
     },
     {
       "id": "yellow-002",
@@ -180,8 +180,8 @@
       "id": "yellow-003",
       "category": "yellow",
       "difficulty": "easy",
-      "questionText": "George Washington was sworn in as the first President of the United States in what year?",
-      "answerText": "1789"
+      "questionText": "George Washington was sworn in as the first President of the United States in what year? A) 1787, B) 1788, C) 1789, D) 1790",
+      "answerText": "1789 (C)"
     },
     {
       "id": "yellow-004",
@@ -208,22 +208,22 @@
       "id": "yellow-007",
       "category": "yellow",
       "difficulty": "medium",
-      "questionText": "The Articles of Confederation were replaced by the U.S. Constitution, which was ratified in what year?",
-      "answerText": "1788"
+      "questionText": "The Articles of Confederation were replaced by the U.S. Constitution, which was ratified in what year? A) 1785, B) 1786, C) 1787, D) 1788",
+      "answerText": "1788 (D)"
     },
     {
       "id": "yellow-008",
       "category": "yellow",
       "difficulty": "medium",
-      "questionText": "The Bill of Rights — the first ten amendments — was ratified in what year?",
-      "answerText": "1791"
+      "questionText": "The Bill of Rights — the first ten amendments — was ratified in what year? A) 1789, B) 1790, C) 1791, D) 1793",
+      "answerText": "1791 (C)"
     },
     {
       "id": "yellow-009",
       "category": "yellow",
       "difficulty": "hard",
-      "questionText": "How many of the original thirteen colonies had to ratify the Constitution to make it effective?",
-      "answerText": "Nine"
+      "questionText": "How many of the original thirteen colonies had to ratify the Constitution to make it effective? A) Seven, B) Eight, C) Nine, D) Ten",
+      "answerText": "Nine (C)"
     },
     {
       "id": "yellow-010",
@@ -362,8 +362,8 @@
       "id": "green-009",
       "category": "green",
       "difficulty": "hard",
-      "questionText": "John Fitch demonstrated the first successful American steamboat on the Delaware River in what year?",
-      "answerText": "1787"
+      "questionText": "John Fitch demonstrated the first successful American steamboat on the Delaware River in what year? A) 1783, B) 1785, C) 1787, D) 1790",
+      "answerText": "1787 (C)"
     },
     {
       "id": "green-010",

@@ -1,0 +1,506 @@
+{
+  "metadata": {
+    "id": "b7b0b001-y0ut-4000-8000-ub200000000",
+    "name": "YouTube Streams",
+    "description": "Test your knowledge of YouTube creators, viral moments, platform history, and streaming culture.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-13T00:00:00.000Z",
+    "updatedAt": "2026-06-13T00:00:00.000Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "f934e7e0968575755352eb658ba1d057c49d0f3b69b42791182837d043e5715c",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 41109
+  },
+  "questions": [
+    {
+      "id": "blue-yt-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "MrBeast (Jimmy Donaldson) was born and raised in which U.S. state?",
+      "answerText": "North Carolina",
+      "tidbits": "Jimmy Donaldson grew up in Greenville, North Carolina, and still operates his main studio and philanthropy efforts there. Despite offers to move to bigger media hubs like Los Angeles, he has kept his base in his home state. This has helped him build a tight-knit local team and contribute significantly to the Greenville economy."
+    },
+    {
+      "id": "blue-yt-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "PewDiePie (Felix Kjellberg) is from which Scandinavian country?",
+      "answerText": "Sweden",
+      "tidbits": "Felix Kjellberg was born in Gothenburg, Sweden, and studied Industrial Economics and Technology Management at Chalmers University before dropping out to pursue YouTube. He later moved to Brighton, UK, and then to Japan. His Swedish nationality became a small detail in the giant cultural phenomenon that PewDiePie became."
+    },
+    {
+      "id": "blue-yt-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Pokimane (Imane Anys) was born in which North African country before moving to Canada?",
+      "answerText": "Morocco",
+      "tidbits": "Imane Anys was born in Morocco and emigrated to Canada as a child, growing up in the Montreal area. She later attended McMaster University in Ontario before her streaming career took off. Her multicultural background has influenced her connection to a diverse international fanbase."
+    },
+    {
+      "id": "blue-yt-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Linus Tech Tips (LTT) is headquartered in which Canadian city?",
+      "answerText": "Langley, British Columbia (Greater Vancouver area)",
+      "tidbits": "Linus Media Group operates out of Langley, BC, just outside Vancouver. The company has expanded significantly and now occupies a large warehouse-style studio space. Canada's tech-friendly business climate and proximity to the U.S. tech corridor make it a strategic home base for one of YouTube's biggest tech channels."
+    },
+    {
+      "id": "blue-yt-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which German city is home to the studio behind the popular science animation channel Kurzgesagt?",
+      "answerText": "Munich",
+      "tidbits": "Kurzgesagt, which means 'in a nutshell' in German, was founded by Philipp Dettmer in Munich in 2013. The team of animators and researchers operates out of a studio in the city. Munich's strong design and creative scene has contributed to the channel's distinctly polished and meticulously researched visual style."
+    },
+    {
+      "id": "blue-yt-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Tom Scott, the British YouTuber known for videos about places and language, is based in which country?",
+      "answerText": "United Kingdom (England)",
+      "tidbits": "Tom Scott studied at Cambridge and has spent much of his career based in the UK. His 'Things You Might Not Know' series frequently takes him to quirky or historically significant sites across Britain and Europe. His dry wit and clear explanatory style reflect a distinctly British educational broadcasting tradition."
+    },
+    {
+      "id": "blue-yt-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The YouTube channel 'Good Mythical Morning,' hosted by Rhett & Link, originates from which U.S. state where the duo grew up together?",
+      "answerText": "North Carolina",
+      "tidbits": "Rhett McLaughlin and Link Neal met in first grade in Buies Creek, North Carolina, and have been best friends ever since. They later produced their show from Los Angeles but their friendship traces back to their North Carolina childhoods. Their long-running partnership, spanning decades, is a rarity in the entertainment world."
+    },
+    {
+      "id": "blue-yt-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "VidCon, the annual YouTube creator convention, was held for many years in which Southern California city before expanding to other countries?",
+      "answerText": "Anaheim, California",
+      "tidbits": "VidCon was founded by John and Hank Green in 2010 and was originally held in Los Angeles before moving to the Anaheim Convention Center, which became its long-time home. The event has since expanded to the Netherlands, Australia, and the UK. At its peak, U.S. VidCon drew over 70,000 attendees across a single weekend."
+    },
+    {
+      "id": "blue-yt-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "jacksepticeye (Seán McLoughlin) is from which small Irish town?",
+      "answerText": "Ballycumber, County Offaly, Ireland",
+      "tidbits": "Seán McLoughlin grew up in the tiny village of Ballycumber in rural County Offaly — a place so small it had a population of only a few hundred people. His upbringing in a tight-knit Irish community influenced his warm and energetic on-camera personality. He has credited his hometown and family for keeping him grounded despite global fame."
+    },
+    {
+      "id": "blue-yt-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Marques Brownlee (MKBHD) is based in which U.S. state, where he started his channel while still in high school?",
+      "answerText": "New Jersey",
+      "tidbits": "Marques Brownlee started his YouTube channel while attending high school in New Jersey and later studied at Stevens Institute of Technology in Hoboken. He has continued operating his studio from the New Jersey / New York metro area. Despite being one of the most prominent tech reviewers on the planet, he has maintained his base close to where he grew up."
+    },
+    {
+      "id": "pink-yt-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which YouTuber is famous for giving away cash, cars, and even islands in elaborate challenge videos?",
+      "answerText": "MrBeast (Jimmy Donaldson)",
+      "tidbits": "MrBeast is widely credited with pioneering the 'stunt philanthropy' genre on YouTube, where massive giveaways are staged as entertainment. His videos routinely cost hundreds of thousands — sometimes millions — of dollars to produce. He has also launched real-world enterprises like MrBeast Burger and Feastables to fund his ever-escalating productions."
+    },
+    {
+      "id": "pink-yt-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What was the name of the 2019 subscriber battle where fans rallied behind the slogan 'Subscribe to PewDiePie'?",
+      "answerText": "PewDiePie vs T-Series",
+      "tidbits": "The battle between PewDiePie and T-Series for the most-subscribed YouTube channel gripped the internet throughout late 2018 and into 2019. T-Series, the Indian music and film label, ultimately overtook PewDiePie in April 2019. The campaign spawned memes, billboard ads, and even a diss track that became one of YouTube's most-viewed songs."
+    },
+    {
+      "id": "pink-yt-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What viral 2012 music video became the first YouTube video to reach 1 billion views?",
+      "answerText": "\"Gangnam Style\" by PSY",
+      "tidbits": "PSY's 'Gangnam Style' was uploaded in July 2012 and hit 1 billion views in December of the same year — a milestone no video had ever achieved before. It grew so popular that YouTube had to update its view counter from a 32-bit integer to a 64-bit one to handle the numbers. The song's quirky horse-riding dance became a global phenomenon at parties and events worldwide."
+    },
+    {
+      "id": "pink-yt-004",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which child YouTuber, known as 'Ryan's World,' became one of YouTube's highest earners before age 10?",
+      "answerText": "Ryan Kaji",
+      "tidbits": "Ryan Kaji started his channel 'Ryan ToysReview' (later rebranded Ryan's World) at age 3, with his parents filming him opening and reviewing toys. By age 8, Forbes estimated he earned $26 million in a single year, making him the highest-paid YouTuber at the time. His brand has since expanded into a full entertainment empire with merchandise and a TV show."
+    },
+    {
+      "id": "pink-yt-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of the collaborative Minecraft server that Dream created, which became a cultural phenomenon featuring many top creators?",
+      "answerText": "Dream SMP",
+      "tidbits": "The Dream SMP (Survival Multiplayer server) launched in May 2020 and featured a sprawling semi-improvised roleplay narrative involving dozens of prominent Minecraft creators. At its peak, streams from the server were breaking concurrent viewer records on Twitch. The storyline and lore became so complex that fans built entire wikis and produced original music to document it."
+    },
+    {
+      "id": "pink-yt-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "In which year did Dream reveal his face for the first time in a video titled 'hi, I'm Dream'?",
+      "answerText": "2022",
+      "tidbits": "Dream uploaded his face reveal video in October 2022, after years of being one of YouTube's most recognized anonymous creators. The reveal generated massive attention across social media, with millions watching within hours. Despite building his identity around anonymity, Dream had already amassed over 30 million subscribers before showing his face."
+    },
+    {
+      "id": "pink-yt-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which YouTube duo hosts 'Good Mythical Morning,' the long-running daily talk-and-challenge show often described as one of YouTube's longest-running original series?",
+      "answerText": "Rhett McLaughlin and Link Neal (Rhett & Link)",
+      "tidbits": "Rhett and Link have uploaded a new episode of Good Mythical Morning virtually every weekday since 2012, making it one of the most prolific content schedules on the platform. Episodes typically feature taste tests, challenges, and comedy sketches. The show has aired over 2,000 episodes, a level of consistency rarely seen among individual YouTube channels."
+    },
+    {
+      "id": "pink-yt-008",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Hank and John Green are famous on YouTube as the 'Vlogbrothers.' What is the name of their fanbase?",
+      "answerText": "Nerdfighters",
+      "tidbits": "The term 'Nerdfighters' emerged organically from the Vlogbrothers community in 2007 after John Green spotted an arcade game called 'Aero Fighters' and misread it — then decided they should be 'Nerdfighters' anyway. Nerdfighters are encouraged to 'decrease world suck,' a philosophy tied to the brothers' charity arm, the Foundation to Decrease Worldsuck. The community has raised millions for global causes through projects like the Project for Awesome."
+    },
+    {
+      "id": "pink-yt-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Ludwig Ahgren made history on Twitch with the longest subathon ever, then later signed exclusively with which platform?",
+      "answerText": "YouTube Gaming",
+      "tidbits": "In 2021, Ludwig Ahgren's Twitch subathon — where subscribers extended the stream's runtime — ran for 31 consecutive days and briefly made him the most-subscribed streamer on Twitch. Later that year, he signed an exclusive deal with YouTube Gaming, becoming one of the most high-profile streamers to make the platform switch. His move was seen as a significant win for YouTube in its ongoing competition with Twitch."
+    },
+    {
+      "id": "pink-yt-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What phrase became a beloved motto in the Minecraft YouTube community following the death of creator Technoblade in June 2022?",
+      "answerText": "\"Technoblade Never Dies\"",
+      "tidbits": "Technoblade was beloved for his skill, sharp humor, and self-deprecating catchphrase, which took on a deeply emotional resonance after he passed away from cancer at age 23. His final video, narrated from a script he left behind, was uploaded posthumously by his father and received over 40 million views. YouTube itself paid tribute by adding a crown to the platform's logo, a reference to his in-game achievements."
+    },
+    {
+      "id": "yellow-yt-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year was YouTube officially launched? A) 2003  B) 2005  C) 2007  D) 2009",
+      "answerText": "B) 2005",
+      "tidbits": "YouTube was officially launched on February 14, 2005 (Valentine's Day) by three former PayPal employees: Chad Hurley, Steve Chen, and Jawed Karim. The domain was registered that same day. Within its first year, the site was attracting 100 million video views per day and was already attracting serious acquisition interest."
+    },
+    {
+      "id": "yellow-yt-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What was the title of the first video ever uploaded to YouTube, posted by co-founder Jawed Karim?",
+      "answerText": "\"Me at the zoo\"",
+      "tidbits": "Jawed Karim uploaded 'Me at the zoo' on April 23, 2005, making it the first public video on the platform. In the 18-second clip, he stands in front of elephants at the San Diego Zoo and remarks on their trunks. The video still exists on the platform and has accumulated hundreds of millions of views, making it one of the most historically significant uploads in internet history."
+    },
+    {
+      "id": "yellow-yt-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Which tech giant acquired YouTube in October 2006? A) Apple  B) Microsoft  C) Google  D) Amazon",
+      "answerText": "C) Google",
+      "tidbits": "Google acquired YouTube in October 2006 for approximately $1.65 billion in stock — one of the largest internet acquisitions at the time. Many analysts initially questioned whether the price was justified, but the deal is now widely regarded as one of the best acquisitions in tech history. YouTube generates an estimated $30+ billion in annual revenue for Google's parent company Alphabet."
+    },
+    {
+      "id": "yellow-yt-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In what year did T-Series officially overtake PewDiePie to become the most-subscribed YouTube channel? A) 2018  B) 2019  C) 2020  D) 2021",
+      "answerText": "B) 2019",
+      "tidbits": "T-Series surpassed PewDiePie in April 2019, ending a months-long back-and-forth race that captivated the internet. T-Series benefited from India's rapidly expanding internet user base, which grew by hundreds of millions in the years prior. Today, T-Series has over 270 million subscribers — a number that seems almost inconceivable given that PewDiePie's 50 million was once considered untouchable."
+    },
+    {
+      "id": "yellow-yt-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "YouTube Shorts, the platform's short-form vertical video feature designed to compete with TikTok, launched globally in which year? A) 2019  B) 2020  C) 2021  D) 2022",
+      "answerText": "C) 2021",
+      "tidbits": "YouTube Shorts launched globally in 2021 after a beta rollout that began in India in September 2020. The feature was a direct response to the explosive growth of TikTok. Within its first year, Shorts accumulated over 5 trillion total views, and YouTube later introduced a revenue-sharing program for Shorts creators to incentivize adoption."
+    },
+    {
+      "id": "yellow-yt-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was the name of the first YouTube Red (now YouTube Premium) original series, released in 2016 and starring popular YouTubers?",
+      "answerText": "\"Scare PewDiePie\"",
+      "tidbits": "Scare PewDiePie was a reality horror series where PewDiePie faced scary scenarios inspired by popular video games. It was the flagship title YouTube used to launch its subscription premium service. Season 2 was completed but never released after controversies surrounding PewDiePie in early 2017 led YouTube to distance itself from the project."
+    },
+    {
+      "id": "yellow-yt-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which YouTuber's 2017 Logan Paul-related scandal led to YouTube introducing stricter monetization policies known informally as the 'Adpocalypse 2.0'?",
+      "answerText": "Logan Paul (the Aokigahara forest video)",
+      "tidbits": "In January 2018, Logan Paul uploaded footage from Japan's Aokigahara forest that showed a deceased person, sparking massive backlash. YouTube responded by removing Paul from its Google Preferred advertising program and delaying his YouTube Red projects. The incident accelerated YouTube's advertiser-driven content policy overhaul, affecting monetization for thousands of creators."
+    },
+    {
+      "id": "yellow-yt-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What was the purchase price Google paid for YouTube in 2006? A) $650 million  B) $1.05 billion  C) $1.65 billion  D) $2.1 billion",
+      "answerText": "C) $1.65 billion",
+      "tidbits": "The $1.65 billion all-stock deal closed in November 2006, just over a year after YouTube launched. At the time, many in the financial press were skeptical that a website hosting mostly amateur videos could be worth that much. Hindsight proved them spectacularly wrong — YouTube's brand value alone is estimated in the hundreds of billions today."
+    },
+    {
+      "id": "yellow-yt-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "YouTube crossed 1 billion hours of video watched per day in which year? A) 2012  B) 2014  C) 2016  D) 2018",
+      "answerText": "C) 2016",
+      "tidbits": "YouTube announced in early 2017 that users were watching over 1 billion hours of video per day as of 2016 — up tenfold from just four years prior. That figure is roughly equivalent to 100,000 years of video every single day. The number demonstrated YouTube's dominance as a video platform and validated Google's long bet on algorithmic recommendation driving watch time."
+    },
+    {
+      "id": "yellow-yt-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Before founding YouTube, all three co-founders — Chad Hurley, Steve Chen, and Jawed Karim — previously worked at which company?",
+      "answerText": "PayPal",
+      "tidbits": "All three YouTube founders were early PayPal employees and benefited from PayPal's 2002 acquisition by eBay for $1.5 billion, giving them the capital and connections to launch their next venture. This group — sometimes called the 'PayPal Mafia' — also included Elon Musk, Peter Thiel, and Reid Hoffman. The YouTube founders used some of their PayPal payout to fund the initial development of the platform."
+    },
+    {
+      "id": "purple-yt-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Which YouTube animator is known for illustrated storytimes about her own life, including struggles with an eating disorder, and has a pet bird named Tofu?",
+      "answerText": "Jaiden Animations",
+      "tidbits": "Jaiden Animations (Jaiden Dittfach) has been open about her experiences with anxiety and an eating disorder in her videos, making her channel one of the more emotionally resonant on the platform. Her animated style uses simple but expressive character designs to convey complex emotions. She is also well known in the Pokémon community for her 'Pokémon but…' challenge run videos."
+    },
+    {
+      "id": "purple-yt-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Which YouTube animator, known for 'The Odd1sOut' channel, became famous for relatable storytime animations about everyday life?",
+      "answerText": "James Rallison (The Odd1sOut)",
+      "tidbits": "James Rallison started The Odd1sOut as a webcomic before transitioning to YouTube animation, where his self-deprecating storytime videos found a massive audience. He is known for his simple, clean art style and comedic timing. He has also published two bestselling books, further expanding his brand beyond the digital world."
+    },
+    {
+      "id": "purple-yt-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Kurzgesagt videos are known for their distinctive visual style. Which type of artistic aesthetic defines their animations?",
+      "answerText": "Flat design / minimalist vector illustration (bird-themed characters)",
+      "tidbits": "Kurzgesagt's signature look uses bright, flat vector illustrations with rounded shapes and — most famously — small bird characters that appear throughout their animations as mascots. The studio employs a dedicated design team to ensure visual consistency across hundreds of videos on topics ranging from black holes to immune systems. Their art direction has influenced an entire generation of educational YouTube channels."
+    },
+    {
+      "id": "purple-yt-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "CGP Grey is known for highly detailed animated explainer videos. What do the initials 'CGP' stand for in his channel name?",
+      "answerText": "Nothing — CGP are not an abbreviation of anything meaningful (Grey has confirmed they are essentially made up)",
+      "tidbits": "CGP Grey has repeatedly deflected or joked about the meaning of his channel name, and has confirmed that CGP does not stand for any specific words. His real name is not widely publicized. The ambiguity has become something of a running joke in his community, with fans inventing increasingly absurd meanings for the initials."
+    },
+    {
+      "id": "purple-yt-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which animation-focused YouTuber is known for the 'Draw My Life' video format, where creators illustrate their biography in real time on a whiteboard?",
+      "answerText": "The 'Draw My Life' format was popularized broadly, but Sam Pepper and later numerous creators adopted it — its mainstream YouTube spread is most associated with Shane Dawson and community-wide adoption in 2013.",
+      "tidbits": "The 'Draw My Life' trend swept YouTube in 2012–2013, with creators drawing simple whiteboard illustrations narrating their life stories. It represented a rare moment where a video format became a platform-wide cultural phenomenon simultaneously. Thousands of creators participated, from mega-stars to tiny channels, making it one of the most replicated video formats in early YouTube history."
+    },
+    {
+      "id": "purple-yt-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which YouTube channel produces long-form animated documentaries about Disney, Pixar, and animation history, often exceeding one hour in length?",
+      "answerText": "schaffrillas productions (or channels like Like Stories of Old / Folding Ideas — but the Disney-specific long-form space is most associated with schaffrillas productions)",
+      "tidbits": "Long-form animation analysis YouTube experienced rapid growth in the 2020s, with channels like schaffrillas productions attracting millions of viewers for multi-hour deep dives into Disney and Pixar films. These videos challenge the assumption that YouTube audiences have short attention spans. Some individual videos in this genre have accumulated tens of millions of views, rivaling mainstream media coverage of the same films."
+    },
+    {
+      "id": "purple-yt-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which YouTube art channel hosted by Chloe Rose Art and similar creators specializes in teaching viewers to draw through step-by-step tutorials for beginners?",
+      "answerText": "Art tutorial / step-by-step drawing channels (the genre broadly; Art for Kids Hub is among the most prominent for children)",
+      "tidbits": "Art for Kids Hub, run by Rob and his family, has become one of the most popular art education channels on YouTube, with videos specifically designed for young children. The channel's straightforward, encouraging format has made it a staple in elementary school classrooms worldwide. Rob's calm instructional style is often cited by parents as one of the most child-friendly educational formats on the platform."
+    },
+    {
+      "id": "purple-yt-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Jaiden Animations collaborated with TheOdd1sOut on a video series set inside which popular Nintendo game's world, releasing a multi-episode animated adventure in 2023?",
+      "answerText": "Pokémon (specifically a Pokémon Scarlet and Violet–themed animated series)",
+      "tidbits": "Jaiden and James (TheOdd1sOut) created a multi-part animated series set inside the Pokémon world, blending their distinctive animation styles with Pokémon lore. The project was notable for being a fully narrative animated series — not just a commentary video — produced independently. It demonstrated how top YouTube animators have built production capabilities that rival small studio outputs."
+    },
+    {
+      "id": "purple-yt-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the name of the surrealist animated YouTube series created by Michael Cusack and Zach Hadel, featuring extremely crude animation and absurdist humor, that went viral in the mid-2010s?",
+      "answerText": "Smiling Friends (preceded by the viral shorts from Zach Hadel / Psychicpebbles and Michael Cusack's CHIKN NUGGIT / Cyanide & Happiness collaborations — the direct answer is 'Smiling Friends' which originated as a YouTube pilot)",
+      "tidbits": "Smiling Friends began as a YouTube-submitted pilot for Adult Swim's 'Off the Air' programming block and went viral before being greenlit as a full series. The show's deliberately crude animation style is intentional, with the creators using limited motion to heighten comedic impact. Its success represents a rare path from YouTube creator to mainstream animated television."
+    },
+    {
+      "id": "purple-yt-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "The animation studio behind Kurzgesagt published a video in 2019 called 'Optimistic Nihilism' that became one of their most-watched. What philosophical school does the title reference?",
+      "answerText": "Nihilism (specifically a reframed, hopeful interpretation of existential nihilism)",
+      "tidbits": "Kurzgesagt's 'Optimistic Nihilism' video argued that the absence of inherent cosmic meaning in the universe is actually liberating rather than depressing. The video struck a chord with millions of viewers and is considered one of the channel's landmark pieces, showcasing their ability to tackle heavy philosophical topics accessibly. It accumulated over 20 million views and sparked widespread philosophical discussion in YouTube comment sections — which is not something you often say."
+    },
+    {
+      "id": "green-yt-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Which tech YouTuber, known by the initials MKBHD, is widely recognized as one of the best smartphone and gadget reviewers on the platform?",
+      "answerText": "Marques Brownlee (MKBHD)",
+      "tidbits": "Marques Brownlee started his channel at age 13 and has built it into one of the most respected tech review destinations on the internet. He has interviewed major tech CEOs including Elon Musk, Mark Zuckerberg, and Bill Gates. In 2023, his honest review of the Fisker Ocean EV contributed to significant public discussion about the car's quality and the company's future."
+    },
+    {
+      "id": "green-yt-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Which YouTube science channel features a Canadian physicist (Derek Muller) who uses hands-on experiments and expert interviews to explain physics and science?",
+      "answerText": "Veritasium",
+      "tidbits": "Derek Muller founded Veritasium in 2011 and holds a PhD in physics education research from the University of Sydney. His videos often challenge common misconceptions, and he has been known to conduct experiments in surprising locations, including on aircraft and in scientific facilities. The channel name means 'element of truth' — a reference to the scientific pursuit at the channel's core."
+    },
+    {
+      "id": "green-yt-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Before becoming a viral YouTube science creator known for glitter bombs and science experiments, Mark Rober worked as an engineer for which U.S. government agency?",
+      "answerText": "NASA (NASA's Jet Propulsion Laboratory)",
+      "tidbits": "Mark Rober spent nine years as a mechanical engineer at NASA's Jet Propulsion Laboratory, working on projects including the Curiosity Mars rover. He left NASA to work at Apple before transitioning to full-time YouTube content creation. His engineering background is central to his videos, where he routinely designs intricate contraptions like self-driving Halloween candy bowls and elaborate porch pirate traps."
+    },
+    {
+      "id": "green-yt-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Linus Tech Tips became embroiled in a 2023 controversy involving a GPU cooler designed by a small company. What was the name of that company and product?",
+      "answerText": "Billet Labs and the Billet Labs Monoblock GPU cooler",
+      "tidbits": "LTT was loaned a one-of-a-kind prototype GPU cooler by Billet Labs for review, but accidentally auctioned it off before the company could get it back. The incident sparked a broader controversy about LTT's editorial and testing standards, and Linus Sebastian published a public apology and pledged to overhaul LTT's review processes. The saga became one of the most discussed creator controversies of 2023."
+    },
+    {
+      "id": "green-yt-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "The YouTube channel SciShow, which produces short educational science videos on a wide range of topics, was co-founded by which famous YouTube duo?",
+      "answerText": "Hank and John Green (the Vlogbrothers / Complexly production company)",
+      "tidbits": "SciShow was launched by Hank Green's production company Complexly in 2012 and initially hosted by Hank himself. It has since expanded into multiple spin-off channels including SciShow Space, SciShow Kids, and SciShow Psych. The Complexly network also produces CrashCourse, making Hank and John Green two of the most influential figures in educational YouTube content."
+    },
+    {
+      "id": "green-yt-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Which YouTube channel, known for colorful animated explainer videos about topics like nuclear energy, gene editing, and existential risks, is produced by a German studio and posts in over a dozen languages?",
+      "answerText": "Kurzgesagt – In a Nutshell",
+      "tidbits": "Kurzgesagt publishes videos in German and English, and funds translations into Spanish, Portuguese, Arabic, Chinese, and other languages through their Patreon community. The studio employs dozens of people including researchers, scriptwriters, and animators all based in Munich. Their commitment to scientific accuracy includes a full review process where experts fact-check scripts before animation begins."
+    },
+    {
+      "id": "green-yt-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Mark Rober's annual charity event, done in partnership with MrBeast and others, raises money for autism research. What is it called?",
+      "answerText": "AUTASTIC (formerly CureCon) — specifically the annual 'Autism Science Foundation' charity stream, but most widely known as the charity event connected to Mark's son and co-organized with MrBeast",
+      "tidbits": "Mark Rober has been open about his son's autism diagnosis and has partnered with MrBeast on charity livestreams raising millions of dollars for autism research and awareness. The events blend entertainment with philanthropy in the style that both creators are known for. These streams have become among the highest-grossing charity events in YouTube history."
+    },
+    {
+      "id": "green-yt-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Linus Tech Tips (LTT) hosts a secondary channel where a team builds, tests, and explores PC hardware projects. What is that channel called?",
+      "answerText": "TechLinked (for news) and Linus Tech Tips also has ShortCircuit — but the flagship secondary experimentation channel is 'TechLinked' for news and 'ShortCircuit' for unboxings; the project/build-focused lab content airs on the main LTT channel",
+      "tidbits": "Linus Media Group operates multiple YouTube channels under its umbrella, including TechLinked for daily tech news, ShortCircuit for quick unboxings, and Floatplane as their own subscription platform. The multi-channel strategy allows them to segment audiences by interest level and content pace. At its peak, the LMG network collectively published dozens of videos per week across all properties."
+    },
+    {
+      "id": "green-yt-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Vsauce, the science and philosophy YouTube channel, is hosted by which creator whose real name is Michael Stevens?",
+      "answerText": "Michael Stevens (Vsauce / Michael from Vsauce)",
+      "tidbits": "Michael Stevens launched Vsauce in 2010 and became known for his deeply meandering, thought-provoking videos that often start with a simple question and end in philosophical territory. Videos like 'What If Everyone Jumped At Once?' and 'How Much Does a Shadow Weigh?' became templates for a genre of cerebral YouTube content. He briefly collaborated with YouTube on an interactive series called 'Mind Field' that explored psychology experiments."
+    },
+    {
+      "id": "green-yt-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Which YouTube science communicator, known for explaining complex engineering and space topics, worked on the New Horizons Pluto mission and later created the 'Smarter Every Day' channel?",
+      "answerText": "Destin Sandlin (Smarter Every Day)",
+      "tidbits": "Destin Sandlin is an aerospace engineer who worked on missile defense systems for the U.S. Army while running Smarter Every Day on the side. His video about the 'backwards brain bicycle' — a bike modified so steering is reversed — became one of the most shared science demonstrations on YouTube. He holds a genuine security clearance and has documented rare access to military and scientific facilities in his videos."
+    },
+    {
+      "id": "orange-yt-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Which YouTuber, known for horror game playthroughs and charity streams, became famous for his series on 'Five Nights at Freddy's'?",
+      "answerText": "Markiplier (Mark Fischbach)",
+      "tidbits": "Markiplier's exaggerated reactions while playing Five Nights at Freddy's helped catapult both his channel and the indie game to worldwide fame in 2014. He has raised millions of dollars for charity through livestreams, making him one of the most philanthropically active creators on the platform. He later co-created and starred in 'A Heist with Markiplier,' an interactive choose-your-own-adventure YouTube film."
+    },
+    {
+      "id": "orange-yt-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Which Irish YouTuber, known for his green hair and energetic personality, runs the channel 'jacksepticeye' and is celebrated for charity work?",
+      "answerText": "Seán McLoughlin (jacksepticeye)",
+      "tidbits": "Seán McLoughlin's channel jacksepticeye grew explosively after PewDiePie gave him a shoutout in 2013, taking him from a few thousand to over a million subscribers in just weeks. He has raised millions for charities including the World Food Programme and Crisis Text Line. His catchphrase 'Top of the morning to ya laddies!' has become one of the most recognized greetings in gaming YouTube culture."
+    },
+    {
+      "id": "orange-yt-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Which Fortnite-famous streamer made headlines by being the first to stream with pop star Drake on Twitch, breaking concurrent viewer records at the time?",
+      "answerText": "Ninja (Tyler Blevins)",
+      "tidbits": "In March 2018, Ninja and Drake played Fortnite together on a Twitch stream that peaked at over 628,000 concurrent viewers, shattering the record for a non-tournament stream. The event mainstreamed the idea of celebrity gaming and brought mainstream media attention to live-streaming for the first time. Ninja later signed a deal with Microsoft's Mixer platform, which ultimately shut down in 2020, before returning to Twitch and YouTube."
+    },
+    {
+      "id": "orange-yt-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Dream is best known for his 'Minecraft Manhunt' series. What is the basic premise of that series?",
+      "answerText": "Dream attempts to beat Minecraft while other players (hunters) try to kill him before he can finish the game",
+      "tidbits": "The Minecraft Manhunt series became a breakout hit for Dream in 2019–2020, with each video delivering high-stakes survival gameplay and elaborate strategies. Dream's use of clever game mechanics to outsmart his hunters — like using buckets of water, boats, or TNT cannons in unexpected ways — became a signature part of the videos' appeal. The series demonstrated that even a decade-old game could generate massive new audiences with the right creator and format."
+    },
+    {
+      "id": "orange-yt-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which gaming YouTuber and former competitive gamer founded the 'Sidemen,' one of the UK's most prominent YouTube creator groups?",
+      "answerText": "KSI (JJ Olatunji) is among the founding members; the group was co-founded by KSI, Miniminter, Zerkaa, TBJZL, Behzinga, Vikkstar123, and W2S",
+      "tidbits": "The Sidemen formed in 2013 as a group of UK YouTubers who collaborated on FIFA and gaming content. They have since expanded into boxing, clothing brands, restaurant businesses, and their own food delivery brand called Sides. KSI in particular has crossed into mainstream entertainment, releasing music that charted internationally and fighting in high-profile boxing matches."
+    },
+    {
+      "id": "orange-yt-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which annual YouTube gaming event, historically streamed live on YouTube, features esports tournaments and gaming announcements, often branded as the 'E3 of online gaming'?",
+      "answerText": "YouTube Gaming's Gamescom streams / Summer Game Fest (Geoff Keighley's event, streamed on YouTube) — or more specifically 'YouTube Gaming's own live events,' but the broadest correct answer is The Game Awards and Summer Game Fest, both streamed on YouTube",
+      "tidbits": "The Game Awards, produced by Geoff Keighley and streamed live on YouTube, has become the de facto successor to traditional gaming press events. The 2023 ceremony drew over 118 million livestreams, making it the most-watched gaming show in history. YouTube's role as the primary broadcast platform for these events has cemented its position as the dominant destination for gaming culture."
+    },
+    {
+      "id": "orange-yt-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Beloved Minecraft creator Technoblade, who passed away in 2022, was particularly renowned for his dominance in which competitive Minecraft game mode?",
+      "answerText": "Hypixel SkyWars (and Bed Wars / general PvP on the Hypixel server)",
+      "tidbits": "Technoblade was widely considered one of the best PvP (player-versus-player) Minecraft players in the world, achieving the number-one ranking on the Hypixel server multiple times. His calculated, tactical approach to combat and his dry, self-aware humor made his videos uniquely entertaining even for non-competitive viewers. His series 'Potato War' — a farming competition against a university's supercomputer — became one of his most celebrated pieces of content."
+    },
+    {
+      "id": "orange-yt-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Felix 'PewDiePie' Kjellberg got his start on YouTube primarily playing which genre of video games that built his initial audience?",
+      "answerText": "Horror games (particularly 'Amnesia: The Dark Descent' and similar survival horror titles)",
+      "tidbits": "PewDiePie's early channel was built almost entirely on let's-play videos of horror games, with his loud, panicked reactions becoming a viral format in 2012–2013. Amnesia: The Dark Descent was his most-played early title and arguably the game most responsible for his initial subscriber surge. The horror let's-play genre he helped popularize has since spawned thousands of imitators across the platform."
+    },
+    {
+      "id": "orange-yt-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In 2019, YouTube signed a deal to become the exclusive streaming home of which major professional sports league's live games in certain markets?",
+      "answerText": "The NFL (NFL Sunday Ticket — though the YouTube TV deal for NFL Sunday Ticket was announced in 2022 and launched in 2023; the 2019 deal was MLB)",
+      "tidbits": "YouTube TV secured the rights to the NFL Sunday Ticket package starting with the 2023 NFL season, ending its decades-long exclusive run on DirecTV. The deal cost YouTube approximately $2 billion per year, signaling how seriously Google views YouTube TV's role in the live sports market. This made YouTube the first streaming platform to carry a major U.S. sports league's out-of-market game package at full scale."
+    },
+    {
+      "id": "orange-yt-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Dream's Minecraft speedrunning career was surrounded by controversy in 2020 when analysis suggested his runs may have involved manipulated game code. What specifically was alleged to have been altered?",
+      "answerText": "His luck/drop rates — specifically, the probability of getting blaze rods and ender pearl drops was alleged to be statistically impossibly high",
+      "tidbits": "A team of statisticians and speedrunners analyzed Dream's Minecraft speedruns and concluded that the probability of his luck occurring naturally was astronomically small, suggesting the game's random number generator may have been modified. Dream initially denied and disputed the findings, hiring his own statistician. He later admitted in 2021 that a mod had inadvertently altered the drop rates, though he maintained he hadn't known about it at the time."
+    }
+  ]
+}

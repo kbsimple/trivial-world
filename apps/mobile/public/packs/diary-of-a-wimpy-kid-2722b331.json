@@ -16,10 +16,10 @@
       "orange": 10
     },
     "totalQuestions": 60,
-    "checksum": "3d61f01847ebc0e39935dd3d3af1784d0788b69b414996b466bcf6a5b09a5bfd",
+    "checksum": "c30b1fca218c42a3076ba5776fe53cb3ebc5b955cbcb158aec1d3bbe21e1ede1",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 17355
+    "size": 14263
   },
   "questions": [
     {
@@ -117,8 +117,8 @@
       "id": "pink-004",
       "category": "pink",
       "difficulty": "medium",
-      "questionText": "How many live-action Diary of a Wimpy Kid theatrical films were released between 2010 and 2017?",
-      "answerText": "Four"
+      "questionText": "How many live-action Diary of a Wimpy Kid theatrical films were released between 2010 and 2017? A) Two, B) Three, C) Four, D) Five",
+      "answerText": "Four (C)"
     },
     {
       "id": "pink-005",

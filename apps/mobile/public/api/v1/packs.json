@@ -15,8 +15,8 @@
         "orange": 13
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/trivial-world-starter-7f3a9c2e.json",
-      "checksum": "5292f4f94eeb1b662ad339d09e7e192ede4d739e318f0eaa6e3febea9f4a1461",
-      "size": 19948
+      "checksum": "7e7aeeac3cf11eea06c375faa3dc6d5c985655cf416dc4cf5aac1fb151651c64",
+      "size": 15801
     },
     {
       "id": "2722b331-e6bd-4042-a34d-b4d7ab8b6e51",
@@ -33,8 +33,8 @@
         "orange": 10
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/diary-of-a-wimpy-kid-2722b331.json",
-      "checksum": "d5f5b4040d2980d46c507f9aa5ccdb8a3ab1a457af9fe1bc0a8cd6721fc60b6b",
-      "size": 17371
+      "checksum": "c30b1fca218c42a3076ba5776fe53cb3ebc5b955cbcb158aec1d3bbe21e1ede1",
+      "size": 14263
     },
     {
       "id": "6ac4973a-4ef2-4a13-a261-5cd1de052df1",
@@ -51,8 +51,8 @@
         "orange": 15
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/young-sheldon-6ac4973a.json",
-      "checksum": "538246d8797e29f9cc44e6ed9dc6cd8eccf45c874bae669af23c996de33ca0bd",
-      "size": 22927
+      "checksum": "b260ea5d0412ddb67a0dc7a042315be0eb55d8b518745689fbc33e658987fb38",
+      "size": 18444
     },
     {
       "id": "dadd53ef-d68e-4018-a394-6d81119ce810",
@@ -69,8 +69,8 @@
         "orange": 10
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/american-history-1700s-dadd53ef.json",
-      "checksum": "d4e783e8dc4a0d96c18d376fb075fbddc2bfe605633476487eb9c580074f4c07",
-      "size": 15809
+      "checksum": "d15b2a8c0985f63b5e0f0fb5d0f2dd525376b9fdb793e967d5e2b89ad38ff3e4",
+      "size": 12897
     },
     {
       "id": "26180b72-0e16-4850-8d8d-c021d1ed990c",
@@ -87,8 +87,26 @@
         "orange": 10
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/alpine-ski-slopes-26180b72.json",
-      "checksum": "05b7e8ce1bf0a54e0f2c2e3189effdb7b0eb888b4f7a82cf6a49f7ed39e8f777",
-      "size": 16865
+      "checksum": "89c9fe646d3e8e56a473da12391e244d83acd7b129324b30aadef46ab1cc4cf4",
+      "size": 13898
+    },
+    {
+      "id": "b7b0b001-y0ut-4000-8000-ub200000000",
+      "name": "YouTube Streams",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/youtube-streams-b7b0b001.json",
+      "checksum": "f934e7e0968575755352eb658ba1d057c49d0f3b69b42791182837d043e5715c",
+      "size": 41109
     }
   ]
 }

@@ -16,10 +16,10 @@
       "orange": 10
     },
     "totalQuestions": 60,
-    "checksum": "3df43a52ee1cf33126e3d7d42f067e3b54d8cbb1127f60fc909901756372eb48",
+    "checksum": "89c9fe646d3e8e56a473da12391e244d83acd7b129324b30aadef46ab1cc4cf4",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 16849
+    "size": 13898
   },
   "questions": [
     {
@@ -166,8 +166,8 @@
       "id": "yellow-001",
       "category": "yellow",
       "difficulty": "easy",
-      "questionText": "In what year did Squaw Valley host the Winter Olympic Games?",
-      "answerText": "1960"
+      "questionText": "In what year did Squaw Valley host the Winter Olympic Games? A) 1952, B) 1956, C) 1960, D) 1964",
+      "answerText": "1960 (C)"
     },
     {
       "id": "yellow-002",
@@ -187,8 +187,8 @@
       "id": "yellow-004",
       "category": "yellow",
       "difficulty": "medium",
-      "questionText": "In what year did Alpine Meadows open for its first ski season?",
-      "answerText": "1961"
+      "questionText": "In what year did Alpine Meadows open for its first ski season? A) 1958, B) 1961, C) 1965, D) 1968",
+      "answerText": "1961 (B)"
     },
     {
       "id": "yellow-005",
@@ -229,8 +229,8 @@
       "id": "yellow-010",
       "category": "yellow",
       "difficulty": "hard",
-      "questionText": "In what year did KSL Capital Partners acquire Squaw Valley Ski Holdings, preceding the eventual Alterra merger?",
-      "answerText": "2017"
+      "questionText": "In what year did KSL Capital Partners acquire Squaw Valley Ski Holdings, preceding the eventual Alterra merger? A) 2014, B) 2015, C) 2016, D) 2017",
+      "answerText": "2017 (D)"
     },
     {
       "id": "purple-001",
@@ -432,8 +432,8 @@
       "id": "orange-009",
       "category": "orange",
       "difficulty": "hard",
-      "questionText": "What is the vertical drop in feet of the main Palisades (former Squaw Valley) mountain from summit to base?",
-      "answerText": "2,850 feet"
+      "questionText": "What is the vertical drop in feet of the main Palisades (former Squaw Valley) mountain from summit to base? A) 2,200 feet, B) 2,500 feet, C) 2,850 feet, D) 3,300 feet",
+      "answerText": "2,850 feet (C)"
     },
     {
       "id": "orange-010",

@@ -16,10 +16,10 @@
       "orange": 15
     },
     "totalQuestions": 90,
-    "checksum": "3e8014a7fd6da758e329d83c1e6d124d3381ca7d4d99ef5b5b64ee34657f4d1f",
+    "checksum": "b260ea5d0412ddb67a0dc7a042315be0eb55d8b518745689fbc33e658987fb38",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 22911
+    "size": 18444
   },
   "questions": [
     {
@@ -68,8 +68,8 @@
       "id": "blue-007",
       "category": "blue",
       "difficulty": "medium",
-      "questionText": "The show is set starting in what year, when Sheldon is 9 years old?",
-      "answerText": "1989"
+      "questionText": "The show is set starting in what year, when Sheldon is 9 years old? A) 1985, B) 1987, C) 1989, D) 1991",
+      "answerText": "1989 (C)"
     },
     {
       "id": "blue-008",
@@ -236,8 +236,8 @@
       "id": "yellow-001",
       "category": "yellow",
       "difficulty": "easy",
-      "questionText": "How old is Sheldon Cooper when Young Sheldon begins?",
-      "answerText": "9"
+      "questionText": "How old is Sheldon Cooper when Young Sheldon begins? A) 7, B) 8, C) 9, D) 10",
+      "answerText": "9 (C)"
     },
     {
       "id": "yellow-002",
@@ -453,8 +453,8 @@
       "id": "green-002",
       "category": "green",
       "difficulty": "easy",
-      "questionText": "What IQ number is Sheldon stated to have in the show?",
-      "answerText": "187"
+      "questionText": "What IQ number is Sheldon stated to have in the show? A) 167, B) 175, C) 187, D) 200",
+      "answerText": "187 (C)"
     },
     {
       "id": "green-003",
@@ -523,8 +523,8 @@
       "id": "green-012",
       "category": "green",
       "difficulty": "easy",
-      "questionText": "Sheldon graduates high school at what remarkably young age?",
-      "answerText": "11"
+      "questionText": "Sheldon graduates high school at what remarkably young age? A) 9, B) 11, C) 13, D) 14",
+      "answerText": "11 (B)"
     },
     {
       "id": "green-013",
@@ -544,8 +544,8 @@
       "id": "green-015",
       "category": "green",
       "difficulty": "hard",
-      "questionText": "What specific number does Sheldon declare to be the best number, a trait he carries into The Big Bang Theory?",
-      "answerText": "73"
+      "questionText": "What specific number does Sheldon declare to be the best number, a trait he carries into The Big Bang Theory? A) 42, B) 73, C) 97, D) 137",
+      "answerText": "73 (B)"
     },
     {
       "id": "orange-001",
