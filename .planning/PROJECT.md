@@ -2,33 +2,41 @@
 
 ## What This Is
 
-Trivial World is a mobile trivia game for in-person social play, with a CLI-based question generation pipeline for creating custom question packs. One person acts as the **game conductor**, reading questions from the app to participants. Each player can independently configure their question pack and difficulty level. The mobile app handles category selection, question management, per-player pack/difficulty routing, championship mode, and scoring, while players engage in a shared physical space around the mobile device.
+Trivial World is a mobile trivia game for in-person social play, with a CLI-based question generation pipeline for creating custom question packs. One person acts as the **game conductor**, reading questions from the app to participants. Each player can independently configure their question pack (or pack combo) and difficulty level, using either a shared game-level pack or a per-player custom selection. The mobile app handles category selection, question management, per-player pack/difficulty routing, championship mode, and scoring, while players engage in a shared physical space around the mobile device.
 
 ## Core Value
 
 Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
 
-## Current State: v5.0 Complete
+## Current State: v7.0 Complete
 
 **Shipped:** 2026-06-13
-**Phases:** 1–17 (17 phases across 5 milestones)
+**Phases:** 1–19 (19 phases across 7 milestones)
 **Tech stack:** Expo SDK 55 + React Native 0.83, Zustand 5.x, WatermelonDB, Tamagui 2.x, Expo Router
+**Tests:** 288 passing
 
 ### What's Working
 
 - Full game loop: setup → category selection → question → scoring → championship → win
 - Per-player pack + difficulty configuration (native only; web uses bundled pool)
+- Pack Combos: named blends of 2+ packs selectable at game or per-player level
+- Shared Pack vs Custom Per Player toggle: game-level vs per-player pack selection mode
 - CLI question generation: `pnpm generate --topic <topic>` → draft JSON → `pnpm review <draft>` → published pack
 - `tidbits` field in QuestionSchema v3 displayed in answer reveal screen
 - WatermelonDB offline pack caching with schema v3 (tidbits migration)
 - Web export via Expo static export (game plays in browser)
 - AI question generation via Ollama (local dev only)
+- 12 question packs with terse (1-2 sentence) tidbits
 
 ### Known Technical Debt
 
 - `questionProvider.getNextQuestionFromDatabase` is dead code on mobile with two latent bugs (drops tidbits, ignores packId) — safe today, risky if refactored
 - Starter pack `trivial-world-starter-7f3a9c2e.json` has zero tidbits content
 - `effectiveDifficulties` derivation logic duplicated in `questionStore.ts` and `questionProvider.ts`
+- F-01: deleteCombo leaves stale player.comboId in playerStore (Phase 18 review)
+- F-02: resetAskedQuestions loop leaves activePackId corrupted on throw (Phase 18 review)
+- F-03: combos.tsx has no ScrollView — Back button unreachable with many combos (Phase 18 review)
+- Cosmetic: playerSourceRow label shows "Pack: …" for combo sources (Phase 19)
 
 ---
 
@@ -55,6 +63,9 @@ Enable in-person social trivia gameplay where the app supports (not replaces) hu
 - ✓ Interactive draft review and pack publish CLI — v5.0
 - ✓ Per-player difficulty configuration (Easy/Medium/Hard/Any) — v5.0
 - ✓ tidbits field displayed in question reveal screen — v5.0
+- ✓ Pack Combos: named blends of 2+ packs selectable at game or per-player level — v6.0
+- ✓ Shared Pack vs Custom Per Player toggle with packMode persistence — v7.0
+- ✓ clearPlayerPackSources on mode switch: Custom→Shared clears all player overrides — v7.0
 
 ### Active (Deferred from v3.0)
 
@@ -119,6 +130,12 @@ Enable in-person social trivia gameplay where the app supports (not replaces) hu
 | Draft JSON workflow (v5.0) | generate writes immediately, review decouples inspection and publish | ✓ Good |
 | effectiveDifficulties pattern (v5.0) | Per-player difficulty overrides game-level; null falls back to game default | ✓ Good |
 | playerDifficulties snapshot (v5.0) | Mirrors playerPackIds pattern — immutable in-game state | ✓ Good |
+| Pack Combos (v6.0) | Named blends of 2+ packs; packId ↔ comboId mutual exclusion at player level | ✓ Good |
+| playerPackIdLists runtime (v6.0) | Combo resolved to packIds at startGame(), pooled for question draw | ✓ Good |
+| packMode in packStore (v7.0) | UI config concern — local literal union, not promoted to @trivial-world/types | ✓ Good |
+| Segmented control via Pressable (v7.0) | Two Pressable elements, no external library — matches existing patterns | ✓ Good |
+| clearPlayerPackSources on mode switch (v7.0) | Custom→Shared clears both packId and comboId atomically | ✓ Good |
+| Human UAT → automated tests (v7.0) | 3 UAT scenarios converted to functional unit/integration tests | ✓ Good |
 
 ## Constraints
 
@@ -128,4 +145,4 @@ Enable in-person social trivia gameplay where the app supports (not replaces) hu
 - **Offline-first:** No network dependency for core gameplay
 
 ---
-*Last updated: 2026-06-13 after v5.0 milestone*
+*Last updated: 2026-06-13 after v7.0 milestone*

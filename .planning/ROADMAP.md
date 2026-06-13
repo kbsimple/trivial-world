@@ -8,7 +8,7 @@
 - ✅ **v4.0 Simplified Gameplay** — Phases 12–17 (shipped 2026-06-12 → 2026-06-13)
 - ✅ **v5.0 Content Generation Tooling** — Phases 16–17 (shipped 2026-06-13)
 - ✅ **v6.0 Pack Combos** — Phase 18 (shipped 2026-06-13)
-- 🔄 **v7.0 Per-Player Pack Customization** — Phase 19 (in progress)
+- ✅ **v7.0 Per-Player Pack Customization** — Phase 19 (shipped 2026-06-13)
 
 ## Phases
 
@@ -68,38 +68,20 @@ Archive: `.planning/milestones/v5.0-*`
 <details>
 <summary>✅ v6.0 Pack Combos (Phase 18) — SHIPPED 2026-06-13</summary>
 
-### Phase 18: Pack Combos
+- [x] Phase 18: Pack Combos (4/4 plans) — completed 2026-06-13
 
-**Goal:** Allow mixing and matching multiple question packs. A combo is a named blend of 2+ packs, selectable at the game level or per-player, exactly where a single pack is selected today. At question-draw time, questions are pooled across all packs in the combo, respecting existing category and difficulty filters.
-
-**Plans:** 4 plans
-
-Plans:
-- [x] 18-01-PLAN.md — Type contracts: PackCombo schema, Player.comboId, GameState.playerPackIdLists
-- [x] 18-02-PLAN.md — packStore combo storage + CRUD (savedCombos, activeComboId, create/delete/select, persisted)
-- [x] 18-03-PLAN.md — Multi-pack runtime: playerStore mutual exclusion, gameStore combo resolution + reset + threading, questionStore/questionProvider pooling, test updates
-- [x] 18-04-PLAN.md — UI: combos management screen, route + entry link, setup per-player source picker (pack/combo/default)
-
-Wave structure:
-- Wave 1 (parallel): 18-01 (types), 18-02 (packStore)
-- Wave 2: 18-03 (runtime logic) — depends on 18-01, 18-02
-- Wave 3: 18-04 (UI) — depends on 18-01, 18-02, 18-03
+Archive: `.planning/milestones/v6.0-*`
 
 </details>
 
-### Phase 19: Per-Player Pack Customization
+<details>
+<summary>✅ v7.0 Per-Player Pack Customization (Phase 19) — SHIPPED 2026-06-13</summary>
 
-**Goal:** Introduce a top-level game option — "Shared Pack" or "Custom Per Player" — that controls whether all players draw from the same pool or each player picks their own. When "Custom Per Player" is selected, each player gets a dedicated pack/combo selector in the setup screen. When "Shared" is selected, no per-player pack UI is shown. This replaces the existing small per-player chips with a clearer, intentional flow.
+- [x] Phase 19: Per-Player Pack Customization (1/1 plan) — completed 2026-06-13
 
-**Depends on:** Phase 18 (Pack Combos)
+Archive: `.planning/milestones/v7.0-ROADMAP.md`
 
-**Plans:** 1 plan
-
-Plans:
-- [x] 19-01-PLAN.md — packStore packMode field + setPackMode action + setup.tsx segmented control + conditional per-player rows
-
-Wave structure:
-- Wave 1: 19-01 (all changes in packStore.ts + setup.tsx — single plan, no parallelism needed)
+</details>
 
 ---
 
@@ -136,3 +118,4 @@ Wave structure:
 *v4.0 shipped: 2026-06-12*
 *v5.0 shipped: 2026-06-13*
 *v6.0 shipped: 2026-06-13*
+*v7.0 shipped: 2026-06-13*

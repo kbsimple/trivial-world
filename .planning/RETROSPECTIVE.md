@@ -61,6 +61,56 @@
 
 ---
 
+## Milestone: v7.0 — Per-Player Pack Customization
+
+**Shipped:** 2026-06-13
+**Phases:** 1 (Phase 19)
+**Plans:** 1 | **Verified:** 7/7 must-haves
+
+### What Was Built
+
+- `packMode: 'shared' | 'custom'` field in packStore with `setPackMode` action and `partialize` persistence
+- Segmented control (Shared Pack / Per Player) on game setup screen, inserted between pack banner and player list
+- Custom mode: full-width tappable `playerSourceRow` per player with label and `→` chevron + difficulty chip below
+- `clearPlayerPackSources()` action in playerStore: clears both `packId` and `comboId` for all players atomically
+- `handleSetPackMode` in setup.tsx: calls `clearPlayerPackSources()` before `setPackMode('shared')` on mode switch
+- 3 new `setPackMode` tests + 2 `clearPlayerPackSources` tests + 1 integration test (288/288 total)
+- All 3 human UAT scenarios converted to automated functional tests (eliminated human verification gate)
+- 64 tidbit fixes across 5 question packs (terse 1-2 sentences; removed off-topic content)
+
+### What Worked
+
+- **Single-plan phase**: Phase 19 was 2 files changed (packStore.ts + setup.tsx) + 1 type file. Entire phase was 1 plan, 2 tasks, ~3 minutes execution.
+- **TDD RED/GREEN**: Failing tests committed first (98bb63c), implementation second (c382ae5) — same pattern established in v5.0.
+- **Human UAT → automated tests**: User request to "eliminate human validation" turned into 5 new store tests + 1 integration test. All 3 UAT scenarios now have functional coverage without human involvement.
+- **Parallel tidbit review**: 12 question packs reviewed simultaneously by 12 parallel agents — completed in one pass with no coordination overhead.
+- **Autonomous mode**: discuss → plan → execute → verify → lifecycle ran without interruption except for the 3 grey area questions (all accepted as recommended).
+
+### What Was Inefficient
+
+- **Context compaction mid-session**: Conversation was compacted after execution completed; lifecycle (audit + complete) had to re-derive milestone state from files. Minor cost — all state was in files.
+- **19-HUMAN-UAT.md false positive**: The audit tool flagged Phase 19 as having 3 pending UAT scenarios because the HUMAN-UAT.md status was never updated after automated tests were added. Had to manually update the file to clear the false positive.
+
+### Patterns Established
+
+- **clearPlayerPackSources pattern**: When a mode switch should "reset" per-player state, extract the clearing logic into a named store action (not inline in the component). Enables store-level unit testing without component rendering infrastructure.
+- **Automated UAT replacement**: When human UAT items are purely behavioral (store-level state transitions), they can be replaced by store unit + integration tests. The test file pattern: test the action directly, then test the integration (call action, verify downstream state).
+- **packMode persistence**: New Zustand fields added to an existing store's `partialize` object are automatically merged with defaults on hydration — no migration needed. Safe to add new persisted fields incrementally.
+
+### Key Lessons
+
+1. **UAT file status must be updated when tests replace human scenarios**: The `status: partial` in the HUMAN-UAT.md frontmatter caused a false audit positive. When converting UAT to automated tests, update the file's status to `automated` immediately.
+2. **Cosmetic label debt accumulates**: The "Pack: \<name\>" label for combos wasn't caught until integration review. When adding display names to a UI row, verify the label string handles all source types (pack AND combo).
+3. **Autonomous mode works for small phases**: A 1-plan, 2-file phase in autonomous mode is faster than interactive because the discuss questions are answered instantly by the autonomous driver.
+
+### Cost Observations
+
+- v7.0 was the smallest milestone yet: 1 phase, 1 plan, ~3 minutes execution
+- Parallel tidbit review (12 agents) completed all 12 packs simultaneously — no serialization cost
+- Lifecycle overhead (~30 minutes: audit + complete) dominated wall-clock time for this milestone
+
+---
+
 ## Cross-Milestone Trends
 
 | Milestone | Duration | Plans | Verification Score | Notable |
@@ -70,8 +120,10 @@
 | v3.0 | — | 8 | human_needed on Phase 10 | Web export, Netlify |
 | v4.0 | — | 6 | passed | Simplified gameplay, per-player packs |
 | v5.0 | ~1 day | 6 | 13/13 + 5/5 | CLI pipeline, per-player difficulty |
+| v6.0 | ~1 session | 4 | passed | Pack combos, multi-pack pooling |
+| v7.0 | ~3 min | 1 | 7/7 | Shared/Custom pack mode toggle |
 
-**Velocity trend:** Stable at 6–11 plans per milestone. Autonomous mode accelerated v5.0 to ~1 day from plan to shipped.
+**Velocity trend:** Stable at 1–11 plans per milestone. Single-feature milestones (v7.0: 1 plan) execute in minutes; complex multi-phase milestones (v2.0: 11 plans) take days.
 
 **Verification trend:** Gap closure required in v5.0 Phase 16 (11/13 → 13/13). Phase 17 verified 5/5 on first pass. Overall verification gap rate: ~15%.
 

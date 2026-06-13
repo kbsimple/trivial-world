@@ -28,7 +28,7 @@
       "difficulty": "easy",
       "questionText": "MrBeast (Jimmy Donaldson) was born and raised in which U.S. state?",
       "answerText": "North Carolina",
-      "tidbits": "YouTube was founded in February 2005 by three former PayPal employees: Chad Hurley, Steve Chen, and Jawed Karim."
+      "tidbits": "MrBeast grew up in Greenville, North Carolina, where he began his YouTube channel as a teenager obsessing over subscriber counts before discovering that large-scale stunts and philanthropy could drive viral growth. His home state remained central to his identity even as his operation scaled into a global media company."
     },
     {
       "id": "blue-yt-002",
@@ -36,7 +36,7 @@
       "difficulty": "easy",
       "questionText": "PewDiePie (Felix Kjellberg) is from which Scandinavian country?",
       "answerText": "Sweden",
-      "tidbits": "The YouTube Play Buttons are milestone awards given to creators: Silver (100K), Gold (1M), Diamond (10M), and Red Diamond (100M)."
+      "tidbits": "Felix Kjellberg was born in Gothenburg, Sweden, and studied industrial economics before dropping out to pursue YouTube full-time. He moved to the UK and later Japan, but Swedish culture — including his dry, self-deprecating humor — remained a defining part of his on-camera personality."
     },
     {
       "id": "blue-yt-003",
@@ -44,7 +44,7 @@
       "difficulty": "easy",
       "questionText": "Pokimane (Imane Anys) was born in which North African country before moving to Canada?",
       "answerText": "Morocco",
-      "tidbits": "MrBeast (Jimmy Donaldson) grew his channel through increasingly expensive stunts and philanthropy, becoming one of the highest-earning YouTubers."
+      "tidbits": "Imane Anys was born in Morocco and moved to Canada as a child, eventually studying chemical engineering before leaving to pursue streaming full-time. She became one of the most-followed female streamers on Twitch before expanding her brand to YouTube and content creation outside gaming."
     },
     {
       "id": "blue-yt-004",
@@ -52,7 +52,7 @@
       "difficulty": "medium",
       "questionText": "Linus Tech Tips (LTT) is headquartered in which Canadian city?",
       "answerText": "Langley, British Columbia (Greater Vancouver area)",
-      "tidbits": "YouTube Shorts launched globally in 2021 as a response to TikTok's short-form video dominance."
+      "tidbits": "Linus Sebastian founded Linus Tech Tips in the Vancouver area after leaving his job at NCIX, a Canadian computer retailer. The company grew from a solo bedroom operation into Linus Media Group, employing dozens of people across multiple channels and even launching its own video platform, Floatplane."
     },
     {
       "id": "blue-yt-005",
@@ -60,7 +60,7 @@
       "difficulty": "medium",
       "questionText": "Which German city is home to the studio behind the popular science animation channel Kurzgesagt?",
       "answerText": "Munich",
-      "tidbits": "PewDiePie held the title of most-subscribed individual creator on YouTube for years before T-Series (a music label) surpassed him."
+      "tidbits": "Kurzgesagt (German for 'in a nutshell') was founded in Munich in 2013 by Philipp Dettmer as a design and animation studio. The channel's Munich roots influence its precise, research-driven approach — the team employs full-time researchers and fact-checkers who work alongside the animators."
     },
     {
       "id": "blue-yt-006",
@@ -108,7 +108,7 @@
       "difficulty": "easy",
       "questionText": "Which YouTuber is famous for giving away cash, cars, and even islands in elaborate challenge videos?",
       "answerText": "MrBeast (Jimmy Donaldson)",
-      "tidbits": "The term \"Let's Play\" for gaming commentary videos became popularized on YouTube in the late 2000s and spawned its own genre."
+      "tidbits": "MrBeast's giving-away stunts began small — like tipping restaurant workers thousands of dollars — before escalating to buying strangers entire houses. His philanthropy and his business (including MrBeast Burger and Feastables) became intertwined, with profits from his brands funding increasingly ambitious giveaway videos."
     },
     {
       "id": "pink-yt-002",
@@ -116,7 +116,7 @@
       "difficulty": "easy",
       "questionText": "What was the name of the 2019 subscriber battle where fans rallied behind the slogan 'Subscribe to PewDiePie'?",
       "answerText": "PewDiePie vs T-Series",
-      "tidbits": "ASMR videos generate tingles through soft sounds like whispering and tapping — the genre exploded on YouTube after 2010."
+      "tidbits": "T-Series, the Indian music label, raced to overtake PewDiePie as the most-subscribed YouTube channel in 2019, prompting fans to plaster 'Subscribe to PewDiePie' across billboards, printer hacks, and even a Super Bowl ad. Despite the massive campaign, T-Series ultimately surpassed him, making it the first non-individual account to hold the top spot."
     },
     {
       "id": "pink-yt-003",
@@ -124,7 +124,7 @@
       "difficulty": "easy",
       "questionText": "What viral 2012 music video became the first YouTube video to reach 1 billion views?",
       "answerText": "\"Gangnam Style\" by PSY",
-      "tidbits": "Unboxing videos became a YouTube sensation around 2006 and remain popular for tech, toys, and luxury goods."
+      "tidbits": "PSY's 'Gangnam Style' was so unprecedented in its view count that YouTube's counter briefly broke — the platform had used a 32-bit integer that maxed out at around 2.1 billion views. The video satirized the wealthy Gangnam district of Seoul and introduced Korean pop culture to a massive global audience years before K-pop became mainstream."
     },
     {
       "id": "pink-yt-004",
@@ -132,7 +132,7 @@
       "difficulty": "easy",
       "questionText": "Which child YouTuber, known as 'Ryan's World,' became one of YouTube's highest earners before age 10?",
       "answerText": "Ryan Kaji",
-      "tidbits": "YouTube's \"reaction video\" genre involves creators filming themselves watching other content — it's been both hugely popular and legally controversial."
+      "tidbits": "Ryan Kaji started his channel at age 4 when his parents filmed him unboxing toys, and by age 8 he was earning an estimated $26 million per year. His channel spawned a merchandise empire, a Nickelodeon show, and raised widespread debate about child labor protections for young social media creators."
     },
     {
       "id": "pink-yt-005",
@@ -140,7 +140,7 @@
       "difficulty": "medium",
       "questionText": "What is the name of the collaborative Minecraft server that Dream created, which became a cultural phenomenon featuring many top creators?",
       "answerText": "Dream SMP",
-      "tidbits": "The Vlog Squad, associated with David Dobrik, was one of the most-watched YouTube collectives in the late 2010s."
+      "tidbits": "The Dream SMP (Survival Multiplayer) server featured scripted storylines and improvised roleplay between dozens of prominent Minecraft creators, blending gaming with collaborative fiction. At its peak, individual SMP stream events drew over 650,000 concurrent viewers. It became a defining piece of early 2020s internet culture."
     },
     {
       "id": "pink-yt-006",
@@ -204,7 +204,7 @@
       "difficulty": "easy",
       "questionText": "Which tech giant acquired YouTube in October 2006? A) Apple  B) Microsoft  C) Google  D) Amazon",
       "answerText": "C) Google",
-      "tidbits": "YouTube removed its dislike count from public view in 2021, citing creator mental health concerns."
+      "tidbits": "Google paid $1.65 billion in stock for YouTube just 18 months after the site launched — a deal widely mocked at the time as wildly overpriced. YouTube's brand value is now estimated in the hundreds of billions, making it one of the greatest acquisitions in tech history."
     },
     {
       "id": "yellow-yt-004",
@@ -212,7 +212,7 @@
       "difficulty": "medium",
       "questionText": "In what year did T-Series officially overtake PewDiePie to become the most-subscribed YouTube channel? A) 2018  B) 2019  C) 2020  D) 2021",
       "answerText": "B) 2019",
-      "tidbits": "The YouTube Partner Program (YPP), which allows creators to monetize, launched in 2007 and transformed content creation into a career."
+      "tidbits": "T-Series is an Indian music and film production company, making it the first non-individual creator account to top YouTube's subscriber chart. The milestone sparked debate about whether YouTube's culture was shifting from individual creators toward large media companies. T-Series continues to hold the top subscriber spot by a massive margin."
     },
     {
       "id": "yellow-yt-005",
@@ -220,7 +220,7 @@
       "difficulty": "medium",
       "questionText": "YouTube Shorts, the platform's short-form vertical video feature designed to compete with TikTok, launched globally in which year? A) 2019  B) 2020  C) 2021  D) 2022",
       "answerText": "C) 2021",
-      "tidbits": "Gangnam Style by PSY was the first YouTube video to reach 1 billion views in 2012, and later the first to reach 2 billion."
+      "tidbits": "YouTube Shorts launched globally in 2021 after a pilot in India, offering creators a fast-track to new audiences through its dedicated short-form feed. Within two years, Shorts was generating over 50 billion daily views, demonstrating the platform's ability to compete with TikTok even as a latecomer to the format."
     },
     {
       "id": "yellow-yt-006",
@@ -268,7 +268,7 @@
       "difficulty": "easy",
       "questionText": "Which YouTube animator is known for illustrated storytimes about her own life, including struggles with an eating disorder, and has a pet bird named Tofu?",
       "answerText": "Jaiden Animations",
-      "tidbits": "YouTube thumbnails are a micro-art form — creators employ graphic designers specifically to optimize click-through rates."
+      "tidbits": "Jaiden Animations became one of the most prominent storytime animators on YouTube by openly discussing personal struggles, including her eating disorder and social anxiety — making her channel unusually candid for the genre. Her bird Ari (and later Tofu) became beloved recurring characters that fans tracked across years of videos."
     },
     {
       "id": "purple-yt-002",
@@ -276,7 +276,7 @@
       "difficulty": "easy",
       "questionText": "Which YouTube animator, known for 'The Odd1sOut' channel, became famous for relatable storytime animations about everyday life?",
       "answerText": "James Rallison (The Odd1sOut)",
-      "tidbits": "YouTube's auto-generated captions use machine learning and can produce unintentionally humorous mistranscriptions called \"autocaption fails.\""
+      "tidbits": "James Rallison started The Odd1sOut as a webcomic before transitioning to animated YouTube videos about his own mundane experiences — working at Subway, attending school, dealing with awkward social situations. His self-deprecating, plainly drawn style made his channel one of the most-subscribed animation channels on YouTube."
     },
     {
       "id": "purple-yt-003",
@@ -284,7 +284,7 @@
       "difficulty": "easy",
       "questionText": "Kurzgesagt videos are known for their distinctive visual style. Which type of artistic aesthetic defines their animations?",
       "answerText": "Flat design / minimalist vector illustration (bird-themed characters)",
-      "tidbits": "The YouTube \"end screen\" feature allows creators to promote other videos or channels during the final 5–20 seconds of a video."
+      "tidbits": "Kurzgesagt's signature visual style features minimalist flat-design vector art with their iconic duck-like bird characters used to represent human figures. The studio developed this consistent aesthetic deliberately to make even complex or unsettling topics feel approachable, balancing dark subject matter with visually warm, almost playful imagery."
     },
     {
       "id": "purple-yt-004",
@@ -292,7 +292,7 @@
       "difficulty": "medium",
       "questionText": "CGP Grey is known for highly detailed animated explainer videos. What do the initials 'CGP' stand for in his channel name?",
       "answerText": "Nothing — CGP are not an abbreviation of anything meaningful (Grey has confirmed they are essentially made up)",
-      "tidbits": "Lo-fi hip hop streams became a YouTube phenomenon with their iconic \"study girl\" animation, which streams live 24/7."
+      "tidbits": "CGP Grey deliberately keeps his identity private, rarely appearing on camera and avoiding personal social media. He typically takes months or even years between video releases, with each one exhaustively researched and scripted. His video 'This Video Will Make You Angry' is a notable piece of early YouTube commentary on how outrage spreads online."
     },
     {
       "id": "purple-yt-005",
@@ -348,7 +348,7 @@
       "difficulty": "easy",
       "questionText": "Which tech YouTuber, known by the initials MKBHD, is widely recognized as one of the best smartphone and gadget reviewers on the platform?",
       "answerText": "Marques Brownlee (MKBHD)",
-      "tidbits": "YouTube uses a Content ID system that scans uploaded videos against a database of copyrighted material to automatically flag or monetize matches."
+      "tidbits": "Marques Brownlee built his reputation on unusually high production quality — shooting reviews with cinema-grade cameras and lighting before professional equipment was common among YouTube creators. His detailed, calm review style attracted direct partnerships with major tech companies who would send him prototype hardware for early coverage."
     },
     {
       "id": "green-yt-002",
@@ -356,7 +356,7 @@
       "difficulty": "easy",
       "questionText": "Which YouTube science channel features a Canadian physicist (Derek Muller) who uses hands-on experiments and expert interviews to explain physics and science?",
       "answerText": "Veritasium",
-      "tidbits": "Over 500 hours of video are uploaded to YouTube every minute as of the mid-2020s."
+      "tidbits": "Derek Muller holds a PhD in physics education and founded Veritasium to test what actually helps people understand science — his research showed that showing people their own misconceptions first makes them more likely to retain correct information. That counterintuitive pedagogical approach is baked into how he structures his videos."
     },
     {
       "id": "green-yt-003",
@@ -364,7 +364,7 @@
       "difficulty": "easy",
       "questionText": "Before becoming a viral YouTube science creator known for glitter bombs and science experiments, Mark Rober worked as an engineer for which U.S. government agency?",
       "answerText": "NASA (NASA's Jet Propulsion Laboratory)",
-      "tidbits": "YouTube's recommendation algorithm has been studied extensively for its role in \"rabbit holes\" — progressively leading users to more extreme content."
+      "tidbits": "Mark Rober spent nine years as a mechanical engineer at NASA's Jet Propulsion Laboratory, including work on the Curiosity Mars rover's surface operations. He left NASA in 2014 and joined Apple before eventually going full-time on YouTube, bringing his engineering rigor to increasingly elaborate stunts."
     },
     {
       "id": "green-yt-004",
@@ -372,7 +372,7 @@
       "difficulty": "medium",
       "questionText": "Linus Tech Tips became embroiled in a 2023 controversy involving a GPU cooler designed by a small company. What was the name of that company and product?",
       "answerText": "Billet Labs and the Billet Labs Monoblock GPU cooler",
-      "tidbits": "YouTube Premium, launched in 2018, offers ad-free viewing and background play for a monthly subscription fee."
+      "tidbits": "The controversy erupted when Linus Tech Tips allegedly lost or sold a one-of-a-kind prototype GPU cooler belonging to Billet Labs without consent. The incident, combined with accusations of rushed and inaccurate product testing, forced LTT to pause production and overhaul its editorial review processes. It became one of the most scrutinized creator accountability moments in YouTube history."
     },
     {
       "id": "green-yt-005",
@@ -380,7 +380,7 @@
       "difficulty": "medium",
       "questionText": "The YouTube channel SciShow, which produces short educational science videos on a wide range of topics, was co-founded by which famous YouTube duo?",
       "answerText": "Hank and John Green (the Vlogbrothers / Complexly production company)",
-      "tidbits": "YouTube's servers store an almost incomprehensible amount of data — estimates place the archive at over 1 exabyte (1 billion gigabytes)."
+      "tidbits": "Hank and John Green's production company Complexly has launched over a dozen educational YouTube channels including SciShow, Crash Course, and Healthcare Triage. Crash Course, a free educational series covering history, science, and literature, has become one of the most widely used supplementary resources in high school and college classrooms worldwide."
     },
     {
       "id": "green-yt-006",
@@ -428,7 +428,7 @@
       "difficulty": "easy",
       "questionText": "Which YouTuber, known for horror game playthroughs and charity streams, became famous for his series on 'Five Nights at Freddy's'?",
       "answerText": "Markiplier (Mark Fischbach)",
-      "tidbits": "Sidemen FC, a YouTube creator football club, has played charity matches drawing tens of thousands of live spectators and millions of online viewers."
+      "tidbits": "Markiplier's energetic, theatrical reactions to horror games — especially his Five Nights at Freddy's playthroughs — helped make FNAF a mainstream cultural phenomenon. Beyond gaming, he has raised millions for charity through his annual charity livestreams, including over $3 million for children's hospitals in a single event."
     },
     {
       "id": "orange-yt-002",
@@ -444,7 +444,7 @@
       "difficulty": "easy",
       "questionText": "Which Fortnite-famous streamer made headlines by being the first to stream with pop star Drake on Twitch, breaking concurrent viewer records at the time?",
       "answerText": "Ninja (Tyler Blevins)",
-      "tidbits": "YouTube has hosted exclusive coverage of major sports events including UEFA Champions League matches and NFL games."
+      "tidbits": "The March 2018 Ninja/Drake Fortnite stream peaked at 628,000 concurrent viewers, smashing Twitch records at the time. The stream brought mainstream celebrity attention to game streaming, and Drake later admitted he had to create a Twitch account just to play with Ninja. The event is widely credited with legitimizing live gaming as mainstream entertainment."
     },
     {
       "id": "orange-yt-004",
@@ -452,7 +452,7 @@
       "difficulty": "medium",
       "questionText": "Dream is best known for his 'Minecraft Manhunt' series. What is the basic premise of that series?",
       "answerText": "Dream attempts to beat Minecraft while other players (hunters) try to kill him before he can finish the game",
-      "tidbits": "Dude Perfect, known for trick shot videos and sports challenges, has over 60 million subscribers and tours arenas for live shows."
+      "tidbits": "Dream's Minecraft Manhunt series popularized a format where the tension came not from traditional boss fights but from player-versus-player strategy — Dream's creative use of game mechanics to evade and outmaneuver hunters made the series feel like competitive chess played with block-game physics."
     },
     {
       "id": "orange-yt-005",
