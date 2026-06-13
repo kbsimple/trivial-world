@@ -1,0 +1,446 @@
+{
+  "metadata": {
+    "id": "dadd53ef-d68e-4018-a394-6d81119ce810",
+    "name": "American History (1700's)",
+    "description": "",
+    "version": "1.0.0",
+    "author": "Faiser",
+    "createdAt": "2026-06-13T07:07:21.049Z",
+    "updatedAt": "2026-06-13T07:07:21.049Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "576a9ac6a708d6c97767c0fbb49104f707523a96d721e331aeda5e45391a7ca0",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 15793
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What city served as the capital of the United States from 1790 to 1800?",
+      "answerText": "Philadelphia"
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Which river forms the eastern boundary between New York and New Jersey?",
+      "answerText": "Hudson River"
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What body of water did George Washington famously cross on the night of December 25–26, 1776?",
+      "answerText": "Delaware River"
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The Battle of Bunker Hill was actually fought on which nearby hill?",
+      "answerText": "Breed's Hill"
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which colonial port city was blockaded by the British in 1774 as punishment for the Tea Party?",
+      "answerText": "Boston"
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What Virginia city served as the colonial capital before Richmond?",
+      "answerText": "Williamsburg"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The Siege of Yorktown — the final major battle of the Revolution — took place in which colony?",
+      "answerText": "Virginia"
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Fort Ticonderoga, captured by Ethan Allen in 1775, sits at the southern end of which lake?",
+      "answerText": "Lake Champlain"
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "The Proclamation of 1763 forbade colonial settlement west of which mountain range?",
+      "answerText": "Appalachian Mountains"
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "The Treaty of Paris (1783) set the western boundary of the United States at which river?",
+      "answerText": "Mississippi River"
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who wrote the influential 1776 pamphlet 'Common Sense'?",
+      "answerText": "Thomas Paine"
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Benjamin Franklin published which famous almanac annually from 1732 to 1758?",
+      "answerText": "Poor Richard's Almanack"
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What popular colonial tavern in Boston was a gathering place for Sons of Liberty?",
+      "answerText": "Green Dragon Tavern"
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Boston newspaper, founded in 1690, was the first newspaper published in the American colonies?",
+      "answerText": "Publick Occurrences Both Foreign and Domestick"
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "John Peter Zenger's 1735 trial established an early precedent for which freedom in America?",
+      "answerText": "Freedom of the press"
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "The Federalist Papers were published under what collective pen name?",
+      "answerText": "Publius"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which 1765 law sparked widespread colonial protest because it taxed legal documents and printed materials?",
+      "answerText": "Stamp Act"
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which song, originally a British tune used to mock colonists, was adopted by American patriots as their own marching song?",
+      "answerText": "Yankee Doodle"
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Thomas Paine's follow-up pamphlet series published during the Revolutionary War was titled what?",
+      "answerText": "The American Crisis"
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which colonial-era newspaper, founded by Benjamin Franklin's brother James in 1721, openly criticized the colonial government?",
+      "answerText": "New-England Courant"
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year was the Declaration of Independence adopted?",
+      "answerText": "1776"
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Who was the primary author of the Declaration of Independence?",
+      "answerText": "Thomas Jefferson"
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "George Washington was sworn in as the first President of the United States in what year?",
+      "answerText": "1789"
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "The Constitutional Convention was held in which city in 1787?",
+      "answerText": "Philadelphia"
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What event on December 16, 1773 involved colonists dumping 342 chests of tea into Boston Harbor?",
+      "answerText": "Boston Tea Party"
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which battle on April 19, 1775 is known as 'the shot heard round the world'?",
+      "answerText": "Battle of Lexington and Concord"
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "The Articles of Confederation were replaced by the U.S. Constitution, which was ratified in what year?",
+      "answerText": "1788"
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "The Bill of Rights — the first ten amendments — was ratified in what year?",
+      "answerText": "1791"
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "How many of the original thirteen colonies had to ratify the Constitution to make it effective?",
+      "answerText": "Nine"
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "The XYZ Affair of 1797–1798 nearly brought the United States into war with which country?",
+      "answerText": "France"
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Which artist painted the famous portrait of George Washington that appears on the one-dollar bill?",
+      "answerText": "Gilbert Stuart"
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Paul Revere created a famous 1770 engraving depicting which violent confrontation between British soldiers and colonists?",
+      "answerText": "Boston Massacre"
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What bird was chosen as the national symbol on the Great Seal of the United States, adopted in 1782?",
+      "answerText": "Bald eagle"
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Betsy Ross is traditionally credited with sewing the first version of what object in 1776?",
+      "answerText": "American flag"
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "The reverse of the Great Seal features an unfinished pyramid with how many levels?",
+      "answerText": "13"
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "John Trumbull's painting 'Declaration of Independence' depicts the presentation of the draft to what body?",
+      "answerText": "Continental Congress"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which female allegorical figure, often depicted with a torch and shield, symbolized American liberty in the 1700s?",
+      "answerText": "Columbia"
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Charles Willson Peale founded the first major American art museum in Philadelphia in 1786 — what was it called?",
+      "answerText": "Peale's Museum"
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "The Latin phrase 'E Pluribus Unum' on the Great Seal means what in English?",
+      "answerText": "Out of many, one"
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Paul Revere was by profession primarily a craftsman in which material, before becoming famous as a patriot?",
+      "answerText": "Silver (silversmith)"
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Benjamin Franklin's famous kite experiment in 1752 demonstrated that lightning was a form of what?",
+      "answerText": "Electricity"
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Franklin invented a rod placed on buildings to protect them from lightning strikes — what is it called?",
+      "answerText": "Lightning rod"
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Benjamin Franklin invented eyeglasses with two lenses of different focal lengths — what are they called?",
+      "answerText": "Bifocals"
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "The printing press used in colonial America was based on technology invented by whom in the 1440s?",
+      "answerText": "Johannes Gutenberg"
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "David Bushnell built the 'Turtle' in 1775 — the first military submarine. Which revolutionary war force did it serve?",
+      "answerText": "Continental (American)"
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Benjamin Franklin invented a heat-efficient fireplace insert in 1741 — what is it commonly called?",
+      "answerText": "Franklin stove"
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "If a colonial farmer plants corn in rows of 8 with 12 rows total, how many corn plants did he plant?",
+      "answerText": "96"
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "The dominant three-masted square-rigged sailing warship of the Revolutionary War era was commonly called what?",
+      "answerText": "Ship-of-the-line (man-of-war)"
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "John Fitch demonstrated the first successful American steamboat on the Delaware River in what year?",
+      "answerText": "1787"
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Oliver Evans designed an automated flour mill in the 1780s that used what system to move grain without manual labor?",
+      "answerText": "Continuous automated conveyor (bucket elevator)"
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What was the most popular spectator sport among wealthy colonial Americans in the 1700s, especially in Virginia?",
+      "answerText": "Horse racing"
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "George Washington was known to enjoy which fox-related outdoor sport on his estate at Mount Vernon?",
+      "answerText": "Fox hunting"
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What popular colonial yard game involved throwing a horseshoe at a stake in the ground?",
+      "answerText": "Horseshoes"
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Colonial armed citizen soldiers required to drill and respond at a minute's notice were called what?",
+      "answerText": "Minutemen"
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What early American bowling-like game played with nine pins was popular in colonial taverns?",
+      "answerText": "Ninepins"
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Gander pulling was a rough colonial game in which contestants tried to pull off the head of what animal while riding on horseback?",
+      "answerText": "Goose (gander)"
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which card game, imported from Europe, was the most popular gambling card game in colonial American taverns?",
+      "answerText": "Faro"
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "At colonial fairs and musters, what competitive shooting event had participants firing rifles at a target for prizes?",
+      "answerText": "Rifle shooting match (turkey shoot)"
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "The earliest known American horse race course was established in 1665 on Long Island — what was it called?",
+      "answerText": "Newmarket Course (Hempstead Plains)"
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What colonial bat-and-ball game, an ancestor of modern baseball, involved hitting a ball and running to bases or posts?",
+      "answerText": "Rounders (town ball / base ball)"
+    }
+  ]
+}

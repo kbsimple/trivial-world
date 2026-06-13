@@ -1,0 +1,446 @@
+{
+  "metadata": {
+    "id": "26180b72-0e16-4850-8d8d-c021d1ed990c",
+    "name": "Alpine Ski Slopes",
+    "description": "60 questions about the ski slopes of Alpine Meadows and Squaw Valley (now Palisades Tahoe) — covering geography, history, culture, art, science, and racing.",
+    "version": "1.0.0",
+    "author": "Faiser",
+    "createdAt": "2026-06-13T07:07:21.049Z",
+    "updatedAt": "2026-06-13T07:07:21.049Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "3df43a52ee1cf33126e3d7d42f067e3b54d8cbb1127f60fc909901756372eb48",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 16849
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In which US state are both Alpine Meadows and Squaw Valley ski resorts located?",
+      "answerText": "California"
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What large alpine lake lies just a few miles east of Palisades Tahoe?",
+      "answerText": "Lake Tahoe"
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What mountain range contains both Alpine Meadows and Squaw Valley?",
+      "answerText": "Sierra Nevada"
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What small town on the north shore of Lake Tahoe sits just a few miles from Palisades Tahoe?",
+      "answerText": "Tahoe City"
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What railroad town roughly 12 miles northwest of Lake Tahoe serves as a gateway city to Palisades Tahoe?",
+      "answerText": "Truckee"
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The valley in which Squaw Valley sits is drained by which creek that flows into the Truckee River?",
+      "answerText": "Squaw Creek"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Approximately how many acres of skiable terrain does Palisades Tahoe (both villages combined) offer?",
+      "answerText": "6,000 acres"
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the base elevation in feet at the Alpine Meadows village?",
+      "answerText": "6,835 feet"
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "At roughly what elevation in feet does the summit of KT-22 chair at Palisades Tahoe sit?",
+      "answerText": "8,200 feet"
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Which Nevada county border is Lake Tahoe's eastern shoreline closest to, making part of the lake lie in Nevada?",
+      "answerText": "Washoe County"
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which 1993 snowboard comedy film features the character Charles 'Chunk' Godfrey and was largely set at a ski resort?",
+      "answerText": "Aspen Extreme"
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What iconic 1998 snowboard trick competition at the Winter X Games made halfpipe a mainstream spectator sport?",
+      "answerText": "Halfpipe"
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which legendary American skier nicknamed 'The Herminator' dominated World Cup racing in the late 1990s?",
+      "answerText": "Hermann Maier"
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which American snowboarder won three Olympic halfpipe gold medals and trained extensively at Lake Tahoe resorts?",
+      "answerText": "Shaun White"
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What 1969 ski film starring Robert Redford was filmed partly in the Sierra Nevada and helped romanticize downhill racing?",
+      "answerText": "Downhill Racer"
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Tahoe-area skier won back-to-back Olympic downhill golds in 2010 and 2014?",
+      "answerText": "Bode Miller"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "The 1960 Winter Olympics opening ceremony at Squaw Valley was narrated by which famous Disney figure?",
+      "answerText": "Walt Disney"
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which ski film production company, known for films like 'Superheroes of Stoke,' frequently featured Palisades Tahoe riders in the 2010s?",
+      "answerText": "Level 1 Productions"
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Squaw Valley's 1960 Olympics were the first Winter Games to be broadcast live on television in the US — on which network?",
+      "answerText": "CBS"
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which Squaw Valley native and freestyle skier won the first-ever Olympic moguls gold medal in 1992 for the US?",
+      "answerText": "Donna Weinbrecht"
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year did Squaw Valley host the Winter Olympic Games?",
+      "answerText": "1960"
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What is the new combined name of Squaw Valley and Alpine Meadows since their 2021 rebranding?",
+      "answerText": "Palisades Tahoe"
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what decade was Alpine Meadows ski resort originally founded?",
+      "answerText": "1960s"
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In what year did Alpine Meadows open for its first ski season?",
+      "answerText": "1961"
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What devastating natural disaster struck Alpine Meadows on March 31, 1982, killing seven people?",
+      "answerText": "Avalanche"
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which developer and entrepreneur originally built and opened Squaw Valley ski resort in 1949?",
+      "answerText": "Wayne Poulsen"
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What company owns and operates Palisades Tahoe today, having acquired Squaw Valley Alpine Meadows in 2021?",
+      "answerText": "Alterra Mountain Company"
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "The 1960 Squaw Valley Olympics were awarded to the resort over which other favored candidate city?",
+      "answerText": "Innsbruck"
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Who was the ski patrol dog whose handler, Frank Yeatman, survived the 1982 Alpine Meadows avalanche — the dog that helped locate a survivor named Anna Conrad?",
+      "answerText": "Bridger"
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In what year did KSL Capital Partners acquire Squaw Valley Ski Holdings, preceding the eventual Alterra merger?",
+      "answerText": "2017"
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What iconic style of illustrated resort map, showing a bird's-eye perspective of the mountain with labeled runs, is called a what?",
+      "answerText": "Trail map"
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What color symbol is used on North American ski trail signs to mark an intermediate run?",
+      "answerText": "Blue square"
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What shape and color symbol marks the easiest beginner runs on a North American ski trail map?",
+      "answerText": "Green circle"
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which legendary ski poster artist, known for his vibrant Art Deco mountain prints, created iconic imagery for resorts like Sun Valley in the mid-20th century?",
+      "answerText": "Sascha Maurer"
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "The official Palisades Tahoe trail map uses an oblique aerial illustration style. What term describes this artistic bird's-eye mountain perspective technique?",
+      "answerText": "Panoramic map"
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What double black diamond symbol shape is used on North American ski maps to mark the most challenging expert-only terrain?",
+      "answerText": "Double black diamond"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Palisades Tahoe's logo features a stylized mountain peak. What two colors dominate the resort's current branding?",
+      "answerText": "Blue and white"
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Which Swiss graphic designer is widely credited with defining the clean, modernist aesthetic of mid-century European ski resort posters?",
+      "answerText": "Herbert Matter"
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "The famous illustrated trail maps of many Western ski resorts were produced for decades by which artist collective based in Colorado?",
+      "answerText": "James Niehues"
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What photographic technique — using a long focal length lens to compress the apparent distance between ski runs — is commonly used in resort promotional photography?",
+      "answerText": "Telephoto compression"
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What type of mechanical lift carries skiers up a mountain while they sit in chairs hanging from a moving cable?",
+      "answerText": "Chairlift"
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the name of the crystalline solid water structure that forms naturally as snowflakes?",
+      "answerText": "Ice crystal"
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the term for artificially produced snow blown onto ski slopes using machines?",
+      "answerText": "Man-made snow"
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What explosive device is commonly used by ski patrol to trigger controlled avalanche releases before the slopes open?",
+      "answerText": "Avalanche bomb"
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the name of the system installed on ski boots and bindings that releases the boot during a fall to prevent leg fractures?",
+      "answerText": "Safety binding"
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What type of high-speed enclosed gondola system connects the two Palisades Tahoe base areas — replacing the need to drive between resorts?",
+      "answerText": "Funitel"
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Snowmaking guns mix compressed air with water to produce snow. What minimum temperature in Fahrenheit is typically required for snowmaking to work?",
+      "answerText": "28°F"
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the term for the specific type of persistent weak layer in a snowpack — a faceted crystal layer — that creates high avalanche danger days after a storm?",
+      "answerText": "Faceted snow"
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Palisades Tahoe uses a remote avalanche control system called Gazex. What propellant gas mixture is detonated in Gazex exploders to trigger avalanche releases?",
+      "answerText": "Propane and oxygen"
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the scientific term for the density measurement of snow — grams per cubic centimeter — that ski patrol uses to assess avalanche potential?",
+      "answerText": "Snow density"
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What is the famous expert chairlift and run at Palisades Tahoe known for steep, ungroomed terrain — abbreviated KT?",
+      "answerText": "KT-22"
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What symbol on a trail sign indicates an expert-only, most difficult ski run?",
+      "answerText": "Black diamond"
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What is the name of the international ski racing organization that sanctions World Cup events?",
+      "answerText": "FIS"
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the name of the very steep, narrow expert chute at Alpine Meadows known for its intimidating pitch and tight walls?",
+      "answerText": "Gunshot"
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "KT-22 at Palisades Tahoe is named for how many kick turns a pioneer skier needed to descend the face. How many kick turns gave the run its name?",
+      "answerText": "22"
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the name of the terrain park at Palisades Tahoe's main mountain that features halfpipes, rails, and jump lines for freestyle skiers and snowboarders?",
+      "answerText": "Gold Coast terrain park"
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Alpine Meadows was home to a prominent women's World Cup downhill race in the 1970s and 80s. What is the name of the main race venue run?",
+      "answerText": "Promised Land"
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Which American ski racer, a Lake Tahoe local, won a World Cup downhill on the KT-22 course in 1969 — one of the first American men to win a downhill?",
+      "answerText": "Spider Sabich"
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the vertical drop in feet of the main Palisades (former Squaw Valley) mountain from summit to base?",
+      "answerText": "2,850 feet"
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In competitive ski racing, what is the name of the discipline combining a downhill and giant slalom section into a single run, which was debuted at the 1960 Squaw Valley Olympics?",
+      "answerText": "Combined"
+    }
+  ]
+}

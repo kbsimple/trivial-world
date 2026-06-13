@@ -17,6 +17,78 @@
       "downloadUrl": "https://trivial-world.netlify.app/packs/trivial-world-starter-7f3a9c2e.json",
       "checksum": "7bc32580c033d78e18fa7ea854ad17f9ba076cbd8a1fb28de451457a55210c51",
       "size": 14191
+    },
+    {
+      "id": "2722b331-e6bd-4042-a34d-b4d7ab8b6e51",
+      "name": "Diary of a Wimpy Kid",
+      "author": "Faiser",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/diary-of-a-wimpy-kid-2722b331.json",
+      "checksum": "3d61f01847ebc0e39935dd3d3af1784d0788b69b414996b466bcf6a5b09a5bfd",
+      "size": 17355
+    },
+    {
+      "id": "6ac4973a-4ef2-4a13-a261-5cd1de052df1",
+      "name": "Young Sheldon",
+      "author": "Faiser",
+      "version": "1.0.0",
+      "totalQuestions": 90,
+      "categoryCounts": {
+        "blue": 15,
+        "pink": 15,
+        "yellow": 15,
+        "purple": 15,
+        "green": 15,
+        "orange": 15
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/young-sheldon-6ac4973a.json",
+      "checksum": "3e8014a7fd6da758e329d83c1e6d124d3381ca7d4d99ef5b5b64ee34657f4d1f",
+      "size": 22911
+    },
+    {
+      "id": "dadd53ef-d68e-4018-a394-6d81119ce810",
+      "name": "American History (1700's)",
+      "author": "Faiser",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/american-history-1700s-dadd53ef.json",
+      "checksum": "576a9ac6a708d6c97767c0fbb49104f707523a96d721e331aeda5e45391a7ca0",
+      "size": 15793
+    },
+    {
+      "id": "26180b72-0e16-4850-8d8d-c021d1ed990c",
+      "name": "Alpine Ski Slopes",
+      "author": "Faiser",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/alpine-ski-slopes-26180b72.json",
+      "checksum": "3df43a52ee1cf33126e3d7d42f067e3b54d8cbb1127f60fc909901756372eb48",
+      "size": 16849
     }
   ]
 }

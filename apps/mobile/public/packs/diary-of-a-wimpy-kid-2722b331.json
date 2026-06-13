@@ -1,0 +1,446 @@
+{
+  "metadata": {
+    "id": "2722b331-e6bd-4042-a34d-b4d7ab8b6e51",
+    "name": "Diary of a Wimpy Kid",
+    "description": "Trivia based on Jeff Kinney's Diary of a Wimpy Kid book series.",
+    "version": "1.0.0",
+    "author": "Faiser",
+    "createdAt": "2026-06-13T07:07:21.049Z",
+    "updatedAt": "2026-06-13T07:07:21.049Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "3d61f01847ebc0e39935dd3d3af1784d0788b69b414996b466bcf6a5b09a5bfd",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 17355
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In what U.S. state does Greg Heffley live?",
+      "answerText": "No specific state is named (left intentionally vague)"
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the name of the street where Greg's family lives?",
+      "answerText": "Surrey Street"
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In 'The Long Haul,' the Heffley family travels to which relative's celebration?",
+      "answerText": "Meemaw's 90th birthday party"
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What campground/resort does the Heffley family visit in 'The Long Haul'?",
+      "answerText": "Corny's Family Campground"
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In 'Old School,' the Hardscrabble Farms trip takes the kids to what kind of location?",
+      "answerText": "A rural farm/wilderness retreat"
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In 'Cabin Fever,' a blizzard traps Greg's family at home. What does Greg do to get money before the storm?",
+      "answerText": "He shovels snow (tries to get ahead of the storm by pre-selling snow-shoveling)"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In 'The Getaway,' the Heffleys vacation at a resort called Isla de Corales. In what region is this resort set?",
+      "answerText": "A tropical island resort"
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In 'Big Shot,' Greg joins a basketball team. What is the name of the rec-league team Greg ends up on?",
+      "answerText": "The Platypuses"
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the middle school Greg attends throughout most of the series?",
+      "answerText": "Westmore Middle School"
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In 'No Brainer,' Greg's school faces possible closure. What competing school are students potentially transferred to?",
+      "answerText": "Jefferson Middle School"
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who directed the first live-action Diary of a Wimpy Kid film released in 2010?",
+      "answerText": "Thor Freudenthal"
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which actor played Greg Heffley in the 2010 live-action film?",
+      "answerText": "Zachary Gordon"
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "On which streaming platform was the animated Diary of a Wimpy Kid film released in 2021?",
+      "answerText": "Disney+"
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "How many live-action Diary of a Wimpy Kid theatrical films were released between 2010 and 2017?",
+      "answerText": "Four"
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which book served as the basis for the 2022 Disney+ animated film 'Diary of a Wimpy Kid: Rodrick Rules'?",
+      "answerText": "Rodrick Rules (book 2)"
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Jeff Kinney originally published Diary of a Wimpy Kid online before it became a book. On which website did it first appear?",
+      "answerText": "Funbrain.com"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is the name of the fictional in-universe horror movie that Greg and Rowley watch on their date in 'Diary of a Wimpy Kid'?",
+      "answerText": "The Foot (or a monster movie — Greg describes a scary movie; the specific fictional title is not named)"
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "In the live-action films, which actor played Rowley Jefferson?",
+      "answerText": "Robert Capron"
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Jeff Kinney won which prestigious award for his contributions to children's literature, given by Nickelodeon's Kids' Choice Awards multiple times?",
+      "answerText": "Kids' Choice Award for Favorite Book"
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "In 'Diary of a Wimpy Kid: The Long Haul' (2017 film), which actor replaced Zachary Gordon as Greg Heffley?",
+      "answerText": "Jason Drucker"
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What is Greg Heffley's older brother's name?",
+      "answerText": "Rodrick"
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What is Greg Heffley's younger brother's name?",
+      "answerText": "Manny"
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What is the name of Greg's best friend throughout the series?",
+      "answerText": "Rowley Jefferson"
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In book 1, what disgusting object do Greg and Rowley dare other kids to touch, causing years of trouble?",
+      "answerText": "The Cheese"
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In 'Rodrick Rules,' what secret does Rodrick blackmail Greg with after a party?",
+      "answerText": "Greg's embarrassing incident at a girl's house (he got locked in the basement bathroom)"
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What is the name of Rodrick's heavy-metal band?",
+      "answerText": "Löded Diper"
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In 'The Last Straw,' Greg's dad threatens to send him where if he doesn't shape up?",
+      "answerText": "Spag Union military academy"
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In 'Dog Days,' what is the name of the country club where Greg tries to spend his summer?",
+      "answerText": "Whirley Street Kids' club / the pool club (Leisure Towers pool)"
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In 'The Ugly Truth,' Greg and Rowley have a falling out. What event causes them to reconnect at the end of the book?",
+      "answerText": "Rowley's grandmother's funeral / Greg speaking at the ceremony"
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In 'Double Down,' Greg becomes obsessed with making a horror film. What is the name of his film concept?",
+      "answerText": "The Spinetickler"
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Diary of a Wimpy Kid is illustrated in a style that mimics what kind of drawing?",
+      "answerText": "Stick-figure / hand-drawn cartoon sketches"
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the name of the in-universe comic strip that Rowley creates that becomes very popular at school?",
+      "answerText": "Zoo-Wee Mama!"
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the name of Greg's own comic strip that he tries (and fails) to get published in the school paper?",
+      "answerText": "Creighton the Cretin"
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Jeff Kinney draws Greg Heffley's face with two dots for eyes and a line for a mouth. What does Kinney say inspired this minimalist style?",
+      "answerText": "His own childhood doodles / keeping it simple so kids feel they could draw it too"
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "In the books, what visual element appears on every page to make it look like Greg is writing in an actual diary?",
+      "answerText": "Lined notebook paper (ruled lines in the background)"
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the name of the superhero comic Greg and Rowley create together in 'Diary of a Wimpy Kid'?",
+      "answerText": "They don't create a superhero comic — Greg writes 'Creighton the Cretin'; Rowley makes 'Zoo-Wee Mama!' They briefly collaborate on a story called 'The Big Ones'"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "In 'Diper Överlöde,' Rodrick's band creates a graphic novel/comic. What is the name of that graphic novel?",
+      "answerText": "Diper Överlöde (the in-book band graphic novel tie-in)"
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Jeff Kinney studied what subject in college before becoming an author and game designer?",
+      "answerText": "Computer science (and criminal justice — he studied both; he is best known for citing computer science/game design background)"
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which spin-off book series features Rowley Jefferson as the main character and narrator, with a fairy-tale visual style?",
+      "answerText": "Rowley Jefferson's Awesome Friendly Adventure series"
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "In 'Cabin Fever,' a drawing Greg made appears on wanted posters around school. What did he accidentally deface?",
+      "answerText": "A holiday fund-raising banner (he drew on the school's Christmas banner)"
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Greg starts a journal at the beginning of book 1. He insists it is NOT a diary but a what?",
+      "answerText": "Journal"
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "In 'Hard Luck,' Greg relies on a device to make decisions for him. What is it?",
+      "answerText": "A Magic 8-Ball"
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Greg and Rowley set up a 'haunted house' to earn money. How many customers do they get on opening night?",
+      "answerText": "Zero (no one shows up)"
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "If Greg has 3 best friends at the start of middle school but loses 2 by the end of book 1, how many does he have left?",
+      "answerText": "One (Rowley, though their friendship is strained)"
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In 'The Meltdown,' Greg and Rowley build a snow fort. What do they call the territory they are defending?",
+      "answerText": "Surrey Street (their street / their side of the hill)"
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In 'Wrecking Ball,' the Heffleys renovate their house. What was the original plan for the new addition?",
+      "answerText": "An indoor pool"
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In 'Deep End,' the Heffleys go on an extended RV trip. Greg tries to problem-solve a way off the trip. What is the campsite situation that finally forces them home?",
+      "answerText": "The RV park floods and they're stranded"
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In 'No Brainer,' Greg devises a plan to save his school. What key piece of information does he use to argue the school should stay open?",
+      "answerText": "He finds evidence about the school's historical/founding significance (the school's value to the community)"
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Greg's mom Susan writes a parenting blog. What does Greg fear most about the blog?",
+      "answerText": "That his classmates will read embarrassing stories about him"
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In 'Old School,' the students are required to give up all technology for the Hardscrabble Farms trip. Name one device they are NOT allowed to bring.",
+      "answerText": "Cell phones (or video games / screens)"
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What is the name of the video game Greg and Rowley are obsessed with in 'Diary of a Wimpy Kid'?",
+      "answerText": "Twisted Wizard"
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "In 'Dog Days,' what sport does Greg try to learn at the country club?",
+      "answerText": "Tennis"
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What sport does Greg's dad Frank try to get Greg interested in throughout the series?",
+      "answerText": "Football"
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In 'Big Shot,' Greg joins a basketball league. Why did he sign up in the first place?",
+      "answerText": "His parents made him join to get off screens / as a punishment"
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In 'Diary of a Wimpy Kid' (book 1), what role does Greg get in the school play, and how does it humiliate him?",
+      "answerText": "A tree (he is cast as a tree in the school play)"
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In 'Rodrick Rules,' what is the name of the video game Rodrick and Greg compete at?",
+      "answerText": "Twisted Wizard (same game — Rodrick beats Greg's high score)"
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In 'The Last Straw,' Greg joins which sport/activity to avoid being sent to military school?",
+      "answerText": "Soccer"
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In 'Double Down,' Greg tries to scare his school with what creature he claims is real?",
+      "answerText": "The Moth (a giant moth creature)"
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In 'Diper Överlöde,' Greg joins Rodrick on a band tour. What game-like challenge does Greg use to survive backstage life?",
+      "answerText": "He treats the tour like a video game, collecting 'power-ups' and avoiding hazards"
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In 'Big Shot,' what is the final play Greg draws up that leads to the championship game outcome?",
+      "answerText": "An inbound pass play where Greg is the unexpected shooter / Greg takes the final shot"
+    }
+  ]
+}
