@@ -83,3 +83,46 @@ Generate one question now.`;
 
   return prompt;
 }
+
+/**
+ * Build question generation prompt for the bulk CLI pipeline.
+ * Identical to buildQuestionPrompt but explicitly requests a tidbits field.
+ * Does not accept sourceMaterial — CLI bulk generation is topic-driven only.
+ *
+ * @param topic - The topic for the question
+ * @param category - The question category
+ * @param guidance - Optional additional guidance
+ * @returns Formatted prompt string
+ */
+export function buildCLIQuestionPrompt(
+  topic: string,
+  category: Category,
+  guidance?: string
+): string {
+  const categoryName = CATEGORY_NAMES[category];
+  const sanitizedTopic = sanitizeInput(topic, 100);
+  const sanitizedGuidance = guidance ? sanitizeInput(guidance, 500) : undefined;
+
+  return `You are a trivia question creator for a social board game. Generate a single trivia question.
+
+Requirements:
+- Topic: ${sanitizedTopic}
+- Category: ${categoryName} (${category})
+- Factual accuracy: The answer must be verifiable
+- Difficulty: Suitable for general knowledge enthusiasts
+- Format: Clear question with a single correct answer${sanitizedGuidance ? `\n- Additional guidance: ${sanitizedGuidance}` : ''}
+
+Respond with valid JSON matching this schema:
+{
+  "id": "unique-url-safe-id",
+  "category": "${category}",
+  "questionText": "The question text (10-500 characters)",
+  "answerText": "The correct answer (1-200 characters)",
+  "difficulty": "easy" | "medium" | "hard",
+  "tidbits": "2-3 sentences of surprising or interesting context about the answer"
+}
+
+The "tidbits" field is REQUIRED. It should be an engaging fact or context about the answer that players would find interesting to learn.
+
+Generate one question now.`;
+}

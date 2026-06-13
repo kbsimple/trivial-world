@@ -11,9 +11,11 @@
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { program } from 'commander';
-import { type Category } from '@trivial-world/types';
-import { generateAndVerifyQuestion } from '../lib/ollama/client.js';
-import { sanitizeInput } from '../lib/ollama/prompts.js';
+import { generateObject } from 'ai';
+import { createOllama } from 'ollama-ai-provider-v2';
+import { QuestionSchema, type Category } from '@trivial-world/types';
+import { verifyQuestion } from '../lib/ollama/client.js';
+import { sanitizeInput, buildCLIQuestionPrompt } from '../lib/ollama/prompts.js';
 import { initDraft, appendDraftQuestion, type DraftQuestion } from './lib/draft.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -58,14 +60,14 @@ program.action(async (opts) => {
 
     for (let i = 0; i < count; i++) {
       try {
-        const { question, verification } = await generateAndVerifyQuestion(
-          topic,
-          category,
-          undefined,  // guidance
-          undefined,  // sourceMaterial
-          model,
-          ollamaUrl,
-        );
+        const ollama = createOllama({ baseURL: ollamaUrl });
+        const prompt = buildCLIQuestionPrompt(topic, category);
+        const { object: question } = await generateObject({
+          model: ollama(model),
+          schema: QuestionSchema,
+          prompt,
+        });
+        const verification = await verifyQuestion(question, model, ollamaUrl);
 
         const draftQuestion: DraftQuestion = {
           question,
