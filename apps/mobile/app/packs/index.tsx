@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { View, Text, FlatList, Pressable, ActivityIndicator, StyleSheet, Alert, Platform, LayoutAnimation } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router';
+import { usePlayerStore } from '../../stores/playerStore';
 import { useTheme } from 'tamagui';
 import { usePackStore } from '../../stores/packStore';
 import { PackCard } from '../../components/PackCard';
@@ -39,6 +40,7 @@ export default function PackSelectionScreen() {
     refreshDownloadedPacks,
     selectPack,
     selectPackList,
+    savedCombos,
     setEnabledCategories,
     setEnabledDifficulties,
     clearDownloadError,
@@ -55,6 +57,15 @@ export default function PackSelectionScreen() {
   const errorPackRef = useRef<PackIndexEntry | null>(null);
   // Collapsible filters
   const [filtersExpanded, setFiltersExpanded] = useState(false);
+
+  // Per-player mode: read targetPlayerId URL param
+  const { targetPlayerId } = useLocalSearchParams<{ targetPlayerId?: string }>();
+  const { players, updatePlayerPack, updatePlayerCombo } = usePlayerStore();
+
+  // Look up the target player for title display
+  const targetPlayer = targetPlayerId
+    ? players.find(p => p.id === targetPlayerId) ?? null
+    : null;
 
   const toggleFilters = () => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
@@ -137,10 +148,23 @@ export default function PackSelectionScreen() {
   };
 
   const handleSelectPack = async (packId: string) => {
-    await selectPack(packId);
-    setModalVisible(false);
-    setSelectedPackIds([]);
-    router.push('/game/setup');
+    if (targetPlayerId) {
+      updatePlayerPack(targetPlayerId, packId);
+      setModalVisible(false);
+      router.back();
+    } else {
+      await selectPack(packId);
+      setModalVisible(false);
+      setSelectedPackIds([]);
+      router.push('/game/setup');
+    }
+  };
+
+  const handleSelectComboForPlayer = (comboId: string) => {
+    if (targetPlayerId) {
+      updatePlayerCombo(targetPlayerId, comboId);
+      router.back();
+    }
   };
 
   const togglePackSelection = (packId: string) => {
@@ -225,7 +249,7 @@ export default function PackSelectionScreen() {
     <View style={[styles.container, { backgroundColor: theme.background?.val as string }]}>
       {/* Header */}
       <Text style={[styles.title, { color: theme.color?.val as string }]}>
-        Select Question Pack
+        {targetPlayer ? `Select Pack for ${targetPlayer.name}` : 'Select Question Pack'}
       </Text>
 
       {/* Download progress (D-10) */}
@@ -276,7 +300,9 @@ export default function PackSelectionScreen() {
               isActive={hasSelection ? isSelected : activePackId === item.id}
               onPress={
                 isDownloaded
-                  ? () => togglePackSelection(item.id)
+                  ? targetPlayerId
+                    ? () => handleSelectPack(item.id)
+                    : () => togglePackSelection(item.id)
                   : () => handlePackPress(item)
               }
             />
@@ -308,9 +334,38 @@ export default function PackSelectionScreen() {
         }
       />
 
+      {/* Saved Combos section — per-player mode only */}
+      {targetPlayerId && savedCombos.length > 0 && (
+        <View style={styles.comboSection}>
+          <Text style={[styles.comboSectionHeader, { color: theme.color?.val as string }]}>
+            Saved Combos
+          </Text>
+          {savedCombos.map((combo) => (
+            <Pressable
+              key={combo.id}
+              style={[styles.footerButton, { backgroundColor: 'rgba(255, 255, 255, 0.2)' }]}
+              onPress={() => handleSelectComboForPlayer(combo.id)}
+            >
+              <Text style={[styles.footerButtonText, { color: theme.color?.val as string }]}>
+                {combo.name}
+              </Text>
+            </Pressable>
+          ))}
+        </View>
+      )}
+
       {/* Footer — in layout flow, no absolute positioning */}
       <View style={styles.footer}>
-        {hasSelection ? (
+        {targetPlayerId ? (
+          <Pressable
+            style={[styles.footerButton, { backgroundColor: 'rgba(255, 255, 255, 0.2)' }]}
+            onPress={() => router.back()}
+          >
+            <Text style={[styles.footerButtonText, { color: theme.color?.val as string }]}>
+              Back
+            </Text>
+          </Pressable>
+        ) : hasSelection ? (
           <>
             <Pressable
               style={[styles.playButton, { backgroundColor: 'rgba(255, 255, 255, 0.25)' }]}
@@ -418,5 +473,17 @@ const styles = StyleSheet.create({
   clearButtonText: {
     fontSize: 14,
     opacity: 0.6,
+  },
+  comboSection: {
+    paddingHorizontal: 20,
+    paddingTop: 8,
+    paddingBottom: 4,
+    gap: 8,
+  },
+  comboSectionHeader: {
+    fontSize: 13,
+    fontWeight: '600',
+    opacity: 0.55,
+    letterSpacing: 0.5,
   },
 });
