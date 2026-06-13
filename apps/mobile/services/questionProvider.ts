@@ -55,12 +55,13 @@ function playerColorToCategory(color: PlayerColor): Category {
 export async function getNextQuestion(
   category: PlayerColor,
   excludeIds: string[],
-  packId?: string
+  packId?: string,
+  difficulty?: Difficulty
 ): Promise<Question | null> {
   if (Platform.OS === 'web') {
-    return getNextQuestionFromBundle(playerColorToCategory(category), excludeIds, packId);
+    return getNextQuestionFromBundle(playerColorToCategory(category), excludeIds, packId, difficulty);
   }
-  return getNextQuestionFromDatabase(category, excludeIds);
+  return getNextQuestionFromDatabase(category, excludeIds, difficulty);
 }
 
 /**
@@ -85,19 +86,25 @@ export async function getQuestionsForCategory(
 async function getNextQuestionFromBundle(
   category: Category,
   excludeIds: string[],
-  packId?: string
+  packId?: string,
+  difficulty?: Difficulty
 ): Promise<Question | null> {
   // Use pack-specific questions if available, otherwise fall back to bundled data
   const pool = packId
     ? ((await fetchWebPackQuestions(packId)) ?? ALL_QUESTIONS)
     : ALL_QUESTIONS;
 
+  // Per-player difficulty filter: if difficulty != null, restrict to that difficulty
   const available = pool.filter(
     (q) => q.category === category && !excludeIds.includes(q.id)
+      && (difficulty != null ? q.difficulty === difficulty : true)
   );
 
   if (available.length === 0) {
-    const categoryQuestions = pool.filter((q) => q.category === category);
+    const categoryQuestions = pool.filter(
+      (q) => q.category === category
+        && (difficulty != null ? q.difficulty === difficulty : true)
+    );
     if (categoryQuestions.length === 0) return null;
 
     const selected = categoryQuestions[Math.floor(Math.random() * categoryQuestions.length)];
@@ -114,7 +121,8 @@ async function getNextQuestionFromBundle(
  */
 async function getNextQuestionFromDatabase(
   category: PlayerColor,
-  excludeIds: string[]
+  excludeIds: string[],
+  difficulty?: Difficulty
 ): Promise<Question | null> {
   // Dynamic import to avoid bundling database on web
   const { getDatabase } = await import('../database');
@@ -175,11 +183,16 @@ async function getNextQuestionFromDatabase(
       askedAt: (q as unknown as QuestionRecord).askedAt,
     }));
 
-    // D-06: Apply difficulty filter if set
-    const filteredQuestions = enabledDifficulties && enabledDifficulties.length > 0
+    // D-06: Per-player difficulty takes precedence; fallback to game-level enabledDifficulties
+    const effectiveDifficulties: Difficulty[] | null =
+      difficulty != null
+        ? [difficulty]
+        : (enabledDifficulties && enabledDifficulties.length > 0 ? enabledDifficulties : null);
+
+    const filteredQuestions = effectiveDifficulties
       ? questions.filter(q => {
           const qDifficulty = q.difficulty;
-          return qDifficulty && enabledDifficulties.includes(qDifficulty as Difficulty);
+          return qDifficulty && effectiveDifficulties.includes(qDifficulty as Difficulty);
         })
       : questions;
 

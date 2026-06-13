@@ -40,7 +40,7 @@ interface QuestionState {
 
   // Actions
   /** Select a question from active pack's category pool */
-  selectQuestion: (category: PlayerColor, packId?: string) => Promise<Question | null>;
+  selectQuestion: (category: PlayerColor, packId?: string, difficulty?: Difficulty) => Promise<Question | null>;
   /** Mark a question as asked (call after answer). Returns true if successful. */
   markAsked: (questionId: string) => Promise<boolean>;
   /** Reset asked questions for new game */
@@ -63,11 +63,11 @@ export const useQuestionStore = create<QuestionState>()(
       currentCategory: null,
       askedQuestionIds: [],
 
-      selectQuestion: async (category: PlayerColor, packId?: string) => {
+      selectQuestion: async (category: PlayerColor, packId?: string, difficulty?: Difficulty) => {
         if (Platform.OS === 'web') {
           const { activePackId } = usePackStore.getState();
           const resolvedPackId = packId ?? activePackId ?? undefined;
-          const question = await getNextQuestion(category, get().askedQuestionIds, resolvedPackId);
+          const question = await getNextQuestion(category, get().askedQuestionIds, resolvedPackId, difficulty);
           if (question) {
             set({ currentQuestion: question, currentCategory: category });
           }
@@ -120,11 +120,16 @@ export const useQuestionStore = create<QuestionState>()(
           const rawQuestions = await query.fetch();
           const questions = rawQuestions as QuestionModelType[];
 
-          // D-06: Apply difficulty filter if set
-          const filteredQuestions = enabledDifficulties && enabledDifficulties.length > 0
+          // D-06: Per-player difficulty takes precedence; fallback to game-level enabledDifficulties
+          const effectiveDifficulties: Difficulty[] | null =
+            difficulty != null
+              ? [difficulty]
+              : (enabledDifficulties && enabledDifficulties.length > 0 ? enabledDifficulties : null);
+
+          const filteredQuestions = effectiveDifficulties
             ? questions.filter(q => {
                 const qDifficulty = q.difficulty;
-                return qDifficulty && enabledDifficulties.includes(qDifficulty as Difficulty);
+                return qDifficulty && effectiveDifficulties.includes(qDifficulty as Difficulty);
               })
             : questions;
 
