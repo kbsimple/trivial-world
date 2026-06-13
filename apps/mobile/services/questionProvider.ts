@@ -49,17 +49,17 @@ function playerColorToCategory(color: PlayerColor): Category {
  * Get next question for a category, excluding already-asked questions
  * @param category - The category to get a question from
  * @param excludeIds - Array of question IDs to exclude (already asked)
- * @param packId - Pack ID to source questions from (web: fetches pack JSON; native: handled by caller)
+ * @param packIds - Pack IDs to source questions from (web: fetches pack JSONs and pools; native: handled by caller)
  * @returns A random unasked question, or null if none available
  */
 export async function getNextQuestion(
   category: PlayerColor,
   excludeIds: string[],
-  packId?: string,
+  packIds?: string[],
   difficulty?: Difficulty
 ): Promise<Question | null> {
   if (Platform.OS === 'web') {
-    return getNextQuestionFromBundle(playerColorToCategory(category), excludeIds, packId, difficulty);
+    return getNextQuestionFromBundle(playerColorToCategory(category), excludeIds, packIds, difficulty);
   }
   return getNextQuestionFromDatabase(category, excludeIds, difficulty);
 }
@@ -81,18 +81,24 @@ export async function getQuestionsForCategory(
 // --- Platform-specific implementations ---
 
 /**
- * Web: Get question from selected pack (fetched on demand) or bundled fallback per D-08
+ * Web: Get question from selected packs (fetched on demand) or bundled fallback per D-08
+ * Pools questions from all packIds when multiple packs are provided (multi-pack combo support)
  */
 async function getNextQuestionFromBundle(
   category: Category,
   excludeIds: string[],
-  packId?: string,
+  packIds?: string[],
   difficulty?: Difficulty
 ): Promise<Question | null> {
   // Use pack-specific questions if available, otherwise fall back to bundled data
-  const pool = packId
-    ? ((await fetchWebPackQuestions(packId)) ?? ALL_QUESTIONS)
-    : ALL_QUESTIONS;
+  let pool: Question[];
+  if (packIds && packIds.length > 0) {
+    const poolArrays = await Promise.all(packIds.map(pid => fetchWebPackQuestions(pid)));
+    const fetched = poolArrays.flatMap(qs => qs ?? []);
+    pool = fetched.length > 0 ? fetched : ALL_QUESTIONS;
+  } else {
+    pool = ALL_QUESTIONS;
+  }
 
   // Per-player difficulty filter: if difficulty != null, restrict to that difficulty
   const available = pool.filter(
