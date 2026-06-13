@@ -230,6 +230,54 @@ describe('usePlayerStore', () => {
       expect(afterStore.players[0].id).toBe(originalId);
       expect(afterStore.players[0].color).toBe(originalColor);
       expect(afterStore.players[0].wedges).toEqual([]);
+      expect(afterStore.players[0].packId).toBeNull();
+    });
+  });
+
+  describe('updatePlayerPack', () => {
+    it('sets packId for a player by ID', () => {
+      getStore().addPlayer('Alice');
+      const store = getStore();
+      const playerId = store.players[0].id;
+
+      store.updatePlayerPack(playerId, 'pack-123');
+      const afterStore = getStore();
+
+      expect(afterStore.players[0].packId).toBe('pack-123');
+    });
+
+    it('clears packId when set to null', () => {
+      getStore().addPlayer('Alice');
+      const store = getStore();
+      const playerId = store.players[0].id;
+
+      store.updatePlayerPack(playerId, 'pack-123');
+      store.updatePlayerPack(playerId, null);
+      const afterStore = getStore();
+
+      expect(afterStore.players[0].packId).toBeNull();
+    });
+
+    it('does not change other players', () => {
+      getStore().addPlayer('Alice');
+      getStore().addPlayer('Bob');
+      const store = getStore();
+      const aliceId = store.players[0].id;
+
+      store.updatePlayerPack(aliceId, 'pack-123');
+      const afterStore = getStore();
+
+      expect(afterStore.players[1].packId).toBeNull();
+    });
+
+    it('does nothing for non-existent ID', () => {
+      getStore().addPlayer('Alice');
+      const store = getStore();
+
+      store.updatePlayerPack('non-existent-id', 'pack-123');
+      const afterStore = getStore();
+
+      expect(afterStore.players[0].packId).toBeNull();
     });
   });
 

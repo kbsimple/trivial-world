@@ -48,6 +48,7 @@ export const usePlayerStore = create<PlayerState>()(
           name: playerName,
           color: nextColor,
           wedges: [], // Initialize empty wedges array
+          packId: null, // explicit null — stable serialization, avoids undefined in tests
         },
       ],
     };
@@ -68,6 +69,12 @@ export const usePlayerStore = create<PlayerState>()(
   updatePlayerName: (id: string, name: string) => set((state) => ({
     players: state.players.map(p =>
       p.id === id ? { ...p, name } : p
+    ),
+  })),
+
+  updatePlayerPack: (id: string, packId: string | null) => set((state) => ({
+    players: state.players.map(p =>
+      p.id === id ? { ...p, packId } : p
     ),
   })),
 
