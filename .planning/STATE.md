@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
-milestone: v5.0
-milestone_name: Content Generation Tooling
-status: shipped
+milestone: v6.0
+milestone_name: Pack Combos
+status: complete
 stopped_at: null
 last_updated: "2026-06-13T00:00:00.000Z"
-last_activity: 2026-06-13 — v5.0 milestone shipped; all 17 phases complete
+last_activity: 2026-06-13 — Phase 18 executed (4 plans, 3 waves) + code review + verification; v6.0 SHIPPED
 resume_file: null
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
+  total_phases: 1
+  completed_phases: 1
+  total_plans: 4
+  completed_plans: 4
   percent: 100
 ---
 
@@ -22,26 +22,31 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-13)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** v5.0 Content Generation Tooling — SHIPPED. Planning next milestone.
+**Current focus:** v6.0 Pack Combos — SHIPPED.
 
 ## Current Position
 
-All 17 phases complete across 5 milestones (v1.0–v5.0).
-Last milestone: v5.0 Content Generation Tooling — shipped 2026-06-13.
-Status: Ready for next milestone planning via `/gsd-new-milestone`.
+Phase 18: Pack Combos — COMPLETE. v6.0 shipped 2026-06-13.
+229 tests passing. Code review complete (5 findings, 2 HIGH deferred to follow-up).
 
 Progress: [████████████████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 41
+- Total plans completed: 45
 - v1.0: 10 plans (~65 min execution)
 - v2.0: 11 plans (~48 hours)
 - v3.0 + v4.0 + v5.0: combined ~1 day execution
+- v6.0: 4 plans (~1 session execution)
 - Milestone archive: .planning/milestones/
 
 ## Accumulated Context
+
+### Roadmap Evolution
+
+- Phase 18 added: Pack Combos — allow mixing and matching multiple question packs; a combo is a named blend selectable at game or per-player level
+- Phase 18 completed 2026-06-13
 
 ### Key Architectural Decisions
 
@@ -53,14 +58,18 @@ Progress: [████████████████████] 100%
 - Question provider abstraction: WatermelonDB (mobile) vs bundled questions (web)
 - Per-player pack + difficulty: playerPackIds + playerDifficulties snapshotted at startGame()
 - effectiveDifficulties pattern: per-player difficulty overrides game-level; null falls back
+- **Pack Combos (v6.0):** packId ↔ comboId mutual exclusion at player level; playerPackIdLists drives multi-pack question pooling at runtime; savedCombos + activeComboId persisted in packStore
 
 ### Pending Todos
 
-None — v5.0 shipped.
+From Phase 18 code review (18-REVIEW.md):
+- F-01 HIGH: deleteCombo leaves stale player.comboId in playerStore
+- F-02 HIGH: resetAskedQuestions loop leaves activePackId corrupted on throw
+- F-03 MEDIUM: combos.tsx has no ScrollView — Back button unreachable with many items
 
 ### Blockers/Concerns
 
-None.
+None blocking next milestone.
 
 ## Deferred Items
 
@@ -76,3 +85,6 @@ Items acknowledged and deferred at milestone close on 2026-06-13:
 | todo | 2026-06-10-fix-netlify-transpilepackages.md [deployment] | pending | Netlify build config |
 | todo | 2026-06-10-metro-resolver-watermelondb-mock.md [mobile] | pending | Metro resolver fix |
 | todo | 2026-06-10-remove-nextjs-plugin-game-site.md [deployment] | pending | Next.js plugin cleanup |
+| review | Phase 18: F-01 deleteCombo stale comboId [combo] | pending | High: clear player.comboId on deleteCombo |
+| review | Phase 18: F-02 resetAskedQuestions corrupts activePackId on throw [combo] | pending | High: add try/finally restore |
+| review | Phase 18: F-03 combos.tsx missing ScrollView [combo] | pending | Medium: wrap in ScrollView |

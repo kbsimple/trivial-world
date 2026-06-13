@@ -7,7 +7,7 @@
 - ✅ **v3.0 Web Deployment** — Phases 9–11 (shipped 2026-06-11)
 - ✅ **v4.0 Simplified Gameplay** — Phases 12–17 (shipped 2026-06-12 → 2026-06-13)
 - ✅ **v5.0 Content Generation Tooling** — Phases 16–17 (shipped 2026-06-13)
-- 🚧 **v6.0 Pack Combos** — Phase 18 (in progress)
+- ✅ **v6.0 Pack Combos** — Phase 18 (shipped 2026-06-13)
 
 ## Phases
 
@@ -64,8 +64,8 @@ Archive: `.planning/milestones/v5.0-*`
 
 </details>
 
-<details open>
-<summary>🚧 v6.0 Pack Combos (Phase 18) — IN PROGRESS</summary>
+<details>
+<summary>✅ v6.0 Pack Combos (Phase 18) — SHIPPED 2026-06-13</summary>
 
 ### Phase 18: Pack Combos
 
@@ -74,10 +74,10 @@ Archive: `.planning/milestones/v5.0-*`
 **Plans:** 4 plans
 
 Plans:
-- [ ] 18-01-PLAN.md — Type contracts: PackCombo schema, Player.comboId, GameState.playerPackIdLists
-- [ ] 18-02-PLAN.md — packStore combo storage + CRUD (savedCombos, activeComboId, create/delete/select, persisted)
-- [ ] 18-03-PLAN.md — Multi-pack runtime: playerStore mutual exclusion, gameStore combo resolution + reset + threading, questionStore/questionProvider pooling, test updates
-- [ ] 18-04-PLAN.md — UI: combos management screen, route + entry link, setup per-player source picker (pack/combo/default)
+- [x] 18-01-PLAN.md — Type contracts: PackCombo schema, Player.comboId, GameState.playerPackIdLists
+- [x] 18-02-PLAN.md — packStore combo storage + CRUD (savedCombos, activeComboId, create/delete/select, persisted)
+- [x] 18-03-PLAN.md — Multi-pack runtime: playerStore mutual exclusion, gameStore combo resolution + reset + threading, questionStore/questionProvider pooling, test updates
+- [x] 18-04-PLAN.md — UI: combos management screen, route + entry link, setup per-player source picker (pack/combo/default)
 
 Wave structure:
 - Wave 1 (parallel): 18-01 (types), 18-02 (packStore)
@@ -109,7 +109,7 @@ Wave structure:
 | 15. Per-Player Pack Selection | v4.0 | 3/3 | Complete | 2026-06-12 |
 | 16. CLI Bulk Question Generation | v5.0 | 4/4 | Complete | 2026-06-13 |
 | 17. Per-Player Pack and Difficulty | v5.0 | 2/2 | Complete | 2026-06-13 |
-| 18. Pack Combos | v6.0 | 0/4 | Planned | — |
+| 18. Pack Combos | v6.0 | 4/4 | Complete | 2026-06-13 |
 
 ---
 
@@ -119,3 +119,4 @@ Wave structure:
 *v3.0 shipped: 2026-06-11*
 *v4.0 shipped: 2026-06-12*
 *v5.0 shipped: 2026-06-13*
+*v6.0 shipped: 2026-06-13*
