@@ -107,6 +107,24 @@
       "downloadUrl": "https://trivial-world.netlify.app/packs/youtube-streams-b7b0b001.json",
       "checksum": "f934e7e0968575755352eb658ba1d057c49d0f3b69b42791182837d043e5715c",
       "size": 41109
+    },
+    {
+      "id": "a2025e00-2025-4000-8000-202500000001",
+      "name": "The Year of 2025",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 90,
+      "categoryCounts": {
+        "blue": 15,
+        "pink": 15,
+        "yellow": 15,
+        "purple": 15,
+        "green": 15,
+        "orange": 15
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/year-of-2025-a2025e00.json",
+      "checksum": "a7bd073e7218b6d8b2885143d3d0007080b35237810140e36ac42f2d0b6f788d",
+      "size": 53956
     }
   ]
 }

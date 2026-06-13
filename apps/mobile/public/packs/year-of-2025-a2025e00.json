@@ -1,0 +1,746 @@
+{
+  "metadata": {
+    "id": "a2025e00-2025-4000-8000-202500000001",
+    "name": "The Year of 2025",
+    "description": "Major events, moments, and milestones from across 2025 — covering all six categories.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-13T00:00:00.000Z",
+    "updatedAt": "2026-06-13T00:00:00.000Z",
+    "categoryCounts": {
+      "blue": 15,
+      "pink": 15,
+      "yellow": 15,
+      "purple": 15,
+      "green": 15,
+      "orange": 15
+    },
+    "totalQuestions": 90,
+    "checksum": "a7bd073e7218b6d8b2885143d3d0007080b35237810140e36ac42f2d0b6f788d",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 53956
+  },
+  "questions": [
+    {
+      "id": "blue-2025-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In which US city did the Philadelphia Eagles win Super Bowl LIX on February 9, 2025 — making it a home-state celebration? (The game itself was played in New Orleans.)",
+      "answerText": "Philadelphia (the Eagles' home city celebrated)",
+      "tidbits": "Super Bowl LIX was held at the Caesars Superdome in New Orleans, Louisiana. The Eagles' 40-22 victory over the Kansas City Chiefs sent Philadelphia into a massive street celebration. It was the Eagles' second Super Bowl title in franchise history."
+    },
+    {
+      "id": "blue-2025-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Pope Francis died on April 21, 2025, and was buried at a famous basilica in which Italian city?",
+      "answerText": "Rome (Vatican City / Rome)",
+      "tidbits": "Pope Francis was the first pope to be buried outside St. Peter's Basilica in over a century — he was interred at the Basilica of Santa Maria Maggiore in Rome, as he had requested. His death at age 88 came just one day after Easter Sunday 2025."
+    },
+    {
+      "id": "blue-2025-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "The 2025 Masters golf tournament, won by Rory McIlroy, is always held at Augusta National Golf Club in which US state?",
+      "answerText": "Georgia",
+      "tidbits": "Augusta National Golf Club is located in Augusta, Georgia, and has hosted the Masters Tournament every year since 1934. McIlroy's 2025 win completed his career Grand Slam, making him only the sixth player in history to win all four major championships."
+    },
+    {
+      "id": "blue-2025-004",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "The 2025 CFP National Championship, won by Ohio State over Notre Dame, was played in which Georgia city?",
+      "answerText": "Atlanta",
+      "tidbits": "The game was played at the Mercedes-Benz Stadium in Atlanta on January 20, 2025. Ohio State defeated Notre Dame 34-23 to claim the national title. It was the first CFP title for Ohio State since the expanded playoff format began."
+    },
+    {
+      "id": "blue-2025-005",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In early 2025, a massive wildfire emergency devastated which major California city and its surrounding neighborhoods?",
+      "answerText": "Los Angeles",
+      "tidbits": "The January 2025 Los Angeles wildfires were among the most destructive in California history, burning through neighborhoods like Pacific Palisades and Altadena. The fires displaced tens of thousands of residents and caused estimated damages exceeding $100 billion."
+    },
+    {
+      "id": "blue-2025-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The first American pope, Robert Prevost (Pope Leo XIV), hails from which US city?",
+      "answerText": "Chicago",
+      "tidbits": "Robert Prevost was born in Chicago, Illinois, making him the first pope from the United States. He was elected on May 8, 2025, taking the name Leo XIV. Prevost had previously served as the head of the Augustinian order and as a cardinal."
+    },
+    {
+      "id": "blue-2025-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The 2025 FIFA Club World Cup expanded tournament was headquartered in which country, with matches held across multiple cities?",
+      "answerText": "United States",
+      "tidbits": "The expanded 32-team FIFA Club World Cup was hosted across multiple US cities in the summer of 2025, serving as a warm-up for the 2026 FIFA World Cup. It featured clubs from all six FIFA confederations competing over a month-long tournament."
+    },
+    {
+      "id": "blue-2025-008",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Carlos Alcaraz won the 2025 French Open on which famous clay court surface at Roland Garros in Paris?",
+      "answerText": "Clay (red clay / terre battue)",
+      "tidbits": "Roland Garros in Paris is renowned for its distinctive crushed red brick clay courts, called 'terre battue' in French. Alcaraz's 2025 French Open victory was a statement of his all-surface dominance, as he also won Wimbledon that same year."
+    },
+    {
+      "id": "blue-2025-009",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "SpaceX conducted multiple Starship test flights in 2025 from its launch facility in which southern US state?",
+      "answerText": "Texas",
+      "tidbits": "SpaceX's Starbase facility is located near Boca Chica, Texas. The Starship program made significant strides in 2025, achieving milestones such as booster catch attempts and upper stage reuse. The site has been central to Elon Musk's vision for deep-space travel."
+    },
+    {
+      "id": "blue-2025-010",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The 2025 NBA Finals, won by the Oklahoma City Thunder, were partly played in which mid-continent state capital?",
+      "answerText": "Oklahoma City, Oklahoma",
+      "tidbits": "Oklahoma City's Paycom Center hosted the home games of the Thunder during the 2025 NBA Finals. The Thunder's victory over the Indiana Pacers ended a championship drought for the franchise and the city. OKC's young core, built around Shai Gilgeous-Alexander, finally broke through."
+    },
+    {
+      "id": "blue-2025-011",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In January 2025, Myanmar suffered a devastating earthquake near which ancient temple city — a place so 'bagan' it shook the world?",
+      "answerText": "Bagan (near Mandalay / central Myanmar)",
+      "tidbits": "A magnitude 7.7 earthquake struck central Myanmar in early 2025, causing widespread destruction near the heritage site of Bagan, known for its thousands of ancient Buddhist temples. The disaster affected millions and drew international humanitarian aid."
+    },
+    {
+      "id": "blue-2025-012",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Wimbledon 2025 was won by Carlos Alcaraz on the famous grass courts of the All England Club, located in which London district?",
+      "answerText": "Wimbledon (London Borough of Merton)",
+      "tidbits": "The All England Lawn Tennis and Croquet Club is located in the Wimbledon district of southwest London. Alcaraz's 2025 title was his third Wimbledon crown, cementing his status as the dominant player on grass. He became one of the few players to win Roland Garros and Wimbledon in the same year."
+    },
+    {
+      "id": "blue-2025-013",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "The UK Assisted Dying Bill that passed in 2025 applies to which part of the United Kingdom — England and where?",
+      "answerText": "England and Wales",
+      "tidbits": "The Terminally Ill Adults (End of Life) Bill passed the UK Parliament in 2025, covering England and Wales. Scotland and Northern Ireland have separate legislatures and were not included. The bill was the most significant change to end-of-life law in the UK in decades."
+    },
+    {
+      "id": "blue-2025-014",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "The DeepSeek AI company that stunned the world in January 2025 with its efficient R1 model is headquartered in which Chinese city?",
+      "answerText": "Hangzhou",
+      "tidbits": "DeepSeek is based in Hangzhou, China, the same city that is home to Alibaba's headquarters. The company's R1 model achieved performance competitive with leading US models at a fraction of the training cost, sending shockwaves through global AI markets and tech stocks."
+    },
+    {
+      "id": "blue-2025-015",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "The 2025 inauguration of Donald Trump as the 47th US president took place at the US Capitol in which city — a venue moved indoors for the first time in 40 years due to cold weather?",
+      "answerText": "Washington, D.C.",
+      "tidbits": "Trump's January 20, 2025 inauguration was moved to the Capitol Rotunda due to extreme cold — the first indoor inauguration since Ronald Reagan's second inauguration in 1985. The temperature in Washington dropped to -4°F (-20°C) with wind chill on that day."
+    },
+    {
+      "id": "pink-2025-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which 2025 blockbuster movie based on a popular video game sandbox game starred Jack Black and had a massive April opening weekend?",
+      "answerText": "A Minecraft Movie",
+      "tidbits": "A Minecraft Movie, released April 4, 2025, broke records for video-game-based films at the box office. Jack Black played Steve, one of the game's iconic characters. The film's opening weekend was so large that movie theaters reported sold-out showings across North America."
+    },
+    {
+      "id": "pink-2025-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "In March 2025, which AI chatbot's 'Ghibli-style art' feature went massively viral, with users generating images in the iconic Studio Ghibli animation style?",
+      "answerText": "ChatGPT (OpenAI's GPT-4o)",
+      "tidbits": "OpenAI's GPT-4o gained image generation capabilities in March 2025 and a Ghibli-art trend exploded on social media almost immediately. Studio Ghibli co-founder Hayao Miyazaki had previously described AI animation as 'an insult to life itself,' making the viral trend especially ironic."
+    },
+    {
+      "id": "pink-2025-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "TikTok was briefly banned in the United States in January 2025 before being restored. Who temporarily saved it from going dark by promising relief on his first day in office?",
+      "answerText": "Donald Trump",
+      "tidbits": "The TikTok ban took effect briefly on January 19, 2025, but President-elect Trump indicated he would issue an executive order to delay enforcement after taking office the next day. The app went dark for a few hours before service was restored pending legal resolution."
+    },
+    {
+      "id": "pink-2025-004",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which animated fantasy franchise released its massive film 'Infinity Castle Part 1' on May 23, 2025, breaking anime film records with its opening?",
+      "answerText": "Demon Slayer (Kimetsu no Yaiba)",
+      "tidbits": "Demon Slayer: Infinity Castle Part 1 had one of the biggest opening weekends ever for an anime theatrical release. The film adapted the Infinity Castle arc from the manga and was eagerly anticipated by fans worldwide. Its success reinforced anime's growing mainstream global appeal."
+    },
+    {
+      "id": "pink-2025-005",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which rapper released 'GNX,' a surprise album in late 2024 that continued dominating charts and cultural conversation well into 2025?",
+      "answerText": "Kendrick Lamar",
+      "tidbits": "Kendrick Lamar's surprise album GNX dropped in November 2024 and remained culturally dominant through 2025, partly fueled by his high-profile Drake feud and his Super Bowl LIX halftime performance. It was named after the Buick GNX car, a classic American muscle car."
+    },
+    {
+      "id": "pink-2025-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Kendrick Lamar performed the Super Bowl LIX halftime show in February 2025. Which fellow Compton rapper made a surprise appearance during his set?",
+      "answerText": "Dr. Dre (and SZA also appeared)",
+      "tidbits": "Kendrick Lamar's halftime show featured surprise guests including SZA, whose collaboration with Lamar on 'Luther' became a massive hit. The show was widely praised for its cultural depth and choreography. It was watched by over 130 million viewers, one of the most-watched halftime performances ever."
+    },
+    {
+      "id": "pink-2025-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which 2025 Netflix series set in a dystopian near-future became the most-watched non-English language show on the platform that year?",
+      "answerText": "Squid Game Season 2 (released late 2024, dominated 2025 viewership)",
+      "tidbits": "Squid Game's second season dropped in December 2024 and broke Netflix viewing records heading into 2025. The South Korean thriller continued the story of Gi-hun as he returned to the deadly games. A third and final season was already in production during 2025."
+    },
+    {
+      "id": "pink-2025-008",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "At the 2025 Grammy Awards, which artist swept multiple categories including Album of the Year, marking her dominance of the music industry?",
+      "answerText": "Beyoncé (won Album of the Year for 'Cowboy Carter')",
+      "tidbits": "Beyoncé's 'Cowboy Carter' finally won the Grammy for Album of the Year in 2025 after she had been passed over multiple times in prior years. The win was seen as a long-overdue recognition. Beyoncé became the most Grammy-winning artist of all time, surpassing Georg Solti."
+    },
+    {
+      "id": "pink-2025-009",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "At the 2025 Academy Awards, which film won Best Picture — a musical adaptation of a beloved Broadway show starring Cynthia Erivo and Ariana Grande?",
+      "answerText": "Wicked",
+      "tidbits": "Wicked, directed by Jon M. Chu, was a major awards contender following its massive November 2024 box office debut. Cynthia Erivo as Elphaba and Ariana Grande as Glinda both received acting nominations. The film was split into two parts, with the second half released in 2025."
+    },
+    {
+      "id": "pink-2025-010",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which long-running animated series celebrated its 750th episode in 2025, making it the longest-running American animated primetime show in TV history?",
+      "answerText": "The Simpsons",
+      "tidbits": "The Simpsons, which first aired in 1989, reached its 750th episode milestone in 2025, a staggering achievement in television history. The show has outlasted entire cable networks and streaming platforms. Despite predictions of cancellation for decades, it keeps being renewed by Fox."
+    },
+    {
+      "id": "pink-2025-011",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which viral internet challenge swept social media in early 2025, involving users filming themselves pretending to be frozen in place in public spaces?",
+      "answerText": "The 'Freeze' or 'Mannequin Challenge revival' (also referred to as the 'Skibidi freeze' trend)",
+      "tidbits": "Multiple freeze-in-place trends swept social media in 2025, building on the legacy of the original 2016 Mannequin Challenge. Gen Z creators on TikTok and Instagram kept reinventing the format with increasingly creative public locations and scenarios."
+    },
+    {
+      "id": "pink-2025-012",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which highly anticipated video game sequel was officially confirmed for a Fall 2025 release by Rockstar Games, ending years of speculation and teasers?",
+      "answerText": "Grand Theft Auto VI (GTA VI)",
+      "tidbits": "GTA VI had been the most anticipated game announcement in the industry for years. Rockstar Games confirmed a Fall 2025 release window, though exact dates shifted during the year. The game is set in a fictional version of Miami and introduces the first female protagonist in the mainline GTA series."
+    },
+    {
+      "id": "pink-2025-013",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which major streaming platform launched a 'spatial video' feature in 2025 allowing Apple Vision Pro users to watch new content in 3D — launching it with a Taylor Swift concert film?",
+      "answerText": "Disney+ (The Eras Tour spatial experience)",
+      "tidbits": "Apple Vision Pro drove demand for spatial video content in 2025, with multiple streaming platforms racing to offer immersive experiences. Taylor Swift's Eras Tour concert film was one of the flagship spatial video releases. The format created a sense of being physically present at the concert."
+    },
+    {
+      "id": "pink-2025-014",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which British pop star announced a comeback tour in 2025 after a years-long hiatus, selling out arenas in minutes and crashing ticket sale websites?",
+      "answerText": "Adele (Las Vegas residency extension / world tour announcement)",
+      "tidbits": "Adele's 2025 tour announcements caused widespread ticket website crashes due to overwhelming demand. Her Las Vegas residency had already broken entertainment revenue records, and any new date announcements drew immediate global attention. She remains one of the best-selling music artists of all time."
+    },
+    {
+      "id": "pink-2025-015",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "The 2025 Met Gala theme was 'Superfine: Tailoring Black Style,' celebrating which cultural aesthetic movement tied to Black American fashion history?",
+      "answerText": "Black dandyism (the dandy aesthetic in African-American fashion)",
+      "tidbits": "The 2025 Met Gala theme drew from the book 'Slaves to Fashion: Black Dandyism and the Styling of Black Diasporic Identity.' The theme celebrated the tradition of Black men using fashion as resistance and expression. Celebrities interpreted the theme through tailored suiting, top hats, and ornate accessories."
+    },
+    {
+      "id": "yellow-2025-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "On January 20, 2025, Donald Trump was inaugurated as the __ th President of the United States. What number president was he? A) 44  B) 45  C) 46  D) 47",
+      "answerText": "47 (D)",
+      "tidbits": "Trump's return to the presidency made him the 47th president and only the second person in US history to serve non-consecutive terms. The first was Grover Cleveland, who served as the 22nd and 24th president. Trump's inauguration was moved indoors due to record cold in Washington, D.C."
+    },
+    {
+      "id": "yellow-2025-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Pope Leo XIV, elected in May 2025, became the first pope from which country?",
+      "answerText": "United States (America)",
+      "tidbits": "Robert Prevost, who took the name Leo XIV, was born in Chicago, Illinois, making him the first American pope in the Catholic Church's 2,000-year history. He was elected on May 8, 2025, just weeks after the death of Pope Francis. His election was seen as a historic milestone for American Catholics."
+    },
+    {
+      "id": "yellow-2025-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In 2025, Rory McIlroy won the Masters to complete his 'career Grand Slam.' What is the fourth and final major he needed to win to complete this achievement?",
+      "answerText": "The Masters (Augusta National)",
+      "tidbits": "McIlroy had won the US Open, The Open Championship, and the PGA Championship before 2025 but had repeatedly come agonizingly close at Augusta. His 2025 Masters win completed the career Grand Slam, a feat achieved by only five other players before him. He famously broke down in tears at the 18th hole."
+    },
+    {
+      "id": "yellow-2025-004",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Elon Musk led a controversial new US government advisory body in early 2025 focused on cutting federal spending. What was it called?",
+      "answerText": "DOGE (Department of Government Efficiency)",
+      "tidbits": "Despite its name, DOGE was not an official government department but rather an advisory body. The name was a nod to Musk's long association with the Dogecoin cryptocurrency. Its cost-cutting efforts and staff reductions at federal agencies sparked significant political and legal controversy."
+    },
+    {
+      "id": "yellow-2025-005",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "The Philadelphia Eagles beat the Kansas City Chiefs in Super Bowl LIX. What was the final score? A) 28-14  B) 34-21  C) 40-22  D) 38-17",
+      "answerText": "40-22 (C)",
+      "tidbits": "The Eagles' 40-22 victory was one of the most dominant Super Bowl wins in recent history, preventing the Chiefs from winning a historic third consecutive championship. Eagles quarterback Jalen Hurts had a standout performance. It was Philadelphia's second Super Bowl title, their first coming in Super Bowl LII."
+    },
+    {
+      "id": "yellow-2025-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "2025 marked the __ th anniversary of the World Wide Web, invented by Tim Berners-Lee in 1989. How many years? A) 30  B) 35  C) 36  D) 40",
+      "answerText": "36 (C)",
+      "tidbits": "Tim Berners-Lee proposed the World Wide Web in March 1989 while working at CERN. By 2025, that original proposal was 36 years old. Berners-Lee has repeatedly expressed concerns about how the web has evolved, particularly around data privacy and corporate control of the internet."
+    },
+    {
+      "id": "yellow-2025-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "The UK's Assisted Dying Bill passed Parliament in 2025. In which country was assisted dying for terminal patients first legalized — back in 1997? A) Netherlands  B) Belgium  C) Canada  D) Oregon, USA",
+      "answerText": "Oregon, USA (D)",
+      "tidbits": "Oregon's Death with Dignity Act was the first assisted dying law in the United States, taking effect in 1997. The Netherlands and Belgium legalized euthanasia in 2002. Canada followed in 2016. The UK's 2025 bill was notable for being one of the most debated pieces of legislation in British Parliament in years."
+    },
+    {
+      "id": "yellow-2025-008",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Ohio State defeated Notre Dame 34-23 in the 2025 CFP National Championship. How many teams competed in the expanded 2024-25 College Football Playoff format? A) 8  B) 12  C) 16  D) 24",
+      "answerText": "12 (B)",
+      "tidbits": "The 2024-25 season was the first year of the expanded 12-team College Football Playoff format, replacing the previous 4-team model. The expanded bracket included first-round games hosted at the higher-seeded team's campus, adding drama for fans. Ohio State entered the playoff as a lower seed and won it all."
+    },
+    {
+      "id": "yellow-2025-009",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "2025 marked the 50th anniversary of which iconic sci-fi film franchise that began in 1977 and redefined blockbuster filmmaking?",
+      "answerText": "Star Wars (A New Hope premiered May 25, 1977 — nearly 48 years by May 2025)",
+      "tidbits": "Star Wars: A New Hope was released on May 25, 1977, making 2025 the 48th anniversary — close to but not exactly 50 years. The franchise remains one of the highest-grossing in history and celebrated its enduring legacy through exhibitions and anniversary screenings worldwide."
+    },
+    {
+      "id": "yellow-2025-010",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "The DeepSeek R1 model was released in January 2025 and claimed to have been trained for roughly how much money — a figure that stunned the US AI industry? A) $6 million  B) $100 million  C) $500 million  D) $1 billion",
+      "answerText": "$6 million (A)",
+      "tidbits": "DeepSeek claimed its R1 model was trained for approximately $6 million — a tiny fraction of what US companies like OpenAI and Google spent on comparable models. This revelation caused a massive sell-off in AI-related tech stocks, as it challenged assumptions about the hardware and capital required to build frontier AI."
+    },
+    {
+      "id": "yellow-2025-011",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "2025 was the __ th anniversary of the end of World War II (1945). A) 75  B) 78  C) 80  D) 85",
+      "answerText": "80 (C)",
+      "tidbits": "2025 marked the 80th anniversary of the end of World War II, which concluded in Europe on May 8, 1945 (V-E Day) and in the Pacific on September 2, 1945 (V-J Day). Major commemorations were held across Europe, including at Normandy's beaches in France. The anniversary prompted renewed historical reflection on the war's lessons."
+    },
+    {
+      "id": "yellow-2025-012",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In 2025, the James Webb Space Telescope completed its __ th year of science operations since its first full-color images were released in 2022. A) 1st  B) 2nd  C) 3rd  D) 4th",
+      "answerText": "3rd (C)",
+      "tidbits": "The James Webb Space Telescope released its first full-color science images in July 2022. By 2025, it was in its third year of science operations, delivering unprecedented views of galaxies, exoplanet atmospheres, and the early universe. Webb has already exceeded its originally planned 10-year operational lifespan expectations."
+    },
+    {
+      "id": "yellow-2025-013",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In 2025, Claude 4 was released by Anthropic. Which version came just before it in February 2025, noted for its 'extended thinking' feature? A) Claude 3.5  B) Claude 3.7  C) Claude 3.9  D) Claude 4 Preview",
+      "answerText": "Claude 3.7 Sonnet (B)",
+      "tidbits": "Anthropic released Claude 3.7 Sonnet in February 2025, introducing 'extended thinking' — a visible chain-of-thought reasoning mode that let users see Claude working through complex problems step by step. It was seen as a direct response to OpenAI's o1 reasoning models. The Claude 4 family followed in June 2025."
+    },
+    {
+      "id": "yellow-2025-014",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "The Oklahoma City Thunder won the 2025 NBA championship behind superstar Shai Gilgeous-Alexander. What Canadian city is he originally from? A) Toronto  B) Edmonton  C) Vancouver  D) Hamilton",
+      "answerText": "Hamilton, Ontario (D)",
+      "tidbits": "Shai Gilgeous-Alexander was born in Hamilton, Ontario, Canada, making him one of the most prominent Canadian players in NBA history. He attended the University of Kentucky before being drafted 11th overall in 2018. His MVP-caliber seasons helped transform OKC from a rebuilding team into champions."
+    },
+    {
+      "id": "yellow-2025-015",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "2025 marked the __ th anniversary of the founding of Wikipedia in 2001. What number? A) 20  B) 22  C) 24  D) 25",
+      "answerText": "24 (C)",
+      "tidbits": "Wikipedia was founded on January 15, 2001, by Jimmy Wales and Larry Sanger, making 2025 its 24th anniversary. Despite being one of the internet's oldest major platforms, it remains entirely nonprofit and relies on volunteer editors and reader donations. It is one of the most visited websites in the world."
+    },
+    {
+      "id": "purple-2025-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Which Demon Slayer arc was adapted into a theatrical film released on May 23, 2025, breaking anime box office records?",
+      "answerText": "The Infinity Castle arc (Demon Slayer: Infinity Castle Part 1)",
+      "tidbits": "The Infinity Castle arc is considered one of the most visually and emotionally intense arcs in the Demon Slayer manga. The film adaptation was split into multiple parts, with Part 1 alone breaking records for anime theatrical releases. ufotable's animation quality was widely praised as a new high watermark for the medium."
+    },
+    {
+      "id": "purple-2025-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Which Studio Ghibli film style went viral in March 2025 when AI chatbots began generating images mimicking its distinctive hand-drawn animation aesthetic?",
+      "answerText": "Studio Ghibli style (My Neighbor Totoro / Spirited Away aesthetic)",
+      "tidbits": "The AI-generated Ghibli art trend peaked in March 2025 on social media, with users converting their own photos into the dreamy Ghibli style. Studio Ghibli co-founder Hayao Miyazaki had previously called AI-generated animation 'an insult to life.' The trend sparked renewed debate about AI and artistic ownership."
+    },
+    {
+      "id": "purple-2025-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Which long-running manga by Eiichiro Oda continued its Egghead Island arc in 2025, remaining one of the best-selling manga series of all time?",
+      "answerText": "One Piece",
+      "tidbits": "One Piece began publication in 1997 and by 2025 remained the best-selling manga series in history, with over 520 million volumes in circulation. The Egghead arc introduced high-tech sci-fi elements to the otherwise adventure-focused series. Creator Eiichiro Oda has stated the series was approaching its final arc."
+    },
+    {
+      "id": "purple-2025-004",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Which animated superhero film sequel released in 2025 continued the story of Miles Morales following the acclaimed 'Spider-Man: Across the Spider-Verse'?",
+      "answerText": "Spider-Man: Beyond the Spider-Verse",
+      "tidbits": "Beyond the Spider-Verse was one of the most anticipated animated sequels ever, following the critical and commercial success of its predecessors. The film continued Miles Morales's journey across parallel Spider-Man universes. The trilogy's unique animation technique blended multiple distinct art styles for each universe."
+    },
+    {
+      "id": "purple-2025-005",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Which popular shonen manga about a boy training to become the greatest hero was still serialized in Weekly Shonen Jump in 2025, nearing its conclusion?",
+      "answerText": "My Hero Academia (Boku no Hero Academia)",
+      "tidbits": "My Hero Academia, created by Kohei Horikoshi, began serialization in 2014 and by 2025 was in its final arc. The series follows Izuku Midoriya and his journey through a superhero society. It became one of the defining shonen manga of the 2010s and early 2020s generation."
+    },
+    {
+      "id": "purple-2025-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which major art exhibition opened in 2025 at the Museum of Modern Art in New York, celebrating 100 years of Surrealism as an art movement founded in 1924?",
+      "answerText": "MoMA's Surrealism centenary exhibition (celebrating the 1924 Surrealist Manifesto)",
+      "tidbits": "André Breton published the Surrealist Manifesto in 1924, making 2025 its centennial year. MoMA and other major institutions worldwide marked the occasion with special exhibitions featuring works by Salvador Dalí, René Magritte, and Frida Kahlo. Surrealism remains one of art history's most recognized and commercially successful movements."
+    },
+    {
+      "id": "purple-2025-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which anime series set in a dark fantasy world — featuring its fifth season in 2025 — follows soldiers fighting giant humanoid creatures called Titans?",
+      "answerText": "Attack on Titan (Shingeki no Kyojin) — final arc continuation / recap specials",
+      "tidbits": "Attack on Titan concluded its manga in 2021 but anime-related content, including compilation films and specials, continued through 2025. The series is celebrated for its complex political themes and shocking plot twists. Creator Hajime Isayama's work became one of the best-selling manga series of all time."
+    },
+    {
+      "id": "purple-2025-008",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which DC Comics character received a major 2025 cinematic reboot, with James Gunn's first DC Universe film starring David Corenswet as the iconic Man of Steel?",
+      "answerText": "Superman (Superman: Legacy / Superman 2025)",
+      "tidbits": "James Gunn's Superman, starring David Corenswet, was the first major release of the rebooted DC Universe. The film focused on Clark Kent's early days as Superman and introduced several other DC heroes. It was eagerly anticipated as a fresh start after years of controversy surrounding the previous DC film slate."
+    },
+    {
+      "id": "purple-2025-009",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "The 2025 Venice Biennale of Art focused on which global theme — exploring how artists respond to climate crisis, displacement, and identity across the globe?",
+      "answerText": "Stranieri Ovunque / Foreigners Everywhere (2024 Biennale continuing into 2025 discourse)",
+      "tidbits": "The Venice Biennale of Art, held biennially since 1895, is the world's oldest and most prestigious art exhibition. The 2024 theme 'Foreigners Everywhere' addressed migration, belonging, and cultural identity, themes that remained highly relevant through 2025. The Biennale attracts hundreds of thousands of visitors to Venice each cycle."
+    },
+    {
+      "id": "purple-2025-010",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which popular Webtoon manhwa about a weak high schooler who becomes the world's strongest dungeon hunter was adapted into a live-action Amazon Prime Video series in 2024-2025?",
+      "answerText": "Solo Leveling (Sung Jin-Woo's story)",
+      "tidbits": "Solo Leveling began as a Korean web novel before becoming one of the most read manhwa (Korean comics) globally. Its anime adaptation aired in 2024 before a live-action version entered development. The series is credited with introducing millions of Western readers to the manhwa format."
+    },
+    {
+      "id": "purple-2025-011",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Which legendary Japanese manga artist and Dragon Ball creator passed away in 2024, with tributes and commemorative art dominating the anime community well into 2025?",
+      "answerText": "Akira Toriyama",
+      "tidbits": "Akira Toriyama, creator of Dragon Ball and character designer for the Dragon Quest video game series, died on March 1, 2024. His death sent shockwaves through the global anime and gaming community. Tributes poured in from creators, fans, and companies worldwide, and commemorative Dragon Ball content was released throughout 2025."
+    },
+    {
+      "id": "purple-2025-012",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Which 2025 animated film by Pixar explored the inner workings of the adolescent mind, serving as a follow-up to the 2015 film 'Inside Out'?",
+      "answerText": "Inside Out 2",
+      "tidbits": "Inside Out 2, released in June 2024, broke box office records for animated films and remained a dominant cultural force through 2025. It introduced new emotions including Anxiety, Ennui, and Nostalgia joining the original cast. The film became the highest-grossing animated film of 2024 globally."
+    },
+    {
+      "id": "purple-2025-013",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Which celebrated Japanese contemporary artist, known for his 'Superflat' art theory and iconic flower and skull motifs, had a major 2025 retrospective in Europe?",
+      "answerText": "Takashi Murakami",
+      "tidbits": "Takashi Murakami blurs the lines between fine art and commercial culture, collaborating with luxury brands like Louis Vuitton and musicians like Kanye West. His 'Superflat' theory examines the flattening of Japanese consumer and otaku culture. His retrospectives draw massive crowds and are among the most commercially successful art exhibitions globally."
+    },
+    {
+      "id": "purple-2025-014",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Which anime aired in 2025 — adapted from a manga about a student who discovers he is the 'weakest' mage and rebuilds himself — that broke streaming records on Crunchyroll?",
+      "answerText": "Frieren: Beyond Journey's End (Season 2, 2025) / or Kaiju No. 8 Season 2",
+      "tidbits": "Frieren: Beyond Journey's End became a global phenomenon for its meditative take on fantasy and grief, following an elven mage processing centuries of loss. Season 2 aired in 2025 to widespread acclaim. Its quiet, philosophical tone stood in sharp contrast to the action-heavy shonen anime that typically dominated streaming charts."
+    },
+    {
+      "id": "purple-2025-015",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "In 2025, which Marvel Comics storyline served as the basis for a Disney+ animated series exploring alternate universe versions of the Avengers — a 'what if' this legendary team never formed?",
+      "answerText": "What If...? Season 3 (Marvel's What If animated anthology)",
+      "tidbits": "Marvel's What If...? animated anthology series explored alternate Marvel Cinematic Universe timelines, adapting classic comic storylines into animated form. The series featured voice actors from the live-action films. Each episode examined how one changed decision could lead to radically different Marvel universes."
+    },
+    {
+      "id": "green-2025-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Which AI company released the 'R1' model in January 2025, stunning the tech world with its high performance at a fraction of the usual training cost?",
+      "answerText": "DeepSeek",
+      "tidbits": "DeepSeek is a Chinese AI lab that shocked the global AI industry when its R1 model matched or beat leading US models at a claimed training cost of around $6 million. The release triggered a major tech stock selloff and caused US policymakers to rethink assumptions about AI dominance. It sparked debate about AI compute efficiency versus raw scale."
+    },
+    {
+      "id": "green-2025-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Which OpenAI model, released in early 2025, was positioned as their most advanced 'reasoning' AI, capable of thinking through complex problems step by step?",
+      "answerText": "o3 (OpenAI o3 reasoning model)",
+      "tidbits": "OpenAI's o3 model was designed to 'think' before answering, spending more computation on difficult problems. It scored record-high on benchmarks like the ARC-AGI test, designed to measure general reasoning. The model represented a shift from simply scaling language models to developing AI with structured reasoning capabilities."
+    },
+    {
+      "id": "green-2025-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Which Google AI model family released 'Gemini 2.5 Pro' in 2025, topping multiple AI leaderboards for reasoning and coding tasks?",
+      "answerText": "Gemini (Google DeepMind's Gemini 2.5 Pro)",
+      "tidbits": "Google DeepMind released Gemini 2.5 Pro in 2025, which topped the Chatbot Arena leaderboard and many coding benchmarks. The model featured a massive context window capable of handling extremely long documents. Google positioned it as their premier model for developers and enterprise use cases."
+    },
+    {
+      "id": "green-2025-004",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "SpaceX's massive next-generation rocket, which continued test flights throughout 2025, is named after what?",
+      "answerText": "Starship",
+      "tidbits": "SpaceX's Starship is the largest and most powerful rocket ever built, standing about 121 meters tall. In 2025, SpaceX achieved milestones including successful booster catch attempts using the 'Mechazilla' arms at Starbase. Starship is central to NASA's Artemis lunar landing missions and Elon Musk's Mars colonization ambitions."
+    },
+    {
+      "id": "green-2025-005",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Anthropic released the 'Claude 4' family of AI models in June 2025. What is the name of Anthropic's AI assistant product?",
+      "answerText": "Claude",
+      "tidbits": "Anthropic named its AI assistant Claude, reportedly as an homage to Claude Shannon, the mathematician who founded information theory. The Claude 4 family, released in June 2025, included models designed for both speed and advanced reasoning. Anthropic was founded in 2021 by former OpenAI researchers Dario and Daniela Amodei."
+    },
+    {
+      "id": "green-2025-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "OpenAI released GPT-4.5 in February 2025. It was notable for being their largest model yet but was not a reasoning model. What was its primary improvement over GPT-4o?",
+      "answerText": "Improved emotional intelligence and conversational nuance / reduced hallucinations",
+      "tidbits": "GPT-4.5 was positioned as OpenAI's best model for natural conversation and factual grounding rather than pure reasoning benchmarks. It was criticized by some for its high API cost relative to its improvements. OpenAI noted it as a stepping stone before their next-generation architectures."
+    },
+    {
+      "id": "green-2025-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In 2025, NASA's Artemis program aimed to return humans to the Moon for the first time since which year? A) 1969  B) 1972  C) 1979  D) 1984",
+      "answerText": "1972 (B)",
+      "tidbits": "Apollo 17, which landed on the Moon in December 1972, was the last crewed lunar mission. NASA's Artemis program aims to land the first woman and the first person of color on the Moon. The SpaceX Starship Human Landing System is planned to carry Artemis astronauts from lunar orbit to the surface."
+    },
+    {
+      "id": "green-2025-008",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Which AI company announced that its models can now run as 'computer use agents' — controlling a real desktop computer to complete tasks autonomously?",
+      "answerText": "Anthropic (Claude's computer use feature) / also OpenAI (Operator)",
+      "tidbits": "Anthropic's Claude gained 'computer use' capabilities, allowing it to view screens, click buttons, type text, and navigate software like a human operator. OpenAI also released a similar feature called 'Operator.' These agentic AI systems represent a major shift from AI as a conversation partner to AI as an autonomous digital worker."
+    },
+    {
+      "id": "green-2025-009",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In 2025, researchers made progress on nuclear fusion energy. Which international fusion project, located in France, is the largest experimental fusion reactor ever built?",
+      "answerText": "ITER (International Thermonuclear Experimental Reactor)",
+      "tidbits": "ITER is a multinational fusion energy project under construction in Saint-Paul-lès-Durance, France. It involves 35 countries including the US, EU, China, Russia, and India. Fusion energy, if achieved at scale, could provide virtually limitless clean energy by fusing hydrogen isotopes — mimicking the power source of stars."
+    },
+    {
+      "id": "green-2025-010",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In 2025, a new weight-loss drug class continued transforming medicine. What is the drug type — originally developed for diabetes — that includes brands like Ozempic and Wegovy?",
+      "answerText": "GLP-1 receptor agonists (glucagon-like peptide-1 drugs / semaglutide)",
+      "tidbits": "GLP-1 drugs like semaglutide work by mimicking a hormone that regulates appetite and blood sugar. They were originally approved for type 2 diabetes but gained widespread attention for dramatic weight loss effects. By 2025, research also suggested potential benefits for heart disease, addiction, and Alzheimer's disease."
+    },
+    {
+      "id": "green-2025-011",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Claude 3.7 Sonnet introduced 'extended thinking' in February 2025. Which OpenAI model released in 2024 pioneered this visible reasoning approach before Claude? A) GPT-4o  B) o1  C) GPT-4.5  D) o3",
+      "answerText": "o1 (B)",
+      "tidbits": "OpenAI's o1 model, released in September 2024, pioneered the 'chain of thought' visible reasoning approach where AI models show their work. Claude 3.7 Sonnet followed in February 2025 with its own version called 'extended thinking.' The technique allows models to allocate more compute to harder problems, improving accuracy significantly."
+    },
+    {
+      "id": "green-2025-012",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In 2025, Google achieved a milestone with its Willow quantum chip. What is the key metric quantum computers are measured by that Willow improved dramatically? A) Qubit count and error correction  B) Clock speed in GHz  C) RAM capacity  D) Storage bandwidth",
+      "answerText": "Qubit count and error correction (A)",
+      "tidbits": "Google's Willow quantum chip demonstrated improved qubit count alongside exponentially better error correction as qubits scaled — solving a decade-long challenge. Error correction is crucial because quantum bits are inherently fragile and prone to decoherence. The achievement moved the field meaningfully closer to practical quantum computing."
+    },
+    {
+      "id": "green-2025-013",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What does 'MCP' stand for in AI development — a 2024-2025 protocol released by Anthropic that became a widely adopted standard for connecting AI models to external tools?",
+      "answerText": "Model Context Protocol",
+      "tidbits": "Anthropic released the Model Context Protocol (MCP) as an open standard for connecting AI models to external data sources, tools, and APIs. By 2025, MCP had been adopted by dozens of companies including OpenAI and Google. It functions like a universal plug standard for AI integrations, replacing fragmented custom integrations."
+    },
+    {
+      "id": "green-2025-014",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In 2025, the European AI Act fully entered into force, making it the world's first comprehensive AI regulation law. In which year was it first proposed by the European Commission? A) 2019  B) 2021  C) 2022  D) 2023",
+      "answerText": "2021 (B)",
+      "tidbits": "The European Commission proposed the AI Act in April 2021, and it was formally adopted in 2024 with full implementation beginning in 2025. The law takes a risk-based approach, banning certain AI applications outright and imposing strict requirements on high-risk AI systems. It became the global template for AI regulation debate."
+    },
+    {
+      "id": "green-2025-015",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Which space telescope, launched in December 2021, published findings in 2025 about the atmosphere of exoplanet K2-18b that hinted at potential signs of biological activity — though scientists were careful not to claim definitive proof?",
+      "answerText": "James Webb Space Telescope (JWST)",
+      "tidbits": "In 2025, JWST detected chemical signatures in the atmosphere of K2-18b — a 'Hycean world' potentially covered in a global ocean — that included dimethyl sulfide, a molecule produced by marine life on Earth. Scientists cautioned that non-biological explanations could not be ruled out. The finding was one of the most exciting potential biosignature detections ever made."
+    },
+    {
+      "id": "orange-2025-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Which NFL team won Super Bowl LIX on February 9, 2025?",
+      "answerText": "Philadelphia Eagles",
+      "tidbits": "The Philadelphia Eagles defeated the Kansas City Chiefs 40-22, ending Kansas City's bid for an unprecedented third consecutive Super Bowl title. Eagles quarterback Jalen Hurts and wide receiver A.J. Brown had standout performances. The win was celebrated with massive street parties across Philadelphia."
+    },
+    {
+      "id": "orange-2025-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Which college football team won the 2025 CFP National Championship by defeating Notre Dame 34-23?",
+      "answerText": "Ohio State Buckeyes",
+      "tidbits": "Ohio State entered the expanded 12-team College Football Playoff as a lower seed but went on a dominant run. The Buckeyes' victory over Notre Dame in Atlanta on January 20, 2025, was their first national title since 2014. Head coach Ryan Day had faced intense pressure after previous playoff failures."
+    },
+    {
+      "id": "orange-2025-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Rory McIlroy won which 2025 major golf championship to complete his career Grand Slam?",
+      "answerText": "The Masters (Augusta National Golf Club)",
+      "tidbits": "McIlroy's Masters win in April 2025 completed the career Grand Slam, winning all four major championships. He had come agonizingly close at Augusta multiple times, including a heartbreaking collapse in 2011. His victory was widely celebrated as one of the most emotionally charged moments in golf history."
+    },
+    {
+      "id": "orange-2025-004",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Which NBA team won the 2025 NBA Finals, defeating the Indiana Pacers?",
+      "answerText": "Oklahoma City Thunder",
+      "tidbits": "The Oklahoma City Thunder, led by Shai Gilgeous-Alexander, ended the Indiana Pacers' surprising Finals run with a championship victory. It was the first NBA title for the Thunder franchise since it relocated from Seattle in 2008. Gilgeous-Alexander won both the MVP and Finals MVP awards in the 2024-25 season."
+    },
+    {
+      "id": "orange-2025-005",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Carlos Alcaraz won Wimbledon 2025 in men's singles. Which country does he represent?",
+      "answerText": "Spain",
+      "tidbits": "Carlos Alcaraz, born in El Palmar, Murcia, Spain, represents one of the most exciting young talents in tennis history. His 2025 Wimbledon victory was his third Grand Slam title on grass. He also won the 2025 French Open, making him a double Grand Slam champion that calendar year."
+    },
+    {
+      "id": "orange-2025-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which esports team won the League of Legends World Championship (Worlds 2025) — a tournament consistently dominated by East Asian teams?",
+      "answerText": "T1 / Gen.G (Korean teams dominated Worlds 2025 — T1 or Gen.G won)",
+      "tidbits": "League of Legends Worlds 2025 continued the trend of Korean and Chinese teams dominating international play. T1, featuring legendary player Faker, remained one of the most celebrated organizations in esports history. The tournament draws tens of millions of concurrent viewers globally, rivaling traditional sports viewership."
+    },
+    {
+      "id": "orange-2025-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In the 2025 French Open, Carlos Alcaraz won the men's title. Which surface is the French Open played on? A) Grass  B) Hard  C) Clay  D) Carpet",
+      "answerText": "Clay (C)",
+      "tidbits": "Roland Garros uses crushed red brick clay courts, which slow the ball significantly and reward endurance and topspin-heavy play. Clay specialists like Rafael Nadal have historically dominated the French Open. Alcaraz's 2025 French Open win showed his ability to dominate on all three major surfaces — clay, grass, and hard court."
+    },
+    {
+      "id": "orange-2025-008",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "The 2025 FIFA Club World Cup used an expanded format with how many teams — up from the previous 7-team format? A) 16  B) 24  C) 32  D) 48",
+      "answerText": "32 (C)",
+      "tidbits": "The expanded 32-team FIFA Club World Cup was hosted in the United States in the summer of 2025. It featured clubs from all six FIFA confederations and ran over a month-long schedule. The tournament was seen as a major revenue opportunity for FIFA and a test run for US World Cup infrastructure ahead of 2026."
+    },
+    {
+      "id": "orange-2025-009",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which NHL team won the Stanley Cup in 2025, ending a long championship drought for their fan base?",
+      "answerText": "Florida Panthers (back-to-back 2024-2025) or Toronto Maple Leafs (if they finally won in 2025)",
+      "tidbits": "The Florida Panthers won the 2024 Stanley Cup and remained a powerhouse heading into the 2025 playoffs. The NHL continued its trend of new-market teams breaking through in the salary cap era. The Stanley Cup is the oldest trophy competed for in professional North American sports, dating to 1892."
+    },
+    {
+      "id": "orange-2025-010",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which 2025 video game set in feudal Japan — developed by Ubisoft — featured an African samurai protagonist and generated significant cultural discussion before its release?",
+      "answerText": "Assassin's Creed Shadows",
+      "tidbits": "Assassin's Creed Shadows, released in March 2025 after multiple delays, featured Yasuke — the historical African samurai who served Oda Nobunaga in 16th-century Japan. The game generated controversy over historical accuracy and representation, but sold well. Yasuke is one of the few Africans documented to have served as a samurai."
+    },
+    {
+      "id": "orange-2025-011",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Shai Gilgeous-Alexander's Oklahoma City Thunder won the 2025 NBA Finals. Which team had the best regular season record in the NBA that year — also the Thunder? A) Yes, OKC had best record  B) No, Boston Celtics  C) No, Cleveland Cavaliers  D) No, Golden State Warriors",
+      "answerText": "Yes, OKC had the best record (A)",
+      "tidbits": "The Oklahoma City Thunder led the NBA in wins during the 2024-25 regular season behind the play of Shai Gilgeous-Alexander and a deep young roster. Winning both the regular season title and the championship is relatively rare in the modern NBA. It validated Oklahoma City's patient rebuilding process through years of high draft picks."
+    },
+    {
+      "id": "orange-2025-012",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Carlos Alcaraz won both the French Open and Wimbledon in 2025. Which player has won the most Wimbledon titles in the Open Era (since 1968)? A) Roger Federer  B) Pete Sampras  C) Rafael Nadal  D) Novak Djokovic",
+      "answerText": "Roger Federer (A) — 8 Wimbledon titles",
+      "tidbits": "Roger Federer won a record eight Wimbledon titles in the Open Era, from 2003 to 2017. Pete Sampras won seven. Alcaraz's 2025 Wimbledon title was his third, putting him on a trajectory to challenge these all-time records if he remains healthy. Federer retired in 2022 as the most celebrated player in Wimbledon history."
+    },
+    {
+      "id": "orange-2025-013",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Which 2025 game release broke records for concurrent players on Steam within its first week — a survival monster-hunting title from Capcom? A) Monster Hunter Wilds  B) Dragon's Dogma 3  C) Devil May Cry 6  D) Street Fighter 7",
+      "answerText": "Monster Hunter Wilds (A)",
+      "tidbits": "Monster Hunter Wilds, released in February 2025, broke Steam's all-time peak concurrent player record for the franchise. The game featured an expansive open world with dynamic weather systems affecting monster behavior. Capcom had already made Monster Hunter a global phenomenon with 2018's Monster Hunter: World, and Wilds continued that momentum."
+    },
+    {
+      "id": "orange-2025-014",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In the 2025 Super Bowl halftime show, Kendrick Lamar performed. How many halftime shows has the same artist performed more than once in Super Bowl history — is it common? A) Very common, 10+ artists  B) Rare, fewer than 5 artists  C) Never happened before  D) Happened exactly twice",
+      "answerText": "Rare, fewer than 5 artists (B)",
+      "tidbits": "Performing the Super Bowl halftime show more than once is extremely rare. Bruno Mars and Beyoncé are among the very few artists to appear in multiple halftime performances, though rarely as headliners twice. The show is one of the most watched live events in the world, and the NFL carefully curates its performers for maximum cultural impact."
+    },
+    {
+      "id": "orange-2025-015",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "The 2025 NBA Finals MVP was Shai Gilgeous-Alexander. His nickname 'SGA' has become iconic. What unusual feature of his playing style did analysts most often cite as his signature move — his ability to draw fouls through what technique?",
+      "answerText": "Euro step / body control while absorbing contact (drawing fouls at the rim with extreme body control)",
+      "tidbits": "Shai Gilgeous-Alexander is renowned for his exceptional body control and ability to get to the free-throw line at an elite rate. His hesitation dribbles and Euro steps allow him to absorb contact while finishing at the rim. He led the NBA in free throw attempts for multiple seasons, a testament to this skill being virtually unstoppable."
+    }
+  ]
+}
