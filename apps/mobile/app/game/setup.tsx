@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { View, Text, TextInput, Pressable, ScrollView, StyleSheet, Alert } from 'react-native';
+import { Platform, View, Text, TextInput, Pressable, ScrollView, StyleSheet, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from 'tamagui';
 import { usePlayerStore } from '../../stores/playerStore';
@@ -24,10 +24,11 @@ import { SEMANTIC_COLORS } from '../../constants/theme';
 export default function SetupScreen() {
   const router = useRouter();
   const theme = useTheme();
-  const { players, addPlayer, removePlayer, updatePlayerName } = usePlayerStore();
+  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack } = usePlayerStore();
   const { startGame } = useGameStore();
   const activePackId = usePackStore((state) => state.activePackId);
   const availablePacks = usePackStore((state) => state.availablePacks);
+  const downloadedPackIds = usePackStore((state) => state.downloadedPackIds);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [packName, setPackName] = useState<string | null>(null);
 
@@ -86,6 +87,28 @@ export default function SetupScreen() {
     updatePlayerName(id, name);
   };
 
+  const handlePickPack = (playerId: string) => {
+    if (Platform.OS === 'web') return; // web: always default pack (no downloaded packs)
+    const selectablePacks = availablePacks.filter(p =>
+      downloadedPackIds.includes(p.id)
+    );
+    Alert.alert(
+      'Select Pack for Player',
+      undefined,
+      [
+        {
+          text: 'Default (game pack)',
+          onPress: () => updatePlayerPack(playerId, null),
+        },
+        ...selectablePacks.map(p => ({
+          text: p.name.length > 28 ? p.name.slice(0, 25) + '...' : p.name,
+          onPress: () => updatePlayerPack(playerId, p.id),
+        })),
+        { text: 'Cancel', style: 'cancel' as const },
+      ]
+    );
+  };
+
   const handleStartGame = () => {
     // CONF-01: Prevent starting without pack selection
     if (!activePackId) {
@@ -142,34 +165,58 @@ export default function SetupScreen() {
 
       {/* Participant list */}
       <View style={styles.playerList}>
-        {players.map((player, index) => (
-          <View key={player.id} style={styles.playerRow}>
-            {/* Color indicator */}
-            <View
-              style={[
-                styles.colorIndicator,
-                { backgroundColor: CATEGORY_COLORS[player.color as PlayerColor] },
-              ]}
-            />
+        {players.map((player, index) => {
+          const playerPackName = player.packId
+            ? (availablePacks.find(p => p.id === player.packId)?.name ?? 'Custom Pack')
+            : null;
+          const chipLabel = playerPackName
+            ? (playerPackName.length > 12 ? playerPackName.slice(0, 12) + '...' : playerPackName)
+            : 'Default';
 
-            {/* Name input (D-04: inline editing) */}
-            <TextInput
-              style={[styles.nameInput, { color: theme.color?.val as string }]}
-              value={player.name}
-              onChangeText={(name) => handleNameChange(player.id, name)}
-              placeholder={`Player ${index + 1}`}
-              placeholderTextColor={theme.color?.val as string}
-            />
+          return (
+            <View key={player.id} style={styles.playerRowOuter}>
+              {/* Row 1: color dot | name input | remove button */}
+              <View style={styles.playerRow}>
+                <View
+                  style={[
+                    styles.colorIndicator,
+                    { backgroundColor: CATEGORY_COLORS[player.color as PlayerColor] },
+                  ]}
+                />
+                <TextInput
+                  style={[styles.nameInput, { color: theme.color?.val as string }]}
+                  value={player.name}
+                  onChangeText={(name) => handleNameChange(player.id, name)}
+                  placeholder={`Player ${index + 1}`}
+                  placeholderTextColor={theme.color?.val as string}
+                />
+                <Pressable
+                  style={styles.removeButton}
+                  onPress={() => handleRemovePlayer(player.id)}
+                >
+                  <Text style={styles.removeButtonText}>×</Text>
+                </Pressable>
+              </View>
 
-            {/* Remove button */}
-            <Pressable
-              style={styles.removeButton}
-              onPress={() => handleRemovePlayer(player.id)}
-            >
-              <Text style={styles.removeButtonText}>×</Text>
-            </Pressable>
-          </View>
-        ))}
+              {/* Row 2: pack chip — below the name input, native only */}
+              {Platform.OS !== 'web' && (
+                <View style={styles.packChipRow}>
+                  <Pressable
+                    style={[
+                      styles.packChip,
+                      playerPackName ? styles.packChipActive : styles.packChipDefault,
+                    ]}
+                    onPress={() => handlePickPack(player.id)}
+                  >
+                    <Text style={styles.packChipText} numberOfLines={1}>
+                      {chipLabel}
+                    </Text>
+                  </Pressable>
+                </View>
+              )}
+            </View>
+          );
+        })}
       </View>
 
       {/* Add participant button */}
@@ -264,12 +311,14 @@ const styles = StyleSheet.create({
   playerList: {
     marginBottom: 16,
   },
+  playerRowOuter: {
+    marginBottom: 8,
+  },
   playerRow: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 12,
     paddingHorizontal: 16,
-    marginBottom: 8,
     borderRadius: 8,
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
   },
@@ -290,6 +339,27 @@ const styles = StyleSheet.create({
   removeButtonText: {
     fontSize: 24,
     color: SEMANTIC_COLORS.remove,
+  },
+  packChipRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 36,
+    marginTop: 4,
+  },
+  packChip: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
+  },
+  packChipDefault: {
+    backgroundColor: 'rgba(255,255,255,0.12)',
+  },
+  packChipActive: {
+    backgroundColor: 'rgba(255,255,255,0.28)',
+  },
+  packChipText: {
+    fontSize: 11,
+    color: '#ccc',
   },
   addButtonContainer: {
     alignItems: 'center',
