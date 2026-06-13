@@ -29,10 +29,11 @@ interface QuestionCardProps {
   questionNumber: number;
   category: PlayerColor;
   questionText: string;
-  revealed: boolean;          // still needed for MC choice highlighting
+  revealed: boolean;
   choices?: string[];
   correctChoiceIndex?: number;
   difficulty?: Difficulty;
+  tidbits?: string;
 }
 
 /**
@@ -56,6 +57,7 @@ export function QuestionCard({
   choices,
   correctChoiceIndex,
   difficulty,
+  tidbits,
 }: QuestionCardProps) {
   const theme = useTheme();
 
@@ -111,6 +113,12 @@ export function QuestionCard({
               </View>
             );
           })}
+
+          {revealed && tidbits && (
+            <Text style={styles.tidbitsText}>
+              {tidbits}
+            </Text>
+          )}
         </View>
       )}
     </View>
@@ -201,5 +209,14 @@ const styles = StyleSheet.create({
   choiceTextCorrect: {
     color: '#ffffff',
     fontWeight: '600',
+  },
+  tidbitsText: {
+    fontSize: 13,
+    textAlign: 'center',
+    marginTop: 12,
+    paddingHorizontal: 8,
+    opacity: 0.65,
+    fontStyle: 'italic',
+    color: '#ccc',
   },
 });

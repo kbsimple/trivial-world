@@ -80,6 +80,7 @@ export default function QuestionScreen() {
             choices={currentQuestion.choices}
             correctChoiceIndex={currentQuestion.correctChoiceIndex}
             difficulty={currentQuestion.difficulty}
+            tidbits={currentQuestion.tidbits}
           />
         ) : null}
 
@@ -88,7 +89,8 @@ export default function QuestionScreen() {
             <Text style={[styles.answerText, { color: theme.color?.val as string }]}>
               {currentQuestion.answerText}
             </Text>
-            {currentQuestion.tidbits && (
+            {/* tidbits for non-MC only — MC questions render them inside QuestionCard below the choices */}
+            {currentQuestion.tidbits && !(currentQuestion.choices && currentQuestion.choices.length > 0) && (
               <Text style={[styles.tidbitsText, { color: theme.color?.val as string }]}>
                 {currentQuestion.tidbits}
               </Text>
