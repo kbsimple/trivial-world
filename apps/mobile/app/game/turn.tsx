@@ -23,13 +23,14 @@ export default function TurnScreen() {
     currentPlayerIndex,
     completedCategories,
     isChampionshipMode,
+    playerPackIds,
+    playerCategories,
   } = useGameStore();
   const { players } = usePlayerStore();
-  const enabledCategories = usePackStore((state) => state.enabledCategories);
+  const availablePacks = usePackStore((state) => state.availablePacks);
+  // Per-player categories from game snapshot (immutable during game, CONTEXT.md decision)
   const activeCategories: PlayerColor[] =
-    enabledCategories && enabledCategories.length > 0
-      ? (enabledCategories as PlayerColor[])
-      : PLAYER_COLORS;
+    playerCategories[currentPlayerIndex] ?? PLAYER_COLORS;
 
   const currentPlayer = players[currentPlayerIndex];
   if (!currentPlayer) return null;
@@ -109,14 +110,25 @@ export default function TurnScreen() {
           {players.map((player, idx) => {
             const count = (completedCategories[idx] ?? []).length;
             const champ = isChampionshipMode[idx] ?? false;
+            const totalCats = (playerCategories[idx] ?? PLAYER_COLORS).length;
+            const pid = playerPackIds[idx];
+            const rawPackName = pid
+              ? (availablePacks.find(p => p.id === pid)?.name ?? null)
+              : null;
+            const displayPackName = rawPackName
+              ? (rawPackName.length > 12 ? rawPackName.slice(0, 12) + '...' : rawPackName)
+              : null;
             return (
               <View key={player.id} style={styles.progressEntry}>
                 <View style={[styles.progressDot, { backgroundColor: CATEGORY_COLORS[player.color] }]} />
                 <Text style={styles.progressName} numberOfLines={1}>
                   {player.name}
                 </Text>
+                {displayPackName && (
+                  <Text style={styles.progressPack} numberOfLines={1}>{displayPackName}</Text>
+                )}
                 <Text style={styles.progressCount}>
-                  {champ ? '🏆' : `${count}/6`}
+                  {champ ? '🏆' : `${count}/${totalCats}`}
                 </Text>
               </View>
             );
@@ -234,5 +246,10 @@ const styles = StyleSheet.create({
     fontSize: 13,
     minWidth: 30,
     textAlign: 'right',
+  },
+  progressPack: {
+    color: '#888',
+    fontSize: 11,
+    marginRight: 4,
   },
 });
