@@ -39,7 +39,7 @@ interface QuestionState {
 
   // Actions
   /** Select a question from active pack's category pool */
-  selectQuestion: (category: PlayerColor) => Promise<Question | null>;
+  selectQuestion: (category: PlayerColor, packId?: string) => Promise<Question | null>;
   /** Mark a question as asked (call after answer). Returns true if successful. */
   markAsked: (questionId: string) => Promise<boolean>;
   /** Reset asked questions for new game */
@@ -62,7 +62,7 @@ export const useQuestionStore = create<QuestionState>()(
       currentCategory: null,
       askedQuestionIds: [],
 
-      selectQuestion: async (category: PlayerColor) => {
+      selectQuestion: async (category: PlayerColor, packId?: string) => {
         if (Platform.OS === 'web') {
           const question = await getNextQuestion(category, get().askedQuestionIds);
           if (question) {
@@ -79,8 +79,9 @@ export const useQuestionStore = create<QuestionState>()(
         const database = getDatabase();
 
         const { activePackId, enabledCategories, enabledDifficulties } = usePackStore.getState();
+        const resolvedPackId = packId ?? activePackId;
 
-        if (!activePackId) {
+        if (!resolvedPackId) {
           logger.error('No active pack selected');
           return null;
         }
@@ -94,7 +95,7 @@ export const useQuestionStore = create<QuestionState>()(
         try {
           // Get active pack from WatermelonDB
           const packs = await database.get('question_packs')
-            .query(Q.where('pack_id', activePackId))
+            .query(Q.where('pack_id', resolvedPackId))
             .fetch();
 
           if (packs.length === 0) {

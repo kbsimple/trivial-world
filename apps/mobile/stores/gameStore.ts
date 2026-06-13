@@ -11,13 +11,6 @@ import { Player } from '../types/player';
 
 const ALL_CATEGORIES: PlayerColor[] = [...PLAYER_COLORS];
 
-function getActiveCategories(): PlayerColor[] {
-  const { enabledCategories } = usePackStore.getState();
-  return enabledCategories && enabledCategories.length > 0
-    ? (enabledCategories as PlayerColor[])
-    : ALL_CATEGORIES;
-}
-
 interface GameStore extends GameState {
   currentQuestion: Question | null;
   currentCategory: PlayerColor | null;
@@ -51,14 +44,17 @@ export const useGameStore = create<GameStore>()(
       isChampionshipMode: [],
       winner: null,
       activePackId: null,
+      playerPackIds: [],
+      playerCategories: [],
 
       startGame: async () => {
-        const { activePackId } = usePackStore.getState();
+        const { activePackId, availablePacks, enabledCategories } = usePackStore.getState();
         if (!activePackId) {
           console.error('No active pack selected');
           return;
         }
-        const playerCount = usePlayerStore.getState().players.length;
+        const { players } = usePlayerStore.getState();
+        const playerCount = players.length;
         if (playerCount === 0) {
           console.error('No players added');
           return;
@@ -66,6 +62,38 @@ export const useGameStore = create<GameStore>()(
 
         try {
           await useQuestionStore.getState().resetAskedQuestions();
+
+          const playerPackIds = players.map(p => p.packId ?? activePackId ?? null);
+
+          function deriveCategoriesForPack(packId: string | null): PlayerColor[] {
+            if (!packId) return ALL_CATEGORIES;
+            const pack = availablePacks.find(p => p.id === packId);
+            if (!pack) return ALL_CATEGORIES;
+            const packCats = (Object.entries(pack.categoryCounts) as [PlayerColor, number][])
+              .filter(([, count]) => count > 0)
+              .map(([cat]) => cat);
+            // Apply game-level category filter if set (preserves existing enabledCategories feature)
+            return enabledCategories && enabledCategories.length > 0
+              ? packCats.filter(c => (enabledCategories as PlayerColor[]).includes(c))
+              : packCats;
+          }
+
+          const playerCategories = playerPackIds.map(deriveCategoriesForPack);
+
+          // Reset asked-question state for every unique pack used in this game.
+          // questionStore.resetAskedQuestions() internally reads packStore.activePackId, so
+          // we temporarily set activePackId to each unique packId, call reset, then restore.
+          const uniquePackIds = [...new Set(playerPackIds.filter((id): id is string => id !== null))];
+          for (const pid of uniquePackIds) {
+            if (pid !== activePackId) {
+              usePackStore.setState({ activePackId: pid });
+              await useQuestionStore.getState().resetAskedQuestions();
+            }
+          }
+          // Restore the game-level pack as activePackId
+          if (activePackId !== null) {
+            usePackStore.setState({ activePackId });
+          }
 
           set({
             phase: 'selecting',
@@ -78,6 +106,8 @@ export const useGameStore = create<GameStore>()(
             isChampionshipMode: makeChampionshipMode(playerCount),
             winner: null,
             activePackId,
+            playerPackIds,
+            playerCategories,
           });
         } catch (error) {
           console.error('Error starting game:', error);
@@ -86,7 +116,9 @@ export const useGameStore = create<GameStore>()(
       },
 
       selectCategory: async (category: PlayerColor) => {
-        const question = await useQuestionStore.getState().selectQuestion(category);
+        const { playerPackIds, currentPlayerIndex } = get();
+        const packId = playerPackIds[currentPlayerIndex] ?? undefined;
+        const question = await useQuestionStore.getState().selectQuestion(category, packId);
         set({
           currentCategory: category,
           currentQuestion: question,
@@ -140,8 +172,10 @@ export const useGameStore = create<GameStore>()(
             i === currentPlayerIndex ? newCompleted : arr
           );
 
-          // Check if all required categories (per pack filter) are now done
-          const allDone = getActiveCategories().every(c => newCompleted.includes(c));
+          // Check if all required categories (per player's own pack) are now done
+          const { playerCategories } = get();
+          const thisPlayerCategories = playerCategories[currentPlayerIndex] ?? ALL_CATEGORIES;
+          const allDone = thisPlayerCategories.every(c => newCompleted.includes(c));
           const updatedChampionship = isChampionshipMode.map((val, i) =>
             i === currentPlayerIndex ? (allDone ? true : val) : val
           );
@@ -203,6 +237,8 @@ export const useGameStore = create<GameStore>()(
           isChampionshipMode: [],
           winner: null,
           activePackId: null,
+          playerPackIds: [],
+          playerCategories: [],
         });
       },
     }),
@@ -217,6 +253,8 @@ export const useGameStore = create<GameStore>()(
         phase: state.phase,
         questionNumber: state.questionNumber,
         winner: state.winner,
+        playerPackIds: state.playerPackIds,
+        playerCategories: state.playerCategories,
       }),
     }
   )
