@@ -1,17 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v6.0
-milestone_name: Pack Combos
-status: complete
-stopped_at: null
-last_updated: "2026-06-13T00:00:00.000Z"
-last_activity: 2026-06-13 — Completed quick task 260613-7a: question screen vertical layout
+milestone: v7.0
+milestone_name: Per-Player Pack Customization
+status: in_progress
+last_updated: "2026-06-13T21:48:22.000Z"
+stopped_at: Phase 19, Plan 01 complete
 resume_file: null
 progress:
   total_phases: 1
-  completed_phases: 1
-  total_plans: 4
-  completed_plans: 4
+  completed_phases: 0
+  total_plans: 1
+  completed_plans: 1
   percent: 100
 ---
 
@@ -22,23 +21,25 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-13)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** v6.0 Pack Combos — SHIPPED.
+**Current focus:** v7.0 Per-Player Pack Customization — Phase 19 Plan 01 complete.
 
 ## Current Position
 
-Phase 18: Pack Combos — COMPLETE. v6.0 shipped 2026-06-13.
-229 tests passing. Code review complete (5 findings, 2 HIGH deferred to follow-up).
+Phase 19: Per-Player Pack Customization — Plan 01 complete (2026-06-13).
+285 tests passing. packMode (shared/custom) added to packStore; segmented control live on setup screen.
 
 Progress: [████████████████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 45
+
+- Total plans completed: 46
 - v1.0: 10 plans (~65 min execution)
 - v2.0: 11 plans (~48 hours)
 - v3.0 + v4.0 + v5.0: combined ~1 day execution
 - v6.0: 4 plans (~1 session execution)
+- v7.0: 1 plan (~3 min execution)
 - Milestone archive: .planning/milestones/
 
 ## Accumulated Context
@@ -60,10 +61,12 @@ Progress: [████████████████████] 100%
 - Per-player pack + difficulty: playerPackIds + playerDifficulties snapshotted at startGame()
 - effectiveDifficulties pattern: per-player difficulty overrides game-level; null falls back
 - **Pack Combos (v6.0):** packId ↔ comboId mutual exclusion at player level; playerPackIdLists drives multi-pack question pooling at runtime; savedCombos + activeComboId persisted in packStore
+- **Per-Player Pack Mode (v7.0):** packMode 'shared'|'custom' in packStore (persisted); segmented control on setup screen; custom mode shows full-width per-player source rows; switching to shared clears all player overrides
 
 ### Pending Todos
 
 From Phase 18 code review (18-REVIEW.md):
+
 - F-01 HIGH: deleteCombo leaves stale player.comboId in playerStore
 - F-02 HIGH: resetAskedQuestions loop leaves activePackId corrupted on throw
 - F-03 MEDIUM: combos.tsx has no ScrollView — Back button unreachable with many items
