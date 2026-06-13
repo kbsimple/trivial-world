@@ -16,6 +16,8 @@ export interface Player {
   wedges: PlayerColor[];
   /** Per-player pack override — null means use game-level activePackId */
   packId?: string | null;
+  /** Per-player combo override — null means use game-level combo or pack. Mutually exclusive with packId. */
+  comboId?: string | null;
   /** Per-player difficulty override — null means use game-level enabledDifficulties */
   difficultyPreference?: Difficulty | null;
 }
@@ -39,6 +41,8 @@ export interface PlayerState {
   resetPlayers: () => void;
   /** Assign a question pack to a specific player (null = use game default) */
   updatePlayerPack: (id: string, packId: string | null) => void;
+  /** Assign a combo to a specific player (null = clear combo, inherit game default). Clears packId when set. */
+  updatePlayerCombo: (id: string, comboId: string | null) => void;
   /** Assign a difficulty preference to a specific player (null = use game-level default) */
   updatePlayerDifficulty: (id: string, difficulty: Difficulty | null) => void;
 

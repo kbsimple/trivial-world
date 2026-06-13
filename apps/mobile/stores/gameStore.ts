@@ -47,6 +47,7 @@ export const useGameStore = create<GameStore>()(
       playerPackIds: [],
       playerCategories: [],
       playerDifficulties: [],
+      playerPackIdLists: [],
 
       startGame: async () => {
         const { activePackId, availablePacks, enabledCategories } = usePackStore.getState();
@@ -111,6 +112,7 @@ export const useGameStore = create<GameStore>()(
             playerPackIds,
             playerCategories,
             playerDifficulties,
+            playerPackIdLists: playerPackIds.map(id => (id !== null ? [id] : null)),
           });
         } catch (error) {
           console.error('Error starting game:', error);
@@ -244,6 +246,7 @@ export const useGameStore = create<GameStore>()(
           playerPackIds: [],
           playerCategories: [],
           playerDifficulties: [],
+          playerPackIdLists: [],
         });
       },
     }),
@@ -261,6 +264,7 @@ export const useGameStore = create<GameStore>()(
         playerPackIds: state.playerPackIds,
         playerCategories: state.playerCategories,
         playerDifficulties: state.playerDifficulties,
+        playerPackIdLists: state.playerPackIdLists,
       }),
     }
   )
