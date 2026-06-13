@@ -24,11 +24,12 @@ import { SEMANTIC_COLORS } from '../../constants/theme';
 export default function SetupScreen() {
   const router = useRouter();
   const theme = useTheme();
-  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack, updatePlayerDifficulty } = usePlayerStore();
+  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack, updatePlayerCombo, updatePlayerDifficulty } = usePlayerStore();
   const { startGame } = useGameStore();
   const activePackId = usePackStore((state) => state.activePackId);
   const availablePacks = usePackStore((state) => state.availablePacks);
   const downloadedPackIds = usePackStore((state) => state.downloadedPackIds);
+  const savedCombos = usePackStore((state) => state.savedCombos);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [packName, setPackName] = useState<string | null>(null);
 
@@ -87,22 +88,24 @@ export default function SetupScreen() {
     updatePlayerName(id, name);
   };
 
-  const handlePickPack = (playerId: string) => {
+  const handlePickSource = (playerId: string) => {
     if (Platform.OS === 'web') return; // web: always default pack (no downloaded packs)
-    const selectablePacks = availablePacks.filter(p =>
-      downloadedPackIds.includes(p.id)
-    );
+    const selectablePacks = availablePacks.filter(p => downloadedPackIds.includes(p.id));
     Alert.alert(
-      'Select Pack for Player',
+      'Select Pack or Combo',
       undefined,
       [
         {
-          text: 'Default (game pack)',
-          onPress: () => updatePlayerPack(playerId, null),
+          text: 'Default (game source)',
+          onPress: () => { updatePlayerPack(playerId, null); updatePlayerCombo(playerId, null); },
         },
         ...selectablePacks.map(p => ({
           text: p.name.length > 28 ? p.name.slice(0, 25) + '...' : p.name,
-          onPress: () => updatePlayerPack(playerId, p.id),
+          onPress: () => { updatePlayerPack(playerId, p.id); },
+        })),
+        ...savedCombos.map(c => ({
+          text: `Combo: ${c.name.length > 22 ? c.name.slice(0, 19) + '...' : c.name}`,
+          onPress: () => { updatePlayerCombo(playerId, c.id); },
         })),
         { text: 'Cancel', style: 'cancel' as const },
       ]
@@ -188,11 +191,15 @@ export default function SetupScreen() {
       {/* Participant list */}
       <View style={styles.playerList}>
         {players.map((player, index) => {
-          const playerPackName = player.packId
+          const playerComboName = player.comboId
+            ? (savedCombos.find(c => c.id === player.comboId)?.name ?? 'Custom Combo')
+            : null;
+          const playerPackName = !playerComboName && player.packId
             ? (availablePacks.find(p => p.id === player.packId)?.name ?? 'Custom Pack')
             : null;
-          const chipLabel = playerPackName
-            ? (playerPackName.length > 12 ? playerPackName.slice(0, 12) + '...' : playerPackName)
+          const displayName = playerComboName ?? playerPackName;
+          const chipLabel = displayName
+            ? (displayName.length > 12 ? displayName.slice(0, 12) + '...' : displayName)
             : 'Default';
           const difficultyLabel = player.difficultyPreference
             ? player.difficultyPreference.charAt(0).toUpperCase() + player.difficultyPreference.slice(1)
@@ -229,9 +236,9 @@ export default function SetupScreen() {
                   <Pressable
                     style={[
                       styles.packChip,
-                      playerPackName ? styles.packChipActive : styles.packChipDefault,
+                      displayName ? styles.packChipActive : styles.packChipDefault,
                     ]}
-                    onPress={() => handlePickPack(player.id)}
+                    onPress={() => handlePickSource(player.id)}
                   >
                     <Text style={styles.packChipText} numberOfLines={1}>
                       {chipLabel}
