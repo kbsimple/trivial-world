@@ -21,6 +21,7 @@ export class QuestionModel extends Model {
   @field('difficulty') difficulty?: Difficulty;
   @field('choices') choices?: string; // JSON array
   @field('correct_choice_index') correctChoiceIndex?: number;
+  @field('tidbits') tidbits?: string;
   @field('asked_at') askedAt?: number; // Unix timestamp or null
 
   @relation('question_packs', 'question_pack_id') pack!: QuestionPackModel;
@@ -50,6 +51,7 @@ export class QuestionModel extends Model {
       difficulty: this.difficulty,
       choices: this.getChoices(),
       correctChoiceIndex: this.correctChoiceIndex,
+      tidbits: this.tidbits,
     };
   }
 

@@ -1,5 +1,6 @@
 import { schemaMigrations } from '@nozbe/watermelondb/Schema/migrations';
 import migration002 from './002_add_question_packs';
+import migration003 from './003_add_tidbits';
 
 /**
  * Combined migrations for WatermelonDB
@@ -12,9 +13,10 @@ import migration002 from './002_add_question_packs';
 export const migrations = {
   validated: true as const,
   minVersion: 1,
-  maxVersion: 2,
+  maxVersion: 3,
   sortedMigrations: [
     ...migration002.sortedMigrations,
+    ...migration003.sortedMigrations,
   ],
 };
 

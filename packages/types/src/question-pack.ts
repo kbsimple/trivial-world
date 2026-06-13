@@ -14,6 +14,7 @@ export const QuestionSchema = z.object({
   // Future: multiple choice support
   choices: z.array(z.string()).max(6).optional(),
   correctChoiceIndex: z.number().int().min(0).optional(),
+  tidbits: z.string().max(500).optional(), // interesting context shown at answer reveal
   // Metadata
   createdAt: z.string().datetime().optional(),
   updatedAt: z.string().datetime().optional(),
