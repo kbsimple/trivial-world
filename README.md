@@ -1,5 +1,7 @@
 # Trivial World
 
+**Play Now: [trivial-world.netlify.app →](https://trivial-world.netlify.app)**
+
 A mobile trivia game for in-person social play, with a web-based question generator for creating custom question packs.
 
 ## Overview
