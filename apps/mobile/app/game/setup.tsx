@@ -30,6 +30,8 @@ export default function SetupScreen() {
   const availablePacks = usePackStore((state) => state.availablePacks);
   const downloadedPackIds = usePackStore((state) => state.downloadedPackIds);
   const savedCombos = usePackStore((state) => state.savedCombos);
+  const packMode = usePackStore((state) => state.packMode);
+  const setPackMode = usePackStore((state) => state.setPackMode);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [packName, setPackName] = useState<string | null>(null);
   const [webPicker, setWebPicker] = useState<{
@@ -141,6 +143,17 @@ export default function SetupScreen() {
     }
   };
 
+  const handleSetPackMode = (mode: 'shared' | 'custom') => {
+    if (mode === 'shared') {
+      // Clear all per-player pack/combo overrides on switch to shared (per CONTEXT.md locked decision)
+      players.forEach(p => {
+        updatePlayerPack(p.id, null);
+        updatePlayerCombo(p.id, null);
+      });
+    }
+    setPackMode(mode);
+  };
+
   const handleStartGame = async () => {
     // CONF-01: Prevent starting without pack selection
     if (!activePackId) {
@@ -202,6 +215,26 @@ export default function SetupScreen() {
         )}
       </Pressable>
 
+      {/* Pack mode toggle — Shared Pack vs Per Player (v7.0) */}
+      <View style={styles.segmentedControl}>
+        <Pressable
+          style={[styles.segment, packMode === 'shared' && styles.segmentActive]}
+          onPress={() => handleSetPackMode('shared')}
+        >
+          <Text style={[styles.segmentText, packMode === 'shared' && styles.segmentTextActive]}>
+            Shared Pack
+          </Text>
+        </Pressable>
+        <Pressable
+          style={[styles.segment, packMode === 'custom' && styles.segmentActive]}
+          onPress={() => handleSetPackMode('custom')}
+        >
+          <Text style={[styles.segmentText, packMode === 'custom' && styles.segmentTextActive]}>
+            Per Player
+          </Text>
+        </Pressable>
+      </View>
+
       {/* Participant list */}
       <View style={styles.playerList}>
         {players.map((player, index) => {
@@ -244,31 +277,33 @@ export default function SetupScreen() {
                 </Pressable>
               </View>
 
-              {/* Row 2: pack chip and difficulty chip */}
-              <View style={styles.packChipRow}>
-                <Pressable
-                  style={[
-                    styles.packChip,
-                    displayName ? styles.packChipActive : styles.packChipDefault,
-                  ]}
-                  onPress={() => handlePickSource(player.id)}
-                >
-                  <Text style={styles.packChipText} numberOfLines={1}>
-                    {chipLabel}
-                  </Text>
-                </Pressable>
-                <Pressable
-                  style={[
-                    styles.packChip,
-                    player.difficultyPreference ? styles.packChipActive : styles.packChipDefault,
-                  ]}
-                  onPress={() => handlePickDifficulty(player.id)}
-                >
-                  <Text style={styles.packChipText} numberOfLines={1}>
-                    {difficultyLabel}
-                  </Text>
-                </Pressable>
-              </View>
+              {/* Row 2 (custom mode only): full-width source row + difficulty chip */}
+              {packMode === 'custom' && (
+                <>
+                  <Pressable
+                    style={styles.playerSourceRow}
+                    onPress={() => handlePickSource(player.id)}
+                  >
+                    <Text style={styles.playerSourceLabel} numberOfLines={1}>
+                      {displayName ? `Pack: ${displayName}` : 'Pack: Default (game pack)'}
+                    </Text>
+                    <Text style={styles.playerSourceChevron}>{'→'}</Text>
+                  </Pressable>
+                  <View style={styles.packChipRow}>
+                    <Pressable
+                      style={[
+                        styles.packChip,
+                        player.difficultyPreference ? styles.packChipActive : styles.packChipDefault,
+                      ]}
+                      onPress={() => handlePickDifficulty(player.id)}
+                    >
+                      <Text style={styles.packChipText} numberOfLines={1}>
+                        {difficultyLabel}
+                      </Text>
+                    </Pressable>
+                  </View>
+                </>
+              )}
             </View>
           );
         })}
@@ -515,5 +550,49 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 16,
     textAlign: 'center',
+  },
+  segmentedControl: {
+    flexDirection: 'row',
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    borderRadius: 8,
+    marginBottom: 16,
+    padding: 3,
+  },
+  segment: {
+    flex: 1,
+    paddingVertical: 8,
+    borderRadius: 6,
+    alignItems: 'center',
+  },
+  segmentActive: {
+    backgroundColor: 'rgba(255,255,255,0.9)',
+  },
+  segmentText: {
+    fontSize: 14,
+    fontWeight: '500',
+    color: '#aaa',
+  },
+  segmentTextActive: {
+    color: '#111',
+  },
+  playerSourceRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    marginTop: 4,
+  },
+  playerSourceLabel: {
+    fontSize: 14,
+    color: '#ccc',
+    flex: 1,
+  },
+  playerSourceChevron: {
+    fontSize: 14,
+    color: '#ccc',
+    marginLeft: 8,
   },
 });
