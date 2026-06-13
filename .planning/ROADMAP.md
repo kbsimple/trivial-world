@@ -256,6 +256,20 @@ Plans:
 - [ ] 16-03-PLAN.md — CLI review.ts: interactive approve/edit/reject + publish to public/packs/ and index
 - [ ] 16-04-PLAN.md — Mobile UI: tidbits display in QuestionCard after answer reveal
 
+### Phase 17: Per-Player Pack and Difficulty
+**Goal**: Each player can independently configure their own pack and difficulty level; a game draws questions from multiple packs simultaneously
+**Depends on**: Phase 16
+**Success Criteria**:
+  1. During game setup, each player can select both a pack and a difficulty level independently
+  2. A game can draw questions from multiple packs simultaneously (one per player)
+  3. Questions are served to each player from their individually configured pack + difficulty combination
+  4. Game-level default pack and difficulty serve as fallback for players without custom settings
+  5. Setup UI clearly shows each player's pack and difficulty configuration
+**Plans**: 2 plans
+Plans:
+- [ ] 17-01-PLAN.md — Data layer: Player.difficultyPreference + playerStore action + gameStore playerDifficulties snapshot + questionStore/questionProvider difficulty filter
+- [ ] 17-02-PLAN.md — UI: difficulty chip in setup packChipRow + difficulty label in turn progress strip
+
 ---
 
 ## Progress
@@ -278,6 +292,7 @@ Plans:
 | 14. Championship Mode & Polish | 1/1 | Complete | 2026-06-12 |
 | 15. Per-Player Pack Selection | 3/3 | Complete | 2026-06-12 |
 | 16. CLI Bulk Question Generation | 0/4 | Not started | — |
+| 17. Per-Player Pack and Difficulty | 0/2 | Not started | — |
 
 ---
 
