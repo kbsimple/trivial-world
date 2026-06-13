@@ -217,6 +217,22 @@ Plans:
 
 ---
 
+### Phase 15: Per-Player Pack Selection
+**Goal**: Allow each player to select a different question pack, so players can use different packs in the same game
+**Depends on**: Phase 14
+**Success Criteria**:
+  1. During game setup, each player can choose their own pack independently
+  2. Questions for each player are drawn from their assigned pack
+  3. Category completion and championship logic respects each player's pack (enabled categories)
+  4. UI clearly shows which pack each player is using during the game
+**Plans**: 3 plans
+Plans:
+- [ ] 15-01-PLAN.md — Player model: add packId field and updatePlayerPack action
+- [ ] 15-02-PLAN.md — Game/question store: snapshot playerPackIds and playerCategories; thread packId through selectQuestion
+- [ ] 15-03-PLAN.md — UI: per-player pack chip in setup, pack name in turn progress strip
+
+---
+
 ## Progress
 
 | Phase | Plans Complete | Status | Completed |
@@ -235,6 +251,7 @@ Plans:
 | 12. Game Store Refactor | 0/1 | Not started | — |
 | 13. Turn Flow UI | 0/1 | Not started | — |
 | 14. Championship Mode & Polish | 0/1 | Not started | — |
+| 15. Per-Player Pack Selection | 0/3 | Not started | — |
 
 ---
 
