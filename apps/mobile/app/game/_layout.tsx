@@ -61,7 +61,7 @@ export default function GameLayout() {
           headerLeft: () => (
             <Pressable onPress={() => setPauseOpen(true)} style={styles.pauseButton}>
               <Text style={[styles.pauseText, { color: theme.color?.val as string }]}>
-                Pause
+                {Platform.OS === 'web' ? '☰' : 'Pause'}
               </Text>
             </Pressable>
           ),

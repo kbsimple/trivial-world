@@ -71,6 +71,12 @@ export function QuestionCard({
     <View style={[styles.container, { backgroundColor: theme.background?.val as string }]}>
       <View style={styles.headerRow}>
         <CategoryBadge category={category} size="$4" />
+      </View>
+
+      <View style={styles.questionRow}>
+        <Text style={[styles.questionNumber, { color: theme.color?.val as string }]}>
+          Q{questionNumber}
+        </Text>
         {diffConfig && (
           <View style={[styles.difficultyBadge, { borderColor: diffConfig.color }]}>
             <Text style={[styles.difficultyLabel, { color: diffConfig.color, fontSize: diffConfig.size }]}>
@@ -79,10 +85,6 @@ export function QuestionCard({
           </View>
         )}
       </View>
-
-      <Text style={[styles.questionNumber, { color: theme.color?.val as string }]}>
-        Q{questionNumber}
-      </Text>
 
       <Text style={[styles.questionText, { color: theme.color?.val as string }]}>
         {resolvedStem}
@@ -126,6 +128,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
   },
+  questionRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginTop: 12,
+  },
   difficultyBadge: {
     borderWidth: 1,
     borderRadius: 4,
@@ -139,7 +147,6 @@ const styles = StyleSheet.create({
   questionNumber: {
     fontSize: 16,
     opacity: 0.7,
-    marginTop: 12,
   },
   questionText: {
     fontSize: 24,

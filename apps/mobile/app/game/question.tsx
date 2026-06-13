@@ -82,6 +82,19 @@ export default function QuestionScreen() {
             difficulty={currentQuestion.difficulty}
           />
         ) : null}
+
+        {answerRevealed && currentQuestion && (
+          <View style={styles.answerZone}>
+            <Text style={[styles.answerText, { color: theme.color?.val as string }]}>
+              {currentQuestion.answerText}
+            </Text>
+            {currentQuestion.tidbits && (
+              <Text style={[styles.tidbitsText, { color: theme.color?.val as string }]}>
+                {currentQuestion.tidbits}
+              </Text>
+            )}
+          </View>
+        )}
       </View>
 
       {/* Spacer — pushes footer to bottom */}
@@ -99,19 +112,6 @@ export default function QuestionScreen() {
           >
             <Text style={styles.revealButtonText}>Reveal Answer</Text>
           </Pressable>
-        )}
-
-        {answerRevealed && currentQuestion && (
-          <>
-            <Text style={[styles.answerText, { color: theme.color?.val as string }]}>
-              {currentQuestion.answerText}
-            </Text>
-            {currentQuestion.tidbits && (
-              <Text style={[styles.tidbitsText, { color: theme.color?.val as string }]}>
-                {currentQuestion.tidbits}
-              </Text>
-            )}
-          </>
         )}
 
         <AnswerButtons
@@ -152,6 +152,25 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
     alignItems: 'center',
   },
+  answerZone: {
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingTop: 8,
+  },
+  answerText: {
+    fontSize: 20,
+    textAlign: 'center',
+    paddingHorizontal: 16,
+    fontWeight: '600',
+    marginBottom: 6,
+  },
+  tidbitsText: {
+    fontSize: 14,
+    textAlign: 'center',
+    paddingHorizontal: 16,
+    opacity: 0.7,
+    fontStyle: 'italic',
+  },
   revealButton: {
     paddingHorizontal: 32,
     paddingVertical: 16,
@@ -164,20 +183,5 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 18,
     fontWeight: 'bold',
-  },
-  answerText: {
-    fontSize: 20,
-    textAlign: 'center',
-    paddingHorizontal: 16,
-    fontWeight: '600',
-    marginBottom: 8,
-  },
-  tidbitsText: {
-    fontSize: 14,
-    textAlign: 'center',
-    paddingHorizontal: 16,
-    opacity: 0.7,
-    fontStyle: 'italic',
-    marginBottom: 16,
   },
 });
