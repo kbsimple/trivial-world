@@ -3,6 +3,7 @@ import { useTheme } from 'tamagui';
 import { useRouter } from 'expo-router';
 import { useGameStore } from '../../stores/gameStore';
 import { usePlayerStore } from '../../stores/playerStore';
+import { usePackStore } from '../../stores/packStore';
 import { PlayerIndicator } from '../../components/PlayerIndicator';
 import { PLAYER_COLORS, CATEGORY_COLORS, CATEGORY_NAMES, PlayerColor } from '../../constants/categories';
 
@@ -24,6 +25,11 @@ export default function TurnScreen() {
     isChampionshipMode,
   } = useGameStore();
   const { players } = usePlayerStore();
+  const enabledCategories = usePackStore((state) => state.enabledCategories);
+  const activeCategories: PlayerColor[] =
+    enabledCategories && enabledCategories.length > 0
+      ? (enabledCategories as PlayerColor[])
+      : PLAYER_COLORS;
 
   const currentPlayer = players[currentPlayerIndex];
   if (!currentPlayer) return null;
@@ -59,7 +65,7 @@ export default function TurnScreen() {
       ) : (
         <View style={styles.progressHeader}>
           <Text style={[styles.progressLabel, { color: theme.color?.val as string }]}>
-            {myCompleted.length} / 6 categories done
+            {myCompleted.length} / {activeCategories.length} categories done
           </Text>
           <Text style={[styles.chooseLabel, { color: theme.color?.val as string }]}>
             Choose a category
@@ -68,7 +74,7 @@ export default function TurnScreen() {
       )}
 
       <View style={styles.categoryGrid}>
-        {PLAYER_COLORS.map((color) => {
+        {activeCategories.map((color) => {
           const done = myCompleted.includes(color);
           const disabled = !inChampionship && done;
 

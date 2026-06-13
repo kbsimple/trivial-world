@@ -3,6 +3,7 @@ import { useTheme } from 'tamagui';
 import { useRouter } from 'expo-router';
 import { useGameStore } from '../../stores/gameStore';
 import { usePlayerStore } from '../../stores/playerStore';
+import { usePackStore } from '../../stores/packStore';
 import { CATEGORY_COLORS, CATEGORY_NAMES, PLAYER_COLORS, PlayerColor } from '../../constants/categories';
 
 /**
@@ -16,6 +17,11 @@ export default function ResultsScreen() {
   const router = useRouter();
   const { winner, questionNumber, completedCategories, resetGame } = useGameStore();
   const { players, resetPlayers } = usePlayerStore();
+  const enabledCategories = usePackStore((state) => state.enabledCategories);
+  const activeCategories: PlayerColor[] =
+    enabledCategories && enabledCategories.length > 0
+      ? (enabledCategories as PlayerColor[])
+      : PLAYER_COLORS;
 
   const totalQuestions = questionNumber > 1 ? questionNumber - 1 : 0;
   const textColor = theme.color?.val as string || '#ffffff';
@@ -57,11 +63,11 @@ export default function ResultsScreen() {
                   {isWinner ? ' 🏆' : ''}
                 </Text>
                 <Text style={[styles.categoryCount, { color: textColor }]}>
-                  {completed.length}/6
+                  {completed.length}/{activeCategories.length}
                 </Text>
               </View>
               <View style={styles.categoryDots}>
-                {PLAYER_COLORS.map((c) => (
+                {activeCategories.map((c) => (
                   <View
                     key={c}
                     style={[
@@ -75,7 +81,7 @@ export default function ResultsScreen() {
                 ))}
               </View>
               <View style={styles.categoryLabels}>
-                {PLAYER_COLORS.map((c) => (
+                {activeCategories.map((c) => (
                   <Text key={c} style={styles.categoryLabel} numberOfLines={1}>
                     {CATEGORY_NAMES[c].split(' ')[0]}
                   </Text>

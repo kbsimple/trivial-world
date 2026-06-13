@@ -11,6 +11,13 @@ import { Player } from '../types/player';
 
 const ALL_CATEGORIES: PlayerColor[] = [...PLAYER_COLORS];
 
+function getActiveCategories(): PlayerColor[] {
+  const { enabledCategories } = usePackStore.getState();
+  return enabledCategories && enabledCategories.length > 0
+    ? (enabledCategories as PlayerColor[])
+    : ALL_CATEGORIES;
+}
+
 interface GameStore extends GameState {
   currentQuestion: Question | null;
   currentCategory: PlayerColor | null;
@@ -133,8 +140,8 @@ export const useGameStore = create<GameStore>()(
             i === currentPlayerIndex ? newCompleted : arr
           );
 
-          // Check if all 6 categories now done
-          const allDone = ALL_CATEGORIES.every(c => newCompleted.includes(c));
+          // Check if all required categories (per pack filter) are now done
+          const allDone = getActiveCategories().every(c => newCompleted.includes(c));
           const updatedChampionship = isChampionshipMode.map((val, i) =>
             i === currentPlayerIndex ? (allDone ? true : val) : val
           );
