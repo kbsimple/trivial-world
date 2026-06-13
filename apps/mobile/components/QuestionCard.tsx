@@ -14,6 +14,7 @@ interface QuestionCardProps {
   onReveal: () => void;
   choices?: string[];
   correctChoiceIndex?: number;
+  tidbits?: string;
 }
 
 /**
@@ -37,6 +38,7 @@ export function QuestionCard({
   onReveal,
   choices,
   correctChoiceIndex,
+  tidbits,
 }: QuestionCardProps) {
   const theme = useTheme();
   const isMultipleChoice = Array.isArray(choices) && choices.length > 0;
@@ -86,12 +88,29 @@ export function QuestionCard({
               <Text style={styles.revealButtonText}>Reveal Answer</Text>
             </Pressable>
           )}
+
+          {revealed && (
+            <>
+              {tidbits && (
+                <Text style={[styles.tidbitsText, { color: theme.color?.val as string }]}>
+                  {tidbits}
+                </Text>
+              )}
+            </>
+          )}
         </View>
       ) : (
         revealed ? (
-          <Text style={[styles.answerText, { color: theme.color?.val as string }]}>
-            {answerText}
-          </Text>
+          <>
+            <Text style={[styles.answerText, { color: theme.color?.val as string }]}>
+              {answerText}
+            </Text>
+            {tidbits && (
+              <Text style={[styles.tidbitsText, { color: theme.color?.val as string }]}>
+                {tidbits}
+              </Text>
+            )}
+          </>
         ) : (
           <Pressable
             style={({ pressed }) => [
@@ -133,6 +152,14 @@ const styles = StyleSheet.create({
     marginTop: 32,
     paddingHorizontal: 16,
     fontWeight: '600',
+  },
+  tidbitsText: {
+    fontSize: 14,
+    textAlign: 'center',
+    marginTop: 12,
+    paddingHorizontal: 16,
+    opacity: 0.7,
+    fontStyle: 'italic',
   },
   revealButton: {
     marginTop: 24,

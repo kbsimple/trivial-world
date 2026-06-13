@@ -80,6 +80,7 @@ export default function QuestionScreen() {
             onReveal={() => revealAnswer()}
             choices={displayQuestion.choices}
             correctChoiceIndex={displayQuestion.correctChoiceIndex}
+            tidbits={displayQuestion.tidbits}
           />
         ) : null}
       </View>
