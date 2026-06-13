@@ -2,8 +2,28 @@ import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
 import { PlayerColor } from '../constants/categories';
 import { CategoryBadge } from './CategoryBadge';
+import { Difficulty } from '../types/question';
 
 const CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+const DIFFICULTY_CONFIG: Record<Difficulty, { label: string; color: string; size: number }> = {
+  easy:   { label: 'E', color: '#4caf50', size: 11 },
+  medium: { label: 'M', color: '#ff9800', size: 11 },
+  hard:   { label: 'H', color: '#f44336', size: 11 },
+};
+
+// Parse "Question text? A) opt1, B) opt2, C) opt3, D) opt4" into stem + options array.
+function parseEmbeddedMC(text: string): { stem: string; options: string[] } | null {
+  const aIdx = text.search(/\bA\)\s/);
+  if (aIdx === -1) return null;
+  const stem = text.slice(0, aIdx).trim();
+  const optionsPart = text.slice(aIdx);
+  const parts = optionsPart
+    .split(/\s*\b[B-F]\)\s+/)
+    .map(s => s.replace(/^A\)\s+/, '').replace(/,\s*$/, '').trim())
+    .filter(Boolean);
+  return parts.length >= 2 ? { stem, options: parts } : null;
+}
 
 interface QuestionCardProps {
   questionNumber: number;
@@ -15,6 +35,7 @@ interface QuestionCardProps {
   choices?: string[];
   correctChoiceIndex?: number;
   tidbits?: string;
+  difficulty?: Difficulty;
 }
 
 /**
@@ -39,25 +60,42 @@ export function QuestionCard({
   choices,
   correctChoiceIndex,
   tidbits,
+  difficulty,
 }: QuestionCardProps) {
   const theme = useTheme();
-  const isMultipleChoice = Array.isArray(choices) && choices.length > 0;
+
+  // Prefer explicit choices array; fall back to parsing embedded MC options from questionText.
+  const parsed = (!choices || choices.length === 0) ? parseEmbeddedMC(questionText) : null;
+  const resolvedChoices = choices && choices.length > 0 ? choices : parsed?.options ?? null;
+  const resolvedStem = parsed ? parsed.stem : questionText;
+  const isMultipleChoice = Array.isArray(resolvedChoices) && resolvedChoices.length > 0;
+
+  const diffConfig = difficulty ? DIFFICULTY_CONFIG[difficulty] : null;
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background?.val as string }]}>
-      <CategoryBadge category={category} size="$4" />
+      <View style={styles.headerRow}>
+        <CategoryBadge category={category} size="$4" />
+        {diffConfig && (
+          <View style={[styles.difficultyBadge, { borderColor: diffConfig.color }]}>
+            <Text style={[styles.difficultyLabel, { color: diffConfig.color, fontSize: diffConfig.size }]}>
+              {diffConfig.label}
+            </Text>
+          </View>
+        )}
+      </View>
 
       <Text style={[styles.questionNumber, { color: theme.color?.val as string }]}>
         Q{questionNumber}
       </Text>
 
       <Text style={[styles.questionText, { color: theme.color?.val as string }]}>
-        {questionText}
+        {resolvedStem}
       </Text>
 
       {isMultipleChoice ? (
         <View style={styles.choicesContainer}>
-          {choices!.map((choice, index) => {
+          {resolvedChoices!.map((choice, index) => {
             const isCorrect = index === correctChoiceIndex;
             const choiceStyle = revealed
               ? isCorrect
@@ -133,6 +171,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 16,
+  },
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  difficultyBadge: {
+    borderWidth: 1,
+    borderRadius: 4,
+    paddingHorizontal: 5,
+    paddingVertical: 2,
+  },
+  difficultyLabel: {
+    fontWeight: '700',
+    letterSpacing: 0.5,
   },
   questionNumber: {
     fontSize: 16,

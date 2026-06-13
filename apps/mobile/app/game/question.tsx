@@ -77,6 +77,7 @@ export default function QuestionScreen() {
             choices={currentQuestion.choices}
             correctChoiceIndex={currentQuestion.correctChoiceIndex}
             tidbits={currentQuestion.tidbits}
+            difficulty={currentQuestion.difficulty}
           />
         ) : null}
       </View>

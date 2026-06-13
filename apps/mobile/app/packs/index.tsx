@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { View, Text, FlatList, Pressable, ActivityIndicator, StyleSheet, Alert, Platform } from 'react-native';
+import { View, Text, FlatList, Pressable, ActivityIndicator, StyleSheet, Alert, Platform, LayoutAnimation } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from 'tamagui';
 import { usePackStore } from '../../stores/packStore';
@@ -53,6 +53,13 @@ export default function PackSelectionScreen() {
   const [downloadedPackVersions, setDownloadedPackVersions] = useState<Record<string, string>>({});
   // WR-01: Track pack that caused download error for retry
   const errorPackRef = useRef<PackIndexEntry | null>(null);
+  // Collapsible filters
+  const [filtersExpanded, setFiltersExpanded] = useState(false);
+
+  const toggleFilters = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    setFiltersExpanded(prev => !prev);
+  };
 
   // Fetch available packs on mount
   useEffect(() => {
@@ -231,21 +238,28 @@ export default function PackSelectionScreen() {
         />
       )}
 
-      {/* Category filter (D-05) */}
-      <CategoryFilter
-        enabledCategories={enabledCategories}
-        onToggle={handleCategoryToggle}
-        onSelectAll={handleSelectAllCategories}
-        onClearAll={handleClearAllCategories}
-      />
-
-      {/* Difficulty filter (D-06) */}
-      <DifficultyFilter
-        enabledDifficulties={enabledDifficulties}
-        onToggle={handleDifficultyToggle}
-        onSelectAll={handleSelectAllDifficulties}
-        onClearAll={() => setEnabledDifficulties([])}
-      />
+      {/* Collapsible filters (D-05, D-06) */}
+      <Pressable style={styles.filtersToggle} onPress={toggleFilters}>
+        <Text style={[styles.filtersToggleText, { color: theme.color?.val as string }]}>
+          Filters {filtersExpanded ? '▲' : '▼'}
+        </Text>
+      </Pressable>
+      {filtersExpanded && (
+        <View>
+          <CategoryFilter
+            enabledCategories={enabledCategories}
+            onToggle={handleCategoryToggle}
+            onSelectAll={handleSelectAllCategories}
+            onClearAll={handleClearAllCategories}
+          />
+          <DifficultyFilter
+            enabledDifficulties={enabledDifficulties}
+            onToggle={handleDifficultyToggle}
+            onSelectAll={handleSelectAllDifficulties}
+            onClearAll={() => setEnabledDifficulties([])}
+          />
+        </View>
+      )}
 
       {/* Pack list (CONF-01) */}
       <FlatList
@@ -324,10 +338,10 @@ export default function PackSelectionScreen() {
             </Pressable>
             <Pressable
               style={[styles.footerButton, { backgroundColor: 'rgba(255, 255, 255, 0.2)' }]}
-              onPress={() => router.back()}
+              onPress={() => router.replace('/')}
             >
               <Text style={[styles.footerButtonText, { color: theme.color?.val as string }]}>
-                Back
+                Home
               </Text>
             </Pressable>
           </>
@@ -351,6 +365,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     padding: 20,
+  },
+  filtersToggle: {
+    alignSelf: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 6,
+    marginBottom: 4,
+  },
+  filtersToggleText: {
+    fontSize: 13,
+    opacity: 0.55,
+    letterSpacing: 0.5,
   },
   list: {
     padding: 16,
