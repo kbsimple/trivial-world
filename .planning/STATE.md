@@ -2,17 +2,17 @@
 gsd_state_version: 1.0
 milestone: v4.0
 milestone_name: Simplified Gameplay
-status: in_progress
+status: complete
 stopped_at: null
-last_updated: "2026-06-12T00:00:00.000Z"
-last_activity: 2026-06-12 — Milestone v4.0 started
+last_updated: "2026-06-12T23:00:00.000Z"
+last_activity: 2026-06-12 — Phase 15 complete; v4.0 shipped
 resume_file: null
 progress:
-  total_phases: 3
-  completed_phases: 0
-  total_plans: 3
-  completed_plans: 0
-  percent: 0
+  total_phases: 4
+  completed_phases: 4
+  total_plans: 6
+  completed_plans: 6
+  percent: 100
 ---
 
 # Project State
@@ -26,12 +26,12 @@ See: .planning/PROJECT.md (updated 2026-06-12)
 
 ## Current Position
 
-Phase: 12 (Game Store Refactor)
-Plan: Not started
-Status: Ready to plan
-Last activity: 2026-06-12 — Milestone v4.0 started
+Phase: 15 (Per-Player Pack Selection) — COMPLETE
+Plan: All 3 plans complete
+Status: v4.0 milestone shipped
+Last activity: 2026-06-12 — Phase 15 complete; all phases verified, 207/207 tests passing
 
-Progress: [          ] 0%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -68,12 +68,18 @@ Progress: [          ] 0%
 - D-08: Bundled default pack questions for web
 - Expo static export for web (dist/ folder)
 
-**v4.0 In Progress (2026-06-12):**
+**v4.0 Complete (2026-06-12):**
 - D-v4-01: Die roll and board positions removed entirely
 - D-v4-02: Correct answer continues turn; incorrect answer ends it (streak mechanic)
 - D-v4-03: Championship mode: all 6 categories correct → one final question to win
 - D-v4-04: Championship category chosen verbally by opponents/conductor (no app input needed)
 - D-v4-05: Game phase state: setup → selecting → answering → championship → finished
+- D-v4-06: Per-player pack selection (native only); web always uses bundled question pool
+- D-v4-07: playerPackIds and playerCategories snapshotted at startGame() for immutable in-game state
+
+### Roadmap Evolution
+
+- Phase 15 added: Per-Player Pack Selection (allow each player to use a different question pack)
 
 ### Pending Todos
 

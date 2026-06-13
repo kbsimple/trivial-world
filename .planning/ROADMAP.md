@@ -9,7 +9,7 @@ Trivial World is a mobile trivia game for in-person social play. v1.0 (Phases 1-
 - **v1.0 Core Gameplay** - Phases 1-5 (shipped 2026-06-08)
 - **v2.0 Question Packs & Game Configuration** - Phases 6-8 (shipped 2026-06-08)
 - **v3.0 Web Deployment** - Phases 9-11 (shipped 2026-06-11)
-- **v4.0 Simplified Gameplay** - Phases 12-14 (in progress)
+- **v4.0 Simplified Gameplay** - Phases 12-15 (shipped 2026-06-12)
 
 ## Phases
 
@@ -176,7 +176,7 @@ Plans:
 
 ---
 
-## v4.0 Simplified Gameplay (Phases 12-14) — IN PROGRESS
+## v4.0 Simplified Gameplay (Phases 12-15) — SHIPPED 2026-06-12
 
 ### Phase 12: Game Store Refactor
 **Goal**: Replace die/wedge state with category completion tracking; update the game flow state machine
@@ -190,6 +190,7 @@ Plans:
   5. All wedge/die state fields removed from gameStore
   6. Game phase state machine: `setup → selecting → answering → championship → finished`
 **Plans**: 1 plan
+**Completed**: 2026-06-12
 
 ### Phase 13: Turn Flow UI
 **Goal**: Replace roll/move screens with a unified turn screen showing category selection and player progress
@@ -202,6 +203,7 @@ Plans:
   4. Tapping a category navigates to question screen
   5. Die roll screen (`/game/roll`) and move screen (`/game/move`) are no longer in the navigation flow
 **Plans**: 1 plan
+**Completed**: 2026-06-12
 
 ### Phase 14: Championship Mode & Polish
 **Goal**: Championship question flow, win detection, results screen, and removal of residual wedge UI
@@ -214,6 +216,7 @@ Plans:
   4. Results screen shows winner without wedge count
   5. WedgeBadge, WedgeCollection, Die components no longer rendered in active game flow
 **Plans**: 1 plan
+**Completed**: 2026-06-12
 
 ---
 
@@ -227,9 +230,10 @@ Plans:
   4. UI clearly shows which pack each player is using during the game
 **Plans**: 3 plans
 Plans:
-- [ ] 15-01-PLAN.md — Player model: add packId field and updatePlayerPack action
-- [ ] 15-02-PLAN.md — Game/question store: snapshot playerPackIds and playerCategories; thread packId through selectQuestion
-- [ ] 15-03-PLAN.md — UI: per-player pack chip in setup, pack name in turn progress strip
+- [x] 15-01-PLAN.md — Player model: add packId field and updatePlayerPack action
+- [x] 15-02-PLAN.md — Game/question store: snapshot playerPackIds and playerCategories; thread packId through selectQuestion
+- [x] 15-03-PLAN.md — UI: per-player pack chip in setup, pack name in turn progress strip
+**Completed**: 2026-06-12
 
 ---
 
@@ -248,10 +252,10 @@ Plans:
 | 9. Mobile Web Export | 5/5 | Complete | 2026-06-09 |
 | 10. Netlify Deployment | 2/2 | Complete | 2026-06-11 |
 | 11. PWA Manifest | 1/1 | Complete | 2026-06-11 |
-| 12. Game Store Refactor | 0/1 | Not started | — |
-| 13. Turn Flow UI | 0/1 | Not started | — |
-| 14. Championship Mode & Polish | 0/1 | Not started | — |
-| 15. Per-Player Pack Selection | 0/3 | Not started | — |
+| 12. Game Store Refactor | 1/1 | Complete | 2026-06-12 |
+| 13. Turn Flow UI | 1/1 | Complete | 2026-06-12 |
+| 14. Championship Mode & Polish | 1/1 | Complete | 2026-06-12 |
+| 15. Per-Player Pack Selection | 3/3 | Complete | 2026-06-12 |
 
 ---
 
@@ -260,3 +264,4 @@ Plans:
 *v2.0 shipped: 2026-06-08*
 *v3.0 milestone started: 2026-06-09*
 *v3.0 shipped: 2026-06-11*
+*v4.0 shipped: 2026-06-12*
