@@ -51,12 +51,19 @@ export const useGameStore = create<GameStore>()(
 
       startGame: async () => {
         const { activePackId, availablePacks, enabledCategories } = usePackStore.getState();
-        if (!activePackId) {
+        const { players } = usePlayerStore.getState();
+        const playerCount = players.length;
+
+        // All-custom bypass: if every player has a non-null packId or comboId,
+        // no game-level shared pack is required (CONF-01 bypass per phase 20 design)
+        const allPlayersCustom =
+          playerCount > 0 &&
+          players.every((p) => p.packId != null || p.comboId != null);
+
+        if (!activePackId && !allPlayersCustom) {
           console.error('No active pack selected');
           return;
         }
-        const { players } = usePlayerStore.getState();
-        const playerCount = players.length;
         if (playerCount === 0) {
           console.error('No players added');
           return;

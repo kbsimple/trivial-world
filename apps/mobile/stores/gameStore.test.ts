@@ -746,6 +746,91 @@ describe('useGameStore', () => {
   });
 
   // ─────────────────────────────────────────────────────────
+  describe('startGame — all-custom bypass', () => {
+    it('starts game when activePackId is null but all players have a custom packId', async () => {
+      vi.mocked(usePackStore.getState).mockReturnValue({
+        activePackId: null,
+        availablePacks: [],
+        enabledCategories: null,
+        savedCombos: [],
+        activeComboId: null,
+        activePackIdList: null,
+      } as any);
+      mockPlayerStore([
+        { ...createMockPlayer(0), packId: 'pack-a', comboId: null } as Player,
+        { ...createMockPlayer(1), packId: 'pack-b', comboId: null } as Player,
+      ]);
+      mockQuestionStore();
+
+      await useGameStore.getState().startGame();
+
+      expect(useGameStore.getState().phase).toBe('selecting');
+    });
+
+    it('starts game when activePackId is null but all players have a custom comboId', async () => {
+      vi.mocked(usePackStore.getState).mockReturnValue({
+        activePackId: null,
+        availablePacks: [],
+        enabledCategories: null,
+        savedCombos: [],
+        activeComboId: null,
+        activePackIdList: null,
+      } as any);
+      mockPlayerStore([
+        { ...createMockPlayer(0), packId: null, comboId: 'combo-x' } as Player,
+        { ...createMockPlayer(1), packId: null, comboId: 'combo-y' } as Player,
+      ]);
+      mockQuestionStore();
+
+      await useGameStore.getState().startGame();
+
+      expect(useGameStore.getState().phase).toBe('selecting');
+    });
+
+    it('blocks game when activePackId is null and at least one player has no custom source', async () => {
+      const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+      vi.mocked(usePackStore.getState).mockReturnValue({
+        activePackId: null,
+        availablePacks: [],
+        enabledCategories: null,
+        savedCombos: [],
+        activeComboId: null,
+        activePackIdList: null,
+      } as any);
+      mockPlayerStore([
+        { ...createMockPlayer(0), packId: 'pack-a', comboId: null } as Player,
+        { ...createMockPlayer(1), packId: null, comboId: null } as Player,
+      ]);
+      mockQuestionStore();
+
+      await useGameStore.getState().startGame();
+
+      expect(consoleSpy).toHaveBeenCalledWith('No active pack selected');
+      expect(useGameStore.getState().phase).toBe('setup');
+      consoleSpy.mockRestore();
+    });
+
+    it('existing shared-pack path still works when activePackId is set', async () => {
+      vi.mocked(usePackStore.getState).mockReturnValue({
+        activePackId: 'test-pack-id',
+        availablePacks: [],
+        enabledCategories: null,
+        savedCombos: [],
+        activeComboId: null,
+        activePackIdList: null,
+      } as any);
+      mockPlayerStore([
+        { ...createMockPlayer(0), packId: null, comboId: null } as Player,
+      ]);
+      mockQuestionStore();
+
+      await useGameStore.getState().startGame();
+
+      expect(useGameStore.getState().phase).toBe('selecting');
+      expect(useGameStore.getState().activePackId).toBe('test-pack-id');
+    });
+  });
+
   describe('resetGame', () => {
     it('resets all state to initial values', () => {
       const player = createMockPlayer(0);
