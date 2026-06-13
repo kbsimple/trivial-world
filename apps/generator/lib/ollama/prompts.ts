@@ -112,12 +112,16 @@ Requirements:
 - Difficulty: Suitable for general knowledge enthusiasts
 - Format: Clear question with a single correct answer${sanitizedGuidance ? `\n- Additional guidance: ${sanitizedGuidance}` : ''}
 
+Question style guidelines:
+- MULTIPLE CHOICE for specific numbers: When the answer is a year, distance, duration, count, or other specific numeric value, embed A/B/C/D options in the question text so players have something to work with. Exception: skip multiple choice if the options would make the answer obvious, or if 3-4 plausible wrong answers don't exist. Include the correct letter in answerText (e.g. "1989 (B)").
+- LIGHT PUNS ALLOWED: For especially difficult questions, a subtle wordplay hint in the question text is acceptable — the question should still make sense without catching the pun.
+
 Respond with valid JSON matching this schema:
 {
   "id": "unique-url-safe-id",
   "category": "${category}",
-  "questionText": "The question text (10-500 characters)",
-  "answerText": "The correct answer (1-200 characters)",
+  "questionText": "The question text (10-500 characters). For numeric answers, include A/B/C/D options unless it would give away the answer.",
+  "answerText": "The correct answer (1-200 characters). If multiple choice, include the letter, e.g. '1989 (B)'.",
   "difficulty": "easy" | "medium" | "hard",
   "tidbits": "2-3 sentences of surprising or interesting context about the answer"
 }
