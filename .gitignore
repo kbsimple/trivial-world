@@ -48,3 +48,4 @@ coverage/
 # Playwright output (local only)
 playwright-report/
 test-results/
+apps/mobile/node_modules
