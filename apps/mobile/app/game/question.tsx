@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
 import { useRouter } from 'expo-router';
 import { useGameStore } from '../../stores/gameStore';
@@ -8,14 +8,10 @@ import { AnswerButtons } from '../../components/AnswerButtons';
 import { PlayerIndicator } from '../../components/PlayerIndicator';
 
 /**
- * Question screen
- * Displays current question for game conductor to read aloud
+ * Question screen — v4.0 Simplified Gameplay
  *
- * Per D-14: Minimal chrome - no scores, no player list, no board
- * Per D-15: Conductor mode implicit (person holding phone)
- * Per D-16: Auto-advance after marking to next player
- * Per LOOP-04: Advance turn after question
- * Per LOOP-05: Turn cycling through all participants
+ * Shows championship banner when the active player is in championship mode (SIMP-09).
+ * After marking: navigates to /game/results on win, /game/turn otherwise.
  */
 export default function QuestionScreen() {
   const theme = useTheme();
@@ -28,34 +24,28 @@ export default function QuestionScreen() {
     currentCategory,
     questionNumber,
     currentPlayerIndex,
+    isChampionshipMode,
   } = useGameStore();
   const { players } = usePlayerStore();
 
-  // Get current player for indicator
   const currentPlayer = players[currentPlayerIndex];
-
-  // Default category to blue if no question yet
   const category = currentCategory || currentQuestion?.category || 'blue';
+  const inChampionship = isChampionshipMode[currentPlayerIndex] ?? false;
 
-  // Handle answer marking
   const handleMarkAnswer = (correct: boolean) => {
-    // Mark the answer (resets answerRevealed, increments questionNumber)
     markAnswer(correct);
-
-    // Check if game finished after marking
     setTimeout(() => {
-      const currentPhase = useGameStore.getState().phase;
-      if (currentPhase === 'finished') {
+      const phase = useGameStore.getState().phase;
+      if (phase === 'finished') {
         router.replace('/game/results');
       } else {
-        router.replace('/game/roll');
+        router.replace('/game/turn');
       }
     }, 600);
   };
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background?.val as string }]}>
-      {/* Player indicator at top - D-17 */}
       {currentPlayer && (
         <View style={styles.playerIndicator}>
           <PlayerIndicator
@@ -65,7 +55,13 @@ export default function QuestionScreen() {
         </View>
       )}
 
-      {/* Question card in center - D-09, D-10, D-11, D-12 */}
+      {/* Championship banner — SIMP-09 */}
+      {inChampionship && (
+        <View style={styles.championshipBanner}>
+          <Text style={styles.championshipText}>🏆 Championship Question</Text>
+        </View>
+      )}
+
       <View style={styles.questionContainer}>
         {currentQuestion ? (
           <QuestionCard
@@ -90,7 +86,6 @@ export default function QuestionScreen() {
         )}
       </View>
 
-      {/* Answer buttons at bottom - D-13, D-20 */}
       <View style={styles.answerButtons}>
         <AnswerButtons
           visible={answerRevealed}
@@ -109,6 +104,16 @@ const styles = StyleSheet.create({
   playerIndicator: {
     alignItems: 'center',
     paddingTop: 8,
+  },
+  championshipBanner: {
+    alignItems: 'center',
+    paddingVertical: 8,
+    marginTop: 4,
+  },
+  championshipText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#FFD700',
   },
   questionContainer: {
     flex: 1,

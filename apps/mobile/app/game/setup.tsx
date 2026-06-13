@@ -107,7 +107,7 @@ export default function SetupScreen() {
     }
 
     startGame();
-    router.replace('/game/roll');
+    router.replace('/game/turn');
   };
 
   return (

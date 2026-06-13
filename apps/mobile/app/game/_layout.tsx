@@ -68,8 +68,7 @@ export default function GameLayout() {
         }}
       >
         <Stack.Screen name="setup" />
-        <Stack.Screen name="roll" />
-        <Stack.Screen name="move" />
+        <Stack.Screen name="turn" />
         <Stack.Screen name="question" />
         <Stack.Screen name="results" options={{ headerLeft: () => null }} />
       </Stack>

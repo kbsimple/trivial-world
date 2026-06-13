@@ -2,70 +2,56 @@ import { PlayerColor } from '../constants/categories';
 import { Player } from './player';
 
 /**
- * Game phase state machine
- * Valid transitions defined in VALID_TRANSITIONS
+ * Game phase state machine — v4.0 Simplified Gameplay
+ *
+ * Flow: setup → selecting (pick a category) → answering → back to selecting
+ * Streak: correct answer = same player selects next category
+ *         incorrect answer = next player's turn
+ * Championship: all 6 categories complete → isChampionshipMode flag set;
+ *               correct championship answer wins the game
  */
 export type GamePhase =
   | 'setup'
-  | 'rolling'
-  | 'moving'
+  | 'selecting'
   | 'answering'
-  | 'scoring'
   | 'finished';
 
-/**
- * Valid phase transitions
- * Ensures game progresses in correct order
- * SCOR-03: 'scoring' can transition to 'finished' on win
- */
 export const VALID_TRANSITIONS: Record<GamePhase, GamePhase[]> = {
-  setup: ['rolling'],
-  rolling: ['moving'],
-  moving: ['answering'],
-  answering: ['scoring'],
-  scoring: ['rolling', 'finished'], // Can go to finished on win
+  setup: ['selecting'],
+  selecting: ['answering'],
+  answering: ['selecting', 'finished'],
   finished: [],
 };
 
 /**
- * Game state interface
- * Persisted to AsyncStorage via Zustand middleware
+ * Game state — persisted via platformStorage (AsyncStorage mobile, sessionStorage web)
  */
 export interface GameState {
-  /** Current phase in game lifecycle */
   phase: GamePhase;
-  /** Index of current player in players array */
   currentPlayerIndex: number;
-  /** Current question number (increments each turn) */
   questionNumber: number;
-  /** Whether answer is currently visible */
   answerRevealed: boolean;
-  /** Result of die roll (1-6) or null if not rolled yet */
-  dieResult: number | null;
-  /** Whether current question is a center question (win attempt) - SCOR-03 */
-  isCenterQuestion: boolean;
-  /** Player who won (null if game ongoing) - SCOR-03 */
+  /** Categories each player has answered correctly, indexed by player order — SIMP-02 */
+  completedCategories: PlayerColor[][];
+  /** Whether each player has all 6 done and is in championship mode — SIMP-08 */
+  isChampionshipMode: boolean[];
+  /** Player who won (null if game ongoing) */
   winner: Player | null;
 
   // Actions
-  /** Start game from setup phase */
   startGame: () => void;
-  /** Move to next turn */
   nextTurn: () => void;
-  /** Reveal the answer */
   revealAnswer: () => void;
-  /** Mark answer as correct or incorrect */
   markAnswer: (correct: boolean) => void;
 }
 
 /**
- * Category type derived from Trivial World categories
- * Maps to player colors (blue, pink, yellow, purple, green, orange)
+ * Category type alias — maps to player colors
  */
 export type Category = PlayerColor;
 
 /**
- * Question interface
+ * Question interface (local UI type)
  */
 export interface Question {
   id: string;

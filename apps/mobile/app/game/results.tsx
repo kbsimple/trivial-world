@@ -3,77 +3,92 @@ import { useTheme } from 'tamagui';
 import { useRouter } from 'expo-router';
 import { useGameStore } from '../../stores/gameStore';
 import { usePlayerStore } from '../../stores/playerStore';
-import { PlayerScoreCard } from '../../components/PlayerScoreCard';
+import { CATEGORY_COLORS, CATEGORY_NAMES, PLAYER_COLORS, PlayerColor } from '../../constants/categories';
 
 /**
- * Results Screen
- * Displays final scores and winner when game ends
+ * Results Screen — v4.0 Simplified Gameplay
  *
- * Per SCOR-04:
- * - Shows all players sorted by wedge count
- * - Highlights winner prominently
- * - Displays total questions asked
- * - New Game button returns to setup
- *
- * Per D-15: Conductor mode implicit (person holding phone)
+ * Shows winner and each player's category completion at game end.
+ * No wedge count — progress is shown as colored category dots.
  */
 export default function ResultsScreen() {
   const theme = useTheme();
   const router = useRouter();
-  const { winner, questionNumber } = useGameStore();
+  const { winner, questionNumber, completedCategories, resetGame } = useGameStore();
   const { players, resetPlayers } = usePlayerStore();
 
-  // Sort players by wedge count (highest first)
-  const sortedPlayers = [...players].sort(
-    (a, b) => b.wedges.length - a.wedges.length
-  );
-
-  // Calculate total questions asked (questionNumber - 1 because it increments after each)
   const totalQuestions = questionNumber > 1 ? questionNumber - 1 : 0;
+  const textColor = theme.color?.val as string || '#ffffff';
+  const bgColor = theme.background?.val as string || '#1a1a2e';
 
-  // Handle new game
   const handleNewGame = () => {
-    // Reset game state
-    useGameStore.getState().transitionTo('setup');
-
-    // Reset players (clear wedges, keep names)
+    resetGame();
     resetPlayers();
-
-    // Navigate to setup
     router.replace('/');
   };
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.background?.val as string || '#1a1a2e' }]}>
-      {/* Header: Winner announcement */}
+    <View style={[styles.container, { backgroundColor: bgColor }]}>
       <View style={styles.header}>
-        <Text style={[styles.title, { color: theme.color?.val as string || '#ffffff' }]}>
-          {winner ? `${winner.name} Wins!` : 'Game Complete'}
+        <Text style={[styles.title, { color: textColor }]}>
+          {winner ? `${winner.name} Wins! 🏆` : 'Game Complete'}
         </Text>
-        <Text style={[styles.subtitle, { color: theme.color?.val as string || '#ffffff' }]}>
+        <Text style={[styles.subtitle, { color: textColor }]}>
           {totalQuestions} questions asked
         </Text>
       </View>
 
-      {/* Player scores sorted by wedge count */}
       <ScrollView style={styles.scores}>
-        {sortedPlayers.map((player, index) => (
-          <PlayerScoreCard
-            key={player.id}
-            player={player}
-            rank={index + 1}
-            isWinner={winner?.id === player.id}
-          />
-        ))}
+        {players.map((player, idx) => {
+          const completed: PlayerColor[] = completedCategories[idx] ?? [];
+          const isWinner = winner?.id === player.id;
+          return (
+            <View
+              key={player.id}
+              style={[
+                styles.playerCard,
+                isWinner && styles.playerCardWinner,
+              ]}
+            >
+              <View style={styles.playerRow}>
+                <View style={[styles.colorDot, { backgroundColor: CATEGORY_COLORS[player.color] }]} />
+                <Text style={[styles.playerName, { color: textColor }]}>
+                  {player.name}
+                  {isWinner ? ' 🏆' : ''}
+                </Text>
+                <Text style={[styles.categoryCount, { color: textColor }]}>
+                  {completed.length}/6
+                </Text>
+              </View>
+              <View style={styles.categoryDots}>
+                {PLAYER_COLORS.map((c) => (
+                  <View
+                    key={c}
+                    style={[
+                      styles.categoryDot,
+                      {
+                        backgroundColor: CATEGORY_COLORS[c],
+                        opacity: completed.includes(c) ? 1 : 0.2,
+                      },
+                    ]}
+                  />
+                ))}
+              </View>
+              <View style={styles.categoryLabels}>
+                {PLAYER_COLORS.map((c) => (
+                  <Text key={c} style={styles.categoryLabel} numberOfLines={1}>
+                    {CATEGORY_NAMES[c].split(' ')[0]}
+                  </Text>
+                ))}
+              </View>
+            </View>
+          );
+        })}
       </ScrollView>
 
-      {/* New Game button */}
       <View style={styles.actions}>
         <Pressable
-          style={[
-            styles.button,
-            { backgroundColor: theme.accent?.val as string || '#4CAF50' },
-          ]}
+          style={[styles.button, { backgroundColor: theme.accent?.val as string || '#4CAF50' }]}
           onPress={handleNewGame}
         >
           <Text style={styles.buttonText}>New Game</Text>
@@ -84,31 +99,44 @@ export default function ResultsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  container: { flex: 1, padding: 16 },
+  header: { alignItems: 'center', paddingVertical: 24 },
+  title: { fontSize: 32, fontWeight: '700', textAlign: 'center' },
+  subtitle: { fontSize: 16, marginTop: 8, opacity: 0.7 },
+  scores: { flex: 1 },
+  playerCard: {
+    borderRadius: 12,
     padding: 16,
+    marginBottom: 12,
+    backgroundColor: 'rgba(255,255,255,0.07)',
   },
-  header: {
+  playerCardWinner: {
+    backgroundColor: 'rgba(255,215,0,0.12)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,215,0,0.4)',
+  },
+  playerRow: {
+    flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 24,
+    marginBottom: 10,
   },
-  title: {
-    fontSize: 32,
-    fontWeight: '700',
-    textAlign: 'center',
+  colorDot: { width: 14, height: 14, borderRadius: 7, marginRight: 10 },
+  playerName: { flex: 1, fontSize: 18, fontWeight: '600' },
+  categoryCount: { fontSize: 14, opacity: 0.7 },
+  categoryDots: {
+    flexDirection: 'row',
+    gap: 8,
+    justifyContent: 'space-between',
+    marginBottom: 4,
   },
-  subtitle: {
-    fontSize: 16,
-    marginTop: 8,
-    opacity: 0.7,
+  categoryDot: { width: 28, height: 28, borderRadius: 14 },
+  categoryLabels: {
+    flexDirection: 'row',
+    gap: 8,
+    justifyContent: 'space-between',
   },
-  scores: {
-    flex: 1,
-  },
-  actions: {
-    paddingVertical: 16,
-    alignItems: 'center',
-  },
+  categoryLabel: { width: 28, fontSize: 9, textAlign: 'center', color: '#888' },
+  actions: { paddingVertical: 16, alignItems: 'center' },
   button: {
     paddingHorizontal: 32,
     paddingVertical: 16,
@@ -116,9 +144,5 @@ const styles = StyleSheet.create({
     minWidth: 200,
     alignItems: 'center',
   },
-  buttonText: {
-    color: '#ffffff',
-    fontSize: 18,
-    fontWeight: '600',
-  },
+  buttonText: { color: '#ffffff', fontSize: 18, fontWeight: '600' },
 });

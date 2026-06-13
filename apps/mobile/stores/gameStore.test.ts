@@ -1,15 +1,17 @@
 /**
- * Tests for gameStore
- * Tests game phase transitions, turn management, scoring, and win conditions
+ * Tests for gameStore — v4.0 Simplified Gameplay
+ *
+ * Covers: startGame, selectCategory, revealAnswer, markAnswer (streak mechanic,
+ * championship activation, championship win), nextTurn, transitionTo,
+ * VALID_TRANSITIONS, and resetGame.
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { useGameStore } from './gameStore';
 import { GamePhase, VALID_TRANSITIONS } from '../types/game';
 import { PlayerColor } from '../constants/categories';
 import { Player } from '../types/player';
 
-// Mock dependencies
 vi.mock('./questionStore', () => ({
   useQuestionStore: {
     getState: vi.fn(() => ({
@@ -24,9 +26,6 @@ vi.mock('./playerStore', () => ({
   usePlayerStore: {
     getState: vi.fn(() => ({
       players: [],
-      awardWedge: vi.fn(),
-      resetWedges: vi.fn(),
-      hasAllWedges: vi.fn(() => false),
     })),
   },
 }));
@@ -47,15 +46,15 @@ vi.mock('@react-native-async-storage/async-storage', () => ({
   },
 }));
 
-// Import mocked modules to get references
 import { useQuestionStore } from './questionStore';
 import { usePlayerStore } from './playerStore';
 import { usePackStore } from './packStore';
 
-// Helper to create mock question
+const ALL_CATEGORIES: PlayerColor[] = ['blue', 'pink', 'yellow', 'purple', 'green', 'orange'];
+
 function createMockQuestion(category: PlayerColor = 'blue') {
   return {
-    id: `question-${Date.now()}`,
+    id: `q-${category}-${Math.random()}`,
     category,
     questionText: 'Test question?',
     answerText: 'Test answer',
@@ -63,23 +62,32 @@ function createMockQuestion(category: PlayerColor = 'blue') {
   };
 }
 
-// Helper to create mock player
-function createMockPlayer(index: number, wedges: PlayerColor[] = []): Player {
+function createMockPlayer(index: number): Player {
   const colors: PlayerColor[] = ['blue', 'pink', 'yellow', 'purple', 'green', 'orange'];
   return {
     id: `player-${index}`,
     name: `Player ${index + 1}`,
     color: colors[index] || 'blue',
-    wedges,
+    wedges: [],
   };
+}
+
+function mockQuestionStore(overrides: Record<string, unknown> = {}) {
+  vi.mocked(useQuestionStore.getState).mockReturnValue({
+    selectQuestion: vi.fn(),
+    markAsked: vi.fn(),
+    resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
+    ...overrides,
+  } as any);
+}
+
+function mockPlayerStore(players: Player[]) {
+  vi.mocked(usePlayerStore.getState).mockReturnValue({ players } as any);
 }
 
 describe('useGameStore', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    vi.useFakeTimers();
-
-    // Reset store to initial state
     useGameStore.setState({
       phase: 'setup',
       currentPlayerIndex: 0,
@@ -87,911 +95,669 @@ describe('useGameStore', () => {
       answerRevealed: false,
       currentQuestion: null,
       currentCategory: null,
-      dieResult: null,
-      isCenterQuestion: false,
+      completedCategories: [],
+      isChampionshipMode: [],
       winner: null,
       activePackId: null,
     });
   });
 
-  afterEach(() => {
-    vi.useRealTimers();
-    vi.restoreAllMocks();
-  });
-
+  // ─────────────────────────────────────────────────────────
   describe('initial state', () => {
     it('has correct default values', () => {
       const state = useGameStore.getState();
-
       expect(state.phase).toBe('setup');
       expect(state.currentPlayerIndex).toBe(0);
       expect(state.questionNumber).toBe(1);
       expect(state.answerRevealed).toBe(false);
       expect(state.currentQuestion).toBeNull();
       expect(state.currentCategory).toBeNull();
-      expect(state.dieResult).toBeNull();
-      expect(state.isCenterQuestion).toBe(false);
+      expect(state.completedCategories).toEqual([]);
+      expect(state.isChampionshipMode).toEqual([]);
       expect(state.winner).toBeNull();
       expect(state.activePackId).toBeNull();
     });
 
     it('has all required action methods', () => {
       const state = useGameStore.getState();
-
       expect(typeof state.startGame).toBe('function');
       expect(typeof state.nextTurn).toBe('function');
       expect(typeof state.revealAnswer).toBe('function');
       expect(typeof state.markAnswer).toBe('function');
       expect(typeof state.transitionTo).toBe('function');
       expect(typeof state.selectCategory).toBe('function');
-      expect(typeof state.rollDie).toBe('function');
-      expect(typeof state.startCenterQuestion).toBe('function');
+      expect(typeof state.resetGame).toBe('function');
     });
   });
 
+  // ─────────────────────────────────────────────────────────
   describe('startGame', () => {
-    it('transitions to rolling phase when active pack exists', async () => {
-      const mockQuestion = createMockQuestion('blue');
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(mockQuestion),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      vi.mocked(usePackStore.getState).mockReturnValue({
-        activePackId: 'test-pack-id',
-      } as any);
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players: [createMockPlayer(0)],
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
+    it('transitions to selecting phase when pack and players exist', async () => {
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id' } as any);
+      mockPlayerStore([createMockPlayer(0)]);
+      mockQuestionStore();
 
       await useGameStore.getState().startGame();
 
       const state = useGameStore.getState();
-      expect(state.phase).toBe('rolling');
+      expect(state.phase).toBe('selecting');
       expect(state.currentPlayerIndex).toBe(0);
       expect(state.questionNumber).toBe(1);
       expect(state.answerRevealed).toBe(false);
-      expect(state.dieResult).toBeNull();
-      expect(state.isCenterQuestion).toBe(false);
       expect(state.winner).toBeNull();
       expect(state.activePackId).toBe('test-pack-id');
     });
 
-    it('resets asked questions via questionStore', async () => {
+    it('initializes one completedCategories array per player', async () => {
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id' } as any);
+      mockPlayerStore([createMockPlayer(0), createMockPlayer(1), createMockPlayer(2)]);
+      mockQuestionStore();
+
+      await useGameStore.getState().startGame();
+
+      const { completedCategories } = useGameStore.getState();
+      expect(completedCategories).toHaveLength(3);
+      completedCategories.forEach(arr => expect(arr).toEqual([]));
+    });
+
+    it('initializes isChampionshipMode as all-false per player', async () => {
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id' } as any);
+      mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
+      mockQuestionStore();
+
+      await useGameStore.getState().startGame();
+
+      const { isChampionshipMode } = useGameStore.getState();
+      expect(isChampionshipMode).toHaveLength(2);
+      isChampionshipMode.forEach(val => expect(val).toBe(false));
+    });
+
+    it('resets asked questions', async () => {
       const resetAskedQuestions = vi.fn().mockResolvedValue(undefined);
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(createMockQuestion()),
-        markAsked: vi.fn(),
-        resetAskedQuestions,
-      } as any);
-
-      vi.mocked(usePackStore.getState).mockReturnValue({
-        activePackId: 'test-pack-id',
-      } as any);
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players: [createMockPlayer(0)],
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id' } as any);
+      mockPlayerStore([createMockPlayer(0)]);
+      mockQuestionStore({ resetAskedQuestions });
 
       await useGameStore.getState().startGame();
 
       expect(resetAskedQuestions).toHaveBeenCalled();
     });
 
-    it('resets wedges for all players', async () => {
-      const resetWedges = vi.fn();
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players: [createMockPlayer(0)],
-        awardWedge: vi.fn(),
-        resetWedges,
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(createMockQuestion()),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      vi.mocked(usePackStore.getState).mockReturnValue({
-        activePackId: 'test-pack-id',
-      } as any);
+    it('does not pre-load a question (question loaded when category is chosen)', async () => {
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id' } as any);
+      mockPlayerStore([createMockPlayer(0)]);
+      mockQuestionStore();
 
       await useGameStore.getState().startGame();
 
-      expect(resetWedges).toHaveBeenCalled();
+      expect(useGameStore.getState().currentQuestion).toBeNull();
+      expect(useGameStore.getState().currentCategory).toBeNull();
     });
 
-    it('does not start game without active pack', async () => {
+    it('does not start without an active pack', async () => {
       const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-
-      vi.mocked(usePackStore.getState).mockReturnValue({
-        activePackId: null,
-      } as any);
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: null } as any);
 
       await useGameStore.getState().startGame();
 
       expect(consoleSpy).toHaveBeenCalledWith('No active pack selected');
       expect(useGameStore.getState().phase).toBe('setup');
-
       consoleSpy.mockRestore();
     });
 
-    it('sets current question from selectQuestion result', async () => {
-      const mockQuestion = createMockQuestion('pink');
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(mockQuestion),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      vi.mocked(usePackStore.getState).mockReturnValue({
-        activePackId: 'test-pack-id',
-      } as any);
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players: [createMockPlayer(0)],
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
+    it('does not start with no players', async () => {
+      const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id' } as any);
+      mockPlayerStore([]);
 
       await useGameStore.getState().startGame();
 
-      const state = useGameStore.getState();
-      expect(state.currentQuestion).toEqual(mockQuestion);
-      expect(state.currentCategory).toBe('pink');
-    });
-  });
-
-  describe('rollDie', () => {
-    it('returns a number between 1 and 6', () => {
-      const store = useGameStore.getState();
-
-      // Test multiple rolls
-      for (let i = 0; i < 100; i++) {
-        const result = store.rollDie();
-        expect(result).toBeGreaterThanOrEqual(1);
-        expect(result).toBeLessThanOrEqual(6);
-        expect(Number.isInteger(result)).toBe(true);
-      }
-    });
-
-    it('updates dieResult in state', () => {
-      const store = useGameStore.getState();
-
-      expect(useGameStore.getState().dieResult).toBeNull();
-
-      const result = store.rollDie();
-
-      expect(useGameStore.getState().dieResult).toBe(result);
-    });
-  });
-
-  describe('nextTurn', () => {
-    it('cycles to next player index', async () => {
-      const players = [createMockPlayer(0), createMockPlayer(1), createMockPlayer(2)];
-      const mockQuestion = createMockQuestion('blue');
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(mockQuestion),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      // Set initial state
-      useGameStore.setState({ currentPlayerIndex: 0 });
-
-      await useGameStore.getState().nextTurn();
-
-      expect(useGameStore.getState().currentPlayerIndex).toBe(1);
-    });
-
-    it('wraps around to first player after last player', async () => {
-      const players = [createMockPlayer(0), createMockPlayer(1), createMockPlayer(2)];
-      const mockQuestion = createMockQuestion('blue');
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(mockQuestion),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      // Start at last player
-      useGameStore.setState({ currentPlayerIndex: 2 });
-
-      await useGameStore.getState().nextTurn();
-
-      expect(useGameStore.getState().currentPlayerIndex).toBe(0);
-    });
-
-    it('increments question number', async () => {
-      const players = [createMockPlayer(0), createMockPlayer(1)];
-      const mockQuestion = createMockQuestion('blue');
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(mockQuestion),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      useGameStore.setState({ questionNumber: 5 });
-
-      await useGameStore.getState().nextTurn();
-
-      expect(useGameStore.getState().questionNumber).toBe(6);
-    });
-
-    it('resets dieResult and answerRevealed', async () => {
-      const players = [createMockPlayer(0), createMockPlayer(1)];
-      const mockQuestion = createMockQuestion('blue');
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(mockQuestion),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      useGameStore.setState({
-        dieResult: 5,
-        answerRevealed: true,
-      });
-
-      await useGameStore.getState().nextTurn();
-
-      expect(useGameStore.getState().dieResult).toBeNull();
-      expect(useGameStore.getState().answerRevealed).toBe(false);
-    });
-
-    it('sets phase to rolling', async () => {
-      const players = [createMockPlayer(0), createMockPlayer(1)];
-      const mockQuestion = createMockQuestion('blue');
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(mockQuestion),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      useGameStore.setState({ phase: 'scoring' });
-
-      await useGameStore.getState().nextTurn();
-
-      expect(useGameStore.getState().phase).toBe('rolling');
-    });
-
-    it('resets isCenterQuestion flag', async () => {
-      const players = [createMockPlayer(0), createMockPlayer(1)];
-      const mockQuestion = createMockQuestion('blue');
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(mockQuestion),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      useGameStore.setState({ isCenterQuestion: true });
-
-      await useGameStore.getState().nextTurn();
-
-      expect(useGameStore.getState().isCenterQuestion).toBe(false);
-    });
-
-    it('handles empty players array gracefully', async () => {
-      const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players: [],
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      await useGameStore.getState().nextTurn();
-
-      expect(consoleSpy).toHaveBeenCalledWith('nextTurn called with no players');
+      expect(consoleSpy).toHaveBeenCalledWith('No players added');
       expect(useGameStore.getState().phase).toBe('setup');
-
       consoleSpy.mockRestore();
     });
+  });
 
-    it('uses current category or defaults to blue', async () => {
-      const players = [createMockPlayer(0), createMockPlayer(1)];
+  // ─────────────────────────────────────────────────────────
+  describe('selectCategory', () => {
+    it('calls selectQuestion with the chosen category', async () => {
       const mockQuestion = createMockQuestion('pink');
-
       const selectQuestion = vi.fn().mockResolvedValue(mockQuestion);
+      mockQuestionStore({ selectQuestion });
 
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion,
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      // No current category set
-      useGameStore.setState({ currentCategory: null });
-
-      await useGameStore.getState().nextTurn();
-
-      // Should default to 'blue'
-      expect(selectQuestion).toHaveBeenCalledWith('blue');
-
-      // Now with a category set
-      selectQuestion.mockClear();
-      useGameStore.setState({ currentCategory: 'pink' });
-
-      await useGameStore.getState().nextTurn();
+      await useGameStore.getState().selectCategory('pink');
 
       expect(selectQuestion).toHaveBeenCalledWith('pink');
     });
+
+    it('sets currentCategory, currentQuestion, and phase to answering', async () => {
+      const mockQuestion = createMockQuestion('yellow');
+      mockQuestionStore({ selectQuestion: vi.fn().mockResolvedValue(mockQuestion) });
+
+      await useGameStore.getState().selectCategory('yellow');
+
+      const state = useGameStore.getState();
+      expect(state.currentCategory).toBe('yellow');
+      expect(state.currentQuestion).toEqual(mockQuestion);
+      expect(state.phase).toBe('answering');
+    });
+
+    it('handles null question result gracefully', async () => {
+      mockQuestionStore({ selectQuestion: vi.fn().mockResolvedValue(null) });
+
+      await useGameStore.getState().selectCategory('green');
+
+      const state = useGameStore.getState();
+      expect(state.currentCategory).toBe('green');
+      expect(state.currentQuestion).toBeNull();
+      expect(state.phase).toBe('answering');
+    });
   });
 
+  // ─────────────────────────────────────────────────────────
   describe('revealAnswer', () => {
     it('sets answerRevealed to true', () => {
       useGameStore.setState({ answerRevealed: false });
-
       useGameStore.getState().revealAnswer();
-
       expect(useGameStore.getState().answerRevealed).toBe(true);
     });
 
-    it('does not toggle (idempotent)', () => {
+    it('is idempotent when already revealed', () => {
       useGameStore.setState({ answerRevealed: true });
-
       useGameStore.getState().revealAnswer();
-
       expect(useGameStore.getState().answerRevealed).toBe(true);
     });
   });
 
+  // ─────────────────────────────────────────────────────────
   describe('markAnswer', () => {
-    it('marks question as asked', () => {
-      const mockQuestion = createMockQuestion('blue');
-      const players = [createMockPlayer(0)];
-
+    it('calls markAsked for the current question', () => {
       const markAsked = vi.fn();
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn(),
-        markAsked,
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
+      const mockQuestion = createMockQuestion('blue');
+      mockPlayerStore([createMockPlayer(0)]);
+      mockQuestionStore({ markAsked });
 
       useGameStore.setState({
         currentQuestion: mockQuestion,
         currentPlayerIndex: 0,
-        isCenterQuestion: false,
+        completedCategories: [[]],
+        isChampionshipMode: [false],
+        questionNumber: 1,
       });
 
       useGameStore.getState().markAnswer(false);
-
       expect(markAsked).toHaveBeenCalledWith(mockQuestion.id);
     });
 
-    it('awards wedge on correct answer (not center question)', () => {
-      const mockQuestion = createMockQuestion('blue');
-      const players = [createMockPlayer(0)];
-
-      const awardWedge = vi.fn();
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge,
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn(),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
+    it('does not call markAsked when currentQuestion is null', () => {
+      const markAsked = vi.fn();
+      mockPlayerStore([createMockPlayer(0)]);
+      mockQuestionStore({ markAsked });
 
       useGameStore.setState({
-        currentQuestion: mockQuestion,
+        currentQuestion: null,
         currentPlayerIndex: 0,
-        isCenterQuestion: false,
+        completedCategories: [[]],
+        isChampionshipMode: [false],
+        questionNumber: 1,
       });
 
       useGameStore.getState().markAnswer(true);
-
-      expect(awardWedge).toHaveBeenCalledWith(players[0].id, 'blue');
+      expect(markAsked).not.toHaveBeenCalled();
     });
 
-    it('does not award wedge on incorrect answer', () => {
-      const mockQuestion = createMockQuestion('blue');
-      const players = [createMockPlayer(0)];
-
-      const awardWedge = vi.fn();
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge,
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn(),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      useGameStore.setState({
-        currentQuestion: mockQuestion,
-        currentPlayerIndex: 0,
-        isCenterQuestion: false,
-      });
-
-      useGameStore.getState().markAnswer(false);
-
-      expect(awardWedge).not.toHaveBeenCalled();
-    });
-
-    it('does not award wedge on center question even if correct', () => {
-      const mockQuestion = createMockQuestion('blue');
-      const players = [createMockPlayer(0)];
-
-      const awardWedge = vi.fn();
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge,
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn(),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      useGameStore.setState({
-        currentQuestion: mockQuestion,
-        currentPlayerIndex: 0,
-        isCenterQuestion: true,
-      });
-
+    it('returns early and leaves phase unchanged when players array is empty', () => {
+      mockPlayerStore([]);
+      useGameStore.setState({ phase: 'answering' });
       useGameStore.getState().markAnswer(true);
-
-      // Center questions don't award wedges
-      expect(awardWedge).not.toHaveBeenCalled();
+      expect(useGameStore.getState().phase).toBe('answering');
     });
 
-    it('triggers nextTurn after delay', async () => {
-      const mockQuestion = createMockQuestion('blue');
-      const players = [createMockPlayer(0), createMockPlayer(1)];
+    describe('correct answer — regular mode', () => {
+      it('adds the answered category to completedCategories', () => {
+        mockPlayerStore([createMockPlayer(0)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 0,
+          completedCategories: [[]],
+          isChampionshipMode: [false],
+          questionNumber: 1,
+        });
 
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
+        useGameStore.getState().markAnswer(true);
 
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(createMockQuestion()),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      useGameStore.setState({
-        currentQuestion: mockQuestion,
-        currentPlayerIndex: 0,
-        isCenterQuestion: false,
-        phase: 'scoring',
+        expect(useGameStore.getState().completedCategories[0]).toContain('blue');
       });
 
-      useGameStore.getState().markAnswer(false);
+      it('keeps the same player active (streak continues)', () => {
+        mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 0,
+          completedCategories: [[], []],
+          isChampionshipMode: [false, false],
+          questionNumber: 1,
+        });
 
-      // Before timeout
-      expect(useGameStore.getState().currentPlayerIndex).toBe(0);
+        useGameStore.getState().markAnswer(true);
 
-      // Advance timers by 500ms
-      vi.advanceTimersByTime(500);
-      await Promise.resolve();
+        const state = useGameStore.getState();
+        expect(state.currentPlayerIndex).toBe(0);
+        expect(state.phase).toBe('selecting');
+      });
+
+      it('clears currentQuestion, currentCategory, and answerRevealed', () => {
+        mockPlayerStore([createMockPlayer(0)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('yellow'),
+          currentCategory: 'yellow',
+          answerRevealed: true,
+          currentPlayerIndex: 0,
+          completedCategories: [[]],
+          isChampionshipMode: [false],
+          questionNumber: 1,
+        });
+
+        useGameStore.getState().markAnswer(true);
+
+        const state = useGameStore.getState();
+        expect(state.currentQuestion).toBeNull();
+        expect(state.currentCategory).toBeNull();
+        expect(state.answerRevealed).toBe(false);
+      });
+
+      it('increments questionNumber', () => {
+        mockPlayerStore([createMockPlayer(0)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 0,
+          completedCategories: [[]],
+          isChampionshipMode: [false],
+          questionNumber: 5,
+        });
+
+        useGameStore.getState().markAnswer(true);
+
+        expect(useGameStore.getState().questionNumber).toBe(6);
+      });
+
+      it('does not add the same category twice', () => {
+        mockPlayerStore([createMockPlayer(0)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 0,
+          completedCategories: [['blue']],
+          isChampionshipMode: [false],
+          questionNumber: 2,
+        });
+
+        useGameStore.getState().markAnswer(true);
+
+        const count = useGameStore.getState().completedCategories[0].filter(c => c === 'blue').length;
+        expect(count).toBe(1);
+      });
+
+      it('does not affect other players completedCategories', () => {
+        mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 0,
+          completedCategories: [[], ['pink']],
+          isChampionshipMode: [false, false],
+          questionNumber: 1,
+        });
+
+        useGameStore.getState().markAnswer(true);
+
+        expect(useGameStore.getState().completedCategories[1]).toEqual(['pink']);
+      });
+
+      it('sets isChampionshipMode when answering the 6th category', () => {
+        mockPlayerStore([createMockPlayer(0)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('orange'),
+          currentPlayerIndex: 0,
+          completedCategories: [['blue', 'pink', 'yellow', 'purple', 'green']],
+          isChampionshipMode: [false],
+          questionNumber: 6,
+        });
+
+        useGameStore.getState().markAnswer(true);
+
+        const state = useGameStore.getState();
+        expect(state.isChampionshipMode[0]).toBe(true);
+        expect(state.completedCategories[0]).toHaveLength(6);
+        expect(state.phase).toBe('selecting');
+      });
+
+      it('does not set isChampionshipMode for other players', () => {
+        mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('orange'),
+          currentPlayerIndex: 0,
+          completedCategories: [['blue', 'pink', 'yellow', 'purple', 'green'], ['blue']],
+          isChampionshipMode: [false, false],
+          questionNumber: 6,
+        });
+
+        useGameStore.getState().markAnswer(true);
+
+        expect(useGameStore.getState().isChampionshipMode[1]).toBe(false);
+      });
+    });
+
+    describe('correct answer — championship mode', () => {
+      it('sets phase to finished and records winner', () => {
+        const player0 = createMockPlayer(0);
+        mockPlayerStore([player0, createMockPlayer(1)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('purple'),
+          currentPlayerIndex: 0,
+          completedCategories: [ALL_CATEGORIES, []],
+          isChampionshipMode: [true, false],
+          questionNumber: 8,
+        });
+
+        useGameStore.getState().markAnswer(true);
+
+        const state = useGameStore.getState();
+        expect(state.phase).toBe('finished');
+        expect(state.winner).toEqual(player0);
+      });
+
+      it('clears activePackId on win', () => {
+        mockPlayerStore([createMockPlayer(0)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 0,
+          completedCategories: [ALL_CATEGORIES],
+          isChampionshipMode: [true],
+          questionNumber: 8,
+          activePackId: 'some-pack',
+        });
+
+        useGameStore.getState().markAnswer(true);
+
+        expect(useGameStore.getState().activePackId).toBeNull();
+      });
+
+      it('does not win when player is not in championship mode', () => {
+        mockPlayerStore([createMockPlayer(0)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 0,
+          completedCategories: [['blue', 'pink']],
+          isChampionshipMode: [false],
+          questionNumber: 3,
+        });
+
+        useGameStore.getState().markAnswer(true);
+
+        const state = useGameStore.getState();
+        expect(state.phase).toBe('selecting');
+        expect(state.winner).toBeNull();
+      });
+    });
+
+    describe('incorrect answer', () => {
+      it('advances to the next player', () => {
+        mockPlayerStore([createMockPlayer(0), createMockPlayer(1), createMockPlayer(2)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 0,
+          completedCategories: [[], [], []],
+          isChampionshipMode: [false, false, false],
+          questionNumber: 1,
+        });
+
+        useGameStore.getState().markAnswer(false);
+
+        const state = useGameStore.getState();
+        expect(state.currentPlayerIndex).toBe(1);
+        expect(state.phase).toBe('selecting');
+      });
+
+      it('wraps around from last player to first', () => {
+        mockPlayerStore([createMockPlayer(0), createMockPlayer(1), createMockPlayer(2)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 2,
+          completedCategories: [[], [], []],
+          isChampionshipMode: [false, false, false],
+          questionNumber: 5,
+        });
+
+        useGameStore.getState().markAnswer(false);
+
+        expect(useGameStore.getState().currentPlayerIndex).toBe(0);
+      });
+
+      it('does not add category to completedCategories', () => {
+        mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 0,
+          completedCategories: [[], []],
+          isChampionshipMode: [false, false],
+          questionNumber: 1,
+        });
+
+        useGameStore.getState().markAnswer(false);
+
+        expect(useGameStore.getState().completedCategories[0]).toEqual([]);
+      });
+
+      it('clears currentQuestion, currentCategory, and answerRevealed', () => {
+        mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('pink'),
+          currentCategory: 'pink',
+          answerRevealed: true,
+          currentPlayerIndex: 0,
+          completedCategories: [[], []],
+          isChampionshipMode: [false, false],
+          questionNumber: 2,
+        });
+
+        useGameStore.getState().markAnswer(false);
+
+        const state = useGameStore.getState();
+        expect(state.currentQuestion).toBeNull();
+        expect(state.currentCategory).toBeNull();
+        expect(state.answerRevealed).toBe(false);
+      });
+
+      it('does not trigger a win in championship mode on wrong answer', () => {
+        mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 0,
+          completedCategories: [ALL_CATEGORIES, []],
+          isChampionshipMode: [true, false],
+          questionNumber: 8,
+        });
+
+        useGameStore.getState().markAnswer(false);
+
+        const state = useGameStore.getState();
+        expect(state.phase).toBe('selecting');
+        expect(state.winner).toBeNull();
+        expect(state.currentPlayerIndex).toBe(1);
+      });
+
+      it('increments questionNumber', () => {
+        mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
+        mockQuestionStore();
+        useGameStore.setState({
+          currentQuestion: createMockQuestion('blue'),
+          currentPlayerIndex: 0,
+          completedCategories: [[], []],
+          isChampionshipMode: [false, false],
+          questionNumber: 3,
+        });
+
+        useGameStore.getState().markAnswer(false);
+
+        expect(useGameStore.getState().questionNumber).toBe(4);
+      });
+    });
+  });
+
+  // ─────────────────────────────────────────────────────────
+  describe('nextTurn', () => {
+    it('advances to next player', () => {
+      mockPlayerStore([createMockPlayer(0), createMockPlayer(1), createMockPlayer(2)]);
+      useGameStore.setState({ currentPlayerIndex: 0 });
+
+      useGameStore.getState().nextTurn();
 
       expect(useGameStore.getState().currentPlayerIndex).toBe(1);
     });
 
-    it('handles empty players array gracefully', () => {
-      const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    it('wraps around from last player to first', () => {
+      mockPlayerStore([createMockPlayer(0), createMockPlayer(1), createMockPlayer(2)]);
+      useGameStore.setState({ currentPlayerIndex: 2 });
 
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players: [],
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
+      useGameStore.getState().nextTurn();
 
-      useGameStore.getState().markAnswer(true);
-
-      expect(consoleSpy).toHaveBeenCalledWith('markAnswer called with no players');
-
-      consoleSpy.mockRestore();
+      expect(useGameStore.getState().currentPlayerIndex).toBe(0);
     });
-  });
 
-  describe('win condition (center question)', () => {
-    it('sets winner and finished phase on correct center question with all wedges', () => {
-      const mockQuestion = createMockQuestion('blue');
-      const allWedges: PlayerColor[] = ['blue', 'pink', 'yellow', 'purple', 'green', 'orange'];
-      const players = [createMockPlayer(0, allWedges)];
+    it('sets phase to selecting', () => {
+      mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
+      useGameStore.setState({ phase: 'answering', currentPlayerIndex: 0 });
 
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => true),
-      } as any);
+      useGameStore.getState().nextTurn();
 
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn(),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
+      expect(useGameStore.getState().phase).toBe('selecting');
+    });
 
+    it('clears currentQuestion, currentCategory, and answerRevealed', () => {
+      mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
       useGameStore.setState({
-        currentQuestion: mockQuestion,
+        currentQuestion: createMockQuestion('blue'),
+        currentCategory: 'blue',
+        answerRevealed: true,
         currentPlayerIndex: 0,
-        isCenterQuestion: true,
-        phase: 'answering',
       });
 
-      useGameStore.getState().markAnswer(true);
+      useGameStore.getState().nextTurn();
 
       const state = useGameStore.getState();
-      expect(state.phase).toBe('finished');
-      expect(state.winner).toEqual(players[0]);
-      expect(state.activePackId).toBeNull();
+      expect(state.currentQuestion).toBeNull();
+      expect(state.currentCategory).toBeNull();
+      expect(state.answerRevealed).toBe(false);
     });
 
-    it('continues game on correct center question without all wedges', async () => {
-      const mockQuestion = createMockQuestion('blue');
-      const players = [createMockPlayer(0, ['blue', 'pink'])]; // Only 2 wedges
+    it('handles empty players without throwing', () => {
+      mockPlayerStore([]);
+      const phaseBefore = useGameStore.getState().phase;
 
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(createMockQuestion()),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      useGameStore.setState({
-        currentQuestion: mockQuestion,
-        currentPlayerIndex: 0,
-        isCenterQuestion: true,
-        phase: 'answering',
-      });
-
-      useGameStore.getState().markAnswer(true);
-
-      // Should not be finished
-      expect(useGameStore.getState().phase).not.toBe('finished');
-      expect(useGameStore.getState().winner).toBeNull();
-
-      // After timeout, should advance to next turn
-      vi.advanceTimersByTime(500);
-      await Promise.resolve();
-
-      expect(useGameStore.getState().phase).toBe('rolling');
-    });
-
-    it('continues game on incorrect center question', async () => {
-      const mockQuestion = createMockQuestion('blue');
-      const allWedges: PlayerColor[] = ['blue', 'pink', 'yellow', 'purple', 'green', 'orange'];
-      const players = [createMockPlayer(0, allWedges)];
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => true),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(createMockQuestion()),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      useGameStore.setState({
-        currentQuestion: mockQuestion,
-        currentPlayerIndex: 0,
-        isCenterQuestion: true,
-        phase: 'answering',
-      });
-
-      useGameStore.getState().markAnswer(false);
-
-      // Should not be finished
-      expect(useGameStore.getState().phase).not.toBe('finished');
-      expect(useGameStore.getState().winner).toBeNull();
+      expect(() => useGameStore.getState().nextTurn()).not.toThrow();
+      expect(useGameStore.getState().phase).toBe(phaseBefore);
     });
   });
 
+  // ─────────────────────────────────────────────────────────
   describe('transitionTo', () => {
-    it('transitions to valid next phase', () => {
+    it('transitions to a valid next phase', () => {
       useGameStore.setState({ phase: 'setup' });
-
-      useGameStore.getState().transitionTo('rolling');
-
-      expect(useGameStore.getState().phase).toBe('rolling');
+      useGameStore.getState().transitionTo('selecting');
+      expect(useGameStore.getState().phase).toBe('selecting');
     });
 
-    it('rejects invalid transition', () => {
+    it('rejects an invalid transition and logs an error', () => {
       const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-
       useGameStore.setState({ phase: 'setup' });
 
-      // setup -> answering is invalid
-      useGameStore.getState().transitionTo('answering');
+      useGameStore.getState().transitionTo('answering'); // setup → answering is invalid
 
       expect(consoleSpy).toHaveBeenCalled();
-      expect(useGameStore.getState().phase).toBe('setup'); // Unchanged
-
+      expect(useGameStore.getState().phase).toBe('setup');
       consoleSpy.mockRestore();
     });
 
-    it('rejects transition from finished phase (no outgoing transitions)', () => {
+    it('rejects any transition from finished', () => {
       const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-
       useGameStore.setState({ phase: 'finished' });
 
       useGameStore.getState().transitionTo('setup');
 
       expect(consoleSpy).toHaveBeenCalled();
-      expect(useGameStore.getState().phase).toBe('finished'); // Unchanged
-
+      expect(useGameStore.getState().phase).toBe('finished');
       consoleSpy.mockRestore();
     });
   });
 
+  // ─────────────────────────────────────────────────────────
   describe('VALID_TRANSITIONS', () => {
-    it('allows setup -> rolling', () => {
-      expect(VALID_TRANSITIONS['setup']).toContain('rolling');
+    it('allows setup → selecting', () => {
+      expect(VALID_TRANSITIONS['setup']).toContain('selecting');
     });
 
-    it('allows rolling -> moving', () => {
-      expect(VALID_TRANSITIONS['rolling']).toContain('moving');
+    it('allows selecting → answering', () => {
+      expect(VALID_TRANSITIONS['selecting']).toContain('answering');
     });
 
-    it('allows moving -> answering', () => {
-      expect(VALID_TRANSITIONS['moving']).toContain('answering');
+    it('allows answering → selecting (player continues or turn passes)', () => {
+      expect(VALID_TRANSITIONS['answering']).toContain('selecting');
     });
 
-    it('allows answering -> scoring', () => {
-      expect(VALID_TRANSITIONS['answering']).toContain('scoring');
+    it('allows answering → finished (championship win)', () => {
+      expect(VALID_TRANSITIONS['answering']).toContain('finished');
     });
 
-    it('allows scoring -> rolling (continue game)', () => {
-      expect(VALID_TRANSITIONS['scoring']).toContain('rolling');
-    });
-
-    it('allows scoring -> finished (win condition)', () => {
-      expect(VALID_TRANSITIONS['scoring']).toContain('finished');
-    });
-
-    it('has no transitions from finished', () => {
+    it('has no outgoing transitions from finished', () => {
       expect(VALID_TRANSITIONS['finished']).toEqual([]);
     });
   });
 
-  describe('selectCategory', () => {
-    it('selects question for given category', async () => {
-      const mockQuestion = createMockQuestion('pink');
-
-      const selectQuestion = vi.fn().mockResolvedValue(mockQuestion);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion,
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      await useGameStore.getState().selectCategory('pink');
-
-      expect(selectQuestion).toHaveBeenCalledWith('pink');
-      expect(useGameStore.getState().currentCategory).toBe('pink');
-      expect(useGameStore.getState().currentQuestion).toEqual(mockQuestion);
-    });
-
-    it('handles null question result', async () => {
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(null),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      await useGameStore.getState().selectCategory('green');
-
-      expect(useGameStore.getState().currentCategory).toBe('green');
-      expect(useGameStore.getState().currentQuestion).toBeNull();
-    });
-  });
-
-  describe('startCenterQuestion', () => {
-    it('sets isCenterQuestion to true', async () => {
-      const mockQuestion = createMockQuestion('blue');
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(mockQuestion),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      await useGameStore.getState().startCenterQuestion();
-
-      expect(useGameStore.getState().isCenterQuestion).toBe(true);
-    });
-
-    it('sets phase to answering', async () => {
-      const mockQuestion = createMockQuestion('blue');
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn().mockResolvedValue(mockQuestion),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      await useGameStore.getState().startCenterQuestion();
-
-      expect(useGameStore.getState().phase).toBe('answering');
-    });
-
-    it('selects question from a valid category', async () => {
-      const mockQuestion = createMockQuestion('purple');
-      const selectQuestion = vi.fn().mockResolvedValue(mockQuestion);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion,
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      await useGameStore.getState().startCenterQuestion();
-
-      // Should be called with one of the valid categories
-      const validCategories: PlayerColor[] = ['blue', 'pink', 'yellow', 'purple', 'green', 'orange'];
-      expect(validCategories).toContain(selectQuestion.mock.calls[0][0]);
-    });
-  });
-
-  describe('edge cases', () => {
-    it('handles currentQuestion being null in markAnswer', () => {
-      const players = [createMockPlayer(0)];
-      const markAsked = vi.fn();
-
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players,
-        awardWedge: vi.fn(),
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn(),
-        markAsked,
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
+  // ─────────────────────────────────────────────────────────
+  describe('resetGame', () => {
+    it('resets all state to initial values', () => {
+      const player = createMockPlayer(0);
       useGameStore.setState({
-        currentQuestion: null,
-        currentPlayerIndex: 0,
-        isCenterQuestion: false,
+        phase: 'answering',
+        currentPlayerIndex: 2,
+        questionNumber: 10,
+        answerRevealed: true,
+        currentQuestion: createMockQuestion('blue'),
+        currentCategory: 'blue',
+        completedCategories: [ALL_CATEGORIES],
+        isChampionshipMode: [true],
+        winner: player,
+        activePackId: 'some-pack',
       });
 
-      // Should not throw
-      useGameStore.getState().markAnswer(true);
+      useGameStore.getState().resetGame();
 
-      // Should not try to mark a null question
-      expect(markAsked).not.toHaveBeenCalled();
-    });
-
-    it('handles player not found in markAnswer', () => {
-      const mockQuestion = createMockQuestion('blue');
-      const awardWedge = vi.fn();
-
-      // Empty players but valid playerIndex
-      vi.mocked(usePlayerStore.getState).mockReturnValue({
-        players: [],
-        awardWedge: awardWedge,
-        resetWedges: vi.fn(),
-        hasAllWedges: vi.fn(() => false),
-      } as any);
-
-      vi.mocked(useQuestionStore.getState).mockReturnValue({
-        selectQuestion: vi.fn(),
-        markAsked: vi.fn(),
-        resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
-      } as any);
-
-      useGameStore.setState({
-        currentQuestion: mockQuestion,
-        currentPlayerIndex: 0,
-        isCenterQuestion: false,
-      });
-
-      // Should handle gracefully (console.error called)
-      const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-
-      useGameStore.getState().markAnswer(true);
-
-      // Due to empty players, awardWedge should not be called for the player
-      // (the player lookup returns undefined)
-      expect(consoleSpy).toHaveBeenCalledWith('markAnswer called with no players');
-
-      consoleSpy.mockRestore();
+      const state = useGameStore.getState();
+      expect(state.phase).toBe('setup');
+      expect(state.currentPlayerIndex).toBe(0);
+      expect(state.questionNumber).toBe(1);
+      expect(state.answerRevealed).toBe(false);
+      expect(state.currentQuestion).toBeNull();
+      expect(state.currentCategory).toBeNull();
+      expect(state.completedCategories).toEqual([]);
+      expect(state.isChampionshipMode).toEqual([]);
+      expect(state.winner).toBeNull();
+      expect(state.activePackId).toBeNull();
     });
   });
 });

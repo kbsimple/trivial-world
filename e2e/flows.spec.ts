@@ -152,17 +152,13 @@ async function addPlayers(page: Page, count: number): Promise<void> {
 }
 
 /**
- * Drive the game from the roll screen to the question screen.
+ * Drive the game from the turn screen to the question screen.
  * Returns after the question screen is visible.
  */
 async function playOneTurn(page: Page): Promise<void> {
-  // Roll screen
-  await page.waitForURL('**/game/roll', { timeout: 10_000 });
-  await expect(page.getByText('Tap the die to roll')).toBeVisible({ timeout: 10_000 });
-  await page.getByTestId('die').click();
-
-  // Move screen — select any category to advance
-  await page.waitForURL('**/game/move', { timeout: 8_000 });
+  // Turn screen — select a category to advance
+  await page.waitForURL('**/game/turn', { timeout: 10_000 });
+  await expect(page.getByText('Choose a category')).toBeVisible({ timeout: 10_000 });
   await page.getByTestId('category-button-blue').click();
 
   // Question screen
@@ -327,36 +323,13 @@ test.describe('Flow: Play a Game Turn', () => {
     await page.getByText('Start Game').click();
   });
 
-  test('Start Game navigates to the roll screen', async ({ page }) => {
-    await page.waitForURL('**/game/roll', { timeout: 10_000 });
-    await expect(page.getByText('Tap the die to roll')).toBeVisible({ timeout: 10_000 });
-    await expect(page.getByTestId('die')).toBeVisible({ timeout: 5_000 });
+  test('Start Game navigates to the turn screen', async ({ page }) => {
+    await page.waitForURL('**/game/turn', { timeout: 10_000 });
+    await expect(page.getByText('Choose a category')).toBeVisible({ timeout: 10_000 });
   });
 
-  test('rolling the die navigates to the move screen', async ({ page }) => {
-    await page.waitForURL('**/game/roll', { timeout: 10_000 });
-    await page.getByTestId('die').click();
-
-    await page.waitForURL('**/game/move', { timeout: 8_000 });
-    await expect(page.getByText(/you rolled/i)).toBeVisible({ timeout: 5_000 });
-  });
-
-  test('die result shown on move screen is 1–6', async ({ page }) => {
-    await page.waitForURL('**/game/roll', { timeout: 10_000 });
-    await page.getByTestId('die').click();
-
-    await page.waitForURL('**/game/move', { timeout: 8_000 });
-    // The large number after "You rolled" should be 1–6
-    const resultText = await page.getByText(/^[1-6]$/).first().textContent({ timeout: 3_000 });
-    expect(Number(resultText)).toBeGreaterThanOrEqual(1);
-    expect(Number(resultText)).toBeLessThanOrEqual(6);
-  });
-
-  test('Selecting a category on move screen navigates to the question screen', async ({ page }) => {
-    await page.waitForURL('**/game/roll', { timeout: 10_000 });
-    await page.getByTestId('die').click();
-
-    await page.waitForURL('**/game/move', { timeout: 8_000 });
+  test('Selecting a category on the turn screen navigates to the question screen', async ({ page }) => {
+    await page.waitForURL('**/game/turn', { timeout: 10_000 });
     await page.getByTestId('category-button-blue').click();
 
     await page.waitForURL('**/game/question', { timeout: 10_000 });
@@ -384,26 +357,26 @@ test.describe('Flow: Play a Game Turn', () => {
     await expect(page.getByText('Reveal Answer')).not.toBeVisible();
   });
 
-  test('marking Incorrect advances to the next roll', async ({ page }) => {
+  test('marking Incorrect advances to the next turn screen', async ({ page }) => {
     await playOneTurn(page);
     await page.getByText('Reveal Answer').click();
     await expect(page.getByText('✗ Incorrect')).toBeVisible({ timeout: 5_000 });
 
     await page.getByText('✗ Incorrect').click();
 
-    // Game continues — should reach roll or results
-    await page.waitForURL(/\/(game\/roll|game\/results)/, { timeout: 10_000 });
+    // Game continues — should reach turn or results
+    await page.waitForURL(/\/(game\/turn|game\/results)/, { timeout: 10_000 });
   });
 
-  test('marking Correct advances to the next roll', async ({ page }) => {
+  test('marking Correct advances to the next turn screen', async ({ page }) => {
     await playOneTurn(page);
     await page.getByText('Reveal Answer').click();
     await expect(page.getByText('✓ Correct')).toBeVisible({ timeout: 5_000 });
 
     await page.getByText('✓ Correct').click();
 
-    // Game continues — should reach roll or results (if somehow won)
-    await page.waitForURL(/\/(game\/roll|game\/results)/, { timeout: 10_000 });
+    // Game continues — should reach turn or results
+    await page.waitForURL(/\/(game\/turn|game\/results)/, { timeout: 10_000 });
   });
 });
 
@@ -412,7 +385,7 @@ test.describe('Flow: Play a Game Turn', () => {
 // ─────────────────────────────────────────────────────────
 
 test.describe('Flow: Full Turn Sequence', () => {
-  test('setup → roll → move → question → answer → next roll', async ({ page }) => {
+  test('setup → turn → category select → question → answer → next turn', async ({ page }) => {
     await page.goto('/');
     await page.waitForURL('**/game/setup', { timeout: 10_000 });
     await selectPackViaUI(page);
@@ -422,27 +395,23 @@ test.describe('Flow: Full Turn Sequence', () => {
     await page.locator('input').nth(0).fill('Alice');
     await page.locator('input').nth(1).fill('Bob');
 
-    // Start the game
+    // Start the game — lands on turn screen
     await page.getByText('Start Game').click();
-    await page.waitForURL('**/game/roll', { timeout: 10_000 });
+    await page.waitForURL('**/game/turn', { timeout: 10_000 });
+    await expect(page.getByText('Choose a category')).toBeVisible({ timeout: 10_000 });
 
-    // First turn: Alice rolls
-    await expect(page.getByText('Tap the die to roll')).toBeVisible({ timeout: 10_000 });
-    await page.getByTestId('die').click();
-    await page.waitForURL('**/game/move', { timeout: 8_000 });
-    await expect(page.getByText(/you rolled/i)).toBeVisible({ timeout: 5_000 });
-
+    // Alice selects a category
     await page.getByTestId('category-button-blue').click();
     await page.waitForURL('**/game/question', { timeout: 10_000 });
     await expect(page.getByText('Q1')).toBeVisible({ timeout: 5_000 });
 
-    // Reveal and mark incorrect — continues to Bob's turn
+    // Reveal and mark incorrect — turn passes to Bob
     await page.getByText('Reveal Answer').click();
     await expect(page.getByText('✗ Incorrect')).toBeVisible({ timeout: 5_000 });
     await page.getByText('✗ Incorrect').click();
 
-    // Should be back at roll for the next player
-    await page.waitForURL('**/game/roll', { timeout: 10_000 });
-    await expect(page.getByText('Tap the die to roll')).toBeVisible({ timeout: 10_000 });
+    // Should be back at turn screen for the next player
+    await page.waitForURL('**/game/turn', { timeout: 10_000 });
+    await expect(page.getByText('Choose a category')).toBeVisible({ timeout: 10_000 });
   });
 });
