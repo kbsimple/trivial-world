@@ -25,6 +25,7 @@ export default function TurnScreen() {
     isChampionshipMode,
     playerPackIds,
     playerCategories,
+    playerDifficulties,
   } = useGameStore();
   const { players } = usePlayerStore();
   const availablePacks = usePackStore((state) => state.availablePacks);
@@ -118,6 +119,10 @@ export default function TurnScreen() {
             const displayPackName = rawPackName
               ? (rawPackName.length > 12 ? rawPackName.slice(0, 12) + '...' : rawPackName)
               : null;
+            const difficultyLabel = playerDifficulties?.[idx] != null
+              ? (playerDifficulties[idx] as string).charAt(0).toUpperCase()
+                + (playerDifficulties[idx] as string).slice(1)
+              : null;
             return (
               <View key={player.id} style={styles.progressEntry}>
                 <View style={[styles.progressDot, { backgroundColor: CATEGORY_COLORS[player.color] }]} />
@@ -126,6 +131,9 @@ export default function TurnScreen() {
                 </Text>
                 {displayPackName && (
                   <Text style={styles.progressPack} numberOfLines={1}>{displayPackName}</Text>
+                )}
+                {difficultyLabel && (
+                  <Text style={styles.progressDifficulty} numberOfLines={1}>{difficultyLabel}</Text>
                 )}
                 <Text style={styles.progressCount}>
                   {champ ? '🏆' : `${count}/${totalCats}`}
@@ -248,6 +256,11 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
   progressPack: {
+    color: '#888',
+    fontSize: 11,
+    marginRight: 4,
+  },
+  progressDifficulty: {
     color: '#888',
     fontSize: 11,
     marginRight: 4,
