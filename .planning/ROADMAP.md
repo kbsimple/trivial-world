@@ -7,6 +7,7 @@
 - ✅ **v3.0 Web Deployment** — Phases 9–11 (shipped 2026-06-11)
 - ✅ **v4.0 Simplified Gameplay** — Phases 12–17 (shipped 2026-06-12 → 2026-06-13)
 - ✅ **v5.0 Content Generation Tooling** — Phases 16–17 (shipped 2026-06-13)
+- 🚧 **v6.0 Pack Combos** — Phase 18 (in progress)
 
 ## Phases
 
@@ -63,6 +64,28 @@ Archive: `.planning/milestones/v5.0-*`
 
 </details>
 
+<details open>
+<summary>🚧 v6.0 Pack Combos (Phase 18) — IN PROGRESS</summary>
+
+### Phase 18: Pack Combos
+
+**Goal:** Allow mixing and matching multiple question packs. A combo is a named blend of 2+ packs, selectable at the game level or per-player, exactly where a single pack is selected today. At question-draw time, questions are pooled across all packs in the combo, respecting existing category and difficulty filters.
+
+**Plans:** 4 plans
+
+Plans:
+- [ ] 18-01-PLAN.md — Type contracts: PackCombo schema, Player.comboId, GameState.playerPackIdLists
+- [ ] 18-02-PLAN.md — packStore combo storage + CRUD (savedCombos, activeComboId, create/delete/select, persisted)
+- [ ] 18-03-PLAN.md — Multi-pack runtime: playerStore mutual exclusion, gameStore combo resolution + reset + threading, questionStore/questionProvider pooling, test updates
+- [ ] 18-04-PLAN.md — UI: combos management screen, route + entry link, setup per-player source picker (pack/combo/default)
+
+Wave structure:
+- Wave 1 (parallel): 18-01 (types), 18-02 (packStore)
+- Wave 2: 18-03 (runtime logic) — depends on 18-01, 18-02
+- Wave 3: 18-04 (UI) — depends on 18-01, 18-02, 18-03
+
+</details>
+
 ---
 
 ## Progress
@@ -86,6 +109,7 @@ Archive: `.planning/milestones/v5.0-*`
 | 15. Per-Player Pack Selection | v4.0 | 3/3 | Complete | 2026-06-12 |
 | 16. CLI Bulk Question Generation | v5.0 | 4/4 | Complete | 2026-06-13 |
 | 17. Per-Player Pack and Difficulty | v5.0 | 2/2 | Complete | 2026-06-13 |
+| 18. Pack Combos | v6.0 | 0/4 | Planned | — |
 
 ---
 
