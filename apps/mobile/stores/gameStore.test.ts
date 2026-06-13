@@ -37,6 +37,8 @@ vi.mock('./packStore', () => ({
       availablePacks: [],
       enabledCategories: null,
       enabledDifficulties: null,
+      savedCombos: [],
+      activeComboId: null,
     })),
     setState: vi.fn(),
   },
@@ -106,6 +108,7 @@ describe('useGameStore', () => {
       playerPackIds: [],
       playerCategories: [],
       playerDifficulties: [],
+      playerPackIdLists: [],
     });
   });
 
@@ -126,6 +129,7 @@ describe('useGameStore', () => {
       expect(state.playerPackIds).toEqual([]);
       expect(state.playerCategories).toEqual([]);
       expect(state.playerDifficulties).toEqual([]);
+      expect(state.playerPackIdLists).toEqual([]);
     });
 
     it('has all required action methods', () => {
@@ -143,7 +147,7 @@ describe('useGameStore', () => {
   // ─────────────────────────────────────────────────────────
   describe('startGame', () => {
     it('transitions to selecting phase when pack and players exist', async () => {
-      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null } as any);
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null, savedCombos: [], activeComboId: null } as any);
       mockPlayerStore([createMockPlayer(0)]);
       mockQuestionStore();
 
@@ -159,7 +163,7 @@ describe('useGameStore', () => {
     });
 
     it('initializes one completedCategories array per player', async () => {
-      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null } as any);
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null, savedCombos: [], activeComboId: null } as any);
       mockPlayerStore([createMockPlayer(0), createMockPlayer(1), createMockPlayer(2)]);
       mockQuestionStore();
 
@@ -171,7 +175,7 @@ describe('useGameStore', () => {
     });
 
     it('initializes isChampionshipMode as all-false per player', async () => {
-      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null } as any);
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null, savedCombos: [], activeComboId: null } as any);
       mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
       mockQuestionStore();
 
@@ -184,7 +188,7 @@ describe('useGameStore', () => {
 
     it('resets asked questions', async () => {
       const resetAskedQuestions = vi.fn().mockResolvedValue(undefined);
-      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null } as any);
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null, savedCombos: [], activeComboId: null } as any);
       mockPlayerStore([createMockPlayer(0)]);
       mockQuestionStore({ resetAskedQuestions });
 
@@ -194,7 +198,7 @@ describe('useGameStore', () => {
     });
 
     it('does not pre-load a question (question loaded when category is chosen)', async () => {
-      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null } as any);
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null, savedCombos: [], activeComboId: null } as any);
       mockPlayerStore([createMockPlayer(0)]);
       mockQuestionStore();
 
@@ -206,7 +210,7 @@ describe('useGameStore', () => {
 
     it('does not start without an active pack', async () => {
       const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: null, availablePacks: [], enabledCategories: null } as any);
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: null, availablePacks: [], enabledCategories: null, savedCombos: [], activeComboId: null } as any);
 
       await useGameStore.getState().startGame();
 
@@ -217,7 +221,7 @@ describe('useGameStore', () => {
 
     it('does not start with no players', async () => {
       const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null } as any);
+      vi.mocked(usePackStore.getState).mockReturnValue({ activePackId: 'test-pack-id', availablePacks: [], enabledCategories: null, savedCombos: [], activeComboId: null } as any);
       mockPlayerStore([]);
 
       await useGameStore.getState().startGame();
@@ -759,6 +763,7 @@ describe('useGameStore', () => {
         playerPackIds: ['some-pack-id'],
         playerCategories: [ALL_CATEGORIES],
         playerDifficulties: [null],
+        playerPackIdLists: [['some-pack-id']],
       });
 
       useGameStore.getState().resetGame();
@@ -777,6 +782,7 @@ describe('useGameStore', () => {
       expect(state.playerPackIds).toEqual([]);
       expect(state.playerCategories).toEqual([]);
       expect(state.playerDifficulties).toEqual([]);
+      expect(state.playerPackIdLists).toEqual([]);
     });
   });
 });

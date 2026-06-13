@@ -68,26 +68,52 @@ export const useGameStore = create<GameStore>()(
           const playerPackIds = players.map(p => p.packId ?? activePackId ?? null);
           const playerDifficulties = players.map(p => p.difficultyPreference ?? null);
 
-          function deriveCategoriesForPack(packId: string | null): PlayerColor[] {
-            if (!packId) return ALL_CATEGORIES;
-            const pack = availablePacks.find(p => p.id === packId);
-            if (!pack) return ALL_CATEGORIES;
-            const packCats = (Object.entries(pack.categoryCounts) as [PlayerColor, number][])
-              .filter(([, count]) => count > 0)
-              .map(([cat]) => cat);
-            // Apply game-level category filter if set (preserves existing enabledCategories feature)
-            return enabledCategories && enabledCategories.length > 0
-              ? packCats.filter(c => (enabledCategories as PlayerColor[]).includes(c))
-              : packCats;
+          const { savedCombos, activeComboId } = usePackStore.getState();
+
+          function resolvePlayerPackIdList(player: Player): string[] {
+            if (player.comboId) {
+              const combo = savedCombos.find(c => c.id === player.comboId);
+              if (combo) return combo.packIds;
+            }
+            if (player.packId) return [player.packId];
+            if (activeComboId) {
+              const combo = savedCombos.find(c => c.id === activeComboId);
+              if (combo) return combo.packIds;
+            }
+            if (activePackId) return [activePackId];
+            return [];
           }
 
-          const playerCategories = playerPackIds.map(deriveCategoriesForPack);
+          const playerPackIdLists = players.map(resolvePlayerPackIdList);
+
+          function deriveCategoriesForPackList(packIdList: string[]): PlayerColor[] {
+            const allCats = new Set<PlayerColor>();
+            for (const pid of packIdList) {
+              const pack = availablePacks.find(p => p.id === pid);
+              if (!pack) continue;
+              (Object.entries(pack.categoryCounts) as [PlayerColor, number][])
+                .filter(([, count]) => count > 0)
+                .forEach(([cat]) => allCats.add(cat));
+            }
+            const cats = allCats.size > 0 ? [...allCats] : ALL_CATEGORIES;
+            return enabledCategories && enabledCategories.length > 0
+              ? cats.filter(c => (enabledCategories as PlayerColor[]).includes(c))
+              : cats;
+          }
+
+          const playerCategories = playerPackIdLists.map(list => deriveCategoriesForPackList(list ?? []));
 
           // Reset asked-question state for every unique pack used in this game.
           // questionStore.resetAskedQuestions() internally reads packStore.activePackId, so
           // we temporarily set activePackId to each unique packId, call reset, then restore.
-          const uniquePackIds = [...new Set(playerPackIds.filter((id): id is string => id !== null))];
-          for (const pid of uniquePackIds) {
+          const uniquePackIdsForReset = [
+            ...new Set(
+              playerPackIdLists
+                .flatMap(list => list ?? [])
+                .filter((id): id is string => Boolean(id))
+            )
+          ];
+          for (const pid of uniquePackIdsForReset) {
             if (pid !== activePackId) {
               usePackStore.setState({ activePackId: pid });
               await useQuestionStore.getState().resetAskedQuestions();
@@ -110,9 +136,9 @@ export const useGameStore = create<GameStore>()(
             winner: null,
             activePackId,
             playerPackIds,
+            playerPackIdLists,
             playerCategories,
             playerDifficulties,
-            playerPackIdLists: playerPackIds.map(id => (id !== null ? [id] : null)),
           });
         } catch (error) {
           console.error('Error starting game:', error);
@@ -121,10 +147,11 @@ export const useGameStore = create<GameStore>()(
       },
 
       selectCategory: async (category: PlayerColor) => {
-        const { playerPackIds, playerDifficulties, currentPlayerIndex } = get();
-        const packId = playerPackIds[currentPlayerIndex] ?? undefined;
+        const { playerPackIdLists, playerDifficulties, currentPlayerIndex, activePackId } = get();
+        const packIds = playerPackIdLists[currentPlayerIndex]
+          ?? (activePackId ? [activePackId] : undefined);
         const difficulty = (playerDifficulties ?? [])[currentPlayerIndex] ?? undefined;
-        const question = await useQuestionStore.getState().selectQuestion(category, packId, difficulty);
+        const question = await useQuestionStore.getState().selectQuestion(category, packIds, difficulty);
         set({
           currentCategory: category,
           currentQuestion: question,

@@ -39,8 +39,8 @@ interface QuestionState {
   askedQuestionIds: string[];
 
   // Actions
-  /** Select a question from active pack's category pool */
-  selectQuestion: (category: PlayerColor, packId?: string, difficulty?: Difficulty) => Promise<Question | null>;
+  /** Select a question from active pack's category pool (supports multi-pack pooling via packIds) */
+  selectQuestion: (category: PlayerColor, packIds?: string[], difficulty?: Difficulty) => Promise<Question | null>;
   /** Mark a question as asked (call after answer). Returns true if successful. */
   markAsked: (questionId: string) => Promise<boolean>;
   /** Reset asked questions for new game */
@@ -63,11 +63,11 @@ export const useQuestionStore = create<QuestionState>()(
       currentCategory: null,
       askedQuestionIds: [],
 
-      selectQuestion: async (category: PlayerColor, packId?: string, difficulty?: Difficulty) => {
+      selectQuestion: async (category: PlayerColor, packIds?: string[], difficulty?: Difficulty) => {
         if (Platform.OS === 'web') {
           const { activePackId } = usePackStore.getState();
-          const resolvedPackId = packId ?? activePackId ?? undefined;
-          const question = await getNextQuestion(category, get().askedQuestionIds, resolvedPackId, difficulty);
+          const resolvedPackIds = packIds ?? (activePackId ? [activePackId] : undefined);
+          const question = await getNextQuestion(category, get().askedQuestionIds, resolvedPackIds, difficulty);
           if (question) {
             set({ currentQuestion: question, currentCategory: category });
           }
@@ -82,10 +82,10 @@ export const useQuestionStore = create<QuestionState>()(
         const database = getDatabase();
 
         const { activePackId, enabledCategories, enabledDifficulties } = usePackStore.getState();
-        const resolvedPackId = packId ?? activePackId;
+        const resolvedPackIds = packIds ?? (activePackId ? [activePackId] : []);
 
-        if (!resolvedPackId) {
-          logger.error('No active pack selected');
+        if (resolvedPackIds.length === 0) {
+          logger.error('No packs available for question selection');
           return null;
         }
 
@@ -96,29 +96,24 @@ export const useQuestionStore = create<QuestionState>()(
         }
 
         try {
-          // Get active pack from WatermelonDB
-          const packs = await database.get('question_packs')
-            .query(Q.where('pack_id', resolvedPackId))
-            .fetch();
-
-          if (packs.length === 0) {
-            logger.error('Active pack not found in database');
-            return null;
+          let allQuestions: QuestionModelType[] = [];
+          for (const pid of resolvedPackIds) {
+            const packs = await database.get('question_packs')
+              .query(Q.where('pack_id', pid))
+              .fetch();
+            if (packs.length === 0) {
+              logger.warn(`Pack ${pid} not found in database — skipping (may be undownloaded)`);
+              continue;
+            }
+            const qs = await database.get('questions')
+              .query(
+                Q.where('question_pack_id', packs[0].id),
+                Q.where('category', category),
+                Q.where('asked_at', null)
+              )
+              .fetch();
+            allQuestions = [...allQuestions, ...(qs as QuestionModelType[])];
           }
-
-          // Build query for available questions
-          // D-06: Apply category and difficulty filters
-
-          // Query questions for this pack and category, not yet asked
-          const query = database.get('questions')
-            .query(
-              Q.where('question_pack_id', packs[0].id),
-              Q.where('category', category),
-              Q.where('asked_at', null)
-            );
-
-          const rawQuestions = await query.fetch();
-          const questions = rawQuestions as QuestionModelType[];
 
           // D-06: Per-player difficulty takes precedence; fallback to game-level enabledDifficulties
           const effectiveDifficulties: Difficulty[] | null =
@@ -127,11 +122,11 @@ export const useQuestionStore = create<QuestionState>()(
               : (enabledDifficulties && enabledDifficulties.length > 0 ? enabledDifficulties : null);
 
           const filteredQuestions = effectiveDifficulties
-            ? questions.filter(q => {
+            ? allQuestions.filter(q => {
                 const qDifficulty = q.difficulty;
                 return qDifficulty && effectiveDifficulties.includes(qDifficulty as Difficulty);
               })
-            : questions;
+            : allQuestions;
 
           // If all questions exhausted, warn and return null
           if (filteredQuestions.length === 0) {
