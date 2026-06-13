@@ -93,7 +93,13 @@ Wave structure:
 
 **Depends on:** Phase 18 (Pack Combos)
 
-**Plans:** TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 19-01-PLAN.md — packStore packMode field + setPackMode action + setup.tsx segmented control + conditional per-player rows
+
+Wave structure:
+- Wave 1: 19-01 (all changes in packStore.ts + setup.tsx — single plan, no parallelism needed)
 
 ---
 
@@ -119,7 +125,7 @@ Wave structure:
 | 16. CLI Bulk Question Generation | v5.0 | 4/4 | Complete | 2026-06-13 |
 | 17. Per-Player Pack and Difficulty | v5.0 | 2/2 | Complete | 2026-06-13 |
 | 18. Pack Combos | v6.0 | 4/4 | Complete | 2026-06-13 |
-| 19. Per-Player Pack Customization | v7.0 | 0/? | Not planned | — |
+| 19. Per-Player Pack Customization | v7.0 | 0/1 | In progress | — |
 
 ---
 
