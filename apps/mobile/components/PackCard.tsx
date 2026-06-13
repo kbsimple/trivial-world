@@ -112,9 +112,11 @@ const styles = StyleSheet.create({
   author: {
     fontSize: 14,
     marginBottom: 2,
+    textAlign: 'center',
   },
   count: {
     fontSize: 12,
+    textAlign: 'center',
   },
   badgesContainer: {
     flexDirection: 'column',
