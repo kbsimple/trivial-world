@@ -50,6 +50,7 @@ export const usePlayerStore = create<PlayerState>()(
           color: nextColor,
           wedges: [], // Initialize empty wedges array
           packId: null, // explicit null — stable serialization, avoids undefined in tests
+          comboId: null, // explicit null — mirrors packId pattern; mutually exclusive with packId
           difficultyPreference: null, // explicit null — mirrors packId pattern; stable serialization
         },
       ],
@@ -76,7 +77,13 @@ export const usePlayerStore = create<PlayerState>()(
 
   updatePlayerPack: (id: string, packId: string | null) => set((state) => ({
     players: state.players.map(p =>
-      p.id === id ? { ...p, packId } : p
+      p.id === id ? { ...p, packId, ...(packId !== null ? { comboId: null } : {}) } : p
+    ),
+  })),
+
+  updatePlayerCombo: (id: string, comboId: string | null) => set((state) => ({
+    players: state.players.map(p =>
+      p.id === id ? { ...p, comboId, ...(comboId !== null ? { packId: null } : {}) } : p
     ),
   })),
 

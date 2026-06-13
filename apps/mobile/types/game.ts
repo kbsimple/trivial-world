@@ -47,6 +47,10 @@ export interface GameState {
   /** Snapshotted difficulty preference per player at game start (index matches player order).
    *  null = player uses game-level enabledDifficulties fallback. */
   playerDifficulties: (Difficulty | null)[];
+  /** Resolved list of pack IDs per player — from combo.packIds or [packId] at startGame().
+   *  null = player inherits game-level fallback. Drives selectQuestion for multi-pack draw.
+   *  Parallel to playerPackIds (kept for display); playerPackIdLists drives question selection. */
+  playerPackIdLists: (string[] | null)[];
 
   // Actions
   startGame: () => void;
