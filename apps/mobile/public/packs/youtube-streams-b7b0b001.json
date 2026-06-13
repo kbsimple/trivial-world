@@ -299,7 +299,7 @@
       "category": "purple",
       "difficulty": "medium",
       "questionText": "Which animation-focused YouTuber is known for the 'Draw My Life' video format, where creators illustrate their biography in real time on a whiteboard?",
-      "answerText": "The 'Draw My Life' format was popularized broadly, but Sam Pepper and later numerous creators adopted it — its mainstream YouTube spread is most associated with Shane Dawson and community-wide adoption in 2013.",
+      "answerText": "The 'Draw My Life' format was popularized broadly, but Sam Pepper and later numerous creators adopted it — its mainstream YouTube spread is most associated with Shane Dawson and community-wide adopti…",
       "tidbits": "YouTube's algorithm favors watch time and click-through rate over raw view counts when recommending videos."
     },
     {
@@ -331,7 +331,7 @@
       "category": "purple",
       "difficulty": "hard",
       "questionText": "What is the name of the surrealist animated YouTube series created by Michael Cusack and Zach Hadel, featuring extremely crude animation and absurdist humor, that went viral in the mid-2010s?",
-      "answerText": "Smiling Friends (preceded by the viral shorts from Zach Hadel / Psychicpebbles and Michael Cusack's CHIKN NUGGIT / Cyanide & Happiness collaborations — the direct answer is 'Smiling Friends' which originated as a YouTube pilot)",
+      "answerText": "Smiling Friends (preceded by the viral shorts from Zach Hadel / Psychicpebbles and Michael Cusack's CHIKN NUGGIT / Cyanide & Happiness collaborations — the direct answer is 'Smiling Friends' which or…",
       "tidbits": "Smiling Friends began as a YouTube-submitted pilot for Adult Swim's 'Off the Air' programming block and went viral before being greenlit as a full series. The show's deliberately crude animation style is intentional, with the creators using limited motion to heighten comedic impact. Its success represents a rare path from YouTube creator to mainstream animated television."
     },
     {
@@ -403,7 +403,7 @@
       "category": "green",
       "difficulty": "hard",
       "questionText": "Linus Tech Tips (LTT) hosts a secondary channel where a team builds, tests, and explores PC hardware projects. What is that channel called?",
-      "answerText": "TechLinked (for news) and Linus Tech Tips also has ShortCircuit — but the flagship secondary experimentation channel is 'TechLinked' for news and 'ShortCircuit' for unboxings; the project/build-focused lab content airs on the main LTT channel",
+      "answerText": "TechLinked (for news) and Linus Tech Tips also has ShortCircuit — but the flagship secondary experimentation channel is 'TechLinked' for news and 'ShortCircuit' for unboxings; the project/build-focus…",
       "tidbits": "Linus Media Group operates multiple YouTube channels under its umbrella, including TechLinked for daily tech news, ShortCircuit for quick unboxings, and Floatplane as their own subscription platform. The multi-channel strategy allows them to segment audiences by interest level and content pace. At its peak, the LMG network collectively published dozens of videos per week across all properties."
     },
     {
@@ -467,7 +467,7 @@
       "category": "orange",
       "difficulty": "medium",
       "questionText": "Which annual YouTube gaming event, historically streamed live on YouTube, features esports tournaments and gaming announcements, often branded as the 'E3 of online gaming'?",
-      "answerText": "YouTube Gaming's Gamescom streams / Summer Game Fest (Geoff Keighley's event, streamed on YouTube) — or more specifically 'YouTube Gaming's own live events,' but the broadest correct answer is The Game Awards and Summer Game Fest, both streamed on YouTube",
+      "answerText": "YouTube Gaming's Gamescom streams / Summer Game Fest (Geoff Keighley's event, streamed on YouTube) — or more specifically 'YouTube Gaming's own live events,' but the broadest correct answer is The Ga…",
       "tidbits": "The Game Awards, produced by Geoff Keighley and streamed live on YouTube, has become the de facto successor to traditional gaming press events. The 2023 ceremony drew over 118 million livestreams, making it the most-watched gaming show in history. YouTube's role as the primary broadcast platform for these events has cemented its position as the dominant destination for gaming culture."
     },
     {
@@ -503,6 +503,6 @@
       "tidbits": "A team of statisticians and speedrunners analyzed Dream's Minecraft speedruns and concluded that the probability of his luck occurring naturally was astronomically small, suggesting the game's random number generator may have been modified. Dream initially denied and disputed the findings, hiring his own statistician. He later admitted in 2021 that a mod had inadvertently altered the drop rates, though he maintained he hadn't known about it at the time."
     }
   ],
-  "checksum": "a01ba04170789df0c8cde09ae0ef5f09556301a62beabee65e55dbeaf3554a17",
-  "size": 33229
+  "checksum": "bc911b9e39cd804a74a3927fce814ef77e3e5b10049fae1f21c81d1e34eabca6",
+  "size": 33779
 }

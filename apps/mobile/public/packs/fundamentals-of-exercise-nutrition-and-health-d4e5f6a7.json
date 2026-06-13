@@ -366,7 +366,7 @@
       "category": "green",
       "difficulty": "hard",
       "questionText": "What happens during EPOC (Excess Post-Exercise Oxygen Consumption) after intense exercise?",
-      "answerText": "The body continues to consume extra oxygen above resting levels to restore physiological systems — replenishing energy stores, clearing lactic acid, and repairing muscle — resulting in continued calorie burning after exercise ends"
+      "answerText": "The body continues to consume extra oxygen above resting levels to restore physiological systems — replenishing energy stores, clearing lactic acid, and repairing muscle — resulting in continued calo…"
     },
     {
       "id": "green-010",
@@ -422,7 +422,7 @@
       "category": "orange",
       "difficulty": "medium",
       "questionText": "What is the role of electrolytes — including sodium, potassium, and magnesium — during exercise?",
-      "answerText": "Electrolytes regulate fluid balance, nerve signals, and muscle contractions; they are lost through sweat and must be replenished during prolonged exercise to prevent cramping and hyponatremia (low blood sodium)"
+      "answerText": "Electrolytes regulate fluid balance, nerve signals, and muscle contractions; they are lost through sweat and must be replenished during prolonged exercise to prevent cramping and hyponatremia (low bl…"
     },
     {
       "id": "orange-008",
@@ -443,9 +443,9 @@
       "category": "orange",
       "difficulty": "hard",
       "questionText": "What is the concept of \"progressive overload,\" and why is it the fundamental principle behind strength and conditioning gains?",
-      "answerText": "Progressive overload means gradually increasing the stress placed on the body during training; without this, the body adapts to its current workload and stops improving — making it the cornerstone of all effective training programs"
+      "answerText": "Progressive overload means gradually increasing the stress placed on the body during training; without this, the body adapts to its current workload and stops improving — making it the cornerstone of…"
     }
   ],
-  "checksum": "df75b9d733f3f235cbe68a79f001fede215fbcd799a206301997275be6504293",
-  "size": 15377
+  "checksum": "c0d19cd1027040c18cce84c5aaca3af1c31d46085617c598e3ea579fbce69942",
+  "size": 16023
 }
