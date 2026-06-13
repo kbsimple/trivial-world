@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Platform, View, Text, TextInput, Pressable, ScrollView, StyleSheet, Alert } from 'react-native';
+import { Platform, View, Text, TextInput, Pressable, ScrollView, StyleSheet, Alert, Modal, TouchableWithoutFeedback } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from 'tamagui';
 import { usePlayerStore } from '../../stores/playerStore';
@@ -32,6 +32,10 @@ export default function SetupScreen() {
   const savedCombos = usePackStore((state) => state.savedCombos);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [packName, setPackName] = useState<string | null>(null);
+  const [webPicker, setWebPicker] = useState<{
+    title: string;
+    options: { label: string; onPress: () => void }[];
+  } | null>(null);
 
   // Load pack name — check the in-memory index first (web-safe), then WatermelonDB
   useEffect(() => {
@@ -89,42 +93,52 @@ export default function SetupScreen() {
   };
 
   const handlePickSource = (playerId: string) => {
-    if (Platform.OS === 'web') return; // web: always default pack (no downloaded packs)
-    const selectablePacks = availablePacks.filter(p => downloadedPackIds.includes(p.id));
-    Alert.alert(
-      'Select Pack or Combo',
-      undefined,
-      [
-        {
-          text: 'Default (game source)',
-          onPress: () => { updatePlayerPack(playerId, null); updatePlayerCombo(playerId, null); },
-        },
-        ...selectablePacks.map(p => ({
-          text: p.name.length > 28 ? p.name.slice(0, 25) + '...' : p.name,
-          onPress: () => { updatePlayerPack(playerId, p.id); },
-        })),
-        ...savedCombos.map(c => ({
-          text: `Combo: ${c.name.length > 22 ? c.name.slice(0, 19) + '...' : c.name}`,
-          onPress: () => { updatePlayerCombo(playerId, c.id); },
-        })),
+    // On web, all packs are available (no download step); on native, filter to downloaded only.
+    const selectablePacks = Platform.OS === 'web'
+      ? availablePacks
+      : availablePacks.filter(p => downloadedPackIds.includes(p.id));
+
+    const options = [
+      {
+        label: 'Default (game source)',
+        onPress: () => { updatePlayerPack(playerId, null); updatePlayerCombo(playerId, null); },
+      },
+      ...selectablePacks.map(p => ({
+        label: p.name.length > 28 ? p.name.slice(0, 25) + '...' : p.name,
+        onPress: () => { updatePlayerPack(playerId, p.id); },
+      })),
+      ...savedCombos.map(c => ({
+        label: `Combo: ${c.name.length > 22 ? c.name.slice(0, 19) + '...' : c.name}`,
+        onPress: () => { updatePlayerCombo(playerId, c.id); },
+      })),
+    ];
+
+    if (Platform.OS === 'web') {
+      setWebPicker({ title: 'Select Pack or Combo', options });
+    } else {
+      Alert.alert('Select Pack or Combo', undefined, [
+        ...options.map(o => ({ text: o.label, onPress: o.onPress })),
         { text: 'Cancel', style: 'cancel' as const },
-      ]
-    );
+      ]);
+    }
   };
 
   const handlePickDifficulty = (playerId: string) => {
-    if (Platform.OS === 'web') return;
-    Alert.alert(
-      'Select Difficulty',
-      undefined,
-      [
-        { text: 'Any Difficulty', onPress: () => updatePlayerDifficulty(playerId, null) },
-        { text: 'Easy', onPress: () => updatePlayerDifficulty(playerId, 'easy') },
-        { text: 'Medium', onPress: () => updatePlayerDifficulty(playerId, 'medium') },
-        { text: 'Hard', onPress: () => updatePlayerDifficulty(playerId, 'hard') },
+    const options = [
+      { label: 'Any Difficulty', onPress: () => updatePlayerDifficulty(playerId, null) },
+      { label: 'Easy', onPress: () => updatePlayerDifficulty(playerId, 'easy') },
+      { label: 'Medium', onPress: () => updatePlayerDifficulty(playerId, 'medium') },
+      { label: 'Hard', onPress: () => updatePlayerDifficulty(playerId, 'hard') },
+    ];
+
+    if (Platform.OS === 'web') {
+      setWebPicker({ title: 'Select Difficulty', options });
+    } else {
+      Alert.alert('Select Difficulty', undefined, [
+        ...options.map(o => ({ text: o.label, onPress: o.onPress })),
         { text: 'Cancel', style: 'cancel' as const },
-      ]
-    );
+      ]);
+    }
   };
 
   const handleStartGame = async () => {
@@ -230,33 +244,31 @@ export default function SetupScreen() {
                 </Pressable>
               </View>
 
-              {/* Row 2: pack chip and difficulty chip — below the name input, native only */}
-              {Platform.OS !== 'web' && (
-                <View style={styles.packChipRow}>
-                  <Pressable
-                    style={[
-                      styles.packChip,
-                      displayName ? styles.packChipActive : styles.packChipDefault,
-                    ]}
-                    onPress={() => handlePickSource(player.id)}
-                  >
-                    <Text style={styles.packChipText} numberOfLines={1}>
-                      {chipLabel}
-                    </Text>
-                  </Pressable>
-                  <Pressable
-                    style={[
-                      styles.packChip,
-                      player.difficultyPreference ? styles.packChipActive : styles.packChipDefault,
-                    ]}
-                    onPress={() => handlePickDifficulty(player.id)}
-                  >
-                    <Text style={styles.packChipText} numberOfLines={1}>
-                      {difficultyLabel}
-                    </Text>
-                  </Pressable>
-                </View>
-              )}
+              {/* Row 2: pack chip and difficulty chip */}
+              <View style={styles.packChipRow}>
+                <Pressable
+                  style={[
+                    styles.packChip,
+                    displayName ? styles.packChipActive : styles.packChipDefault,
+                  ]}
+                  onPress={() => handlePickSource(player.id)}
+                >
+                  <Text style={styles.packChipText} numberOfLines={1}>
+                    {chipLabel}
+                  </Text>
+                </Pressable>
+                <Pressable
+                  style={[
+                    styles.packChip,
+                    player.difficultyPreference ? styles.packChipActive : styles.packChipDefault,
+                  ]}
+                  onPress={() => handlePickDifficulty(player.id)}
+                >
+                  <Text style={styles.packChipText} numberOfLines={1}>
+                    {difficultyLabel}
+                  </Text>
+                </Pressable>
+              </View>
             </View>
           );
         })}
@@ -305,6 +317,40 @@ export default function SetupScreen() {
           </Text>
         )}
       </View>
+      {/* Web picker modal — replaces Alert.alert for source/difficulty selection */}
+      {Platform.OS === 'web' && webPicker && (
+        <Modal transparent visible onRequestClose={() => setWebPicker(null)}>
+          <TouchableWithoutFeedback onPress={() => setWebPicker(null)}>
+            <View style={styles.webPickerBackdrop}>
+              <TouchableWithoutFeedback>
+                <View style={styles.webPickerCard}>
+                  <Text style={styles.webPickerTitle}>{webPicker.title}</Text>
+                  <View style={styles.webPickerDivider} />
+                  {webPicker.options.map((opt, i) => (
+                    <Pressable
+                      key={i}
+                      style={({ pressed }) => [
+                        styles.webPickerItem,
+                        pressed && styles.webPickerItemPressed,
+                      ]}
+                      onPress={() => { opt.onPress(); setWebPicker(null); }}
+                    >
+                      <Text style={styles.webPickerItemText}>{opt.label}</Text>
+                    </Pressable>
+                  ))}
+                  <View style={styles.webPickerDivider} />
+                  <Pressable
+                    style={({ pressed }) => [styles.webPickerItem, pressed && styles.webPickerItemPressed]}
+                    onPress={() => setWebPicker(null)}
+                  >
+                    <Text style={[styles.webPickerItemText, { opacity: 0.5 }]}>Cancel</Text>
+                  </Pressable>
+                </View>
+              </TouchableWithoutFeedback>
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
+      )}
     </ScrollView>
   );
 }
@@ -432,5 +478,42 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 8,
     opacity: 0.7,
+  },
+  webPickerBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  webPickerCard: {
+    backgroundColor: '#1c1c1e',
+    borderRadius: 12,
+    width: 280,
+    overflow: 'hidden',
+  },
+  webPickerTitle: {
+    color: '#aaa',
+    fontSize: 13,
+    fontWeight: '600',
+    textAlign: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    letterSpacing: 0.3,
+  },
+  webPickerDivider: {
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: 'rgba(255,255,255,0.15)',
+  },
+  webPickerItem: {
+    paddingVertical: 14,
+    paddingHorizontal: 20,
+  },
+  webPickerItemPressed: {
+    backgroundColor: 'rgba(255,255,255,0.08)',
+  },
+  webPickerItemText: {
+    color: '#ffffff',
+    fontSize: 16,
+    textAlign: 'center',
   },
 });
