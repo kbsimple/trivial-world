@@ -21,7 +21,7 @@ export default function ResultsScreen() {
   const activeCategories: PlayerColor[] =
     enabledCategories && enabledCategories.length > 0
       ? (enabledCategories as PlayerColor[])
-      : PLAYER_COLORS;
+      : ([...PLAYER_COLORS] as PlayerColor[]);
 
   const totalQuestions = questionNumber > 1 ? questionNumber - 1 : 0;
   const textColor = theme.color?.val as string || '#ffffff';

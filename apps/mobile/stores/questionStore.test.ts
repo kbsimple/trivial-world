@@ -138,7 +138,7 @@ describe('questionStore', () => {
         activePackId: null,
         enabledCategories: null,
         enabledDifficulties: null,
-      });
+      } as any);
 
       const result = await useQuestionStore.getState().selectQuestion('blue');
 
@@ -151,7 +151,7 @@ describe('questionStore', () => {
         activePackId: 'test-pack-uuid',
         enabledCategories: ['pink', 'yellow'], // blue is disabled
         enabledDifficulties: null,
-      });
+      } as any);
 
       const result = await useQuestionStore.getState().selectQuestion('blue');
 
@@ -218,7 +218,7 @@ describe('questionStore', () => {
         activePackId: 'test-pack-uuid',
         enabledCategories: null,
         enabledDifficulties: ['hard'], // Only hard questions
-      });
+      } as any);
 
       mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
       mockDatabaseQueryShouldReturn = [
@@ -240,7 +240,7 @@ describe('questionStore', () => {
         activePackId: 'test-pack-uuid',
         enabledCategories: null,
         enabledDifficulties: ['hard'], // Only hard questions
-      });
+      } as any);
 
       mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
       mockDatabaseQueryShouldReturn = [
@@ -312,7 +312,7 @@ describe('questionStore', () => {
         activePackId: null,
         enabledCategories: null,
         enabledDifficulties: null,
-      });
+      } as any);
 
       // Should not throw
       await expect(

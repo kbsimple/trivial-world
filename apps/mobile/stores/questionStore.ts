@@ -21,6 +21,7 @@ interface Question {
   questionText: string;
   answerText: string;
   difficulty?: Difficulty;
+  tidbits?: string;
 }
 
 /**
@@ -64,12 +65,9 @@ export const useQuestionStore = create<QuestionState>()(
 
       selectQuestion: async (category: PlayerColor, packId?: string) => {
         if (Platform.OS === 'web') {
-          // Web platform: packId argument is intentionally ignored here.
-          // Web always draws from the single bundled question pool (no downloaded packs),
-          // so per-player pack selection has no effect on web. The pack chip UI is already
-          // hidden on web (see Platform.OS !== 'web' guard in setup.tsx), so this code
-          // path is consistent with the overall web-only design decision.
-          const question = await getNextQuestion(category, get().askedQuestionIds);
+          const { activePackId } = usePackStore.getState();
+          const resolvedPackId = packId ?? activePackId ?? undefined;
+          const question = await getNextQuestion(category, get().askedQuestionIds, resolvedPackId);
           if (question) {
             set({ currentQuestion: question, currentCategory: category });
           }
@@ -147,6 +145,7 @@ export const useQuestionStore = create<QuestionState>()(
             questionText: selected.questionText,
             answerText: selected.answerText,
             difficulty: selected.difficulty as Difficulty | undefined,
+            tidbits: selected.tidbits,
           };
 
           set({

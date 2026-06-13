@@ -22,7 +22,7 @@ export class QuestionModel extends Model {
   @field('choices') choices?: string; // JSON array
   @field('correct_choice_index') correctChoiceIndex?: number;
   @field('tidbits') tidbits?: string;
-  @field('asked_at') askedAt?: number; // Unix timestamp or null
+  @field('asked_at') askedAt?: number | null; // Unix timestamp or null
 
   @relation('question_packs', 'question_pack_id') pack!: QuestionPackModel;
 

@@ -4,6 +4,29 @@ import { ALL_QUESTIONS, getQuestionsByCategory } from '../data/questions';
 import { PlayerColor } from '../constants/categories';
 import { logger } from '../utils/logger';
 
+// Web-only: in-memory cache of questions per pack ID (cleared on page reload)
+const webPackCache = new Map<string, Question[]>();
+
+async function fetchWebPackQuestions(packId: string): Promise<Question[] | null> {
+  if (webPackCache.has(packId)) return webPackCache.get(packId)!;
+
+  const { usePackStore } = await import('../stores/packStore');
+  const packEntry = usePackStore.getState().availablePacks.find(p => p.id === packId);
+  if (!packEntry) return null;
+
+  try {
+    const res = await fetch(packEntry.downloadUrl);
+    if (!res.ok) return null;
+    const { QuestionPackSchema } = await import('@trivial-world/types');
+    const result = QuestionPackSchema.safeParse(await res.json());
+    if (!result.success) return null;
+    webPackCache.set(packId, result.data.questions);
+    return result.data.questions;
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Question provider abstraction per D-07
  * - Mobile: WatermelonDB with pack downloads
@@ -26,14 +49,16 @@ function playerColorToCategory(color: PlayerColor): Category {
  * Get next question for a category, excluding already-asked questions
  * @param category - The category to get a question from
  * @param excludeIds - Array of question IDs to exclude (already asked)
+ * @param packId - Pack ID to source questions from (web: fetches pack JSON; native: handled by caller)
  * @returns A random unasked question, or null if none available
  */
 export async function getNextQuestion(
   category: PlayerColor,
-  excludeIds: string[]
+  excludeIds: string[],
+  packId?: string
 ): Promise<Question | null> {
   if (Platform.OS === 'web') {
-    return getNextQuestionFromBundle(playerColorToCategory(category), excludeIds);
+    return getNextQuestionFromBundle(playerColorToCategory(category), excludeIds, packId);
   }
   return getNextQuestionFromDatabase(category, excludeIds);
 }
@@ -55,19 +80,24 @@ export async function getQuestionsForCategory(
 // --- Platform-specific implementations ---
 
 /**
- * Web: Get question from bundled default pack per D-08
+ * Web: Get question from selected pack (fetched on demand) or bundled fallback per D-08
  */
 async function getNextQuestionFromBundle(
   category: Category,
-  excludeIds: string[]
+  excludeIds: string[],
+  packId?: string
 ): Promise<Question | null> {
-  const available = ALL_QUESTIONS.filter(
+  // Use pack-specific questions if available, otherwise fall back to bundled data
+  const pool = packId
+    ? ((await fetchWebPackQuestions(packId)) ?? ALL_QUESTIONS)
+    : ALL_QUESTIONS;
+
+  const available = pool.filter(
     (q) => q.category === category && !excludeIds.includes(q.id)
   );
 
   if (available.length === 0) {
-    // Reset if all questions exhausted (allow re-asking)
-    const categoryQuestions = ALL_QUESTIONS.filter((q) => q.category === category);
+    const categoryQuestions = pool.filter((q) => q.category === category);
     if (categoryQuestions.length === 0) return null;
 
     const selected = categoryQuestions[Math.floor(Math.random() * categoryQuestions.length)];
