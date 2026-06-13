@@ -249,7 +249,12 @@ Plans:
   4. A separate review command lets editors inspect and approve/edit draft questions before publishing
   5. Published packs are independent JSON files registered in the pack index and downloadable by the mobile app
   6. The `tidbits` field is displayed in the question reveal screen of the mobile app
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+- [ ] 16-01-PLAN.md — Schema: tidbits field in QuestionSchema, WatermelonDB migration 003, schema v3, Question model
+- [ ] 16-02-PLAN.md — CLI generate.ts: bulk generation loop, draft.ts helper, incremental draft saves
+- [ ] 16-03-PLAN.md — CLI review.ts: interactive approve/edit/reject + publish to public/packs/ and index
+- [ ] 16-04-PLAN.md — Mobile UI: tidbits display in QuestionCard after answer reveal
 
 ---
 
@@ -272,7 +277,7 @@ Plans:
 | 13. Turn Flow UI | 1/1 | Complete | 2026-06-12 |
 | 14. Championship Mode & Polish | 1/1 | Complete | 2026-06-12 |
 | 15. Per-Player Pack Selection | 3/3 | Complete | 2026-06-12 |
-| 16. CLI Bulk Question Generation | 0/? | Not started | — |
+| 16. CLI Bulk Question Generation | 0/4 | Not started | — |
 
 ---
 
