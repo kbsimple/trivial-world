@@ -4,15 +4,15 @@ milestone: v5.0
 milestone_name: Content Generation Tooling
 status: planning
 stopped_at: null
-last_updated: "2026-06-12T23:30:00.000Z"
-last_activity: 2026-06-12 — Phase 16 planned (4 plans, 3 waves); ready to execute
+last_updated: "2026-06-13T00:00:00.000Z"
+last_activity: 2026-06-13 — Phase 17 complete (2/2 plans, verified 5/5 criteria)
 resume_file: null
 progress:
-  total_phases: 1
-  completed_phases: 0
-  total_plans: 4
-  completed_plans: 0
-  percent: 0
+  total_phases: 2
+  completed_phases: 1
+  total_plans: 6
+  completed_plans: 2
+  percent: 50
 ---
 
 # Project State
@@ -26,17 +26,17 @@ See: .planning/PROJECT.md (updated 2026-06-12)
 
 ## Current Position
 
-Phase: 16 (CLI Bulk Question Generation) — READY TO EXECUTE
-Plan: 4 plans planned, 0 complete
+Phase: 17 (Per-Player Pack and Difficulty) — COMPLETE
+Next Phase: 16 (CLI Bulk Question Generation) — READY TO PLAN
 Status: v5.0 milestone in progress
-Last activity: 2026-06-12 — Phase 16 planned; 4 plans verified across 3 waves
+Last activity: 2026-06-13 — Phase 17 complete; 5/5 success criteria verified
 
-Progress: [██████████] 100%
+Progress: [██████████] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 35
+- Total plans completed: 37
 - v1.0: 10 plans (~65 min execution)
 - v2.0: 11 plans (~48 hours)
 - v3.0: 5 plans (~18 min execution)
@@ -77,10 +77,16 @@ Progress: [██████████] 100%
 - D-v4-06: Per-player pack selection (native only); web always uses bundled question pool
 - D-v4-07: playerPackIds and playerCategories snapshotted at startGame() for immutable in-game state
 
+**v5.0 In Progress (2026-06-13):**
+- D-v5-01: Per-player difficulty preference — each player can independently set Easy/Medium/Hard or Any (null)
+- D-v5-02: playerDifficulties snapshotted at startGame() alongside playerPackIds for immutable in-game state
+- D-v5-03: Per-player difficulty overrides game-level enabledDifficulties; null falls back to game-level filter
+
 ### Roadmap Evolution
 
 - Phase 15 added: Per-Player Pack Selection (allow each player to use a different question pack)
 - Phase 16 added: CLI Bulk Question Generation — scalable CLI pipeline, decoupled review, tidbits field in answer reveals
+- Phase 17 added: Per-Player Pack and Difficulty — each player independently selects pack + difficulty; game draws from multiple packs simultaneously
 
 ### Pending Todos
 

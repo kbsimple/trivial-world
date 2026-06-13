@@ -267,8 +267,9 @@ Plans:
   5. Setup UI clearly shows each player's pack and difficulty configuration
 **Plans**: 2 plans
 Plans:
-- [ ] 17-01-PLAN.md — Data layer: Player.difficultyPreference + playerStore action + gameStore playerDifficulties snapshot + questionStore/questionProvider difficulty filter
-- [ ] 17-02-PLAN.md — UI: difficulty chip in setup packChipRow + difficulty label in turn progress strip
+- [x] 17-01-PLAN.md — Data layer: Player.difficultyPreference + playerStore action + gameStore playerDifficulties snapshot + questionStore/questionProvider difficulty filter
+- [x] 17-02-PLAN.md — UI: difficulty chip in setup packChipRow + difficulty label in turn progress strip
+**Completed**: 2026-06-13
 
 ---
 
@@ -292,7 +293,7 @@ Plans:
 | 14. Championship Mode & Polish | 1/1 | Complete | 2026-06-12 |
 | 15. Per-Player Pack Selection | 3/3 | Complete | 2026-06-12 |
 | 16. CLI Bulk Question Generation | 0/4 | Not started | — |
-| 17. Per-Player Pack and Difficulty | 0/2 | Not started | — |
+| 17. Per-Player Pack and Difficulty | 2/2 | Complete | 2026-06-13 |
 
 ---
 
