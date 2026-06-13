@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v5.0
 milestone_name: Content Generation Tooling
-status: complete
+status: shipped
 stopped_at: null
 last_updated: "2026-06-13T00:00:00.000Z"
-last_activity: 2026-06-13 — Phase 16 complete (13/13); Phase 17 complete (5/5); v5.0 milestone complete
+last_activity: 2026-06-13 — v5.0 milestone shipped; all 17 phases complete
 resume_file: null
 progress:
   total_phases: 2
@@ -19,16 +19,16 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-12)
+See: .planning/PROJECT.md (updated 2026-06-13)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** v5.0 Content Generation Tooling — COMPLETE
+**Current focus:** v5.0 Content Generation Tooling — SHIPPED. Planning next milestone.
 
 ## Current Position
 
-Phase: 17 (Per-Player Pack and Difficulty) — COMPLETE
-Status: v5.0 milestone complete — all 2 phases done
-Last activity: 2026-06-13 — Phase 16 (13/13) and Phase 17 (5/5) verified; v5.0 milestone complete
+All 17 phases complete across 5 milestones (v1.0–v5.0).
+Last milestone: v5.0 Content Generation Tooling — shipped 2026-06-13.
+Status: Ready for next milestone planning via `/gsd-new-milestone`.
 
 Progress: [████████████████████] 100%
 
@@ -38,61 +38,25 @@ Progress: [████████████████████] 100%
 - Total plans completed: 41
 - v1.0: 10 plans (~65 min execution)
 - v2.0: 11 plans (~48 hours)
-- v3.0: 5 plans (~18 min execution)
-- Total execution time: ~219 minutes
+- v3.0 + v4.0 + v5.0: combined ~1 day execution
+- Milestone archive: .planning/milestones/
 
 ## Accumulated Context
 
-### Decisions
+### Key Architectural Decisions
 
-**v1.0 Completed (2026-06-08):**
-- Quick start flow (no setup wizard)
-- Conductor-centric design (app reads questions aloud)
-- 6 adapted categories from Trivial Pursuit
-- Zustand persist middleware for offline-first storage
-- No user accounts (friction kills social gameplay)
-
-**v2.0 Completed (2026-06-08):**
-- Contract-first development: structure → generator → consumer
-- Zod schemas with versioning from day one
-- WatermelonDB for offline pack caching
-- Pack selection screen before game setup (home → pack → setup → game)
-- Built-in default pack with 120 questions
-
-**v3.0 Completed (2026-06-11):**
-- D-01: AI generation stays dev-only (Ollama local)
-- D-02: Game storage is session-only (no IndexedDB)
-- D-03: Two separate Netlify sites (game + generator)
-- D-07: Question provider abstraction (WatermelonDB mobile, bundled questions web)
-- D-08: Bundled default pack questions for web
-- Expo static export for web (dist/ folder)
-
-**v4.0 Complete (2026-06-12):**
-- D-v4-01: Die roll and board positions removed entirely
-- D-v4-02: Correct answer continues turn; incorrect answer ends it (streak mechanic)
-- D-v4-03: Championship mode: all 6 categories correct → one final question to win
-- D-v4-04: Championship category chosen verbally by opponents/conductor (no app input needed)
-- D-v4-05: Game phase state: setup → selecting → answering → championship → finished
-- D-v4-06: Per-player pack selection (native only); web always uses bundled question pool
-- D-v4-07: playerPackIds and playerCategories snapshotted at startGame() for immutable in-game state
-
-**v5.0 Complete (2026-06-13):**
-- D-v5-01: Per-player difficulty preference — each player can independently set Easy/Medium/Hard or Any (null)
-- D-v5-02: playerDifficulties snapshotted at startGame() alongside playerPackIds for immutable in-game state
-- D-v5-03: Per-player difficulty overrides game-level enabledDifficulties; null falls back to game-level filter
-- D-v5-04: CLI pipeline (generate.ts + review.ts) for bulk question generation with tidbits field
-- D-v5-05: tidbits field in QuestionSchema (v3), WatermelonDB migration 003, displayed in answer reveal
-- D-v5-06: Draft JSON workflow: generate writes immediately, review decouples inspection and publish
-
-### Roadmap Evolution
-
-- Phase 15 added: Per-Player Pack Selection (allow each player to use a different question pack)
-- Phase 16 added: CLI Bulk Question Generation — scalable CLI pipeline, decoupled review, tidbits field in answer reveals
-- Phase 17 added: Per-Player Pack and Difficulty — each player independently selects pack + difficulty; game draws from multiple packs simultaneously
+- Monorepo: Turborepo + pnpm workspaces (apps/mobile, apps/generator, packages/types)
+- Zod-first schemas: single source of truth, TypeScript types derived automatically
+- WatermelonDB: offline-first pack caching, schema v3 with tidbits migration
+- Zustand 5.x: persist middleware, per-player state snapshotted at startGame()
+- Expo Router: file-based navigation for mobile + web export
+- Question provider abstraction: WatermelonDB (mobile) vs bundled questions (web)
+- Per-player pack + difficulty: playerPackIds + playerDifficulties snapshotted at startGame()
+- effectiveDifficulties pattern: per-player difficulty overrides game-level; null falls back
 
 ### Pending Todos
 
-None.
+None — v5.0 shipped.
 
 ### Blockers/Concerns
 
@@ -100,11 +64,15 @@ None.
 
 ## Deferred Items
 
-| Category | Item | Status | Deferred At |
-|----------|------|--------|-------------|
-| Data Migration | 120 existing hardcoded questions | Deferred | Phase 6 (D-02) |
-| Cloud Hosting | Pack hosting and discovery | Deferred | Phase 7 (future) |
-| Multi-Provider AI | OpenAI, Anthropic, Google Gemini support | Deferred | Phase 7 (future) |
-| Time Limits | Per-question countdown timers | Deferred | Phase 8 (D-04) |
-| Game Variants | Short game, custom win conditions | Deferred | Phase 8 (D-07) |
-| Offline Web | IndexedDB persistence for web game | Deferred | v4.0 |
+Items acknowledged and deferred at milestone close on 2026-06-13:
+
+| Category | Item | Status | Notes |
+|----------|------|--------|-------|
+| uat | Phase 10: 10-HUMAN-UAT.md [automated] — 0 pending scenarios | pre-existing | From v3.0 |
+| verification | Phase 10: 10-VERIFICATION.md [human_needed] | pre-existing | Netlify UAT deferred |
+| verification | Phase 15: 15-VERIFICATION.md [human_needed] | pre-existing | Per-player pack manual testing |
+| todo | 2026-06-10-add-e2e-tests-mobile-generator.md [testing] | pending | E2E test setup |
+| todo | 2026-06-10-fix-e2e-console-listener-timing.md [testing] | pending | Test timing issue |
+| todo | 2026-06-10-fix-netlify-transpilepackages.md [deployment] | pending | Netlify build config |
+| todo | 2026-06-10-metro-resolver-watermelondb-mock.md [mobile] | pending | Metro resolver fix |
+| todo | 2026-06-10-remove-nextjs-plugin-game-site.md [deployment] | pending | Next.js plugin cleanup |

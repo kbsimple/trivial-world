@@ -1,5 +1,32 @@
 # Milestones
 
+## v5.0: Content Generation Tooling — Completed 2026-06-13
+
+**Goal:** CLI pipeline for bulk AI question generation with tidbits + per-player difficulty configuration
+
+**Shipped:**
+- `tidbits` field in QuestionSchema v3 + WatermelonDB migration 003 (Phase 16)
+- `generate.ts` CLI: bulk generation from `--topic`, all 6 categories, incremental draft saves (Phase 16)
+- `review.ts` CLI: interactive approve/edit/reject + pack publish to `public/packs/` and index (Phase 16)
+- tidbits display in QuestionCard answer reveal screen (Phase 16)
+- Per-player difficulty preference (Easy/Medium/Hard/Any) with `updatePlayerDifficulty` action (Phase 17)
+- `playerDifficulties` snapshot at `startGame()` mirroring `playerPackIds` pattern (Phase 17)
+- Difficulty chip per player in game setup; difficulty label in turn progress strip (Phase 17)
+
+**Key Decisions:**
+- Draft JSON workflow: generate writes immediately, review decouples inspection and publish
+- `effectiveDifficulties = difficulty != null ? [difficulty] : enabledDifficulties` priority pattern
+- playerDifficulties snapshotted at startGame() for immutable in-game state (mirrors playerPackIds)
+- Per-player difficulty overrides game-level enabledDifficulties; null falls back to game default
+
+**Tech Debt:**
+- `questionProvider.getNextQuestionFromDatabase` is dead code on mobile with latent tidbits and packId bugs
+- Starter pack has zero tidbits content (content gap, not code bug)
+
+**Duration:** ~1 day
+
+---
+
 ## v2.0: Question Packs & Game Configuration — Completed 2026-06-08
 
 **Goal:** Custom question packs with AI generation and game configuration
@@ -49,4 +76,4 @@
 **Duration:** ~65 minutes execution time
 
 ---
-*Last updated: 2026-06-08*
+*Last updated: 2026-06-13*
