@@ -76,7 +76,7 @@ const status = {
   commitShort: commit !== 'unknown' ? commit.slice(0, 8) : 'unknown',
   branch,
   context: process.env.CONTEXT || (process.env.NETLIFY === 'true' ? 'netlify' : 'local'),
-  builtAt: new Date().toISOString(),
+  builtAt: new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles', timeZoneName: 'short' }),
   // Netlify-specific: present in CI, null locally
   buildId: process.env.BUILD_ID || null,
   deployId: process.env.DEPLOY_ID || null,
