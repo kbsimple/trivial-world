@@ -27,21 +27,24 @@
       "category": "blue",
       "difficulty": "easy",
       "questionText": "In what fictional East Texas town does the Cooper family live in Young Sheldon?",
-      "answerText": "Medford"
+      "answerText": "Medford",
+      "tidbits": "East Texas, where Young Sheldon is set, is characterized by its conservative culture, religious communities, and distinct regional identity."
     },
     {
       "id": "blue-002",
       "category": "blue",
       "difficulty": "easy",
       "questionText": "What state is Medford, Texas located in?",
-      "answerText": "Texas"
+      "answerText": "Texas",
+      "tidbits": "Medford, Texas (Sheldon's fictional hometown) is depicted as a small town where everyone knows each other and Sheldon stands out dramatically."
     },
     {
       "id": "blue-003",
       "category": "blue",
       "difficulty": "easy",
       "questionText": "What is the name of the high school where George Cooper Sr. coaches and Sheldon attends?",
-      "answerText": "Medford High School"
+      "answerText": "Medford High School",
+      "tidbits": "The University of East Texas (fictional) in the show is based loosely on real East Texas universities like UT Tyler."
     },
     {
       "id": "blue-004",
@@ -132,21 +135,24 @@
       "category": "pink",
       "difficulty": "easy",
       "questionText": "What iconic science fiction TV show is Sheldon's absolute favorite, influencing nearly every aspect of his life?",
-      "answerText": "Star Trek"
+      "answerText": "Star Trek",
+      "tidbits": "Jim Parsons narrates Young Sheldon as the adult Sheldon looking back, directly connecting it to The Big Bang Theory timeline."
     },
     {
       "id": "pink-002",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "Young Sheldon is a prequel spin-off of what long-running CBS sitcom?",
-      "answerText": "The Big Bang Theory"
+      "answerText": "The Big Bang Theory",
+      "tidbits": "The show is set in 1989–1993, requiring meticulous period-accurate props, clothing, and pop culture references."
     },
     {
       "id": "pink-003",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "Who provides the adult Sheldon narration voiceover throughout the series?",
-      "answerText": "Jim Parsons"
+      "answerText": "Jim Parsons",
+      "tidbits": "Georgie Cooper, Sheldon's older brother, runs a tire shop as an adult in The Big Bang Theory — his early entrepreneurial instincts are shown in Young Sheldon."
     },
     {
       "id": "pink-004",
@@ -237,21 +243,24 @@
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "How old is Sheldon Cooper when Young Sheldon begins? A) 7, B) 8, C) 9, D) 10",
-      "answerText": "9 (C)"
+      "answerText": "9 (C)",
+      "tidbits": "Young Sheldon premiered in 2017 and ran for 7 seasons, concluding in 2024 with Sheldon leaving for Caltech."
     },
     {
       "id": "yellow-002",
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "What grade does Sheldon enter at Medford High School at the start of the series?",
-      "answerText": "Ninth grade"
+      "answerText": "Ninth grade",
+      "tidbits": "Iain Armitage was 9 years old when he began playing young Sheldon, and his performance was praised for capturing Jim Parsons's mannerisms."
     },
     {
       "id": "yellow-003",
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "What is the name of Sheldon's twin sister?",
-      "answerText": "Missy"
+      "answerText": "Missy",
+      "tidbits": "The show filmed in California but carefully recreated the look of 1980s–90s Texas through set design and location shoots."
     },
     {
       "id": "yellow-004",
@@ -342,21 +351,24 @@
       "category": "purple",
       "difficulty": "easy",
       "questionText": "Young Sheldon uses what visual device at the start of episodes to establish time and place?",
-      "answerText": "Title cards"
+      "answerText": "Title cards",
+      "tidbits": "Montana Jordan, who plays Georgie, became one of the show's most popular characters despite being introduced as a secondary figure."
     },
     {
       "id": "purple-002",
       "category": "purple",
       "difficulty": "easy",
       "questionText": "What camera style does Young Sheldon use, distinguishing it visually from The Big Bang Theory?",
-      "answerText": "Single-camera"
+      "answerText": "Single-camera",
+      "tidbits": "The Cooper family's home set is designed to feel authentically middle-class 1980s American with period-accurate decor."
     },
     {
       "id": "purple-003",
       "category": "purple",
       "difficulty": "medium",
       "questionText": "Unlike The Big Bang Theory, Young Sheldon deliberately omits what standard sitcom audio element?",
-      "answerText": "Laugh track"
+      "answerText": "Laugh track",
+      "tidbits": "Meemaw (Connie Tucker) is portrayed as the fun-loving, gambling, sometimes morally ambiguous counterpoint to Sheldon's structured worldview."
     },
     {
       "id": "purple-004",
@@ -447,21 +459,24 @@
       "category": "green",
       "difficulty": "easy",
       "questionText": "What branch of physics is Sheldon Cooper most passionate about?",
-      "answerText": "Theoretical physics"
+      "answerText": "Theoretical physics",
+      "tidbits": "Sheldon's early interest in train schedules and precise time management shown in the series foreshadows his adult obsession with routine in The Big Bang Theory."
     },
     {
       "id": "green-002",
       "category": "green",
       "difficulty": "easy",
       "questionText": "What IQ number is Sheldon stated to have in the show? A) 167, B) 175, C) 187, D) 200",
-      "answerText": "187 (C)"
+      "answerText": "187 (C)",
+      "tidbits": "The series shows Sheldon's early experiments with physics including his \"Cooper Coupler\" train experiment."
     },
     {
       "id": "green-003",
       "category": "green",
       "difficulty": "easy",
       "questionText": "What famous equation by Einstein does Sheldon frequently reference as foundational to all physics?",
-      "answerText": "E equals mc squared"
+      "answerText": "E equals mc squared",
+      "tidbits": "Dr. Sturgis (Sheldon's early mentor at the university) represents the kind of brilliant-but-socially-awkward role model Sheldon aspires to be."
     },
     {
       "id": "green-004",
@@ -552,21 +567,24 @@
       "category": "orange",
       "difficulty": "easy",
       "questionText": "What sport does George Cooper Sr. coach at Medford High School?",
-      "answerText": "Football"
+      "answerText": "Football",
+      "tidbits": "George Cooper Sr.'s football coaching career is central to the show — his relationship with Sheldon provides the main emotional arc of the series."
     },
     {
       "id": "orange-002",
       "category": "orange",
       "difficulty": "easy",
       "questionText": "What position does Georgie primarily play on the Medford High football team?",
-      "answerText": "Running back"
+      "answerText": "Running back",
+      "tidbits": "Sheldon's distaste for sports, especially football, contrasts sharply with his father's deep passion for coaching, creating ongoing family tension."
     },
     {
       "id": "orange-003",
       "category": "orange",
       "difficulty": "medium",
       "questionText": "What rival town's team does Medford High regularly compete against in football?",
-      "answerText": "Jasper"
+      "answerText": "Jasper",
+      "tidbits": "The show accurately depicts the cultural dominance of high school football in Texas, where Friday night games are community events."
     },
     {
       "id": "orange-004",
@@ -652,5 +670,7 @@
       "questionText": "Though Sheldon excels academically, Georgie's football athleticism earns what specific emotional response from George Sr.?",
       "answerText": "Pride"
     }
-  ]
+  ],
+  "checksum": "58fadb3d16ffb30d5a8af8965902620eef019ddb84a1e6b1085a291b79643cce",
+  "size": 20419
 }

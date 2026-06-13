@@ -15,8 +15,8 @@
         "orange": 13
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/trivial-world-starter-7f3a9c2e.json",
-      "checksum": "7e7aeeac3cf11eea06c375faa3dc6d5c985655cf416dc4cf5aac1fb151651c64",
-      "size": 15801
+      "checksum": "e31bcf080f5637a5dfd30ebed1dbf1682eedc8d196ad3c07ea1c17038fc057b4",
+      "size": 17112
     },
     {
       "id": "2722b331-e6bd-4042-a34d-b4d7ab8b6e51",
@@ -33,8 +33,8 @@
         "orange": 10
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/diary-of-a-wimpy-kid-2722b331.json",
-      "checksum": "c30b1fca218c42a3076ba5776fe53cb3ebc5b955cbcb158aec1d3bbe21e1ede1",
-      "size": 14263
+      "checksum": "7116b648d80caeafe6062fff1afc58d637cd10d216f75f03fd16de5b48d9ddf4",
+      "size": 15612
     },
     {
       "id": "6ac4973a-4ef2-4a13-a261-5cd1de052df1",
@@ -51,8 +51,8 @@
         "orange": 15
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/young-sheldon-6ac4973a.json",
-      "checksum": "b260ea5d0412ddb67a0dc7a042315be0eb55d8b518745689fbc33e658987fb38",
-      "size": 18444
+      "checksum": "58fadb3d16ffb30d5a8af8965902620eef019ddb84a1e6b1085a291b79643cce",
+      "size": 20419
     },
     {
       "id": "dadd53ef-d68e-4018-a394-6d81119ce810",
@@ -69,8 +69,8 @@
         "orange": 10
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/american-history-1700s-dadd53ef.json",
-      "checksum": "d15b2a8c0985f63b5e0f0fb5d0f2dd525376b9fdb793e967d5e2b89ad38ff3e4",
-      "size": 12897
+      "checksum": "3c2b3a7b2a541030efaad788f0eddf779835dd98ac94bd13b81dab843a689210",
+      "size": 16505
     },
     {
       "id": "26180b72-0e16-4850-8d8d-c021d1ed990c",
@@ -87,8 +87,8 @@
         "orange": 10
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/alpine-ski-slopes-26180b72.json",
-      "checksum": "89c9fe646d3e8e56a473da12391e244d83acd7b129324b30aadef46ab1cc4cf4",
-      "size": 13898
+      "checksum": "baa5bdcce970e28a7ede77441754f79581b1019df1f4f74d5f6f406354ed77cb",
+      "size": 17041
     },
     {
       "id": "b7b0b001-y0ut-4000-8000-ub200000000",
@@ -105,8 +105,8 @@
         "orange": 10
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/youtube-streams-b7b0b001.json",
-      "checksum": "f934e7e0968575755352eb658ba1d057c49d0f3b69b42791182837d043e5715c",
-      "size": 41109
+      "checksum": "a01ba04170789df0c8cde09ae0ef5f09556301a62beabee65e55dbeaf3554a17",
+      "size": 33229
     },
     {
       "id": "a2025e00-2025-4000-8000-202500000001",
@@ -123,8 +123,8 @@
         "orange": 15
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/year-of-2025-a2025e00.json",
-      "checksum": "a7bd073e7218b6d8b2885143d3d0007080b35237810140e36ac42f2d0b6f788d",
-      "size": 53956
+      "checksum": "f19922e79594796d480b2d6013d61789048b090f92533b532789c36fb99b3ece",
+      "size": 50314
     },
     {
       "id": "c1c1p1ec-0001-4000-8000-0pece0000001",
@@ -141,8 +141,84 @@
         "orange": 10
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/one-piece-c1c1p1ec.json",
-      "checksum": "8301d919b93ad7526775051ad16fc0e3919f92376b452d5813660601c93803ca",
-      "size": 46054
+      "checksum": "0b567bde76564fe35390272d8eed256ffdcbe27695ee8d1c804fc888d0e7db91",
+      "size": 35732
+    },
+    {
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "name": "5th Grade Grade School Curriculum",
+      "description": "Test your knowledge of what every 5th grader should know — from world geography and American history to science, art, and sports.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/5th-grade-grade-school-curriculum-a1b2c3d4.json",
+      "checksum": "943c77b50cca33d5d9638865527ed9611ecaf5f860ab2ad0801d6f22feef8c14",
+      "size": 11459
+    },
+    {
+      "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "name": "7th Grade Grade School Curriculum",
+      "description": "Middle school knowledge challenge covering world history, science, literature, health, and the arts for 7th graders.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/7th-grade-grade-school-curriculum-b2c3d4e5.json",
+      "checksum": "71860084865880717d996ce838614e1d20b794358dd2fa0d97e768535e9ac0af",
+      "size": 12450
+    },
+    {
+      "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "name": "9th Grade Grade School Curriculum",
+      "description": "High school entry-level knowledge spanning modern history, literature, biology, chemistry, geometry, and physical fitness.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/9th-grade-grade-school-curriculum-c3d4e5f6.json",
+      "checksum": "14f7e22eb03f0530840455ffe36d84222a0e67027f046225f098d43ccb59888e",
+      "size": 13374
+    },
+    {
+      "id": "d4e5f6a7-b8c9-0123-def0-234567890123",
+      "name": "Fundamentals of Exercise, Nutrition, and Health",
+      "description": "From macronutrients and muscle anatomy to athletic performance and wellness culture — a deep dive into health science.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/fundamentals-of-exercise-nutrition-and-health-d4e5f6a7.json",
+      "checksum": "df75b9d733f3f235cbe68a79f001fede215fbcd799a206301997275be6504293",
+      "size": 15377
     }
   ]
 }

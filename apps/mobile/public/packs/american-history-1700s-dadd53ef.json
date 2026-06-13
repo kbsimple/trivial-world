@@ -27,35 +27,40 @@
       "category": "blue",
       "difficulty": "easy",
       "questionText": "What city served as the capital of the United States from 1790 to 1800?",
-      "answerText": "Philadelphia"
+      "answerText": "Philadelphia",
+      "tidbits": "The Boston Tea Party took place on December 16, 1773, when colonists dumped 342 chests of East India Company tea into Boston Harbor."
     },
     {
       "id": "blue-002",
       "category": "blue",
       "difficulty": "easy",
       "questionText": "Which river forms the eastern boundary between New York and New Jersey?",
-      "answerText": "Hudson River"
+      "answerText": "Hudson River",
+      "tidbits": "The Proclamation of 1763 aimed to avoid conflicts between colonists and Native Americans, but many colonists ignored it."
     },
     {
       "id": "blue-003",
       "category": "blue",
       "difficulty": "easy",
       "questionText": "What body of water did George Washington famously cross on the night of December 25–26, 1776?",
-      "answerText": "Delaware River"
+      "answerText": "Delaware River",
+      "tidbits": "The Intolerable Acts were passed in response to the Boston Tea Party and included closing Boston Harbor until the tea was paid for."
     },
     {
       "id": "blue-004",
       "category": "blue",
       "difficulty": "medium",
       "questionText": "The Battle of Bunker Hill was actually fought on which nearby hill?",
-      "answerText": "Breed's Hill"
+      "answerText": "Breed's Hill",
+      "tidbits": "Patrick Henry delivered his famous \"Give me liberty, or give me death!\" speech in March 1775 at the Second Virginia Convention."
     },
     {
       "id": "blue-005",
       "category": "blue",
       "difficulty": "medium",
       "questionText": "Which colonial port city was blockaded by the British in 1774 as punishment for the Tea Party?",
-      "answerText": "Boston"
+      "answerText": "Boston",
+      "tidbits": "The Battle of Bunker Hill (actually fought on Breed's Hill) showed that colonial militia could stand up to professional British soldiers."
     },
     {
       "id": "blue-006",
@@ -97,35 +102,40 @@
       "category": "pink",
       "difficulty": "easy",
       "questionText": "Who wrote the influential 1776 pamphlet 'Common Sense'?",
-      "answerText": "Thomas Paine"
+      "answerText": "Thomas Paine",
+      "tidbits": "Thomas Paine's Common Sense sold about 500,000 copies in its first year — an extraordinary number for a population of just 2.5 million."
     },
     {
       "id": "pink-002",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "Benjamin Franklin published which famous almanac annually from 1732 to 1758?",
-      "answerText": "Poor Richard's Almanack"
+      "answerText": "Poor Richard's Almanack",
+      "tidbits": "The Declaration was primarily written by Thomas Jefferson over about 17 days in June 1776."
     },
     {
       "id": "pink-003",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "What popular colonial tavern in Boston was a gathering place for Sons of Liberty?",
-      "answerText": "Green Dragon Tavern"
+      "answerText": "Green Dragon Tavern",
+      "tidbits": "Most signers of the Declaration were lawyers, merchants, or planters — relatively wealthy and educated men."
     },
     {
       "id": "pink-004",
       "category": "pink",
       "difficulty": "medium",
       "questionText": "Which Boston newspaper, founded in 1690, was the first newspaper published in the American colonies?",
-      "answerText": "Publick Occurrences Both Foreign and Domestick"
+      "answerText": "Publick Occurrences Both Foreign and Domestick",
+      "tidbits": "Washington's crossing of the Delaware on Christmas night 1776 led to surprise victories at Trenton and Princeton."
     },
     {
       "id": "pink-005",
       "category": "pink",
       "difficulty": "medium",
       "questionText": "John Peter Zenger's 1735 trial established an early precedent for which freedom in America?",
-      "answerText": "Freedom of the press"
+      "answerText": "Freedom of the press",
+      "tidbits": "Valley Forge (1777–78) was a turning point where Friedrich von Steuben drilled the Continental Army into a more professional fighting force."
     },
     {
       "id": "pink-006",
@@ -167,35 +177,40 @@
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "In what year was the Declaration of Independence adopted? A) 1774, B) 1775, C) 1776, D) 1778",
-      "answerText": "1776 (C)"
+      "answerText": "1776 (C)",
+      "tidbits": "Benjamin Franklin was 70 years old when he signed the Declaration of Independence, making him the oldest signer."
     },
     {
       "id": "yellow-002",
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "Who was the primary author of the Declaration of Independence?",
-      "answerText": "Thomas Jefferson"
+      "answerText": "Thomas Jefferson",
+      "tidbits": "The Constitutional Convention met in secret — windows were nailed shut in summer heat to keep deliberations confidential."
     },
     {
       "id": "yellow-003",
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "George Washington was sworn in as the first President of the United States in what year? A) 1787, B) 1788, C) 1789, D) 1790",
-      "answerText": "1789 (C)"
+      "answerText": "1789 (C)",
+      "tidbits": "Alexander Hamilton wrote 51 of the 85 Federalist Papers, making it his most prolific literary project."
     },
     {
       "id": "yellow-004",
       "category": "yellow",
       "difficulty": "medium",
       "questionText": "The Constitutional Convention was held in which city in 1787?",
-      "answerText": "Philadelphia"
+      "answerText": "Philadelphia",
+      "tidbits": "The Bill of Rights was ratified on December 15, 1791, adding the first 10 amendments to the Constitution."
     },
     {
       "id": "yellow-005",
       "category": "yellow",
       "difficulty": "medium",
       "questionText": "What event on December 16, 1773 involved colonists dumping 342 chests of tea into Boston Harbor?",
-      "answerText": "Boston Tea Party"
+      "answerText": "Boston Tea Party",
+      "tidbits": "The term \"Midnight Judges\" refers to appointments John Adams made the night before Jefferson's inauguration."
     },
     {
       "id": "yellow-006",
@@ -237,35 +252,40 @@
       "category": "purple",
       "difficulty": "easy",
       "questionText": "Which artist painted the famous portrait of George Washington that appears on the one-dollar bill?",
-      "answerText": "Gilbert Stuart"
+      "answerText": "Gilbert Stuart",
+      "tidbits": "Gilbert Stuart's unfinished portrait of Washington (the \"Athenaeum portrait\") became the most reproduced portrait in American history and appears on the dollar bill."
     },
     {
       "id": "purple-002",
       "category": "purple",
       "difficulty": "easy",
       "questionText": "Paul Revere created a famous 1770 engraving depicting which violent confrontation between British soldiers and colonists?",
-      "answerText": "Boston Massacre"
+      "answerText": "Boston Massacre",
+      "tidbits": "Phillis Wheatley was the first African American and one of the first American women to publish a book of poetry."
     },
     {
       "id": "purple-003",
       "category": "purple",
       "difficulty": "easy",
       "questionText": "What bird was chosen as the national symbol on the Great Seal of the United States, adopted in 1782?",
-      "answerText": "Bald eagle"
+      "answerText": "Bald eagle",
+      "tidbits": "The Liberty Bell cracked sometime in the 19th century; it had already been recast twice since its arrival from England in 1752."
     },
     {
       "id": "purple-004",
       "category": "purple",
       "difficulty": "medium",
       "questionText": "Betsy Ross is traditionally credited with sewing the first version of what object in 1776?",
-      "answerText": "American flag"
+      "answerText": "American flag",
+      "tidbits": "The Great Seal of the United States was approved by Congress on June 20, 1782, and took six years and three committees to finalize."
     },
     {
       "id": "purple-005",
       "category": "purple",
       "difficulty": "medium",
       "questionText": "The reverse of the Great Seal features an unfinished pyramid with how many levels?",
-      "answerText": "13"
+      "answerText": "13",
+      "tidbits": "\"Yankee Doodle\" was originally a British song meant to mock American colonists; colonists adopted it defiantly as their own."
     },
     {
       "id": "purple-006",
@@ -307,35 +327,40 @@
       "category": "green",
       "difficulty": "easy",
       "questionText": "Benjamin Franklin's famous kite experiment in 1752 demonstrated that lightning was a form of what?",
-      "answerText": "Electricity"
+      "answerText": "Electricity",
+      "tidbits": "The triangular trade linked Europe, Africa, and the Americas; enslaved Africans were traded for sugar, tobacco, and rum."
     },
     {
       "id": "green-002",
       "category": "green",
       "difficulty": "easy",
       "questionText": "Franklin invented a rod placed on buildings to protect them from lightning strikes — what is it called?",
-      "answerText": "Lightning rod"
+      "answerText": "Lightning rod",
+      "tidbits": "Continental currency depreciated so severely that the phrase \"not worth a Continental\" became a common expression."
     },
     {
       "id": "green-003",
       "category": "green",
       "difficulty": "easy",
       "questionText": "Benjamin Franklin invented eyeglasses with two lenses of different focal lengths — what are they called?",
-      "answerText": "Bifocals"
+      "answerText": "Bifocals",
+      "tidbits": "France's entry into the Revolutionary War in 1778 transformed it into a global conflict stretching to India and the Caribbean."
     },
     {
       "id": "green-004",
       "category": "green",
       "difficulty": "medium",
       "questionText": "The printing press used in colonial America was based on technology invented by whom in the 1440s?",
-      "answerText": "Johannes Gutenberg"
+      "answerText": "Johannes Gutenberg",
+      "tidbits": "The Northwest Ordinance of 1787 is considered one of the most significant acts of the Continental Congress — it established a framework for admitting new states."
     },
     {
       "id": "green-005",
       "category": "green",
       "difficulty": "medium",
       "questionText": "David Bushnell built the 'Turtle' in 1775 — the first military submarine. Which revolutionary war force did it serve?",
-      "answerText": "Continental (American)"
+      "answerText": "Continental (American)",
+      "tidbits": "Jay's Treaty was deeply unpopular; mobs burned John Jay in effigy and Alexander Hamilton was stoned while trying to defend it."
     },
     {
       "id": "green-006",
@@ -377,35 +402,40 @@
       "category": "orange",
       "difficulty": "easy",
       "questionText": "What was the most popular spectator sport among wealthy colonial Americans in the 1700s, especially in Virginia?",
-      "answerText": "Horse racing"
+      "answerText": "Horse racing",
+      "tidbits": "George Rogers Clark's 1779 capture of Fort Sackville in present-day Indiana helped secure the Old Northwest for the United States."
     },
     {
       "id": "orange-002",
       "category": "orange",
       "difficulty": "easy",
       "questionText": "George Washington was known to enjoy which fox-related outdoor sport on his estate at Mount Vernon?",
-      "answerText": "Fox hunting"
+      "answerText": "Fox hunting",
+      "tidbits": "The Whiskey Rebellion of 1794 was the first major test of federal authority; Washington personally led troops — the only sitting president to command in the field."
     },
     {
       "id": "orange-003",
       "category": "orange",
       "difficulty": "easy",
       "questionText": "What popular colonial yard game involved throwing a horseshoe at a stake in the ground?",
-      "answerText": "Horseshoes"
+      "answerText": "Horseshoes",
+      "tidbits": "The XYZ Affair referred to the three unnamed French agents who demanded bribes before diplomatic talks, sparking public outrage in the U.S."
     },
     {
       "id": "orange-004",
       "category": "orange",
       "difficulty": "medium",
       "questionText": "Colonial armed citizen soldiers required to drill and respond at a minute's notice were called what?",
-      "answerText": "Minutemen"
+      "answerText": "Minutemen",
+      "tidbits": "The Louisiana Purchase doubled the size of the United States for about 3 cents per acre."
     },
     {
       "id": "orange-005",
       "category": "orange",
       "difficulty": "medium",
       "questionText": "What early American bowling-like game played with nine pins was popular in colonial taverns?",
-      "answerText": "Ninepins"
+      "answerText": "Ninepins",
+      "tidbits": "The Lewis and Clark Expedition traveled roughly 8,000 miles round-trip from 1804 to 1806."
     },
     {
       "id": "orange-006",
@@ -442,5 +472,7 @@
       "questionText": "What colonial bat-and-ball game, an ancestor of modern baseball, involved hitting a ball and running to bases or posts?",
       "answerText": "Rounders (town ball / base ball)"
     }
-  ]
+  ],
+  "checksum": "3c2b3a7b2a541030efaad788f0eddf779835dd98ac94bd13b81dab843a689210",
+  "size": 16505
 }

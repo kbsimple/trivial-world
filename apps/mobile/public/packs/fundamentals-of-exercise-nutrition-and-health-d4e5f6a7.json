@@ -1,0 +1,451 @@
+{
+  "metadata": {
+    "id": "d4e5f6a7-b8c9-0123-def0-234567890123",
+    "name": "Fundamentals of Exercise, Nutrition, and Health",
+    "description": "Core concepts in exercise physiology, nutrition science, anatomy, sports performance, and wellness.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-13T12:00:00.000Z",
+    "updatedAt": "2026-06-13T12:00:00.000Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "df75b9d733f3f235cbe68a79f001fede215fbcd799a206301997275be6504293",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 15377
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "The heart is located in which area of the body?",
+      "answerText": "The chest (thoracic cavity), slightly left of center"
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the name of the large muscle at the front of the upper arm that bends the elbow?",
+      "answerText": "Bicep (biceps brachii)"
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What organ located in the upper abdomen begins the chemical digestion of food?",
+      "answerText": "Stomach"
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What tough, fibrous tissue connects muscles to bones?",
+      "answerText": "Tendons"
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What flexible tissue covers the ends of bones at joints, preventing them from rubbing together?",
+      "answerText": "Cartilage"
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What region of the spine is referred to as the \"lumbar\" region?",
+      "answerText": "The lower back (the five lumbar vertebrae, L1–L5)"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What organ, located behind the stomach, produces both digestive enzymes and the hormone insulin?",
+      "answerText": "Pancreas"
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the name of the fibrous sac that surrounds and protects the heart?",
+      "answerText": "Pericardium"
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the anatomical name for the collarbone?",
+      "answerText": "Clavicle"
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the name of the large, flat triangular bone at the back of the shoulder, commonly called the shoulder blade?",
+      "answerText": "Scapula"
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What Olympic gymnast is widely considered the greatest of all time, having won the most World Championship medals in gymnastics history?",
+      "answerText": "Simone Biles"
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What sport did Michael Jordan play professionally?",
+      "answerText": "Basketball (NBA)"
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What health trend involves eliminating gluten — a protein found in wheat, barley, and rye — from the diet?",
+      "answerText": "A gluten-free diet"
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What type of diet, popular in recent years, combines very high fat, moderate protein, and extremely low carbohydrates to push the body into a state called ketosis?",
+      "answerText": "Ketogenic diet (keto)"
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What tennis legend, who won 23 Grand Slam singles titles, retired in 2022?",
+      "answerText": "Serena Williams"
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What ancient practice originating in India combines physical postures, breathing exercises, and meditation?",
+      "answerText": "Yoga",
+      "tidbits": "The word \"yoga\" comes from a Sanskrit word meaning to unite or join."
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What former NFL quarterback created the \"TB12 Method,\" a wellness and diet program he credits with extending his playing career into his mid-40s?",
+      "answerText": "Tom Brady"
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What fitness evaluation system developed by the Cooper Institute uses the PACER aerobic test and is commonly administered in U.S. schools?",
+      "answerText": "FitnessGram (PACER test)"
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What sprinter, known as \"the fastest man alive,\" holds world records in both the 100m and 200m events?",
+      "answerText": "Usain Bolt"
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What term, coined by researchers studying populations with the longest-living people on Earth, describes regions like Okinawa and Sardinia with high concentrations of centenarians?",
+      "answerText": "Blue Zones"
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What scientist discovered penicillin, the first antibiotic, in 1928?",
+      "answerText": "Alexander Fleming"
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What vitamin, found in citrus fruits, prevents the disease scurvy?",
+      "answerText": "Vitamin C (ascorbic acid)"
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What English physician pioneered the smallpox vaccine in 1796?",
+      "answerText": "Edward Jenner",
+      "tidbits": "Jenner noticed that milkmaids who contracted cowpox seemed immune to smallpox, leading to the first vaccine."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What landmark U.S. law, passed in 1906, established the first federal oversight of food and drug safety?",
+      "answerText": "The Pure Food and Drug Act (which also led to the formation of the FDA)"
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What scientist coined the term \"vitamins\" in 1912 to describe essential nutrients needed to prevent diseases like scurvy and beriberi?",
+      "answerText": "Casimir Funk"
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What Polish-French scientist discovered two radioactive elements — polonium and radium — and was the first woman to win a Nobel Prize?",
+      "answerText": "Marie Curie"
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What ancient Greek physician, considered the father of medicine, emphasized observation and rational thinking in treating illness?",
+      "answerText": "Hippocrates"
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What 19th-century Hungarian physician discovered that hand-washing dramatically reduced deaths in hospitals, decades before germ theory was widely accepted?",
+      "answerText": "Ignaz Semmelweis"
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What 1953 discovery by Watson and Crick, building on X-ray crystallography by Rosalind Franklin, revealed the double-helix structure of DNA?",
+      "answerText": "The double-helix structure of DNA (deoxyribonucleic acid)",
+      "tidbits": "Watson and Crick's model relied heavily on unpublished X-ray images taken by Rosalind Franklin."
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What nutritional deficiency disease, once common in the southeastern United States, was caused by a lack of niacin (Vitamin B3) and was widespread where corn was the dietary staple?",
+      "answerText": "Pellagra"
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the term for the practice of paying focused attention to the present moment without judgment, often used in stress reduction?",
+      "answerText": "Mindfulness"
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What chemical, often called the body's natural \"feel-good\" hormones, is released during exercise and helps reduce pain and boost mood?",
+      "answerText": "Endorphins"
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What stage of sleep, characterized by rapid eye movement and vivid dreaming, is critical for emotional processing and memory consolidation?",
+      "answerText": "REM sleep (Rapid Eye Movement sleep)"
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the physiological \"fight-or-flight\" response, and what triggers it?",
+      "answerText": "A cascade of hormonal and physical changes — including increased heart rate, adrenaline release, and heightened alertness — triggered by a perceived threat or stressor"
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What type of therapy, developed by Dr. Aaron Beck, helps patients identify and reframe negative thought patterns that contribute to depression and anxiety?",
+      "answerText": "Cognitive Behavioral Therapy (CBT)"
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What Japanese philosophy, meaning \"reason for being\" or purpose in life, is associated with the longevity of people in Okinawa?",
+      "answerText": "Ikigai"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What evidence-based stress reduction program, developed by Jon Kabat-Zinn in 1979, combines mindfulness meditation with yoga?",
+      "answerText": "MBSR (Mindfulness-Based Stress Reduction)"
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What psychological model, developed by researcher Hans Selye, describes the three-stage bodily response to prolonged stress: alarm, resistance, and exhaustion?",
+      "answerText": "General Adaptation Syndrome (GAS)"
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is cortisol, and what role does chronically elevated cortisol play in health?",
+      "answerText": "Cortisol is the primary stress hormone; chronically high levels can suppress the immune system, increase blood pressure, impair memory, and contribute to weight gain"
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What term from positive psychology describes an optimal state of full engagement and enjoyment in an activity, where time seems to disappear?",
+      "answerText": "Flow (flow state), coined by psychologist Mihaly Csikszentmihalyi"
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What are the three macronutrients that provide the body with energy?",
+      "answerText": "Carbohydrates, proteins, and fats"
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "How many calories per gram does fat provide? A) 4, B) 7, C) 9, D) 12",
+      "answerText": "9 (C) — compared to 4 calories per gram for carbohydrates and protein"
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What vitamin does the skin produce when exposed to sunlight?",
+      "answerText": "Vitamin D"
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the Basal Metabolic Rate (BMR)?",
+      "answerText": "The number of calories your body burns at rest to maintain basic functions like breathing, circulation, and cell repair"
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What percentage of the human body is made up of water? A) 40%, B) 50%, C) 60%, D) 70%",
+      "answerText": "About 60% (C) — though this varies with age, sex, and body composition"
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What role does dietary fiber play in digestion and overall health?",
+      "answerText": "Fiber adds bulk to stool, supports beneficial gut bacteria, and slows sugar absorption — reducing risk of constipation, heart disease, and blood sugar spikes"
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the glycemic index, and why does it matter for energy and nutrition?",
+      "answerText": "The glycemic index (GI) measures how quickly a food raises blood glucose; low-GI foods provide steady energy, while high-GI foods cause rapid spikes and crashes"
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the process called when the liver converts excess glucose into glycogen for storage?",
+      "answerText": "Glycogenesis"
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What happens during EPOC (Excess Post-Exercise Oxygen Consumption) after intense exercise?",
+      "answerText": "The body continues to consume extra oxygen above resting levels to restore physiological systems — replenishing energy stores, clearing lactic acid, and repairing muscle — resulting in continued calorie burning after exercise ends"
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What essential amino acid, which the body cannot synthesize on its own, is a precursor to serotonin and is found in high concentrations in eggs, turkey, and cheese?",
+      "answerText": "Tryptophan"
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What food group provides the primary fuel for endurance athletes during prolonged exercise?",
+      "answerText": "Carbohydrates (stored as glycogen in muscles and the liver)"
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What does the acronym RICE stand for in sports injury first aid?",
+      "answerText": "Rest, Ice, Compression, Elevation"
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What is the purpose of warming up before intense exercise?",
+      "answerText": "To gradually increase heart rate and blood flow to muscles, raise core temperature, and prepare joints — reducing injury risk and improving performance"
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the difference between a sprain and a strain in sports injuries?",
+      "answerText": "A sprain is a stretch or tear of a ligament (connecting bone to bone); a strain is a stretch or tear of a muscle or tendon"
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is \"carbohydrate loading,\" and which type of athletes commonly use it?",
+      "answerText": "Increasing carbohydrate intake in the days before a long event to maximize muscle glycogen stores; used by marathon runners, cyclists, and triathletes"
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What heart rate zone — expressed as a percentage of maximum heart rate — is generally considered the aerobic training zone? A) 40–50%, B) 50–60%, C) 60–80%, D) 80–100%",
+      "answerText": "60–80% (C)"
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the role of electrolytes — including sodium, potassium, and magnesium — during exercise?",
+      "answerText": "Electrolytes regulate fluid balance, nerve signals, and muscle contractions; they are lost through sweat and must be replenished during prolonged exercise to prevent cramping and hyponatremia (low blood sodium)"
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is periodization in athletic training?",
+      "answerText": "A systematic approach of cycling training volume and intensity through planned phases — base, build, peak, and recovery — to optimize performance and prevent overtraining"
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What physiological adaptation in the cardiovascular system occurs after months of sustained aerobic training?",
+      "answerText": "The heart becomes stronger and more efficient (cardiac hypertrophy), pumping more blood per beat (increased stroke volume), resulting in a lower resting heart rate"
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the concept of \"progressive overload,\" and why is it the fundamental principle behind strength and conditioning gains?",
+      "answerText": "Progressive overload means gradually increasing the stress placed on the body during training; without this, the body adapts to its current workload and stops improving — making it the cornerstone of all effective training programs"
+    }
+  ],
+  "checksum": "df75b9d733f3f235cbe68a79f001fede215fbcd799a206301997275be6504293",
+  "size": 15377
+}

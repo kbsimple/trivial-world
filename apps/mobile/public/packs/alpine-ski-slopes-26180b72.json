@@ -27,35 +27,40 @@
       "category": "blue",
       "difficulty": "easy",
       "questionText": "In which US state are both Alpine Meadows and Squaw Valley ski resorts located?",
-      "answerText": "California"
+      "answerText": "California",
+      "tidbits": "The Alps span eight countries: France, Switzerland, Italy, Monaco, Liechtenstein, Austria, Germany, and Slovenia."
     },
     {
       "id": "blue-002",
       "category": "blue",
       "difficulty": "easy",
       "questionText": "What large alpine lake lies just a few miles east of Palisades Tahoe?",
-      "answerText": "Lake Tahoe"
+      "answerText": "Lake Tahoe",
+      "tidbits": "Chamonix hosted the first Winter Olympics in 1924, making it a historic landmark in alpine skiing history."
     },
     {
       "id": "blue-003",
       "category": "blue",
       "difficulty": "easy",
       "questionText": "What mountain range contains both Alpine Meadows and Squaw Valley?",
-      "answerText": "Sierra Nevada"
+      "answerText": "Sierra Nevada",
+      "tidbits": "Verbier, Switzerland sits at over 1,500 meters elevation, giving it reliable snowfall from November through April."
     },
     {
       "id": "blue-004",
       "category": "blue",
       "difficulty": "medium",
       "questionText": "What small town on the north shore of Lake Tahoe sits just a few miles from Palisades Tahoe?",
-      "answerText": "Tahoe City"
+      "answerText": "Tahoe City",
+      "tidbits": "Val Thorens in France is the highest ski resort in the Alps at 2,300 meters, with skiing possible into May."
     },
     {
       "id": "blue-005",
       "category": "blue",
       "difficulty": "medium",
       "questionText": "What railroad town roughly 12 miles northwest of Lake Tahoe serves as a gateway city to Palisades Tahoe?",
-      "answerText": "Truckee"
+      "answerText": "Truckee",
+      "tidbits": "Innsbruck, Austria has hosted the Winter Olympics twice — in 1964 and 1976."
     },
     {
       "id": "blue-006",
@@ -97,35 +102,40 @@
       "category": "pink",
       "difficulty": "easy",
       "questionText": "Which 1993 snowboard comedy film features the character Charles 'Chunk' Godfrey and was largely set at a ski resort?",
-      "answerText": "Aspen Extreme"
+      "answerText": "Aspen Extreme",
+      "tidbits": "The FIS Alpine Ski World Cup circuit was established in 1966 and features events across Europe, North America, and occasionally Asia."
     },
     {
       "id": "pink-002",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "What iconic 1998 snowboard trick competition at the Winter X Games made halfpipe a mainstream spectator sport?",
-      "answerText": "Halfpipe"
+      "answerText": "Halfpipe",
+      "tidbits": "Lindsey Vonn holds the record for the most World Cup wins by a female alpine skier with 82 victories."
     },
     {
       "id": "pink-003",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "Which legendary American skier nicknamed 'The Herminator' dominated World Cup racing in the late 1990s?",
-      "answerText": "Hermann Maier"
+      "answerText": "Hermann Maier",
+      "tidbits": "Mikaela Shiffrin surpassed Ingemar Stenmark's all-time World Cup win record in 2023, earning over 90 victories."
     },
     {
       "id": "pink-004",
       "category": "pink",
       "difficulty": "medium",
       "questionText": "Which American snowboarder won three Olympic halfpipe gold medals and trained extensively at Lake Tahoe resorts?",
-      "answerText": "Shaun White"
+      "answerText": "Shaun White",
+      "tidbits": "The Hahnenkamm downhill race in Kitzbühel, Austria is considered the most challenging race on the men's circuit."
     },
     {
       "id": "pink-005",
       "category": "pink",
       "difficulty": "medium",
       "questionText": "What 1969 ski film starring Robert Redford was filmed partly in the Sierra Nevada and helped romanticize downhill racing?",
-      "answerText": "Downhill Racer"
+      "answerText": "Downhill Racer",
+      "tidbits": "Giant slalom gates are wider than slalom gates — typically 4–8 meters wide versus 0.75 meters for slalom."
     },
     {
       "id": "pink-006",
@@ -167,35 +177,40 @@
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "In what year did Squaw Valley host the Winter Olympic Games? A) 1952, B) 1956, C) 1960, D) 1964",
-      "answerText": "1960 (C)"
+      "answerText": "1960 (C)",
+      "tidbits": "Skiing as a sport dates back thousands of years; ancient skis have been found in Norway and Russia dated to around 6000 BCE."
     },
     {
       "id": "yellow-002",
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "What is the new combined name of Squaw Valley and Alpine Meadows since their 2021 rebranding?",
-      "answerText": "Palisades Tahoe"
+      "answerText": "Palisades Tahoe",
+      "tidbits": "The modern ski binding that releases during a fall was developed in the 1950s, dramatically reducing leg injuries."
     },
     {
       "id": "yellow-003",
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "In what decade was Alpine Meadows ski resort originally founded?",
-      "answerText": "1960s"
+      "answerText": "1960s",
+      "tidbits": "Ski boots evolved from leather lace-up boots to the rigid plastic shell design in the 1960s, improving control significantly."
     },
     {
       "id": "yellow-004",
       "category": "yellow",
       "difficulty": "medium",
       "questionText": "In what year did Alpine Meadows open for its first ski season? A) 1958, B) 1961, C) 1965, D) 1968",
-      "answerText": "1961 (B)"
+      "answerText": "1961 (B)",
+      "tidbits": "Snowplowing (the \"pizza\" shape for beginners) was the dominant braking technique taught before parallel skiing became standard."
     },
     {
       "id": "yellow-005",
       "category": "yellow",
       "difficulty": "medium",
       "questionText": "What devastating natural disaster struck Alpine Meadows on March 31, 1982, killing seven people?",
-      "answerText": "Avalanche"
+      "answerText": "Avalanche",
+      "tidbits": "Moguls form naturally when many skiers make turns in the same spots, pushing snow into mounds over time."
     },
     {
       "id": "yellow-006",
@@ -237,35 +252,40 @@
       "category": "purple",
       "difficulty": "easy",
       "questionText": "What iconic style of illustrated resort map, showing a bird's-eye perspective of the mountain with labeled runs, is called a what?",
-      "answerText": "Trail map"
+      "answerText": "Trail map",
+      "tidbits": "The iconic bright colors of ski gear emerged in the 1980s when synthetic materials replaced wool and made bold dyeing easy."
     },
     {
       "id": "purple-002",
       "category": "purple",
       "difficulty": "easy",
       "questionText": "What color symbol is used on North American ski trail signs to mark an intermediate run?",
-      "answerText": "Blue square"
+      "answerText": "Blue square",
+      "tidbits": "Après-ski culture — socializing after skiing — is especially prominent in Austrian and Swiss resorts like St. Anton."
     },
     {
       "id": "purple-003",
       "category": "purple",
       "difficulty": "easy",
       "questionText": "What shape and color symbol marks the easiest beginner runs on a North American ski trail map?",
-      "answerText": "Green circle"
+      "answerText": "Green circle",
+      "tidbits": "The ski lift was invented in Sun Valley, Idaho in 1936, inspired by banana-loading conveyors on cargo ships."
     },
     {
       "id": "purple-004",
       "category": "purple",
       "difficulty": "medium",
       "questionText": "Which legendary ski poster artist, known for his vibrant Art Deco mountain prints, created iconic imagery for resorts like Sun Valley in the mid-20th century?",
-      "answerText": "Sascha Maurer"
+      "answerText": "Sascha Maurer",
+      "tidbits": "Snowcats (tracked vehicles used for grooming) can cost over $500,000 each and operate through the night to prepare slopes."
     },
     {
       "id": "purple-005",
       "category": "purple",
       "difficulty": "medium",
       "questionText": "The official Palisades Tahoe trail map uses an oblique aerial illustration style. What term describes this artistic bird's-eye mountain perspective technique?",
-      "answerText": "Panoramic map"
+      "answerText": "Panoramic map",
+      "tidbits": "Modern ski helmets meet EN 1077 or ASTM F2040 safety standards and are designed to absorb impact at speeds up to 25 mph."
     },
     {
       "id": "purple-006",
@@ -307,35 +327,40 @@
       "category": "green",
       "difficulty": "easy",
       "questionText": "What type of mechanical lift carries skiers up a mountain while they sit in chairs hanging from a moving cable?",
-      "answerText": "Chairlift"
+      "answerText": "Chairlift",
+      "tidbits": "At high speeds, alpine skiers generate G-forces in turns similar to those experienced by fighter jet pilots — up to 3G."
     },
     {
       "id": "green-002",
       "category": "green",
       "difficulty": "easy",
       "questionText": "What is the name of the crystalline solid water structure that forms naturally as snowflakes?",
-      "answerText": "Ice crystal"
+      "answerText": "Ice crystal",
+      "tidbits": "Piste grooming machines mix compressed snow with water to create a firm, consistent surface for racing."
     },
     {
       "id": "green-003",
       "category": "green",
       "difficulty": "easy",
       "questionText": "What is the term for artificially produced snow blown onto ski slopes using machines?",
-      "answerText": "Man-made snow"
+      "answerText": "Man-made snow",
+      "tidbits": "Modern carbon-fiber ski poles are engineered to flex slightly on impact, reducing wrist strain during high-speed turns."
     },
     {
       "id": "green-004",
       "category": "green",
       "difficulty": "medium",
       "questionText": "What explosive device is commonly used by ski patrol to trigger controlled avalanche releases before the slopes open?",
-      "answerText": "Avalanche bomb"
+      "answerText": "Avalanche bomb",
+      "tidbits": "Altitude sickness can affect skiers above 2,500 meters — symptoms include headache, nausea, and fatigue."
     },
     {
       "id": "green-005",
       "category": "green",
       "difficulty": "medium",
       "questionText": "What is the name of the system installed on ski boots and bindings that releases the boot during a fall to prevent leg fractures?",
-      "answerText": "Safety binding"
+      "answerText": "Safety binding",
+      "tidbits": "UV radiation increases about 10–12% for every 1,000 meters of elevation, making sunscreen essential on ski slopes."
     },
     {
       "id": "green-006",
@@ -377,35 +402,40 @@
       "category": "orange",
       "difficulty": "easy",
       "questionText": "What is the famous expert chairlift and run at Palisades Tahoe known for steep, ungroomed terrain — abbreviated KT?",
-      "answerText": "KT-22"
+      "answerText": "KT-22",
+      "tidbits": "The downhill event is the fastest alpine skiing discipline, with top racers exceeding 150 km/h (93 mph)."
     },
     {
       "id": "orange-002",
       "category": "orange",
       "difficulty": "easy",
       "questionText": "What symbol on a trail sign indicates an expert-only, most difficult ski run?",
-      "answerText": "Black diamond"
+      "answerText": "Black diamond",
+      "tidbits": "Slalom courses feature 55–75 gates for men and 40–60 gates for women, requiring rapid short-radius turns."
     },
     {
       "id": "orange-003",
       "category": "orange",
       "difficulty": "easy",
       "questionText": "What is the name of the international ski racing organization that sanctions World Cup events?",
-      "answerText": "FIS"
+      "answerText": "FIS",
+      "tidbits": "The combined event in alpine skiing merges a downhill run with one or two slalom runs, rewarding all-around ability."
     },
     {
       "id": "orange-004",
       "category": "orange",
       "difficulty": "medium",
       "questionText": "What is the name of the very steep, narrow expert chute at Alpine Meadows known for its intimidating pitch and tight walls?",
-      "answerText": "Gunshot"
+      "answerText": "Gunshot",
+      "tidbits": "A ski race course inspection (called \"inspection\") allows athletes to side-slip down the course slowly to memorize the line."
     },
     {
       "id": "orange-005",
       "category": "orange",
       "difficulty": "medium",
       "questionText": "KT-22 at Palisades Tahoe is named for how many kick turns a pioneer skier needed to descend the face. How many kick turns gave the run its name?",
-      "answerText": "22"
+      "answerText": "22",
+      "tidbits": "Ski racing suits are aerodynamically tested in wind tunnels and can shave tenths of a second off race times."
     },
     {
       "id": "orange-006",
@@ -442,5 +472,7 @@
       "questionText": "In competitive ski racing, what is the name of the discipline combining a downhill and giant slalom section into a single run, which was debuted at the 1960 Squaw Valley Olympics?",
       "answerText": "Combined"
     }
-  ]
+  ],
+  "checksum": "baa5bdcce970e28a7ede77441754f79581b1019df1f4f74d5f6f406354ed77cb",
+  "size": 17041
 }

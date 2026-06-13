@@ -27,35 +27,40 @@
       "category": "blue",
       "difficulty": "easy",
       "questionText": "In which country is the city of Istanbul located?",
-      "answerText": "Turkey"
+      "answerText": "Turkey",
+      "tidbits": "Canada has the longest coastline of any country in the world, stretching over 202,000 km."
     },
     {
       "id": "blue-002",
       "category": "blue",
       "difficulty": "medium",
       "questionText": "What is the tallest mountain in Africa?",
-      "answerText": "Mount Kilimanjaro"
+      "answerText": "Mount Kilimanjaro",
+      "tidbits": "The Sahara Desert spans 11 countries and is roughly the size of the contiguous United States."
     },
     {
       "id": "blue-003",
       "category": "blue",
       "difficulty": "hard",
       "questionText": "In Neon Genesis Evangelion, what is the name of the futuristic city built over the Geofront?",
-      "answerText": "Tokyo-3"
+      "answerText": "Tokyo-3",
+      "tidbits": "The Amazon River discharges about 20% of all fresh water that flows into the world's oceans."
     },
     {
       "id": "blue-004",
       "category": "blue",
       "difficulty": "medium",
       "questionText": "What is the capital city of Brazil?",
-      "answerText": "Brasília"
+      "answerText": "Brasília",
+      "tidbits": "The Great Wall of China stretches over 13,000 miles when including all its branches and sections."
     },
     {
       "id": "blue-005",
       "category": "blue",
       "difficulty": "easy",
       "questionText": "In which US state is the Grand Canyon located?",
-      "answerText": "Arizona"
+      "answerText": "Arizona",
+      "tidbits": "Antarctica is technically a desert — it receives very little precipitation annually."
     },
     {
       "id": "blue-006",
@@ -97,35 +102,40 @@
       "category": "pink",
       "difficulty": "easy",
       "questionText": "Which Marvel superhero is known as the God of Thunder and wields Mjölnir?",
-      "answerText": "Thor"
+      "answerText": "Thor",
+      "tidbits": "The first video game to feature Mario was Donkey Kong (1981), where he was called \"Jumpman.\""
     },
     {
       "id": "pink-002",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "On which platform did PewDiePie become the most subscribed individual creator?",
-      "answerText": "YouTube"
+      "answerText": "YouTube",
+      "tidbits": "Netflix was founded in 1997 as a DVD mail-rental service before pivoting to streaming in 2007."
     },
     {
       "id": "pink-003",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "Who plays Tony Stark / Iron Man in the Marvel Cinematic Universe?",
-      "answerText": "Robert Downey Jr."
+      "answerText": "Robert Downey Jr.",
+      "tidbits": "The Marvel Cinematic Universe is the highest-grossing film franchise in history, surpassing $30 billion in box office revenue."
     },
     {
       "id": "pink-004",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "On which streaming platform can you watch Stranger Things?",
-      "answerText": "Netflix"
+      "answerText": "Netflix",
+      "tidbits": "YouTube was founded in February 2005 and acquired by Google just 18 months later for $1.65 billion."
     },
     {
       "id": "pink-005",
       "category": "pink",
       "difficulty": "medium",
       "questionText": "What is the name of the popular internet meme featuring a dog sitting calmly in a burning room?",
-      "answerText": "This is Fine"
+      "answerText": "This is Fine",
+      "tidbits": "Minecraft has sold over 238 million copies across all platforms, making it the best-selling video game of all time."
     },
     {
       "id": "pink-006",
@@ -167,35 +177,40 @@
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "In what year was the first iPhone released by Apple? A) 2005, B) 2006, C) 2007, D) 2008",
-      "answerText": "2007 (C)"
+      "answerText": "2007 (C)",
+      "tidbits": "The Great Pyramids of Giza were built with such precision that the sides of the Great Pyramid are aligned almost exactly to the cardinal directions."
     },
     {
       "id": "yellow-002",
       "category": "yellow",
       "difficulty": "medium",
       "questionText": "Who is widely credited as the world's first computer programmer?",
-      "answerText": "Ada Lovelace"
+      "answerText": "Ada Lovelace",
+      "tidbits": "The Roman Empire, at its peak, connected approximately 20% of the world's population under one government."
     },
     {
       "id": "yellow-003",
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "What ancient Greek city-state was renowned for its warrior culture and military training?",
-      "answerText": "Sparta"
+      "answerText": "Sparta",
+      "tidbits": "The Black Death in the 14th century killed an estimated one-third to one-half of Europe's population."
     },
     {
       "id": "yellow-004",
       "category": "yellow",
       "difficulty": "medium",
       "questionText": "In which battle did Napoleon Bonaparte suffer his final defeat in 1815?",
-      "answerText": "The Battle of Waterloo"
+      "answerText": "The Battle of Waterloo",
+      "tidbits": "The Wright Brothers' first powered flight at Kitty Hawk lasted only 12 seconds and covered 120 feet."
     },
     {
       "id": "yellow-005",
       "category": "yellow",
       "difficulty": "medium",
       "questionText": "Who invented the World Wide Web in 1989?",
-      "answerText": "Tim Berners-Lee"
+      "answerText": "Tim Berners-Lee",
+      "tidbits": "Neil Armstrong's famous quote was likely a miscommunication — he intended to say \"one small step for a man.\""
     },
     {
       "id": "yellow-006",
@@ -237,28 +252,32 @@
       "category": "purple",
       "difficulty": "hard",
       "questionText": "Who created Batman — originally appearing in Detective Comics #27 in 1939?",
-      "answerText": "Bob Kane and Bill Finger"
+      "answerText": "Bob Kane and Bill Finger",
+      "tidbits": "The Mona Lisa is painted on a poplar wood panel, not canvas, and is smaller than most people expect — about 30 by 21 inches."
     },
     {
       "id": "purple-002",
       "category": "purple",
       "difficulty": "easy",
       "questionText": "What is Spider-Man's real name?",
-      "answerText": "Peter Parker"
+      "answerText": "Peter Parker",
+      "tidbits": "Shakespeare invented over 1,700 words that we still use today, including \"bedroom,\" \"lonely,\" and \"generous.\""
     },
     {
       "id": "purple-003",
       "category": "purple",
       "difficulty": "easy",
       "questionText": "Who painted the Mona Lisa?",
-      "answerText": "Leonardo da Vinci"
+      "answerText": "Leonardo da Vinci",
+      "tidbits": "The first comic book superhero is generally considered to be Superman, who debuted in Action Comics #1 in 1938."
     },
     {
       "id": "purple-004",
       "category": "purple",
       "difficulty": "easy",
       "questionText": "In which country did manga (Japanese comics) originate?",
-      "answerText": "Japan"
+      "answerText": "Japan",
+      "tidbits": "The Louvre in Paris is the world's most visited art museum, welcoming about 9 million visitors per year."
     },
     {
       "id": "purple-005",
@@ -307,35 +326,40 @@
       "category": "green",
       "difficulty": "easy",
       "questionText": "What does the abbreviation \"AI\" stand for?",
-      "answerText": "Artificial Intelligence"
+      "answerText": "Artificial Intelligence",
+      "tidbits": "A teaspoon of neutron star material would weigh about 10 million tons — roughly the weight of Mount Everest."
     },
     {
       "id": "green-002",
       "category": "green",
       "difficulty": "easy",
       "questionText": "How many planets are currently recognized in our solar system? A) 7, B) 8, C) 9, D) 10",
-      "answerText": "8 (B)"
+      "answerText": "8 (B)",
+      "tidbits": "DNA was first identified in 1869, but its double-helix structure wasn't discovered until Watson and Crick's work in 1953."
     },
     {
       "id": "green-003",
       "category": "green",
       "difficulty": "medium",
       "questionText": "What animal is considered the apex predator of the ocean?",
-      "answerText": "Orca (killer whale)"
+      "answerText": "Orca (killer whale)",
+      "tidbits": "The Internet was originally developed as ARPANET in 1969, funded by the U.S. Department of Defense."
     },
     {
       "id": "green-004",
       "category": "green",
       "difficulty": "easy",
       "questionText": "What company created and released ChatGPT?",
-      "answerText": "OpenAI"
+      "answerText": "OpenAI",
+      "tidbits": "Octopuses have three hearts, blue blood, and can change color despite being colorblind."
     },
     {
       "id": "green-005",
       "category": "green",
       "difficulty": "medium",
       "questionText": "What is the name of NASA's Mars rover that landed in Jezero Crater in February 2021?",
-      "answerText": "Perseverance"
+      "answerText": "Perseverance",
+      "tidbits": "The human brain generates about 20 watts of power — enough to power a dim light bulb."
     },
     {
       "id": "green-006",
@@ -377,35 +401,40 @@
       "category": "orange",
       "difficulty": "medium",
       "questionText": "Which esports game features the annual championship tournament called \"The International\"?",
-      "answerText": "Dota 2"
+      "answerText": "Dota 2",
+      "tidbits": "Michael Jordan was cut from his high school varsity basketball team as a sophomore."
     },
     {
       "id": "orange-002",
       "category": "orange",
       "difficulty": "easy",
       "questionText": "How many players from each team are on the court at the same time in basketball? A) 4, B) 5, C) 6, D) 7",
-      "answerText": "5 (B)"
+      "answerText": "5 (B)",
+      "tidbits": "The first modern Olympic Games were held in Athens, Greece in 1896 with 241 athletes from 14 nations."
     },
     {
       "id": "orange-003",
       "category": "orange",
       "difficulty": "medium",
       "questionText": "Which college football team is nicknamed the Fighting Irish?",
-      "answerText": "Notre Dame"
+      "answerText": "Notre Dame",
+      "tidbits": "Babe Ruth started his career as a pitcher for the Boston Red Sox before becoming a legendary home run hitter for the Yankees."
     },
     {
       "id": "orange-004",
       "category": "orange",
       "difficulty": "medium",
       "questionText": "In which competitive first-person shooter game is the ESL Pro League a major tournament?",
-      "answerText": "Counter-Strike"
+      "answerText": "Counter-Strike",
+      "tidbits": "Soccer (association football) is the most-watched sport in the world, with an estimated 3.5 billion fans globally."
     },
     {
       "id": "orange-005",
       "category": "orange",
       "difficulty": "easy",
       "questionText": "How many holes make up a standard round of golf? A) 9, B) 12, C) 18, D) 24",
-      "answerText": "18 (C)"
+      "answerText": "18 (C)",
+      "tidbits": "The Super Bowl is consistently the most-watched annual television broadcast in the United States."
     },
     {
       "id": "orange-006",
@@ -447,252 +476,128 @@
       "category": "blue",
       "difficulty": "medium",
       "questionText": "Which country has the most natural UNESCO World Heritage Sites?",
-      "answerText": "China",
-      "choices": [
-        "Brazil",
-        "Italy",
-        "China",
-        "India"
-      ],
-      "correctChoiceIndex": 2
+      "answerText": "China"
     },
     {
       "id": "blue-mc-002",
       "category": "blue",
       "difficulty": "easy",
       "questionText": "In the video game \"The Legend of Zelda: Breath of the Wild\", which region contains the main castle?",
-      "answerText": "Hyrule",
-      "choices": [
-        "Akkala",
-        "Faron",
-        "Lanayru",
-        "Hyrule Field"
-      ],
-      "correctChoiceIndex": 3
+      "answerText": "Hyrule"
     },
     {
       "id": "blue-mc-003",
       "category": "blue",
       "difficulty": "easy",
       "questionText": "The Amazon River flows through which continent?",
-      "answerText": "South America",
-      "choices": [
-        "Africa",
-        "South America",
-        "Asia",
-        "North America"
-      ],
-      "correctChoiceIndex": 1
+      "answerText": "South America"
     },
     {
       "id": "pink-mc-001",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "Which streaming platform released \"Stranger Things\"?",
-      "answerText": "Netflix",
-      "choices": [
-        "Hulu",
-        "Disney+",
-        "Netflix",
-        "HBO Max"
-      ],
-      "correctChoiceIndex": 2
+      "answerText": "Netflix"
     },
     {
       "id": "pink-mc-002",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "What is the name of the fictional kingdom in the movie \"Frozen\"?",
-      "answerText": "Arendelle",
-      "choices": [
-        "Arendelle",
-        "Narnia",
-        "Eldorado",
-        "Zootopia"
-      ],
-      "correctChoiceIndex": 0
+      "answerText": "Arendelle"
     },
     {
       "id": "pink-mc-003",
       "category": "pink",
       "difficulty": "medium",
       "questionText": "Which social media platform invented the \"Stories\" format that others later copied?",
-      "answerText": "Snapchat",
-      "choices": [
-        "Instagram",
-        "TikTok",
-        "Snapchat",
-        "Twitter"
-      ],
-      "correctChoiceIndex": 2
+      "answerText": "Snapchat"
     },
     {
       "id": "yellow-mc-001",
       "category": "yellow",
       "difficulty": "medium",
       "questionText": "In which year did the Berlin Wall fall?",
-      "answerText": "1989",
-      "choices": [
-        "1985",
-        "1989",
-        "1991",
-        "1993"
-      ],
-      "correctChoiceIndex": 1
+      "answerText": "1989"
     },
     {
       "id": "yellow-mc-002",
       "category": "yellow",
       "difficulty": "hard",
       "questionText": "Which ancient wonder of the world was located in Alexandria, Egypt?",
-      "answerText": "The Lighthouse of Alexandria",
-      "choices": [
-        "The Colossus of Rhodes",
-        "The Hanging Gardens",
-        "The Lighthouse of Alexandria",
-        "The Temple of Artemis"
-      ],
-      "correctChoiceIndex": 2
+      "answerText": "The Lighthouse of Alexandria"
     },
     {
       "id": "yellow-mc-003",
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "Who invented the World Wide Web?",
-      "answerText": "Tim Berners-Lee",
-      "choices": [
-        "Bill Gates",
-        "Tim Berners-Lee",
-        "Vint Cerf",
-        "Steve Jobs"
-      ],
-      "correctChoiceIndex": 1
+      "answerText": "Tim Berners-Lee"
     },
     {
       "id": "purple-mc-001",
       "category": "purple",
       "difficulty": "easy",
       "questionText": "Which studio produced the animated film \"Spirited Away\"?",
-      "answerText": "Studio Ghibli",
-      "choices": [
-        "Pixar",
-        "Studio Ghibli",
-        "DreamWorks",
-        "Madhouse"
-      ],
-      "correctChoiceIndex": 1
+      "answerText": "Studio Ghibli"
     },
     {
       "id": "purple-mc-002",
       "category": "purple",
       "difficulty": "medium",
       "questionText": "What art movement is Salvador Dalí most associated with?",
-      "answerText": "Surrealism",
-      "choices": [
-        "Cubism",
-        "Impressionism",
-        "Surrealism",
-        "Abstract Expressionism"
-      ],
-      "correctChoiceIndex": 2
+      "answerText": "Surrealism"
     },
     {
       "id": "purple-mc-003",
       "category": "purple",
       "difficulty": "hard",
       "questionText": "In \"Spider-Man: Into the Spider-Verse\", what is Miles Morales's home dimension?",
-      "answerText": "Earth-1610",
-      "choices": [
-        "Earth-616",
-        "Earth-1610",
-        "Earth-65",
-        "Earth-928"
-      ],
-      "correctChoiceIndex": 1
+      "answerText": "Earth-1610"
     },
     {
       "id": "green-mc-001",
       "category": "green",
       "difficulty": "easy",
       "questionText": "How many planets are in our solar system?",
-      "answerText": "8",
-      "choices": [
-        "7",
-        "8",
-        "9",
-        "10"
-      ],
-      "correctChoiceIndex": 1
+      "answerText": "8"
     },
     {
       "id": "green-mc-002",
       "category": "green",
       "difficulty": "medium",
       "questionText": "Which programming language was created by Guido van Rossum?",
-      "answerText": "Python",
-      "choices": [
-        "Ruby",
-        "Java",
-        "Python",
-        "Perl"
-      ],
-      "correctChoiceIndex": 2
+      "answerText": "Python"
     },
     {
       "id": "green-mc-003",
       "category": "green",
       "difficulty": "medium",
       "questionText": "What is the speed of light in a vacuum, approximately?",
-      "answerText": "300,000 km/s",
-      "choices": [
-        "150,000 km/s",
-        "300,000 km/s",
-        "500,000 km/s",
-        "1,000,000 km/s"
-      ],
-      "correctChoiceIndex": 1
+      "answerText": "300,000 km/s"
     },
     {
       "id": "orange-mc-001",
       "category": "orange",
       "difficulty": "easy",
       "questionText": "How many players are on a standard basketball team on the court at one time?",
-      "answerText": "5",
-      "choices": [
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "correctChoiceIndex": 1
+      "answerText": "5"
     },
     {
       "id": "orange-mc-002",
       "category": "orange",
       "difficulty": "hard",
       "questionText": "Which esports organization won the first League of Legends World Championship in 2011?",
-      "answerText": "Fnatic",
-      "choices": [
-        "Team SoloMid",
-        "Cloud9",
-        "Fnatic",
-        "SK Telecom T1"
-      ],
-      "correctChoiceIndex": 2
+      "answerText": "Fnatic"
     },
     {
       "id": "orange-mc-003",
       "category": "orange",
       "difficulty": "easy",
       "questionText": "In FIFA, what does the abbreviation \"VAR\" stand for?",
-      "answerText": "Video Assistant Referee",
-      "choices": [
-        "Video Action Replay",
-        "Virtual Assistant Review",
-        "Video Assistant Referee",
-        "Visual Aid Referee"
-      ],
-      "correctChoiceIndex": 2
+      "answerText": "Video Assistant Referee"
     }
-  ]
+  ],
+  "checksum": "e31bcf080f5637a5dfd30ebed1dbf1682eedc8d196ad3c07ea1c17038fc057b4",
+  "size": 17112
 }

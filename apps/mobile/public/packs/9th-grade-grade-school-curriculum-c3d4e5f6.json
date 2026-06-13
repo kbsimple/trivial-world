@@ -1,0 +1,449 @@
+{
+  "metadata": {
+    "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+    "name": "9th Grade Grade School Curriculum",
+    "description": "Questions and concepts from the 9th grade curriculum — human geography, literature, modern history, biology, chemistry, and physical fitness science.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-13T12:00:00.000Z",
+    "updatedAt": "2026-06-13T12:00:00.000Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "14f7e22eb03f0530840455ffe36d84222a0e67027f046225f098d43ccb59888e",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 13374
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What continent is Egypt located on?",
+      "answerText": "Africa"
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the capital of Brazil?",
+      "answerText": "Brasília",
+      "tidbits": "Many guess Rio de Janeiro or São Paulo, but Brasília was built as the new capital in 1960."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "How many continents are there on Earth?",
+      "answerText": "7"
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What type of government is it when citizens elect representatives to make laws on their behalf?",
+      "answerText": "Representative democracy (or republic)"
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What are the imaginary horizontal lines around the Earth, measured in degrees north or south of the equator, called?",
+      "answerText": "Lines of latitude (parallels)"
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the term for a country that is completely surrounded by land, with no access to the sea?",
+      "answerText": "Landlocked"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What invisible line at 0° longitude, passing through Greenwich, England, divides the Eastern and Western Hemispheres?",
+      "answerText": "The Prime Meridian"
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the term for the formal process by which one country takes control of another territory and incorporates it as part of its own, as when the U.S. annexed Texas?",
+      "answerText": "Annexation"
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What shared currency is used by most member nations of the European Union?",
+      "answerText": "The Euro"
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What term describes the large-scale movement of people from rural areas to cities, which accelerated dramatically during the Industrial Revolution?",
+      "answerText": "Urbanization"
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who wrote \"Romeo and Juliet\"?",
+      "answerText": "William Shakespeare"
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "In George Orwell's \"Animal Farm,\" what type of animals take control of the farm and lead the rebellion?",
+      "answerText": "Pigs"
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What is the name of the hero in Homer's \"The Odyssey\" who spends 10 years trying to return home from the Trojan War?",
+      "answerText": "Odysseus (also known as Ulysses in Latin)"
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the term for the central problem or struggle that drives the plot of a story?",
+      "answerText": "Conflict (main conflict)"
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the first-person narrator's nickname in Harper Lee's \"To Kill a Mockingbird\"?",
+      "answerText": "Scout (Jean Louise Finch)"
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What literary term describes a hint or clue in a story that suggests what will happen later?",
+      "answerText": "Foreshadowing"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "In Shakespeare's \"Hamlet,\" what is the name of the Danish castle where most of the action takes place?",
+      "answerText": "Elsinore (Kronborg Castle)"
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is the Greek term for the tragic flaw in a hero's character that leads to their downfall?",
+      "answerText": "Hamartia"
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "In Mary Shelley's \"Frankenstein,\" what is the first name of the scientist who creates the creature?",
+      "answerText": "Victor (Victor Frankenstein)"
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What literary device involves dramatic irony — when the audience knows something a character in the story does not?",
+      "answerText": "Dramatic irony"
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What event triggered the start of World War I in 1914?",
+      "answerText": "The assassination of Archduke Franz Ferdinand of Austria-Hungary"
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What wall, built in 1961, physically divided East and West Berlin until it fell in 1989?",
+      "answerText": "The Berlin Wall"
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year did World War II end? A) 1943, B) 1945, C) 1947, D) 1950",
+      "answerText": "1945 (B)"
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was the name of the global economic collapse that began with the U.S. stock market crash in 1929?",
+      "answerText": "The Great Depression"
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What term describes the economic and social transformation that began in Britain in the 18th century, introducing factory production and steam power?",
+      "answerText": "The Industrial Revolution"
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was the code name for the Allied invasion of Normandy, France on June 6, 1944?",
+      "answerText": "Operation Overlord (commonly called D-Day)"
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What term describes the policy of European powers claiming and governing African and Asian territories as colonies in the 19th and early 20th centuries?",
+      "answerText": "Imperialism (colonialism)"
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What is the term for the decades-long geopolitical tension between the United States and the Soviet Union from 1947 to 1991 that never became direct armed conflict?",
+      "answerText": "The Cold War"
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What 1919 peace treaty ended World War I and placed sole war guilt on Germany, requiring heavy reparations that contributed to conditions leading to World War II?",
+      "answerText": "The Treaty of Versailles"
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What is the term for the policy of legal racial segregation enforced by the white-minority government of South Africa from 1948 to 1994?",
+      "answerText": "Apartheid"
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is a metaphor?",
+      "answerText": "A direct comparison between two unlike things without using \"like\" or \"as\""
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What do you call a poem that has no rhyme scheme and no regular meter?",
+      "answerText": "Free verse"
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What 20th-century art movement, led by artists like Salvador Dalí, depicted dream imagery and the unconscious mind?",
+      "answerText": "Surrealism"
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the term for a 17-syllable Japanese poem divided into three lines of 5, 7, and 5 syllables?",
+      "answerText": "Haiku"
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What abstract art movement emerged in the U.S. in the 1940s and emphasized large-scale paintings expressing raw emotion through gesture and color?",
+      "answerText": "Abstract Expressionism"
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "In drama, what is the term for a speech delivered by a character alone on stage, revealing their inner thoughts to the audience?",
+      "answerText": "Soliloquy"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What figure of speech uses a part of something to represent the whole, such as saying \"boots on the ground\" to mean soldiers?",
+      "answerText": "Synecdoche"
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the term for using a highly exaggerated statement not meant to be taken literally, like \"I've told you a million times\"?",
+      "answerText": "Hyperbole"
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What Italian art technique, used by Leonardo da Vinci, creates soft gradations between light and shadow with no sharp outlines?",
+      "answerText": "Sfumato"
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What type of literary irony occurs when a character says the opposite of what they mean, often to mock or criticize?",
+      "answerText": "Verbal irony (or sarcasm when used mockingly)"
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the \"powerhouse of the cell,\" the organelle that produces energy?",
+      "answerText": "Mitochondria"
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What gas do humans exhale when they breathe out?",
+      "answerText": "Carbon dioxide (CO₂)"
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the area of a rectangle with a length of 8 and a width of 5?",
+      "answerText": "40 square units"
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the process by which a cell divides to produce two identical daughter cells?",
+      "answerText": "Mitosis"
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the chemical formula for table salt?",
+      "answerText": "NaCl (sodium chloride)"
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What theorem states that in a right triangle, the square of the hypotenuse equals the sum of the squares of the other two sides?",
+      "answerText": "The Pythagorean theorem (a² + b² = c²)"
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What term describes the passing of inherited traits from parents to offspring through genes?",
+      "answerText": "Heredity (genetics / inheritance)"
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the term for the minimum energy required to start a chemical reaction?",
+      "answerText": "Activation energy"
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "A right triangle has legs of length 3 and 4. What is the length of its hypotenuse? A) 5, B) 6, C) 7, D) 8",
+      "answerText": "5 (A) — because 3² + 4² = 9 + 16 = 25, and √25 = 5"
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What type of cell division results in four genetically unique cells and is used for sexual reproduction?",
+      "answerText": "Meiosis"
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What is your pulse, and where can you feel it?",
+      "answerText": "Your pulse is the rhythmic beating of your heart; it can be felt at the wrist (radial artery) or neck (carotid artery)"
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How many chambers does the human heart have? A) 2, B) 3, C) 4, D) 5",
+      "answerText": "4 (C) — two upper atria and two lower ventricles"
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How much water should most teenagers drink each day? A) 1 liter, B) 2 liters, C) 3 liters, D) 4 liters",
+      "answerText": "About 2 liters (B) — though needs vary with activity level and climate"
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What does your body use when it cannot deliver enough oxygen during intense short-term exercise?",
+      "answerText": "Anaerobic respiration — producing energy without oxygen, which generates lactic acid"
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What does BMI (Body Mass Index) measure, and how is it calculated?",
+      "answerText": "BMI estimates body fat by dividing weight in kilograms by height in meters squared (kg/m²)"
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What major muscle groups are worked during a push-up?",
+      "answerText": "Chest (pectorals), triceps, and shoulders (anterior deltoids)"
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the difference between a sprain and a strain?",
+      "answerText": "A sprain is a stretched or torn ligament (bone-to-bone); a strain is a stretched or torn muscle or tendon"
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the difference between Type I (slow-twitch) and Type II (fast-twitch) muscle fibers?",
+      "answerText": "Slow-twitch fibers resist fatigue and power endurance activity; fast-twitch fibers are powerful but fatigue quickly and are used for sprinting and strength"
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What does VO₂ max measure, and why is it important for athletes?",
+      "answerText": "VO₂ max measures the maximum rate of oxygen the body can use during intense exercise; it is the gold standard for measuring aerobic fitness and endurance capacity"
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What does the FITT principle stand for, and how is it used in exercise planning?",
+      "answerText": "Frequency, Intensity, Time, and Type — the four variables adjusted to design a progressive, effective workout program"
+    }
+  ],
+  "checksum": "14f7e22eb03f0530840455ffe36d84222a0e67027f046225f098d43ccb59888e",
+  "size": 13374
+}

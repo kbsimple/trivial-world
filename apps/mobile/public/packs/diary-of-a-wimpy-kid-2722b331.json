@@ -27,21 +27,24 @@
       "category": "blue",
       "difficulty": "easy",
       "questionText": "In what U.S. state does Greg Heffley live?",
-      "answerText": "No specific state is named (left intentionally vague)"
+      "answerText": "No specific state is named (left intentionally vague)",
+      "tidbits": "The Diary of a Wimpy Kid series has sold over 250 million copies worldwide and been translated into 65 languages."
     },
     {
       "id": "blue-002",
       "category": "blue",
       "difficulty": "easy",
       "questionText": "What is the name of the street where Greg's family lives?",
-      "answerText": "Surrey Street"
+      "answerText": "Surrey Street",
+      "tidbits": "Jeff Kinney originally wrote Diary of a Wimpy Kid as a webcomic on Funbrain.com starting in 2004 before it became a book."
     },
     {
       "id": "blue-003",
       "category": "blue",
       "difficulty": "medium",
       "questionText": "In 'The Long Haul,' the Heffley family travels to which relative's celebration?",
-      "answerText": "Meemaw's 90th birthday party"
+      "answerText": "Meemaw's 90th birthday party",
+      "tidbits": "Greg Heffley's school is set in a fictional town in the northeastern United States."
     },
     {
       "id": "blue-004",
@@ -97,21 +100,24 @@
       "category": "pink",
       "difficulty": "easy",
       "questionText": "Who directed the first live-action Diary of a Wimpy Kid film released in 2010?",
-      "answerText": "Thor Freudenthal"
+      "answerText": "Thor Freudenthal",
+      "tidbits": "Rowley's father is portrayed as overprotective and often disapproves of Greg's influence on his son."
     },
     {
       "id": "pink-002",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "Which actor played Greg Heffley in the 2010 live-action film?",
-      "answerText": "Zachary Gordon"
+      "answerText": "Zachary Gordon",
+      "tidbits": "The \"Cheese Touch\" is one of the most iconic elements of the series — touching a piece of cheese on the blacktop gives you the \"touch\" until you pass it to someone else."
     },
     {
       "id": "pink-003",
       "category": "pink",
       "difficulty": "easy",
       "questionText": "On which streaming platform was the animated Diary of a Wimpy Kid film released in 2021?",
-      "answerText": "Disney+"
+      "answerText": "Disney+",
+      "tidbits": "Rodrick's band is named \"Löded Diper\" — a purposely misspelled name that reflects his personality."
     },
     {
       "id": "pink-004",
@@ -167,21 +173,24 @@
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "What is Greg Heffley's older brother's name?",
-      "answerText": "Rodrick"
+      "answerText": "Rodrick",
+      "tidbits": "Jeff Kinney spent about 8 years writing and refining the original Diary of a Wimpy Kid before it was published as a book in 2007."
     },
     {
       "id": "yellow-002",
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "What is Greg Heffley's younger brother's name?",
-      "answerText": "Manny"
+      "answerText": "Manny",
+      "tidbits": "The books are written in a diary/journal format with Greg's handwritten-style text and simple stick-figure illustrations."
     },
     {
       "id": "yellow-003",
       "category": "yellow",
       "difficulty": "easy",
       "questionText": "What is the name of Greg's best friend throughout the series?",
-      "answerText": "Rowley Jefferson"
+      "answerText": "Rowley Jefferson",
+      "tidbits": "The first Diary of a Wimpy Kid film was released in 2010, with Zachary Gordon playing Greg Heffley."
     },
     {
       "id": "yellow-004",
@@ -237,14 +246,16 @@
       "category": "purple",
       "difficulty": "easy",
       "questionText": "Diary of a Wimpy Kid is illustrated in a style that mimics what kind of drawing?",
-      "answerText": "Stick-figure / hand-drawn cartoon sketches"
+      "answerText": "Stick-figure / hand-drawn cartoon sketches",
+      "tidbits": "Jeff Kinney was a computer-game designer before becoming a full-time author and still works on game projects."
     },
     {
       "id": "purple-002",
       "category": "purple",
       "difficulty": "easy",
       "questionText": "What is the name of the in-universe comic strip that Rowley creates that becomes very popular at school?",
-      "answerText": "Zoo-Wee Mama!"
+      "answerText": "Zoo-Wee Mama!",
+      "tidbits": "The illustrations in the books are meant to look like a kid's drawings, which Kinney deliberately keeps simple."
     },
     {
       "id": "purple-003",
@@ -307,14 +318,16 @@
       "category": "green",
       "difficulty": "easy",
       "questionText": "Greg starts a journal at the beginning of book 1. He insists it is NOT a diary but a what?",
-      "answerText": "Journal"
+      "answerText": "Journal",
+      "tidbits": "The book series has inspired a long-running musical adaptation that has toured the United States."
     },
     {
       "id": "green-002",
       "category": "green",
       "difficulty": "easy",
       "questionText": "In 'Hard Luck,' Greg relies on a device to make decisions for him. What is it?",
-      "answerText": "A Magic 8-Ball"
+      "answerText": "A Magic 8-Ball",
+      "tidbits": "Greg's journal is described as a \"diary\" even though he insists it's not — he calls it a journal to seem less childish."
     },
     {
       "id": "green-003",
@@ -377,14 +390,16 @@
       "category": "orange",
       "difficulty": "easy",
       "questionText": "What is the name of the video game Greg and Rowley are obsessed with in 'Diary of a Wimpy Kid'?",
-      "answerText": "Twisted Wizard"
+      "answerText": "Twisted Wizard",
+      "tidbits": "Rowley is portrayed as more innocent and childlike than Greg, which often creates comedic contrast between the two friends."
     },
     {
       "id": "orange-002",
       "category": "orange",
       "difficulty": "easy",
       "questionText": "In 'Dog Days,' what sport does Greg try to learn at the country club?",
-      "answerText": "Tennis"
+      "answerText": "Tennis",
+      "tidbits": "The wrestling storyline in various books parodies the exaggerated showmanship of professional wrestling."
     },
     {
       "id": "orange-003",
@@ -442,5 +457,7 @@
       "questionText": "In 'Big Shot,' what is the final play Greg draws up that leads to the championship game outcome?",
       "answerText": "An inbound pass play where Greg is the unexpected shooter / Greg takes the final shot"
     }
-  ]
+  ],
+  "checksum": "7116b648d80caeafe6062fff1afc58d637cd10d216f75f03fd16de5b48d9ddf4",
+  "size": 15612
 }

@@ -1,0 +1,453 @@
+{
+  "metadata": {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "5th Grade Grade School Curriculum",
+    "description": "Questions and concepts from the 5th grade curriculum — geography, American history, science, math, art, and sports.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-13T12:00:00.000Z",
+    "updatedAt": "2026-06-13T12:00:00.000Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "943c77b50cca33d5d9638865527ed9611ecaf5f860ab2ad0801d6f22feef8c14",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 11459
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the capital of the United States?",
+      "answerText": "Washington, D.C."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Which ocean is the largest in the world?",
+      "answerText": "Pacific Ocean"
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "On which continent is Brazil located?",
+      "answerText": "South America"
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What large canyon in Arizona was carved by the Colorado River?",
+      "answerText": "The Grand Canyon",
+      "tidbits": "It is about 277 miles long, up to 18 miles wide, and over a mile deep."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which US state is the largest in total land area?",
+      "answerText": "Alaska"
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the capital city of Mexico?",
+      "answerText": "Mexico City"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The Amazon River flows through which South American country?",
+      "answerText": "Brazil",
+      "tidbits": "The Amazon carries more water than any other river on Earth."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the name of the body of water that separates Asia from North America?",
+      "answerText": "The Bering Strait"
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the highest mountain in North America?",
+      "answerText": "Denali (also called Mount McKinley), located in Alaska"
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the capital city of Canada?",
+      "answerText": "Ottawa"
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who wrote the Harry Potter book series?",
+      "answerText": "J.K. Rowling"
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who was the first president of the United States?",
+      "answerText": "George Washington"
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What is the name of the pig who is the main character in \"Charlotte's Web\"?",
+      "answerText": "Wilbur"
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which inventor is credited with creating the first practical electric light bulb?",
+      "answerText": "Thomas Edison"
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Martin Luther King Jr. delivered his \"I Have a Dream\" speech in what year? A) 1955, B) 1963, C) 1968, D) 1971",
+      "answerText": "1963 (B)"
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Who painted the ceiling of the Sistine Chapel?",
+      "answerText": "Michelangelo"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What woman is famous for leading enslaved people to freedom through the Underground Railroad?",
+      "answerText": "Harriet Tubman"
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "In what year did the Wright Brothers make their first powered airplane flight? A) 1893, B) 1903, C) 1913, D) 1923",
+      "answerText": "1903 (B)"
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What pen name did author Samuel Clemens use when writing \"The Adventures of Tom Sawyer\"?",
+      "answerText": "Mark Twain"
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What author wrote the \"Diary of a Wimpy Kid\" series?",
+      "answerText": "Jeff Kinney"
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What document, signed in 1776, declared that the American colonies were free from British rule?",
+      "answerText": "The Declaration of Independence"
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Who was president of the United States during the Civil War?",
+      "answerText": "Abraham Lincoln"
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What year was the Declaration of Independence signed? A) 1765, B) 1776, C) 1787, D) 1800",
+      "answerText": "1776 (B)"
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was the name of the ship that carried the Pilgrims to America in 1620?",
+      "answerText": "The Mayflower"
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What Native American woman helped guide Lewis and Clark on their westward expedition?",
+      "answerText": "Sacagawea"
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What invention by Eli Whitney greatly increased the demand for enslaved labor in the South?",
+      "answerText": "The cotton gin",
+      "tidbits": "Invented in 1793, the cotton gin made cotton farming so profitable that it dramatically expanded plantation slavery."
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What system of secret routes and safe houses helped enslaved people escape to freedom in the Northern states?",
+      "answerText": "The Underground Railroad"
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What act, passed in 1830, forced tens of thousands of Native Americans to relocate west of the Mississippi?",
+      "answerText": "The Indian Removal Act"
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "The first ten amendments to the U.S. Constitution are collectively called what?",
+      "answerText": "The Bill of Rights"
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What 1777 battle in New York is considered a turning point of the American Revolution because it convinced France to support the colonists?",
+      "answerText": "The Battle of Saratoga"
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What are the three primary colors in art?",
+      "answerText": "Red, yellow, and blue"
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Who painted the Mona Lisa?",
+      "answerText": "Leonardo da Vinci"
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What do you call the speed at which a piece of music is played?",
+      "answerText": "Tempo"
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the term for a painting done directly on wet plaster on a wall or ceiling?",
+      "answerText": "Fresco",
+      "tidbits": "The word \"fresco\" means \"fresh\" in Italian, referring to the wet plaster."
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What famous Dutch painter, known for cutting off part of his own ear, painted \"The Starry Night\"?",
+      "answerText": "Vincent van Gogh"
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What technique creates art by gluing photos, paper, and other materials onto a flat surface?",
+      "answerText": "Collage"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What are the three secondary colors, each made by mixing two primary colors?",
+      "answerText": "Orange, green, and purple (violet)"
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Which Renaissance sculptor created the famous marble statues \"David\" and \"Pietà\"?",
+      "answerText": "Michelangelo"
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the name of the traditional Japanese art of paper folding?",
+      "answerText": "Origami"
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What American folk artist started painting at age 78 and became famous for colorful scenes of rural life?",
+      "answerText": "Grandma Moses (Anna Mary Robertson Moses)"
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What planet in our solar system is known as the Red Planet?",
+      "answerText": "Mars"
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What gas do plants produce during photosynthesis that animals need to breathe?",
+      "answerText": "Oxygen"
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is 3/4 + 1/4?",
+      "answerText": "1 (or 4/4, which equals one whole)"
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "How many planets are in our solar system? A) 7, B) 8, C) 9, D) 10",
+      "answerText": "8 (B)",
+      "tidbits": "Pluto was reclassified as a dwarf planet in 2006, leaving eight official planets."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What force pulls objects toward the surface of the Earth?",
+      "answerText": "Gravity"
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What type of rock is formed when lava or magma cools and hardens?",
+      "answerText": "Igneous rock"
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the process by which liquid water turns into water vapor and rises into the atmosphere?",
+      "answerText": "Evaporation"
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the decimal equivalent of 3/8? A) 0.25, B) 0.30, C) 0.375, D) 0.5",
+      "answerText": "0.375 (C)"
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What organelle in a cell is known as the \"powerhouse\" because it produces energy?",
+      "answerText": "Mitochondria"
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Which layer of the Earth's atmosphere protects life by absorbing most of the Sun's harmful ultraviolet radiation?",
+      "answerText": "The ozone layer"
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How many players from each team are on the court in a basketball game at one time? A) 4, B) 5, C) 6, D) 7",
+      "answerText": "5 (B)"
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "In soccer, what role is the only player allowed to use their hands?",
+      "answerText": "Goalkeeper (goalie)"
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How many innings are in a standard baseball game? A) 7, B) 8, C) 9, D) 10",
+      "answerText": "9 (C)"
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What sport uses a shuttlecock instead of a ball?",
+      "answerText": "Badminton"
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "How often do the Summer Olympic Games take place? A) Every 2 years, B) Every 4 years, C) Every 6 years, D) Every 8 years",
+      "answerText": "Every 4 years (B)"
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In gymnastics, what piece of equipment is a long, narrow elevated beam that gymnasts balance and perform on?",
+      "answerText": "Balance beam"
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "How many points is a touchdown worth in American football? A) 3, B) 6, C) 7, D) 8",
+      "answerText": "6 (B)"
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In volleyball, how many players from each team are on the court at one time? A) 4, B) 5, C) 6, D) 7",
+      "answerText": "6 (C)"
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What fitness principle says that you must gradually increase the difficulty of exercise over time to keep improving?",
+      "answerText": "Progressive overload (the principle of progression)"
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What famous annual tennis tournament is played on grass courts in Wimbledon, England?",
+      "answerText": "Wimbledon (The Championships, Wimbledon)"
+    }
+  ],
+  "checksum": "943c77b50cca33d5d9638865527ed9611ecaf5f860ab2ad0801d6f22feef8c14",
+  "size": 11459
+}

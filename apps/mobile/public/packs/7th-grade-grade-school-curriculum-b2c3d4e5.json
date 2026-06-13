@@ -1,0 +1,453 @@
+{
+  "metadata": {
+    "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+    "name": "7th Grade Grade School Curriculum",
+    "description": "Questions and concepts from the 7th grade curriculum — world geography, world history, life science, algebra, art history, and health.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-13T12:00:00.000Z",
+    "updatedAt": "2026-06-13T12:00:00.000Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "71860084865880717d996ce838614e1d20b794358dd2fa0d97e768535e9ac0af",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 12450
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the largest continent in the world by area?",
+      "answerText": "Asia"
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the capital of France?",
+      "answerText": "Paris"
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "The Amazon River, the world's largest river by volume, flows through which country?",
+      "answerText": "Brazil"
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What mountain range stretching over 4,300 miles forms the natural spine of South America?",
+      "answerText": "The Andes Mountains"
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What large island nation off the southeast coast of Africa is famous for unique animals like lemurs found nowhere else on Earth?",
+      "answerText": "Madagascar"
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which country has the longest coastline in the world?",
+      "answerText": "Canada"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "On which continent is the Sahara Desert located?",
+      "answerText": "Africa",
+      "tidbits": "The Sahara is the world's largest hot desert, spanning about 3.6 million square miles."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the capital of Australia?",
+      "answerText": "Canberra",
+      "tidbits": "Many people guess Sydney or Melbourne, but Canberra was purpose-built as the capital in 1913."
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the name of the narrow strip of land that connects North America and South America?",
+      "answerText": "The Isthmus of Panama"
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Which ocean is the smallest in the world?",
+      "answerText": "The Arctic Ocean"
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who was the first person to walk on the Moon?",
+      "answerText": "Neil Armstrong"
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who wrote \"Romeo and Juliet\"?",
+      "answerText": "William Shakespeare"
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What civil rights leader delivered the \"I Have a Dream\" speech in 1963?",
+      "answerText": "Martin Luther King Jr."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of the holy book of Islam?",
+      "answerText": "The Quran (Koran)"
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the first name of the narrator of S.E. Hinton's novel \"The Outsiders\"?",
+      "answerText": "Ponyboy (Ponyboy Curtis)"
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which ancient civilization built the pyramids at Giza?",
+      "answerText": "Ancient Egyptians"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What famous explorer, sailing for Spain, first reached the Caribbean in 1492?",
+      "answerText": "Christopher Columbus"
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "The \"Silk Road\" was an ancient network of trade routes connecting Europe with which region?",
+      "answerText": "China (East Asia)",
+      "tidbits": "The Silk Road also carried religion, disease, and culture — not just silk."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What literary device gives human qualities to non-human things, such as \"the wind whispered\"?",
+      "answerText": "Personification"
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What Spanish conquistador conquered the Aztec Empire in Mexico during the 1520s?",
+      "answerText": "Hernán Cortés"
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What period of cultural rebirth in Europe, beginning in Italy in the 14th century, is known for its art and learning?",
+      "answerText": "The Renaissance"
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What deadly disease, spread by fleas on rats, killed about one-third of Europe's population in the 14th century?",
+      "answerText": "The Black Death (Bubonic Plague)"
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What battle in 1066 resulted in the Norman conquest of England?",
+      "answerText": "The Battle of Hastings"
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What social system of medieval Europe involved lords granting land to knights in exchange for military service?",
+      "answerText": "Feudalism"
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What did Johannes Gutenberg invent in the 1440s that transformed the spread of knowledge across Europe?",
+      "answerText": "The printing press"
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In what century did Gutenberg invent the printing press? A) 13th, B) 14th, C) 15th, D) 16th",
+      "answerText": "15th century (C) — approximately 1440"
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What series of medieval Christian military expeditions were launched to capture Jerusalem from Muslim rulers?",
+      "answerText": "The Crusades"
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What ancient document, signed by King John of England in 1215, established that even rulers must obey the law?",
+      "answerText": "Magna Carta",
+      "tidbits": "Magna Carta means \"Great Charter\" in Latin and is one of the first documents to limit royal power."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What is the term for the period of intense scientific discovery in the 16th and 17th centuries, when thinkers like Galileo and Newton changed our understanding of the universe?",
+      "answerText": "The Scientific Revolution"
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What Portuguese explorer, sponsored by the Spanish crown, led the first expedition to circumnavigate the globe (though he died before completing it)?",
+      "answerText": "Ferdinand Magellan"
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What Italian artist painted the ceiling of the Sistine Chapel?",
+      "answerText": "Michelangelo"
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What literary device is it when multiple consecutive words start with the same sound, like \"Peter Piper picked pickled peppers\"?",
+      "answerText": "Alliteration"
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Who painted the Mona Lisa?",
+      "answerText": "Leonardo da Vinci"
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What art movement, developed in France in the 1860s, is known for capturing light using small, visible brushstrokes?",
+      "answerText": "Impressionism"
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What Spanish artist, who co-founded Cubism, painted the anti-war mural \"Guernica\"?",
+      "answerText": "Pablo Picasso"
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What literary device involves a reference to another work of literature, history, or culture?",
+      "answerText": "Allusion"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which Dutch master of the 17th century painted \"The Night Watch,\" one of the most famous paintings in Western art?",
+      "answerText": "Rembrandt van Rijn"
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the Japanese art of flower arrangement called?",
+      "answerText": "Ikebana"
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the term for a 14-line poem with a specific rhyme scheme, of which Shakespeare wrote 154?",
+      "answerText": "Sonnet"
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What Japanese master artist created \"The Great Wave off Kanagawa,\" one of the most recognized images in art history?",
+      "answerText": "Katsushika Hokusai"
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What gas makes up the largest portion of Earth's atmosphere? A) Oxygen, B) Carbon dioxide, C) Nitrogen, D) Hydrogen",
+      "answerText": "Nitrogen (C)",
+      "tidbits": "Nitrogen makes up about 78% of our atmosphere; oxygen is about 21%."
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the basic unit of all living things?",
+      "answerText": "Cell"
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the value of x if 2x = 14?",
+      "answerText": "x = 7"
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the chemical formula for water?",
+      "answerText": "H₂O (two hydrogen atoms bonded to one oxygen atom)"
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What process do plants use to convert sunlight, water, and carbon dioxide into glucose?",
+      "answerText": "Photosynthesis"
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the difference between potential energy and kinetic energy?",
+      "answerText": "Potential energy is stored energy (energy of position or condition); kinetic energy is the energy of motion"
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the term for a pure substance that cannot be broken down into simpler substances by chemical means?",
+      "answerText": "Element"
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What branch of science studies the composition, structure, and properties of matter and how substances interact?",
+      "answerText": "Chemistry"
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "If a triangle has two angles measuring 40° and 65°, what is the measure of the third angle?",
+      "answerText": "75° (all angles of a triangle add up to 180°)"
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the key difference between mitosis and meiosis?",
+      "answerText": "Mitosis produces 2 identical daughter cells for growth and repair; meiosis produces 4 genetically unique cells for sexual reproduction"
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How many bones are in the adult human body? A) 106, B) 206, C) 306, D) 406",
+      "answerText": "206 (B)"
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What body system pumps blood through the heart and blood vessels to deliver oxygen to cells?",
+      "answerText": "Cardiovascular system (circulatory system)"
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What organs in the body filter waste from blood to produce urine?",
+      "answerText": "Kidneys"
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "How much moderate physical activity per day do health guidelines recommend for children and teens? A) 15 minutes, B) 30 minutes, C) 60 minutes, D) 90 minutes",
+      "answerText": "60 minutes (C)"
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In basketball, what is the violation called when a player moves with the ball without dribbling?",
+      "answerText": "Traveling (walking)"
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which macronutrient provides the most energy per gram — fats, proteins, or carbohydrates?",
+      "answerText": "Fats (9 calories per gram, versus 4 calories per gram for both proteins and carbohydrates)"
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In American football, how many points is a field goal worth? A) 1, B) 2, C) 3, D) 6",
+      "answerText": "3 (C)"
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What system of muscles and bones work together to support the body and enable movement?",
+      "answerText": "Musculoskeletal system"
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the difference between aerobic and anaerobic exercise?",
+      "answerText": "Aerobic exercise uses oxygen for sustained activity (like jogging); anaerobic exercise doesn't rely on oxygen and is used for short, intense bursts (like sprinting)"
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What combined track-and-field event tests athletes in 10 disciplines over two days?",
+      "answerText": "Decathlon"
+    }
+  ],
+  "checksum": "71860084865880717d996ce838614e1d20b794358dd2fa0d97e768535e9ac0af",
+  "size": 12450
+}
