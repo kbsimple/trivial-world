@@ -516,4 +516,22 @@ describe('usePackStore', () => {
       expect(usePackStore.getState().downloadError).toBeNull();
     });
   });
+
+  describe('setPackMode', () => {
+    it('has initial packMode of shared', () => {
+      const state = usePackStore.getState();
+      expect(state.packMode).toBe('shared');
+    });
+
+    it('sets packMode to custom', () => {
+      usePackStore.getState().setPackMode('custom');
+      expect(usePackStore.getState().packMode).toBe('custom');
+    });
+
+    it('sets packMode back to shared', () => {
+      usePackStore.setState({ packMode: 'custom' });
+      usePackStore.getState().setPackMode('shared');
+      expect(usePackStore.getState().packMode).toBe('shared');
+    });
+  });
 });
