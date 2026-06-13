@@ -37,6 +37,12 @@ export interface GameState {
   isChampionshipMode: boolean[];
   /** Player who won (null if game ongoing) */
   winner: Player | null;
+  /** Snapshotted pack ID per player at game start (index matches player order).
+   *  null = player inherited the game-level activePackId. */
+  playerPackIds: (string | null)[];
+  /** Snapshotted active categories per player (from pack categoryCounts + enabledCategories filter).
+   *  Immutable during game — determines per-player championship condition. */
+  playerCategories: PlayerColor[][];
 
   // Actions
   startGame: () => void;
