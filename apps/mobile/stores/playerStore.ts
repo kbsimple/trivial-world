@@ -77,13 +77,13 @@ export const usePlayerStore = create<PlayerState>()(
 
   updatePlayerPack: (id: string, packId: string | null) => set((state) => ({
     players: state.players.map(p =>
-      p.id === id ? { ...p, packId, ...(packId !== null ? { comboId: null } : {}) } : p
+      p.id === id ? { ...p, packId, comboId: packId !== null ? null : p.comboId } : p
     ),
   })),
 
   updatePlayerCombo: (id: string, comboId: string | null) => set((state) => ({
     players: state.players.map(p =>
-      p.id === id ? { ...p, comboId, ...(comboId !== null ? { packId: null } : {}) } : p
+      p.id === id ? { ...p, comboId, packId: comboId !== null ? null : p.packId } : p
     ),
   })),
 
