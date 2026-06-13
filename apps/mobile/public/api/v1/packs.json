@@ -5,14 +5,14 @@
       "name": "Trivial World Starter Pack",
       "author": "Trivial World Team",
       "version": "1.0.0",
-      "totalQuestions": 60,
+      "totalQuestions": 78,
       "categoryCounts": {
-        "blue": 10,
-        "pink": 10,
-        "yellow": 10,
-        "purple": 10,
-        "green": 10,
-        "orange": 10
+        "blue": 13,
+        "pink": 13,
+        "yellow": 13,
+        "purple": 13,
+        "green": 13,
+        "orange": 13
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/trivial-world-starter-7f3a9c2e.json",
       "checksum": "7bc32580c033d78e18fa7ea854ad17f9ba076cbd8a1fb28de451457a55210c51",

@@ -3,29 +3,30 @@ import { useTheme } from 'tamagui';
 import { PlayerColor } from '../constants/categories';
 import { CategoryBadge } from './CategoryBadge';
 
+const CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E', 'F'];
+
 interface QuestionCardProps {
-  /** Question number (Q1, Q2, etc.) */
   questionNumber: number;
-  /** Category color for badge */
   category: PlayerColor;
-  /** Question text to display */
   questionText: string;
-  /** Answer text (hidden until revealed) */
   answerText: string;
-  /** Whether answer is currently revealed */
   revealed: boolean;
-  /** Callback when user taps reveal button */
   onReveal: () => void;
+  choices?: string[];
+  correctChoiceIndex?: number;
 }
 
 /**
  * QuestionCard component
- * Displays question text with category badge and answer reveal functionality
+ * Supports both open-answer and multiple-choice questions.
+ *
+ * MC flow: choices always visible (conductor reads them aloud), "Reveal Answer"
+ * highlights the correct choice. Correct/Incorrect buttons follow as normal.
  *
  * Per D-09: Large centered text for arm's-distance reading (24pt minimum)
  * Per D-11: Question number shown as "Q1", "Q2", etc.
  * Per D-12: Answer hidden by default, large "Reveal Answer" button
- * Per D-14: Minimal chrome - only category badge, question number, question text, and reveal button
+ * Per D-14: Minimal chrome
  */
 export function QuestionCard({
   questionNumber,
@@ -34,39 +35,74 @@ export function QuestionCard({
   answerText,
   revealed,
   onReveal,
+  choices,
+  correctChoiceIndex,
 }: QuestionCardProps) {
   const theme = useTheme();
+  const isMultipleChoice = Array.isArray(choices) && choices.length > 0;
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background?.val as string }]}>
-      {/* Category Badge - D-10 */}
       <CategoryBadge category={category} size="$4" />
 
-      {/* Question Number - D-11 */}
       <Text style={[styles.questionNumber, { color: theme.color?.val as string }]}>
         Q{questionNumber}
       </Text>
 
-      {/* Question Text - D-09: 24pt minimum, centered */}
       <Text style={[styles.questionText, { color: theme.color?.val as string }]}>
         {questionText}
       </Text>
 
-      {/* Answer Reveal Button or Answer Text - D-12 */}
-      {revealed ? (
-        <Text style={[styles.answerText, { color: theme.color?.val as string }]}>
-          {answerText}
-        </Text>
+      {isMultipleChoice ? (
+        <View style={styles.choicesContainer}>
+          {choices!.map((choice, index) => {
+            const isCorrect = index === correctChoiceIndex;
+            const choiceStyle = revealed
+              ? isCorrect
+                ? styles.choiceCorrect
+                : styles.choiceWrong
+              : styles.choiceDefault;
+
+            return (
+              <View key={index} style={[styles.choiceRow, choiceStyle]}>
+                <Text style={[styles.choiceLabel, revealed && isCorrect && styles.choiceLabelCorrect]}>
+                  {CHOICE_LABELS[index]}
+                </Text>
+                <Text style={[styles.choiceText, revealed && isCorrect && styles.choiceTextCorrect]}>
+                  {choice}
+                </Text>
+              </View>
+            );
+          })}
+
+          {!revealed && (
+            <Pressable
+              style={({ pressed }) => [
+                styles.revealButton,
+                { backgroundColor: pressed ? '#444' : '#333' },
+              ]}
+              onPress={onReveal}
+            >
+              <Text style={styles.revealButtonText}>Reveal Answer</Text>
+            </Pressable>
+          )}
+        </View>
       ) : (
-        <Pressable
-          style={({ pressed }) => [
-            styles.revealButton,
-            { backgroundColor: pressed ? '#444' : '#333' },
-          ]}
-          onPress={onReveal}
-        >
-          <Text style={styles.revealButtonText}>Reveal Answer</Text>
-        </Pressable>
+        revealed ? (
+          <Text style={[styles.answerText, { color: theme.color?.val as string }]}>
+            {answerText}
+          </Text>
+        ) : (
+          <Pressable
+            style={({ pressed }) => [
+              styles.revealButton,
+              { backgroundColor: pressed ? '#444' : '#333' },
+            ]}
+            onPress={onReveal}
+          >
+            <Text style={styles.revealButtonText}>Reveal Answer</Text>
+          </Pressable>
+        )
       )}
     </View>
   );
@@ -85,7 +121,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   questionText: {
-    fontSize: 24, // D-09: minimum 24pt
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 24,
@@ -99,7 +135,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   revealButton: {
-    marginTop: 40,
+    marginTop: 24,
     paddingHorizontal: 32,
     paddingVertical: 16,
     borderRadius: 12,
@@ -110,5 +146,52 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  choicesContainer: {
+    width: '100%',
+    marginTop: 20,
+    gap: 8,
+    paddingHorizontal: 8,
+  },
+  choiceRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+    gap: 12,
+  },
+  choiceDefault: {
+    borderWidth: 2,
+    borderColor: '#444',
+  },
+  choiceCorrect: {
+    backgroundColor: '#1a6b2a',
+    borderWidth: 2,
+    borderColor: '#2d9e40',
+  },
+  choiceWrong: {
+    borderWidth: 2,
+    borderColor: '#333',
+    opacity: 0.45,
+  },
+  choiceLabel: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#aaa',
+    width: 22,
+    textAlign: 'center',
+  },
+  choiceLabelCorrect: {
+    color: '#7dde8f',
+  },
+  choiceText: {
+    fontSize: 16,
+    color: '#ddd',
+    flex: 1,
+  },
+  choiceTextCorrect: {
+    color: '#ffffff',
+    fontWeight: '600',
   },
 });

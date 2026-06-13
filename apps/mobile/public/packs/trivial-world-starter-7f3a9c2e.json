@@ -8,14 +8,14 @@
     "createdAt": "2026-06-12T00:00:00.000Z",
     "updatedAt": "2026-06-12T00:00:00.000Z",
     "categoryCounts": {
-      "blue": 10,
-      "pink": 10,
-      "yellow": 10,
-      "purple": 10,
-      "green": 10,
-      "orange": 10
+      "blue": 13,
+      "pink": 13,
+      "yellow": 13,
+      "purple": 13,
+      "green": 13,
+      "orange": 13
     },
-    "totalQuestions": 60,
+    "totalQuestions": 78,
     "checksum": "7bc32580c033d78e18fa7ea854ad17f9ba076cbd8a1fb28de451457a55210c51",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
@@ -441,6 +441,168 @@
       "difficulty": "medium",
       "questionText": "In professional sports, what does \"G.O.A.T.\" stand for?",
       "answerText": "Greatest Of All Time"
+    },
+    {
+      "id": "blue-mc-001",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which country has the most natural UNESCO World Heritage Sites?",
+      "answerText": "China",
+      "choices": ["Brazil", "Italy", "China", "India"],
+      "correctChoiceIndex": 2
+    },
+    {
+      "id": "blue-mc-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In the video game \"The Legend of Zelda: Breath of the Wild\", which region contains the main castle?",
+      "answerText": "Hyrule",
+      "choices": ["Akkala", "Faron", "Lanayru", "Hyrule Field"],
+      "correctChoiceIndex": 3
+    },
+    {
+      "id": "blue-mc-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "The Amazon River flows through which continent?",
+      "answerText": "South America",
+      "choices": ["Africa", "South America", "Asia", "North America"],
+      "correctChoiceIndex": 1
+    },
+    {
+      "id": "pink-mc-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which streaming platform released \"Stranger Things\"?",
+      "answerText": "Netflix",
+      "choices": ["Hulu", "Disney+", "Netflix", "HBO Max"],
+      "correctChoiceIndex": 2
+    },
+    {
+      "id": "pink-mc-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What is the name of the fictional kingdom in the movie \"Frozen\"?",
+      "answerText": "Arendelle",
+      "choices": ["Arendelle", "Narnia", "Eldorado", "Zootopia"],
+      "correctChoiceIndex": 0
+    },
+    {
+      "id": "pink-mc-003",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which social media platform invented the \"Stories\" format that others later copied?",
+      "answerText": "Snapchat",
+      "choices": ["Instagram", "TikTok", "Snapchat", "Twitter"],
+      "correctChoiceIndex": 2
+    },
+    {
+      "id": "yellow-mc-001",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In which year did the Berlin Wall fall?",
+      "answerText": "1989",
+      "choices": ["1985", "1989", "1991", "1993"],
+      "correctChoiceIndex": 1
+    },
+    {
+      "id": "yellow-mc-002",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Which ancient wonder of the world was located in Alexandria, Egypt?",
+      "answerText": "The Lighthouse of Alexandria",
+      "choices": ["The Colossus of Rhodes", "The Hanging Gardens", "The Lighthouse of Alexandria", "The Temple of Artemis"],
+      "correctChoiceIndex": 2
+    },
+    {
+      "id": "yellow-mc-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Who invented the World Wide Web?",
+      "answerText": "Tim Berners-Lee",
+      "choices": ["Bill Gates", "Tim Berners-Lee", "Vint Cerf", "Steve Jobs"],
+      "correctChoiceIndex": 1
+    },
+    {
+      "id": "purple-mc-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Which studio produced the animated film \"Spirited Away\"?",
+      "answerText": "Studio Ghibli",
+      "choices": ["Pixar", "Studio Ghibli", "DreamWorks", "Madhouse"],
+      "correctChoiceIndex": 1
+    },
+    {
+      "id": "purple-mc-002",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What art movement is Salvador Dalí most associated with?",
+      "answerText": "Surrealism",
+      "choices": ["Cubism", "Impressionism", "Surrealism", "Abstract Expressionism"],
+      "correctChoiceIndex": 2
+    },
+    {
+      "id": "purple-mc-003",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "In \"Spider-Man: Into the Spider-Verse\", what is Miles Morales's home dimension?",
+      "answerText": "Earth-1610",
+      "choices": ["Earth-616", "Earth-1610", "Earth-65", "Earth-928"],
+      "correctChoiceIndex": 1
+    },
+    {
+      "id": "green-mc-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "How many planets are in our solar system?",
+      "answerText": "8",
+      "choices": ["7", "8", "9", "10"],
+      "correctChoiceIndex": 1
+    },
+    {
+      "id": "green-mc-002",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Which programming language was created by Guido van Rossum?",
+      "answerText": "Python",
+      "choices": ["Ruby", "Java", "Python", "Perl"],
+      "correctChoiceIndex": 2
+    },
+    {
+      "id": "green-mc-003",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the speed of light in a vacuum, approximately?",
+      "answerText": "300,000 km/s",
+      "choices": ["150,000 km/s", "300,000 km/s", "500,000 km/s", "1,000,000 km/s"],
+      "correctChoiceIndex": 1
+    },
+    {
+      "id": "orange-mc-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How many players are on a standard basketball team on the court at one time?",
+      "answerText": "5",
+      "choices": ["4", "5", "6", "7"],
+      "correctChoiceIndex": 1
+    },
+    {
+      "id": "orange-mc-002",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Which esports organization won the first League of Legends World Championship in 2011?",
+      "answerText": "Fnatic",
+      "choices": ["Team SoloMid", "Cloud9", "Fnatic", "SK Telecom T1"],
+      "correctChoiceIndex": 2
+    },
+    {
+      "id": "orange-mc-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "In FIFA, what does the abbreviation \"VAR\" stand for?",
+      "answerText": "Video Assistant Referee",
+      "choices": ["Video Action Replay", "Virtual Assistant Review", "Video Assistant Referee", "Visual Aid Referee"],
+      "correctChoiceIndex": 2
     }
   ]
 }

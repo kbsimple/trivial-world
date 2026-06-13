@@ -75,6 +75,8 @@ export default function QuestionScreen() {
             answerText={currentQuestion.answerText}
             revealed={answerRevealed}
             onReveal={() => revealAnswer()}
+            choices={currentQuestion.choices}
+            correctChoiceIndex={currentQuestion.correctChoiceIndex}
           />
         ) : (
           <QuestionCard
