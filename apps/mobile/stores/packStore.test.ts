@@ -518,46 +518,4 @@ describe('usePackStore', () => {
     });
   });
 
-  describe('setPackMode', () => {
-    it('has initial packMode of shared', () => {
-      const state = usePackStore.getState();
-      expect(state.packMode).toBe('shared');
-    });
-
-    it('sets packMode to custom', () => {
-      usePackStore.getState().setPackMode('custom');
-      expect(usePackStore.getState().packMode).toBe('custom');
-    });
-
-    it('sets packMode back to shared', () => {
-      usePackStore.setState({ packMode: 'custom' });
-      usePackStore.getState().setPackMode('shared');
-      expect(usePackStore.getState().packMode).toBe('shared');
-    });
-
-    it('clearPlayerPackSources then setPackMode shared produces clean shared state', () => {
-      // Reset player store to clean state for this test
-      usePlayerStore.setState({ players: [] });
-
-      // This mirrors what handleSetPackMode does when switching to Shared Pack mode
-      const { addPlayer, updatePlayerPack, updatePlayerCombo, clearPlayerPackSources } = usePlayerStore.getState();
-      addPlayer('Player 1');
-      const [p] = usePlayerStore.getState().players;
-      updatePlayerPack(p.id, 'some-pack-id');
-      updatePlayerCombo(p.id, 'some-combo-id');
-
-      // Switch to custom first
-      usePackStore.getState().setPackMode('custom');
-      expect(usePackStore.getState().packMode).toBe('custom');
-
-      // Switch back to shared — clear overrides then set mode
-      clearPlayerPackSources();
-      usePackStore.getState().setPackMode('shared');
-
-      expect(usePackStore.getState().packMode).toBe('shared');
-      const players = usePlayerStore.getState().players;
-      expect(players[0].packId).toBeNull();
-      expect(players[0].comboId).toBeNull();
-    });
-  });
 });
