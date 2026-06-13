@@ -13,6 +13,8 @@ export interface Player {
   color: PlayerColor;
   /** Wedges earned (max 6, one per category) - SCOR-01 */
   wedges: PlayerColor[];
+  /** Per-player pack override — null means use game-level activePackId */
+  packId?: string | null;
 }
 
 /**
@@ -32,6 +34,8 @@ export interface PlayerState {
   updatePlayerName: (id: string, name: string) => void;
   /** Clear all players */
   resetPlayers: () => void;
+  /** Assign a question pack to a specific player (null = use game default) */
+  updatePlayerPack: (id: string, packId: string | null) => void;
 
   // Scoring actions (SCOR-01)
   /** Award a wedge to a player for correct answer on category space */
