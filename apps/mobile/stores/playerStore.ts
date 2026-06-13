@@ -3,6 +3,7 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import { platformStorage } from '../services/platformStorage';
 import { PLAYER_COLORS, PlayerColor } from '../constants/categories';
 import { Player, PlayerState } from '../types/player';
+import { Difficulty } from '@trivial-world/types';
 
 /**
  * Generate unique ID for players
@@ -49,6 +50,7 @@ export const usePlayerStore = create<PlayerState>()(
           color: nextColor,
           wedges: [], // Initialize empty wedges array
           packId: null, // explicit null — stable serialization, avoids undefined in tests
+          difficultyPreference: null, // explicit null — mirrors packId pattern; stable serialization
         },
       ],
     };
@@ -75,6 +77,12 @@ export const usePlayerStore = create<PlayerState>()(
   updatePlayerPack: (id: string, packId: string | null) => set((state) => ({
     players: state.players.map(p =>
       p.id === id ? { ...p, packId } : p
+    ),
+  })),
+
+  updatePlayerDifficulty: (id: string, difficulty: Difficulty | null) => set((state) => ({
+    players: state.players.map(p =>
+      p.id === id ? { ...p, difficultyPreference: difficulty } : p
     ),
   })),
 
