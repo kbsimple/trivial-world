@@ -5,9 +5,9 @@ import { PackComboSchema } from '@trivial-world/types';
  * TDD tests for PackComboSchema (Phase 18, Plan 01)
  */
 describe('PackComboSchema', () => {
-  const validUuid1 = 'a1b2c3d4-e5f6-7890-abcd-ef1234567890';
-  const validUuid2 = 'b2c3d4e5-f6a7-8901-bcde-f12345678901';
-  const validUuid3 = 'c3d4e5f6-a7b8-9012-cdef-123456789012';
+  const validUuid1 = 'aef009f7-60ed-4208-94bd-5ea5f424fe7a';
+  const validUuid2 = '01afc75b-f88b-4e96-b042-dd486058d539';
+  const validUuid3 = '551f9350-77f1-4f4e-ac34-666fe1f145ca';
 
   const validCombo = {
     id: validUuid1,

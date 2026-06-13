@@ -8,8 +8,9 @@ export {
   PackMetadataSchema,
   QuestionPackSchema,
   PackIndexEntrySchema,
+  PackComboSchema,
 } from './question-pack.js';
-export type { Question, PackMetadata, QuestionPack, PackIndexEntry } from './question-pack.js';
+export type { Question, PackMetadata, QuestionPack, PackIndexEntry, PackCombo } from './question-pack.js';
 
 // JSON Schema exports
 export {
