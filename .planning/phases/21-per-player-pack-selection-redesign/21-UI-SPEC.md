@@ -1,7 +1,7 @@
 ---
 phase: 21
 slug: per-player-pack-selection-redesign
-status: draft
+status: approved
 shadcn_initialized: false
 preset: none
 created: 2026-06-13
@@ -61,10 +61,10 @@ All sizes in density-independent pixels (React Native units). Font is Inter thro
 |------|------|--------|-------------|-------|
 | Display | 28px | 700 (bold) | 1.2 | Screen title ("Setup Game", "Select Question Pack") |
 | Body | 18px | 400 (regular) | 1.4 | Player name input, pack name in packInfo row |
-| Label | 16px | 500 (medium) | 1.5 | Footer button text, subtitle, packText, webPickerItemText |
+| Label | 16px | 700 (bold) | 1.5 | Footer button text, subtitle, packText, webPickerItemText |
 | Chip | 11px | 400 (regular) | 1.3 | Pack chip text, difficulty chip text |
 
-Weights in use: 400 (regular) and 700 (bold). Weight 500 is used only for `packText` and `footerButtonText` — treat as the single "semibold/medium" weight in this phase. Declare exactly two weights: 400 and 600+ (700 used in practice).
+Weights in use: 400 (regular) and 700 (bold).
 
 Source: `setup.tsx` StyleSheet (fontSize values lines 376–528) + `packs/index.tsx` StyleSheet.
 
@@ -233,11 +233,11 @@ This is a React Native project. No component registries are used. All components
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
+- [x] Dimension 1 Copywriting: FLAG (non-blocking)
+- [x] Dimension 2 Visuals: FLAG (non-blocking)
+- [x] Dimension 3 Color: PASS
+- [x] Dimension 4 Typography: PASS
+- [x] Dimension 5 Spacing: FLAG (non-blocking)
+- [x] Dimension 6 Registry Safety: PASS
 
-**Approval:** pending
+**Approval:** APPROVED 2026-06-13
