@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v7.0
-milestone_name: Per-Player Pack Customization
+milestone: v8.0
+milestone_name: Pack Selection UX Overhaul
 status: complete
-last_updated: "2026-06-13T22:30:00.000Z"
+last_updated: "2026-06-13T23:00:00.000Z"
 stopped_at: null
 resume_file: null
 progress:
   total_phases: 1
   completed_phases: 1
-  total_plans: 1
-  completed_plans: 1
+  total_plans: 2
+  completed_plans: 2
   percent: 100
 ---
 
@@ -21,12 +21,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-13)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** v7.0 Per-Player Pack Customization — COMPLETE. Archived 2026-06-13.
+**Current focus:** v8.0 Pack Selection UX Overhaul — COMPLETE. Archived 2026-06-13.
 
 ## Current Position
 
-Milestone v7.0 archived 2026-06-13.
-19 total phases across 7 milestones. 288 tests passing.
+Milestone v8.0 archived 2026-06-13.
+20 total phases across 8 milestones. 288 tests passing.
 Planning next milestone via `/gsd-new-milestone`.
 
 Progress: [████████████████████] 100%
@@ -41,6 +41,7 @@ Progress: [████████████████████] 100%
 - v3.0 + v4.0 + v5.0: combined ~1 day execution
 - v6.0: 4 plans (~1 session execution)
 - v7.0: 1 plan (~3 min execution)
+- v8.0: 2 plans (~1 session execution)
 - Milestone archive: .planning/milestones/
 
 ## Accumulated Context
@@ -51,6 +52,9 @@ Progress: [████████████████████] 100%
 - Phase 18 completed 2026-06-13
 - Phase 19 added: Per-Player Pack Customization — top-level "Shared Pack" vs "Custom Per Player" toggle; replaces implicit per-player chips with an explicit intentional flow
 - Phase 19 completed 2026-06-13; v7.0 archived
+- Phase 20 added: Pack Selection UX Overhaul — per-player Shared/Custom chip on player row, unified picker flow, conditional shared pack requirement
+- Phase 20 completed 2026-06-13; v8.0 archived
+- **v8.0 UX changes:** packMode removed from packStore; setup.tsx segmented control removed; per-player pack chip always visible alongside difficulty chip; allPlayersCustom bypass skips CONF-01 shared pack requirement
 
 ### Key Architectural Decisions
 
@@ -63,7 +67,7 @@ Progress: [████████████████████] 100%
 - Per-player pack + difficulty: playerPackIds + playerDifficulties snapshotted at startGame()
 - effectiveDifficulties pattern: per-player difficulty overrides game-level; null falls back
 - **Pack Combos (v6.0):** packId ↔ comboId mutual exclusion at player level; playerPackIdLists drives multi-pack question pooling at runtime; savedCombos + activeComboId persisted in packStore
-- **Per-Player Pack Mode (v7.0):** packMode 'shared'|'custom' in packStore (persisted); segmented control on setup screen; custom mode shows full-width per-player source rows; switching to shared calls clearPlayerPackSources() to clear all player packId/comboId overrides
+- **Per-Player Pack Mode (v7.0 → v8.0):** packMode removed in v8.0; setup screen now shows per-player pack chip always (not gated by a toggle); allPlayersCustom bypass in gameStore.startGame() skips CONF-01 if every player has a non-null packId or comboId
 
 ### Pending Todos
 
