@@ -270,6 +270,16 @@ export default function PackSelectionScreen() {
         }
       />
 
+      {/* Manage Combos button */}
+      <Pressable
+        style={[styles.combosButton, { backgroundColor: 'rgba(255, 255, 255, 0.2)' }]}
+        onPress={() => router.push('/packs/combos')}
+      >
+        <Text style={[styles.combosButtonText, { color: theme.color?.val as string }]}>
+          Manage Combos
+        </Text>
+      </Pressable>
+
       {/* Back button */}
       <Pressable
         style={[styles.backButton, { backgroundColor: 'rgba(255, 255, 255, 0.2)' }]}
@@ -307,6 +317,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 40,
     opacity: 0.7,
+  },
+  combosButton: {
+    position: 'absolute',
+    bottom: 72,
+    left: 20,
+    right: 20,
+    paddingVertical: 12,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  combosButtonText: {
+    fontSize: 16,
+    fontWeight: '600',
   },
   backButton: {
     position: 'absolute',

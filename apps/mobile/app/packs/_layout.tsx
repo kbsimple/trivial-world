@@ -18,6 +18,12 @@ export default function PacksLayout() {
           title: 'Select Pack',
         }}
       />
+      <Stack.Screen
+        name="combos"
+        options={{
+          title: 'Pack Combos',
+        }}
+      />
     </Stack>
   );
 }
