@@ -38,6 +38,7 @@ export default function PackSelectionScreen() {
     downloadPack,
     refreshDownloadedPacks,
     selectPack,
+    selectPackList,
     setEnabledCategories,
     setEnabledDifficulties,
     clearDownloadError,
@@ -46,6 +47,8 @@ export default function PackSelectionScreen() {
   // Local state
   const [selectedPack, setSelectedPack] = useState<PackIndexEntry | null>(null);
   const [modalVisible, setModalVisible] = useState(false);
+  // Multi-pack dynamic selection
+  const [selectedPackIds, setSelectedPackIds] = useState<string[]>([]);
   // D-14: Downloaded pack versions for semver comparison
   const [downloadedPackVersions, setDownloadedPackVersions] = useState<Record<string, string>>({});
   // WR-01: Track pack that caused download error for retry
@@ -129,7 +132,23 @@ export default function PackSelectionScreen() {
   const handleSelectPack = async (packId: string) => {
     await selectPack(packId);
     setModalVisible(false);
-    // Navigate to setup screen (D-01: Pack -> Setup -> Game)
+    setSelectedPackIds([]);
+    router.push('/game/setup');
+  };
+
+  const togglePackSelection = (packId: string) => {
+    setSelectedPackIds((prev) =>
+      prev.includes(packId) ? prev.filter((id) => id !== packId) : [...prev, packId]
+    );
+  };
+
+  const handlePlaySelected = async () => {
+    if (selectedPackIds.length === 1) {
+      await selectPack(selectedPackIds[0]);
+    } else {
+      await selectPackList(selectedPackIds);
+    }
+    setSelectedPackIds([]);
     router.push('/game/setup');
   };
 
@@ -193,6 +212,8 @@ export default function PackSelectionScreen() {
     );
   }
 
+  const hasSelection = selectedPackIds.length > 0;
+
   return (
     <View style={[styles.container, { backgroundColor: theme.background?.val as string }]}>
       {/* Header */}
@@ -230,20 +251,23 @@ export default function PackSelectionScreen() {
       <FlatList
         data={availablePacks}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <PackCard
-            pack={item}
-            isDownloaded={downloadedPackIds.includes(item.id)}
-            hasUpdate={checkHasUpdateAvailable(item)}
-            isActive={activePackId === item.id}
-            onPress={() => handlePackPress(item)}
-            onSelect={
-              (downloadedPackIds.includes(item.id) || Platform.OS === 'web')
-                ? () => handleSelectPack(item.id)
-                : undefined
-            }
-          />
-        )}
+        renderItem={({ item }) => {
+          const isDownloaded = downloadedPackIds.includes(item.id) || Platform.OS === 'web';
+          const isSelected = selectedPackIds.includes(item.id);
+          return (
+            <PackCard
+              pack={item}
+              isDownloaded={downloadedPackIds.includes(item.id)}
+              hasUpdate={checkHasUpdateAvailable(item)}
+              isActive={hasSelection ? isSelected : activePackId === item.id}
+              onPress={
+                isDownloaded
+                  ? () => togglePackSelection(item.id)
+                  : () => handlePackPress(item)
+              }
+            />
+          );
+        }}
         contentContainerStyle={styles.list}
         ListEmptyComponent={
           <Text style={[styles.emptyText, { color: theme.color?.val as string }]}>
@@ -270,25 +294,45 @@ export default function PackSelectionScreen() {
         }
       />
 
-      {/* Manage Combos button */}
-      <Pressable
-        style={[styles.combosButton, { backgroundColor: 'rgba(255, 255, 255, 0.2)' }]}
-        onPress={() => router.push('/packs/combos')}
-      >
-        <Text style={[styles.combosButtonText, { color: theme.color?.val as string }]}>
-          Manage Combos
-        </Text>
-      </Pressable>
-
-      {/* Back button */}
-      <Pressable
-        style={[styles.backButton, { backgroundColor: 'rgba(255, 255, 255, 0.2)' }]}
-        onPress={() => router.back()}
-      >
-        <Text style={[styles.backButtonText, { color: theme.color?.val as string }]}>
-          Back
-        </Text>
-      </Pressable>
+      {/* Footer — in layout flow, no absolute positioning */}
+      <View style={styles.footer}>
+        {hasSelection ? (
+          <>
+            <Pressable
+              style={[styles.playButton, { backgroundColor: 'rgba(255, 255, 255, 0.25)' }]}
+              onPress={handlePlaySelected}
+            >
+              <Text style={[styles.playButtonText, { color: theme.color?.val as string }]}>
+                Play with {selectedPackIds.length} pack{selectedPackIds.length !== 1 ? 's' : ''} →
+              </Text>
+            </Pressable>
+            <Pressable style={styles.clearButton} onPress={() => setSelectedPackIds([])}>
+              <Text style={[styles.clearButtonText, { color: theme.color?.val as string }]}>
+                Clear selection
+              </Text>
+            </Pressable>
+          </>
+        ) : (
+          <>
+            <Pressable
+              style={[styles.footerButton, { backgroundColor: 'rgba(255, 255, 255, 0.2)' }]}
+              onPress={() => router.push('/packs/combos')}
+            >
+              <Text style={[styles.footerButtonText, { color: theme.color?.val as string }]}>
+                Manage Combos
+              </Text>
+            </Pressable>
+            <Pressable
+              style={[styles.footerButton, { backgroundColor: 'rgba(255, 255, 255, 0.2)' }]}
+              onPress={() => router.back()}
+            >
+              <Text style={[styles.footerButtonText, { color: theme.color?.val as string }]}>
+                Back
+              </Text>
+            </Pressable>
+          </>
+        )}
+      </View>
     </View>
   );
 }
@@ -310,7 +354,7 @@ const styles = StyleSheet.create({
   },
   list: {
     padding: 16,
-    paddingBottom: 80,
+    paddingBottom: 8,
   },
   emptyText: {
     fontSize: 16,
@@ -318,30 +362,36 @@ const styles = StyleSheet.create({
     marginTop: 40,
     opacity: 0.7,
   },
-  combosButton: {
-    position: 'absolute',
-    bottom: 72,
-    left: 20,
-    right: 20,
+  footer: {
+    paddingHorizontal: 20,
+    paddingBottom: 24,
+    paddingTop: 8,
+    gap: 10,
+  },
+  footerButton: {
     paddingVertical: 12,
     borderRadius: 8,
     alignItems: 'center',
   },
-  combosButtonText: {
+  footerButtonText: {
     fontSize: 16,
     fontWeight: '600',
   },
-  backButton: {
-    position: 'absolute',
-    bottom: 20,
-    left: 20,
-    right: 20,
-    paddingVertical: 12,
+  playButton: {
+    paddingVertical: 14,
     borderRadius: 8,
     alignItems: 'center',
   },
-  backButtonText: {
-    fontSize: 16,
-    fontWeight: '600',
+  playButtonText: {
+    fontSize: 17,
+    fontWeight: '700',
+  },
+  clearButton: {
+    alignItems: 'center',
+    paddingVertical: 6,
+  },
+  clearButtonText: {
+    fontSize: 14,
+    opacity: 0.6,
   },
 });

@@ -17,6 +17,8 @@ interface PackState {
   downloadedPackIds: string[];
   // Currently active pack for gameplay (D-15: only one active)
   activePackId: string | null;
+  // Dynamic multi-pack selection (set when user picks 2+ packs without naming a combo)
+  activePackIdList: string[] | null; // null = single-pack mode (use activePackId)
   // User-created combos (blend of multiple packs), persisted
   savedCombos: PackCombo[];
   // Currently active combo for game-level selection (null = single pack via activePackId)
@@ -37,6 +39,7 @@ interface PackState {
   downloadPack: (entry: PackIndexEntry) => Promise<void>;
   refreshDownloadedPacks: () => Promise<void>;
   selectPack: (packId: string) => Promise<void>;
+  selectPackList: (packIds: string[]) => Promise<void>;
   createCombo: (name: string, packIds: string[]) => void;
   deleteCombo: (comboId: string) => void;
   selectCombo: (comboId: string | null) => void;
@@ -52,6 +55,7 @@ export const usePackStore = create<PackState>()(
       availablePacks: [],
       downloadedPackIds: [],
       activePackId: null,
+      activePackIdList: null,
       savedCombos: [],
       activeComboId: null,
       enabledCategories: null, // null = all categories enabled
@@ -108,12 +112,18 @@ export const usePackStore = create<PackState>()(
       },
 
       selectPack: async (packId: string) => {
-        // D-15: Only one active pack at a time
-        // On web, Zustand's persist middleware handles storage; WatermelonDB is mobile-only
         if (Platform.OS !== 'web') {
           await setActivePack(packId);
         }
-        set({ activePackId: packId });
+        set({ activePackId: packId, activePackIdList: null });
+      },
+
+      selectPackList: async (packIds: string[]) => {
+        if (packIds.length === 0) return;
+        if (Platform.OS !== 'web') {
+          await setActivePack(packIds[0]);
+        }
+        set({ activePackId: packIds[0], activePackIdList: packIds, activeComboId: null });
       },
 
       createCombo: (name: string, packIds: string[]) => {
@@ -153,6 +163,7 @@ export const usePackStore = create<PackState>()(
       partialize: (state) => ({
         downloadedPackIds: state.downloadedPackIds,
         activePackId: state.activePackId,
+        activePackIdList: state.activePackIdList,
         enabledCategories: state.enabledCategories,
         enabledDifficulties: state.enabledDifficulties,
         savedCombos: state.savedCombos,

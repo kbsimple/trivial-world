@@ -68,7 +68,7 @@ export const useGameStore = create<GameStore>()(
           const playerPackIds = players.map(p => p.packId ?? activePackId ?? null);
           const playerDifficulties = players.map(p => p.difficultyPreference ?? null);
 
-          const { savedCombos, activeComboId } = usePackStore.getState();
+          const { savedCombos, activeComboId, activePackIdList } = usePackStore.getState();
 
           function resolvePlayerPackIdList(player: Player): string[] {
             if (player.comboId) {
@@ -80,6 +80,7 @@ export const useGameStore = create<GameStore>()(
               const combo = savedCombos.find(c => c.id === activeComboId);
               if (combo) return combo.packIds;
             }
+            if (activePackIdList && activePackIdList.length > 0) return activePackIdList;
             if (activePackId) return [activePackId];
             return [];
           }
