@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
-milestone: v8.0
-milestone_name: Pack Selection UX Overhaul
-status: complete
-last_updated: "2026-06-13T23:00:00.000Z"
+milestone: v9.0
+milestone_name: Per-Player Pack Selection Redesign
+status: planned
+last_updated: "2026-06-13T23:38:00.000Z"
 stopped_at: null
 resume_file: null
 progress:
   total_phases: 1
-  completed_phases: 1
+  completed_phases: 0
   total_plans: 2
-  completed_plans: 2
-  percent: 100
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -25,11 +25,11 @@ See: .planning/PROJECT.md (updated 2026-06-13)
 
 ## Current Position
 
-Milestone v8.0 archived 2026-06-13.
-20 total phases across 8 milestones. 288 tests passing.
-Planning next milestone via `/gsd-new-milestone`.
+Milestone v9.0 started 2026-06-13. Phase 21 planned (2 plans ready).
+21 total phases across 9 milestones. 288 tests passing.
+Ready to execute Phase 21.
 
-Progress: [████████████████████] 100%
+Progress: [░░░░░░░░░░░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
