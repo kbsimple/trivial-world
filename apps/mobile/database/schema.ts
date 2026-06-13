@@ -10,7 +10,7 @@ import { appSchema, tableSchema } from '@nozbe/watermelondb';
  * - Lazy loading via WatermelonDB queries (not all questions in memory)
  */
 export const schema = appSchema({
-  version: 2, // Incremented from v1 (original game state)
+  version: 3, // v3: Added tidbits column to questions table (Phase 16)
   tables: [
     // Question packs table
     // Stores pack metadata and download status
@@ -44,6 +44,7 @@ export const schema = appSchema({
         { name: 'choices', type: 'string', isOptional: true },    // JSON array of strings
         { name: 'correct_choice_index', type: 'number', isOptional: true },
         { name: 'asked_at', type: 'number', isOptional: true },   // Unix timestamp or null
+        { name: 'tidbits', type: 'string', isOptional: true },    // Interesting context shown at answer reveal
       ],
     }),
   ],
