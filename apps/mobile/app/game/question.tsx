@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
 import { useRouter } from 'expo-router';
@@ -28,18 +28,14 @@ export default function QuestionScreen() {
     isChampionshipMode,
   } = useGameStore();
   const { players } = usePlayerStore();
-
-  // markAnswer clears currentQuestion before navigation fires (600ms later).
-  // Hold the last non-null question so the card doesn't flash the fallback.
-  const lastQuestionRef = useRef(currentQuestion);
-  if (currentQuestion) lastQuestionRef.current = currentQuestion;
-  const displayQuestion = currentQuestion ?? lastQuestionRef.current;
+  const [submitted, setSubmitted] = useState(false);
 
   const currentPlayer = players[currentPlayerIndex];
-  const category = currentCategory || displayQuestion?.category || 'blue';
+  const category = currentCategory || currentQuestion?.category || 'blue';
   const inChampionship = isChampionshipMode[currentPlayerIndex] ?? false;
 
   const handleMarkAnswer = (correct: boolean) => {
+    setSubmitted(true);
     markAnswer(correct);
     setTimeout(() => {
       const phase = useGameStore.getState().phase;
@@ -70,17 +66,17 @@ export default function QuestionScreen() {
       )}
 
       <View style={styles.questionContainer}>
-        {displayQuestion ? (
+        {!submitted && currentQuestion ? (
           <QuestionCard
             questionNumber={questionNumber}
             category={category}
-            questionText={displayQuestion.questionText}
-            answerText={displayQuestion.answerText}
+            questionText={currentQuestion.questionText}
+            answerText={currentQuestion.answerText}
             revealed={answerRevealed}
             onReveal={() => revealAnswer()}
-            choices={displayQuestion.choices}
-            correctChoiceIndex={displayQuestion.correctChoiceIndex}
-            tidbits={displayQuestion.tidbits}
+            choices={currentQuestion.choices}
+            correctChoiceIndex={currentQuestion.correctChoiceIndex}
+            tidbits={currentQuestion.tidbits}
           />
         ) : null}
       </View>

@@ -419,7 +419,7 @@ export default schemaMigrations({
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Default model for CLI**
    - What we know: `llama3.2` is hardcoded as `DEFAULT_MODEL` but is NOT installed locally. Available models: `qwen3.5:latest`, `glm-5.1:cloud`.

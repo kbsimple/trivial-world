@@ -1,18 +1,18 @@
 ---
 gsd_state_version: 1.0
-milestone: v4.0
-milestone_name: Simplified Gameplay
-status: complete
+milestone: v5.0
+milestone_name: Content Generation Tooling
+status: planning
 stopped_at: null
-last_updated: "2026-06-12T23:00:00.000Z"
-last_activity: 2026-06-12 — Phase 15 complete; v4.0 shipped
+last_updated: "2026-06-12T23:30:00.000Z"
+last_activity: 2026-06-12 — Phase 16 planned (4 plans, 3 waves); ready to execute
 resume_file: null
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 6
-  completed_plans: 6
-  percent: 100
+  total_phases: 1
+  completed_phases: 0
+  total_plans: 4
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -22,14 +22,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-12)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** Simplified Gameplay — replace die/board/wedge mechanics with streak-based category completion
+**Current focus:** Content Generation Tooling — CLI pipeline for bulk question pack generation with tidbits
 
 ## Current Position
 
-Phase: 15 (Per-Player Pack Selection) — COMPLETE
-Plan: All 3 plans complete
-Status: v4.0 milestone shipped
-Last activity: 2026-06-12 — Phase 15 complete; all phases verified, 207/207 tests passing
+Phase: 16 (CLI Bulk Question Generation) — READY TO EXECUTE
+Plan: 4 plans planned, 0 complete
+Status: v5.0 milestone in progress
+Last activity: 2026-06-12 — Phase 16 planned; 4 plans verified across 3 waves
 
 Progress: [██████████] 100%
 
