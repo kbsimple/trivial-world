@@ -2,7 +2,7 @@ import { Platform } from 'react-native';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { platformStorage } from '../services/platformStorage';
-import { PackIndexEntry, Category, Difficulty } from '@trivial-world/types';
+import { PackIndexEntry, Category, Difficulty, PackCombo } from '@trivial-world/types';
 import { fetchPackIndex } from '../services/packIndex';
 import { downloadPackWithProgress, getDownloadedPackIds, setActivePack } from '../services/packDownloader';
 
@@ -17,6 +17,10 @@ interface PackState {
   downloadedPackIds: string[];
   // Currently active pack for gameplay (D-15: only one active)
   activePackId: string | null;
+  // User-created combos (blend of multiple packs), persisted
+  savedCombos: PackCombo[];
+  // Currently active combo for game-level selection (null = single pack via activePackId)
+  activeComboId: string | null;
   // Category filter (D-05: before game start)
   enabledCategories: Category[] | null; // null = all enabled
   // Difficulty filter (D-06: optional pre-game setting)
@@ -33,6 +37,9 @@ interface PackState {
   downloadPack: (entry: PackIndexEntry) => Promise<void>;
   refreshDownloadedPacks: () => Promise<void>;
   selectPack: (packId: string) => Promise<void>;
+  createCombo: (name: string, packIds: string[]) => void;
+  deleteCombo: (comboId: string) => void;
+  selectCombo: (comboId: string | null) => void;
   setEnabledCategories: (categories: Category[] | null) => void;
   setEnabledDifficulties: (difficulties: Difficulty[] | null) => void;
   setDownloadProgress: (progress: number) => void;
@@ -45,6 +52,8 @@ export const usePackStore = create<PackState>()(
       availablePacks: [],
       downloadedPackIds: [],
       activePackId: null,
+      savedCombos: [],
+      activeComboId: null,
       enabledCategories: null, // null = all categories enabled
       enabledDifficulties: null, // null = all difficulties enabled
       isLoading: false,
@@ -107,6 +116,21 @@ export const usePackStore = create<PackState>()(
         set({ activePackId: packId });
       },
 
+      createCombo: (name: string, packIds: string[]) => {
+        const id = (typeof crypto !== 'undefined' && crypto.randomUUID)
+          ? crypto.randomUUID()
+          : `combo-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
+        const combo: PackCombo = { id, name, packIds, createdAt: new Date().toISOString() };
+        set((state) => ({ savedCombos: [...state.savedCombos, combo] }));
+      },
+
+      deleteCombo: (comboId: string) => set((state) => ({
+        savedCombos: state.savedCombos.filter(c => c.id !== comboId),
+        activeComboId: state.activeComboId === comboId ? null : state.activeComboId,
+      })),
+
+      selectCombo: (comboId: string | null) => set({ activeComboId: comboId }),
+
       setEnabledCategories: (categories: Category[] | null) => {
         set({ enabledCategories: categories });
       },
@@ -131,6 +155,8 @@ export const usePackStore = create<PackState>()(
         activePackId: state.activePackId,
         enabledCategories: state.enabledCategories,
         enabledDifficulties: state.enabledDifficulties,
+        savedCombos: state.savedCombos,
+        activeComboId: state.activeComboId,
       }),
     }
   )

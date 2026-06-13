@@ -73,3 +73,15 @@ export const PackIndexEntrySchema = z.object({
   size: z.number(),
 });
 export type PackIndexEntry = z.infer<typeof PackIndexEntrySchema>;
+
+/**
+ * Pack combo schema — a named blend of multiple question packs
+ * Minimum 2 packs required (a single-pack combo is just a pack selection)
+ */
+export const PackComboSchema = z.object({
+  id: z.string().uuid(),
+  name: z.string().min(1, 'Combo name is required').max(50),
+  packIds: z.array(z.string().uuid()).min(2, 'A combo needs at least 2 packs'),
+  createdAt: z.string().datetime(),
+});
+export type PackCombo = z.infer<typeof PackComboSchema>;
