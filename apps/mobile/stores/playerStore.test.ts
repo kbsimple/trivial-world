@@ -525,6 +525,29 @@ describe('usePlayerStore', () => {
     });
   });
 
+  describe('clearPlayerPackSources', () => {
+    it('clears packId and comboId for all players', () => {
+      usePlayerStore.getState().addPlayer('Alice');
+      usePlayerStore.getState().addPlayer('Bob');
+      const [a, b] = usePlayerStore.getState().players;
+      usePlayerStore.getState().updatePlayerPack(a.id, 'pack-1');
+      usePlayerStore.getState().updatePlayerCombo(b.id, 'combo-1');
+
+      usePlayerStore.getState().clearPlayerPackSources();
+
+      const players = usePlayerStore.getState().players;
+      expect(players[0].packId).toBeNull();
+      expect(players[0].comboId).toBeNull();
+      expect(players[1].packId).toBeNull();
+      expect(players[1].comboId).toBeNull();
+    });
+
+    it('is a no-op when no players exist', () => {
+      expect(() => usePlayerStore.getState().clearPlayerPackSources()).not.toThrow();
+      expect(usePlayerStore.getState().players).toHaveLength(0);
+    });
+  });
+
   describe('edge cases', () => {
     it('handles duplicate names (allowed)', () => {
       getStore().addPlayer('Alice');

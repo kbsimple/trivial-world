@@ -24,7 +24,7 @@ import { SEMANTIC_COLORS } from '../../constants/theme';
 export default function SetupScreen() {
   const router = useRouter();
   const theme = useTheme();
-  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack, updatePlayerCombo, updatePlayerDifficulty } = usePlayerStore();
+  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack, updatePlayerCombo, updatePlayerDifficulty, clearPlayerPackSources } = usePlayerStore();
   const { startGame } = useGameStore();
   const activePackId = usePackStore((state) => state.activePackId);
   const availablePacks = usePackStore((state) => state.availablePacks);
@@ -145,11 +145,7 @@ export default function SetupScreen() {
 
   const handleSetPackMode = (mode: 'shared' | 'custom') => {
     if (mode === 'shared') {
-      // Clear all per-player pack/combo overrides on switch to shared (per CONTEXT.md locked decision)
-      players.forEach(p => {
-        updatePlayerPack(p.id, null);
-        updatePlayerCombo(p.id, null);
-      });
+      clearPlayerPackSources();
     }
     setPackMode(mode);
   };

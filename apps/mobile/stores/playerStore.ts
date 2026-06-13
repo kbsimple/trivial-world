@@ -93,6 +93,11 @@ export const usePlayerStore = create<PlayerState>()(
     ),
   })),
 
+  clearPlayerPackSources: () =>
+    set((state) => ({
+      players: state.players.map((p) => ({ ...p, packId: null, comboId: null })),
+    })),
+
   resetPlayers: () => set({ players: [] }),
 
   // SCOR-01: Award wedge to player

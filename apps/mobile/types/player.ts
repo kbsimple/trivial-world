@@ -45,6 +45,8 @@ export interface PlayerState {
   updatePlayerCombo: (id: string, comboId: string | null) => void;
   /** Assign a difficulty preference to a specific player (null = use game-level default) */
   updatePlayerDifficulty: (id: string, difficulty: Difficulty | null) => void;
+  /** Clear pack and combo overrides for all players (called when switching to Shared Pack mode) */
+  clearPlayerPackSources: () => void;
 
   // Scoring actions (SCOR-01)
   /** Award a wedge to a player for correct answer on category space */
