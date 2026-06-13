@@ -76,7 +76,18 @@ const status = {
   commitShort: commit !== 'unknown' ? commit.slice(0, 8) : 'unknown',
   branch,
   context: process.env.CONTEXT || (process.env.NETLIFY === 'true' ? 'netlify' : 'local'),
-  builtAt: new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles', timeZoneName: 'short' }),
+  builtAt: (() => {
+    const d = new Date();
+    const p = (n) => String(n).padStart(2, '0');
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles',
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+      hour12: true, timeZoneName: 'short',
+    }).formatToParts(d);
+    const get = (type) => parts.find(p => p.type === type)?.value ?? '';
+    return `${get('year')}/${get('month')}/${get('day')}, ${get('hour')}:${get('minute')}:${get('second')} ${get('dayPeriod')} ${get('timeZoneName')}`;
+  })(),
   // Netlify-specific: present in CI, null locally
   buildId: process.env.BUILD_ID || null,
   deployId: process.env.DEPLOY_ID || null,
