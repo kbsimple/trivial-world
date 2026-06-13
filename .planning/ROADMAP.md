@@ -8,7 +8,8 @@ Trivial World is a mobile trivia game for in-person social play. v1.0 (Phases 1-
 
 - **v1.0 Core Gameplay** - Phases 1-5 (shipped 2026-06-08)
 - **v2.0 Question Packs & Game Configuration** - Phases 6-8 (shipped 2026-06-08)
-- **v3.0 Web Deployment** - Phases 9-11 (in progress)
+- **v3.0 Web Deployment** - Phases 9-11 (shipped 2026-06-11)
+- **v4.0 Simplified Gameplay** - Phases 12-14 (in progress)
 
 ## Phases
 
@@ -175,6 +176,47 @@ Plans:
 
 ---
 
+## v4.0 Simplified Gameplay (Phases 12-14) — IN PROGRESS
+
+### Phase 12: Game Store Refactor
+**Goal**: Replace die/wedge state with category completion tracking; update the game flow state machine
+**Depends on**: Phase 11
+**Requirements**: SIMP-02, SIMP-04, SIMP-05, SIMP-06, SIMP-07, SIMP-08, SIMP-11, SIMP-12, SIMP-13
+**Success Criteria**:
+  1. `completedCategories` tracked per player (array of PlayerColor[], one per player index)
+  2. `isChampionshipMode` tracked per player (boolean[])
+  3. `selectCategory` marks category complete on correct answer and continues turn
+  4. `markAnswer(false)` ends turn and advances to next player
+  5. All wedge/die state fields removed from gameStore
+  6. Game phase state machine: `setup → selecting → answering → championship → finished`
+**Plans**: 1 plan
+
+### Phase 13: Turn Flow UI
+**Goal**: Replace roll/move screens with a unified turn screen showing category selection and player progress
+**Depends on**: Phase 12
+**Requirements**: SIMP-01, SIMP-03, SIMP-07, SIMP-14
+**Success Criteria**:
+  1. `/game/turn` screen shows active player name and all 6 category buttons
+  2. Completed categories are visually marked (checkmark/dimmed) and not pressable
+  3. Player progress strip shows each player's completed-category count
+  4. Tapping a category navigates to question screen
+  5. Die roll screen (`/game/roll`) and move screen (`/game/move`) are no longer in the navigation flow
+**Plans**: 1 plan
+
+### Phase 14: Championship Mode & Polish
+**Goal**: Championship question flow, win detection, results screen, and removal of residual wedge UI
+**Depends on**: Phase 13
+**Requirements**: SIMP-08, SIMP-09, SIMP-10, SIMP-11, SIMP-14
+**Success Criteria**:
+  1. When a player completes all 6 categories, a "Championship Round" banner appears on the question screen
+  2. Correct championship answer triggers the results/win screen
+  3. Incorrect championship answer ends the turn; championship banner reappears on player's next turn
+  4. Results screen shows winner without wedge count
+  5. WedgeBadge, WedgeCollection, Die components no longer rendered in active game flow
+**Plans**: 1 plan
+
+---
+
 ## Progress
 
 | Phase | Plans Complete | Status | Completed |
@@ -190,6 +232,9 @@ Plans:
 | 9. Mobile Web Export | 5/5 | Complete | 2026-06-09 |
 | 10. Netlify Deployment | 2/2 | Complete | 2026-06-11 |
 | 11. PWA Manifest | 1/1 | Complete | 2026-06-11 |
+| 12. Game Store Refactor | 0/1 | Not started | — |
+| 13. Turn Flow UI | 0/1 | Not started | — |
+| 14. Championship Mode & Polish | 0/1 | Not started | — |
 
 ---
 

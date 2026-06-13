@@ -1,37 +1,37 @@
 ---
 gsd_state_version: 1.0
-milestone: v3.0
-milestone_name: Web Deployment
-status: complete
+milestone: v4.0
+milestone_name: Simplified Gameplay
+status: in_progress
 stopped_at: null
-last_updated: "2026-06-11T23:00:00.000Z"
-last_activity: 2026-06-11 — Phase 10 and 11 complete, v3.0 shipped
+last_updated: "2026-06-12T00:00:00.000Z"
+last_activity: 2026-06-12 — Milestone v4.0 started
 resume_file: null
 progress:
   total_phases: 3
-  completed_phases: 3
-  total_plans: 8
-  completed_plans: 8
-  percent: 100
+  completed_phases: 0
+  total_plans: 3
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-09)
+See: .planning/PROJECT.md (updated 2026-06-12)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** Web deployment — deploy both apps to Netlify with GitHub sync
+**Current focus:** Simplified Gameplay — replace die/board/wedge mechanics with streak-based category completion
 
 ## Current Position
 
-Phase: 10 (Netlify Deployment)
+Phase: 12 (Game Store Refactor)
 Plan: Not started
 Status: Ready to plan
-Last activity: 2026-06-09 — Phase 9 complete (Mobile Web Export)
+Last activity: 2026-06-12 — Milestone v4.0 started
 
-Progress: [####      ] 33%
+Progress: [          ] 0%
 
 ## Performance Metrics
 
@@ -41,20 +41,6 @@ Progress: [####      ] 33%
 - v2.0: 11 plans (~48 hours)
 - v3.0: 5 plans (~18 min execution)
 - Total execution time: ~219 minutes
-
-**By Phase:**
-
-| Phase | Plans | Duration |
-|-------|-------|----------|
-| 1. Game Setup & Conductor Interface | 2 | — |
-| 2. Game Loop & Turn Management | 2 | — |
-| 3. Question System | 2 | — |
-| 4. Scoring & Win Condition | 2 | — |
-| 5. State Persistence | 2 | — |
-| 6. Question Pack Structure | 3 | ~30 min |
-| 7. Question Generator Web App | 4 | ~32 min |
-| 8. Game Configuration | 4 | ~30 min |
-| 9. Mobile Web Export | 5 | ~18 min |
 
 ## Accumulated Context
 
@@ -69,40 +55,35 @@ Progress: [####      ] 33%
 
 **v2.0 Completed (2026-06-08):**
 - Contract-first development: structure → generator → consumer
-- Three-phase approach: Pack Structure → Generator → Configuration
-- Zod schemas with versioning from day one (prevent migration failures)
+- Zod schemas with versioning from day one
 - WatermelonDB for offline pack caching
-- Netlify for generator web app deployment
-- Multi-model fact-checking for AI question quality
 - Pack selection screen before game setup (home → pack → setup → game)
 - Built-in default pack with 120 questions
-- Semver version comparison for pack updates
 
-**v3.0 Completed (2026-06-09):**
+**v3.0 Completed (2026-06-11):**
 - D-01: AI generation stays dev-only (Ollama local)
 - D-02: Game storage is session-only (no IndexedDB)
 - D-03: Two separate Netlify sites (game + generator)
-- D-04/D-06: Platform storage adapter (AsyncStorage mobile, sessionStorage web)
 - D-07: Question provider abstraction (WatermelonDB mobile, bundled questions web)
 - D-08: Bundled default pack questions for web
-- D-09: Web skips pack selection (uses bundled default)
-- D-10: Haptics no-op on web (no vibration API fallback)
-- D-11: Screen orientation mobile-only (web-agnostic)
 - Expo static export for web (dist/ folder)
-- Tamagui with disabled static extraction for web builds
-- Metro resolver config to mock SQLite adapter for web
+
+**v4.0 In Progress (2026-06-12):**
+- D-v4-01: Die roll and board positions removed entirely
+- D-v4-02: Correct answer continues turn; incorrect answer ends it (streak mechanic)
+- D-v4-03: Championship mode: all 6 categories correct → one final question to win
+- D-v4-04: Championship category chosen verbally by opponents/conductor (no app input needed)
+- D-v4-05: Game phase state: setup → selecting → answering → championship → finished
 
 ### Pending Todos
 
-None — ready to plan Phase 10.
+None.
 
 ### Blockers/Concerns
 
 None.
 
 ## Deferred Items
-
-Items acknowledged and carried forward for future milestones:
 
 | Category | Item | Status | Deferred At |
 |----------|------|--------|-------------|
@@ -112,9 +93,3 @@ Items acknowledged and carried forward for future milestones:
 | Time Limits | Per-question countdown timers | Deferred | Phase 8 (D-04) |
 | Game Variants | Short game, custom win conditions | Deferred | Phase 8 (D-07) |
 | Offline Web | IndexedDB persistence for web game | Deferred | v4.0 |
-
-## Session Continuity
-
-Last session: 2026-06-09T18:35:00Z
-Stopped at: null
-Resume file: null

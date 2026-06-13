@@ -8,20 +8,21 @@ Trivial World is a mobile trivia game for in-person social play, with a web-base
 
 Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
 
-## Current Milestone: v3.0 Web Deployment
+## Current Milestone: v4.0 Simplified Gameplay
 
-**Goal:** Deploy both apps to Netlify with GitHub sync from main branch
+**Goal:** Replace die/board/wedge mechanics with a streak-based category completion system
 
 **Target features:**
-- WEB-01: Game web app — Expo web export with session-only storage
-- WEB-02: Generator web app — Next.js static export for Netlify
-- WEB-03: Netlify deployment — Two separate sites, GitHub sync from main
-- WEB-04: PWA manifest — Add to Home Screen, app icons
+- SIMP-01–04: Category completion tracking per player (replaces wedges)
+- SIMP-05–07: Streak-based turns — keep going while correct, lose turn on wrong answer
+- SIMP-08–11: Championship mode once all 6 categories completed
+- SIMP-12–14: Remove die roll, board positions, and wedge UI entirely
 
 **Key decisions:**
-- AI generation stays dev-only (Ollama local) — production generator deploys as static site
-- Game storage is session-only — no IndexedDB, simpler than full offline
-- Two separate Netlify sites — game and generator deploy independently
+- Die roll screen removed; turn starts with category selection
+- Correct answer continues current player's turn; incorrect answer passes to next player
+- Championship question category chosen by opponents/conductor (verbal, no app input)
+- Player retains championship status across turns if final question answered incorrectly
 
 ## Requirements
 
@@ -41,10 +42,20 @@ Enable in-person social trivia gameplay where the app supports (not replaces) hu
 
 ### Active
 
-- [ ] WEB-01: Game runs in web browser via Expo export
-- [ ] WEB-02: Generator accessible as static web app
-- [ ] WEB-03: Both apps deploy automatically from main branch
-- [ ] WEB-04: Game installable as PWA on mobile devices
+- [ ] SIMP-01: Player can see which of their 6 categories have been completed
+- [ ] SIMP-02: Category completion persists across turns within a game
+- [ ] SIMP-03: Conductor selects which category the active player attempts
+- [ ] SIMP-04: Correct answer marks that category as complete for the player
+- [ ] SIMP-05: Correct answer continues current player's turn
+- [ ] SIMP-06: Incorrect answer ends turn and passes to next player
+- [ ] SIMP-07: Completed categories cannot be selected again for that player
+- [ ] SIMP-08: Player who completes all 6 categories enters championship mode
+- [ ] SIMP-09: Championship question category is selected by conductor/opponents
+- [ ] SIMP-10: Correct championship answer wins the game
+- [ ] SIMP-11: Incorrect championship answer ends turn; player remains in championship mode
+- [ ] SIMP-12: Die roll screen removed from game flow
+- [ ] SIMP-13: Wedge/board position mechanics removed
+- [ ] SIMP-14: Player progress (categories completed) visible during play
 
 ### Out of Scope
 

@@ -116,6 +116,34 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **PWA-02**: HTTPS enforced (Netlify provides)
 - [ ] **PWA-03**: Add to Home Screen works on Android/iOS
 
+### Simplified Gameplay (SIMP) — v4.0
+
+#### Category Completion
+
+- [ ] **SIMP-01**: Player can see which of their 6 categories have been completed during their turn
+- [ ] **SIMP-02**: Category completion state persists across turns within a game session
+- [ ] **SIMP-03**: Conductor can select any uncompleted category for the active player to attempt
+- [ ] **SIMP-04**: Correct answer marks that category as completed for the active player
+
+#### Streak-Based Turn Mechanics
+
+- [ ] **SIMP-05**: Correct answer keeps the current player's turn active (streak continues)
+- [ ] **SIMP-06**: Incorrect answer immediately ends the turn and passes to the next player
+- [ ] **SIMP-07**: Already-completed categories are visually disabled and cannot be re-selected
+
+#### Championship Mode
+
+- [ ] **SIMP-08**: Completing all 6 categories triggers championship mode for that player
+- [ ] **SIMP-09**: Championship question screen clearly indicates the player is attempting to win
+- [ ] **SIMP-10**: Correct answer on championship question ends the game with that player as winner
+- [ ] **SIMP-11**: Incorrect championship answer ends the turn; player remains in championship mode for future turns
+
+#### Cleanup
+
+- [ ] **SIMP-12**: Die roll screen and die roll animation are removed from the game flow
+- [ ] **SIMP-13**: Wedge tracking, wedge display, and board position mechanics are removed
+- [ ] **SIMP-14**: Player progress (completed categories as colored indicators) is visible during play
+
 ## v4+ Future Requirements
 
 Deferred to future milestones. Tracked but not in current milestone.
@@ -164,6 +192,8 @@ Explicitly excluded. Documented to prevent scope creep.
 | Cloud AI for generation | Dev-only Ollama for v3.0 (D-01) |
 | IndexedDB persistence | Session-only storage for v3.0 (D-02) |
 | Service worker caching | Shell-only caching deferred for v4.0 |
+| Time limits per question | Conductor controls pacing (D-04) |
+| Custom win condition (# of categories) | Fixed at 6+1 for v4.0 simplicity |
 
 ## Traceability
 
