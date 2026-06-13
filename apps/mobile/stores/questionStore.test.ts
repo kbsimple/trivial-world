@@ -4,7 +4,6 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { act } from '@testing-library/react';
 
 // Mock dependencies before importing the store
 const mockQuestions: Array<{
