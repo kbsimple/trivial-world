@@ -5,7 +5,7 @@ milestone_name: Pack Combos
 status: complete
 stopped_at: null
 last_updated: "2026-06-13T00:00:00.000Z"
-last_activity: 2026-06-13 — Phase 18 executed (4 plans, 3 waves) + code review + verification; v6.0 SHIPPED
+last_activity: 2026-06-13 — Completed quick task 260613-7a: question screen vertical layout
 resume_file: null
 progress:
   total_phases: 1
@@ -66,6 +66,12 @@ From Phase 18 code review (18-REVIEW.md):
 - F-01 HIGH: deleteCombo leaves stale player.comboId in playerStore
 - F-02 HIGH: resetAskedQuestions loop leaves activePackId corrupted on throw
 - F-03 MEDIUM: combos.tsx has no ScrollView — Back button unreachable with many items
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260613-7a | Question screen vertical layout: top-anchor badge+question, footer-anchor reveal button | 2026-06-13 | e9025fa | [260613-7a-question-screen-vertical-layout](./quick/260613-7a-question-screen-vertical-layout/) |
 
 ### Blockers/Concerns
 
