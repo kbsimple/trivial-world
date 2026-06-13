@@ -54,6 +54,7 @@ Progress: [████████████████████] 100%
 - Phase 19 completed 2026-06-13; v7.0 archived
 - Phase 20 added: Pack Selection UX Overhaul — per-player Shared/Custom chip on player row, unified picker flow, conditional shared pack requirement
 - Phase 20 completed 2026-06-13; v8.0 archived
+- Phase 21 added: Per-Player Pack Selection Redesign — inline Shared/Custom toggle on player row, Custom navigates to /packs for that player's pack config, remove inline Alert/Modal pickers for packs and difficulty
 - **v8.0 UX changes:** packMode removed from packStore; setup.tsx segmented control removed; per-player pack chip always visible alongside difficulty chip; allPlayersCustom bypass skips CONF-01 shared pack requirement
 
 ### Key Architectural Decisions
