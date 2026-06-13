@@ -100,7 +100,11 @@ Archive: `.planning/milestones/v8.0-*`
 
 **Depends on:** Phase 20 (Pack Selection UX Overhaul)
 
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 21-01-PLAN.md — Refactor setup.tsx: replace two-chip row with Shared/Custom toggle, remove all inline Alert/Modal picker infrastructure
+- [ ] 21-02-PLAN.md — Add per-player mode to packs/index.tsx: targetPlayerId param, per-player pack/combo selection, conditional footer and title
 
 ---
 
@@ -128,7 +132,7 @@ Archive: `.planning/milestones/v8.0-*`
 | 18. Pack Combos | v6.0 | 4/4 | Complete | 2026-06-13 |
 | 19. Per-Player Pack Customization | v7.0 | 1/1 | Complete | 2026-06-13 |
 | 20. Pack Selection UX Overhaul | v8.0 | 2/2 | Complete | 2026-06-13 |
-| 21. Per-Player Pack Selection Redesign | v9.0 | 0/? | Not started | - |
+| 21. Per-Player Pack Selection Redesign | v9.0 | 0/2 | In progress | - |
 
 ---
 
