@@ -23,6 +23,9 @@ interface PackState {
   savedCombos: PackCombo[];
   // Currently active combo for game-level selection (null = single pack via activePackId)
   activeComboId: string | null;
+  // Pack mode: shared = all players use game-level source; custom = per-player overrides (v7.0)
+  packMode: 'shared' | 'custom';
+  setPackMode: (mode: 'shared' | 'custom') => void;
   // Category filter (D-05: before game start)
   enabledCategories: Category[] | null; // null = all enabled
   // Difficulty filter (D-06: optional pre-game setting)
@@ -58,6 +61,7 @@ export const usePackStore = create<PackState>()(
       activePackIdList: null,
       savedCombos: [],
       activeComboId: null,
+      packMode: 'shared',
       enabledCategories: null, // null = all categories enabled
       enabledDifficulties: null, // null = all difficulties enabled
       isLoading: false,
@@ -141,6 +145,8 @@ export const usePackStore = create<PackState>()(
 
       selectCombo: (comboId: string | null) => set({ activeComboId: comboId }),
 
+      setPackMode: (mode) => set({ packMode: mode }),
+
       setEnabledCategories: (categories: Category[] | null) => {
         set({ enabledCategories: categories });
       },
@@ -168,6 +174,7 @@ export const usePackStore = create<PackState>()(
         enabledDifficulties: state.enabledDifficulties,
         savedCombos: state.savedCombos,
         activeComboId: state.activeComboId,
+        packMode: state.packMode,
       }),
     }
   )
