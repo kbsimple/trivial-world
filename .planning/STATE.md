@@ -2,17 +2,17 @@
 gsd_state_version: 1.0
 milestone: v5.0
 milestone_name: Content Generation Tooling
-status: planning
+status: complete
 stopped_at: null
 last_updated: "2026-06-13T00:00:00.000Z"
-last_activity: 2026-06-13 — Phase 17 complete (2/2 plans, verified 5/5 criteria)
+last_activity: 2026-06-13 — Phase 16 complete (13/13); Phase 17 complete (5/5); v5.0 milestone complete
 resume_file: null
 progress:
   total_phases: 2
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 6
-  completed_plans: 2
-  percent: 50
+  completed_plans: 6
+  percent: 100
 ---
 
 # Project State
@@ -22,21 +22,20 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-12)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** Content Generation Tooling — CLI pipeline for bulk question pack generation with tidbits
+**Current focus:** v5.0 Content Generation Tooling — COMPLETE
 
 ## Current Position
 
 Phase: 17 (Per-Player Pack and Difficulty) — COMPLETE
-Next Phase: 16 (CLI Bulk Question Generation) — READY TO PLAN
-Status: v5.0 milestone in progress
-Last activity: 2026-06-13 — Phase 17 complete; 5/5 success criteria verified
+Status: v5.0 milestone complete — all 2 phases done
+Last activity: 2026-06-13 — Phase 16 (13/13) and Phase 17 (5/5) verified; v5.0 milestone complete
 
-Progress: [██████████] 50%
+Progress: [████████████████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 37
+- Total plans completed: 41
 - v1.0: 10 plans (~65 min execution)
 - v2.0: 11 plans (~48 hours)
 - v3.0: 5 plans (~18 min execution)
@@ -77,10 +76,13 @@ Progress: [██████████] 50%
 - D-v4-06: Per-player pack selection (native only); web always uses bundled question pool
 - D-v4-07: playerPackIds and playerCategories snapshotted at startGame() for immutable in-game state
 
-**v5.0 In Progress (2026-06-13):**
+**v5.0 Complete (2026-06-13):**
 - D-v5-01: Per-player difficulty preference — each player can independently set Easy/Medium/Hard or Any (null)
 - D-v5-02: playerDifficulties snapshotted at startGame() alongside playerPackIds for immutable in-game state
 - D-v5-03: Per-player difficulty overrides game-level enabledDifficulties; null falls back to game-level filter
+- D-v5-04: CLI pipeline (generate.ts + review.ts) for bulk question generation with tidbits field
+- D-v5-05: tidbits field in QuestionSchema (v3), WatermelonDB migration 003, displayed in answer reveal
+- D-v5-06: Draft JSON workflow: generate writes immediately, review decouples inspection and publish
 
 ### Roadmap Evolution
 

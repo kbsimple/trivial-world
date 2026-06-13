@@ -237,7 +237,7 @@ Plans:
 
 ---
 
-## v5.0 Content Generation Tooling (Phase 16+) — PLANNED
+## v5.0 Content Generation Tooling (Phase 16+) — COMPLETE
 
 ### Phase 16: CLI Bulk Question Generation
 **Goal**: Scalable CLI pipeline to generate question packs in bulk, with decoupled review and per-question tidbits in the answer reveal
@@ -251,10 +251,11 @@ Plans:
   6. The `tidbits` field is displayed in the question reveal screen of the mobile app
 **Plans**: 4 plans
 Plans:
-- [ ] 16-01-PLAN.md — Schema: tidbits field in QuestionSchema, WatermelonDB migration 003, schema v3, Question model
-- [ ] 16-02-PLAN.md — CLI generate.ts: bulk generation loop, draft.ts helper, incremental draft saves
-- [ ] 16-03-PLAN.md — CLI review.ts: interactive approve/edit/reject + publish to public/packs/ and index
-- [ ] 16-04-PLAN.md — Mobile UI: tidbits display in QuestionCard after answer reveal
+- [x] 16-01-PLAN.md — Schema: tidbits field in QuestionSchema, WatermelonDB migration 003, schema v3, Question model
+- [x] 16-02-PLAN.md — CLI generate.ts: bulk generation loop, draft.ts helper, incremental draft saves
+- [x] 16-03-PLAN.md — CLI review.ts: interactive approve/edit/reject + publish to public/packs/ and index
+- [x] 16-04-PLAN.md — Mobile UI: tidbits display in QuestionCard after answer reveal
+**Completed**: 2026-06-13
 
 ### Phase 17: Per-Player Pack and Difficulty
 **Goal**: Each player can independently configure their own pack and difficulty level; a game draws questions from multiple packs simultaneously
@@ -292,7 +293,7 @@ Plans:
 | 13. Turn Flow UI | 1/1 | Complete | 2026-06-12 |
 | 14. Championship Mode & Polish | 1/1 | Complete | 2026-06-12 |
 | 15. Per-Player Pack Selection | 3/3 | Complete | 2026-06-12 |
-| 16. CLI Bulk Question Generation | 0/4 | Not started | — |
+| 16. CLI Bulk Question Generation | 4/4 | Complete | 2026-06-13 |
 | 17. Per-Player Pack and Difficulty | 2/2 | Complete | 2026-06-13 |
 
 ---
