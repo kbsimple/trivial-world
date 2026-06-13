@@ -1,5 +1,6 @@
 import { PlayerColor } from '../constants/categories';
 import { Player } from './player';
+import { Difficulty } from '@trivial-world/types';
 
 /**
  * Game phase state machine — v4.0 Simplified Gameplay
@@ -43,6 +44,9 @@ export interface GameState {
   /** Snapshotted active categories per player (from pack categoryCounts + enabledCategories filter).
    *  Immutable during game — determines per-player championship condition. */
   playerCategories: PlayerColor[][];
+  /** Snapshotted difficulty preference per player at game start (index matches player order).
+   *  null = player uses game-level enabledDifficulties fallback. */
+  playerDifficulties: (Difficulty | null)[];
 
   // Actions
   startGame: () => void;

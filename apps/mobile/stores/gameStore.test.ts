@@ -36,6 +36,7 @@ vi.mock('./packStore', () => ({
       activePackId: 'test-pack-id',
       availablePacks: [],
       enabledCategories: null,
+      enabledDifficulties: null,
     })),
     setState: vi.fn(),
   },
@@ -104,6 +105,7 @@ describe('useGameStore', () => {
       activePackId: null,
       playerPackIds: [],
       playerCategories: [],
+      playerDifficulties: [],
     });
   });
 
@@ -123,6 +125,7 @@ describe('useGameStore', () => {
       expect(state.activePackId).toBeNull();
       expect(state.playerPackIds).toEqual([]);
       expect(state.playerCategories).toEqual([]);
+      expect(state.playerDifficulties).toEqual([]);
     });
 
     it('has all required action methods', () => {
@@ -234,8 +237,8 @@ describe('useGameStore', () => {
 
       await useGameStore.getState().selectCategory('pink');
 
-      // playerPackIds is [] in this test's state, so playerPackIds[0] is undefined
-      expect(selectQuestion).toHaveBeenCalledWith('pink', undefined);
+      // playerPackIds and playerDifficulties are [] in this test's state, so [0] is undefined
+      expect(selectQuestion).toHaveBeenCalledWith('pink', undefined, undefined);
     });
 
     it('sets currentCategory, currentQuestion, and phase to answering', async () => {
@@ -755,6 +758,7 @@ describe('useGameStore', () => {
         activePackId: 'some-pack',
         playerPackIds: ['some-pack-id'],
         playerCategories: [ALL_CATEGORIES],
+        playerDifficulties: [null],
       });
 
       useGameStore.getState().resetGame();
@@ -772,6 +776,7 @@ describe('useGameStore', () => {
       expect(state.activePackId).toBeNull();
       expect(state.playerPackIds).toEqual([]);
       expect(state.playerCategories).toEqual([]);
+      expect(state.playerDifficulties).toEqual([]);
     });
   });
 });

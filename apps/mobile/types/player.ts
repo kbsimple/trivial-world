@@ -1,4 +1,5 @@
 import { PlayerColor } from '../constants/categories';
+import { Difficulty } from '@trivial-world/types';
 
 /**
  * Player interface
@@ -15,6 +16,8 @@ export interface Player {
   wedges: PlayerColor[];
   /** Per-player pack override — null means use game-level activePackId */
   packId?: string | null;
+  /** Per-player difficulty override — null means use game-level enabledDifficulties */
+  difficultyPreference?: Difficulty | null;
 }
 
 /**
@@ -36,6 +39,8 @@ export interface PlayerState {
   resetPlayers: () => void;
   /** Assign a question pack to a specific player (null = use game default) */
   updatePlayerPack: (id: string, packId: string | null) => void;
+  /** Assign a difficulty preference to a specific player (null = use game-level default) */
+  updatePlayerDifficulty: (id: string, difficulty: Difficulty | null) => void;
 
   // Scoring actions (SCOR-01)
   /** Award a wedge to a player for correct answer on category space */

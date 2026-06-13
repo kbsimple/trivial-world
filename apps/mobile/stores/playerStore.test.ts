@@ -234,6 +234,53 @@ describe('usePlayerStore', () => {
     });
   });
 
+  describe('updatePlayerDifficulty', () => {
+    it('sets difficultyPreference for a player by ID', () => {
+      getStore().addPlayer('Alice');
+      const store = getStore();
+      const playerId = store.players[0].id;
+
+      store.updatePlayerDifficulty(playerId, 'easy');
+      const afterStore = getStore();
+
+      expect(afterStore.players[0].difficultyPreference).toBe('easy');
+    });
+
+    it('clears difficultyPreference when set to null', () => {
+      getStore().addPlayer('Alice');
+      const store = getStore();
+      const playerId = store.players[0].id;
+
+      store.updatePlayerDifficulty(playerId, 'hard');
+      store.updatePlayerDifficulty(playerId, null);
+      const afterStore = getStore();
+
+      expect(afterStore.players[0].difficultyPreference).toBeNull();
+    });
+
+    it('does not change other players', () => {
+      getStore().addPlayer('Alice');
+      getStore().addPlayer('Bob');
+      const store = getStore();
+      const aliceId = store.players[0].id;
+
+      store.updatePlayerDifficulty(aliceId, 'medium');
+      const afterStore = getStore();
+
+      expect(afterStore.players[1].difficultyPreference).toBeNull();
+    });
+
+    it('does nothing for non-existent ID', () => {
+      getStore().addPlayer('Alice');
+      const store = getStore();
+
+      store.updatePlayerDifficulty('non-existent-id', 'easy');
+      const afterStore = getStore();
+
+      expect(afterStore.players[0].difficultyPreference).toBeNull();
+    });
+  });
+
   describe('updatePlayerPack', () => {
     it('sets packId for a player by ID', () => {
       getStore().addPlayer('Alice');

@@ -46,6 +46,7 @@ export const useGameStore = create<GameStore>()(
       activePackId: null,
       playerPackIds: [],
       playerCategories: [],
+      playerDifficulties: [],
 
       startGame: async () => {
         const { activePackId, availablePacks, enabledCategories } = usePackStore.getState();
@@ -64,6 +65,7 @@ export const useGameStore = create<GameStore>()(
           await useQuestionStore.getState().resetAskedQuestions();
 
           const playerPackIds = players.map(p => p.packId ?? activePackId ?? null);
+          const playerDifficulties = players.map(p => p.difficultyPreference ?? null);
 
           function deriveCategoriesForPack(packId: string | null): PlayerColor[] {
             if (!packId) return ALL_CATEGORIES;
@@ -108,6 +110,7 @@ export const useGameStore = create<GameStore>()(
             activePackId,
             playerPackIds,
             playerCategories,
+            playerDifficulties,
           });
         } catch (error) {
           console.error('Error starting game:', error);
@@ -116,9 +119,10 @@ export const useGameStore = create<GameStore>()(
       },
 
       selectCategory: async (category: PlayerColor) => {
-        const { playerPackIds, currentPlayerIndex } = get();
+        const { playerPackIds, playerDifficulties, currentPlayerIndex } = get();
         const packId = playerPackIds[currentPlayerIndex] ?? undefined;
-        const question = await useQuestionStore.getState().selectQuestion(category, packId);
+        const difficulty = (playerDifficulties ?? [])[currentPlayerIndex] ?? undefined;
+        const question = await useQuestionStore.getState().selectQuestion(category, packId, difficulty);
         set({
           currentCategory: category,
           currentQuestion: question,
@@ -239,6 +243,7 @@ export const useGameStore = create<GameStore>()(
           activePackId: null,
           playerPackIds: [],
           playerCategories: [],
+          playerDifficulties: [],
         });
       },
     }),
@@ -255,6 +260,7 @@ export const useGameStore = create<GameStore>()(
         winner: state.winner,
         playerPackIds: state.playerPackIds,
         playerCategories: state.playerCategories,
+        playerDifficulties: state.playerDifficulties,
       }),
     }
   )
