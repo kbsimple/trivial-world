@@ -123,7 +123,10 @@ Archive: `.planning/milestones/v9.0-*`
 
 **Depends on:** Phase 21 (Per-Player Pack Selection Redesign)
 
-**Plans:** TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 22-01-PLAN.md — Add lastMarkSnapshot + undoLastMark() to gameStore, unmarkAsked() to questionStore, and Undo affordance to turn screen
 
 </details>
 
@@ -154,7 +157,7 @@ Archive: `.planning/milestones/v9.0-*`
 | 19. Per-Player Pack Customization | v7.0 | 1/1 | Complete | 2026-06-13 |
 | 20. Pack Selection UX Overhaul | v8.0 | 2/2 | Complete | 2026-06-13 |
 | 21. Per-Player Pack Selection Redesign | v9.0 | 2/2 | Complete | 2026-06-13 |
-| 22. Undo Last Answer | v10.0 | 0/? | Not planned | — |
+| 22. Undo Last Answer | v10.0 | 0/1 | In progress | — |
 
 ---
 
