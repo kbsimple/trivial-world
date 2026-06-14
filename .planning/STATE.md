@@ -76,6 +76,10 @@ Progress: [████████████████████] 100%
 
 ### Pending Todos
 
+From `.planning/todos/pending/`:
+
+- 2026-06-14: Multi-user registration and login via identity providers (Google) — [auth] `2026-06-14-multi-user-auth-identity-providers.md`
+
 From Phase 18 code review (18-REVIEW.md):
 
 - F-01 HIGH: deleteCombo leaves stale player.comboId in playerStore
