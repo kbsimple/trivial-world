@@ -57,6 +57,7 @@ Progress: [████████████████████] 100%
 - Phase 20 completed 2026-06-13; v8.0 archived
 - Phase 21 added: Per-Player Pack Selection Redesign — inline Shared/Custom toggle on player row, Custom navigates to /packs for that player's pack config, remove inline Alert/Modal pickers for packs and difficulty
 - Phase 21 completed 2026-06-13; v9.0 archived
+- Phase 22 added: Undo Last Answer — snapshot pre-mark game state, add undoLastMark() + unmarkAsked(), show Undo button on turn screen until next question selected
 - **v8.0 UX changes:** packMode removed from packStore; setup.tsx segmented control removed; per-player pack chip always visible alongside difficulty chip; allPlayersCustom bypass skips CONF-01 shared pack requirement
 - **v9.0 UX changes:** setup.tsx two-chip row (pack+difficulty) replaced with single Shared/Custom toggle chip; difficulty chip removed entirely; handleRevertToShared now also clears difficultyPreference; /packs/index.tsx gains per-player mode via targetPlayerId param with per-player title, pack/combo selection, and Back-only footer
 

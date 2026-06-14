@@ -11,6 +11,7 @@
 - ✅ **v7.0 Per-Player Pack Customization** — Phase 19 (shipped 2026-06-13)
 - ✅ **v8.0 Pack Selection UX Overhaul** — Phase 20 (shipped 2026-06-13)
 - ✅ **v9.0 Per-Player Pack Selection Redesign** — Phase 21 (shipped 2026-06-13)
+- ⏳ **v10.0 Undo Last Answer** — Phase 22 (in progress)
 
 ## Phases
 
@@ -113,6 +114,19 @@ Archive: `.planning/milestones/v9.0-*`
 
 </details>
 
+<details>
+<summary>⏳ v10.0 Undo Last Answer (Phase 22) — IN PROGRESS</summary>
+
+### Phase 22: Undo Last Answer
+
+**Goal:** Allow the conductor to undo an accidentally marked answer (correct or incorrect) before a new question is selected. Snapshot the full game state before `markAnswer` runs, expose an Undo button on the turn screen, and restore the snapshot — including un-marking the question in questionStore — until the next question is picked.
+
+**Depends on:** Phase 21 (Per-Player Pack Selection Redesign)
+
+**Plans:** TBD
+
+</details>
+
 ---
 
 ## Progress
@@ -140,6 +154,7 @@ Archive: `.planning/milestones/v9.0-*`
 | 19. Per-Player Pack Customization | v7.0 | 1/1 | Complete | 2026-06-13 |
 | 20. Pack Selection UX Overhaul | v8.0 | 2/2 | Complete | 2026-06-13 |
 | 21. Per-Player Pack Selection Redesign | v9.0 | 2/2 | Complete | 2026-06-13 |
+| 22. Undo Last Answer | v10.0 | 0/? | Not planned | — |
 
 ---
 
