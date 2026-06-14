@@ -122,7 +122,7 @@ export default function QuestionScreen() {
             ]}
             onPress={() => skipQuestion()}
           >
-            <Text style={styles.skipButtonText}>Skip</Text>
+            <Text style={styles.skipButtonText}>Go Again</Text>
           </Pressable>
         )}
 
@@ -204,6 +204,7 @@ const styles = StyleSheet.create({
     borderColor: '#555',
     alignItems: 'center',
     marginTop: 8,
+    marginBottom: 24,
   },
   skipButtonText: {
     color: '#aaa',

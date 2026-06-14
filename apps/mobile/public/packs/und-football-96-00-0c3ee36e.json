@@ -16,10 +16,10 @@
       "orange": 10
     },
     "totalQuestions": 60,
-    "checksum": "cfbbe6ba34cad376be7cf0f3603772af11719a560aeaa9c0d12c390b94621c5d",
+    "checksum": "60d2e389c64ca6f053c38fb44fa43035492f68878addd3ce140664dbe0eb5b83",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 26879
+    "size": 26845
   },
   "questions": [
     {
@@ -345,9 +345,9 @@
       "id": "green-002",
       "category": "green",
       "difficulty": "easy",
-      "questionText": "What running back led Notre Dame in rushing during most of Autry Denson's career, and how many yards did Denson finish with as Notre Dame's career leader?",
-      "answerText": "Autry Denson, over 3,800 career rushing yards",
-      "tidbits": "Autry Denson's career record stood as the Notre Dame rushing record for years after he graduated in 1998."
+      "questionText": "Which Irish running back finished his career in 1998 as Notre Dame's all-time leading rusher before being drafted by the Miami Dolphins?",
+      "answerText": "Autry Denson (over 3,800 career yards)",
+      "tidbits": "Denson's career record stood as Notre Dame's all-time rushing mark for years after he graduated."
     },
     {
       "id": "green-003",
@@ -492,6 +492,6 @@
       "tidbits": "The Notre Dame-Michigan State rivalry, sometimes called the 'Megaphone Trophy Game,' features one of college football's most storied series between Indiana and Michigan programs."
     }
   ],
-  "checksum": "cfbbe6ba34cad376be7cf0f3603772af11719a560aeaa9c0d12c390b94621c5d",
-  "size": 26879
+  "checksum": "60d2e389c64ca6f053c38fb44fa43035492f68878addd3ce140664dbe0eb5b83",
+  "size": 26845
 }
