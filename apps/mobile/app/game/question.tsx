@@ -25,6 +25,7 @@ export default function QuestionScreen() {
     answerRevealed,
     revealAnswer,
     markAnswer,
+    skipQuestion,
     currentQuestion,
     currentCategory,
     questionNumber,
@@ -116,6 +117,18 @@ export default function QuestionScreen() {
           </Pressable>
         )}
 
+        {!answerRevealed && !submitted && (
+          <Pressable
+            style={({ pressed }) => [
+              styles.skipButton,
+              { opacity: pressed ? 0.6 : 1 },
+            ]}
+            onPress={() => skipQuestion()}
+          >
+            <Text style={styles.skipButtonText}>Skip</Text>
+          </Pressable>
+        )}
+
         <AnswerButtons
           visible={answerRevealed}
           onMark={handleMarkAnswer}
@@ -185,5 +198,18 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  skipButton: {
+    paddingHorizontal: 24,
+    paddingVertical: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#555',
+    alignItems: 'center',
+    marginTop: 8,
+  },
+  skipButtonText: {
+    color: '#aaa',
+    fontSize: 14,
   },
 });

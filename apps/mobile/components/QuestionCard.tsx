@@ -96,14 +96,14 @@ export function QuestionCard({
         <View style={styles.choicesContainer}>
           {resolvedChoices!.map((choice, index) => {
             const isCorrect = index === correctChoiceIndex;
-            const choiceStyle = revealed
+            const revealedInlineStyle = revealed
               ? isCorrect
-                ? styles.choiceCorrect
-                : styles.choiceWrong
-              : styles.choiceDefault;
+                ? { backgroundColor: '#16a34a', borderWidth: 2, borderColor: '#22c55e' }
+                : { borderWidth: 2, borderColor: '#333', opacity: 0.4 }
+              : undefined;
 
             return (
-              <View key={index} style={[styles.choiceRow, choiceStyle]}>
+              <View key={index} style={[styles.choiceRow, styles.choiceDefault, revealedInlineStyle]}>
                 <Text style={[styles.choiceLabel, revealed && isCorrect && styles.choiceLabelCorrect]}>
                   {CHOICE_LABELS[index]}
                 </Text>

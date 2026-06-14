@@ -182,7 +182,7 @@ export default function SetupScreen() {
           const isCustom = player.packId !== null || player.comboId !== null;
           const chipLabel = isCustom
             ? (displayName
-                ? `Custom: ${displayName.length > 12 ? displayName.slice(0, 12) + '…' : displayName}`
+                ? `Custom: ${displayName.length > 8 ? displayName.slice(0, 8) + '…' : displayName}`
                 : 'Custom')
             : 'Shared';
 
@@ -340,6 +340,7 @@ const styles = StyleSheet.create({
   },
   nameInput: {
     flex: 1,
+    minWidth: 0,
     fontSize: 18,
     paddingVertical: 4,
   },

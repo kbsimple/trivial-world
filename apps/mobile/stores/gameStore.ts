@@ -17,6 +17,7 @@ interface GameStore extends GameState {
   activePackId: string | null;
   transitionTo: (newPhase: GamePhase) => void;
   selectCategory: (category: PlayerColor) => Promise<void>;
+  skipQuestion: () => Promise<void>;
   startGame: () => Promise<void>;
   nextTurn: () => void;
   resetGame: () => void;
@@ -168,6 +169,17 @@ export const useGameStore = create<GameStore>()(
       },
 
       revealAnswer: () => set({ answerRevealed: true }),
+
+      skipQuestion: async () => {
+        const { currentQuestion, currentCategory, playerPackIdLists, playerDifficulties, currentPlayerIndex, activePackId } = get();
+        if (!currentQuestion || !currentCategory) return;
+        useQuestionStore.getState().markAsked(currentQuestion.id);
+        const packIds = playerPackIdLists[currentPlayerIndex]
+          ?? (activePackId ? [activePackId] : undefined);
+        const difficulty = (playerDifficulties ?? [])[currentPlayerIndex] ?? undefined;
+        const question = await useQuestionStore.getState().selectQuestion(currentCategory, packIds, difficulty);
+        set({ currentQuestion: question, answerRevealed: false });
+      },
 
       markAnswer: (correct: boolean) => {
         const { players } = usePlayerStore.getState();
