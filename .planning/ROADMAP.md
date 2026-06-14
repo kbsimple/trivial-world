@@ -11,7 +11,7 @@
 - ✅ **v7.0 Per-Player Pack Customization** — Phase 19 (shipped 2026-06-13)
 - ✅ **v8.0 Pack Selection UX Overhaul** — Phase 20 (shipped 2026-06-13)
 - ✅ **v9.0 Per-Player Pack Selection Redesign** — Phase 21 (shipped 2026-06-13)
-- ⏳ **v10.0 Undo Last Answer** — Phase 22 (in progress)
+- ✅ **v10.0 Undo Last Answer** — Phase 22 (shipped 2026-06-13)
 
 ## Phases
 
@@ -115,7 +115,7 @@ Archive: `.planning/milestones/v9.0-*`
 </details>
 
 <details>
-<summary>⏳ v10.0 Undo Last Answer (Phase 22) — IN PROGRESS</summary>
+<summary>✅ v10.0 Undo Last Answer (Phase 22) — SHIPPED 2026-06-13</summary>
 
 ### Phase 22: Undo Last Answer
 
@@ -126,7 +126,7 @@ Archive: `.planning/milestones/v9.0-*`
 **Plans:** 1 plan
 
 Plans:
-- [ ] 22-01-PLAN.md — Add lastMarkSnapshot + undoLastMark() to gameStore, unmarkAsked() to questionStore, and Undo affordance to turn screen
+- [x] 22-01-PLAN.md — Add lastMarkSnapshot + undoLastMark() to gameStore, unmarkAsked() to questionStore, and Undo affordance to turn screen
 
 </details>
 
@@ -157,7 +157,7 @@ Plans:
 | 19. Per-Player Pack Customization | v7.0 | 1/1 | Complete | 2026-06-13 |
 | 20. Pack Selection UX Overhaul | v8.0 | 2/2 | Complete | 2026-06-13 |
 | 21. Per-Player Pack Selection Redesign | v9.0 | 2/2 | Complete | 2026-06-13 |
-| 22. Undo Last Answer | v10.0 | 0/1 | In progress | — |
+| 22. Undo Last Answer | v10.0 | 1/1 | Complete | 2026-06-13 |
 
 ---
 
@@ -170,3 +170,5 @@ Plans:
 *v6.0 shipped: 2026-06-13*
 *v7.0 shipped: 2026-06-13*
 *v8.0 shipped: 2026-06-13*
+*v9.0 shipped: 2026-06-13*
+*v10.0 shipped: 2026-06-13*

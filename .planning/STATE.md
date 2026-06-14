@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v9.0
-milestone_name: Per-Player Pack Selection Redesign
+milestone: v10.0
+milestone_name: Undo Last Answer
 status: complete
-last_updated: "2026-06-13T17:10:00.000Z"
+last_updated: "2026-06-13T22:15:00.000Z"
 stopped_at: null
 resume_file: null
 progress:
   total_phases: 1
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 1
+  completed_plans: 1
   percent: 100
 ---
 
@@ -21,12 +21,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-13)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** v9.0 Per-Player Pack Selection Redesign — COMPLETE. Archived 2026-06-13.
+**Current focus:** v10.0 Undo Last Answer — COMPLETE. Shipped 2026-06-13.
 
 ## Current Position
 
-Milestone v9.0 complete 2026-06-13. Phase 21 done (2/2 plans).
-21 total phases across 9 milestones. 288 tests passing.
+Milestone v10.0 complete 2026-06-13. Phase 22 done (1/1 plans).
+22 total phases across 10 milestones. 302 tests passing.
 Ready to plan next milestone.
 
 Progress: [████████████████████] 100%
@@ -57,7 +57,7 @@ Progress: [████████████████████] 100%
 - Phase 20 completed 2026-06-13; v8.0 archived
 - Phase 21 added: Per-Player Pack Selection Redesign — inline Shared/Custom toggle on player row, Custom navigates to /packs for that player's pack config, remove inline Alert/Modal pickers for packs and difficulty
 - Phase 21 completed 2026-06-13; v9.0 archived
-- Phase 22 added: Undo Last Answer — snapshot pre-mark game state, add undoLastMark() + unmarkAsked(), show Undo button on turn screen until next question selected
+- Phase 22 added and completed: Undo Last Answer — snapshot pre-mark game state, add undoLastMark() + unmarkAsked(), show '↩ Undo last mark' link on turn screen until next question selected
 - **v8.0 UX changes:** packMode removed from packStore; setup.tsx segmented control removed; per-player pack chip always visible alongside difficulty chip; allPlayersCustom bypass skips CONF-01 shared pack requirement
 - **v9.0 UX changes:** setup.tsx two-chip row (pack+difficulty) replaced with single Shared/Custom toggle chip; difficulty chip removed entirely; handleRevertToShared now also clears difficultyPreference; /packs/index.tsx gains per-player mode via targetPlayerId param with per-player title, pack/combo selection, and Back-only footer
 
