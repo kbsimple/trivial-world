@@ -26,6 +26,8 @@ export default function TurnScreen() {
     playerPackIds,
     playerCategories,
     playerDifficulties,
+    lastMarkSnapshot,
+    undoLastMark,
   } = useGameStore();
   const { players } = usePlayerStore();
   const availablePacks = usePackStore((state) => state.availablePacks);
@@ -42,6 +44,11 @@ export default function TurnScreen() {
   const handleCategorySelected = async (color: PlayerColor) => {
     if (!inChampionship && myCompleted.includes(color)) return; // already done
     await selectCategory(color);
+    router.replace('/game/question');
+  };
+
+  const handleUndo = () => {
+    undoLastMark();
     router.replace('/game/question');
   };
 
@@ -142,6 +149,16 @@ export default function TurnScreen() {
             );
           })}
         </View>
+      )}
+
+      {lastMarkSnapshot && (
+        <Pressable
+          testID="undo-last-mark"
+          style={({ pressed }) => [styles.undoLink, { opacity: pressed ? 0.5 : 1 }]}
+          onPress={handleUndo}
+        >
+          <Text style={styles.undoLinkText}>↩ Undo last mark</Text>
+        </Pressable>
       )}
     </View>
   );
@@ -264,5 +281,15 @@ const styles = StyleSheet.create({
     color: '#888',
     fontSize: 11,
     marginRight: 4,
+  },
+  undoLink: {
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+  },
+  undoLinkText: {
+    color: '#888',
+    fontSize: 13,
+    opacity: 0.8,
   },
 });

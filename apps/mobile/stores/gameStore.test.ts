@@ -17,6 +17,7 @@ vi.mock('./questionStore', () => ({
     getState: vi.fn(() => ({
       selectQuestion: vi.fn(),
       markAsked: vi.fn(),
+      unmarkAsked: vi.fn(),
       resetAskedQuestions: vi.fn(),
     })),
   },
@@ -82,6 +83,7 @@ function mockQuestionStore(overrides: Record<string, unknown> = {}) {
   vi.mocked(useQuestionStore.getState).mockReturnValue({
     selectQuestion: vi.fn(),
     markAsked: vi.fn(),
+    unmarkAsked: vi.fn(),
     resetAskedQuestions: vi.fn().mockResolvedValue(undefined),
     ...overrides,
   } as any);
@@ -105,6 +107,7 @@ describe('useGameStore', () => {
       isChampionshipMode: [],
       winner: null,
       activePackId: null,
+      lastMarkSnapshot: null,
       playerPackIds: [],
       playerCategories: [],
       playerDifficulties: [],
@@ -126,6 +129,7 @@ describe('useGameStore', () => {
       expect(state.isChampionshipMode).toEqual([]);
       expect(state.winner).toBeNull();
       expect(state.activePackId).toBeNull();
+      expect(state.lastMarkSnapshot).toBeNull();
       expect(state.playerPackIds).toEqual([]);
       expect(state.playerCategories).toEqual([]);
       expect(state.playerDifficulties).toEqual([]);
@@ -141,6 +145,7 @@ describe('useGameStore', () => {
       expect(typeof state.transitionTo).toBe('function');
       expect(typeof state.selectCategory).toBe('function');
       expect(typeof state.resetGame).toBe('function');
+      expect(typeof state.undoLastMark).toBe('function');
     });
   });
 
@@ -633,6 +638,233 @@ describe('useGameStore', () => {
 
         expect(useGameStore.getState().questionNumber).toBe(4);
       });
+    });
+  });
+
+  // ─────────────────────────────────────────────────────────
+  describe('markAnswer — snapshot', () => {
+    it('sets lastMarkSnapshot when marking correct', () => {
+      const mockQuestion = createMockQuestion('blue');
+      mockPlayerStore([createMockPlayer(0)]);
+      mockQuestionStore();
+      useGameStore.setState({
+        currentQuestion: mockQuestion,
+        currentCategory: 'blue',
+        currentPlayerIndex: 0,
+        completedCategories: [[]],
+        isChampionshipMode: [false],
+        questionNumber: 3,
+        phase: 'answering',
+        answerRevealed: true,
+        lastMarkSnapshot: null,
+      });
+
+      useGameStore.getState().markAnswer(true);
+
+      const snapshot = useGameStore.getState().lastMarkSnapshot;
+      expect(snapshot).not.toBeNull();
+    });
+
+    it('sets lastMarkSnapshot when marking incorrect', () => {
+      const mockQuestion = createMockQuestion('pink');
+      mockPlayerStore([createMockPlayer(0), createMockPlayer(1)]);
+      mockQuestionStore();
+      useGameStore.setState({
+        currentQuestion: mockQuestion,
+        currentCategory: 'pink',
+        currentPlayerIndex: 0,
+        completedCategories: [[], []],
+        isChampionshipMode: [false, false],
+        questionNumber: 2,
+        phase: 'answering',
+        answerRevealed: true,
+        lastMarkSnapshot: null,
+      });
+
+      useGameStore.getState().markAnswer(false);
+
+      expect(useGameStore.getState().lastMarkSnapshot).not.toBeNull();
+    });
+
+    it('snapshot contains all 8 required fields with correct pre-mark values', () => {
+      const mockQuestion = createMockQuestion('yellow');
+      mockPlayerStore([createMockPlayer(0)]);
+      mockQuestionStore();
+      useGameStore.setState({
+        currentQuestion: mockQuestion,
+        currentCategory: 'yellow',
+        currentPlayerIndex: 0,
+        completedCategories: [['blue']],
+        isChampionshipMode: [false],
+        questionNumber: 4,
+        phase: 'answering',
+        answerRevealed: true,
+        lastMarkSnapshot: null,
+      });
+
+      useGameStore.getState().markAnswer(true);
+
+      const snapshot = useGameStore.getState().lastMarkSnapshot;
+      expect(snapshot?.currentQuestion).toEqual(mockQuestion);
+      expect(snapshot?.currentCategory).toBe('yellow');
+      expect(snapshot?.currentPlayerIndex).toBe(0);
+      expect(snapshot?.questionNumber).toBe(4);
+      expect(snapshot?.completedCategories).toEqual([['blue']]);
+      expect(snapshot?.isChampionshipMode).toEqual([false]);
+      expect(snapshot?.phase).toBe('answering');
+      expect(snapshot?.answerRevealed).toBe(true);
+    });
+  });
+
+  // ─────────────────────────────────────────────────────────
+  describe('undoLastMark', () => {
+    it('is a no-op when lastMarkSnapshot is null', () => {
+      mockQuestionStore();
+      useGameStore.setState({
+        phase: 'selecting',
+        currentPlayerIndex: 1,
+        lastMarkSnapshot: null,
+      });
+
+      useGameStore.getState().undoLastMark();
+
+      expect(useGameStore.getState().currentPlayerIndex).toBe(1);
+      expect(useGameStore.getState().phase).toBe('selecting');
+    });
+
+    it('does not call unmarkAsked when snapshot is null', () => {
+      const unmarkAsked = vi.fn();
+      mockQuestionStore({ unmarkAsked });
+      useGameStore.setState({ lastMarkSnapshot: null });
+
+      useGameStore.getState().undoLastMark();
+
+      expect(unmarkAsked).not.toHaveBeenCalled();
+    });
+
+    it('restores all 8 snapshot fields into store state', () => {
+      const mockQuestion = createMockQuestion('green');
+      mockQuestionStore();
+      useGameStore.setState({
+        phase: 'selecting',
+        currentPlayerIndex: 1,
+        questionNumber: 5,
+        answerRevealed: false,
+        currentQuestion: null,
+        currentCategory: null,
+        completedCategories: [['blue'], []],
+        isChampionshipMode: [false, false],
+        lastMarkSnapshot: {
+          currentQuestion: mockQuestion,
+          currentCategory: 'green',
+          currentPlayerIndex: 0,
+          questionNumber: 4,
+          completedCategories: [[], []],
+          isChampionshipMode: [false, false],
+          phase: 'answering',
+          answerRevealed: true,
+        },
+      });
+
+      useGameStore.getState().undoLastMark();
+
+      const state = useGameStore.getState();
+      expect(state.currentQuestion).toEqual(mockQuestion);
+      expect(state.currentCategory).toBe('green');
+      expect(state.currentPlayerIndex).toBe(0);
+      expect(state.questionNumber).toBe(4);
+      expect(state.completedCategories).toEqual([[], []]);
+      expect(state.isChampionshipMode).toEqual([false, false]);
+      expect(state.phase).toBe('answering');
+      expect(state.answerRevealed).toBe(true);
+    });
+
+    it('clears lastMarkSnapshot to null after restoring', () => {
+      const mockQuestion = createMockQuestion('purple');
+      mockQuestionStore();
+      useGameStore.setState({
+        lastMarkSnapshot: {
+          currentQuestion: mockQuestion,
+          currentCategory: 'purple',
+          currentPlayerIndex: 0,
+          questionNumber: 2,
+          completedCategories: [[]],
+          isChampionshipMode: [false],
+          phase: 'answering',
+          answerRevealed: true,
+        },
+      });
+
+      useGameStore.getState().undoLastMark();
+
+      expect(useGameStore.getState().lastMarkSnapshot).toBeNull();
+    });
+
+    it('calls unmarkAsked with the snapshot question id', () => {
+      const unmarkAsked = vi.fn();
+      mockQuestionStore({ unmarkAsked });
+      const mockQuestion = createMockQuestion('orange');
+      useGameStore.setState({
+        lastMarkSnapshot: {
+          currentQuestion: mockQuestion,
+          currentCategory: 'orange',
+          currentPlayerIndex: 0,
+          questionNumber: 1,
+          completedCategories: [[]],
+          isChampionshipMode: [false],
+          phase: 'answering',
+          answerRevealed: true,
+        },
+      });
+
+      useGameStore.getState().undoLastMark();
+
+      expect(unmarkAsked).toHaveBeenCalledWith(mockQuestion.id);
+    });
+
+    it('does not call unmarkAsked when snapshot currentQuestion is null', () => {
+      const unmarkAsked = vi.fn();
+      mockQuestionStore({ unmarkAsked });
+      useGameStore.setState({
+        lastMarkSnapshot: {
+          currentQuestion: null,
+          currentCategory: 'blue',
+          currentPlayerIndex: 0,
+          questionNumber: 1,
+          completedCategories: [[]],
+          isChampionshipMode: [false],
+          phase: 'answering',
+          answerRevealed: true,
+        },
+      });
+
+      useGameStore.getState().undoLastMark();
+
+      expect(unmarkAsked).not.toHaveBeenCalled();
+    });
+  });
+
+  // ─────────────────────────────────────────────────────────
+  describe('selectCategory — clears snapshot', () => {
+    it('clears lastMarkSnapshot when selectCategory is called', async () => {
+      const mockQuestion = createMockQuestion('blue');
+      mockQuestionStore({ selectQuestion: vi.fn().mockResolvedValue(mockQuestion) });
+      useGameStore.setState({
+        lastMarkSnapshot: {
+          currentQuestion: mockQuestion,
+          currentCategory: 'blue',
+          currentPlayerIndex: 0,
+          questionNumber: 1,
+          completedCategories: [[]],
+          isChampionshipMode: [false],
+          phase: 'answering',
+          answerRevealed: true,
+        },
+      });
+
+      await useGameStore.getState().selectCategory('pink');
+
+      expect(useGameStore.getState().lastMarkSnapshot).toBeNull();
     });
   });
 

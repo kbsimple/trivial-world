@@ -124,6 +124,7 @@ describe('questionStore', () => {
     useQuestionStore.setState({
       currentQuestion: null,
       currentCategory: null,
+      askedQuestionIds: [],
     });
   });
 
@@ -343,6 +344,45 @@ describe('questionStore', () => {
       // Should not throw
       await expect(
         useQuestionStore.getState().resetAskedQuestions()
+      ).resolves.not.toThrow();
+    });
+  });
+
+  describe('unmarkAsked', () => {
+    it('is present as a function in the store', () => {
+      expect(typeof useQuestionStore.getState().unmarkAsked).toBe('function');
+    });
+
+    it('calls update on the matching question record', async () => {
+      const mockQ = createMockQuestion('q-to-unmark', 'blue', 'medium', Date.now());
+      mockDatabaseQueryShouldReturn = [mockQ];
+
+      await useQuestionStore.getState().unmarkAsked('q-to-unmark');
+
+      expect(mockQ.update).toHaveBeenCalled();
+    });
+
+    it('passes a callback to update that sets askedAt to null', async () => {
+      const mockQ = createMockQuestion('q-to-unmark', 'blue', 'medium', Date.now());
+      let capturedCallback: ((q: any) => void) | undefined;
+      mockQ.update = vi.fn(async (fn: (q: any) => void) => {
+        capturedCallback = fn;
+      });
+      mockDatabaseQueryShouldReturn = [mockQ];
+
+      await useQuestionStore.getState().unmarkAsked('q-to-unmark');
+
+      expect(capturedCallback).toBeDefined();
+      const record = { askedAt: 12345 as number | null };
+      capturedCallback!(record);
+      expect(record.askedAt).toBeNull();
+    });
+
+    it('handles question not found gracefully', async () => {
+      mockDatabaseQueryShouldReturn = [];
+
+      await expect(
+        useQuestionStore.getState().unmarkAsked('non-existent')
       ).resolves.not.toThrow();
     });
   });

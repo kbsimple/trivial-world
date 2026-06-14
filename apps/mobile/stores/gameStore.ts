@@ -11,16 +11,29 @@ import { Player } from '../types/player';
 
 const ALL_CATEGORIES: PlayerColor[] = [...PLAYER_COLORS];
 
+interface MarkSnapshot {
+  currentQuestion: Question | null;
+  currentCategory: PlayerColor | null;
+  currentPlayerIndex: number;
+  questionNumber: number;
+  completedCategories: PlayerColor[][];
+  isChampionshipMode: boolean[];
+  phase: GamePhase;
+  answerRevealed: boolean;
+}
+
 interface GameStore extends GameState {
   currentQuestion: Question | null;
   currentCategory: PlayerColor | null;
   activePackId: string | null;
+  lastMarkSnapshot: MarkSnapshot | null;
   transitionTo: (newPhase: GamePhase) => void;
   selectCategory: (category: PlayerColor) => Promise<void>;
   skipQuestion: () => Promise<void>;
   startGame: () => Promise<void>;
   nextTurn: () => void;
   resetGame: () => void;
+  undoLastMark: () => void;
 }
 
 function makeCompletedCategories(playerCount: number): PlayerColor[][] {
@@ -45,6 +58,7 @@ export const useGameStore = create<GameStore>()(
       isChampionshipMode: [],
       winner: null,
       activePackId: null,
+      lastMarkSnapshot: null,
       playerPackIds: [],
       playerCategories: [],
       playerDifficulties: [],
@@ -156,6 +170,7 @@ export const useGameStore = create<GameStore>()(
       },
 
       selectCategory: async (category: PlayerColor) => {
+        set({ lastMarkSnapshot: null });
         const { playerPackIdLists, playerDifficulties, currentPlayerIndex, activePackId } = get();
         const packIds = playerPackIdLists[currentPlayerIndex]
           ?? (activePackId ? [activePackId] : undefined);
@@ -185,16 +200,33 @@ export const useGameStore = create<GameStore>()(
         const { players } = usePlayerStore.getState();
         const {
           currentQuestion,
+          currentCategory,
           currentPlayerIndex,
           completedCategories,
           isChampionshipMode,
           questionNumber,
           playerCategories,
+          phase,
+          answerRevealed,
         } = get();
 
         if (players.length === 0) return;
         const currentPlayer = players[currentPlayerIndex];
         if (!currentPlayer) return;
+
+        // Capture snapshot for undo (D-06) — before any mutation
+        set({
+          lastMarkSnapshot: {
+            currentQuestion,
+            currentCategory,
+            currentPlayerIndex,
+            questionNumber,
+            completedCategories,
+            isChampionshipMode,
+            phase,
+            answerRevealed,
+          },
+        });
 
         if (currentQuestion) {
           useQuestionStore.getState().markAsked(currentQuestion.id);
@@ -256,6 +288,25 @@ export const useGameStore = create<GameStore>()(
         }
       },
 
+      undoLastMark: () => {
+        const snapshot = get().lastMarkSnapshot;
+        if (!snapshot) return;
+        set({
+          currentQuestion: snapshot.currentQuestion,
+          currentCategory: snapshot.currentCategory,
+          currentPlayerIndex: snapshot.currentPlayerIndex,
+          questionNumber: snapshot.questionNumber,
+          completedCategories: snapshot.completedCategories,
+          isChampionshipMode: snapshot.isChampionshipMode,
+          phase: snapshot.phase,
+          answerRevealed: snapshot.answerRevealed,
+          lastMarkSnapshot: null,
+        });
+        if (snapshot.currentQuestion) {
+          useQuestionStore.getState().unmarkAsked(snapshot.currentQuestion.id);
+        }
+      },
+
       nextTurn: () => {
         const { players } = usePlayerStore.getState();
         if (players.length === 0) return;
@@ -290,6 +341,7 @@ export const useGameStore = create<GameStore>()(
           isChampionshipMode: [],
           winner: null,
           activePackId: null,
+          lastMarkSnapshot: null,
           playerPackIds: [],
           playerCategories: [],
           playerDifficulties: [],

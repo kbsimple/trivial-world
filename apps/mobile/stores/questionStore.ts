@@ -45,6 +45,8 @@ interface QuestionState {
   markAsked: (questionId: string) => Promise<boolean>;
   /** Reset asked questions for new game */
   resetAskedQuestions: () => Promise<void>;
+  /** Remove a question from the asked pool (undo support) */
+  unmarkAsked: (questionId: string) => Promise<void>;
 }
 
 /**
@@ -191,6 +193,36 @@ export const useQuestionStore = create<QuestionState>()(
         } catch (error) {
           logger.error('Error marking question as asked:', error);
           return false;
+        }
+      },
+
+      unmarkAsked: async (questionId: string): Promise<void> => {
+        if (Platform.OS === 'web') {
+          set((state) => ({
+            askedQuestionIds: state.askedQuestionIds.filter(id => id !== questionId),
+          }));
+          return;
+        }
+        const { getDatabase } = await import('../database');
+        const { QuestionModel } = await import('../database/models/Question');
+        const { Q } = await import('@nozbe/watermelondb');
+        type QuestionModelType = InstanceType<typeof QuestionModel>;
+        const database = getDatabase();
+        try {
+          const questions = await database.get('questions')
+            .query(Q.where('question_id', questionId))
+            .fetch();
+          if (questions.length === 0) {
+            logger.warn(`Question ${questionId} not found when attempting to unmark as asked`);
+            return;
+          }
+          await database.write(async () => {
+            await (questions[0] as QuestionModelType).update((question) => {
+              question.askedAt = null;
+            });
+          });
+        } catch (error) {
+          logger.error('Error unmarking question as asked:', error);
         }
       },
 
