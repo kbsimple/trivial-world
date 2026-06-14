@@ -188,7 +188,7 @@ export default function SetupScreen() {
 
           return (
             <View key={player.id} style={styles.playerRowOuter}>
-              {/* Row 1: color dot | name input | remove button */}
+              {/* Row 1: color dot | name input | pack chip | remove button */}
               <View style={styles.playerRow}>
                 <View
                   style={[
@@ -204,16 +204,6 @@ export default function SetupScreen() {
                   placeholderTextColor={theme.color?.val as string}
                 />
                 <Pressable
-                  style={styles.removeButton}
-                  onPress={() => handleRemovePlayer(player.id)}
-                >
-                  <Text style={styles.removeButtonText}>×</Text>
-                </Pressable>
-              </View>
-
-              {/* Row 2: Shared/Custom toggle chip */}
-              <View style={styles.packChipRow}>
-                <Pressable
                   style={[
                     styles.packChip,
                     isCustom ? styles.packChipActive : styles.packChipDefault,
@@ -226,6 +216,12 @@ export default function SetupScreen() {
                   <Text style={styles.packChipText} numberOfLines={1}>
                     {chipLabel}
                   </Text>
+                </Pressable>
+                <Pressable
+                  style={styles.removeButton}
+                  onPress={() => handleRemovePlayer(player.id)}
+                >
+                  <Text style={styles.removeButtonText}>×</Text>
                 </Pressable>
               </View>
             </View>
@@ -353,13 +349,6 @@ const styles = StyleSheet.create({
   removeButtonText: {
     fontSize: 24,
     color: SEMANTIC_COLORS.remove,
-  },
-  packChipRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingLeft: 36,
-    marginTop: 4,
-    gap: 4,
   },
   packChip: {
     paddingHorizontal: 8,
