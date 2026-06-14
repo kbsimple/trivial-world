@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, Pressable, ScrollView, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
 import { useRouter } from 'expo-router';
 import { useGameStore } from '../../stores/gameStore';
@@ -54,8 +54,8 @@ export default function QuestionScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background?.val as string }]}>
-      {/* Top zone — content stacks from top */}
-      <View style={styles.topZone}>
+      {/* Scrollable top zone — allows long answer text to scroll without pushing footer off screen */}
+      <ScrollView style={styles.scrollArea} contentContainerStyle={styles.scrollContent}>
         {currentPlayer && (
           <View style={styles.playerIndicator}>
             <PlayerIndicator
@@ -98,12 +98,9 @@ export default function QuestionScreen() {
             )}
           </View>
         )}
-      </View>
+      </ScrollView>
 
-      {/* Spacer — pushes footer to bottom */}
-      <View style={styles.spacer} />
-
-      {/* Bottom footer */}
+      {/* Bottom footer — always visible above the fold */}
       <View style={styles.footer}>
         {!answerRevealed && !submitted && (
           <Pressable
@@ -117,7 +114,7 @@ export default function QuestionScreen() {
           </Pressable>
         )}
 
-        {!answerRevealed && !submitted && (
+        {!submitted && (
           <Pressable
             style={({ pressed }) => [
               styles.skipButton,
@@ -143,8 +140,11 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
   },
-  topZone: {
-    // natural height only — no flex: 1
+  scrollArea: {
+    flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 8,
   },
   playerIndicator: {
     alignItems: 'center',
@@ -159,9 +159,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#FFD700',
-  },
-  spacer: {
-    flex: 1,
   },
   footer: {
     paddingBottom: 32,
