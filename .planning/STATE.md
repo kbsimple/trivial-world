@@ -92,7 +92,7 @@ From Phase 21 code review (21-REVIEW.md):
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 260613-7a | Question screen vertical layout: top-anchor badge+question, footer-anchor reveal button | 2026-06-13 | e9025fa | [260613-7a-question-screen-vertical-layout](./quick/260613-7a-question-screen-vertical-layout/) |
-| 260613-b1a | Move Shared/Custom pack chip inline with player name row | 2026-06-13 | — | [260613-b1a-chip-inline-player-row](./quick/260613-b1a-chip-inline-player-row/) |
+| 260613-b1a | Move Shared/Custom pack chip inline with player name row | 2026-06-13 | 9189952 | [260613-b1a-chip-inline-player-row](./quick/260613-b1a-chip-inline-player-row/) |
 
 ### Blockers/Concerns
 
