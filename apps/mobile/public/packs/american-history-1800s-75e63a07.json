@@ -1,0 +1,501 @@
+{
+  "metadata": {
+    "id": "75e63a07-1901-40b7-937c-4fa19f63dcb3",
+    "name": "American History (1800s)",
+    "description": "The century that defined the United States — westward expansion, the Civil War, Reconstruction, industrialization, and the era of robber barons and reform.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-14T12:00:00.000Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
+    "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+    "totalQuestions": 60,
+    "checksum": "e740dd60dd7befcba1ce6a60130ed95f34e0fb213d84da717af5c389bb645ff6",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 28048
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "President Jefferson purchased a vast territory from France in 1803 that roughly doubled the size of the United States. What was this land deal called?",
+      "answerText": "The Louisiana Purchase",
+      "tidbits": "The Louisiana Purchase cost approximately $15 million — about 3 cents per acre — for roughly 830,000 square miles."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What overland route, stretching about 2,000 miles from Missouri to Oregon, carried hundreds of thousands of settlers westward from the 1840s onward?",
+      "answerText": "The Oregon Trail",
+      "tidbits": "The Oregon Trail was so heavily traveled that wagon wheel ruts are still visible in the landscape of Wyoming and Nebraska today."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Which US state was the site of the 1848 gold discovery that triggered the California Gold Rush?",
+      "answerText": "California",
+      "tidbits": "Gold was discovered at Sutter's Mill in Coloma, California on January 24, 1848."
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The 1848 Treaty of Guadalupe Hidalgo, ending the Mexican-American War, transferred which large region to the United States?",
+      "answerText": "The Mexican Cession (present-day California, Nevada, Utah, Arizona, New Mexico, Colorado, Wyoming)",
+      "tidbits": "The Mexican Cession added over 525,000 square miles and accelerated the debate over whether new states would allow slavery."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The transcontinental railroad, completed in 1869, linked the east to the west. Where did the two rail lines meet to drive in the golden spike?",
+      "answerText": "Promontory Summit, Utah",
+      "tidbits": "The ceremony on May 10, 1869 was the first national event transmitted coast-to-coast by telegraph."
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The forced removal of the Cherokee Nation from their southeastern homelands to present-day Oklahoma in 1838–1839 became known by what name?",
+      "answerText": "The Trail of Tears",
+      "tidbits": "Approximately 4,000 of the 15,000 Cherokee who were forced to march died from hunger, disease, and exposure."
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which 1853 land purchase from Mexico added the southernmost strip of present-day Arizona and New Mexico, completing the continental US boundary?",
+      "answerText": "The Gadsden Purchase",
+      "tidbits": "The Gadsden Purchase was negotiated to secure a southern route for a transcontinental railroad."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "The Missouri Compromise of 1820 admitted Missouri as a slave state and Maine as a free state, and drew a slavery dividing line at what latitude?",
+      "answerText": "36°30' north latitude",
+      "tidbits": "The Missouri Compromise held for 34 years until the Kansas-Nebraska Act of 1854 effectively repealed it."
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Which Union general accepted Robert E. Lee's surrender at Appomattox Court House on April 9, 1865?",
+      "answerText": "Ulysses S. Grant",
+      "tidbits": "Grant allowed Confederate soldiers to keep their horses and sidearms, a generous gesture that helped ease the transition to peace."
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "The Homestead Act of 1862 offered settlers how many acres of public land in exchange for improving it over five years?",
+      "answerText": "160 acres",
+      "tidbits": "The Homestead Act eventually transferred approximately 270 million acres — 10% of the United States — to private individuals."
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which president issued the Emancipation Proclamation on January 1, 1863, declaring enslaved people in Confederate states to be free?",
+      "answerText": "Abraham Lincoln",
+      "tidbits": "The Emancipation Proclamation changed the character of the war, making the abolition of slavery an explicit Union goal."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which formerly enslaved woman became the most famous conductor of the Underground Railroad, leading dozens of people to freedom?",
+      "answerText": "Harriet Tubman",
+      "tidbits": "Harriet Tubman made approximately 13 missions to rescue around 70 enslaved people, and said she never lost a passenger."
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which abolitionist and orator, born into slavery, became one of the most influential voices for freedom and equality in the 1800s?",
+      "answerText": "Frederick Douglass",
+      "tidbits": "Frederick Douglass's autobiography, 'Narrative of the Life of Frederick Douglass,' became a seminal anti-slavery text."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which suffragist, along with Elizabeth Cady Stanton, organized the first women's rights convention in Seneca Falls, New York, in 1848?",
+      "answerText": "Susan B. Anthony (co-organizer; the convention was organized by Stanton, Lucretia Mott, and others — Anthony joined the movement shortly after)",
+      "tidbits": "The Seneca Falls Convention produced the Declaration of Sentiments, modeled on the Declaration of Independence, demanding equal rights for women."
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Confederate general surrendered at Appomattox and became a symbol of the 'Lost Cause' mythology after the Civil War?",
+      "answerText": "Robert E. Lee",
+      "tidbits": "After the war, Lee became president of Washington College (now Washington and Lee University) in Lexington, Virginia."
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which industrialist, known as the 'Steel King,' dominated the American steel industry and later gave away most of his fortune to build libraries and fund education?",
+      "answerText": "Andrew Carnegie",
+      "tidbits": "Carnegie gave away over $350 million during his lifetime — equivalent to roughly $6 billion today — funding over 2,500 libraries worldwide."
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Lakota Sioux chief was a key leader at the Battle of Little Bighorn in 1876, where Custer's 7th Cavalry was defeated?",
+      "answerText": "Sitting Bull",
+      "tidbits": "Sitting Bull had a vision of soldiers falling from the sky before the battle, which he interpreted as a sign of victory."
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which Missouri-born author wrote 'Adventures of Huckleberry Finn' in 1884, a novel that explored race and freedom along the Mississippi River?",
+      "answerText": "Mark Twain (Samuel Clemens)",
+      "tidbits": "Ernest Hemingway said all modern American literature comes from 'Adventures of Huckleberry Finn.'"
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which oil tycoon founded Standard Oil in 1870 and used horizontal integration to control approximately 90% of US oil refining by the 1880s?",
+      "answerText": "John D. Rockefeller",
+      "tidbits": "Standard Oil was broken up by the Supreme Court in 1911 under the Sherman Antitrust Act into 34 separate companies."
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which Nez Perce chief led his people on a 1,170-mile retreat across the Rocky Mountains in 1877 before surrendering with the famous words 'I will fight no more forever'?",
+      "answerText": "Chief Joseph",
+      "tidbits": "Chief Joseph's retreat is studied as a military masterpiece — his outnumbered band evaded US Army forces for over three months."
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What war, fought between 1861 and 1865, pitted the Union against the Confederacy over slavery and states' rights?",
+      "answerText": "The Civil War (American Civil War)",
+      "tidbits": "The Civil War resulted in approximately 620,000 to 750,000 soldier deaths — more than any other war in American history."
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Which 1865 constitutional amendment abolished slavery throughout the United States?",
+      "answerText": "The 13th Amendment",
+      "tidbits": "The 13th Amendment was ratified on December 6, 1865 — eight months after the Civil War ended."
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "The Civil War began when Confederate forces fired on which Union fort in South Carolina in April 1861?",
+      "answerText": "Fort Sumter",
+      "tidbits": "Remarkably, no soldiers died in the bombardment of Fort Sumter itself — the first Union casualties came from an accidental explosion during the surrender ceremony."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which 1857 Supreme Court ruling declared that enslaved people were not citizens and that Congress had no power to ban slavery in territories?",
+      "answerText": "Dred Scott v. Sandford",
+      "tidbits": "The Dred Scott decision is widely considered one of the worst in Supreme Court history and helped push the nation toward civil war."
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which three-day battle in Pennsylvania in July 1863 is considered the turning point of the Civil War, resulting in a Union victory?",
+      "answerText": "Battle of Gettysburg",
+      "tidbits": "The Battle of Gettysburg resulted in approximately 50,000 casualties in three days — the bloodiest battle of the Civil War."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "President Monroe's 1823 declaration warning European powers not to interfere in the affairs of the Western Hemisphere became known as what doctrine?",
+      "answerText": "The Monroe Doctrine",
+      "tidbits": "The Monroe Doctrine was largely unenforceable when proclaimed but became a cornerstone of American foreign policy throughout the century."
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was the bloodiest single day in American military history, occurring during the Battle of Antietam in September 1862?",
+      "answerText": "September 17, 1862 (approximately 22,000 casualties in one day)",
+      "tidbits": "Lincoln used the Union's 'victory' at Antietam as the opportunity to issue the preliminary Emancipation Proclamation."
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "The Kansas-Nebraska Act of 1854 introduced what concept that allowed settlers in new territories to vote on whether to allow slavery?",
+      "answerText": "Popular sovereignty",
+      "tidbits": "The resulting conflict in Kansas between pro-slavery and anti-slavery settlers became known as 'Bleeding Kansas.'"
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Which constitutional amendments, ratified during Reconstruction, granted citizenship to formerly enslaved people and voting rights to Black men?",
+      "answerText": "14th Amendment (1868, citizenship) and 15th Amendment (1870, voting rights)",
+      "tidbits": "Despite the 15th Amendment, Southern states used poll taxes, literacy tests, and violence to disenfranchise Black voters for nearly a century."
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "The Spanish-American War of 1898 was partly triggered by the mysterious explosion of what US Navy ship in Havana Harbor?",
+      "answerText": "The USS Maine",
+      "tidbits": "'Remember the Maine, to hell with Spain!' became the rallying cry for American intervention, though the explosion's cause was never definitively proven."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Which 1852 anti-slavery novel by Harriet Beecher Stowe depicted the brutal realities of slavery and became a massive bestseller?",
+      "answerText": "Uncle Tom's Cabin",
+      "tidbits": "When Lincoln met Stowe in 1862, he reportedly said, 'So you are the little woman who wrote the book that started this great war.'"
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What term, coined by Mark Twain and Charles Dudley Warner for their 1873 novel, describes the era of rapid economic growth and widespread corruption after the Civil War?",
+      "answerText": "The Gilded Age",
+      "tidbits": "'Gilded' means covered in a thin layer of gold — a surface shine concealing corruption and inequality underneath."
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Walt Whitman's 1855 poetry collection, which celebrated American democracy and the individual, is considered a cornerstone of American literature. What is it called?",
+      "answerText": "Leaves of Grass",
+      "tidbits": "Whitman self-published the first edition of 'Leaves of Grass' and continued revising it throughout his life, producing nine editions total."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which Massachusetts-born author and philosopher, along with Henry David Thoreau, led the Transcendentalist movement in the mid-1800s?",
+      "answerText": "Ralph Waldo Emerson",
+      "tidbits": "Emerson's essay 'Self-Reliance' called on individuals to trust their own instincts and reject conformity — ideas that shaped American individualism."
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which Black abolitionist newspaper, published by Frederick Douglass starting in 1847, became one of the most influential anti-slavery publications in America?",
+      "answerText": "The North Star (later Frederick Douglass' Paper)",
+      "tidbits": "The North Star's motto was 'Right is of no Sex — Truth is of no Color — God is the Father of us all, and we are all Brethren.'"
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which Massachusetts author wrote 'Walden,' an account of his two-year experiment in simple living in the woods near Concord?",
+      "answerText": "Henry David Thoreau",
+      "tidbits": "Thoreau's essay 'Civil Disobedience' influenced later activists including Mahatma Gandhi and Martin Luther King Jr."
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Lincoln's brief but powerful speech dedicating the military cemetery at Gettysburg is known as what?",
+      "answerText": "The Gettysburg Address",
+      "tidbits": "The Gettysburg Address is just 272 words long, yet is considered one of the greatest speeches in American history."
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Which New England poet, known for her reclusive life and unconventional dashes and slant rhyme, wrote nearly 1,800 poems that were mostly published after her death in 1886?",
+      "answerText": "Emily Dickinson",
+      "tidbits": "Only about a dozen of Dickinson's poems were published during her lifetime; her sister discovered the full collection after her death."
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the term for the political philosophy that the United States was divinely destined to expand across the North American continent to the Pacific Ocean?",
+      "answerText": "Manifest Destiny",
+      "tidbits": "The phrase 'Manifest Destiny' was coined by journalist John O'Sullivan in 1845 to advocate for the annexation of Texas."
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Which abolitionist newspaper was founded by William Lloyd Garrison in 1831 in Boston and became one of the most influential anti-slavery publications for 35 years?",
+      "answerText": "The Liberator",
+      "tidbits": "Garrison's first editorial declared he would be 'as harsh as truth, and as uncompromising as justice' in demanding immediate emancipation."
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Who invented the telegraph and the Morse code system that made long-distance communication possible in the 1840s?",
+      "answerText": "Samuel Morse",
+      "tidbits": "The first long-distance telegraph message, sent from Washington D.C. to Baltimore in 1844, was 'What hath God wrought?'"
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Who invented the practical incandescent light bulb in 1879, ushering in the age of electric lighting?",
+      "answerText": "Thomas Edison",
+      "tidbits": "Edison also developed a complete electrical distribution system, opening the first commercial power station on Pearl Street in New York City in 1882."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Who is credited with inventing the telephone in 1876?",
+      "answerText": "Alexander Graham Bell",
+      "tidbits": "Bell's first telephone call was to his assistant Thomas Watson: 'Mr. Watson — come here — I want to see you.'"
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What ironmaking process, developed in the 1850s by Henry Bessemer, dramatically reduced the cost of producing steel and enabled the construction of skyscrapers and railroads?",
+      "answerText": "The Bessemer Process",
+      "tidbits": "The Bessemer Process reduced the time to make steel from days to under 20 minutes, dropping the price of steel by 80%."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What two railroad companies built the transcontinental railroad from opposite ends, meeting at Promontory Summit in 1869?",
+      "answerText": "Union Pacific (building westward) and Central Pacific (building eastward)",
+      "tidbits": "The Central Pacific relied heavily on Chinese immigrant labor — approximately 10,000 Chinese workers who often faced dangerous conditions."
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "John D. Rockefeller used what business structure — controlling all parts of an industry from raw material to retail — to dominate the oil industry?",
+      "answerText": "Vertical integration (plus horizontal integration to eliminate competitors)",
+      "tidbits": "Standard Oil at its peak controlled 90% of US oil refining and set the template for modern corporate monopoly."
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What 1862 law granted free land to settlers who agreed to farm it for five years, opening vast territories to westward expansion?",
+      "answerText": "The Homestead Act",
+      "tidbits": "Between 1862 and 1934, about 1.6 million people filed Homestead Act claims, and roughly 783,000 succeeded in gaining title."
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What invention by Cyrus McCormick in 1831 mechanized grain harvesting and transformed American agriculture, helping feed rapidly growing cities?",
+      "answerText": "The mechanical reaper",
+      "tidbits": "McCormick's reaper did the work of five men, enabling single farmers to harvest much larger fields and feeding the Union Army during the Civil War."
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What federal law, passed in 1890, gave the government the power to break up monopolies that restrained trade — and was used to dismantle Standard Oil in 1911?",
+      "answerText": "The Sherman Antitrust Act",
+      "tidbits": "The Sherman Antitrust Act was the first federal law to limit cartels and monopolies, but was weakly enforced until Theodore Roosevelt's presidency."
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Lewis and Clark's Corps of Discovery expedition explored the Louisiana Purchase territory from 1804 to 1806, guided in part by which Native American woman?",
+      "answerText": "Sacagawea",
+      "tidbits": "Sacagawea, a Shoshone woman, was invaluable as an interpreter and her presence helped signal to Native groups that the expedition was peaceful."
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What famous battle at a Texas mission in 1836 ended with the deaths of all its defenders, including Davy Crockett and Jim Bowie, during the Texas Revolution?",
+      "answerText": "The Battle of the Alamo",
+      "tidbits": "'Remember the Alamo!' became the rallying cry that helped Sam Houston defeat Santa Anna at the Battle of San Jacinto weeks later."
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Which US Army officer was killed along with all 210 men under his immediate command at the Battle of Little Bighorn in 1876?",
+      "answerText": "George Armstrong Custer",
+      "tidbits": "The Battle of Little Bighorn is also called Custer's Last Stand — the combined Sioux and Cheyenne forces numbered around 1,500–2,000 warriors."
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What was the name of Theodore Roosevelt's volunteer cavalry unit that fought in Cuba during the Spanish-American War of 1898?",
+      "answerText": "The Rough Riders (1st United States Volunteer Cavalry)",
+      "tidbits": "The Rough Riders' charge up Kettle Hill (often called San Juan Hill) made Roosevelt a national war hero and launched his political career."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which war, fought between 1846 and 1848, resulted in the United States acquiring California, Nevada, Utah, and parts of several other states from Mexico?",
+      "answerText": "The Mexican-American War",
+      "tidbits": "The war was opposed by many Americans including Abraham Lincoln and Henry David Thoreau, who wrote 'Civil Disobedience' partly in protest."
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "At which Virginia courthouse did Robert E. Lee formally surrender to Ulysses S. Grant on April 9, 1865, effectively ending the Civil War?",
+      "answerText": "Appomattox Court House",
+      "tidbits": "The surrender took place in the parlor of Wilmer McLean's house — the same man who had fled his first home near Bull Run to escape the war."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which December 1890 massacre marked the end of armed Native American resistance on the Great Plains, killing approximately 250 to 300 Lakota Sioux?",
+      "answerText": "The Wounded Knee Massacre",
+      "tidbits": "Wounded Knee was the last major armed conflict between the US Army and Native Americans, occurring just weeks after Sitting Bull was killed."
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What war between the US and Britain, triggered partly by British impressment of American sailors, was fought from 1812 to 1815?",
+      "answerText": "The War of 1812",
+      "tidbits": "During the War of 1812, British forces burned the White House and Capitol Building in Washington D.C. in 1814."
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Which Civil War battle in September 1862, fought along Antietam Creek in Maryland, was the single bloodiest day in American military history with approximately 22,700 casualties?",
+      "answerText": "The Battle of Antietam",
+      "tidbits": "The tactical draw at Antietam was enough for Lincoln to claim a Union victory and issue the preliminary Emancipation Proclamation five days later."
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Which 1830 federal law, signed by President Andrew Jackson, authorized the forced relocation of Native American tribes from the southeastern US to west of the Mississippi River?",
+      "answerText": "The Indian Removal Act",
+      "tidbits": "The Indian Removal Act displaced over 100,000 Native Americans, leading to the Trail of Tears and other forced marches with devastating mortality."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Confederate General Thomas Jackson earned what famous nickname after holding his position firmly at the First Battle of Bull Run in 1861?",
+      "answerText": "Stonewall Jackson",
+      "tidbits": "Jackson was accidentally shot by his own troops at Chancellorsville in 1863 and died of pneumonia eight days later — a devastating loss for the Confederacy."
+    }
+  ],
+  "checksum": "e740dd60dd7befcba1ce6a60130ed95f34e0fb213d84da717af5c389bb645ff6",
+  "size": 0
+}

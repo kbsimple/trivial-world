@@ -1,0 +1,501 @@
+{
+  "metadata": {
+    "id": "7ccccf32-8a20-4bc4-bab2-9dbe4d9c399e",
+    "name": "Harry Potter",
+    "description": "Questions spanning all seven books and eight films — spells, characters, magical creatures, Hogwarts lore, Quidditch, and the wizarding world.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-14T12:00:00.000Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
+    "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+    "totalQuestions": 60,
+    "checksum": "26f79f2c72ca8c4fb6f6bfda7489fb1c903a334eef630acbd8ea42ef2c474062",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 24475
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the name of the magical shopping street in London where wizards buy their school supplies?",
+      "answerText": "Diagon Alley",
+      "tidbits": "Diagon Alley is accessed through the Leaky Cauldron pub on Charing Cross Road — invisible to Muggles."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "From which platform at King's Cross Station do Hogwarts students depart on the Hogwarts Express?",
+      "answerText": "Platform 9¾",
+      "tidbits": "Students reach the platform by walking directly through the barrier between platforms 9 and 10."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In which country is Hogwarts School of Witchcraft and Wizardry located?",
+      "answerText": "Scotland",
+      "tidbits": "Hogwarts is hidden from Muggles by enchantments that make it appear as a dangerous ruin."
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the wizarding village near Hogwarts that students are allowed to visit in their third year?",
+      "answerText": "Hogsmeade",
+      "tidbits": "Hogsmeade is the only all-wizarding village in Britain. Its most popular establishments include the Three Broomsticks and Honeydukes."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the wizarding prison guarded by Dementors, located in the North Sea?",
+      "answerText": "Azkaban",
+      "tidbits": "Prisoners in Azkaban are kept in a state of perpetual despair as Dementors feed on happy memories."
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In which village did Harry Potter grow up with his aunt and uncle?",
+      "answerText": "Little Whinging (Surrey)",
+      "tidbits": "Harry lived at 4 Privet Drive, Little Whinging — a perfectly ordinary-looking address for a most extraordinary boy."
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the village where Harry Potter was born and where his parents were killed?",
+      "answerText": "Godric's Hollow",
+      "tidbits": "Godric's Hollow is also the birthplace of Godric Gryffindor and the home of Bathilda Bagshot."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the name of the forest bordering Hogwarts that is strictly off-limits to students?",
+      "answerText": "The Forbidden Forest",
+      "tidbits": "The Forbidden Forest is home to centaurs, unicorns, Acromantulas, and many other magical creatures."
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "On which floor of the Ministry of Magic is the Department of Mysteries located?",
+      "answerText": "Level nine",
+      "tidbits": "The Department of Mysteries houses rooms studying time, space, thought, death, love, and prophecy."
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the name of the Weasley family's home, famous for its disheveled, magical appearance?",
+      "answerText": "The Burrow",
+      "tidbits": "The Burrow appears to defy the laws of physics, held together largely by magic."
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which actor played Harry Potter in all eight films?",
+      "answerText": "Daniel Radcliffe",
+      "tidbits": "Daniel Radcliffe was just 11 years old when he was cast as Harry Potter in 2000."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which actress played Hermione Granger in the Harry Potter films?",
+      "answerText": "Emma Watson",
+      "tidbits": "Emma Watson became a UN Women Goodwill Ambassador in 2014, championing gender equality."
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What is Voldemort's real birth name?",
+      "answerText": "Tom Marvolo Riddle",
+      "tidbits": "Tom Marvolo Riddle is an anagram of 'I am Lord Voldemort,' revealed when he rearranges letters with his wand."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which actor, known for his portrayal of the complex Severus Snape, passed away in January 2016?",
+      "answerText": "Alan Rickman",
+      "tidbits": "J.K. Rowling privately told Alan Rickman Snape's true loyalty early on so he could play the character with the right layers."
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of the loyal house-elf who serves the Malfoy family before being freed by Harry?",
+      "answerText": "Dobby",
+      "tidbits": "Dobby is freed when Lucius Malfoy unknowingly presents him with a sock hidden inside Harry's diary."
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which character is known as 'The Boy Who Lived' for surviving Voldemort's killing curse as an infant?",
+      "answerText": "Harry Potter",
+      "tidbits": "The love sacrifice of Harry's mother Lily created ancient magic that protected Harry from Voldemort's curse."
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of Draco Malfoy's mother, a Black family member who ultimately saves Harry's life in the forest?",
+      "answerText": "Narcissa Malfoy",
+      "tidbits": "Narcissa lies to Voldemort about Harry being dead, prioritizing her son Draco's safety over loyalty to the Dark Lord."
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is the full name of the professor who taught Defense Against the Dark Arts in Harry's second year and claimed to be a famous author of DADA books?",
+      "answerText": "Gilderoy Lockhart",
+      "tidbits": "Lockhart stole the achievements of other wizards, then erased their memories — a skill that ultimately backfired on him."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which actress played Bellatrix Lestrange in the Harry Potter films?",
+      "answerText": "Helena Bonham Carter",
+      "tidbits": "Bellatrix Lestrange is the most devoted Death Eater and a cousin of Sirius Black."
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is Luna Lovegood's father's name, and what magazine does he publish?",
+      "answerText": "Xenophilius Lovegood; The Quibbler",
+      "tidbits": "The Quibbler publishes outlandish conspiracy theories but ironically breaks the true story of Voldemort's return."
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "How many books are in the main Harry Potter series?",
+      "answerText": "Seven",
+      "tidbits": "The seven books were published from 1997 to 2007 and have sold over 600 million copies worldwide."
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What is the name of the climactic battle that takes place at Hogwarts in the final book?",
+      "answerText": "The Battle of Hogwarts",
+      "tidbits": "The Battle of Hogwarts takes place on May 2, 1998 — now celebrated as Harry Potter Day."
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In which book does Harry Potter first compete in the Triwizard Tournament?",
+      "answerText": "Harry Potter and the Goblet of Fire (book 4)",
+      "tidbits": "The Triwizard Tournament is a prestigious inter-school competition held between Hogwarts, Beauxbatons, and Durmstrang."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In which year does Dumbledore destroy one of Voldemort's Horcruxes — the Gaunt family ring — but is cursed in the process?",
+      "answerText": "Between books 5 and 6 (the summer before Harry's sixth year)",
+      "tidbits": "Dumbledore knew destroying the ring's curse would eventually kill him, making his pact with Snape all the more poignant."
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Who opens the Chamber of Secrets in Harry's second year by using a basilisk to attack Muggle-born students?",
+      "answerText": "Ginny Weasley (controlled by Riddle's diary Horcrux)",
+      "tidbits": "Tom Riddle's diary was Voldemort's first Horcrux, created when he was just 16 years old."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What object does Harry use to travel back in time to save Sirius Black and Buckbeak in book three?",
+      "answerText": "A Time-Turner",
+      "tidbits": "Hermione had been using the Time-Turner all year to attend multiple classes simultaneously."
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "During the Triwizard Tournament, what are the three tasks the champions must complete?",
+      "answerText": "Steal a dragon's egg, rescue hostages from the lake, navigate a maze",
+      "tidbits": "Harry was the only champion to rescue all hostages from the Black Lake, demonstrating his moral character."
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Which four Horcruxes are destroyed before Harry, Ron, and Hermione begin their hunt in book seven?",
+      "answerText": "Tom Riddle's diary, Marvolo Gaunt's ring, Salazar Slytherin's locket, Helga Hufflepuff's cup",
+      "tidbits": "The locket is destroyed by Ron using the Sword of Gryffindor, overcoming the Horcrux's psychological attack."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What is the name of the prophecy that links Harry Potter and Voldemort, and who first heard it?",
+      "answerText": "The Prophecy of the Chosen One; Professor Trelawney (overheard by Snape)",
+      "tidbits": "Because Snape only heard part of the prophecy before being caught, Voldemort chose Harry — not Neville Longbottom — as his target."
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In what order were the Deathly Hallows originally owned, according to 'The Tale of the Three Brothers'?",
+      "answerText": "Elder Wand (first brother), Resurrection Stone (second brother), Cloak of Invisibility (third brother)",
+      "tidbits": "Death himself is said to have gifted the Hallows to three brothers who outwitted him at a dangerous bridge."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What spell is used to disarm an opponent in wizard duels, and is Harry's signature spell?",
+      "answerText": "Expelliarmus",
+      "tidbits": "Harry's repeated use of Expelliarmus instead of Avada Kedavra reflects his moral refusal to kill."
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What spell conjures a Patronus to repel Dementors?",
+      "answerText": "Expecto Patronum",
+      "tidbits": "A Patronus takes the form of an animal that reflects the caster's innermost character."
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What are the three Unforgivable Curses — the Killing Curse, the Cruciatus Curse, and what third curse?",
+      "answerText": "The Imperius Curse (Imperio)",
+      "tidbits": "During Voldemort's first reign, many Death Eaters claimed to have been under the Imperius Curse to escape prosecution."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What are the three objects that make up the Deathly Hallows?",
+      "answerText": "The Elder Wand, the Resurrection Stone, and the Cloak of Invisibility",
+      "tidbits": "The one who unites all three Deathly Hallows is said to become the Master of Death."
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What magical document, created by the four Marauders, shows every person's location within Hogwarts at any moment?",
+      "answerText": "The Marauder's Map",
+      "tidbits": "The map must be activated by saying 'I solemnly swear that I am up to no good' and cleared with 'Mischief managed.'"
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What spell unlocks doors?",
+      "answerText": "Alohomora",
+      "tidbits": "Alohomora comes from the Manga Ewe language of West Africa, meaning 'friendly to thieves.'"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What spell produces light from the tip of a wand?",
+      "answerText": "Lumos",
+      "tidbits": "Its counter-spell, Nox, extinguishes the light. The incantation derives from the Latin word for light."
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What are the seven objects Voldemort chose to make into Horcruxes — six intentional and one accidental?",
+      "answerText": "Tom Riddle's diary, Marvolo Gaunt's ring, Slytherin's locket, Hufflepuff's cup, Ravenclaw's diadem, the snake Nagini, and Harry Potter (accidental)",
+      "tidbits": "Voldemort intended to split his soul into seven pieces, considering seven the most magically powerful number."
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What spell is used to transform an object into something else entirely, one of the most complex spells taught at Hogwarts?",
+      "answerText": "Transfiguration (not a single incantation — it is a discipline, e.g. Vera Verto)",
+      "tidbits": "Transfiguration is considered one of the most difficult and dangerous branches of magic taught at Hogwarts."
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What charm, used on the trio's tent and the Order's headquarters, makes a space undetectable and untraceable?",
+      "answerText": "The Fidelius Charm",
+      "tidbits": "Once the Fidelius Charm is cast, only the Secret-Keeper can reveal the location — even the inhabitants cannot betray it."
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "How many players are on each Quidditch team?",
+      "answerText": "Seven",
+      "tidbits": "Each team has three Chasers, two Beaters, one Keeper, and one Seeker."
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "How many points is catching the Golden Snitch worth in Quidditch?",
+      "answerText": "150 points",
+      "tidbits": "The team whose Seeker catches the Snitch also ends the game, though catching it doesn't guarantee a win if the score gap is large."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What are the four Hogwarts houses?",
+      "answerText": "Gryffindor, Hufflepuff, Ravenclaw, and Slytherin",
+      "tidbits": "Each house values different traits: bravery, loyalty, wit, and ambition respectively."
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What magical creature form does Professor Lupin take during the full moon?",
+      "answerText": "Werewolf",
+      "tidbits": "Lupin takes Wolfsbane Potion to remain in control during transformations, though it does not prevent the change itself."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What animal does Harry's Patronus take the form of?",
+      "answerText": "A stag",
+      "tidbits": "Harry's Patronus is a stag because his father James Potter's Animagus form was also a stag — Harry inherited this connection."
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What are the two standardized wizarding exams students take at Hogwarts, one at the end of fifth year and one at the end of seventh year?",
+      "answerText": "O.W.L.s (Ordinary Wizarding Levels) and N.E.W.T.s (Nastily Exhausting Wizarding Tests)",
+      "tidbits": "Achieving an 'Outstanding' on a N.E.W.T. is required to pursue careers like Auror or Healer."
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What are the four balls used in a game of Quidditch?",
+      "answerText": "The Quaffle, two Bludgers, and the Golden Snitch",
+      "tidbits": "Bludgers are enchanted iron balls that actively pursue players; Beaters use bats to deflect them."
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the name of the magical law that prevents underage wizards from using magic outside of school?",
+      "answerText": "The Decree for the Reasonable Restriction of Underage Sorcery",
+      "tidbits": "The Ministry detects magic by area, not by individual — meaning magic used by adult wizards in a home with a child can be misattributed."
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What branch of magic governs the behavior of magical creatures, including dragons, hippogriffs, and merpeople, in wizarding law?",
+      "answerText": "The Department for the Regulation and Control of Magical Creatures",
+      "tidbits": "Hagrid's Care of Magical Creatures classes often feature creatures that the Ministry classifies as 'dangerous' or 'XXXXX.'"
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the incantation for the Killing Curse, and what is the only known counter — not a spell, but a force?",
+      "answerText": "Avada Kedavra; love (sacrificial protection)",
+      "tidbits": "No spell can block Avada Kedavra directly — only the protective enchantment born of a loving sacrifice can deflect it."
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What position does Harry Potter play on the Gryffindor Quidditch team?",
+      "answerText": "Seeker",
+      "tidbits": "Harry became the youngest Seeker in a century when Professor McGonagall spotted his flying ability in first year."
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What international tournament involving the three largest European wizarding schools does Harry compete in during his fourth year?",
+      "answerText": "The Triwizard Tournament",
+      "tidbits": "The Triwizard Tournament was discontinued after several deaths, then revived for the events of Goblet of Fire."
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What magical object sorts new Hogwarts students into their houses at the start of term?",
+      "answerText": "The Sorting Hat",
+      "tidbits": "The Sorting Hat was once a normal hat belonging to Godric Gryffindor, enchanted by the four founders to carry out sorting."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the name of the student defense group Harry leads in his fifth year, formed in secret to resist Umbridge's ban on practical Defense Against the Dark Arts?",
+      "answerText": "Dumbledore's Army (D.A.)",
+      "tidbits": "Dumbledore's Army meets in the Room of Requirement, a room that appears only when a person has genuine need of it."
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What position does Oliver Wood play on the Gryffindor Quidditch team?",
+      "answerText": "Keeper",
+      "tidbits": "Oliver Wood is obsessively passionate about Quidditch, giving exhaustive pre-match tactical speeches to his teammates."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In which Quidditch World Cup final do Ireland beat Bulgaria, and who is Bulgaria's star Seeker?",
+      "answerText": "Bulgaria's Seeker is Viktor Krum",
+      "tidbits": "Viktor Krum catches the Golden Snitch but Bulgaria still loses because Ireland led by too many points."
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What award does Harry win in his first year after breaking school rules — flying on his broomstick without permission?",
+      "answerText": "A spot on the Gryffindor Quidditch team as Seeker",
+      "tidbits": "Professor McGonagall bends the rules forbidding first-years from having their own broomsticks to put Harry on the team."
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What are the four Hogwarts house points totals typically displayed in the hourglasses in the entrance hall, and what house wins the House Cup most often during Harry's time?",
+      "answerText": "Gryffindor wins the House Cup in Harry's first, third, and later years; Slytherin had a long winning streak before that",
+      "tidbits": "Slytherin had won the House Cup seven years in a row before Dumbledore awarded last-minute points to Gryffindor in Harry's first year."
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What Quidditch foul involves a player grabbing another player's broomstick tail to slow them down?",
+      "answerText": "Stooging (or Blagging)",
+      "tidbits": "There are 700 known Quidditch fouls, all of which reportedly occurred in the 1473 World Cup."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In the Triwizard Tournament's second task, what do champions use to breathe underwater, and what does Harry use?",
+      "answerText": "Cedric used a bubble-head charm, Fleur used a bubble-head charm, Krum partially transfigured himself — Harry used gillyweed",
+      "tidbits": "Dobby steals the gillyweed from Snape's personal stores to help Harry after Neville accidentally provides the idea."
+    }
+  ],
+  "checksum": "26f79f2c72ca8c4fb6f6bfda7489fb1c903a334eef630acbd8ea42ef2c474062",
+  "size": 0
+}

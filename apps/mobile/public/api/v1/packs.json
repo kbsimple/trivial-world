@@ -267,6 +267,42 @@
       "downloadUrl": "https://trivial-world.netlify.app/packs/big-government-0da2ef60.json",
       "checksum": "e346ee55d936601217333a535c9feb511b607f36f7da67b8c29657a70b8a9279",
       "size": 32524
+    },
+    {
+      "id": "7ccccf32-8a20-4bc4-bab2-9dbe4d9c399e",
+      "name": "Harry Potter",
+      "description": "Questions spanning all seven books and eight films — spells, characters, magical creatures, Hogwarts lore, Quidditch, and the wizarding world.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/harry-potter-7ccccf32.json",
+      "checksum": "26f79f2c72ca8c4fb6f6bfda7489fb1c903a334eef630acbd8ea42ef2c474062",
+      "size": 24475
+    },
+    {
+      "id": "75e63a07-1901-40b7-937c-4fa19f63dcb3",
+      "name": "American History (1800s)",
+      "description": "The century that defined the United States — westward expansion, the Civil War, Reconstruction, industrialization, and the era of robber barons and reform.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/american-history-1800s-75e63a07.json",
+      "checksum": "e740dd60dd7befcba1ce6a60130ed95f34e0fb213d84da717af5c389bb645ff6",
+      "size": 28048
+    },
+    {
+      "id": "8a547a65-eeb0-46e2-be73-c35e07983a82",
+      "name": "NBA Basketball (2020s)",
+      "description": "The modern NBA from 2020 to today — championships, MVP awards, record-breakers, draft classes, and the biggest stars of the decade.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/nba-basketball-2020s-8a547a65.json",
+      "checksum": "0eb41458bb91162e8d59c944f73a9df9644c4cde835df07f3e215e59d9a5ad5b",
+      "size": 26921
     }
   ]
 }

@@ -1,0 +1,501 @@
+{
+  "metadata": {
+    "id": "8a547a65-eeb0-46e2-be73-c35e07983a82",
+    "name": "NBA Basketball (2020s)",
+    "description": "The modern NBA from 2020 to today — championships, MVP awards, record-breakers, draft classes, and the biggest stars of the decade.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-14T12:00:00.000Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
+    "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+    "totalQuestions": 60,
+    "checksum": "0eb41458bb91162e8d59c944f73a9df9644c4cde835df07f3e215e59d9a5ad5b",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 26921
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "The Golden State Warriors play their home games at which arena, located in San Francisco?",
+      "answerText": "Chase Center",
+      "tidbits": "Chase Center opened in 2019, replacing Oracle Arena in Oakland as the Warriors' home."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "The Boston Celtics play their home games at which historic arena?",
+      "answerText": "TD Garden",
+      "tidbits": "TD Garden has hosted the Celtics since 1995. The Celtics' 18 championships are the most in NBA history."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "The Milwaukee Bucks play in which conference — the Eastern or Western?",
+      "answerText": "Eastern Conference",
+      "tidbits": "The Bucks play in the Central Division of the Eastern Conference alongside the Bulls, Pistons, Cavaliers, and Pacers."
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which Texas city is home to the NBA's Spurs franchise, who drafted Victor Wembanyama first overall in 2023?",
+      "answerText": "San Antonio",
+      "tidbits": "The Spurs are one of the most decorated franchises in NBA history, winning five championships between 1999 and 2014."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The Denver Nuggets, 2023 NBA Champions, play their home games at which arena?",
+      "answerText": "Ball Arena",
+      "tidbits": "Ball Arena was previously called Pepsi Center and renamed when the Ball Corporation purchased naming rights in 2020."
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The Dallas Mavericks play at which arena in Dallas, Texas?",
+      "answerText": "American Airlines Center",
+      "tidbits": "American Airlines Center has hosted both the Mavericks and the Dallas Stars NHL team since it opened in 2001."
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which city's NBA team is nicknamed the Bucks, whose name refers to the white-tailed deer common in the region?",
+      "answerText": "Milwaukee",
+      "tidbits": "The Bucks were founded in 1968; their most famous alumni before 2021 include Kareem Abdul-Jabbar and Oscar Robertson."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "The Memphis Grizzlies originally relocated from which Canadian city before moving to Memphis in 2001?",
+      "answerText": "Vancouver",
+      "tidbits": "The team was known as the Vancouver Grizzlies from 1995 to 2001 before relocating to Memphis, Tennessee."
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Which NBA team plays in Oklahoma City and was formerly the Seattle SuperSonics before relocating in 2008?",
+      "answerText": "Oklahoma City Thunder",
+      "tidbits": "The Thunder's relocation from Seattle remains one of the most controversial franchise moves in NBA history."
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What new award did the NBA introduce in the 2023-24 season — a tournament played mid-season with its own bracket and finals?",
+      "answerText": "The NBA In-Season Tournament (Emirates NBA Cup)",
+      "tidbits": "The Los Angeles Lakers won the inaugural NBA In-Season Tournament, defeating the Indiana Pacers in the final in Las Vegas."
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which Greek player, nicknamed 'The Greek Freak,' plays for the Milwaukee Bucks and won back-to-back MVPs in 2019 and 2020?",
+      "answerText": "Giannis Antetokounmpo",
+      "tidbits": "Giannis was born in Athens, Greece to Nigerian parents and was selected 15th overall in the 2013 draft by the Bucks."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "LeBron James, who broke the NBA's all-time scoring record in 2023, plays for which team as of 2024?",
+      "answerText": "Los Angeles Lakers",
+      "tidbits": "LeBron James has also played for the Cleveland Cavaliers and Miami Heat across his record four NBA championships."
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which Serbian center won three NBA MVP awards (2021, 2022, 2024) in four years and led the Denver Nuggets to their first championship?",
+      "answerText": "Nikola Jokic",
+      "tidbits": "Nikola Jokic was drafted 41st overall in the 2014 draft — one of the greatest draft steals in NBA history."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which French center, standing 7'4\", was selected first overall by the San Antonio Spurs in the 2023 NBA Draft?",
+      "answerText": "Victor Wembanyama",
+      "tidbits": "Victor Wembanyama is considered a generational prospect whose wingspan, shot-blocking, and ball-handling are historically unprecedented."
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Slovenian guard plays for the Dallas Mavericks and is considered one of the best scorers and passers of his generation?",
+      "answerText": "Luka Doncic",
+      "tidbits": "Luka Doncic was named Rookie of the Year in 2019 and became one of the youngest players ever to score 50+ points in a playoff game."
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Golden State Warriors guard coaches Steve Kerr has called the greatest shooter in NBA history, known for revolutionizing the three-point game?",
+      "answerText": "Stephen Curry",
+      "tidbits": "Stephen Curry's shooting influence is so vast that the entire NBA shifted its offensive strategy toward three-point shooting in the 2010s."
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Memphis Grizzlies guard faced multiple gun-related suspensions in 2023 and 2024 that significantly derailed his career?",
+      "answerText": "Ja Morant",
+      "tidbits": "Ja Morant was suspended for 25 games in 2023-24 after repeatedly posting videos on social media displaying firearms."
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which Miami Heat coach, known for his defensive system and player development, led his team to NBA Finals appearances in 2020 and 2023?",
+      "answerText": "Erik Spoelstra",
+      "tidbits": "Erik Spoelstra has been the Heat's head coach since 2008 and won back-to-back championships with the Big Three in 2012 and 2013."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which Boston Celtics forward, selected with the fourth overall pick in 2021, won the 2022 Rookie of the Year award with the Toronto Raptors?",
+      "answerText": "Scottie Barnes",
+      "tidbits": "Scottie Barnes won Rookie of the Year despite being considered a lower-profile pick than 2021 first overall Cade Cunningham."
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which Denver Nuggets head coach, who led them to the 2023 championship, previously coached the Sacramento Kings and is known for his offensive system?",
+      "answerText": "Mike Malone",
+      "tidbits": "Mike Malone became just the second Nuggets coach to win a championship, inheriting a team built patiently around Nikola Jokic."
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Which team won the 2023 NBA Championship — the first in their franchise history?",
+      "answerText": "Denver Nuggets",
+      "tidbits": "The Nuggets beat the Miami Heat 4-1 in the 2023 Finals, with Nikola Jokic earning Finals MVP."
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Which team won the 2024 NBA Championship, earning their record 18th title?",
+      "answerText": "Boston Celtics",
+      "tidbits": "The Celtics beat the Dallas Mavericks 4-1 in the 2024 Finals. Jaylen Brown won Finals MVP."
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Which player won the 2021 NBA Finals MVP after scoring 50 points in Game 6 of the Finals?",
+      "answerText": "Giannis Antetokounmpo",
+      "tidbits": "Giannis's 50-point performance in Game 6 is one of the best Finals performances in NBA history. The Bucks beat the Suns 4-2."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which player won the 2022 NBA Finals MVP, his first ever Finals MVP, as the Golden State Warriors beat the Boston Celtics 4-2?",
+      "answerText": "Stephen Curry",
+      "tidbits": "Stephen Curry had won three championships before 2022 but had never won Finals MVP — he averaged 31.2 points in the 2022 Finals."
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which player won the 2020 NBA Finals MVP as the Los Angeles Lakers beat the Miami Heat 4-2 in the NBA Bubble?",
+      "answerText": "LeBron James",
+      "tidbits": "LeBron's 2020 title was his fourth and first with the Lakers. He averaged 29.8 points, 11.8 rebounds, and 8.5 assists in the Finals."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Who won the 2023 regular season NBA MVP, becoming the first player to win from a team with a losing record?",
+      "answerText": "Joel Embiid",
+      "tidbits": "Joel Embiid's MVP was controversial because the Philadelphia 76ers struggled in the second half of the season, leading to debates about the award criteria."
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Victor Wembanyama won the 2024 Rookie of the Year award. Who won the 2023 Rookie of the Year?",
+      "answerText": "Paolo Banchero",
+      "tidbits": "Paolo Banchero, the first overall pick in 2022 by the Orlando Magic, became the first first-year player to win ROY after being drafted first overall since Blake Griffin in 2011."
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Nikola Jokic won three MVPs in four years (2021, 2022, 2024). Who won the MVP in the year between his awards — 2023?",
+      "answerText": "Joel Embiid",
+      "tidbits": "Embiid won the 2023 MVP representing the Philadelphia 76ers — it was the first MVP of his career after multiple near-misses."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Who was the number one overall pick in the 2021 NBA Draft?",
+      "answerText": "Cade Cunningham (Detroit Pistons)",
+      "tidbits": "Cade Cunningham was considered a franchise-changing player for the rebuilding Detroit Pistons, who had the worst record in the 2020-21 season."
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Which player won Finals MVP for the Celtics in 2024, making him the first Celtics player to win Finals MVP since Paul Pierce in 2008?",
+      "answerText": "Jaylen Brown",
+      "tidbits": "Jaylen Brown's 2024 Finals MVP sparked debate because many felt Jayson Tatum had a comparable series, but Brown was consistent and clutch throughout."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "The 2020 NBA season was completed inside a 'Bubble' to protect players from COVID-19. In which Florida city was the Bubble located?",
+      "answerText": "Orlando (at Disney World's ESPN Wide World of Sports complex)",
+      "tidbits": "The NBA Bubble ran from July to October 2020 with no fans, strict COVID protocols, and all teams housed at Disney World."
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "On what date did LeBron James break Kareem Abdul-Jabbar's all-time NBA scoring record?",
+      "answerText": "February 7, 2023",
+      "tidbits": "LeBron passed Kareem's record of 38,387 points during a game against the Oklahoma City Thunder in Los Angeles."
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Stephen Curry broke the all-time NBA three-point record in December 2021, surpassing which former record holder?",
+      "answerText": "Ray Allen",
+      "tidbits": "Curry passed Ray Allen's record of 2,973 made three-pointers on December 14, 2021, against the Knicks at Madison Square Garden."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "During the 2020 NBA Bubble, players and coaches wore social justice messages on their jerseys instead of names. What movement was prominently displayed?",
+      "answerText": "Black Lives Matter (players wore messages like 'Black Lives Matter,' 'Say Her Name,' 'I Can't Breathe')",
+      "tidbits": "The NBA became the first major North American sports league to prominently integrate social justice messaging into games during the 2020 season."
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which NBA superstar announced in 2023 that his son Bronny James had been drafted by the Lakers, making them the first father-son duo to play simultaneously in the NBA?",
+      "answerText": "LeBron James",
+      "tidbits": "Bronny James was selected 55th overall in the 2024 NBA Draft by the Los Angeles Lakers, fulfilling LeBron's longtime dream of playing with his son."
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which documentary series, released in 2020, chronicled Michael Jordan and the Chicago Bulls' final championship season and became a global cultural phenomenon?",
+      "answerText": "The Last Dance",
+      "tidbits": "'The Last Dance' was released during the 2020 COVID shutdown and became one of the most-watched sports documentaries of all time."
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Victor Wembanyama's extraordinary combination of height, wingspan, shooting, and shot-blocking led NBA analysts to call him what kind of historically rare prospect?",
+      "answerText": "A generational or unicorn prospect (a once-in-a-generation talent)",
+      "tidbits": "LeBron James himself called Wembanyama 'an alien' — saying there had never been anyone like him in the history of basketball."
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Which country does Nikola Jokic represent internationally, and what is his country's basketball federation called?",
+      "answerText": "Serbia; Basketball Federation of Serbia (KSS)",
+      "tidbits": "Jokic has led Serbia to multiple FIBA World Cup medals and is considered Serbia's greatest basketball player."
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "The NBA's global appeal expanded significantly in the 2020s. Which country produced the most international players in the NBA as of the 2023-24 season?",
+      "answerText": "Canada",
+      "tidbits": "Canada consistently produces the most NBA players outside the US, fueled by the growth of grassroots basketball programs and the Toronto Raptors' influence."
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Giannis Antetokounmpo signed a supermax extension with the Bucks in 2020 worth approximately how much — setting a record at the time?",
+      "answerText": "Approximately $228 million over 5 years",
+      "tidbits": "Giannis's decision to commit to Milwaukee rather than test free agency was seen as a validation of the Bucks' franchise-building approach."
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "How many points does a three-pointer count for in the NBA?",
+      "answerText": "Three points",
+      "tidbits": "The NBA introduced the three-point line in 1979. Stephen Curry's era has seen three-point attempts more than double league-wide."
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is a triple-double in basketball?",
+      "answerText": "Reaching double digits (10 or more) in three statistical categories in a single game — typically points, rebounds, and assists",
+      "tidbits": "Nikola Jokic holds the record for most career triple-doubles by a center and among the most all-time by any player."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "How many teams are in the NBA?",
+      "answerText": "30 teams",
+      "tidbits": "The NBA's 30 teams are split evenly between the Eastern Conference and Western Conference, 15 teams each."
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Nikola Jokic set new standards for big-man playmaking in the 2020s. What assists-per-game average did he post in the 2021-22 season, unprecedented for a center?",
+      "answerText": "Approximately 7.9 assists per game",
+      "tidbits": "Jokic's 7.9 APG in 2021-22 was the highest ever for a player who also led the league in rebounding in the same season."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "LeBron James became the NBA's all-time leading scorer in 2023, surpassing what total points record set by Kareem Abdul-Jabbar?",
+      "answerText": "38,387 points",
+      "tidbits": "Kareem's record had stood for 38 years since he broke Wilt Chamberlain's record in 1984."
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "How many three-pointers has Stephen Curry made as of the 2024-25 season — approximately how far ahead of second place is he?",
+      "answerText": "Over 3,700 three-pointers (more than 700 ahead of second place Ray Allen's former record)",
+      "tidbits": "Curry passed Ray Allen's 2,973 record in 2021 and has continued to extend the record by hundreds of makes each season."
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Victor Wembanyama stands 7'4\" with an extraordinary wingspan. What is his approximate wingspan in inches?",
+      "answerText": "Approximately 8 feet (96 inches)",
+      "tidbits": "Wembanyama's wingspan of around 8 feet allows him to contest shots from distances that no other player in NBA history could reach."
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Nikola Jokic won the 2021 MVP by averaging 26.4 points, 10.8 rebounds, and 8.3 assists. What makes this statistical profile historically unique for a center?",
+      "answerText": "No center in NBA history had ever averaged those assist numbers while also leading in scoring and rebounding — it is a point guard stat line combined with a big man's physical dominance.",
+      "tidbits": "Jokic's combination of size and playmaking forced teams to reconsider traditional positional roles, pioneering the 'point center' archetype."
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the NBA's shot clock rule — how many seconds does a team have to attempt a shot after gaining possession?",
+      "answerText": "24 seconds",
+      "tidbits": "The 24-second shot clock was introduced in 1954 by NBA president Maurice Podoloff after Danny Biasone calculated the ideal pace for an exciting game."
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Giannis Antetokounmpo scored 50 points in Game 6 of the 2021 Finals — setting a record for what specific Finals statistical achievement?",
+      "answerText": "Most points in a series-clinching Finals game by any player in NBA history",
+      "tidbits": "Giannis also added 14 rebounds and 5 blocks in the 50-point performance, one of the most complete Finals games ever played."
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "In which unusual location did the 2020 NBA season conclude, allowing play to continue safely during the COVID-19 pandemic?",
+      "answerText": "The NBA Bubble at Disney World (ESPN Wide World of Sports), Orlando, Florida",
+      "tidbits": "22 teams entered the Bubble in July 2020; the league completed the full playoffs without a single COVID-19 transmission inside the controlled environment."
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "The 2021 NBA Finals pitted the Milwaukee Bucks against which team from the Western Conference?",
+      "answerText": "Phoenix Suns",
+      "tidbits": "The Suns had the best record in the league in 2020-21 but were defeated 4-2 by the Bucks, denying Chris Paul his first championship."
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How many games did the Celtics need to defeat the Mavericks in the 2024 NBA Finals?",
+      "answerText": "Five games (4-1)",
+      "tidbits": "Luka Doncic struggled in Games 4 and 5 while Jaylen Brown and Jayson Tatum carried the Celtics to the 18th championship."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which team did the Miami Heat stun in the first round of the 2023 playoffs, even though that team held the top seed in the Eastern Conference?",
+      "answerText": "Milwaukee Bucks",
+      "tidbits": "The eighth-seeded Heat swept the first-seed Bucks in the first round in one of the biggest upsets in recent NBA playoff history."
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In the 2022 NBA Finals, which team did the Golden State Warriors defeat to win their fourth championship in eight years?",
+      "answerText": "Boston Celtics",
+      "tidbits": "The 2022 Finals featured two of the most storied franchises — Warriors vs. Celtics — meeting in the Finals for the first time since 1964."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Giannis Antetokounmpo delivered a 50-point, 14-rebound, 5-block performance in which game of the 2021 NBA Finals?",
+      "answerText": "Game 6",
+      "tidbits": "The 50-point game came when the Bucks were up 3-2 and needed a win to clinch — Giannis delivered in historic fashion."
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "The Denver Nuggets' 2023 championship run featured Nikola Jokic at historic levels. Which team did they sweep in the Western Conference Finals?",
+      "answerText": "Los Angeles Lakers",
+      "tidbits": "The Nuggets swept the Lakers 4-0 in the 2023 Western Conference Finals, handing LeBron James and the Lakers a decisive defeat."
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "The Miami Heat made the 2023 NBA Finals as an eighth seed — the lowest seed ever to reach the Finals. Which top seed did they eliminate in the East?",
+      "answerText": "Milwaukee Bucks (1 seed), then New York Knicks (5 seed), then Boston Celtics (2 seed)",
+      "tidbits": "The Heat's 2023 run is one of the greatest Cinderella stories in NBA Finals history, though they ultimately fell to the Nuggets in five games."
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What record did the Golden State Warriors set during the 2022 playoff run that highlights Stephen Curry's Finals impact?",
+      "answerText": "Curry became the oldest Finals MVP at age 34 and the first player to win Finals MVP without winning regular-season MVP in the same year since 1999",
+      "tidbits": "Curry's 2022 Finals MVP silenced critics who questioned whether he could dominate without Kevin Durant."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In the 2020 Western Conference Finals, which surprise team defeated the Los Angeles Clippers despite trailing 3-1 in the series, before losing to the Lakers in the conference finals?",
+      "answerText": "Denver Nuggets",
+      "tidbits": "The Nuggets' 2020 run was remarkable — they also trailed the Utah Jazz 3-1 in the first round and came back. Nikola Jokic's star power was first fully recognized nationally during these playoffs."
+    }
+  ],
+  "checksum": "0eb41458bb91162e8d59c944f73a9df9644c4cde835df07f3e215e59d9a5ad5b",
+  "size": 0
+}
