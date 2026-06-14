@@ -6,20 +6,20 @@
     "version": "1.0.0",
     "author": "Trivial World Team",
     "createdAt": "2026-06-13T12:00:00.000Z",
-    "updatedAt": "2026-06-13T12:00:00.000Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
     "categoryCounts": {
-      "blue": 10,
-      "pink": 10,
-      "yellow": 10,
-      "purple": 10,
-      "green": 10,
-      "orange": 10
+      "blue": 20,
+      "pink": 20,
+      "yellow": 20,
+      "purple": 20,
+      "green": 20,
+      "orange": 20
     },
-    "totalQuestions": 60,
-    "checksum": "943c77b50cca33d5d9638865527ed9611ecaf5f860ab2ad0801d6f22feef8c14",
+    "totalQuestions": 120,
+    "checksum": "d4d85b9dfa2f699bba3f80df8d6a25cf51b0a93cc799a51d3f84e5b9b0e66626",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 11459
+    "size": 29641
   },
   "questions": [
     {
@@ -95,6 +95,76 @@
       "answerText": "Ottawa"
     },
     {
+      "id": "blue-011",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the capital of France?",
+      "answerText": "Paris"
+    },
+    {
+      "id": "blue-012",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "On which continent is Australia located?",
+      "answerText": "Australia (Oceania)"
+    },
+    {
+      "id": "blue-013",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the world's longest mountain range, located in South America?",
+      "answerText": "The Andes Mountains"
+    },
+    {
+      "id": "blue-014",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What large body of water borders the eastern coast of the United States?",
+      "answerText": "The Atlantic Ocean"
+    },
+    {
+      "id": "blue-015",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What country shares the longest border with the United States?",
+      "answerText": "Canada"
+    },
+    {
+      "id": "blue-016",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the five connected freshwater lakes on the US-Canada border?",
+      "answerText": "The Great Lakes"
+    },
+    {
+      "id": "blue-017",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the smallest continent by land area?",
+      "answerText": "Australia"
+    },
+    {
+      "id": "blue-018",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What imaginary line divides the Earth into the Northern and Southern Hemispheres?",
+      "answerText": "The Equator"
+    },
+    {
+      "id": "blue-019",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What US state is made up of a chain of volcanic islands in the Pacific Ocean?",
+      "answerText": "Hawaii"
+    },
+    {
+      "id": "blue-020",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the tallest mountain in the world?",
+      "answerText": "Mount Everest"
+    },
+    {
       "id": "pink-001",
       "category": "pink",
       "difficulty": "easy",
@@ -163,6 +233,76 @@
       "difficulty": "hard",
       "questionText": "What author wrote the \"Diary of a Wimpy Kid\" series?",
       "answerText": "Jeff Kinney"
+    },
+    {
+      "id": "pink-011",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who is the main character in the \"Percy Jackson\" series?",
+      "answerText": "Percy Jackson"
+    },
+    {
+      "id": "pink-012",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who was the famous scientist who developed the theory of gravity after observing a falling apple?",
+      "answerText": "Isaac Newton"
+    },
+    {
+      "id": "pink-013",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What famous nurse, known as the founder of modern nursing, served during the Crimean War in the 1850s?",
+      "answerText": "Florence Nightingale"
+    },
+    {
+      "id": "pink-014",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of the fictional wizard school Harry Potter attends?",
+      "answerText": "Hogwarts"
+    },
+    {
+      "id": "pink-015",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What famous blind and deaf author wrote \"The Story of My Life\" and worked with teacher Anne Sullivan?",
+      "answerText": "Helen Keller"
+    },
+    {
+      "id": "pink-016",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What scientist developed the telephone and is credited as its inventor in 1876?",
+      "answerText": "Alexander Graham Bell"
+    },
+    {
+      "id": "pink-017",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is the name of the spider in E.B. White's \"Charlotte's Web\" who saves Wilbur the pig?",
+      "answerText": "Charlotte"
+    },
+    {
+      "id": "pink-018",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Who was the first woman to win a Nobel Prize, winning two prizes in physics and chemistry?",
+      "answerText": "Marie Curie"
+    },
+    {
+      "id": "pink-019",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What American poet wrote the famous poem that begins 'Two roads diverged in a yellow wood'?",
+      "answerText": "Robert Frost"
+    },
+    {
+      "id": "pink-020",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What Indigenous leader and Shoshone woman helped Lewis and Clark navigate the western United States?",
+      "answerText": "Sacagawea"
     },
     {
       "id": "yellow-001",
@@ -236,6 +376,76 @@
       "answerText": "The Battle of Saratoga"
     },
     {
+      "id": "yellow-011",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What war was fought between the Northern (Union) and Southern (Confederate) states from 1861 to 1865?",
+      "answerText": "The Civil War"
+    },
+    {
+      "id": "yellow-012",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year did Christopher Columbus first sail to the Americas? A) 1392, B) 1492, C) 1592, D) 1692",
+      "answerText": "1492 (B)"
+    },
+    {
+      "id": "yellow-013",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What amendment to the US Constitution abolished slavery in 1865?",
+      "answerText": "The 13th Amendment"
+    },
+    {
+      "id": "yellow-014",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was the name of the first permanent English settlement in America, founded in 1607?",
+      "answerText": "Jamestown"
+    },
+    {
+      "id": "yellow-015",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What famous tea protest in 1773 led colonists to dump British tea into Boston Harbor?",
+      "answerText": "The Boston Tea Party"
+    },
+    {
+      "id": "yellow-016",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What document, written in 1787, established the basic laws and structure of the US government?",
+      "answerText": "The Constitution"
+    },
+    {
+      "id": "yellow-017",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Who was the commander of the Continental Army during the American Revolution?",
+      "answerText": "George Washington"
+    },
+    {
+      "id": "yellow-018",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What 1803 land deal doubled the size of the United States by purchasing territory from France?",
+      "answerText": "The Louisiana Purchase"
+    },
+    {
+      "id": "yellow-019",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What famous speech given by Abraham Lincoln in 1863 honored soldiers who died at the Battle of Gettysburg?",
+      "answerText": "The Gettysburg Address"
+    },
+    {
+      "id": "yellow-020",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What is the name of the trail followed by hundreds of thousands of settlers moving west from Missouri to Oregon in the 1800s?",
+      "answerText": "The Oregon Trail"
+    },
+    {
       "id": "purple-001",
       "category": "purple",
       "difficulty": "easy",
@@ -305,6 +515,76 @@
       "difficulty": "hard",
       "questionText": "What American folk artist started painting at age 78 and became famous for colorful scenes of rural life?",
       "answerText": "Grandma Moses (Anna Mary Robertson Moses)"
+    },
+    {
+      "id": "purple-011",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What instrument family includes the piano, xylophone, and drums?",
+      "answerText": "Percussion"
+    },
+    {
+      "id": "purple-012",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "How many lines are in a standard musical staff?",
+      "answerText": "5"
+    },
+    {
+      "id": "purple-013",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What art term describes colors that are opposite each other on the color wheel, like red and green?",
+      "answerText": "Complementary colors"
+    },
+    {
+      "id": "purple-014",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What famous American composer wrote many marches, including 'Stars and Stripes Forever'?",
+      "answerText": "John Philip Sousa"
+    },
+    {
+      "id": "purple-015",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the name of the process of creating art by pressing ink from a carved block or plate onto paper?",
+      "answerText": "Printmaking"
+    },
+    {
+      "id": "purple-016",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What musical term means to play or sing gradually getting louder?",
+      "answerText": "Crescendo"
+    },
+    {
+      "id": "purple-017",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What French art movement, led by Claude Monet, is known for capturing fleeting light with short, visible brushstrokes?",
+      "answerText": "Impressionism"
+    },
+    {
+      "id": "purple-018",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the term for the way an artist arranges elements in a piece of art to create balance and visual flow?",
+      "answerText": "Composition"
+    },
+    {
+      "id": "purple-019",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What ancient Greek philosopher is credited with inventing the first musical scale and the theories behind music harmony?",
+      "answerText": "Pythagoras"
+    },
+    {
+      "id": "purple-020",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the name of the famous painting by Grant Wood showing a man and woman standing in front of a farmhouse?",
+      "answerText": "American Gothic"
     },
     {
       "id": "green-001",
@@ -378,6 +658,76 @@
       "answerText": "The ozone layer"
     },
     {
+      "id": "green-011",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the closest star to Earth?",
+      "answerText": "The Sun"
+    },
+    {
+      "id": "green-012",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is 25% of 80?",
+      "answerText": "20"
+    },
+    {
+      "id": "green-013",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What three states of matter can water exist in?",
+      "answerText": "Solid (ice), liquid (water), and gas (steam or water vapor)"
+    },
+    {
+      "id": "green-014",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What process do plants use to make their own food using sunlight, water, and carbon dioxide?",
+      "answerText": "Photosynthesis"
+    },
+    {
+      "id": "green-015",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the name for the path a planet travels around the Sun?",
+      "answerText": "Orbit"
+    },
+    {
+      "id": "green-016",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "If a rectangle has a length of 12 and a width of 4, what is its perimeter?",
+      "answerText": "32 units (12+12+4+4)"
+    },
+    {
+      "id": "green-017",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the largest planet in our solar system?",
+      "answerText": "Jupiter"
+    },
+    {
+      "id": "green-018",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What tool do scientists use to classify living things into groups based on shared characteristics?",
+      "answerText": "Taxonomy (classification system)"
+    },
+    {
+      "id": "green-019",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the term for the process by which water vapor in the air cools and turns back into liquid droplets to form clouds?",
+      "answerText": "Condensation"
+    },
+    {
+      "id": "green-020",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the boiling point of water in degrees Celsius?",
+      "answerText": "100°C"
+    },
+    {
       "id": "orange-001",
       "category": "orange",
       "difficulty": "easy",
@@ -446,8 +796,78 @@
       "difficulty": "hard",
       "questionText": "What famous annual tennis tournament is played on grass courts in Wimbledon, England?",
       "answerText": "Wimbledon (The Championships, Wimbledon)"
+    },
+    {
+      "id": "orange-011",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How many bases are there on a baseball field?",
+      "answerText": "4 (first, second, third, and home plate)"
+    },
+    {
+      "id": "orange-012",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "In basketball, how many points is a shot worth if made from behind the three-point line?",
+      "answerText": "3 points"
+    },
+    {
+      "id": "orange-013",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the term for the starting position in a race where runners crouch down behind the starting line?",
+      "answerText": "Starting blocks"
+    },
+    {
+      "id": "orange-014",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In soccer, how many players does each team have on the field during a standard match?",
+      "answerText": "11"
+    },
+    {
+      "id": "orange-015",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the name of the swimming stroke where both arms are pulled back simultaneously like a butterfly?",
+      "answerText": "Butterfly stroke"
+    },
+    {
+      "id": "orange-016",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In gymnastics, what event requires a gymnast to swing and release between two bars at different heights?",
+      "answerText": "Uneven bars"
+    },
+    {
+      "id": "orange-017",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the name of the track-and-field relay event where four runners each run 100 meters and pass a baton?",
+      "answerText": "The 4x100 relay"
+    },
+    {
+      "id": "orange-018",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "How many events make up the Olympic decathlon?",
+      "answerText": "10"
+    },
+    {
+      "id": "orange-019",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the official length of a marathon race?",
+      "answerText": "26.2 miles (42.195 kilometers)"
+    },
+    {
+      "id": "orange-020",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In American football, how many yards does the offense need to gain in four downs to keep possession of the ball?",
+      "answerText": "10 yards"
     }
   ],
-  "checksum": "943c77b50cca33d5d9638865527ed9611ecaf5f860ab2ad0801d6f22feef8c14",
-  "size": 11459
+  "checksum": "d4d85b9dfa2f699bba3f80df8d6a25cf51b0a93cc799a51d3f84e5b9b0e66626",
+  "size": 29641
 }

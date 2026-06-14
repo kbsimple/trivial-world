@@ -6,20 +6,20 @@
     "version": "1.0.0",
     "author": "Trivial World Team",
     "createdAt": "2026-06-13T12:00:00.000Z",
-    "updatedAt": "2026-06-13T12:00:00.000Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
     "categoryCounts": {
-      "blue": 10,
-      "pink": 10,
-      "yellow": 10,
-      "purple": 10,
-      "green": 10,
-      "orange": 10
+      "blue": 20,
+      "pink": 20,
+      "yellow": 20,
+      "purple": 20,
+      "green": 20,
+      "orange": 20
     },
-    "totalQuestions": 60,
-    "checksum": "71860084865880717d996ce838614e1d20b794358dd2fa0d97e768535e9ac0af",
+    "totalQuestions": 120,
+    "checksum": "846c6f98c457679e2c5e00bf3f10754ae941c9d10c53e57cc9493702c8aa2574",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 12450
+    "size": 31271
   },
   "questions": [
     {
@@ -95,6 +95,76 @@
       "answerText": "The Arctic Ocean"
     },
     {
+      "id": "blue-011",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the capital of China?",
+      "answerText": "Beijing"
+    },
+    {
+      "id": "blue-012",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the largest country in South America by land area?",
+      "answerText": "Brazil"
+    },
+    {
+      "id": "blue-013",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What sea lies between Europe and North Africa, bordered by Spain, France, Italy, and Greece?",
+      "answerText": "The Mediterranean Sea"
+    },
+    {
+      "id": "blue-014",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which river, running through Egypt, is the longest river in Africa?",
+      "answerText": "The Nile"
+    },
+    {
+      "id": "blue-015",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the term for an imaginary line running from the North Pole to the South Pole that divides Earth into eastern and western halves?",
+      "answerText": "A meridian (or line of longitude)"
+    },
+    {
+      "id": "blue-016",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which Asian country has the largest population in the world?",
+      "answerText": "India"
+    },
+    {
+      "id": "blue-017",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the name of the imaginary line at 0 degrees latitude that circles the middle of the Earth?",
+      "answerText": "The Equator"
+    },
+    {
+      "id": "blue-018",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the name of the world's largest desert, covering most of Antarctica?",
+      "answerText": "The Antarctic Desert"
+    },
+    {
+      "id": "blue-019",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What type of government is it when a single person has complete, unlimited power over a country?",
+      "answerText": "Autocracy (or dictatorship)"
+    },
+    {
+      "id": "blue-020",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the large island that is the world's largest, located between the Arctic and Atlantic Oceans near Greenland?",
+      "answerText": "Greenland"
+    },
+    {
       "id": "pink-001",
       "category": "pink",
       "difficulty": "easy",
@@ -164,6 +234,76 @@
       "difficulty": "hard",
       "questionText": "What Spanish conquistador conquered the Aztec Empire in Mexico during the 1520s?",
       "answerText": "Hernán Cortés"
+    },
+    {
+      "id": "pink-011",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who is the protagonist of Harper Lee's novel \"To Kill a Mockingbird\"?",
+      "answerText": "Scout Finch"
+    },
+    {
+      "id": "pink-012",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What is the name of the religious text central to the Jewish faith?",
+      "answerText": "The Torah"
+    },
+    {
+      "id": "pink-013",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Who wrote 'The Outsiders,' becoming one of the youngest published novelists in American history?",
+      "answerText": "S.E. Hinton"
+    },
+    {
+      "id": "pink-014",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the term for a comparison using 'like' or 'as,' such as 'fast as lightning'?",
+      "answerText": "Simile"
+    },
+    {
+      "id": "pink-015",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What ancient Greek city-state was famous for its warrior culture and militaristic training program for boys?",
+      "answerText": "Sparta"
+    },
+    {
+      "id": "pink-016",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Who was the Egyptian queen who ruled alongside Julius Caesar and later Mark Antony?",
+      "answerText": "Cleopatra"
+    },
+    {
+      "id": "pink-017",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What famous conqueror from Macedonia built one of the largest empires in history by age 30?",
+      "answerText": "Alexander the Great"
+    },
+    {
+      "id": "pink-018",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What Greek philosopher was the teacher of Alexander the Great?",
+      "answerText": "Aristotle"
+    },
+    {
+      "id": "pink-019",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is the main conflict in S.E. Hinton's 'The Outsiders' about two rival social groups?",
+      "answerText": "The rivalry between the Greasers and the Socs"
+    },
+    {
+      "id": "pink-020",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of the long poem attributed to Homer that describes the fall of the city of Troy?",
+      "answerText": "The Iliad"
     },
     {
       "id": "yellow-001",
@@ -237,6 +377,76 @@
       "answerText": "Ferdinand Magellan"
     },
     {
+      "id": "yellow-011",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What empire, ruled from Rome, controlled most of Europe and the Mediterranean for centuries before falling in 476 AD?",
+      "answerText": "The Roman Empire"
+    },
+    {
+      "id": "yellow-012",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What ancient civilization built the Great Wall to protect its northern border?",
+      "answerText": "China"
+    },
+    {
+      "id": "yellow-013",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was the name of the ancient Egyptian writing system that used pictures and symbols?",
+      "answerText": "Hieroglyphics"
+    },
+    {
+      "id": "yellow-014",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What ancient Greek city-state is known as the birthplace of democracy?",
+      "answerText": "Athens"
+    },
+    {
+      "id": "yellow-015",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What Roman leader was assassinated on March 15, 44 BCE — a date known as the Ides of March?",
+      "answerText": "Julius Caesar"
+    },
+    {
+      "id": "yellow-016",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What religious movement in the 16th century challenged the Catholic Church's authority and led to the creation of Protestant churches?",
+      "answerText": "The Protestant Reformation"
+    },
+    {
+      "id": "yellow-017",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What ancient trade route connected China to the Mediterranean world, carrying silk, spices, and ideas?",
+      "answerText": "The Silk Road"
+    },
+    {
+      "id": "yellow-018",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What is the term for the spread of Greek culture, language, and art following Alexander the Great's conquests?",
+      "answerText": "Hellenism (or the Hellenistic period)"
+    },
+    {
+      "id": "yellow-019",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What document, issued by English King John in 1215, limited royal power and is considered a forerunner of constitutional government?",
+      "answerText": "Magna Carta"
+    },
+    {
+      "id": "yellow-020",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was the name of the Aztec capital city, built on an island in a lake, that became modern-day Mexico City?",
+      "answerText": "Tenochtitlan"
+    },
+    {
       "id": "purple-001",
       "category": "purple",
       "difficulty": "easy",
@@ -305,6 +515,76 @@
       "difficulty": "hard",
       "questionText": "What Japanese master artist created \"The Great Wave off Kanagawa,\" one of the most recognized images in art history?",
       "answerText": "Katsushika Hokusai"
+    },
+    {
+      "id": "purple-011",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the name of the art technique where an artist carves into a block of wood or stone and presses it onto paper to make prints?",
+      "answerText": "Block printing"
+    },
+    {
+      "id": "purple-012",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What Dutch painter is famous for painting bright sunflowers in a vase?",
+      "answerText": "Vincent van Gogh"
+    },
+    {
+      "id": "purple-013",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What literary device is the use of a word that imitates the sound it describes, like 'buzz' or 'crash'?",
+      "answerText": "Onomatopoeia"
+    },
+    {
+      "id": "purple-014",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What French artist is known for painting ballet dancers in his signature Impressionist style?",
+      "answerText": "Edgar Degas"
+    },
+    {
+      "id": "purple-015",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the term for a direct comparison of two unlike things that does NOT use 'like' or 'as'?",
+      "answerText": "Metaphor"
+    },
+    {
+      "id": "purple-016",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What famous Mexican painter, known for self-portraits and vibrant folk art imagery, was married to muralist Diego Rivera?",
+      "answerText": "Frida Kahlo"
+    },
+    {
+      "id": "purple-017",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the term for the technique of creating a mosaic image in digital art by arranging small colored dots or pixels?",
+      "answerText": "Pixel art (or pointillism in traditional art)"
+    },
+    {
+      "id": "purple-018",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the name of the ancient Greek temple on the Acropolis of Athens, dedicated to the goddess Athena?",
+      "answerText": "The Parthenon"
+    },
+    {
+      "id": "purple-019",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the name of the literary technique where a narrator tells a story from outside the events, referring to characters as 'he,' 'she,' or 'they'?",
+      "answerText": "Third-person narration"
+    },
+    {
+      "id": "purple-020",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the art of cutting and folding paper into shapes, associated with the Japanese cultural tradition?",
+      "answerText": "Origami"
     },
     {
       "id": "green-001",
@@ -378,6 +658,76 @@
       "answerText": "Mitosis produces 2 identical daughter cells for growth and repair; meiosis produces 4 genetically unique cells for sexual reproduction"
     },
     {
+      "id": "green-011",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the value of x if x + 5 = 12?",
+      "answerText": "x = 7"
+    },
+    {
+      "id": "green-012",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What organelle in a plant cell contains chlorophyll and performs photosynthesis?",
+      "answerText": "Chloroplast"
+    },
+    {
+      "id": "green-013",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the term for the number of times an event occurs divided by the total number of trials, used in probability?",
+      "answerText": "Relative frequency"
+    },
+    {
+      "id": "green-014",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the term for an organism that makes its own food through photosynthesis or chemosynthesis?",
+      "answerText": "Producer (or autotroph)"
+    },
+    {
+      "id": "green-015",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the value of 3² + 4²?",
+      "answerText": "25 (9 + 16)"
+    },
+    {
+      "id": "green-016",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What type of reproduction involves only one parent and produces genetically identical offspring?",
+      "answerText": "Asexual reproduction"
+    },
+    {
+      "id": "green-017",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the equation for calculating speed?",
+      "answerText": "Speed = Distance ÷ Time"
+    },
+    {
+      "id": "green-018",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the term for the sequence of energy transfers from producers to consumers in an ecosystem?",
+      "answerText": "Food chain"
+    },
+    {
+      "id": "green-019",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In algebra, what is the value of y if 3y − 6 = 9?",
+      "answerText": "y = 5"
+    },
+    {
+      "id": "green-020",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the term for the layer of cells that surrounds and protects a plant cell?",
+      "answerText": "Cell wall"
+    },
+    {
       "id": "orange-001",
       "category": "orange",
       "difficulty": "easy",
@@ -446,8 +796,78 @@
       "difficulty": "hard",
       "questionText": "What combined track-and-field event tests athletes in 10 disciplines over two days?",
       "answerText": "Decathlon"
+    },
+    {
+      "id": "orange-011",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What is the largest organ in the human body?",
+      "answerText": "Skin"
+    },
+    {
+      "id": "orange-012",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How many players are on each side in a volleyball game?",
+      "answerText": "6"
+    },
+    {
+      "id": "orange-013",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the function of the respiratory system?",
+      "answerText": "To bring oxygen into the body and remove carbon dioxide through breathing"
+    },
+    {
+      "id": "orange-014",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the name of the nutrient that builds and repairs muscle tissue?",
+      "answerText": "Protein"
+    },
+    {
+      "id": "orange-015",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the penalty in soccer when a defensive player commits a foul inside their own penalty area?",
+      "answerText": "Penalty kick"
+    },
+    {
+      "id": "orange-016",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the name of the flexible connective tissue that cushions the ends of bones at joints?",
+      "answerText": "Cartilage"
+    },
+    {
+      "id": "orange-017",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the term for a goal in ice hockey scored when the puck passes the opposing team's goalie?",
+      "answerText": "A goal"
+    },
+    {
+      "id": "orange-018",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the name of the physical fitness test that measures how long a person can run back and forth between two lines before failing to reach a line in time?",
+      "answerText": "The beep test (or PACER test)"
+    },
+    {
+      "id": "orange-019",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What type of joint, found in the shoulder and hip, allows movement in multiple directions?",
+      "answerText": "Ball-and-socket joint"
+    },
+    {
+      "id": "orange-020",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the term for the process by which the body converts food into energy that cells can use?",
+      "answerText": "Metabolism"
     }
   ],
-  "checksum": "71860084865880717d996ce838614e1d20b794358dd2fa0d97e768535e9ac0af",
-  "size": 12450
+  "checksum": "846c6f98c457679e2c5e00bf3f10754ae941c9d10c53e57cc9493702c8aa2574",
+  "size": 31271
 }

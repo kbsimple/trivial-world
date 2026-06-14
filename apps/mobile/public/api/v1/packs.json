@@ -23,36 +23,36 @@
       "name": "Diary of a Wimpy Kid",
       "author": "Trivial World Team",
       "version": "1.0.0",
-      "totalQuestions": 60,
+      "totalQuestions": 120,
       "categoryCounts": {
-        "blue": 10,
-        "pink": 10,
-        "yellow": 10,
-        "purple": 10,
-        "green": 10,
-        "orange": 10
+        "blue": 20,
+        "pink": 20,
+        "yellow": 20,
+        "purple": 20,
+        "green": 20,
+        "orange": 20
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/diary-of-a-wimpy-kid-2722b331.json",
-      "checksum": "7116b648d80caeafe6062fff1afc58d637cd10d216f75f03fd16de5b48d9ddf4",
-      "size": 15612
+      "checksum": "c954a6fc98cfd986b4aafcad3f263c7297a9d7e30e90a5f3278b935349ad68e2",
+      "size": 36138
     },
     {
       "id": "6ac4973a-4ef2-4a13-a261-5cd1de052df1",
       "name": "Young Sheldon",
       "author": "Trivial World Team",
       "version": "1.0.0",
-      "totalQuestions": 90,
+      "totalQuestions": 150,
       "categoryCounts": {
-        "blue": 15,
-        "pink": 15,
-        "yellow": 15,
-        "purple": 15,
-        "green": 15,
-        "orange": 15
+        "blue": 25,
+        "pink": 25,
+        "yellow": 25,
+        "purple": 25,
+        "green": 25,
+        "orange": 25
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/young-sheldon-6ac4973a.json",
-      "checksum": "58fadb3d16ffb30d5a8af8965902620eef019ddb84a1e6b1085a291b79643cce",
-      "size": 20419
+      "checksum": "6ca863d72ff8b9c255625be0120103790733b64351208e8527afca2a73337cb0",
+      "size": 42170
     },
     {
       "id": "dadd53ef-d68e-4018-a394-6d81119ce810",
@@ -77,18 +77,18 @@
       "name": "Alpine Ski Slopes",
       "author": "Trivial World Team",
       "version": "1.0.0",
-      "totalQuestions": 60,
+      "totalQuestions": 120,
       "categoryCounts": {
-        "blue": 10,
-        "pink": 10,
-        "yellow": 10,
-        "purple": 10,
-        "green": 10,
-        "orange": 10
+        "blue": 20,
+        "pink": 20,
+        "yellow": 20,
+        "purple": 20,
+        "green": 20,
+        "orange": 20
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/alpine-ski-slopes-26180b72.json",
-      "checksum": "baa5bdcce970e28a7ede77441754f79581b1019df1f4f74d5f6f406354ed77cb",
-      "size": 17041
+      "checksum": "ef5c14435412c29b5e33c4a03753d410bb2cf9ae4553534fd5535949b2a825bd",
+      "size": 37188
     },
     {
       "id": "4b4b6cea-8c58-4eab-b261-46bfb54e8fde",
@@ -150,18 +150,18 @@
       "description": "Test your knowledge of what every 5th grader should know — from world geography and American history to science, art, and sports.",
       "author": "Trivial World Team",
       "version": "1.0.0",
-      "totalQuestions": 60,
+      "totalQuestions": 120,
       "categoryCounts": {
-        "blue": 10,
-        "pink": 10,
-        "yellow": 10,
-        "purple": 10,
-        "green": 10,
-        "orange": 10
+        "blue": 20,
+        "pink": 20,
+        "yellow": 20,
+        "purple": 20,
+        "green": 20,
+        "orange": 20
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/5th-grade-grade-school-curriculum-a1b2c3d4.json",
-      "checksum": "943c77b50cca33d5d9638865527ed9611ecaf5f860ab2ad0801d6f22feef8c14",
-      "size": 11459
+      "checksum": "d4d85b9dfa2f699bba3f80df8d6a25cf51b0a93cc799a51d3f84e5b9b0e66626",
+      "size": 29641
     },
     {
       "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
@@ -169,18 +169,18 @@
       "description": "Middle school knowledge challenge covering world history, science, literature, health, and the arts for 7th graders.",
       "author": "Trivial World Team",
       "version": "1.0.0",
-      "totalQuestions": 60,
+      "totalQuestions": 120,
       "categoryCounts": {
-        "blue": 10,
-        "pink": 10,
-        "yellow": 10,
-        "purple": 10,
-        "green": 10,
-        "orange": 10
+        "blue": 20,
+        "pink": 20,
+        "yellow": 20,
+        "purple": 20,
+        "green": 20,
+        "orange": 20
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/7th-grade-grade-school-curriculum-b2c3d4e5.json",
-      "checksum": "71860084865880717d996ce838614e1d20b794358dd2fa0d97e768535e9ac0af",
-      "size": 12450
+      "checksum": "846c6f98c457679e2c5e00bf3f10754ae941c9d10c53e57cc9493702c8aa2574",
+      "size": 31271
     },
     {
       "id": "82f85560-669b-464c-b881-67eaba74af95",
@@ -188,18 +188,18 @@
       "description": "High school entry-level knowledge spanning modern history, literature, biology, chemistry, geometry, and physical fitness.",
       "author": "Trivial World Team",
       "version": "1.0.0",
-      "totalQuestions": 60,
+      "totalQuestions": 120,
       "categoryCounts": {
-        "blue": 10,
-        "pink": 10,
-        "yellow": 10,
-        "purple": 10,
-        "green": 10,
-        "orange": 10
+        "blue": 20,
+        "pink": 20,
+        "yellow": 20,
+        "purple": 20,
+        "green": 20,
+        "orange": 20
       },
       "downloadUrl": "https://trivial-world.netlify.app/packs/9th-grade-grade-school-curriculum-c3d4e5f6.json",
-      "checksum": "14f7e22eb03f0530840455ffe36d84222a0e67027f046225f098d43ccb59888e",
-      "size": 13374
+      "checksum": "d9a813034b0febcfc5727e9cb57f899dc2add4dac91a605dd41121fbedc86b43",
+      "size": 33163
     },
     {
       "id": "da9bf323-fbc5-4fd3-b79b-11739e359af4",

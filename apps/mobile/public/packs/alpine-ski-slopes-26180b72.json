@@ -6,20 +6,20 @@
     "version": "1.0.0",
     "author": "Trivial World Team",
     "createdAt": "2026-06-13T07:07:21.049Z",
-    "updatedAt": "2026-06-13T07:07:21.049Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
     "categoryCounts": {
-      "blue": 10,
-      "pink": 10,
-      "yellow": 10,
-      "purple": 10,
-      "green": 10,
-      "orange": 10
+      "blue": 20,
+      "pink": 20,
+      "yellow": 20,
+      "purple": 20,
+      "green": 20,
+      "orange": 20
     },
-    "totalQuestions": 60,
-    "checksum": "89c9fe646d3e8e56a473da12391e244d83acd7b129324b30aadef46ab1cc4cf4",
+    "totalQuestions": 120,
+    "checksum": "ef5c14435412c29b5e33c4a03753d410bb2cf9ae4553534fd5535949b2a825bd",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 13898
+    "size": 37188
   },
   "questions": [
     {
@@ -98,6 +98,76 @@
       "answerText": "Washoe County"
     },
     {
+      "id": "blue-011",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In which European country is Chamonix, home of the world's first Winter Olympics, located?",
+      "answerText": "France"
+    },
+    {
+      "id": "blue-012",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What famous ski resort in Sun Valley is located in which US state?",
+      "answerText": "Idaho"
+    },
+    {
+      "id": "blue-013",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which Swiss city is known as the gateway to the Jungfrau ski region in the Bernese Alps?",
+      "answerText": "Interlaken"
+    },
+    {
+      "id": "blue-014",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the high-speed gondola that connects the two base areas of Palisades Tahoe without requiring a car?",
+      "answerText": "Funitel"
+    },
+    {
+      "id": "blue-015",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which Austrian resort town, famous for the Hahnenkamm race, sits at the base of the Kitzbüheler Alps?",
+      "answerText": "Kitzbühel"
+    },
+    {
+      "id": "blue-016",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The resort of Whistler Blackcomb, used for the 2010 Winter Olympics, is located in which Canadian province?",
+      "answerText": "British Columbia"
+    },
+    {
+      "id": "blue-017",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the name of the highest peak in the Sierra Nevada range, standing at 14,505 feet?",
+      "answerText": "Mount Whitney"
+    },
+    {
+      "id": "blue-018",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What Japanese ski resort hosted the alpine skiing events at the 1998 Winter Olympics?",
+      "answerText": "Hakuba"
+    },
+    {
+      "id": "blue-019",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Which Colorado resort, part of the Vail Resorts network, sits at the highest base elevation of any major US ski resort?",
+      "answerText": "Breckenridge"
+    },
+    {
+      "id": "blue-020",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the Nevada ski resort located less than an hour from Reno, sharing the Sierra Nevada range with Palisades Tahoe?",
+      "answerText": "Mount Rose"
+    },
+    {
       "id": "pink-001",
       "category": "pink",
       "difficulty": "easy",
@@ -171,6 +241,76 @@
       "difficulty": "hard",
       "questionText": "Which Squaw Valley native and freestyle skier won the first-ever Olympic moguls gold medal in 1992 for the US?",
       "answerText": "Donna Weinbrecht"
+    },
+    {
+      "id": "pink-011",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which American female alpine skier holds the record for the most World Cup victories of any skier?",
+      "answerText": "Mikaela Shiffrin"
+    },
+    {
+      "id": "pink-012",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What famous ski movie franchise, produced by Warren Miller, has released an annual film since 1949?",
+      "answerText": "Warren Miller Films"
+    },
+    {
+      "id": "pink-013",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Swedish skier known as 'The Iceman' won a record 86 World Cup races before his record was broken in 2023?",
+      "answerText": "Ingemar Stenmark"
+    },
+    {
+      "id": "pink-014",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which American freestyle skier won three consecutive Olympic gold medals in aerial skiing from 1994 to 2002?",
+      "answerText": "Nikki Stone"
+    },
+    {
+      "id": "pink-015",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What Austrian skier dominated men's alpine events at the 2006 Torino Olympics winning three gold medals?",
+      "answerText": "Benjamin Raich"
+    },
+    {
+      "id": "pink-016",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What famous beer brand sponsors the aprés-ski culture that became iconic at European resorts in the 1980s and 90s?",
+      "answerText": "Jägermeister"
+    },
+    {
+      "id": "pink-017",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which French skier, known as 'The Eagle,' won the first downhill World Cup title in 1967?",
+      "answerText": "Jean-Claude Killy"
+    },
+    {
+      "id": "pink-018",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What American ski racer, a two-time Olympic gold medalist, is considered the greatest US male alpine skier of the 1980s?",
+      "answerText": "Phil Mahre"
+    },
+    {
+      "id": "pink-019",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which Austrian extreme skier pioneered big-mountain freeride competitions at venues like the Freeride World Tour in the 2000s?",
+      "answerText": "Hannes Arch"
+    },
+    {
+      "id": "pink-020",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Swiss resort town, famous for hosting the World Economic Forum, is also one of the premier ski destinations in the Alps?",
+      "answerText": "Davos"
     },
     {
       "id": "yellow-001",
@@ -248,6 +388,76 @@
       "answerText": "2017 (D)"
     },
     {
+      "id": "yellow-011",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year did the first Winter Olympic Games take place in Chamonix, France?",
+      "answerText": "1924"
+    },
+    {
+      "id": "yellow-012",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What decade saw the invention of fiberglass skis, which largely replaced wooden skis for recreational use?",
+      "answerText": "1950s"
+    },
+    {
+      "id": "yellow-013",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "The FIS Alpine Ski World Cup tour was founded in which decade?",
+      "answerText": "1960s (1966)"
+    },
+    {
+      "id": "yellow-014",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which US state hosted the 1980 Winter Olympics at Lake Placid?",
+      "answerText": "New York"
+    },
+    {
+      "id": "yellow-015",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What year did snowboarding debut as an official Olympic discipline at the Nagano Winter Games?",
+      "answerText": "1998"
+    },
+    {
+      "id": "yellow-016",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "The first rope tow ski lift in North America was installed in which decade?",
+      "answerText": "1930s (1934)"
+    },
+    {
+      "id": "yellow-017",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What was the name of the company founded by Alex Cushing that originally built and operated Squaw Valley before it was sold?",
+      "answerText": "Squaw Valley Ski Corporation"
+    },
+    {
+      "id": "yellow-018",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In what year did Austria's Anton Seelos develop the parallel turn technique that transformed alpine skiing instruction?",
+      "answerText": "1930s"
+    },
+    {
+      "id": "yellow-019",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What Norwegian skier is credited as the father of modern alpine skiing, having developed the slalom race format in the 1920s?",
+      "answerText": "Arnold Lunn"
+    },
+    {
+      "id": "yellow-020",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In what decade did snowmaking technology first become widely used at commercial ski resorts in North America?",
+      "answerText": "1950s"
+    },
+    {
       "id": "purple-001",
       "category": "purple",
       "difficulty": "easy",
@@ -291,7 +501,7 @@
       "id": "purple-006",
       "category": "purple",
       "difficulty": "medium",
-      "questionText": "What double black diamond symbol shape is used on North American ski maps to mark the most challenging expert-only terrain?",
+      "questionText": "What symbol marks the most challenging, expert-only terrain on a North American ski trail map?",
       "answerText": "Double black diamond"
     },
     {
@@ -321,6 +531,76 @@
       "difficulty": "hard",
       "questionText": "What photographic technique — using a long focal length lens to compress the apparent distance between ski runs — is commonly used in resort promotional photography?",
       "answerText": "Telephoto compression"
+    },
+    {
+      "id": "purple-011",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What bright, one-piece ski outfit popular in the 1980s was named after a colorful style of competition wear?",
+      "answerText": "Ski suit (one-piece)"
+    },
+    {
+      "id": "purple-012",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "In ski fashion, what term describes the style of wearing ski pants tucked into tall boot-top gaiters, popular in the 1970s?",
+      "answerText": "Salopettes"
+    },
+    {
+      "id": "purple-013",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What genre of music became culturally synonymous with après-ski culture at European resorts in the 1980s?",
+      "answerText": "Eurodisco"
+    },
+    {
+      "id": "purple-014",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What Swiss watchmaker, long a sponsor of alpine ski racing, places its timekeeping equipment at every World Cup finish line?",
+      "answerText": "Longines"
+    },
+    {
+      "id": "purple-015",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What type of art installation, featuring snow sculptures and ice carvings, is often featured at winter mountain resort festivals?",
+      "answerText": "Ice sculpture"
+    },
+    {
+      "id": "purple-016",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "The goggles worn by skiers to protect against glare and wind typically feature what type of specialized lens tint for flat-light conditions?",
+      "answerText": "Yellow or rose-tinted lens"
+    },
+    {
+      "id": "purple-017",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What Norwegian painter, known for expressionist landscapes, created iconic winter mountain imagery that influenced early ski resort poster design?",
+      "answerText": "Edvard Munch"
+    },
+    {
+      "id": "purple-018",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the name of the distinctive curved wooden sled used in traditional Norwegian skiing culture that predates modern alpine skis?",
+      "answerText": "Pulk"
+    },
+    {
+      "id": "purple-019",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What Japanese aesthetic concept, meaning awareness of impermanence, is sometimes applied to ski culture in describing the fleeting perfection of fresh powder snow?",
+      "answerText": "Mono no aware"
+    },
+    {
+      "id": "purple-020",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the term for the groomed parallel ridges deliberately left in snow by a piste-grooming machine to create texture for beginner learners?",
+      "answerText": "Corduroy"
     },
     {
       "id": "green-001",
@@ -398,6 +678,76 @@
       "answerText": "Snow density"
     },
     {
+      "id": "green-011",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What physical force causes a skier to accelerate down a slope without any effort?",
+      "answerText": "Gravity"
+    },
+    {
+      "id": "green-012",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What type of energy does a skier at the top of a run have before they start moving?",
+      "answerText": "Potential energy"
+    },
+    {
+      "id": "green-013",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Why do modern skis have a curved shape — wider at the tip and tail and narrower at the middle — called a what?",
+      "answerText": "Sidecut"
+    },
+    {
+      "id": "green-014",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What material replaced wood as the dominant core material in performance alpine skis starting in the 1980s?",
+      "answerText": "Fiberglass and foam"
+    },
+    {
+      "id": "green-015",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the term for the distance a snowpack travels during an avalanche, measured from the starting zone to the deposit?",
+      "answerText": "Runout"
+    },
+    {
+      "id": "green-016",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Ski helmets are tested to absorb impact energy. What unit measures the force of impact that helmets must withstand?",
+      "answerText": "Joules"
+    },
+    {
+      "id": "green-017",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the Bernoulli effect, and how does it create lift in aerodynamic speed suits worn by ski racers?",
+      "answerText": "Faster airflow over a curved surface creates lower pressure, generating upward or forward lift"
+    },
+    {
+      "id": "green-018",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the term for the ratio of vertical drop to horizontal distance on a ski slope, expressed as a percentage?",
+      "answerText": "Grade (or slope percentage)"
+    },
+    {
+      "id": "green-019",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What type of avalanche is most dangerous to skiers — a slab avalanche or a loose snow avalanche — and why?",
+      "answerText": "Slab avalanche — it releases as a cohesive block and travels faster with far more destructive mass"
+    },
+    {
+      "id": "green-020",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What does the DIN setting on a ski binding indicate about how the binding will perform?",
+      "answerText": "How much force is required to release the boot — higher DIN settings mean more force needed to release"
+    },
+    {
       "id": "orange-001",
       "category": "orange",
       "difficulty": "easy",
@@ -471,8 +821,78 @@
       "difficulty": "hard",
       "questionText": "In competitive ski racing, what is the name of the discipline combining a downhill and giant slalom section into a single run, which was debuted at the 1960 Squaw Valley Olympics?",
       "answerText": "Combined"
+    },
+    {
+      "id": "orange-011",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "In a ski slalom race, what color are the pairs of poles that racers must navigate between?",
+      "answerText": "Red and blue (alternating)"
+    },
+    {
+      "id": "orange-012",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "How many runs does a standard FIS slalom competition consist of?",
+      "answerText": "Two"
+    },
+    {
+      "id": "orange-013",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In giant slalom racing, approximately how wide are the gates that racers must pass through?",
+      "answerText": "4 to 8 meters"
+    },
+    {
+      "id": "orange-014",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the name of the alpine skiing discipline that features the longest course, highest speeds, and fewest turns?",
+      "answerText": "Downhill"
+    },
+    {
+      "id": "orange-015",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In freestyle skiing, what discipline involves skiers performing aerial acrobatics off a kicker jump and being scored on form and height?",
+      "answerText": "Aerials"
+    },
+    {
+      "id": "orange-016",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the term for when a ski racer is disqualified for missing a gate during a slalom or giant slalom run?",
+      "answerText": "DNF (Did Not Finish)"
+    },
+    {
+      "id": "orange-017",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the maximum allowable gate interval in a standard FIS downhill course measured in vertical meters?",
+      "answerText": "8 meters"
+    },
+    {
+      "id": "orange-018",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In super-G racing, approximately how many gates are set on a typical men's World Cup course?",
+      "answerText": "35 to 65 gates"
+    },
+    {
+      "id": "orange-019",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the term for the racing technique where a skier crouches low in a tuck position to minimize wind resistance at high speed?",
+      "answerText": "Egg position (or tuck)"
+    },
+    {
+      "id": "orange-020",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the name of the Freeride World Tour event held annually at Palisades Tahoe, where athletes ski unmarked big-mountain terrain?",
+      "answerText": "Palisades Tahoe Freeride"
     }
   ],
-  "checksum": "baa5bdcce970e28a7ede77441754f79581b1019df1f4f74d5f6f406354ed77cb",
-  "size": 17041
+  "checksum": "ef5c14435412c29b5e33c4a03753d410bb2cf9ae4553534fd5535949b2a825bd",
+  "size": 37188
 }

@@ -6,20 +6,20 @@
     "version": "1.0.0",
     "author": "Trivial World Team",
     "createdAt": "2026-06-13T07:07:21.049Z",
-    "updatedAt": "2026-06-13T07:07:21.049Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
     "categoryCounts": {
-      "blue": 10,
-      "pink": 10,
-      "yellow": 10,
-      "purple": 10,
-      "green": 10,
-      "orange": 10
+      "blue": 20,
+      "pink": 20,
+      "yellow": 20,
+      "purple": 20,
+      "green": 20,
+      "orange": 20
     },
-    "totalQuestions": 60,
-    "checksum": "c30b1fca218c42a3076ba5776fe53cb3ebc5b955cbcb158aec1d3bbe21e1ede1",
+    "totalQuestions": 120,
+    "checksum": "c954a6fc98cfd986b4aafcad3f263c7297a9d7e30e90a5f3278b935349ad68e2",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 14263
+    "size": 36138
   },
   "questions": [
     {
@@ -96,6 +96,76 @@
       "answerText": "Jefferson Middle School"
     },
     {
+      "id": "blue-011",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "On which floor of their house does Greg's room appear to be located?",
+      "answerText": "The upper floor"
+    },
+    {
+      "id": "blue-012",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the name of the subdivision or neighborhood where the Heffley family lives?",
+      "answerText": "Surrey Street neighborhood"
+    },
+    {
+      "id": "blue-013",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In 'Rodrick Rules,' where does Rodrick's unsupervised party take place?",
+      "answerText": "The Heffley home while the parents are away"
+    },
+    {
+      "id": "blue-014",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In 'Wrecking Ball,' the Heffley family starts a home renovation. What room does the project originally start in?",
+      "answerText": "The backyard / outdoor space"
+    },
+    {
+      "id": "blue-015",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In 'The Meltdown,' what outdoor location becomes the battlefield between neighborhood kids during the snow war?",
+      "answerText": "The hill at the end of Surrey Street"
+    },
+    {
+      "id": "blue-016",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In 'Deep End,' the Heffleys travel by RV. What is the intended final destination of their road trip?",
+      "answerText": "A beach resort"
+    },
+    {
+      "id": "blue-017",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the name of the rival school that Greg's friend group competes against in various academic and sports events?",
+      "answerText": "Jefferson Middle School"
+    },
+    {
+      "id": "blue-018",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In 'The Last Straw,' Frank Heffley threatens to send Greg to a military school. What is its name?",
+      "answerText": "Spag Union Military Academy"
+    },
+    {
+      "id": "blue-019",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In 'Dog Days,' what is the name of the upscale neighborhood facility where Greg tries to spend his summer?",
+      "answerText": "The Leisure Towers pool club"
+    },
+    {
+      "id": "blue-020",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In 'The Ugly Truth,' where does Greg's school hold the fall dance that causes him embarrassment?",
+      "answerText": "The school gymnasium"
+    },
+    {
       "id": "pink-001",
       "category": "pink",
       "difficulty": "easy",
@@ -167,6 +237,76 @@
       "difficulty": "hard",
       "questionText": "In 'Diary of a Wimpy Kid: The Long Haul' (2017 film), which actor replaced Zachary Gordon as Greg Heffley?",
       "answerText": "Jason Drucker"
+    },
+    {
+      "id": "pink-011",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who is the author of the Diary of a Wimpy Kid series?",
+      "answerText": "Jeff Kinney"
+    },
+    {
+      "id": "pink-012",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What is the name of Greg's kind but naive best friend throughout the series?",
+      "answerText": "Rowley Jefferson"
+    },
+    {
+      "id": "pink-013",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of Greg's mother who runs the household and frequently embarrasses him?",
+      "answerText": "Susan Heffley"
+    },
+    {
+      "id": "pink-014",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the first name of Greg's father who tries to toughen Greg up throughout the series?",
+      "answerText": "Frank"
+    },
+    {
+      "id": "pink-015",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of the popular girl at school whom Greg has a crush on in the early books?",
+      "answerText": "Holly Hills"
+    },
+    {
+      "id": "pink-016",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of the school bully who frequently torments Greg and Rowley throughout the series?",
+      "answerText": "Roddie"
+    },
+    {
+      "id": "pink-017",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "In what year was the first Diary of a Wimpy Kid book published?",
+      "answerText": "2007"
+    },
+    {
+      "id": "pink-018",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is the title of the 17th main Diary of a Wimpy Kid book, published in 2022, in which Rodrick's band goes on tour?",
+      "answerText": "Diper Överlöde"
+    },
+    {
+      "id": "pink-019",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is the name of the spin-off book series featuring Rowley Jefferson as the main narrator?",
+      "answerText": "Rowley Jefferson's Awesome Friendly Adventure"
+    },
+    {
+      "id": "pink-020",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of the elderly neighbor on Surrey Street who often causes problems for Greg?",
+      "answerText": "Mr. Jefferson (Rowley's dad)"
     },
     {
       "id": "yellow-001",
@@ -242,6 +382,76 @@
       "answerText": "The Spinetickler"
     },
     {
+      "id": "yellow-011",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What is the infectious playground game where touching a moldy piece of cheese passes a social curse to another student?",
+      "answerText": "The Cheese Touch"
+    },
+    {
+      "id": "yellow-012",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What sport does Rodrick play badly in his heavy-metal band?",
+      "answerText": "Drums"
+    },
+    {
+      "id": "yellow-013",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In 'The Third Wheel,' Greg prepares for the Valentine's Day dance. What problem does he have finding a date?",
+      "answerText": "He keeps getting paired or left out unexpectedly"
+    },
+    {
+      "id": "yellow-014",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What happens to Manny at the end of 'The Meltdown' that reveals he is more capable than everyone thought?",
+      "answerText": "He leads his own group of younger kids in the snow war"
+    },
+    {
+      "id": "yellow-015",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In 'Cabin Fever,' what community infraction does Greg accidentally commit involving holiday decorations?",
+      "answerText": "He accidentally defaces the school's holiday fundraising banner"
+    },
+    {
+      "id": "yellow-016",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In 'Hard Luck,' Greg relies on a Magic 8-Ball to guide his decisions after losing his friendship with Rowley. How does it work out?",
+      "answerText": "Poorly — the advice leads him into more trouble"
+    },
+    {
+      "id": "yellow-017",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In 'No Brainer,' what does Greg discover about the school's history that he uses in his campaign to save it?",
+      "answerText": "Historical significance of the school building"
+    },
+    {
+      "id": "yellow-018",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In 'Wrecking Ball,' the home renovation goes drastically wrong. What causes the project to spiral out of control?",
+      "answerText": "Each fix creates a bigger problem, escalating the chaos"
+    },
+    {
+      "id": "yellow-019",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In 'The Deep End,' what forces the Heffley family to abandon their RV trip before reaching their destination?",
+      "answerText": "The RV park floods and they get stranded"
+    },
+    {
+      "id": "yellow-020",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What is the name of the haunted attraction Greg and Rowley try to set up in 'Diary of a Wimpy Kid' to make money?",
+      "answerText": "A haunted house"
+    },
+    {
       "id": "purple-001",
       "category": "purple",
       "difficulty": "easy",
@@ -314,10 +524,80 @@
       "answerText": "A holiday fund-raising banner (he drew on the school's Christmas banner)"
     },
     {
+      "id": "purple-011",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What color is the cover of the original first Diary of a Wimpy Kid book?",
+      "answerText": "Green"
+    },
+    {
+      "id": "purple-012",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What word appears on the cover of the book that Greg objects to in the first chapter?",
+      "answerText": "Diary"
+    },
+    {
+      "id": "purple-013",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What visual style does Jeff Kinney use for Rowley's comic Zoo-Wee Mama — how does it differ from a typical comic?",
+      "answerText": "It is intentionally crude and childlike, even simpler than Greg's drawings"
+    },
+    {
+      "id": "purple-014",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "The books are categorized as what hybrid genre that combines prose with illustrations on every page?",
+      "answerText": "Illustrated novel (or diary novel)"
+    },
+    {
+      "id": "purple-015",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the name of the fictional in-world video game series whose cartoons inspire Greg's imagination?",
+      "answerText": "Twisted Wizard"
+    },
+    {
+      "id": "purple-016",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What physical format do the books use to present Greg's text, making it look handwritten even though it is printed?",
+      "answerText": "A custom handwriting-style typeface"
+    },
+    {
+      "id": "purple-017",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the title of Jeff Kinney's autobiographical-style book about his own experience writing Diary of a Wimpy Kid?",
+      "answerText": "Diary of an Awesome Friendly Kid"
+    },
+    {
+      "id": "purple-018",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the name of Jeff Kinney's independent bookshop he opened in Massachusetts?",
+      "answerText": "An Unlikely Story"
+    },
+    {
+      "id": "purple-019",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "In 'Big Shot,' Jeff Kinney uses sports illustrations that differ from the regular diary art style. What sport are they for?",
+      "answerText": "Basketball"
+    },
+    {
+      "id": "purple-020",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "In what year did the animated Diary of a Wimpy Kid film debut on Disney+, rebooting the franchise with a new art style?",
+      "answerText": "2021"
+    },
+    {
       "id": "green-001",
       "category": "green",
       "difficulty": "easy",
-      "questionText": "Greg starts a journal at the beginning of book 1. He insists it is NOT a diary but a what?",
+      "questionText": "Greg firmly refuses to call his writing book a 'diary.' What does he insist it should be called instead?",
       "answerText": "Journal",
       "tidbits": "The book series has inspired a long-running musical adaptation that has toured the United States."
     },
@@ -384,6 +664,76 @@
       "difficulty": "medium",
       "questionText": "In 'Old School,' the students are required to give up all technology for the Hardscrabble Farms trip. Name one device they are NOT allowed to bring.",
       "answerText": "Cell phones (or video games / screens)"
+    },
+    {
+      "id": "green-011",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "In book 1, why does Greg start writing in the diary/journal in the first place?",
+      "answerText": "His mother gives it to him and tells him to write in it"
+    },
+    {
+      "id": "green-012",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "In 'Rodrick Rules,' why does Greg agree to keep Rodrick's party a secret from their parents?",
+      "answerText": "To avoid getting in trouble himself / Rodrick has embarrassing information on him"
+    },
+    {
+      "id": "green-013",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In 'The Last Straw,' what plan does Greg come up with to avoid being sent to military school by his dad?",
+      "answerText": "He tries to become more responsible and joins soccer"
+    },
+    {
+      "id": "green-014",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In 'Dog Days,' how does Greg end up getting access to the country club pool he desperately wants to join?",
+      "answerText": "He pretends to be Rowley's guest"
+    },
+    {
+      "id": "green-015",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In 'The Ugly Truth,' what causes Greg and Rowley's friendship to fall apart at the start of the book?",
+      "answerText": "A fight over Greg using Rowley as a stepping stone to become popular"
+    },
+    {
+      "id": "green-016",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In 'Cabin Fever,' what scheme does Greg try to use to raise money before the blizzard hits?",
+      "answerText": "Selling pre-orders for snow shoveling services"
+    },
+    {
+      "id": "green-017",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In 'The Third Wheel,' Greg creates an elaborate scheme to attend the Valentine's Day dance. What does he discover about how the couples are assigned?",
+      "answerText": "The dance uses a computer matching system that he tries to manipulate"
+    },
+    {
+      "id": "green-018",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In 'Double Down,' Greg launches his horror movie project to cash in on the horror trend. What goes wrong with the production?",
+      "answerText": "Everything spirals out of control with disastrous results"
+    },
+    {
+      "id": "green-019",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In 'Big Shot,' what flaw in Greg's basketball strategy does his team captain try to correct?",
+      "answerText": "Greg refuses to pass the ball and tries to score on his own"
+    },
+    {
+      "id": "green-020",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What problem does Greg encounter when he tries to run a haunted house business in his neighborhood?",
+      "answerText": "No customers show up"
     },
     {
       "id": "orange-001",
@@ -456,8 +806,78 @@
       "difficulty": "hard",
       "questionText": "In 'Big Shot,' what is the final play Greg draws up that leads to the championship game outcome?",
       "answerText": "An inbound pass play where Greg is the unexpected shooter / Greg takes the final shot"
+    },
+    {
+      "id": "orange-011",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What recreational game do Greg and Rowley play in the neighborhood that gets them into trouble in 'Diary of a Wimpy Kid'?",
+      "answerText": "Playing in the street (pretending to be in a wheelchair)"
+    },
+    {
+      "id": "orange-012",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What playground game causes social catastrophe when an old piece of cheese is left on the blacktop?",
+      "answerText": "Cheese Touch"
+    },
+    {
+      "id": "orange-013",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In 'The Meltdown,' what rules does Greg establish for the snow war between the Surrey Street kids and their rivals?",
+      "answerText": "Territory boundaries and snow weapon rules"
+    },
+    {
+      "id": "orange-014",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In 'Diary of a Wimpy Kid,' what game do Greg and Rowley play on the street that a driver complains about?",
+      "answerText": "Playing in the road / pretending to be hit by cars"
+    },
+    {
+      "id": "orange-015",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In 'The Getaway,' the Heffley family tries to enjoy a beach resort. What water activity does Greg attempt but fail at?",
+      "answerText": "Snorkeling or swimming activities"
+    },
+    {
+      "id": "orange-016",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In 'Old School,' students must participate in outdoor activities at Hardscrabble Farms. What task does Greg try hardest to avoid?",
+      "answerText": "Farm chores and outdoor labor"
+    },
+    {
+      "id": "orange-017",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In 'Big Shot,' what is the name of the rec league team that Greg's team faces in the final game?",
+      "answerText": "The opposing championship team"
+    },
+    {
+      "id": "orange-018",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In 'Dog Days,' what happens when Greg tries to play tennis at the country club without knowing the rules?",
+      "answerText": "He causes chaos and embarrasses himself"
+    },
+    {
+      "id": "orange-019",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the name of the PE teacher at Westmore Middle School who forces Greg into physical activities?",
+      "answerText": "Coach Malone"
+    },
+    {
+      "id": "orange-020",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In 'The Last Straw,' how does Greg perform in soccer once he actually joins the team?",
+      "answerText": "Terribly — he avoids the ball and does the minimum to stay on the team"
     }
   ],
-  "checksum": "7116b648d80caeafe6062fff1afc58d637cd10d216f75f03fd16de5b48d9ddf4",
-  "size": 15612
+  "checksum": "c954a6fc98cfd986b4aafcad3f263c7297a9d7e30e90a5f3278b935349ad68e2",
+  "size": 36138
 }

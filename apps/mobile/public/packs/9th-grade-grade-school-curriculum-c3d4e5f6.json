@@ -6,20 +6,20 @@
     "version": "1.0.0",
     "author": "Trivial World Team",
     "createdAt": "2026-06-13T12:00:00.000Z",
-    "updatedAt": "2026-06-13T12:00:00.000Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
     "categoryCounts": {
-      "blue": 10,
-      "pink": 10,
-      "yellow": 10,
-      "purple": 10,
-      "green": 10,
-      "orange": 10
+      "blue": 20,
+      "pink": 20,
+      "yellow": 20,
+      "purple": 20,
+      "green": 20,
+      "orange": 20
     },
-    "totalQuestions": 60,
-    "checksum": "14f7e22eb03f0530840455ffe36d84222a0e67027f046225f098d43ccb59888e",
+    "totalQuestions": 120,
+    "checksum": "d9a813034b0febcfc5727e9cb57f899dc2add4dac91a605dd41121fbedc86b43",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 13374
+    "size": 33163
   },
   "questions": [
     {
@@ -94,6 +94,76 @@
       "answerText": "Urbanization"
     },
     {
+      "id": "blue-011",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the capital of Japan?",
+      "answerText": "Tokyo"
+    },
+    {
+      "id": "blue-012",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Which country has the largest population in the world?",
+      "answerText": "India"
+    },
+    {
+      "id": "blue-013",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the term for a narrow strip of water connecting two larger bodies of water, such as the one between Europe and Asia?",
+      "answerText": "Strait"
+    },
+    {
+      "id": "blue-014",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the longest river in Africa, flowing north through Egypt into the Mediterranean Sea?",
+      "answerText": "The Nile River"
+    },
+    {
+      "id": "blue-015",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What large peninsula contains the countries of Spain and Portugal?",
+      "answerText": "The Iberian Peninsula"
+    },
+    {
+      "id": "blue-016",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the world's largest country by total land area?",
+      "answerText": "Russia"
+    },
+    {
+      "id": "blue-017",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What term describes a government system in which power is divided between a central national authority and regional units such as states?",
+      "answerText": "Federalism"
+    },
+    {
+      "id": "blue-018",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the term for the demographic model showing how birth and death rates change as a country develops economically?",
+      "answerText": "Demographic transition model"
+    },
+    {
+      "id": "blue-019",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the capital of Australia?",
+      "answerText": "Canberra"
+    },
+    {
+      "id": "blue-020",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What geographic term describes a body of land nearly surrounded by water but connected to the mainland on one side?",
+      "answerText": "Peninsula"
+    },
+    {
       "id": "pink-001",
       "category": "pink",
       "difficulty": "easy",
@@ -160,8 +230,78 @@
       "id": "pink-010",
       "category": "pink",
       "difficulty": "hard",
-      "questionText": "What literary device involves dramatic irony — when the audience knows something a character in the story does not?",
+      "questionText": "What literary device occurs when the audience knows something important that a character in the story does not?",
       "answerText": "Dramatic irony"
+    },
+    {
+      "id": "pink-011",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who is the author of \"The Great Gatsby\"?",
+      "answerText": "F. Scott Fitzgerald"
+    },
+    {
+      "id": "pink-012",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "In \"Of Mice and Men,\" what are the names of the two main characters?",
+      "answerText": "George and Lennie"
+    },
+    {
+      "id": "pink-013",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the term for narration from the perspective of a character who uses \"I\" and is inside the story?",
+      "answerText": "First-person narration"
+    },
+    {
+      "id": "pink-014",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the name of the narrator in F. Scott Fitzgerald's \"The Great Gatsby\" who observes Jay Gatsby's world from the outside?",
+      "answerText": "Nick Carraway"
+    },
+    {
+      "id": "pink-015",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What literary device involves a comparison using \"like\" or \"as,\" such as \"brave as a lion\"?",
+      "answerText": "Simile"
+    },
+    {
+      "id": "pink-016",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "In Dickens's \"A Tale of Two Cities,\" what are the two cities referenced in the title?",
+      "answerText": "London and Paris"
+    },
+    {
+      "id": "pink-017",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is the term for a character in a story who contrasts with the main character to highlight the protagonist's qualities?",
+      "answerText": "Foil"
+    },
+    {
+      "id": "pink-018",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "In Sophocles's \"Oedipus Rex,\" what is the tragic irony that the audience understands from the beginning that Oedipus does not?",
+      "answerText": "That Oedipus himself is the murderer he is searching for"
+    },
+    {
+      "id": "pink-019",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What American author wrote \"The Catcher in the Rye,\" narrated by teenager Holden Caulfield?",
+      "answerText": "J.D. Salinger"
+    },
+    {
+      "id": "pink-020",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What is the climax of a story — the moment of highest tension or turning point — also called in narrative structure?",
+      "answerText": "The climax"
     },
     {
       "id": "yellow-001",
@@ -234,6 +374,76 @@
       "answerText": "Apartheid"
     },
     {
+      "id": "yellow-011",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What was the name of the first artificial satellite launched into orbit, sent by the Soviet Union in 1957?",
+      "answerText": "Sputnik"
+    },
+    {
+      "id": "yellow-012",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year did the United States drop atomic bombs on Japan, ending World War II in the Pacific? A) 1943, B) 1944, C) 1945, D) 1946",
+      "answerText": "1945 (C)"
+    },
+    {
+      "id": "yellow-013",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was the name of the American policy of containing Soviet expansion, proposed by diplomat George Kennan after World War II?",
+      "answerText": "The Containment Policy"
+    },
+    {
+      "id": "yellow-014",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What international organization was founded in 1945 to promote peace and cooperation among nations after World War II?",
+      "answerText": "The United Nations"
+    },
+    {
+      "id": "yellow-015",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What 1962 standoff between the United States and Soviet Union over nuclear missiles in Cuba nearly led to nuclear war?",
+      "answerText": "The Cuban Missile Crisis"
+    },
+    {
+      "id": "yellow-016",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What movement, led by figures including Rosa Parks and Martin Luther King Jr., fought to end racial segregation in the United States?",
+      "answerText": "The Civil Rights Movement"
+    },
+    {
+      "id": "yellow-017",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What was the name of the American economic aid program that helped rebuild Western Europe after World War II?",
+      "answerText": "The Marshall Plan"
+    },
+    {
+      "id": "yellow-018",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What 1947 speech by President Truman committed the US to supporting countries threatened by communist expansion, establishing what became known as the Truman Doctrine?",
+      "answerText": "The Truman Doctrine address"
+    },
+    {
+      "id": "yellow-019",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What term describes the genocide of approximately six million Jewish people carried out by Nazi Germany during World War II?",
+      "answerText": "The Holocaust"
+    },
+    {
+      "id": "yellow-020",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In what year did the Soviet Union officially dissolve, ending the Cold War? A) 1987, B) 1989, C) 1991, D) 1993",
+      "answerText": "1991 (C)"
+    },
+    {
       "id": "purple-001",
       "category": "purple",
       "difficulty": "easy",
@@ -302,6 +512,76 @@
       "difficulty": "hard",
       "questionText": "What type of literary irony occurs when a character says the opposite of what they mean, often to mock or criticize?",
       "answerText": "Verbal irony (or sarcasm when used mockingly)"
+    },
+    {
+      "id": "purple-011",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the term for the repetition of the same consonant sound at the beginning of words in a phrase?",
+      "answerText": "Alliteration"
+    },
+    {
+      "id": "purple-012",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the name of the art technique where an image is created by gluing different materials like paper, photos, and fabric onto a surface?",
+      "answerText": "Collage"
+    },
+    {
+      "id": "purple-013",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What literary device gives human qualities or emotions to non-human objects, animals, or ideas?",
+      "answerText": "Personification"
+    },
+    {
+      "id": "purple-014",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What 14-line poem with a fixed rhyme scheme was popularized by William Shakespeare, who wrote 154 of them?",
+      "answerText": "Sonnet"
+    },
+    {
+      "id": "purple-015",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What art movement, pioneered by Andy Warhol and Roy Lichtenstein, drew inspiration from commercial advertising and mass culture?",
+      "answerText": "Pop Art"
+    },
+    {
+      "id": "purple-016",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What term describes the sequence of events in a story, from the introduction through the climax and resolution?",
+      "answerText": "Plot"
+    },
+    {
+      "id": "purple-017",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the term for a reference within a literary work to another work of art, historical event, or cultural figure?",
+      "answerText": "Allusion"
+    },
+    {
+      "id": "purple-018",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What Spanish artist who co-founded Cubism created the famous anti-war mural titled \"Guernica\" in 1937?",
+      "answerText": "Pablo Picasso"
+    },
+    {
+      "id": "purple-019",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "In poetry, what is the term for the pattern of stressed and unstressed syllables that creates rhythm?",
+      "answerText": "Meter"
+    },
+    {
+      "id": "purple-020",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What literary technique involves telling a story through events that happened before the main narrative timeline, often used to explain a character's past?",
+      "answerText": "Flashback"
     },
     {
       "id": "green-001",
@@ -374,6 +654,76 @@
       "answerText": "Meiosis"
     },
     {
+      "id": "green-011",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the chemical symbol for gold on the periodic table?",
+      "answerText": "Au"
+    },
+    {
+      "id": "green-012",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "How many sides does a hexagon have?",
+      "answerText": "6"
+    },
+    {
+      "id": "green-013",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the atomic number of carbon?",
+      "answerText": "6"
+    },
+    {
+      "id": "green-014",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the process by which plants convert sunlight, water, and carbon dioxide into glucose and oxygen?",
+      "answerText": "Photosynthesis"
+    },
+    {
+      "id": "green-015",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What Newton's law states that for every action there is an equal and opposite reaction?",
+      "answerText": "Newton's Third Law of Motion"
+    },
+    {
+      "id": "green-016",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the slope of a line passing through the points (0, 0) and (4, 8)?",
+      "answerText": "2"
+    },
+    {
+      "id": "green-017",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the difference between an element and a compound in chemistry?",
+      "answerText": "An element is a pure substance made of one type of atom; a compound is made of two or more different elements chemically bonded"
+    },
+    {
+      "id": "green-018",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the quadratic formula used to solve equations of the form ax² + bx + c = 0?",
+      "answerText": "x = (−b ± √(b²−4ac)) / 2a"
+    },
+    {
+      "id": "green-019",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the term for the repeating unit of DNA, made up of a sugar, a phosphate group, and a nitrogenous base?",
+      "answerText": "Nucleotide"
+    },
+    {
+      "id": "green-020",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the difference between an acid and a base on the pH scale?",
+      "answerText": "Acids have a pH below 7 and release hydrogen ions; bases have a pH above 7 and accept hydrogen ions"
+    },
+    {
       "id": "orange-001",
       "category": "orange",
       "difficulty": "easy",
@@ -442,8 +792,78 @@
       "difficulty": "hard",
       "questionText": "What does the FITT principle stand for, and how is it used in exercise planning?",
       "answerText": "Frequency, Intensity, Time, and Type — the four variables adjusted to design a progressive, effective workout program"
+    },
+    {
+      "id": "orange-011",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What is the recommended number of days per week for moderate aerobic physical activity for teenagers?",
+      "answerText": "At least 5 days per week"
+    },
+    {
+      "id": "orange-012",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What nutrient provides the body's primary source of fuel during moderate exercise?",
+      "answerText": "Carbohydrates"
+    },
+    {
+      "id": "orange-013",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the name of the largest muscle in the human body, located in the buttocks?",
+      "answerText": "Gluteus maximus"
+    },
+    {
+      "id": "orange-014",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "How long should a warm-up last before vigorous physical activity to safely prepare muscles and joints?",
+      "answerText": "At least 5 to 10 minutes"
+    },
+    {
+      "id": "orange-015",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is resting heart rate, and what range is generally considered healthy for teenagers?",
+      "answerText": "Resting heart rate is the number of heartbeats per minute at rest; 60 to 100 bpm is typical for healthy teens"
+    },
+    {
+      "id": "orange-016",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the term for the maximum heart rate a person should reach during intense exercise, calculated as 220 minus their age?",
+      "answerText": "Maximum heart rate"
+    },
+    {
+      "id": "orange-017",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What energy system does the body use primarily in the first 10 seconds of explosive activity, such as sprinting?",
+      "answerText": "ATP-PCr system (phosphocreatine system)"
+    },
+    {
+      "id": "orange-018",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is overtraining syndrome, and what are two common warning signs?",
+      "answerText": "A condition of excessive training without adequate recovery; warning signs include persistent fatigue and declining performance"
+    },
+    {
+      "id": "orange-019",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the term for the gradual reduction in training volume and intensity before a competition to allow the body to peak?",
+      "answerText": "Tapering"
+    },
+    {
+      "id": "orange-020",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the difference between muscular strength and muscular endurance?",
+      "answerText": "Muscular strength is the maximum force a muscle can exert in one effort; muscular endurance is the ability to sustain repeated contractions over time"
     }
   ],
-  "checksum": "14f7e22eb03f0530840455ffe36d84222a0e67027f046225f098d43ccb59888e",
-  "size": 13374
+  "checksum": "d9a813034b0febcfc5727e9cb57f899dc2add4dac91a605dd41121fbedc86b43",
+  "size": 33163
 }

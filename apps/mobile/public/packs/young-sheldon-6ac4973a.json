@@ -6,20 +6,20 @@
     "version": "1.0.0",
     "author": "Trivial World Team",
     "createdAt": "2026-06-13T07:07:21.049Z",
-    "updatedAt": "2026-06-13T07:07:21.049Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
     "categoryCounts": {
-      "blue": 15,
-      "pink": 15,
-      "yellow": 15,
-      "purple": 15,
-      "green": 15,
-      "orange": 15
+      "blue": 25,
+      "pink": 25,
+      "yellow": 25,
+      "purple": 25,
+      "green": 25,
+      "orange": 25
     },
-    "totalQuestions": 90,
-    "checksum": "b260ea5d0412ddb67a0dc7a042315be0eb55d8b518745689fbc33e658987fb38",
+    "totalQuestions": 150,
+    "checksum": "6ca863d72ff8b9c255625be0120103790733b64351208e8527afca2a73337cb0",
     "schemaVersion": "1.0.0",
     "contentEncoding": "identity",
-    "size": 18444
+    "size": 42170
   },
   "questions": [
     {
@@ -34,7 +34,7 @@
       "id": "blue-002",
       "category": "blue",
       "difficulty": "easy",
-      "questionText": "What state is Medford, Texas located in?",
+      "questionText": "What US state is the fictional town of Medford, home of the Cooper family, located in?",
       "answerText": "Texas",
       "tidbits": "Medford, Texas (Sheldon's fictional hometown) is depicted as a small town where everyone knows each other and Sheldon stands out dramatically."
     },
@@ -127,8 +127,78 @@
       "id": "blue-015",
       "category": "blue",
       "difficulty": "medium",
-      "questionText": "What is the name of the adult neighbor who is Mary's closest friend and confidant throughout the series?",
-      "answerText": "Brenda Sparks"
+      "questionText": "What does Sheldon call his paternal grandmother, the fun-loving, gambling-enthusiast member of the Cooper family?",
+      "answerText": "Meemaw"
+    },
+    {
+      "id": "blue-016",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What type of vehicle does George Sr. typically drive in the series, reflecting working-class Texas life?",
+      "answerText": "Pickup truck"
+    },
+    {
+      "id": "blue-017",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the fictional diner or local eatery in Medford where characters occasionally meet?",
+      "answerText": "Meemaw's kitchen / local diner"
+    },
+    {
+      "id": "blue-018",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What California university does the adult Sheldon eventually join as a physicist, referenced throughout the series?",
+      "answerText": "Caltech"
+    },
+    {
+      "id": "blue-019",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the name of the Medford High principal who has frequent tense confrontations with Sheldon?",
+      "answerText": "Principal Tom Petersen"
+    },
+    {
+      "id": "blue-020",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What real Texas city's cultural identity is the fictional Medford most closely based on, according to the show's writers?",
+      "answerText": "Galveston"
+    },
+    {
+      "id": "blue-021",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What is the name of the Cooper family's street or neighborhood shown in exterior shots?",
+      "answerText": "A quiet suburban East Texas street"
+    },
+    {
+      "id": "blue-022",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the rival football team from Jasper that Medford High frequently plays against?",
+      "answerText": "The Jasper Bulldogs"
+    },
+    {
+      "id": "blue-023",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the bowling alley or recreation center the Cooper family occasionally visits?",
+      "answerText": "Medford Bowl"
+    },
+    {
+      "id": "blue-024",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What is the approximate population of Medford, Texas as described in the series?",
+      "answerText": "Small town, a few thousand residents"
+    },
+    {
+      "id": "blue-025",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the video rental store the Cooper kids visit to rent movies on VHS?",
+      "answerText": "A local video rental store"
     },
     {
       "id": "pink-001",
@@ -239,6 +309,76 @@
       "answerText": "Jimmy Swaggart"
     },
     {
+      "id": "pink-016",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What is the name of the child actor who plays young Sheldon Cooper in the series?",
+      "answerText": "Iain Armitage"
+    },
+    {
+      "id": "pink-017",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What actress plays Mary Cooper, Sheldon's devout and protective mother?",
+      "answerText": "Zoe Perry"
+    },
+    {
+      "id": "pink-018",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What actor plays George Cooper Sr., Sheldon's football-coach father?",
+      "answerText": "Lance Barber"
+    },
+    {
+      "id": "pink-019",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What actress plays Connie Tucker, known as Meemaw, Sheldon's fun-loving grandmother?",
+      "answerText": "Annie Potts"
+    },
+    {
+      "id": "pink-020",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "How many seasons did Young Sheldon run before concluding in 2024?",
+      "answerText": "Seven seasons"
+    },
+    {
+      "id": "pink-021",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What spin-off series starring Georgie and Mandy was announced as a direct continuation of the Young Sheldon universe?",
+      "answerText": "Georgie and Mandy's First Marriage"
+    },
+    {
+      "id": "pink-022",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What classic country song does the Cooper family sing together in a memorable car trip episode?",
+      "answerText": "Old-time gospel or country hymn"
+    },
+    {
+      "id": "pink-023",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Young Sheldon was created by Chuck Lorre and which co-creator who also wrote extensively on The Big Bang Theory?",
+      "answerText": "Steven Molaro"
+    },
+    {
+      "id": "pink-024",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "The Big Bang Theory characters Penny and Leonard reference events from what decade when they mention Sheldon's childhood?",
+      "answerText": "1980s and 1990s"
+    },
+    {
+      "id": "pink-025",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What is the name of the fictional TV show within Young Sheldon that George Sr. and Georgie watch to bond over sports?",
+      "answerText": "Monday Night Football"
+    },
+    {
       "id": "yellow-001",
       "category": "yellow",
       "difficulty": "easy",
@@ -345,6 +485,76 @@
       "difficulty": "hard",
       "questionText": "What Big Bang Theory myth about George Sr. does the Young Sheldon finale directly address and reframe for viewers?",
       "answerText": "That George cheated on Mary"
+    },
+    {
+      "id": "yellow-016",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year did Young Sheldon first premiere on CBS?",
+      "answerText": "2017"
+    },
+    {
+      "id": "yellow-017",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What academic achievement does Sheldon complete at an extraordinarily young age near the end of the series?",
+      "answerText": "Graduating from college"
+    },
+    {
+      "id": "yellow-018",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What major family milestone happens to Georgie in the final seasons that sets up his adult storyline in the spin-off?",
+      "answerText": "He gets married"
+    },
+    {
+      "id": "yellow-019",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What is the name of the girl Georgie has a relationship with who becomes pregnant in Season 6?",
+      "answerText": "Mandy McAllister"
+    },
+    {
+      "id": "yellow-020",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What significant career setback does George Sr. face mid-series that puts pressure on the family finances?",
+      "answerText": "He loses his job as head coach"
+    },
+    {
+      "id": "yellow-021",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What is the name of the baby Georgie and Mandy have, who grows up to be a character referenced in The Big Bang Theory?",
+      "answerText": "Constance (CeeCee)"
+    },
+    {
+      "id": "yellow-022",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What business venture does Meemaw start that causes tension with Mary throughout the series?",
+      "answerText": "An illegal gambling operation"
+    },
+    {
+      "id": "yellow-023",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In the series, what is the age gap between Sheldon and his twin sister Missy?",
+      "answerText": "No gap — they are twins born on the same day"
+    },
+    {
+      "id": "yellow-024",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What happens to Dr. Sturgis that temporarily ends his relationship with Meemaw mid-series?",
+      "answerText": "He has a mental breakdown"
+    },
+    {
+      "id": "yellow-025",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What is the name of the character played by Ed Begley Jr. who becomes a recurring academic rival to Sheldon at East Texas Tech?",
+      "answerText": "Dr. Grant Linkletter"
     },
     {
       "id": "purple-001",
@@ -455,6 +665,76 @@
       "answerText": "Wood-paneled CRT television"
     },
     {
+      "id": "purple-016",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What style of telephone does the Cooper family use at home, typical of the late 1980s?",
+      "answerText": "Corded wall phone"
+    },
+    {
+      "id": "purple-017",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What type of media format do the Cooper kids use to watch movies at home, consistent with the 1989 setting?",
+      "answerText": "VHS tapes"
+    },
+    {
+      "id": "purple-018",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "The show uses warm, nostalgic color grading to evoke the past. What time period does this visual treatment suggest?",
+      "answerText": "Late 1980s to early 1990s"
+    },
+    {
+      "id": "purple-019",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What musical instrument does Mary play at church, establishing her role as a devoted churchgoer?",
+      "answerText": "Organ"
+    },
+    {
+      "id": "purple-020",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "The show's production designer ensured that all cars visible on screen match what time period?",
+      "answerText": "Late 1980s to early 1990s"
+    },
+    {
+      "id": "purple-021",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What hairstyle does George Sr. wear that is iconic to the late 1980s working-class American male aesthetic?",
+      "answerText": "Mullet"
+    },
+    {
+      "id": "purple-022",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What recurring visual motif appears in scenes at Meemaw's home to represent her gambling lifestyle?",
+      "answerText": "Playing cards and poker chips"
+    },
+    {
+      "id": "purple-023",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "How many cameras are used to film a typical episode of Young Sheldon, matching its single-cam cinematic aesthetic?",
+      "answerText": "One primary camera"
+    },
+    {
+      "id": "purple-024",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What type of graphic novel or comic book does Sheldon keep in his room as part of his science-fiction hobby?",
+      "answerText": "Star Trek comics"
+    },
+    {
+      "id": "purple-025",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What font style is used in the show's title cards at the start of each episode to evoke a typewriter aesthetic?",
+      "answerText": "Courier-style typewriter font"
+    },
+    {
       "id": "green-001",
       "category": "green",
       "difficulty": "easy",
@@ -476,7 +756,7 @@
       "difficulty": "easy",
       "questionText": "What famous equation by Einstein does Sheldon frequently reference as foundational to all physics?",
       "answerText": "E equals mc squared",
-      "tidbits": "Einstein's E=mc² established that mass and energy are interchangeable — a concept central to nuclear energy and the atomic bomb. Sheldon frequently invokes it as the foundation of all modern physics, even when it has little direct relevance to what he's explaining."
+      "tidbits": "Einstein's E=mc² established that mass and energy are interchangeable, a foundational concept Sheldon invokes constantly even when it barely applies."
     },
     {
       "id": "green-004",
@@ -563,6 +843,76 @@
       "answerText": "73 (B)"
     },
     {
+      "id": "green-016",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the speed of light, a figure Sheldon references constantly as foundational to physics?",
+      "answerText": "186,000 miles per second (approximately)"
+    },
+    {
+      "id": "green-017",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What type of elementary particle does Sheldon most frequently discuss when explaining quantum physics to his family?",
+      "answerText": "Quarks"
+    },
+    {
+      "id": "green-018",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What scientific concept does Sheldon use to explain why he refuses to take the same seat twice — invoking mathematical optimization?",
+      "answerText": "Game theory / optimal strategy"
+    },
+    {
+      "id": "green-019",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What real physics paper does Sheldon attempt to write as a child, attempting to disprove or extend a foundational theory?",
+      "answerText": "A paper on M-theory"
+    },
+    {
+      "id": "green-020",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What branch of mathematics does Sheldon use to analyze seating arrangements and predict human behavior?",
+      "answerText": "Combinatorics"
+    },
+    {
+      "id": "green-021",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the name of the academic journal that young Sheldon attempts to get his physics paper published in?",
+      "answerText": "Physical Review Letters"
+    },
+    {
+      "id": "green-022",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What type of physics experiment does Sheldon set up in the garage involving electromagnets and train sets?",
+      "answerText": "Cooper Coupler experiment"
+    },
+    {
+      "id": "green-023",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the name of the thought experiment Sheldon uses to explain superposition to Missy using a box and a hypothetical cat?",
+      "answerText": "Schrodinger's cat"
+    },
+    {
+      "id": "green-024",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What Nobel laureate does Dr. Sturgis reference as a personal acquaintance to impress Sheldon in an early season?",
+      "answerText": "Richard Feynman"
+    },
+    {
+      "id": "green-025",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the term for the theoretical framework Sheldon ultimately builds his Nobel Prize-winning research on, combining symmetry principles?",
+      "answerText": "Super-asymmetry"
+    },
+    {
       "id": "orange-001",
       "category": "orange",
       "difficulty": "easy",
@@ -625,8 +975,8 @@
       "id": "orange-009",
       "category": "orange",
       "difficulty": "medium",
-      "questionText": "Meemaw regularly hosts games of what at her home, revealing her gambling streak to the kids?",
-      "answerText": "Poker"
+      "questionText": "What strategy board game does Sheldon attempt to master using advanced game theory?",
+      "answerText": "Chess"
     },
     {
       "id": "orange-010",
@@ -669,8 +1019,78 @@
       "difficulty": "hard",
       "questionText": "Though Sheldon excels academically, Georgie's football athleticism earns what specific emotional response from George Sr.?",
       "answerText": "Pride"
+    },
+    {
+      "id": "orange-016",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What is the name of the Medford High School football team mascot?",
+      "answerText": "The Medford Wolves"
+    },
+    {
+      "id": "orange-017",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What exercise or physical activity does Sheldon's PE teacher try to make him do that he creatively finds ways to avoid?",
+      "answerText": "Running the mile"
+    },
+    {
+      "id": "orange-018",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What type of video game does Georgie play at home that Sheldon dismisses as intellectually beneath him?",
+      "answerText": "Action video games (console games)"
+    },
+    {
+      "id": "orange-019",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In an episode where Sheldon attempts to help coach football, what mathematical formation does he suggest to George Sr.?",
+      "answerText": "A statistically optimal formation based on probability analysis"
+    },
+    {
+      "id": "orange-020",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What sport does Billy Sparks play that occasionally involves Missy Cooper as a teammate or spectator?",
+      "answerText": "Baseball"
+    },
+    {
+      "id": "orange-021",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "When Sheldon is forced to participate in gym class, what creative justification does he give for why athletic competition is irrational?",
+      "answerText": "He argues that competing wastes energy that could be used for intellectual pursuits"
+    },
+    {
+      "id": "orange-022",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What specific position does George Sr. coach in addition to being overall head coach of the Medford High team?",
+      "answerText": "Offensive coordinator"
+    },
+    {
+      "id": "orange-023",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What recreational game does Meemaw teach Sheldon that she uses as a cover for discussing probability and odds?",
+      "answerText": "Card games (poker)"
+    },
+    {
+      "id": "orange-024",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What annual Texas sports tradition does the Medford community treat as a major social event in the show?",
+      "answerText": "The Medford vs. Jasper football rivalry game"
+    },
+    {
+      "id": "orange-025",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the outcome of the Medford High football season in the first episode of the series — do they win or lose their key game?",
+      "answerText": "They lose"
     }
   ],
-  "checksum": "58fadb3d16ffb30d5a8af8965902620eef019ddb84a1e6b1085a291b79643cce",
-  "size": 20419
+  "checksum": "6ca863d72ff8b9c255625be0120103790733b64351208e8527afca2a73337cb0",
+  "size": 42170
 }
