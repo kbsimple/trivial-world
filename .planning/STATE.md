@@ -94,6 +94,7 @@ From Phase 21 code review (21-REVIEW.md):
 |---|-------------|------|--------|-----------|
 | 260613-7a | Question screen vertical layout: top-anchor badge+question, footer-anchor reveal button | 2026-06-13 | e9025fa | [260613-7a-question-screen-vertical-layout](./quick/260613-7a-question-screen-vertical-layout/) |
 | 260613-b1a | Move Shared/Custom pack chip inline with player name row | 2026-06-13 | 9189952 | [260613-b1a-chip-inline-player-row](./quick/260613-b1a-chip-inline-player-row/) |
+| 260614-c2a | Replace pack chip with labeled Shared/Custom segmented control per player | 2026-06-14 | e701de1 | [260614-c2a-per-player-pack-segmented-control](./quick/260614-c2a-per-player-pack-segmented-control/) |
 
 ### Blockers/Concerns
 
