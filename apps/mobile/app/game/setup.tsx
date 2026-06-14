@@ -351,19 +351,24 @@ const styles = StyleSheet.create({
     color: SEMANTIC_COLORS.remove,
   },
   packChip: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 6,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 8,
+    marginLeft: 8,
   },
   packChipDefault: {
     backgroundColor: 'rgba(255,255,255,0.12)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.25)',
   },
   packChipActive: {
     backgroundColor: 'rgba(255,255,255,0.28)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.5)',
   },
   packChipText: {
-    fontSize: 11,
-    color: '#ccc',
+    fontSize: 13,
+    color: '#fff',
   },
   addButtonContainer: {
     alignItems: 'center',

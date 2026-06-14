@@ -41,6 +41,7 @@ export default function PackSelectionScreen() {
     selectPack,
     selectPackList,
     savedCombos,
+    createCombo,
     setEnabledCategories,
     setEnabledDifficulties,
     clearDownloadError,
@@ -149,15 +150,33 @@ export default function PackSelectionScreen() {
 
   const handleSelectPack = async (packId: string) => {
     if (targetPlayerId) {
-      updatePlayerPack(targetPlayerId, packId);
+      // Per-player mode: toggle selection (same multi-select flow as game-level)
+      togglePackSelection(packId);
       setModalVisible(false);
-      router.back();
     } else {
       await selectPack(packId);
       setModalVisible(false);
       setSelectedPackIds([]);
       router.push('/game/setup');
     }
+  };
+
+  const handleConfirmForPlayer = () => {
+    if (!targetPlayerId || selectedPackIds.length === 0) return;
+    if (selectedPackIds.length === 1) {
+      updatePlayerPack(targetPlayerId, selectedPackIds[0]);
+    } else {
+      const packNames = selectedPackIds
+        .map(id => availablePacks.find(p => p.id === id)?.name ?? id)
+        .join(' + ');
+      const autoName = `${targetPlayer?.name || 'Player'}: ${packNames}`;
+      createCombo(autoName, selectedPackIds);
+      const latestCombos = usePackStore.getState().savedCombos;
+      const newCombo = latestCombos[latestCombos.length - 1];
+      if (newCombo) updatePlayerCombo(targetPlayerId, newCombo.id);
+    }
+    setSelectedPackIds([]);
+    router.back();
   };
 
   const handleSelectComboForPlayer = (comboId: string) => {
@@ -300,9 +319,7 @@ export default function PackSelectionScreen() {
               isActive={hasSelection ? isSelected : activePackId === item.id}
               onPress={
                 isDownloaded
-                  ? targetPlayerId
-                    ? () => handleSelectPack(item.id)
-                    : () => togglePackSelection(item.id)
+                  ? () => togglePackSelection(item.id)
                   : () => handlePackPress(item)
               }
             />
@@ -356,7 +373,23 @@ export default function PackSelectionScreen() {
 
       {/* Footer — in layout flow, no absolute positioning */}
       <View style={styles.footer}>
-        {targetPlayerId ? (
+        {targetPlayerId && hasSelection ? (
+          <>
+            <Pressable
+              style={[styles.playButton, { backgroundColor: 'rgba(255, 255, 255, 0.25)' }]}
+              onPress={handleConfirmForPlayer}
+            >
+              <Text style={[styles.playButtonText, { color: theme.color?.val as string }]}>
+                Use {selectedPackIds.length} pack{selectedPackIds.length !== 1 ? 's' : ''} for {targetPlayer?.name || 'Player'} →
+              </Text>
+            </Pressable>
+            <Pressable style={styles.clearButton} onPress={() => setSelectedPackIds([])}>
+              <Text style={[styles.clearButtonText, { color: theme.color?.val as string }]}>
+                Clear selection
+              </Text>
+            </Pressable>
+          </>
+        ) : targetPlayerId ? (
           <Pressable
             style={[styles.footerButton, { backgroundColor: 'rgba(255, 255, 255, 0.2)' }]}
             onPress={() => router.back()}
