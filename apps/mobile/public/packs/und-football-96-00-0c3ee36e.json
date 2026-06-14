@@ -1,0 +1,497 @@
+{
+  "metadata": {
+    "id": "0c3ee36e-f0b0-4dd9-918a-b47d39529834",
+    "name": "UND Football (96 - 00)",
+    "description": "Questions about the Notre Dame Fighting Irish football program from 1996 to 2000 \u2014 coaches, players, rivalries, season records, traditions, and bowl games.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-14T12:00:00.000Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "cfbbe6ba34cad376be7cf0f3603772af11719a560aeaa9c0d12c390b94621c5d",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 26879
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In what city and state is Notre Dame Stadium, home of the Fighting Irish, located?",
+      "answerText": "South Bend, Indiana",
+      "tidbits": "South Bend was named for its location at the southernmost bend of the St. Joseph River, and Notre Dame has been a fixture of the city since 1842."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What nickname, referring to the stadium's architect, is Notre Dame Stadium commonly known by?",
+      "answerText": "The House That Rockne Built",
+      "tidbits": "Knute Rockne was the legendary Notre Dame coach who advocated for building the stadium, which opened in 1930. He died in a plane crash just one year later."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Notre Dame is a football independent, meaning it is not a member of any athletic conference. What does 'independent' mean for their schedule?",
+      "answerText": "They schedule all games individually without conference obligations",
+      "tidbits": "Notre Dame's independence is one of the most debated topics in college football \u2014 it allows them to arrange national matchups but denies them conference championship access."
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the approximate seating capacity of Notre Dame Stadium as it stood in the late 1990s after a major expansion completed in 1997?",
+      "answerText": "Approximately 80,000 to 80,795",
+      "tidbits": "The 1997 expansion added over 20,000 seats by building a new upper deck, making Notre Dame Stadium one of the largest college football venues in the US."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The Notre Dame vs. USC rivalry game is played alternating years in South Bend and in which California city?",
+      "answerText": "Los Angeles (at the Los Angeles Memorial Coliseum)",
+      "tidbits": "The Notre Dame-USC series, first played in 1926, is one of college football's great intersectional rivalries and has featured some of the sport's most memorable games."
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What Big Ten school located in West Lafayette, Indiana is one of Notre Dame's most traditional regional rivals, played annually in the 1990s?",
+      "answerText": "Purdue (Purdue Boilermakers)"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The 2000 Fiesta Bowl, in which Notre Dame played Oregon State, was held at what stadium in Tempe, Arizona?",
+      "answerText": "Sun Devil Stadium",
+      "tidbits": "The Fiesta Bowl was one of four games in the Bowl Championship Series (BCS) rotating host sites for the national title game in the late 1990s and 2000s."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Notre Dame played Michigan in an away game in Ann Arbor multiple times in the late 1990s. What is the name of Michigan's massive football stadium?",
+      "answerText": "Michigan Stadium (The Big House)"
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In the late 1990s, Notre Dame's home schedule featured games against Boston College. In what city is Boston College located?",
+      "answerText": "Chestnut Hill, Massachusetts (suburb of Boston)"
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Notre Dame Stadium's playing surface in the late 1990s was natural grass. What specific shade of blue appears in the official Notre Dame color palette alongside gold?",
+      "answerText": "Navy blue"
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who was the head coach of Notre Dame football from 1986 through the end of the 1996 season, retiring after 11 seasons with a 100-30-2 record?",
+      "answerText": "Lou Holtz",
+      "tidbits": "Lou Holtz won the 1988 national championship at Notre Dame and is known for his motivational speaking and the concept of 'doing right' by others."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who replaced Lou Holtz as Notre Dame's head coach in 1997 and led the program through the 2001 season?",
+      "answerText": "Bob Davie",
+      "tidbits": "Bob Davie came to Notre Dame as defensive coordinator under Lou Holtz before being elevated to head coach. He went 35-25 in five seasons."
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What Notre Dame quarterback played from 1993 to 1997 and was heavily hyped coming out of high school as a potential future Heisman winner?",
+      "answerText": "Ron Powlus",
+      "tidbits": "Ron Powlus was predicted by one analyst to 'win two Heisman Trophies' \u2014 a quote that followed him throughout his career as he never won the award."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What Notre Dame running back, who played from 1995 to 1998, finished his career as one of the program's most prolific rushers and later played in the NFL?",
+      "answerText": "Autry Denson",
+      "tidbits": "Autry Denson set Notre Dame's career rushing record during his time with the Irish, rushing for over 3,800 yards before being drafted by the Miami Dolphins in 1998."
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What Notre Dame quarterback took over as starter in 1999 and led the Irish to a 9-3 season and Fiesta Bowl appearance in 2000?",
+      "answerText": "Jarious Jackson",
+      "tidbits": "Jarious Jackson was a dual-threat quarterback who transferred from a junior college, bringing athleticism and mobility to the Notre Dame offense."
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What future NFL running back enrolled at Notre Dame in 1999 and would go on to become a star with the Dallas Cowboys?",
+      "answerText": "Julius Jones"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Lou Holtz's 1996 season \u2014 his last at Notre Dame \u2014 ended with what record?",
+      "answerText": "8-3",
+      "tidbits": "Holtz resigned after the 1996 season, citing a desire to step down on his own terms. Notre Dame finished the year unranked after several close losses."
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What Notre Dame defensive lineman from the late 1990s era was named to multiple All-American teams and was selected in the first round of the 2000 NFL Draft?",
+      "answerText": "Jabari Holloway (TE) / Anthony Weaver (DE)",
+      "tidbits": "Notre Dame's late 1990s rosters were loaded with NFL talent despite the team's inconsistent win-loss records under Bob Davie."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Bob Davie came to Notre Dame in what year as defensive coordinator before becoming head coach?",
+      "answerText": "1994"
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What Notre Dame wide receiver from the 1996-2000 era later became a prominent NFL player and won Super Bowl rings?",
+      "answerText": "Malcolm Johnson / David Givens",
+      "tidbits": "David Givens played at Notre Dame before going undrafted and earning Super Bowl rings with the New England Patriots in the early 2000s."
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What was Notre Dame's season record under Lou Holtz in 1996, his final season as head coach?",
+      "answerText": "8-3",
+      "tidbits": "Holtz's 11-year record at Notre Dame was 100-30-2, including the 1988 national championship \u2014 making him one of the most successful coaches in program history."
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What bowl game did Notre Dame appear in at the end of the 2000 season (following their 9-3 record), where they faced Oregon State?",
+      "answerText": "Fiesta Bowl",
+      "tidbits": "The 2001 Fiesta Bowl (played January 1, 2001, for the 2000 season) was a BCS game \u2014 one of the most prestigious bowl game slots available at the time."
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Notre Dame suffered a historically lopsided defeat in the 2001 Fiesta Bowl. What was the final score against Oregon State?",
+      "answerText": "Notre Dame 9, Oregon State 41",
+      "tidbits": "The 41-9 loss to Oregon State in the Fiesta Bowl remains one of the worst bowl game performances in Notre Dame history."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was Notre Dame's overall season record in 1997, Bob Davie's first year as head coach?",
+      "answerText": "7-6",
+      "tidbits": "Notre Dame's 1997 season ended with a Gator Bowl loss to Georgia Tech, giving Davie a winning record but a disappointing bowl exit in his debut season."
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In 1999, Notre Dame posted what record \u2014 the program's first losing season under Bob Davie and one of the rare losing seasons in modern Notre Dame football?",
+      "answerText": "5-7",
+      "tidbits": "Notre Dame's 1999 losing season put Davie's job security in question and led to significant roster and scheme adjustments for the 2000 bounce-back campaign."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What bowl game did Notre Dame play at the end of the 1997 season, losing to Georgia Tech?",
+      "answerText": "Gator Bowl"
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was Notre Dame's overall season record in 1998 under Bob Davie?",
+      "answerText": "7-5",
+      "tidbits": "Notre Dame did not play in a bowl game after the 1998 season despite their winning record, as they declined a bowl invitation \u2014 a controversial decision at the time."
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In the 1997 Gator Bowl, Notre Dame lost to Georgia Tech. What was the final score of that game?",
+      "answerText": "Georgia Tech 35, Notre Dame 28",
+      "tidbits": "The Gator Bowl loss capped a season in which Notre Dame struggled with consistency under first-year coach Bob Davie."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Notre Dame's 2000 regular season resulted in a 9-3 record. Which three regular season opponents defeated Notre Dame that year?",
+      "answerText": "Nebraska, Michigan State, and Pittsburgh",
+      "tidbits": "Despite three regular season losses, Notre Dame's 9-win season earned them a coveted BCS Fiesta Bowl invitation for the 2000 campaign."
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Lou Holtz won a national championship at Notre Dame. In what season did the Irish win their last consensus national title before the 1996-2000 era?",
+      "answerText": "1988 season",
+      "tidbits": "The 1988 Fighting Irish finished 12-0 and defeated West Virginia 34-21 in the Fiesta Bowl to claim the national championship \u2014 Lou Holtz's only title at Notre Dame."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the name of Notre Dame's fight song, one of the most recognizable in college football?",
+      "answerText": "Notre Dame Victory March",
+      "tidbits": "The Notre Dame Victory March was written in 1908 by brothers John and Michael Shea and has been named one of the greatest college fight songs in history."
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What color are Notre Dame's distinctive football helmets, which are painted with real metallic paint rather than using decals?",
+      "answerText": "Gold",
+      "tidbits": "Notre Dame's helmets are painted with a gold paint made from actual gold flakes \u2014 a tradition maintained by the equipment staff to this day."
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the name of Notre Dame's mascot \u2014 a small, mustachioed character in a green hat seen at the sideline and in the logo?",
+      "answerText": "The Leprechaun",
+      "tidbits": "Notre Dame adopted the leprechaun as its mascot in the 1960s, embracing the Irish heritage connection. The human student Leprechaun has performed since 1965."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What large mosaic on the side of the Hesburgh Library overlooking Notre Dame Stadium depicts Christ with arms raised and is nicknamed by football fans?",
+      "answerText": "Touchdown Jesus",
+      "tidbits": "'Touchdown Jesus' is officially called 'The Word of Life' mural \u2014 it depicts Christ with arms raised and is visible above the north end zone of Notre Dame Stadium."
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Notre Dame's team colors are gold and what other color?",
+      "answerText": "Navy blue",
+      "tidbits": "Notre Dame's navy blue and gold color scheme dates back to the late 1800s when student athletes chose the colors inspired by a fabric sample in a local store."
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the name of the statue outside Notre Dame Stadium depicting the legendary coach with his arm raised \u2014 a tribute to the man who built the program's early dynasty?",
+      "answerText": "The Knute Rockne statue"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Notre Dame's nickname \u2014 the Fighting Irish \u2014 is believed to have what origin, tied to the university's student population in the late 1800s?",
+      "answerText": "Irish immigrant students who composed much of the early student body and athletic teams",
+      "tidbits": "The 'Fighting Irish' nickname was initially used disparagingly by opponents but was embraced by Notre Dame, officially adopted in 1927."
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What is the name of the traditional song Notre Dame players and fans sing after home victories, to the tune of 'When Irish Eyes Are Smiling'?",
+      "answerText": "'Notre Dame, Our Mother' (sung after wins)"
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What dome atop the main administration building at Notre Dame is covered in gold leaf and is a symbol of the university \u2014 often referenced when describing the school?",
+      "answerText": "The Golden Dome (topped with a statue of Mary)",
+      "tidbits": "The Golden Dome of the Main Building is covered with 23-karat gold leaf and is one of the most iconic architectural symbols in American higher education."
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "In Notre Dame football lore, what name is given to the tradition where the starting lineup is introduced to the crowd by name and number before home games?",
+      "answerText": "Introductions at Notre Dame Stadium (the public address announcements)",
+      "tidbits": "Notre Dame home games are famous for their electric atmosphere, with over 80,000 fans turning the stadium into one of the loudest venues in college football."
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "How many wins did Notre Dame achieve in the 2000 regular season before their Fiesta Bowl appearance?",
+      "answerText": "9 wins (9-3 record)",
+      "tidbits": "The 2000 Fighting Irish ranked as high as 9th in the AP Poll during the season before the lopsided Fiesta Bowl loss."
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What running back led Notre Dame in rushing during most of Autry Denson's career, and how many yards did Denson finish with as Notre Dame's career leader?",
+      "answerText": "Autry Denson, over 3,800 career rushing yards",
+      "tidbits": "Autry Denson's career record stood as the Notre Dame rushing record for years after he graduated in 1998."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Under Lou Holtz's 11 seasons from 1986 to 1996, approximately how many total wins did Notre Dame accumulate?",
+      "answerText": "100 wins (100-30-2 record)",
+      "tidbits": "Holtz is one of only two coaches in history to win 100 or more games at Notre Dame, and his winning percentage of .765 is the best in the modern era."
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What was Bob Davie's overall win-loss record across his five seasons as Notre Dame head coach from 1997 to 2001?",
+      "answerText": "35-25",
+      "tidbits": "Bob Davie's .583 winning percentage was considered below Notre Dame's high standards, leading to his dismissal after the 2001 season."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In the 1999 season \u2014 Notre Dame's worst of the era \u2014 how many total losses did the Fighting Irish suffer?",
+      "answerText": "7 losses (5-7 record)",
+      "tidbits": "The 1999 season was the first losing season under Bob Davie and one of just a handful of losing seasons in Notre Dame's storied history."
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What was the final score of the 2001 Fiesta Bowl (2000 season) between Notre Dame and Oregon State?",
+      "answerText": "Oregon State 41, Notre Dame 9"
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Approximately how many points did Notre Dame average per game in the 1997 season under Bob Davie?",
+      "answerText": "Approximately 24 points per game",
+      "tidbits": "Notre Dame's 1997 offense struggled for consistency in Davie's first year, averaging modest scoring totals while relying heavily on the defense."
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In how many of the five seasons from 1996 to 2000 did Notre Dame finish with a winning record?",
+      "answerText": "Four seasons (1996: 8-3, 1997: 7-6, 1998: 7-5, 2000: 9-3; losing season was 1999 at 5-7)",
+      "tidbits": "Despite four winning seasons in the era, Notre Dame never cracked the Top 10 at season's end during the Davie era, reflecting concerns about strength of schedule."
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "How many bowl game appearances did Notre Dame make across the five seasons from 1996 to 2000?",
+      "answerText": "Two bowl games (1997 Gator Bowl and 2001 Fiesta Bowl for the 2000 season)",
+      "tidbits": "Notre Dame was bowl-eligible but declined bowl invitations after the 1996 and 1998 seasons \u2014 a controversial practice that frustrated fans and boosters."
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Ron Powlus finished his Notre Dame career with approximately how many career passing yards?",
+      "answerText": "Approximately 7,602 career passing yards",
+      "tidbits": "Despite the Heisman hype coming out of high school, Ron Powlus finished his Notre Dame career as the program's all-time passing leader at the time of his graduation."
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Notre Dame's most storied rivalry is against which California university, a series often called 'The Greatest Intersectional Rivalry in College Football'?",
+      "answerText": "USC (University of Southern California)",
+      "tidbits": "The Notre Dame-USC rivalry began in 1926 and has produced some of the most memorable moments in college football history, including multiple game-winning touchdowns in the final minutes."
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Notre Dame lost to Oregon State in the 2001 Fiesta Bowl. Oregon State was led by what head coach who won the Pac-10 Coach of the Year in 2000?",
+      "answerText": "Dennis Erickson",
+      "tidbits": "Dennis Erickson had previously won two national championships at Miami before revitalizing Oregon State into a top-10 program in 2000."
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What annual rivalry game is played between Notre Dame and Purdue, with Notre Dame typically having the upper hand in the series?",
+      "answerText": "The Notre Dame-Purdue rivalry game",
+      "tidbits": "Notre Dame has dominated the Purdue series historically, but the Boilermakers have pulled off notable upsets including a memorable 1998 victory."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Notre Dame's rivalry with Michigan includes games played in the late 1990s. In what stadium do the Wolverines play their home games?",
+      "answerText": "Michigan Stadium (The Big House) in Ann Arbor, Michigan",
+      "tidbits": "Michigan Stadium, with capacity over 107,000, is the largest stadium in the Western Hemisphere and one of the most intimidating road venues in college football."
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In Notre Dame's 1997 bowl game \u2014 the Gator Bowl \u2014 what was the final score and which team won?",
+      "answerText": "Georgia Tech 35, Notre Dame 28",
+      "tidbits": "The Gator Bowl loss under Bob Davie's first season highlighted the transition challenges facing Notre Dame as they moved away from the Lou Holtz era."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which SEC rival did Notre Dame play in a high-profile non-conference matchup during the 1996-2000 era that drew national attention?",
+      "answerText": "Tennessee (1996 season)",
+      "tidbits": "Notre Dame and Tennessee have met in high-profile regular season matchups, with the series drawing significant national television interest given both programs' prestige."
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Oregon State, which defeated Notre Dame in the 2001 Fiesta Bowl, featured what star running back who became the Heisman Trophy runner-up in 2000?",
+      "answerText": "Ken Simonton"
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "How did Notre Dame perform against USC in the 1996-2000 era \u2014 did they have a winning, losing, or even record in the rivalry during those five seasons?",
+      "answerText": "Notre Dame had a mixed record \u2014 approximately 3 wins and 2 losses against USC over those five seasons",
+      "tidbits": "The USC-Notre Dame series fluctuated during the Davie years, with neither team establishing sustained dominance over the other in that period."
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "The 2001 Fiesta Bowl was part of the BCS system. What does BCS stand for?",
+      "answerText": "Bowl Championship Series",
+      "tidbits": "The BCS was introduced in 1998 to create a computer-ranked national championship game, replacing the fragmented bowl system that often left the national champion disputed."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Which state rivalry game did Notre Dame play against Michigan State during the 1996-2000 era, and what is Michigan State's nickname?",
+      "answerText": "Notre Dame vs. Michigan State Spartans",
+      "tidbits": "The Notre Dame-Michigan State rivalry, sometimes called the 'Megaphone Trophy Game,' features one of college football's most storied series between Indiana and Michigan programs."
+    }
+  ],
+  "checksum": "cfbbe6ba34cad376be7cf0f3603772af11719a560aeaa9c0d12c390b94621c5d",
+  "size": 26879
+}

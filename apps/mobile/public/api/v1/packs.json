@@ -219,6 +219,54 @@
       "downloadUrl": "https://trivial-world.netlify.app/packs/fundamentals-of-exercise-nutrition-and-health-d4e5f6a7.json",
       "checksum": "c0d19cd1027040c18cce84c5aaca3af1c31d46085617c598e3ea579fbce69942",
       "size": 16023
+    },
+    {
+      "id": "6b2383e7-6907-40e7-828d-56eff8ce5483",
+      "name": "Applied Computer Science",
+      "description": "Questions covering data structures, algorithms, machine learning, applied AI, software architecture, and the people and companies driving modern computing.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/applied-computer-science-6b2383e7.json",
+      "checksum": "2dfe6dd673c64812a2cdc8d0046e006573b1627a34229cce9de88ad5aeb1deaf",
+      "size": 28699
+    },
+    {
+      "id": "0c3ee36e-f0b0-4dd9-918a-b47d39529834",
+      "name": "UND Football (96 - 00)",
+      "description": "Questions about the Notre Dame Fighting Irish football program from 1996 to 2000 — coaches, players, rivalries, season records, traditions, and bowl games.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/und-football-96-00-0c3ee36e.json",
+      "checksum": "cfbbe6ba34cad376be7cf0f3603772af11719a560aeaa9c0d12c390b94621c5d",
+      "size": 26879
+    },
+    {
+      "id": "96d14293-009a-4bbd-8036-fcf2351e874c",
+      "name": "Thinking HowTO",
+      "description": "Questions about mental models, critical thinking frameworks, logical fallacies, and the reasoning tools used by great thinkers to make better decisions.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/thinking-howto-96d14293.json",
+      "checksum": "44888ff70568e48f6bb445971331387b3603732e267003d03a8471b2dc48056f",
+      "size": 31474
+    },
+    {
+      "id": "0da2ef60-a275-46f0-a736-cac6fb5ba835",
+      "name": "Big Government",
+      "description": "Questions about US taxation policy, government regulation, constitutional rights, and the ongoing tension between government authority and personal freedoms.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 60,
+      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/big-government-0da2ef60.json",
+      "checksum": "e346ee55d936601217333a535c9feb511b607f36f7da67b8c29657a70b8a9279",
+      "size": 32524
     }
   ]
 }

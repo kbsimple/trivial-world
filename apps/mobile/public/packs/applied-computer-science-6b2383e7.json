@@ -1,0 +1,503 @@
+{
+  "metadata": {
+    "id": "6b2383e7-6907-40e7-828d-56eff8ce5483",
+    "name": "Applied Computer Science",
+    "description": "Questions covering data structures, algorithms, machine learning, applied AI, software architecture, and the people and companies driving modern computing.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-14T12:00:00.000Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "2dfe6dd673c64812a2cdc8d0046e006573b1627a34229cce9de88ad5aeb1deaf",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 28699
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What name is given to the global network of interconnected computers that uses the TCP/IP protocol suite?",
+      "answerText": "The Internet",
+      "tidbits": "The Internet carries an estimated 5 exabytes of data every day \u2014 a volume that would take about 47 million years to watch as video."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What acronym describes the practice of storing and accessing computing resources \u2014 servers, storage, databases \u2014 over the internet rather than on local hardware?",
+      "answerText": "Cloud computing",
+      "tidbits": "Amazon Web Services (AWS) launched in 2006 and is credited with popularizing commercial cloud computing."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What protocol, invented by Tim Berners-Lee, governs how web pages are transferred between servers and browsers?",
+      "answerText": "HTTP (Hypertext Transfer Protocol)",
+      "tidbits": "Tim Berners-Lee invented both HTTP and HTML in 1989-1991 while working at CERN in Switzerland."
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What distributed computing design pattern breaks a large application into small, independently deployable services that communicate over APIs?",
+      "answerText": "Microservices architecture",
+      "tidbits": "Netflix famously migrated from a monolithic application to microservices starting in 2009, pioneering the pattern at scale."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What networking concept assigns a unique numerical address to every device on a network, enabling packets to be routed to the correct destination?",
+      "answerText": "IP address (Internet Protocol address)",
+      "tidbits": "IPv6 was introduced to solve the exhaustion of IPv4 addresses, expanding the address space from about 4 billion to 340 undecillion unique addresses."
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What is the name of the system that translates human-readable domain names like 'google.com' into the numerical IP addresses computers use?",
+      "answerText": "DNS (Domain Name System)"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In cloud computing, what term describes the practice of automatically adding or removing server capacity in response to fluctuating demand?",
+      "answerText": "Auto-scaling",
+      "tidbits": "AWS Auto Scaling was launched in 2009 and allowed companies to handle traffic spikes without pre-provisioning servers."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What distributed systems principle, formalized by Eric Brewer in 2000, states that a distributed system can only guarantee two of three properties: Consistency, Availability, and Partition tolerance?",
+      "answerText": "CAP Theorem",
+      "tidbits": "The CAP Theorem has been foundational in guiding NoSQL database design, leading to trade-offs like eventual consistency in systems like DynamoDB and Cassandra."
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What content delivery network technique stores cached copies of static assets at geographically distributed edge servers closer to end users?",
+      "answerText": "CDN (Content Delivery Network)",
+      "tidbits": "Akamai Technologies, founded in 1998, built one of the first large-scale CDNs and today serves 15-30% of all global web traffic."
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What consensus algorithm, used in distributed systems, allows a cluster of servers to elect a leader and agree on a sequence of operations even if some nodes fail?",
+      "answerText": "Raft (or Paxos)",
+      "tidbits": "Raft was designed in 2013 by Diego Ongaro and John Ousterhout as a more understandable alternative to the Paxos algorithm."
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What British mathematician is widely regarded as the father of computer science for his 1936 theoretical model of computation?",
+      "answerText": "Alan Turing",
+      "tidbits": "Turing's 1936 paper introduced the concept of a 'Turing machine' \u2014 a theoretical device that can simulate any algorithm."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What company, founded by Larry Page and Sergey Brin in 1998 in a Menlo Park garage, became the world's dominant search engine?",
+      "answerText": "Google",
+      "tidbits": "Google's original name was 'BackRub' before Page and Brin renamed it in 1997, playing on the word 'googol' \u2014 a 1 followed by 100 zeros."
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Who co-founded Microsoft in 1975 with Bill Gates?",
+      "answerText": "Paul Allen",
+      "tidbits": "Gates and Allen met at Lakeside School in Seattle in 1968 and bonded over their shared passion for programming on the school's computer terminal."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Finnish software engineer created the Linux kernel in 1991 as a personal project and released it as open-source software?",
+      "answerText": "Linus Torvalds",
+      "tidbits": "Torvalds originally named the kernel 'Freax' but the name was changed to 'Linux' by Ari Lemmke, who hosted the files on his FTP server."
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which computer scientist won the 1974 Turing Award for his work on algorithms and the TeX typesetting system, and authored 'The Art of Computer Programming'?",
+      "answerText": "Donald Knuth",
+      "tidbits": "Knuth spent over 50 years writing 'The Art of Computer Programming,' originally planned as one book \u2014 it grew to multiple volumes of thousands of pages."
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What company did Elon Musk, Peter Thiel, and others co-found in 1998, which was later acquired by eBay and became the foundation of modern online payments?",
+      "answerText": "PayPal"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which French-Canadian computer scientist, working at Facebook/Meta, won the 2018 Turing Award for deep learning contributions alongside Geoffrey Hinton and Yoshua Bengio?",
+      "answerText": "Yann LeCun",
+      "tidbits": "LeCun pioneered convolutional neural networks (CNNs) in the late 1980s \u2014 the same architecture that powers modern image recognition and facial detection."
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which Dutch computer scientist formulated the famous shortest-path algorithm in 1956 and also articulated the concept of structured programming, winning the Turing Award in 1972?",
+      "answerText": "Edsger Dijkstra",
+      "tidbits": "Dijkstra designed his shortest-path algorithm in about 20 minutes while sitting at a cafe with his fianc\u00e9e, without pen or paper."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What company, founded by Jensen Huang in 1993, originally made graphics chips for gaming and later became the dominant supplier of GPUs for AI training?",
+      "answerText": "NVIDIA",
+      "tidbits": "NVIDIA's CUDA platform, launched in 2007, allowed developers to use GPUs for general computing \u2014 a key enabler of the deep learning revolution."
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which computer scientist coined the term 'object-oriented programming' and developed the Smalltalk language at Xerox PARC in the 1970s?",
+      "answerText": "Alan Kay",
+      "tidbits": "Alan Kay famously said: 'The best way to predict the future is to invent it.' His work at PARC also influenced the GUI that Apple later adopted in the Macintosh."
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What US Defense Department research network, first operational in 1969, connected university computers and is considered the precursor to the modern internet?",
+      "answerText": "ARPANET",
+      "tidbits": "The first message ever sent over ARPANET on October 29, 1969 was 'lo' \u2014 the system crashed after typing just two letters of the intended word 'login.'"
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What programming language, created by James Gosling at Sun Microsystems in 1995, popularized the principle of 'write once, run anywhere'?",
+      "answerText": "Java",
+      "tidbits": "Java was originally named 'Oak' after an oak tree outside Gosling's office. The name was changed to 'Java' referencing the coffee from the Indonesian island."
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what decade was the first personal computer \u2014 the Altair 8800 \u2014 made commercially available to hobbyists?",
+      "answerText": "1970s (1975)",
+      "tidbits": "The Altair 8800 was featured on the January 1975 cover of Popular Electronics, which inspired a young Bill Gates to write a BASIC interpreter for it."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What 1947 invention at Bell Labs, which replaced vacuum tubes in electronic devices, is considered one of the most important breakthroughs of the 20th century?",
+      "answerText": "The transistor",
+      "tidbits": "John Bardeen, Walter Brattain, and William Shockley won the 1956 Nobel Prize in Physics for inventing the transistor."
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What operating system, created by Ken Thompson and Dennis Ritchie at Bell Labs in the early 1970s, became the foundation for Linux, macOS, and many other modern systems?",
+      "answerText": "Unix",
+      "tidbits": "Unix introduced the pipe operator '|' for chaining commands \u2014 a concept so powerful it remains foundational to command-line computing today."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "In what year did Tim Berners-Lee publish his proposal for the World Wide Web while working at CERN?",
+      "answerText": "1989"
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What 1965 observation by Intel co-founder Gordon Moore predicted that the number of transistors on a chip would double approximately every two years?",
+      "answerText": "Moore's Law",
+      "tidbits": "Moore's Law held remarkably well for about 50 years, driving exponential improvements in chip performance, but physical limits have slowed progress since the 2010s."
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What 1950 paper by Alan Turing proposed an 'imitation game' test to assess whether a machine could exhibit intelligent behavior indistinguishable from a human?",
+      "answerText": "The Turing Test (from 'Computing Machinery and Intelligence')",
+      "tidbits": "In the original paper, Turing predicted that by 2000, machines would be able to fool 30% of human interrogators in a 5-minute conversation."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What 1956 Dartmouth workshop, organized by John McCarthy and Marvin Minsky, is considered the founding event of the field of artificial intelligence?",
+      "answerText": "The Dartmouth Conference (Dartmouth Summer Research Project on Artificial Intelligence)",
+      "tidbits": "John McCarthy coined the term 'artificial intelligence' for this 1956 proposal, deliberately choosing it over competing terms like 'machine learning' and 'automata theory.'"
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Which 1964 programming language, designed for IBM mainframes, became the first widely used high-level language and remained dominant in business computing for decades?",
+      "answerText": "COBOL",
+      "tidbits": "Admiral Grace Hopper, one of COBOL's key architects, also invented the first compiler and coined the term 'debugging' after finding a moth in the Mark II computer."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What software design pattern separates an application into three components \u2014 Model, View, and Controller \u2014 to organize code and separate concerns?",
+      "answerText": "MVC (Model-View-Controller)",
+      "tidbits": "MVC was first described by Trygve Reenskaug in 1979 while working on Smalltalk at Xerox PARC."
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What software design principle states that a class should have only one reason to change, keeping code focused on a single responsibility?",
+      "answerText": "Single Responsibility Principle (SRP)",
+      "tidbits": "SRP is the 'S' in SOLID \u2014 five object-oriented design principles popularized by Robert C. Martin (Uncle Bob) in the early 2000s."
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What type of software interface defines a contract that specifies how different software components communicate, using defined methods and data formats?",
+      "answerText": "API (Application Programming Interface)",
+      "tidbits": "REST APIs, introduced by Roy Fielding in his 2000 dissertation, became the dominant API design style for web services."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What creational design pattern ensures that only one instance of a class exists throughout an application's lifetime, providing a global access point?",
+      "answerText": "Singleton pattern",
+      "tidbits": "The Singleton pattern is one of the 23 design patterns documented in the influential 1994 'Gang of Four' book by Gamma, Helm, Johnson, and Vlissides."
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What software design pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified automatically?",
+      "answerText": "Observer pattern",
+      "tidbits": "The Observer pattern is the foundation of event-driven programming and is central to how modern UI frameworks like React and Vue manage state changes."
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "In API design, what architectural style uses standard HTTP methods (GET, POST, PUT, DELETE) and treats everything as a resource identified by a URL?",
+      "answerText": "REST (Representational State Transfer)"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What UI/UX heuristic principle, named after a usability expert, states that the time to acquire a target is a function of the distance to and size of the target?",
+      "answerText": "Fitts's Law",
+      "tidbits": "Fitts's Law explains why buttons should be large and close to where the user's cursor naturally rests \u2014 a principle that shaped touchscreen UI design."
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What software architecture pattern separates an application into distinct layers \u2014 typically presentation, business logic, and data \u2014 where each layer only communicates with adjacent layers?",
+      "answerText": "Layered architecture (N-tier architecture)",
+      "tidbits": "The three-tier architecture model (presentation, logic, data) became dominant in enterprise software development in the 1990s and early 2000s."
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What principle, articulated by Barbara Liskov in 1987, states that objects of a superclass should be replaceable with objects of a subclass without altering program correctness?",
+      "answerText": "Liskov Substitution Principle (LSP)",
+      "tidbits": "Barbara Liskov won the 2008 Turing Award in part for this principle, which is the 'L' in SOLID design principles."
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What software development practice involves writing failing tests before writing the implementation code, ensuring every feature is driven by a specific test?",
+      "answerText": "Test-Driven Development (TDD)",
+      "tidbits": "TDD was popularized by Kent Beck as part of Extreme Programming (XP) in the late 1990s, and his 2002 book 'Test Driven Development: By Example' codified the methodology."
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What data structure organizes elements hierarchically, with a root node and child nodes branching downward, commonly used for representing file systems?",
+      "answerText": "Tree",
+      "tidbits": "Binary search trees allow for O(log n) search, insertion, and deletion on average \u2014 making them far faster than scanning a list for large datasets."
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What class of machine learning model uses layers of artificial neurons to learn patterns, and forms the basis of deep learning?",
+      "answerText": "Neural network (artificial neural network)",
+      "tidbits": "Modern deep learning models can have hundreds of billions of parameters \u2014 GPT-4 is estimated to have around 1.8 trillion parameters."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "In Big-O notation, what time complexity describes an algorithm whose runtime grows proportionally to the number of input elements \u2014 such as a simple loop?",
+      "answerText": "O(n) \u2014 linear time",
+      "tidbits": "O(1) is constant time (ideal), O(log n) is logarithmic, O(n) is linear, O(n\u00b2) is quadratic, and O(2\u207f) is exponential \u2014 progressively worse as input grows."
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What machine learning algorithm works by creating a sequence of 'if-then' splits on features to classify data, forming a hierarchical branching structure?",
+      "answerText": "Decision tree",
+      "tidbits": "Random forests improve on decision trees by training many trees on random subsets of data and features, then averaging their predictions to reduce overfitting."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What NLP technique, introduced by Google in 2013, represents words as dense numerical vectors in a high-dimensional space where similar words cluster together?",
+      "answerText": "Word2Vec (word embeddings)",
+      "tidbits": "Word2Vec captured relationships like 'king - man + woman = queen,' revealing that arithmetic on word vectors encodes semantic meaning."
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What reinforcement learning algorithm, developed by DeepMind, taught an AI to play Atari games from raw pixel input, achieving superhuman performance?",
+      "answerText": "Deep Q-Network (DQN)",
+      "tidbits": "DeepMind's DQN paper, published in Nature in 2015, demonstrated that a single algorithm could learn to play 49 different Atari games from scratch."
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What sorting algorithm works by repeatedly comparing adjacent elements and swapping them if they are in the wrong order, having O(n\u00b2) average time complexity?",
+      "answerText": "Bubble sort",
+      "tidbits": "Bubble sort is rarely used in practice for large datasets, but it's valuable pedagogically for illustrating sorting concepts and algorithm analysis."
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What 2017 Google paper introduced the Transformer architecture, which uses self-attention mechanisms and became the foundation of modern large language models?",
+      "answerText": "'Attention Is All You Need'",
+      "tidbits": "The 2017 paper was authored by eight researchers at Google. The architecture they introduced powers GPT, BERT, T5, and virtually every modern large language model."
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What technique in neural network training randomly drops a fraction of neurons during each training step to prevent the network from overfitting?",
+      "answerText": "Dropout",
+      "tidbits": "Dropout was introduced by Geoffrey Hinton and colleagues in a 2012 paper and became a standard regularization technique in deep learning."
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What algorithm, used for training neural networks, computes gradients by propagating error signals backward through the network layer by layer?",
+      "answerText": "Backpropagation",
+      "tidbits": "Backpropagation was popularized for neural networks in the 1986 paper by Rumelhart, Hinton, and Williams, though the mathematical concept had been known earlier."
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What programming competition platform, popular among aspiring software engineers, features algorithmic challenges ranked by difficulty with online judge scoring?",
+      "answerText": "LeetCode",
+      "tidbits": "LeetCode was founded in 2015 and hosts over 3,000 algorithmic problems that mirror the style of coding interviews at major tech companies."
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What game engine, released in 2005 and widely used for both indie and AAA game development, powers games like Hearthstone, Cuphead, and Pok\u00e9mon Go?",
+      "answerText": "Unity",
+      "tidbits": "Unity's cross-platform capability \u2014 targeting over 25 platforms from a single codebase \u2014 made it the most widely used game engine by 2023."
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What programming language, created by Guido van Rossum in 1991 and known for its readable syntax, became the dominant language for data science and machine learning?",
+      "answerText": "Python",
+      "tidbits": "Python was named after the British comedy group Monty Python, not the snake. Van Rossum was reading Monty Python scripts while designing the language."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What graphics API, developed by Microsoft and used in Windows gaming and Xbox, competes with OpenGL and Vulkan for real-time 3D rendering?",
+      "answerText": "DirectX (Direct3D)",
+      "tidbits": "DirectX 12, released in 2015, introduced low-level GPU access to Windows developers, dramatically reducing CPU overhead and improving multi-threaded rendering."
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What annual competitive programming competition, hosted by Google, challenges participants to solve algorithmic problems under time pressure, with regional and world finals?",
+      "answerText": "Google Code Jam",
+      "tidbits": "Poland's Tomasz Czajka won the very first Google Code Jam in 2003. The competition ran annually until Google discontinued it in 2023."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What game engine, developed by Epic Games and used in Fortnite, also powers many film-quality cinematic productions and virtual production pipelines?",
+      "answerText": "Unreal Engine"
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In esports infrastructure, what term describes the delay between a player's action and the server registering it, which critically affects competitive fairness?",
+      "answerText": "Latency (or ping)",
+      "tidbits": "Professional esports tournaments often use dedicated LAN networks to reduce latency below 1 millisecond, compared to typical home internet delays of 20-100ms."
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What rendering technique, used in modern AAA games, traces the path of simulated light rays from the camera back to light sources, producing photorealistic shadows and reflections?",
+      "answerText": "Ray tracing",
+      "tidbits": "NVIDIA's RTX 20 series, launched in 2018, was the first consumer GPU line with dedicated hardware acceleration for real-time ray tracing."
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What competitive programming algorithm efficiently finds the shortest path between all pairs of nodes in a weighted graph using dynamic programming?",
+      "answerText": "Floyd-Warshall algorithm",
+      "tidbits": "Floyd-Warshall runs in O(V\u00b3) time, making it practical for dense graphs with hundreds of nodes but unsuitable for the sparse graphs with millions of nodes."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What technique used in game development divides 3D space into an octree or BSP tree to efficiently determine which objects are visible from the camera and skip rendering hidden ones?",
+      "answerText": "Frustum culling (with spatial partitioning)",
+      "tidbits": "Without culling, rendering every object in a large open-world game would be impossibly slow \u2014 culling techniques can reduce the number of draw calls by 90% or more."
+    }
+  ],
+  "checksum": "2dfe6dd673c64812a2cdc8d0046e006573b1627a34229cce9de88ad5aeb1deaf",
+  "size": 28699
+}

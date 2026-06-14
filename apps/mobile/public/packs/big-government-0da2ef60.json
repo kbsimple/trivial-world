@@ -1,0 +1,500 @@
+{
+  "metadata": {
+    "id": "0da2ef60-a275-46f0-a736-cac6fb5ba835",
+    "name": "Big Government",
+    "description": "Questions about US taxation policy, government regulation, constitutional rights, and the ongoing tension between government authority and personal freedoms.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-14T12:00:00.000Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "e346ee55d936601217333a535c9feb511b607f36f7da67b8c29657a70b8a9279",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 32524
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Among developed nations, which organization tracks and compares member countries' tax burdens, including the US, measuring taxes as a percentage of GDP?",
+      "answerText": "OECD (Organisation for Economic Co-operation and Development)",
+      "tidbits": "The US total tax burden as a percentage of GDP consistently ranks among the lowest in the OECD, despite its large absolute government spending in dollar terms."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What annual index, published by the Heritage Foundation, ranks countries from most to least economically free based on factors like property rights, tax burden, and government spending?",
+      "answerText": "Index of Economic Freedom",
+      "tidbits": "The Heritage Foundation's 2024 Index ranked the US around 25th globally for economic freedom \u2014 lower than Singapore, Switzerland, and New Zealand."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Compared to most Western European countries, how does the US federal income tax rate at the top bracket generally compare?",
+      "answerText": "The US top rate is generally lower than most Western European countries",
+      "tidbits": "In 2023, top marginal income tax rates exceeded 50% in countries like Sweden, Denmark, and France, compared to the US federal top rate of 37% (before state taxes)."
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What Scandinavian country consistently ranks among the highest in the world for both tax burden and reported citizen happiness, often cited in debates about government size and well-being?",
+      "answerText": "Denmark (or Finland, Sweden, Norway)",
+      "tidbits": "Denmark's total tax revenue regularly exceeds 45% of GDP \u2014 among the highest in the world \u2014 yet Denmark consistently tops global happiness rankings."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What Asian city-state, frequently ranked as one of the world's most economically free jurisdictions, has a flat income tax system with a top rate far below most Western nations?",
+      "answerText": "Singapore",
+      "tidbits": "Singapore's top personal income tax rate is 24%, compared to 37% in the US and over 50% in some European countries, yet it provides high-quality public services."
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What European country, often cited as a model of economic liberalism, has no corporate income tax and is one of the lowest-tax jurisdictions among developed nations?",
+      "answerText": "Switzerland (or Estonia, Ireland for low corporate tax)"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The Fraser Institute publishes an annual 'Economic Freedom of the World' index. Generally, where does the United States rank compared to other large democracies?",
+      "answerText": "Mid-to-upper range \u2014 typically in the top 15-20 globally but behind Switzerland, New Zealand, and Singapore"
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What European country adopted a 'flat tax' of a single rate for all income earners in 1994, spurring economic growth and becoming a model cited by flat-tax advocates?",
+      "answerText": "Estonia",
+      "tidbits": "Estonia's flat tax of 26% (later reduced) was implemented after independence from the Soviet Union and is credited with attracting investment and fueling GDP growth."
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What term describes the total value of goods and services produced in a country divided by its population \u2014 commonly used to compare living standards across different-sized governments internationally?",
+      "answerText": "GDP per capita",
+      "tidbits": "High-tax Nordic countries like Norway, Denmark, and Sweden all have GDP per capita comparable to or exceeding the US, complicating simple claims that higher taxes always reduce prosperity."
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What international treaty, implemented in 2010, requires foreign financial institutions to report accounts held by US citizens to the IRS \u2014 extending US tax jurisdiction globally?",
+      "answerText": "FATCA (Foreign Account Tax Compliance Act)",
+      "tidbits": "FATCA is so burdensome that more Americans renounced their citizenship in the decade after its passage than in all previous decades combined."
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What American economist, who taught at the University of Chicago, argued for free markets, minimal government intervention, and a negative income tax in place of welfare programs?",
+      "answerText": "Milton Friedman",
+      "tidbits": "Milton Friedman won the 1976 Nobel Prize in Economics and advised President Reagan. His TV series 'Free to Choose' became one of the most-watched public policy programs in history."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What British-American economist, author of 'The General Theory of Employment, Interest and Money,' argued that government spending could stimulate a depressed economy and reduce unemployment?",
+      "answerText": "John Maynard Keynes",
+      "tidbits": "Keynes's ideas were so influential that Franklin Roosevelt's New Deal and virtually all modern deficit-spending policies trace their intellectual lineage to his 1936 General Theory."
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What American president enacted the largest tax cuts in US history at the time in 1981, reducing the top marginal income tax rate from 70% to 50% and later to 28%?",
+      "answerText": "Ronald Reagan",
+      "tidbits": "Reagan's Economic Recovery Tax Act of 1981 reduced the top marginal rate from 70% to 50%, and the Tax Reform Act of 1986 further lowered it to 28% \u2014 a dramatic compression of rates."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What Austrian economist, author of 'The Road to Serfdom,' argued that central economic planning concentrates power in ways that inevitably threaten individual liberty?",
+      "answerText": "Friedrich Hayek",
+      "tidbits": "Hayek won the Nobel Prize in Economics in 1974 and is considered one of the leading intellectual architects of free-market liberalism, influencing both Reagan and Thatcher."
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What Russian-American novelist and philosopher, author of 'Atlas Shrugged,' developed a philosophy called Objectivism that argued for laissez-faire capitalism and radical individual rights against government intervention?",
+      "answerText": "Ayn Rand",
+      "tidbits": "Ayn Rand's 'Atlas Shrugged' (1957) remained in the top 10 of a Library of Congress survey asking which books most influenced readers' lives \u2014 second only to the Bible."
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What American president enacted the New Deal \u2014 a sweeping expansion of federal regulatory power and social programs in response to the Great Depression?",
+      "answerText": "Franklin D. Roosevelt (FDR)"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What American conservative intellectual, founder of National Review magazine, helped define American conservatism with his arguments for limited government, individual freedom, and opposition to liberal social engineering?",
+      "answerText": "William F. Buckley Jr.",
+      "tidbits": "Buckley's 1955 National Review mission statement famously declared it would 'stand athwart history, yelling Stop' \u2014 opposing what he saw as the inexorable expansion of the liberal state."
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What economist, often considered the intellectual founder of classical liberalism, wrote 'The Wealth of Nations' in 1776, arguing that free markets guided by the 'invisible hand' produce better outcomes than government direction?",
+      "answerText": "Adam Smith",
+      "tidbits": "Adam Smith's 'invisible hand' appeared just three times in 'The Wealth of Nations' but became the central metaphor for why decentralized market decisions can outperform central planning."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What Nobel Prize-winning economist argued that government failure is as important as market failure \u2014 and that regulators often end up captured by the industries they regulate?",
+      "answerText": "George Stigler",
+      "tidbits": "Stigler's 'regulatory capture' theory, developed at the University of Chicago in the 1970s, explained why railroad regulation served railroads, not consumers."
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What economist developed Public Choice theory, which applies economic analysis to political behavior \u2014 showing that politicians and bureaucrats act in self-interest rather than the public interest?",
+      "answerText": "James Buchanan",
+      "tidbits": "James Buchanan won the 1986 Nobel Prize in Economics for Public Choice theory. His work implied that expanding government creates self-perpetuating bureaucracies that resist efficiency reforms."
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What constitutional amendment, ratified in 1913, granted Congress the power to levy a federal income tax without apportioning it among the states?",
+      "answerText": "The 16th Amendment",
+      "tidbits": "Before the 16th Amendment, the federal government relied primarily on tariffs and excise taxes. The new income tax initially applied only to the wealthiest 2% of Americans."
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What constitutional amendment, ratified in 1919 and later repealed in 1933, banned the manufacture and sale of alcohol \u2014 often cited as an example of government overreach into personal behavior?",
+      "answerText": "The 18th Amendment (Prohibition)",
+      "tidbits": "Prohibition's repeal via the 21st Amendment in 1933 remains the only time in US history that a constitutional amendment was repealed by another amendment."
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What was the top marginal federal income tax rate in the United States during the 1950s and early 1960s, a fact often cited in debates about historical tax policy?",
+      "answerText": "91% (or 90\u201392%)",
+      "tidbits": "The 91% top marginal rate applied only to income above what is equivalent to several million dollars today \u2014 and effective rates were far lower due to deductions and income sheltering."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What 1930s legislative expansion of the federal government \u2014 including the Social Security Act, Securities Exchange Act, and National Labor Relations Act \u2014 dramatically grew Washington's regulatory role?",
+      "answerText": "The New Deal",
+      "tidbits": "FDR's New Deal created over 30 new federal agencies and programs between 1933 and 1939, fundamentally expanding the role of the federal government in the American economy."
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What post-World War II legislation, known as the GI Bill, provided federal benefits \u2014 education, housing loans, job training \u2014 to millions of veterans, marking a major expansion of federal social programs?",
+      "answerText": "The GI Bill (Servicemen's Readjustment Act of 1944)",
+      "tidbits": "The GI Bill sent nearly 8 million veterans to college or vocational school by 1956, helping create the American middle class but also representing a massive expansion of federal benefits."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What 2001 law, passed in the aftermath of September 11, dramatically expanded domestic surveillance powers, allowing the NSA to monitor phone calls and internet communications with reduced judicial oversight?",
+      "answerText": "The USA PATRIOT Act"
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What 1965 Lyndon Johnson programs, collectively called the 'Great Society,' created Medicare and Medicaid \u2014 two of the largest federal entitlement programs in US history?",
+      "answerText": "The Great Society (Social Security Amendments of 1965)",
+      "tidbits": "Medicare and Medicaid were signed into law on July 30, 1965, with former President Harry Truman \u2014 who had proposed national health insurance in 1945 \u2014 present as an honored guest."
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What 1986 law, signed by Reagan, was the most comprehensive overhaul of the US tax code in decades \u2014 lowering the top marginal rate to 28% while eliminating many deductions and loopholes?",
+      "answerText": "The Tax Reform Act of 1986",
+      "tidbits": "The 1986 Tax Reform Act was notable for being passed with bipartisan support \u2014 lowering rates (appealing to Republicans) while broadening the base by eliminating loopholes (appealing to Democrats)."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What early 20th-century trust-busting actions, undertaken by President Theodore Roosevelt, used the Sherman Antitrust Act to break up Standard Oil, Northern Securities, and other monopolies?",
+      "answerText": "Theodore Roosevelt's antitrust enforcement (trust-busting)",
+      "tidbits": "Roosevelt filed 44 antitrust suits during his presidency (1901-1909), compared to just 18 suits filed in the preceding 11 years since the Sherman Act passed \u2014 earning him the 'trust-buster' nickname."
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What 1930 US trade law, passed during the Great Depression, raised tariffs on over 20,000 imported goods \u2014 widely blamed by economists for deepening the Depression by triggering retaliatory tariffs worldwide?",
+      "answerText": "Smoot-Hawley Tariff Act",
+      "tidbits": "Over 1,000 economists signed a petition urging President Hoover not to sign Smoot-Hawley. After it passed, US imports fell by 66% and exports dropped similarly as trading partners retaliated."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What Amendment to the US Constitution protects citizens against unreasonable searches and seizures, requiring law enforcement to obtain warrants supported by probable cause?",
+      "answerText": "The 4th Amendment",
+      "tidbits": "The 4th Amendment was a direct response to British 'writs of assistance' \u2014 general search warrants that allowed colonial officials to search any home without justification."
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What constitutional right protects individuals from being compelled to testify against themselves in criminal proceedings \u2014 commonly invoked by witnesses who 'plead the Fifth'?",
+      "answerText": "The 5th Amendment (right against self-incrimination)",
+      "tidbits": "The 5th Amendment also includes the 'takings clause,' which requires the government to pay 'just compensation' when it takes private property for public use via eminent domain."
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the first amendment in the US Bill of Rights, which protects freedom of speech, religion, press, assembly, and the right to petition the government?",
+      "answerText": "The 1st Amendment",
+      "tidbits": "The First Amendment's free speech protection is more robust than in virtually any other democracy \u2014 the US does not have hate speech laws that most European countries maintain."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What 1961 Supreme Court case established the 'exclusionary rule' \u2014 that evidence obtained through illegal police searches cannot be used in court?",
+      "answerText": "Mapp v. Ohio",
+      "tidbits": "Before Mapp v. Ohio, the exclusionary rule applied only to federal courts. The 1961 decision extended it to state courts through the 14th Amendment's due process clause."
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What 2005 Supreme Court case held that the government's use of eminent domain to transfer property from one private owner to another for economic development was constitutional?",
+      "answerText": "Kelo v. City of New London",
+      "tidbits": "Kelo v. New London sparked nationwide outrage and led 45 states to pass new laws restricting eminent domain takings for economic development, despite the federal ruling allowing it."
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What landmark 1966 Supreme Court decision requires police to inform suspects of their rights to remain silent and to have an attorney before custodial interrogation?",
+      "answerText": "Miranda v. Arizona"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What constitutional doctrine, developed by the Supreme Court, holds that certain fundamental rights are so important that the government cannot restrict them even if a law passes rational basis review \u2014 requiring strict scrutiny?",
+      "answerText": "Strict scrutiny (for fundamental rights and suspect classifications)"
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What 1973 Supreme Court case struck down state laws restricting abortion, holding they violated a constitutional right to privacy implied by the 14th Amendment \u2014 and was later overturned in 2022?",
+      "answerText": "Roe v. Wade",
+      "tidbits": "Roe v. Wade was overturned by Dobbs v. Jackson Women's Health Organization in June 2022, returning abortion regulation to individual states for the first time since 1973."
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What legal doctrine allows police to seize cash, cars, and property suspected of being connected to a crime \u2014 without charging the owner with a crime \u2014 and has been criticized as a major infringement on property rights?",
+      "answerText": "Civil asset forfeiture",
+      "tidbits": "Under civil asset forfeiture, the government sues the property itself \u2014 cases are literally titled 'United States v. $100,000 in US Currency' \u2014 making it difficult for owners to reclaim property."
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What 2010 Supreme Court case held that the government cannot restrict political spending by corporations, associations, or unions under the First Amendment, dramatically changing campaign finance law?",
+      "answerText": "Citizens United v. Federal Election Commission",
+      "tidbits": "Citizens United overturned 63 years of campaign finance precedent and led to the rise of Super PACs, which can raise unlimited money as long as they don't coordinate directly with candidates."
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What percentage of US GDP does the federal government typically spend in peacetime? A) About 10%, B) About 20-25%, C) About 40%, D) About 55%",
+      "answerText": "About 20-25% (B)",
+      "tidbits": "Federal spending as a share of GDP rose significantly during COVID-19 relief spending in 2020-2021, briefly exceeding 30%, before returning toward the historical 20-24% range."
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the current (2024) top federal marginal income tax rate in the United States?",
+      "answerText": "37%",
+      "tidbits": "The 37% rate applies to taxable income above $609,350 for single filers in 2024. When combined with state taxes, top earners in California face marginal rates approaching 54%."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the term for the total amount the US federal government has borrowed and not yet repaid \u2014 a figure that exceeded $33 trillion in 2023?",
+      "answerText": "The national debt",
+      "tidbits": "The US national debt first exceeded $1 trillion in 1982 under Reagan. It took about 200 years to reach $1 trillion, and only 40 more years to exceed $33 trillion."
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What economic theory, illustrated by a bell-shaped curve, suggests that there is an optimal tax rate beyond which raising rates actually decreases total tax revenue by reducing economic activity?",
+      "answerText": "The Laffer Curve",
+      "tidbits": "Arthur Laffer reportedly drew the curve on a napkin during a 1974 dinner with Dick Cheney and Donald Rumsfeld, though the underlying concept dates back centuries to Ibn Khaldun."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What annual gap between federal government spending and revenue \u2014 which must be covered by borrowing \u2014 has averaged over $1 trillion per year in recent years?",
+      "answerText": "The federal budget deficit",
+      "tidbits": "The US ran budget surpluses from 1998-2001 under Clinton \u2014 the only surpluses since 1969. Since then, deficits have returned every year, ballooning during recessions and COVID."
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the name of the federal agency responsible for collecting income taxes, enforcing tax law, and processing tax returns in the United States?",
+      "answerText": "The IRS (Internal Revenue Service)"
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "The Federal Reserve controls the money supply and sets short-term interest rates. What is the name of the benchmark short-term rate the Fed adjusts to influence the economy?",
+      "answerText": "The federal funds rate",
+      "tidbits": "The Fed raised the federal funds rate from near 0% to over 5% between 2022 and 2023 \u2014 the fastest rate increase in 40 years \u2014 to combat inflation that peaked above 9%."
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "As of 2023, what are the three largest categories of US federal spending that together account for the majority of the budget?",
+      "answerText": "Social Security, Medicare/Medicaid (health care), and defense",
+      "tidbits": "Social Security, Medicare, and Medicaid together consume roughly 60% of the federal budget \u2014 making them the primary drivers of long-term spending growth and deficit projections."
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What term describes the total value of all regulatory requirements imposed on businesses in the US \u2014 estimated by some researchers to cost over $2 trillion annually?",
+      "answerText": "Regulatory burden (or cost of regulation)",
+      "tidbits": "The Competitive Enterprise Institute's 'Ten Thousand Commandments' report estimates annual federal regulatory costs at over $1.9 trillion \u2014 nearly as large as all federal discretionary spending."
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the approximate number of pages in the US Code of Federal Regulations \u2014 the codification of all federal agency rules \u2014 which has grown dramatically since the 1950s?",
+      "answerText": "Approximately 185,000 to 190,000 pages",
+      "tidbits": "The Federal Register and Code of Federal Regulations together contain more than 185,000 pages. In 1950, the CFR contained fewer than 10,000 pages \u2014 an 18-fold increase in 70 years."
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What federal agency is responsible for collecting and enforcing federal income taxes in the United States?",
+      "answerText": "The IRS (Internal Revenue Service)",
+      "tidbits": "The IRS employs approximately 85,000 workers and processes over 240 million tax returns per year. The agency was created by Congress in 1862 during the Civil War to fund the war effort."
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What federal agency, created in 1970 under President Nixon, is responsible for protecting human health and the environment through regulations on air, water, and land pollution?",
+      "answerText": "The EPA (Environmental Protection Agency)",
+      "tidbits": "The EPA was created by executive order in December 1970 \u2014 ironically by Nixon, considered a conservative \u2014 in response to the first Earth Day and growing environmental awareness."
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What federal agency enforces workplace safety regulations \u2014 setting standards for hazardous materials, machinery guards, and employee health protections across American businesses?",
+      "answerText": "OSHA (Occupational Safety and Health Administration)",
+      "tidbits": "OSHA was created by the Occupational Safety and Health Act of 1970 and is credited with reducing workplace fatalities from about 14,000 per year in 1970 to around 5,000 today."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What practice, used by law enforcement agencies, allows police to permanently seize cash, vehicles, and property suspected of connection to a crime without requiring a criminal conviction?",
+      "answerText": "Civil asset forfeiture",
+      "tidbits": "In some years, the total value of property seized through civil asset forfeiture by US law enforcement has exceeded the value of property stolen in all reported burglaries nationwide."
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What NSA surveillance program, revealed by Edward Snowden in 2013, collected phone metadata records from millions of ordinary Americans without individualized warrants?",
+      "answerText": "PRISM (and the bulk phone metadata collection program under Section 215 of the PATRIOT Act)",
+      "tidbits": "The Snowden revelations in 2013 sparked a global debate about surveillance and privacy. A federal court later ruled the bulk phone collection program illegal under the PATRIOT Act."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What federal agency regulates drugs, food safety, medical devices, and cosmetics \u2014 and must approve new drugs before they can be marketed in the United States?",
+      "answerText": "The FDA (Food and Drug Administration)"
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What is the legal doctrine allowing governments to take private property for public use \u2014 such as highways, airports, or parks \u2014 as long as the owner receives 'just compensation'?",
+      "answerText": "Eminent domain",
+      "tidbits": "The 5th Amendment's 'takings clause' authorizes eminent domain. The 2005 Kelo v. New London case controversially extended it to allow takings for private economic development."
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What 1914 federal law, strengthening the Sherman Antitrust Act, explicitly prohibited price fixing, exclusive dealing contracts, and anticompetitive mergers \u2014 and also exempted labor unions from antitrust law?",
+      "answerText": "The Clayton Antitrust Act",
+      "tidbits": "The Clayton Act was championed by Samuel Gompers, founder of the AFL, who called it 'labor's Magna Carta' because it explicitly protected unions from being prosecuted as illegal combinations."
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What federal program, criticized as 'policing for profit,' allows state and local police agencies to keep a significant share of assets seized during drug investigations \u2014 creating financial incentives for aggressive enforcement?",
+      "answerText": "Equitable sharing (federal adoption of civil asset forfeiture)",
+      "tidbits": "The DOJ's equitable sharing program allows local police to transfer cases to federal agencies and receive up to 80% of forfeiture proceeds \u2014 bypassing some state-level restrictions on the practice."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What federal regulatory commission, created in 1934, is responsible for licensing radio and television stations, regulating interstate communications, and overseeing broadband internet access?",
+      "answerText": "The FCC (Federal Communications Commission)",
+      "tidbits": "The FCC's 'net neutrality' rules \u2014 which prohibited ISPs from blocking or slowing internet traffic \u2014 were adopted in 2015, struck down in 2017, and have been the subject of ongoing regulatory battles."
+    }
+  ],
+  "checksum": "e346ee55d936601217333a535c9feb511b607f36f7da67b8c29657a70b8a9279",
+  "size": 32524
+}

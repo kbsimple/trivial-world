@@ -1,0 +1,503 @@
+{
+  "metadata": {
+    "id": "96d14293-009a-4bbd-8036-fcf2351e874c",
+    "name": "Thinking HowTO",
+    "description": "Questions about mental models, critical thinking frameworks, logical fallacies, and the reasoning tools used by great thinkers to make better decisions.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-14T12:00:00.000Z",
+    "updatedAt": "2026-06-14T12:00:00.000Z",
+    "categoryCounts": {
+      "blue": 10,
+      "pink": 10,
+      "yellow": 10,
+      "purple": 10,
+      "green": 10,
+      "orange": 10
+    },
+    "totalQuestions": 60,
+    "checksum": "44888ff70568e48f6bb445971331387b3603732e267003d03a8471b2dc48056f",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 31474
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What mental model, named after a 14th-century English friar, states that among competing explanations, the simplest one that accounts for all the facts should be preferred?",
+      "answerText": "Occam's Razor",
+      "tidbits": "William of Ockham's principle was not about proving simplicity is truth \u2014 it's a heuristic for choosing where to start your investigation first."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What mental model, often associated with Warren Buffett and Charlie Munger, describes the domain of knowledge within which a person can speak with genuine authority and should not stray beyond?",
+      "answerText": "Circle of competence",
+      "tidbits": "Warren Buffett has repeatedly credited his investing success to staying within industries he could thoroughly understand, refusing to invest in technology stocks he didn't grasp."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What mental model suggests that rather than solving a problem directly, you should think about what you want to avoid and work backward from the undesirable outcome?",
+      "answerText": "Inversion",
+      "tidbits": "The German mathematician Carl Jacobi popularized inversion in mathematics: 'Man muss immer umkehren' (always invert). Charlie Munger applied it broadly to life decisions."
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What concept, articulated by Alfred Korzybski in 1931, reminds us that our mental representations of reality are simplifications and should not be mistaken for reality itself?",
+      "answerText": "The map is not the territory",
+      "tidbits": "Korzybski's insight is captured in his phrase: 'The map is not the territory.' It warns against confusing our models, theories, and beliefs with the actual world."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What mental model describes the ripple effects of a decision beyond its immediate consequences \u2014 the effects of the effects \u2014 often ignored in short-term thinking?",
+      "answerText": "Second-order effects (second-order thinking)",
+      "tidbits": "Howard Marks popularized second-order thinking in investing: 'First-level thinking says, 'It's a good company; let's buy the stock.' Second-level thinking asks, 'Is it better than everyone already expects?'"
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What mental model, named after a German diplomat, suggests that you should 'never attribute to malice that which is adequately explained by stupidity or carelessness'?",
+      "answerText": "Hanlon's Razor"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What systems thinking concept describes situations where a feedback loop causes a system to maintain stability by adjusting outputs in response to inputs \u2014 like a thermostat?",
+      "answerText": "Negative feedback loop (homeostasis or balancing loop)",
+      "tidbits": "Negative feedback loops resist change and maintain stability. Positive feedback loops amplify change \u2014 like compound interest or viral spread \u2014 pushing systems away from equilibrium."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What mental model, drawn from physics, describes a phenomenon where increasing the concentration of inputs beyond a certain point yields diminishing returns \u2014 and eventually negative ones?",
+      "answerText": "Diminishing returns (law of diminishing marginal utility)",
+      "tidbits": "The concept of diminishing returns dates to 18th-century economics, but it appears everywhere from fertilizer application in farming to hours studied before an exam."
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What systems concept describes the delay between an action taken in a system and the system's response, which can cause decision-makers to over-correct or under-react?",
+      "answerText": "System lag (or feedback delay)",
+      "tidbits": "Donella Meadows, author of 'Thinking in Systems,' identified feedback delays as one of the most common causes of oscillating behavior and policy failure in complex systems."
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "What mental model, derived from evolutionary biology, suggests that traits and behaviors that once conferred survival advantages may no longer be useful \u2014 or may even be harmful \u2014 in a changed environment?",
+      "answerText": "Evolutionary mismatch (or environment mismatch)",
+      "tidbits": "Evolutionary mismatch explains behaviors like craving sugar and fat \u2014 advantageous when calories were scarce, but harmful in a world of fast food abundance."
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What ancient Greek philosopher is famous for his method of asking probing questions to expose contradictions in his interlocutors' beliefs?",
+      "answerText": "Socrates",
+      "tidbits": "Socrates wrote nothing himself \u2014 all we know of his thought comes from his students, primarily Plato. He was executed in 399 BCE for 'corrupting the youth' of Athens."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What psychologist, who wrote 'Thinking, Fast and Slow,' won the Nobel Prize in Economics for his work on cognitive biases and decision-making?",
+      "answerText": "Daniel Kahneman",
+      "tidbits": "Kahneman's System 1 (fast, intuitive) and System 2 (slow, deliberate) thinking framework has become one of the most influential models in behavioral economics."
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What author of 'The Black Swan' and 'Antifragile' developed the concept that some systems gain strength from disorder and unpredictability?",
+      "answerText": "Nassim Nicholas Taleb",
+      "tidbits": "Taleb's 'antifragile' is the opposite of fragile \u2014 not merely robust, but systems that actually improve when exposed to volatility, stress, and uncertainty."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which philosopher, known for the concept of falsifiability, argued that a theory is scientific only if it can in principle be proven wrong by experiment?",
+      "answerText": "Karl Popper",
+      "tidbits": "Popper's falsifiability criterion led him to classify Marxism and psychoanalysis as pseudosciences \u2014 since both theories could explain any outcome, they could never be disproved."
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What French philosopher, known for 'Cogito, ergo sum' (I think, therefore I am), used radical doubt as a method to find indubitable foundations for knowledge?",
+      "answerText": "Ren\u00e9 Descartes",
+      "tidbits": "Descartes' method of systematic doubt \u2014 imagining an evil demon deceiving him about everything \u2014 led him to the only thing he could not doubt: his own existence as a thinking thing."
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which investor and business partner of Warren Buffett is famous for advocating the use of multiple mental models across many disciplines to think more clearly?",
+      "answerText": "Charlie Munger"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Greek philosopher systematized logic with the concept of the syllogism \u2014 a deductive argument with two premises and a conclusion \u2014 in the 4th century BCE?",
+      "answerText": "Aristotle",
+      "tidbits": "Aristotle's syllogism \u2014 'All men are mortal; Socrates is a man; therefore Socrates is mortal' \u2014 remained the dominant model of logical inference for nearly 2,000 years."
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which Austrian-British philosopher wrote 'Tractatus Logico-Philosophicus' and later 'Philosophical Investigations,' arguing that many philosophical problems arise from misuse of language?",
+      "answerText": "Ludwig Wittgenstein",
+      "tidbits": "Wittgenstein's early work tried to show the logical structure of language; his later work argued that meaning comes from use in practice, not from hidden logical form."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What economist and philosopher wrote 'The Road to Serfdom,' arguing that central planning inevitably leads to totalitarianism by concentrating power and eliminating individual liberty?",
+      "answerText": "Friedrich Hayek",
+      "tidbits": "Hayek's 1944 'The Road to Serfdom' was a direct response to the wartime enthusiasm for central planning, warning that socialism and fascism shared the same authoritarian logic."
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What philosopher and mathematician co-authored 'Principia Mathematica' and later wrote 'A History of Western Philosophy,' winning the Nobel Prize in Literature in 1950?",
+      "answerText": "Bertrand Russell",
+      "tidbits": "Russell's 'Teapot' thought experiment \u2014 positing an undetectable teapot orbiting the sun \u2014 was an argument that the burden of proof lies with the person making a claim, not the skeptic."
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What ancient Greek philosopher and mathematician, who founded a philosophical school in Italy, is credited with developing one of the earliest systematic forms of logical and mathematical reasoning?",
+      "answerText": "Pythagoras",
+      "tidbits": "Pythagoras believed numbers were the fundamental nature of reality. His school treated mathematics as both a scientific and spiritual pursuit."
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What philosophical and scientific movement of the 17th and 18th centuries championed reason, science, and individual rights \u2014 and is sometimes called the 'Age of Reason'?",
+      "answerText": "The Enlightenment",
+      "tidbits": "The Enlightenment produced foundational texts like Locke's 'Two Treatises of Government' and Voltaire's 'Candide,' and directly influenced the American and French revolutions."
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Who developed the scientific method of systematic observation, hypothesis, and experiment \u2014 articulated in his 1620 work 'Novum Organum'?",
+      "answerText": "Francis Bacon",
+      "tidbits": "Francis Bacon argued against relying on ancient authorities and instead advocated for inductive reasoning from observed facts to general principles \u2014 the foundation of empirical science."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What form of logical argument, systematized by Aristotle, draws a specific conclusion from two general premises \u2014 such as 'All A are B; X is A; therefore X is B'?",
+      "answerText": "Syllogism",
+      "tidbits": "The syllogism dominated Western logic for nearly 2,000 years until Gottlob Frege developed predicate logic in the 1870s, which could handle far more complex reasoning."
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What German philosopher wrote 'Critique of Pure Reason,' arguing that our experience of reality is shaped by the mind's own categories of understanding rather than the world itself?",
+      "answerText": "Immanuel Kant",
+      "tidbits": "Kant called his work a 'Copernican revolution in philosophy' \u2014 instead of the mind conforming to objects, objects conform to the mind's structure of perception."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What method, refined by 17th-century philosopher Ren\u00e9 Descartes, involves doubting everything that can possibly be doubted in order to find certain foundations for knowledge?",
+      "answerText": "Cartesian doubt (method of doubt or hyperbolic doubt)"
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What ancient Greek school of philosophy, founded by Epicurus, taught that pleasure and the absence of pain are the highest goods, and that tranquility comes from reason and friendship?",
+      "answerText": "Epicureanism",
+      "tidbits": "Despite popular misconception, Epicurus taught that the highest pleasures are simple ones \u2014 friendship, philosophy, and the absence of fear \u2014 not indulgent luxury."
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What ancient Greek school of philosophy, associated with Zeno of Citium, taught that virtue is the only true good and that one should maintain rational control over desires regardless of external circumstances?",
+      "answerText": "Stoicism",
+      "tidbits": "Stoic philosophy is experiencing a modern revival, with books like 'Meditations' (Marcus Aurelius) and 'The Obstacle Is the Way' (Ryan Holiday) becoming bestsellers."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What 17th-century philosopher, writing in 'An Essay Concerning Human Understanding,' argued that the mind begins as a blank slate \u2014 'tabula rasa' \u2014 shaped entirely by experience?",
+      "answerText": "John Locke",
+      "tidbits": "Locke's tabula rasa challenged the rationalist view that we have innate ideas, launching the empiricist tradition that knowledge comes from sensory experience."
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What German mathematician, working in the 1870s-80s, developed first-order predicate logic \u2014 a formal system powerful enough to represent virtually all mathematical reasoning?",
+      "answerText": "Gottlob Frege",
+      "tidbits": "Frege's work was foundational to both mathematical logic and the philosophy of language, directly inspiring Russell, Wittgenstein, and the analytic philosophy tradition."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What problem-solving technique, developed by Edward de Bono, involves approaching a problem from unusual angles rather than following conventional linear logic?",
+      "answerText": "Lateral thinking",
+      "tidbits": "Edward de Bono coined 'lateral thinking' in his 1967 book of the same name. His most famous exercise is the 'six thinking hats' \u2014 each hat represents a different mode of thought."
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What five-stage creative problem-solving process \u2014 Empathize, Define, Ideate, Prototype, Test \u2014 was popularized by the Stanford d.school and IDEO?",
+      "answerText": "Design thinking",
+      "tidbits": "Design thinking was formalized at Stanford's d.school (Hasso Plattner Institute of Design) and is now taught in business schools and corporate innovation programs worldwide."
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What creative brainstorming technique uses a checklist of seven actions \u2014 Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Reverse \u2014 to generate new ideas?",
+      "answerText": "SCAMPER",
+      "tidbits": "SCAMPER was developed by Bob Eberle as a structured creativity tool and is widely used in product development and innovation workshops."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What problem-solving approach, associated with Elon Musk and popularized in physics, involves breaking a problem down to its most fundamental truths and building reasoning up from there rather than relying on analogy?",
+      "answerText": "First principles thinking",
+      "tidbits": "Aristotle first described reasoning from first principles. Musk used it to reduce the cost of rocket components by asking: what do the raw materials cost, rather than what rockets typically cost?"
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What visualization technique, popularized by Tony Buzan in the 1970s, organizes information radially around a central concept to represent associations and hierarchies?",
+      "answerText": "Mind mapping",
+      "tidbits": "Tony Buzan trademarked 'Mind Map' and wrote extensively about their use for memory, creativity, and learning \u2014 though radial diagrams for note-taking predate his formalization."
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What creative ideation stage in design thinking involves generating as many ideas as possible without judgment, using quantity to fuel eventual quality?",
+      "answerText": "Ideation (brainstorming)",
+      "tidbits": "Alex Osborn, who coined 'brainstorming' in 1953, established four rules: defer judgment, encourage wild ideas, build on others' ideas, and go for quantity."
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What stage in design thinking involves building rough, inexpensive versions of potential solutions to test assumptions before committing to full development?",
+      "answerText": "Prototyping"
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What Japanese problem-solving technique, associated with Toyota's production system, involves asking 'why' repeatedly \u2014 typically five times \u2014 to drill down to the root cause of a problem?",
+      "answerText": "The Five Whys",
+      "tidbits": "The Five Whys was developed by Sakichi Toyoda and became a cornerstone of Toyota's lean manufacturing philosophy. It's now widely used in software engineering root cause analysis."
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What problem-solving framework, developed by Edward de Bono, assigns different colored metaphorical hats to represent distinct modes of thinking \u2014 facts, emotions, creativity, caution, optimism, and process?",
+      "answerText": "Six Thinking Hats",
+      "tidbits": "De Bono's Six Thinking Hats assigns: White (facts), Red (emotions), Black (caution), Yellow (optimism), Green (creativity), and Blue (process management)."
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "What Japanese lean manufacturing concept, meaning 'change for good,' describes a philosophy of continuous incremental improvement involving all employees at every level of an organization?",
+      "answerText": "Kaizen",
+      "tidbits": "Kaizen philosophy contrasts with Western innovation models that rely on occasional major breakthroughs \u2014 kaizen seeks hundreds of small improvements that compound over time."
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What logical fallacy attacks the person making an argument rather than addressing the argument itself?",
+      "answerText": "Ad hominem",
+      "tidbits": "'Ad hominem' means 'to the person' in Latin. It's one of the most common fallacies in political debate \u2014 dismissing an opponent's argument by questioning their character."
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What logical fallacy misrepresents an opponent's argument in an exaggerated or distorted form that is easier to attack than the original position?",
+      "answerText": "Straw man fallacy",
+      "tidbits": "The name comes from the idea of building a 'straw man' \u2014 a fake, weaker version of the opponent's argument \u2014 so it can be knocked down easily."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What logical fallacy presents only two options as if they are the only possibilities, ignoring other alternatives that may exist?",
+      "answerText": "False dichotomy (false dilemma)",
+      "tidbits": "A classic false dichotomy: 'You're either with us or against us' \u2014 ignoring the possibility of neutrality, partial agreement, or alternative positions."
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What logical fallacy claims that because event A preceded event B, A must have caused B \u2014 confusing temporal sequence with causation?",
+      "answerText": "Post hoc ergo propter hoc",
+      "tidbits": "'Post hoc ergo propter hoc' is Latin for 'after this, therefore because of this.' A classic example: a rooster crows before sunrise, so the rooster causes the sun to rise."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What logical fallacy argues that accepting a small first step will inevitably lead to a chain of extreme consequences, without providing evidence for each step in the chain?",
+      "answerText": "Slippery slope fallacy",
+      "tidbits": "The slippery slope is only a fallacy when the chain of consequences is asserted without evidence. When each step can be demonstrated, it becomes a valid causal argument."
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What valid deductive argument form states: 'If P, then Q; P is true; therefore Q is true'?",
+      "answerText": "Modus ponens",
+      "tidbits": "Modus ponens (Latin: 'the way that affirms') is one of the oldest and most fundamental rules of inference, tracing back to Stoic logic in the 3rd century BCE."
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What logical fallacy defers to the opinion of an expert or authority figure on a topic outside their area of expertise, or treats authority as a substitute for evidence?",
+      "answerText": "Appeal to authority (argumentum ad verecundiam)"
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What form of reasoning begins with specific observations and works upward to general conclusions, acknowledging that the conclusion is probable rather than certain?",
+      "answerText": "Inductive reasoning",
+      "tidbits": "Inductive reasoning underlies the scientific method \u2014 we observe many instances and generalize, but a single counterexample can disprove the generalization."
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What logical fallacy argues that a claim must be true because it has not been proven false, shifting the burden of proof inappropriately?",
+      "answerText": "Appeal to ignorance (argumentum ad ignorantiam)",
+      "tidbits": "Carl Sagan summarized the counter-principle: 'Absence of evidence is not evidence of absence' \u2014 but this itself can be misused to avoid investigating claims."
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What valid deductive argument form states: 'If P, then Q; Q is false; therefore P is false'?",
+      "answerText": "Modus tollens",
+      "tidbits": "Modus tollens (Latin: 'the way that denies') is the basis of Karl Popper's falsificationism \u2014 a hypothesis is refuted when a predicted consequence is observed not to occur."
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What classic game theory scenario involves two prisoners who must independently decide whether to betray each other or remain silent, with outcomes that create a tension between individual and collective rationality?",
+      "answerText": "The Prisoner's Dilemma",
+      "tidbits": "The Prisoner's Dilemma was formalized by Merrill Flood and Melvin Dresher in 1950 and named by Albert Tucker. It shows why rational individuals may not cooperate even when cooperation benefits everyone."
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What cognitive bias describes our tendency to weigh losses more heavily than equivalent gains \u2014 losing $100 feels worse than gaining $100 feels good?",
+      "answerText": "Loss aversion",
+      "tidbits": "Kahneman and Tversky found that losses are psychologically about twice as powerful as equivalent gains \u2014 explaining why people are often overly risk-averse in investment decisions."
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What cognitive bias describes the tendency to rely too heavily on the first piece of information encountered when making decisions?",
+      "answerText": "Anchoring bias",
+      "tidbits": "In salary negotiation research, whoever names a number first \u2014 even an absurd one \u2014 strongly influences the final agreed amount, demonstrating anchoring's powerful effect."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What economic principle, named after an 18th-century Italian economist, states that roughly 80% of effects come from 20% of causes?",
+      "answerText": "The Pareto Principle (80/20 rule)",
+      "tidbits": "Vilfredo Pareto observed in 1906 that 80% of Italy's land was owned by 20% of the population. The pattern has since been found in software bugs, sales, and many other domains."
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What psychological phenomenon, named after two researchers, describes how people with lack competence in a domain also tend to lack the metacognitive ability to recognize their own incompetence?",
+      "answerText": "Dunning-Kruger effect",
+      "tidbits": "The Dunning-Kruger paper, published in 1999, found that unskilled people systematically overestimate their abilities, while highly skilled people tend to underestimate how unusual their skills are."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What decision-making error leads people to continue investing time, money, or effort into a failing project because of past investments already made, rather than future potential?",
+      "answerText": "Sunk cost fallacy",
+      "tidbits": "Economists say to 'let sunk costs be sunk' \u2014 past investments that cannot be recovered should have no bearing on rational forward-looking decisions about whether to continue."
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What game theory concept, named after the mathematician who won the Nobel Prize in Economics in 1994, describes a state where no player can improve their outcome by changing only their own strategy?",
+      "answerText": "Nash equilibrium",
+      "tidbits": "John Nash developed the Nash equilibrium concept in his 1950 doctoral dissertation at Princeton. His life was depicted in the film 'A Beautiful Mind' (2001)."
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What decision framework, developed by Daniel Kahneman and Amos Tversky in 1979, describes how people evaluate outcomes relative to a reference point rather than in absolute terms \u2014 and how they are risk-averse for gains but risk-seeking for losses?",
+      "answerText": "Prospect theory",
+      "tidbits": "Prospect theory replaced expected utility theory as a descriptive model of human choice, earning Kahneman the 2002 Nobel Prize in Economics (Tversky had died in 1996)."
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What game theory strategy, proven optimal for the iterated Prisoner's Dilemma in Robert Axelrod's 1980 computer tournament, cooperates on the first move and then mirrors the opponent's previous move?",
+      "answerText": "Tit for Tat",
+      "tidbits": "Tit for Tat was submitted by Anatol Rapoport and won Axelrod's tournament twice. It demonstrates that cooperation can emerge among self-interested agents when interactions repeat."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What cognitive bias, described by Nassim Taleb, refers to our tendency to make decisions based only on information that survived or was recorded \u2014 ignoring the lessons of failures that left no record?",
+      "answerText": "Survivorship bias",
+      "tidbits": "WWII statistician Abraham Wald famously advised reinforcing the parts of returning aircraft that were NOT hit \u2014 because those planes never came back to show where they were damaged."
+    }
+  ],
+  "checksum": "44888ff70568e48f6bb445971331387b3603732e267003d03a8471b2dc48056f",
+  "size": 31474
+}
