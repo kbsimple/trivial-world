@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v9.0
 milestone_name: Per-Player Pack Selection Redesign
-status: planned
-last_updated: "2026-06-13T23:38:00.000Z"
+status: complete
+last_updated: "2026-06-13T17:10:00.000Z"
 stopped_at: null
 resume_file: null
 progress:
   total_phases: 1
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 0
-  percent: 0
+  completed_plans: 2
+  percent: 100
 ---
 
 # Project State
@@ -21,15 +21,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-13)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** v8.0 Pack Selection UX Overhaul — COMPLETE. Archived 2026-06-13.
+**Current focus:** v9.0 Per-Player Pack Selection Redesign — COMPLETE. Archived 2026-06-13.
 
 ## Current Position
 
-Milestone v9.0 started 2026-06-13. Phase 21 planned (2 plans ready).
+Milestone v9.0 complete 2026-06-13. Phase 21 done (2/2 plans).
 21 total phases across 9 milestones. 288 tests passing.
-Ready to execute Phase 21.
+Ready to plan next milestone.
 
-Progress: [░░░░░░░░░░░░░░░░░░░░] 0%
+Progress: [████████████████████] 100%
 
 ## Performance Metrics
 
@@ -42,6 +42,7 @@ Progress: [░░░░░░░░░░░░░░░░░░░░] 0%
 - v6.0: 4 plans (~1 session execution)
 - v7.0: 1 plan (~3 min execution)
 - v8.0: 2 plans (~1 session execution)
+- v9.0: 2 plans (~1 session execution)
 - Milestone archive: .planning/milestones/
 
 ## Accumulated Context
@@ -55,7 +56,9 @@ Progress: [░░░░░░░░░░░░░░░░░░░░] 0%
 - Phase 20 added: Pack Selection UX Overhaul — per-player Shared/Custom chip on player row, unified picker flow, conditional shared pack requirement
 - Phase 20 completed 2026-06-13; v8.0 archived
 - Phase 21 added: Per-Player Pack Selection Redesign — inline Shared/Custom toggle on player row, Custom navigates to /packs for that player's pack config, remove inline Alert/Modal pickers for packs and difficulty
+- Phase 21 completed 2026-06-13; v9.0 archived
 - **v8.0 UX changes:** packMode removed from packStore; setup.tsx segmented control removed; per-player pack chip always visible alongside difficulty chip; allPlayersCustom bypass skips CONF-01 shared pack requirement
+- **v9.0 UX changes:** setup.tsx two-chip row (pack+difficulty) replaced with single Shared/Custom toggle chip; difficulty chip removed entirely; handleRevertToShared now also clears difficultyPreference; /packs/index.tsx gains per-player mode via targetPlayerId param with per-player title, pack/combo selection, and Back-only footer
 
 ### Key Architectural Decisions
 
@@ -78,6 +81,12 @@ From Phase 18 code review (18-REVIEW.md):
 - F-02 HIGH: resetAskedQuestions loop leaves activePackId corrupted on throw
 - F-03 MEDIUM: combos.tsx has no ScrollView — Back button unreachable with many items
 
+From Phase 21 code review (21-REVIEW.md):
+
+- R-21-01 HIGH: difficultyPreference stuck — FIXED in phase 21 (handleRevertToShared now calls updatePlayerDifficulty(null))
+- R-21-03 LOW: empty player name yields "Select Pack for " in /packs title — deferred
+- R-21-04 LOW: post-download in per-player mode doesn't auto-select — deferred
+
 ### Quick Tasks Completed
 
 | # | Description | Date | Commit | Directory |
@@ -90,7 +99,7 @@ None blocking next milestone.
 
 ## Deferred Items
 
-Items acknowledged and deferred at milestone close on 2026-06-13:
+Items acknowledged and deferred at v9.0 milestone close on 2026-06-13:
 
 | Category | Item | Status | Notes |
 |----------|------|--------|-------|
@@ -106,3 +115,5 @@ Items acknowledged and deferred at milestone close on 2026-06-13:
 | review | Phase 18: F-01 deleteCombo stale comboId [combo] | pending | High: clear player.comboId on deleteCombo |
 | review | Phase 18: F-02 resetAskedQuestions corrupts activePackId on throw [combo] | pending | High: add try/finally restore |
 | review | Phase 18: F-03 combos.tsx missing ScrollView [combo] | pending | Medium: wrap in ScrollView |
+| review | Phase 21: R-21-03 empty player name in /packs title [ux] | pending | Low: add name fallback |
+| review | Phase 21: R-21-04 post-download no auto-select in per-player mode [ux] | pending | Low: select pack after download |

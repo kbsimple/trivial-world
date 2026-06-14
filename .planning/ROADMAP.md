@@ -10,7 +10,7 @@
 - ✅ **v6.0 Pack Combos** — Phase 18 (shipped 2026-06-13)
 - ✅ **v7.0 Per-Player Pack Customization** — Phase 19 (shipped 2026-06-13)
 - ✅ **v8.0 Pack Selection UX Overhaul** — Phase 20 (shipped 2026-06-13)
-- 🔄 **v9.0 Per-Player Pack Selection Redesign** — Phase 21 (in progress)
+- ✅ **v9.0 Per-Player Pack Selection Redesign** — Phase 21 (shipped 2026-06-13)
 
 ## Phases
 
@@ -94,6 +94,9 @@ Archive: `.planning/milestones/v8.0-*`
 
 </details>
 
+<details>
+<summary>✅ v9.0 Per-Player Pack Selection Redesign (Phase 21) — SHIPPED 2026-06-13</summary>
+
 ### Phase 21: Per-Player Pack Selection Redesign
 
 **Goal:** Correct the per-player pack selection UX. Each player row shows a "Shared" / "Custom" toggle inline with the player name. Selecting Custom navigates to the /packs page, where the user configures the pack(s) for that player; the result is persisted as that player's custom pack selection. Remove all inline Alert/Modal pickers for packs and difficulty — these interactions move to dedicated screens.
@@ -103,8 +106,12 @@ Archive: `.planning/milestones/v8.0-*`
 **Plans:** 2 plans
 
 Plans:
-- [ ] 21-01-PLAN.md — Refactor setup.tsx: replace two-chip row with Shared/Custom toggle, remove all inline Alert/Modal picker infrastructure
-- [ ] 21-02-PLAN.md — Add per-player mode to packs/index.tsx: targetPlayerId param, per-player pack/combo selection, conditional footer and title
+- [x] 21-01-PLAN.md — Refactor setup.tsx: replace two-chip row with Shared/Custom toggle, remove all inline Alert/Modal picker infrastructure
+- [x] 21-02-PLAN.md — Add per-player mode to packs/index.tsx: targetPlayerId param, per-player pack/combo selection, conditional footer and title
+
+Archive: `.planning/milestones/v9.0-*`
+
+</details>
 
 ---
 
@@ -132,7 +139,7 @@ Plans:
 | 18. Pack Combos | v6.0 | 4/4 | Complete | 2026-06-13 |
 | 19. Per-Player Pack Customization | v7.0 | 1/1 | Complete | 2026-06-13 |
 | 20. Pack Selection UX Overhaul | v8.0 | 2/2 | Complete | 2026-06-13 |
-| 21. Per-Player Pack Selection Redesign | v9.0 | 0/2 | In progress | - |
+| 21. Per-Player Pack Selection Redesign | v9.0 | 2/2 | Complete | 2026-06-13 |
 
 ---
 
