@@ -24,7 +24,7 @@ import { SEMANTIC_COLORS } from '../../constants/theme';
 export default function SetupScreen() {
   const router = useRouter();
   const theme = useTheme();
-  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack, updatePlayerCombo } = usePlayerStore();
+  const { players, addPlayer, removePlayer, updatePlayerName, updatePlayerPack, updatePlayerCombo, updatePlayerDifficulty } = usePlayerStore();
   const { startGame } = useGameStore();
   const activePackId = usePackStore((state) => state.activePackId);
   const availablePacks = usePackStore((state) => state.availablePacks);
@@ -97,8 +97,11 @@ export default function SetupScreen() {
   };
 
   const handleRevertToShared = (playerId: string) => {
+    // updatePlayerPack(null) preserves comboId — both pack+combo calls required to fully revert
     updatePlayerPack(playerId, null);
     updatePlayerCombo(playerId, null);
+    // R-21-01: also clear persisted difficulty so it doesn't silently affect question selection
+    updatePlayerDifficulty(playerId, null);
   };
 
   const handleStartGame = async () => {
