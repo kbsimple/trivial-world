@@ -172,23 +172,11 @@ export default function SetupScreen() {
       {/* Participant list */}
       <View style={styles.playerList}>
         {players.map((player, index) => {
-          const playerComboName = player.comboId
-            ? (savedCombos.find(c => c.id === player.comboId)?.name ?? 'Custom Combo')
-            : null;
-          const playerPackName = !playerComboName && player.packId
-            ? (availablePacks.find(p => p.id === player.packId)?.name ?? 'Custom Pack')
-            : null;
-          const displayName = playerComboName ?? playerPackName;
           const isCustom = player.packId !== null || player.comboId !== null;
-          const chipLabel = isCustom
-            ? (displayName
-                ? `Custom: ${displayName.length > 8 ? displayName.slice(0, 8) + '…' : displayName}`
-                : 'Custom')
-            : 'Shared';
 
           return (
             <View key={player.id} style={styles.playerRowOuter}>
-              {/* Row 1: color dot | name input | pack chip | remove button */}
+              {/* Row 1: color dot | name input | remove button */}
               <View style={styles.playerRow}>
                 <View
                   style={[
@@ -204,24 +192,30 @@ export default function SetupScreen() {
                   placeholderTextColor={theme.color?.val as string}
                 />
                 <Pressable
-                  style={[
-                    styles.packChip,
-                    isCustom ? styles.packChipActive : styles.packChipDefault,
-                  ]}
-                  onPress={() => isCustom
-                    ? handleRevertToShared(player.id)
-                    : handleCustomPack(player.id)
-                  }
-                >
-                  <Text style={styles.packChipText} numberOfLines={1}>
-                    {chipLabel}
-                  </Text>
-                </Pressable>
-                <Pressable
                   style={styles.removeButton}
                   onPress={() => handleRemovePlayer(player.id)}
                 >
                   <Text style={styles.removeButtonText}>×</Text>
+                </Pressable>
+              </View>
+              {/* Row 2: Pack segmented control */}
+              <View style={styles.packSegmented}>
+                <Text style={styles.packSegmentedLabel}>Pack:</Text>
+                <Pressable
+                  style={[styles.packSegment, !isCustom && styles.packSegmentActive]}
+                  onPress={() => { if (isCustom) handleRevertToShared(player.id); }}
+                >
+                  <Text style={[styles.packSegmentText, !isCustom && styles.packSegmentTextActive]}>
+                    Shared
+                  </Text>
+                </Pressable>
+                <Pressable
+                  style={[styles.packSegment, isCustom && styles.packSegmentActive]}
+                  onPress={() => handleCustomPack(player.id)}
+                >
+                  <Text style={[styles.packSegmentText, isCustom && styles.packSegmentTextActive]}>
+                    Custom
+                  </Text>
                 </Pressable>
               </View>
             </View>
@@ -323,14 +317,15 @@ const styles = StyleSheet.create({
   },
   playerRowOuter: {
     marginBottom: 8,
+    borderRadius: 8,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    overflow: 'hidden',
   },
   playerRow: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 12,
     paddingHorizontal: 16,
-    borderRadius: 8,
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
   },
   colorIndicator: {
     width: 24,
@@ -351,25 +346,37 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: SEMANTIC_COLORS.remove,
   },
-  packChip: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 8,
-    marginLeft: 8,
+  packSegmented: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingBottom: 10,
+    gap: 6,
   },
-  packChipDefault: {
-    backgroundColor: 'rgba(255,255,255,0.12)',
+  packSegmentedLabel: {
+    fontSize: 13,
+    color: 'rgba(255,255,255,0.7)',
+    marginRight: 2,
+  },
+  packSegment: {
+    paddingHorizontal: 14,
+    paddingVertical: 5,
+    borderRadius: 6,
     borderWidth: 1,
     borderColor: 'rgba(255,255,255,0.25)',
+    backgroundColor: 'rgba(255,255,255,0.06)',
   },
-  packChipActive: {
+  packSegmentActive: {
     backgroundColor: 'rgba(255,255,255,0.28)',
-    borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.5)',
+    borderColor: 'rgba(255,255,255,0.55)',
   },
-  packChipText: {
+  packSegmentText: {
     fontSize: 13,
+    color: 'rgba(255,255,255,0.6)',
+  },
+  packSegmentTextActive: {
     color: '#fff',
+    fontWeight: '600',
   },
   addButtonContainer: {
     alignItems: 'center',
