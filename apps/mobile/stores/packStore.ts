@@ -5,6 +5,7 @@ import { platformStorage } from '../services/platformStorage';
 import { PackIndexEntry, Category, Difficulty, PackCombo } from '@trivial-world/types';
 import { fetchPackIndex } from '../services/packIndex';
 import { downloadPackWithProgress, getDownloadedPackIds, setActivePack } from '../services/packDownloader';
+import { usePlayerStore } from './playerStore';
 
 /**
  * Pack store state
@@ -134,10 +135,17 @@ export const usePackStore = create<PackState>()(
         set((state) => ({ savedCombos: [...state.savedCombos, combo] }));
       },
 
-      deleteCombo: (comboId: string) => set((state) => ({
-        savedCombos: state.savedCombos.filter(c => c.id !== comboId),
-        activeComboId: state.activeComboId === comboId ? null : state.activeComboId,
-      })),
+      deleteCombo: (comboId: string) => {
+        set((state) => ({
+          savedCombos: state.savedCombos.filter(c => c.id !== comboId),
+          activeComboId: state.activeComboId === comboId ? null : state.activeComboId,
+        }));
+        // F-01: clear stale comboId from any player that had this combo assigned
+        const { players, updatePlayerCombo } = usePlayerStore.getState();
+        players
+          .filter((p) => p.comboId === comboId)
+          .forEach((p) => updatePlayerCombo(p.id, null));
+      },
 
       selectCombo: (comboId: string | null) => set({ activeComboId: comboId }),
 
