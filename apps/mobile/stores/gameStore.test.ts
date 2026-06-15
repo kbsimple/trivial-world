@@ -978,6 +978,90 @@ describe('useGameStore', () => {
   });
 
   // ─────────────────────────────────────────────────────────
+  // ─────────────────────────────────────────────────────────
+  describe('startGame — F-02 activePackId restore after reset error', () => {
+    it('restores activePackId via finally even when resetAskedQuestions throws in the loop', async () => {
+      vi.mocked(usePackStore.getState).mockReturnValue({
+        activePackId: 'pack-a',
+        availablePacks: [],
+        enabledCategories: null,
+        savedCombos: [],
+        activeComboId: null,
+        activePackIdList: null,
+      } as any);
+      // Player 0 uses shared pack-a; player 1 uses a custom pack-b
+      mockPlayerStore([
+        { ...createMockPlayer(0), packId: 'pack-a', comboId: null } as Player,
+        { ...createMockPlayer(1), packId: 'pack-b', comboId: null } as Player,
+      ]);
+      // First call (shared pack reset) succeeds; second call (pack-b in loop) throws
+      const resetAskedQuestions = vi.fn()
+        .mockResolvedValueOnce(undefined)
+        .mockRejectedValueOnce(new Error('DB error'));
+      mockQuestionStore({ resetAskedQuestions });
+
+      await useGameStore.getState().startGame(); // error is caught internally; startGame resolves
+
+      // Despite the throw, the finally block must have restored activePackId to 'pack-a'
+      const allSetStateCalls = vi.mocked(usePackStore.setState).mock.calls;
+      const restoreCall = allSetStateCalls.find(
+        (call) => (call[0] as any)?.activePackId === 'pack-a'
+      );
+      expect(restoreCall).toBeDefined();
+    });
+
+    it('temporarily mutates activePackId to the secondary pack id during the loop', async () => {
+      vi.mocked(usePackStore.getState).mockReturnValue({
+        activePackId: 'pack-a',
+        availablePacks: [],
+        enabledCategories: null,
+        savedCombos: [],
+        activeComboId: null,
+        activePackIdList: null,
+      } as any);
+      mockPlayerStore([
+        { ...createMockPlayer(0), packId: 'pack-a', comboId: null } as Player,
+        { ...createMockPlayer(1), packId: 'pack-b', comboId: null } as Player,
+      ]);
+      mockQuestionStore({ resetAskedQuestions: vi.fn().mockResolvedValue(undefined) });
+
+      await useGameStore.getState().startGame();
+
+      const allSetStateCalls = vi.mocked(usePackStore.setState).mock.calls;
+      // Loop must have set activePackId to 'pack-b' before resetting for that pack
+      const tempCall = allSetStateCalls.find(
+        (call) => (call[0] as any)?.activePackId === 'pack-b'
+      );
+      expect(tempCall).toBeDefined();
+    });
+
+    it('always restores activePackId to original value after a successful multi-pack reset', async () => {
+      vi.mocked(usePackStore.getState).mockReturnValue({
+        activePackId: 'pack-a',
+        availablePacks: [],
+        enabledCategories: null,
+        savedCombos: [],
+        activeComboId: null,
+        activePackIdList: null,
+      } as any);
+      mockPlayerStore([
+        { ...createMockPlayer(0), packId: 'pack-a', comboId: null } as Player,
+        { ...createMockPlayer(1), packId: 'pack-b', comboId: null } as Player,
+      ]);
+      mockQuestionStore({ resetAskedQuestions: vi.fn().mockResolvedValue(undefined) });
+
+      await useGameStore.getState().startGame();
+
+      const allSetStateCalls = vi.mocked(usePackStore.setState).mock.calls;
+      // The finally block always fires — the last temp/restore call must be for 'pack-a'
+      const restoreCalls = allSetStateCalls.filter(
+        (call) => (call[0] as any)?.activePackId === 'pack-a'
+      );
+      expect(restoreCalls.length).toBeGreaterThanOrEqual(1);
+    });
+  });
+
+  // ─────────────────────────────────────────────────────────
   describe('startGame — all-custom bypass', () => {
     it('starts game when activePackId is null but all players have a custom packId', async () => {
       vi.mocked(usePackStore.getState).mockReturnValue({

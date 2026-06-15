@@ -9,7 +9,7 @@
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { create } from 'zustand';
-import { PackIndexEntry, Category, Difficulty } from '@trivial-world/types';
+import { PackIndexEntry, Category, Difficulty, PackCombo } from '@trivial-world/types';
 
 // Mock AsyncStorage
 const mockAsyncStorage: Record<string, string> = {};
@@ -515,6 +515,125 @@ describe('usePackStore', () => {
       await usePackStore.getState().downloadPack(entry);
 
       expect(usePackStore.getState().downloadError).toBeNull();
+    });
+  });
+
+  describe('deleteCombo', () => {
+    function createMockCombo(overrides?: Partial<PackCombo>): PackCombo {
+      return {
+        id: '11111111-1111-1111-1111-111111111111',
+        name: 'Test Combo',
+        packIds: [
+          'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',
+          'bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb',
+        ],
+        createdAt: '2026-06-15T00:00:00.000Z',
+        ...overrides,
+      };
+    }
+
+    it('removes the target combo from savedCombos', () => {
+      const combo1 = createMockCombo({ id: '11111111-1111-1111-1111-111111111111', name: 'Combo 1' });
+      const combo2 = createMockCombo({ id: '22222222-2222-2222-2222-222222222222', name: 'Combo 2' });
+      usePackStore.setState({ savedCombos: [combo1, combo2], activeComboId: null });
+      vi.spyOn(usePlayerStore, 'getState').mockReturnValue({ players: [], updatePlayerCombo: vi.fn() } as any);
+
+      usePackStore.getState().deleteCombo(combo1.id);
+
+      const { savedCombos } = usePackStore.getState();
+      expect(savedCombos).toHaveLength(1);
+      expect(savedCombos[0].id).toBe(combo2.id);
+    });
+
+    it('clears activeComboId when the active combo is deleted', () => {
+      const combo = createMockCombo();
+      usePackStore.setState({ savedCombos: [combo], activeComboId: combo.id });
+      vi.spyOn(usePlayerStore, 'getState').mockReturnValue({ players: [], updatePlayerCombo: vi.fn() } as any);
+
+      usePackStore.getState().deleteCombo(combo.id);
+
+      expect(usePackStore.getState().activeComboId).toBeNull();
+    });
+
+    it('preserves activeComboId when a different combo is deleted', () => {
+      const combo1 = createMockCombo({ id: '11111111-1111-1111-1111-111111111111', name: 'Combo 1' });
+      const combo2 = createMockCombo({ id: '22222222-2222-2222-2222-222222222222', name: 'Combo 2' });
+      usePackStore.setState({ savedCombos: [combo1, combo2], activeComboId: combo2.id });
+      vi.spyOn(usePlayerStore, 'getState').mockReturnValue({ players: [], updatePlayerCombo: vi.fn() } as any);
+
+      usePackStore.getState().deleteCombo(combo1.id);
+
+      expect(usePackStore.getState().activeComboId).toBe(combo2.id);
+    });
+
+    it('F-01: clears comboId from a player assigned the deleted combo', () => {
+      const combo = createMockCombo({ id: '11111111-1111-1111-1111-111111111111' });
+      usePackStore.setState({ savedCombos: [combo], activeComboId: null });
+      const updatePlayerCombo = vi.fn();
+      vi.spyOn(usePlayerStore, 'getState').mockReturnValue({
+        players: [
+          { id: 'p1', name: 'Alice', color: 'blue', wedges: [], packId: null, comboId: combo.id },
+        ],
+        updatePlayerCombo,
+      } as any);
+
+      usePackStore.getState().deleteCombo(combo.id);
+
+      expect(updatePlayerCombo).toHaveBeenCalledOnce();
+      expect(updatePlayerCombo).toHaveBeenCalledWith('p1', null);
+    });
+
+    it('F-01: does not clear comboId from players assigned to a different combo', () => {
+      const combo1 = createMockCombo({ id: '11111111-1111-1111-1111-111111111111' });
+      const combo2 = createMockCombo({ id: '22222222-2222-2222-2222-222222222222' });
+      usePackStore.setState({ savedCombos: [combo1, combo2], activeComboId: null });
+      const updatePlayerCombo = vi.fn();
+      vi.spyOn(usePlayerStore, 'getState').mockReturnValue({
+        players: [
+          { id: 'p1', name: 'Bob', color: 'pink', wedges: [], packId: null, comboId: combo2.id },
+        ],
+        updatePlayerCombo,
+      } as any);
+
+      usePackStore.getState().deleteCombo(combo1.id);
+
+      expect(updatePlayerCombo).not.toHaveBeenCalled();
+    });
+
+    it('F-01: clears comboId from all players that had the deleted combo', () => {
+      const combo = createMockCombo({ id: '11111111-1111-1111-1111-111111111111' });
+      usePackStore.setState({ savedCombos: [combo], activeComboId: null });
+      const updatePlayerCombo = vi.fn();
+      vi.spyOn(usePlayerStore, 'getState').mockReturnValue({
+        players: [
+          { id: 'p1', name: 'Alice', color: 'blue', wedges: [], packId: null, comboId: combo.id },
+          { id: 'p2', name: 'Bob', color: 'pink', wedges: [], packId: null, comboId: combo.id },
+        ],
+        updatePlayerCombo,
+      } as any);
+
+      usePackStore.getState().deleteCombo(combo.id);
+
+      expect(updatePlayerCombo).toHaveBeenCalledTimes(2);
+      expect(updatePlayerCombo).toHaveBeenCalledWith('p1', null);
+      expect(updatePlayerCombo).toHaveBeenCalledWith('p2', null);
+    });
+
+    it('F-01: is a no-op for player cleanup when no player had the deleted combo', () => {
+      const combo1 = createMockCombo({ id: '11111111-1111-1111-1111-111111111111' });
+      const combo2 = createMockCombo({ id: '22222222-2222-2222-2222-222222222222' });
+      usePackStore.setState({ savedCombos: [combo1, combo2], activeComboId: null });
+      const updatePlayerCombo = vi.fn();
+      vi.spyOn(usePlayerStore, 'getState').mockReturnValue({
+        players: [
+          { id: 'p1', name: 'Carol', color: 'green', wedges: [], packId: 'pack-x', comboId: null },
+        ],
+        updatePlayerCombo,
+      } as any);
+
+      usePackStore.getState().deleteCombo(combo1.id);
+
+      expect(updatePlayerCombo).not.toHaveBeenCalled();
     });
   });
 
