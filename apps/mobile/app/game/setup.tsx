@@ -147,27 +147,36 @@ export default function SetupScreen() {
         </Text>
       </View>
 
+      {/* Section label */}
+      <Text style={styles.sectionLabel}>QUESTION PACK</Text>
+
       {/* Pack info display — tap to navigate to pack selection (D-01) */}
       <Pressable style={styles.packInfo} onPress={() => router.push('/packs')}>
         {packName ? (
           <>
-            <Text style={[styles.packText, { color: theme.color?.val as string }]}>
-              Pack: {packName}
+            <Text style={[styles.packText, { color: theme.color?.val as string, flex: 1 }]}>
+              {packName}
             </Text>
             <Text style={[styles.packChange, { color: theme.color?.val as string }]}>
-              Change
+              Change ›
             </Text>
           </>
         ) : allPlayersCustom ? (
-          <Text style={[styles.packText, { color: theme.color?.val as string, opacity: 0.6 }]}>
+          <Text style={[styles.packText, { color: theme.color?.val as string, opacity: 0.6, flex: 1 }]}>
             Shared pack (optional — all players have custom packs)
           </Text>
         ) : (
-          <Text style={[styles.packWarning, { color: '#ffa500' }]}>
-            Tap to select a question pack
-          </Text>
+          <>
+            <Text style={[styles.packText, { color: theme.color?.val as string, flex: 1 }]}>
+              Select a pack
+            </Text>
+            <Text style={[styles.packChevron, { color: theme.color?.val as string }]}>›</Text>
+          </>
         )}
       </Pressable>
+
+      {/* Section label */}
+      <Text style={styles.sectionLabel}>PLAYERS</Text>
 
       {/* Participant list */}
       <View style={styles.playerList}>
@@ -223,11 +232,13 @@ export default function SetupScreen() {
         })}
       </View>
 
-      {/* Add participant button */}
+      {/* Add participant button — secondary outlined style (not primary CTA) */}
       <View style={styles.addButtonContainer}>
         <AddPlayerButton
           onPress={handleAddPlayer}
           disabled={players.length >= 6}
+          style={styles.addPlayerButtonOverride}
+          textStyle={styles.addPlayerButtonText}
         />
         {players.length >= 6 && (
           <Text style={[styles.maxPlayersHint, { color: theme.color?.val as string }]}>
@@ -236,16 +247,16 @@ export default function SetupScreen() {
         )}
       </View>
 
-      {/* Start game button */}
+      {/* Start game button — primary full-width CTA */}
       <View style={styles.startContainer}>
         <Pressable
           style={[
             styles.startButton,
             {
               backgroundColor: players.length === 0 || (!activePackId && !allPlayersCustom)
-                ? (theme.color?.val as string) + '40'
+                ? 'rgba(255,255,255,0.15)'
                 : SEMANTIC_COLORS.success,
-              opacity: players.length === 0 || (!activePackId && !allPlayersCustom) ? 0.5 : 1,
+              opacity: players.length === 0 || (!activePackId && !allPlayersCustom) ? 0.55 : 1,
             },
           ]}
           onPress={handleStartGame}
@@ -261,7 +272,7 @@ export default function SetupScreen() {
           </Text>
         )}
         {!activePackId && !allPlayersCustom && players.length > 0 && (
-          <Text style={[styles.minPlayersHint, { color: '#ffa500' }]}>
+          <Text style={[styles.minPlayersHint, { color: theme.color?.val as string, opacity: 0.7 }]}>
             Select a pack above to start
           </Text>
         )}
@@ -288,15 +299,24 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 8,
   },
+  sectionLabel: {
+    fontSize: 11,
+    fontWeight: '700',
+    letterSpacing: 1.2,
+    color: 'rgba(255,255,255,0.5)',
+    marginBottom: 6,
+    marginTop: 4,
+  },
   packInfo: {
-    marginBottom: 16,
+    marginBottom: 12,
     paddingVertical: 12,
     paddingHorizontal: 16,
     borderRadius: 8,
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.2)',
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'center',
     gap: 8,
   },
   packText: {
@@ -305,12 +325,12 @@ const styles = StyleSheet.create({
   },
   packChange: {
     fontSize: 14,
-    opacity: 0.6,
-    textDecorationLine: 'underline',
+    opacity: 0.7,
+    fontWeight: '600',
   },
-  packWarning: {
-    fontSize: 14,
-    fontWeight: '500',
+  packChevron: {
+    fontSize: 18,
+    opacity: 0.6,
   },
   playerList: {
     marginBottom: 16,
@@ -380,7 +400,15 @@ const styles = StyleSheet.create({
   },
   addButtonContainer: {
     alignItems: 'center',
-    marginBottom: 24,
+    marginBottom: 12,
+  },
+  addPlayerButtonOverride: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.35)',
+  },
+  addPlayerButtonText: {
+    color: 'rgba(255,255,255,0.85)',
   },
   maxPlayersHint: {
     fontSize: 12,
@@ -392,10 +420,10 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   startButton: {
-    paddingHorizontal: 48,
     paddingVertical: 16,
     borderRadius: 12,
-    minWidth: 200,
+    alignSelf: 'stretch',
+    alignItems: 'center',
   },
   startButtonText: {
     fontSize: 20,

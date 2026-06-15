@@ -1,9 +1,13 @@
-import { Pressable, Text, StyleSheet } from 'react-native';
+import { Pressable, Text, StyleSheet, type StyleProp, type ViewStyle, type TextStyle } from 'react-native';
 import { useTheme } from 'tamagui';
 
 interface AddPlayerButtonProps {
   onPress: () => void;
   disabled: boolean;
+  /** Optional style override — used to apply secondary/outlined appearance from call sites */
+  style?: StyleProp<ViewStyle>;
+  /** Optional text style override — used when button background changes (e.g. transparent outlined) */
+  textStyle?: StyleProp<TextStyle>;
 }
 
 /**
@@ -11,7 +15,7 @@ interface AddPlayerButtonProps {
  * - Adds a new participant to the game
  * - Disabled when max players (6) reached (D-06)
  */
-export function AddPlayerButton({ onPress, disabled }: AddPlayerButtonProps) {
+export function AddPlayerButton({ onPress, disabled, style, textStyle }: AddPlayerButtonProps) {
   const theme = useTheme();
 
   return (
@@ -24,11 +28,12 @@ export function AddPlayerButton({ onPress, disabled }: AddPlayerButtonProps) {
             : theme.color?.val as string,
           opacity: disabled ? 0.5 : 1,
         },
+        style,
       ]}
       onPress={onPress}
       disabled={disabled}
     >
-      <Text style={[styles.buttonText, { color: theme.background?.val as string }]}>
+      <Text style={[styles.buttonText, { color: theme.background?.val as string }, textStyle]}>
         + Add Participant
       </Text>
     </Pressable>
