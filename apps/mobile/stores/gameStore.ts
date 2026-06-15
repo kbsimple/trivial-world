@@ -136,14 +136,15 @@ export const useGameStore = create<GameStore>()(
                 .filter((id): id is string => Boolean(id))
             )
           ];
-          for (const pid of uniquePackIdsForReset) {
-            if (pid !== activePackId) {
-              usePackStore.setState({ activePackId: pid });
-              await useQuestionStore.getState().resetAskedQuestions();
+          try {
+            for (const pid of uniquePackIdsForReset) {
+              if (pid !== activePackId) {
+                usePackStore.setState({ activePackId: pid });
+                await useQuestionStore.getState().resetAskedQuestions();
+              }
             }
-          }
-          // Restore the game-level pack as activePackId
-          if (activePackId !== null) {
+          } finally {
+            // Always restore game-level activePackId, even if resetAskedQuestions throws
             usePackStore.setState({ activePackId });
           }
 
