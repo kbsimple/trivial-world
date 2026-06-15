@@ -99,6 +99,10 @@ From Phase 21 code review (21-REVIEW.md):
 | 260613-7a | Question screen vertical layout: top-anchor badge+question, footer-anchor reveal button | 2026-06-13 | e9025fa | [260613-7a-question-screen-vertical-layout](./quick/260613-7a-question-screen-vertical-layout/) |
 | 260613-b1a | Move Shared/Custom pack chip inline with player name row | 2026-06-13 | 9189952 | [260613-b1a-chip-inline-player-row](./quick/260613-b1a-chip-inline-player-row/) |
 | 260614-c2a | Replace pack chip with labeled Shared/Custom segmented control per player | 2026-06-14 | e701de1 | [260614-c2a-per-player-pack-segmented-control](./quick/260614-c2a-per-player-pack-segmented-control/) |
+| 260615-b79 | Setup screen UX redesign: section labels, pack selector chevron, button hierarchy | 2026-06-15 | b70984a | [260615-b79-setup-screen-ux-redesign](./quick/260615-b79-setup-screen-ux-redesign/) |
+| 260615-hb8 | Fix F-02: wrap gameStore reset loop in try/finally to prevent activePackId corruption | 2026-06-15 | af6cd05 | [260615-hb8-fix-f02-reset-asked-corrupts-packid](./quick/260615-hb8-fix-f02-reset-asked-corrupts-packid/) |
+| 260615-nf7 | Fix F-01: deleteCombo now clears stale comboId from playerStore | 2026-06-15 | 5829d31 | [260615-nf7-fix-f01-delete-combo-stale-comboId](./quick/260615-nf7-fix-f01-delete-combo-stale-comboId/) |
+| 260615-tj6 | Fix F-03: combos.tsx ScrollView + map() so Back button is always reachable | 2026-06-15 | 95aaa35 | [260615-tj6-fix-f03-combos-no-scrollview](./quick/260615-tj6-fix-f03-combos-no-scrollview/) |
 
 ### Blockers/Concerns
 
@@ -119,8 +123,8 @@ Items acknowledged and deferred at v9.0 milestone close on 2026-06-13:
 | todo | 2026-06-10-fix-netlify-transpilepackages.md [deployment] | pending | Netlify build config |
 | todo | 2026-06-10-metro-resolver-watermelondb-mock.md [mobile] | pending | Metro resolver fix |
 | todo | 2026-06-10-remove-nextjs-plugin-game-site.md [deployment] | pending | Next.js plugin cleanup |
-| review | Phase 18: F-01 deleteCombo stale comboId [combo] | pending | High: clear player.comboId on deleteCombo |
-| review | Phase 18: F-02 resetAskedQuestions corrupts activePackId on throw [combo] | pending | High: add try/finally restore |
-| review | Phase 18: F-03 combos.tsx missing ScrollView [combo] | pending | Medium: wrap in ScrollView |
+| review | Phase 18: F-01 deleteCombo stale comboId [combo] | **fixed 260615-nf7** | packStore.deleteCombo now clears player.comboId via playerStore |
+| review | Phase 18: F-02 resetAskedQuestions corrupts activePackId on throw [combo] | **fixed 260615-hb8** | try/finally in gameStore.startGame() reset loop |
+| review | Phase 18: F-03 combos.tsx missing ScrollView [combo] | **fixed 260615-tj6** | ScrollView + map() pattern |
 | review | Phase 21: R-21-03 empty player name in /packs title [ux] | pending | Low: add name fallback |
 | review | Phase 21: R-21-04 post-download no auto-select in per-player mode [ux] | pending | Low: select pack after download |
