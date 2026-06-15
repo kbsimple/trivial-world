@@ -102,6 +102,18 @@ export default function QuestionScreen() {
 
       {/* Bottom footer — always visible above the fold */}
       <View style={styles.footer}>
+        {!submitted && (
+          <Pressable
+            style={({ pressed }) => [
+              styles.skipButton,
+              { opacity: pressed ? 0.6 : 1 },
+            ]}
+            onPress={() => skipQuestion()}
+          >
+            <Text style={styles.skipButtonText}>{answerRevealed ? 'Discard and Redo' : 'Skip and Redraw'}</Text>
+          </Pressable>
+        )}
+
         {!answerRevealed && !submitted && (
           <Pressable
             style={({ pressed }) => [
@@ -111,18 +123,6 @@ export default function QuestionScreen() {
             onPress={() => revealAnswer()}
           >
             <Text style={styles.revealButtonText}>Reveal Answer</Text>
-          </Pressable>
-        )}
-
-        {!submitted && (
-          <Pressable
-            style={({ pressed }) => [
-              styles.skipButton,
-              { opacity: pressed ? 0.6 : 1 },
-            ]}
-            onPress={() => skipQuestion()}
-          >
-            <Text style={styles.skipButtonText}>{answerRevealed ? 'Discard and Redo' : 'Skip'}</Text>
           </Pressable>
         )}
 
