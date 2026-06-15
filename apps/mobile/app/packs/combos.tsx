@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, FlatList, Pressable, StyleSheet, Alert, TextInput, Platform } from 'react-native';
+import { View, Text, ScrollView, Pressable, StyleSheet, Alert, TextInput, Platform } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from 'tamagui';
 import { usePackStore } from '../../stores/packStore';
@@ -73,7 +73,10 @@ export default function CombosScreen() {
   );
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.background?.val as string }]}>
+    <ScrollView
+      style={[styles.container, { backgroundColor: theme.background?.val as string }]}
+      contentContainerStyle={styles.scrollContent}
+    >
       <Text style={[styles.title, { color: theme.color?.val as string }]}>Pack Combos</Text>
 
       {/* Create form */}
@@ -124,15 +127,15 @@ export default function CombosScreen() {
 
       {/* Saved combos list */}
       <Text style={[styles.sectionTitle, { color: theme.color?.val as string }]}>Saved Combos</Text>
-      <FlatList
-        data={savedCombos}
-        keyExtractor={(item) => item.id}
-        renderItem={renderComboItem}
-        ListEmptyComponent={
+      <View>
+        {savedCombos.length === 0 ? (
           <Text style={[styles.emptyText, { color: theme.color?.val as string }]}>No combos yet</Text>
-        }
-        scrollEnabled={false}
-      />
+        ) : (
+          savedCombos.map((item) => (
+            <View key={item.id}>{renderComboItem({ item })}</View>
+          ))
+        )}
+      </View>
 
       {/* Back button */}
       <Pressable
@@ -141,7 +144,7 @@ export default function CombosScreen() {
       >
         <Text style={[styles.backButtonText, { color: theme.color?.val as string }]}>Back</Text>
       </Pressable>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -149,6 +152,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+  },
+  scrollContent: {
+    paddingBottom: 40,
   },
   title: {
     fontSize: 28,
