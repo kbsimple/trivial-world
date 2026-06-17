@@ -177,11 +177,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     paddingHorizontal: 16,
-    fontWeight: '600',
+    fontWeight: '400',
     marginBottom: 6,
   },
   tidbitsText: {
-    fontSize: 14,
+    fontSize: 13,
     textAlign: 'center',
     paddingHorizontal: 16,
     opacity: 0.7,
