@@ -26,10 +26,9 @@ export default function GameLayout() {
   const resetPlayers = usePlayerStore((state) => state.resetPlayers);
   const resetGame = useGameStore((state) => state.resetGame);
 
-  const handleEndGame = () => {
+  const handleNewGame = () => {
     resetPlayers();
     resetGame();
-    // Navigate to home and reset game state
     router.replace('/');
   };
 
@@ -76,7 +75,7 @@ export default function GameLayout() {
         open={pauseOpen}
         onOpenChange={setPauseOpen}
         onResume={handleResume}
-        onEndGame={handleEndGame}
+        onNewGame={handleNewGame}
       />
     </>
   );

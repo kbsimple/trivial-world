@@ -15,10 +15,10 @@ interface PauseOverlayProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onResume: () => void;
-  onEndGame: () => void;
+  onNewGame: () => void;
 }
 
-export function PauseOverlay({ open, onOpenChange, onResume, onEndGame }: PauseOverlayProps) {
+export function PauseOverlay({ open, onOpenChange, onResume, onNewGame }: PauseOverlayProps) {
   if (Platform.OS === 'web') {
     if (!open) return null;
     return (
@@ -35,10 +35,10 @@ export function PauseOverlay({ open, onOpenChange, onResume, onEndGame }: PauseO
                 </Pressable>
                 <View style={styles.separator} />
                 <Pressable
-                  style={({ pressed }) => [styles.menuItemDanger, pressed && styles.menuItemPressed]}
-                  onPress={() => { onOpenChange(false); onEndGame(); }}
+                  style={({ pressed }) => [styles.menuItemSuccess, pressed && styles.menuItemPressed]}
+                  onPress={() => { onOpenChange(false); onNewGame(); }}
                 >
-                  <Text style={styles.menuItemTextDanger}>End Game</Text>
+                  <Text style={styles.menuItemTextSuccess}>New Game</Text>
                 </Pressable>
               </View>
             </TouchableWithoutFeedback>
@@ -75,13 +75,13 @@ export function PauseOverlay({ open, onOpenChange, onResume, onEndGame }: PauseO
             </Button>
             <Button
               size="$4"
-              theme="red"
+              theme="green"
               onPress={() => {
                 onOpenChange(false);
-                onEndGame();
+                onNewGame();
               }}
             >
-              End Game
+              New Game
             </Button>
           </YStack>
         </YStack>
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     paddingHorizontal: 16,
   },
-  menuItemDanger: {
+  menuItemSuccess: {
     paddingVertical: 14,
     paddingHorizontal: 16,
   },
@@ -123,8 +123,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '500',
   },
-  menuItemTextDanger: {
-    color: '#ff453a',
+  menuItemTextSuccess: {
+    color: '#30d158',
     fontSize: 15,
     fontWeight: '500',
   },
