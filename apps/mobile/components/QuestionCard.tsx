@@ -222,7 +222,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 12,
     paddingHorizontal: 8,
-    opacity: 0.6,
     fontStyle: 'italic',
     color: '#ccc',
   },

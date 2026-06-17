@@ -184,7 +184,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     paddingHorizontal: 16,
-    opacity: 0.6,
     fontStyle: 'italic',
     marginTop: 8,
   },
