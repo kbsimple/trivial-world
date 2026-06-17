@@ -218,11 +218,11 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   tidbitsText: {
-    fontSize: 13,
+    fontSize: 20,
     textAlign: 'center',
     marginTop: 12,
     paddingHorizontal: 8,
-    opacity: 0.65,
+    opacity: 0.6,
     fontStyle: 'italic',
     color: '#ccc',
   },

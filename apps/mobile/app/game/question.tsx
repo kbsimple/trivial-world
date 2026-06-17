@@ -181,11 +181,12 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   tidbitsText: {
-    fontSize: 13,
+    fontSize: 20,
     textAlign: 'center',
     paddingHorizontal: 16,
-    opacity: 0.7,
+    opacity: 0.6,
     fontStyle: 'italic',
+    marginTop: 8,
   },
   revealButton: {
     paddingHorizontal: 32,
