@@ -14,7 +14,7 @@ import { describe, it, expect } from 'vitest';
  * NOTE: questionCard.utils.ts does NOT yet exist.
  * These tests will FAIL (RED) until the file is created.
  */
-import { shouldShowTidbits } from './questionCard.utils';
+import { shouldShowTidbits, resolveCorrectChoiceIndex } from './questionCard.utils';
 
 describe('QuestionCard tidbits display logic', () => {
   describe('shouldShowTidbits', () => {
@@ -36,6 +36,45 @@ describe('QuestionCard tidbits display logic', () => {
 
     it('returns false when both revealed=false and tidbits=undefined', () => {
       expect(shouldShowTidbits(false, undefined)).toBe(false);
+    });
+  });
+
+  describe('resolveCorrectChoiceIndex', () => {
+    it('returns the explicit correctChoiceIndex when provided', () => {
+      expect(resolveCorrectChoiceIndex(2, '36 (C)')).toBe(2);
+    });
+
+    it('returns 0 for explicit index 0', () => {
+      expect(resolveCorrectChoiceIndex(0, '30 (A)')).toBe(0);
+    });
+
+    it('derives index from "(A)" in answerText when correctChoiceIndex is null', () => {
+      expect(resolveCorrectChoiceIndex(null, '30 (A)')).toBe(0);
+    });
+
+    it('derives index from "(B)" in answerText when correctChoiceIndex is undefined', () => {
+      expect(resolveCorrectChoiceIndex(undefined, '35 (B)')).toBe(1);
+    });
+
+    it('derives index from "(C)" in answerText — the World Wide Web case', () => {
+      expect(resolveCorrectChoiceIndex(null, '36 (C)')).toBe(2);
+    });
+
+    it('derives index from "(D)" in answerText', () => {
+      expect(resolveCorrectChoiceIndex(null, 'Some answer (D)')).toBe(3);
+    });
+
+    it('returns undefined when answerText has no "(X)" pattern', () => {
+      expect(resolveCorrectChoiceIndex(null, 'Just an answer with no letter')).toBeUndefined();
+    });
+
+    it('returns undefined when both correctChoiceIndex and answerText are absent', () => {
+      expect(resolveCorrectChoiceIndex(undefined, undefined)).toBeUndefined();
+    });
+
+    it('prefers explicit index over answerText when both are present', () => {
+      // Index says 0 (A), answerText says (C) — explicit wins
+      expect(resolveCorrectChoiceIndex(0, 'something (C)')).toBe(0);
     });
   });
 });

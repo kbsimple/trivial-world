@@ -80,13 +80,17 @@ export default function QuestionScreen() {
             revealed={answerRevealed}
             choices={currentQuestion.choices}
             correctChoiceIndex={currentQuestion.correctChoiceIndex}
+            answerText={currentQuestion.answerText}
             difficulty={currentQuestion.difficulty}
             tidbits={currentQuestion.tidbits}
           />
         ) : null}
 
-        {/* answerZone: non-MC only — MC questions show the green bar + tidbits inside QuestionCard */}
-        {answerRevealed && currentQuestion && !(currentQuestion.choices && currentQuestion.choices.length > 0) && (
+        {/* answerZone: non-MC only — MC questions (explicit choices or embedded A)/B)/C) format)
+            show the highlighted correct choice inside QuestionCard instead */}
+        {answerRevealed && currentQuestion &&
+          !(currentQuestion.choices && currentQuestion.choices.length > 0) &&
+          !currentQuestion.answerText?.match(/\([A-F]\)/) && (
           <View style={styles.answerZone}>
             <Text style={[styles.answerText, { color: theme.color?.val as string }]}>
               {currentQuestion.answerText}

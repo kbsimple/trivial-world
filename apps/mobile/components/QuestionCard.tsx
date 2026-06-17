@@ -3,6 +3,7 @@ import { useTheme } from 'tamagui';
 import { PlayerColor } from '../constants/categories';
 import { CategoryBadge } from './CategoryBadge';
 import { Difficulty } from '../types/question';
+import { resolveCorrectChoiceIndex } from './questionCard.utils';
 
 const CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E', 'F'];
 
@@ -32,6 +33,7 @@ interface QuestionCardProps {
   revealed: boolean;
   choices?: string[];
   correctChoiceIndex?: number;
+  answerText?: string;
   difficulty?: Difficulty;
   tidbits?: string;
 }
@@ -56,6 +58,7 @@ export function QuestionCard({
   revealed,
   choices,
   correctChoiceIndex,
+  answerText,
   difficulty,
   tidbits,
 }: QuestionCardProps) {
@@ -66,6 +69,10 @@ export function QuestionCard({
   const resolvedChoices = choices && choices.length > 0 ? choices : parsed?.options ?? null;
   const resolvedStem = parsed ? parsed.stem : questionText;
   const isMultipleChoice = Array.isArray(resolvedChoices) && resolvedChoices.length > 0;
+
+  // Resolve correct index: explicit prop first; falls back to "(C)"-style parsing from answerText
+  // for embedded-MC questions that lack a correctChoiceIndex field.
+  const resolvedCorrectIndex = resolveCorrectChoiceIndex(correctChoiceIndex, answerText);
 
   const diffConfig = difficulty ? DIFFICULTY_CONFIG[difficulty] : null;
 
@@ -95,7 +102,7 @@ export function QuestionCard({
       {isMultipleChoice && (
         <View style={styles.choicesContainer}>
           {resolvedChoices!.map((choice, index) => {
-            const isCorrect = index === correctChoiceIndex;
+            const isCorrect = index === resolvedCorrectIndex;
             const revealedInlineStyle = revealed
               ? isCorrect
                 ? { backgroundColor: '#16a34a', borderWidth: 2, borderColor: '#22c55e' }
