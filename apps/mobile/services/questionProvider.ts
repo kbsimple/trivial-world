@@ -3,13 +3,14 @@ import { Category, Difficulty, Question } from '@trivial-world/types';
 import { ALL_QUESTIONS, getQuestionsByCategory } from '../data/questions';
 import { PlayerColor } from '../constants/categories';
 import { logger } from '../utils/logger';
-
-// Web-only: in-memory cache of questions per pack ID (cleared on page reload)
-const webPackCache = new Map<string, Question[]>();
+import { getCachedPackQuestions, setCachedPackQuestions } from './packCache';
 
 async function fetchWebPackQuestions(packId: string): Promise<Question[] | null> {
-  if (webPackCache.has(packId)) return webPackCache.get(packId)!;
+  // 1. Check IDB cache first — persists across page reloads
+  const cached = await getCachedPackQuestions(packId);
+  if (cached) return cached;
 
+  // 2. Try network (existing fetch logic)
   const { usePackStore } = await import('../stores/packStore');
   const packEntry = usePackStore.getState().availablePacks.find(p => p.id === packId);
   if (!packEntry) return null;
@@ -20,10 +21,10 @@ async function fetchWebPackQuestions(packId: string): Promise<Question[] | null>
     const { QuestionPackSchema } = await import('@trivial-world/types');
     const result = QuestionPackSchema.safeParse(await res.json());
     if (!result.success) return null;
-    webPackCache.set(packId, result.data.questions);
+    await setCachedPackQuestions(packId, result.data.questions);
     return result.data.questions;
   } catch {
-    return null;
+    return null; // offline + no IDB cache → caller falls back to ALL_QUESTIONS
   }
 }
 
