@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v11.0
 milestone_name: Web Pack Downloading
-status: planned
+status: complete
 last_updated: "2026-06-18T00:00:00.000Z"
 stopped_at: null
 resume_file: null
 progress:
   total_phases: 1
   completed_phases: 1
-  total_plans: 1
-  completed_plans: 1
+  total_plans: 6
+  completed_plans: 6
   percent: 100
 ---
 
@@ -21,13 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-13)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** v11.0 Web Pack Downloading — Phase 23, ready to plan.
+**Current focus:** v11.0 Web Pack Downloading — Phase 23, complete.
 
 ## Current Position
 
-Milestone v11.0 in progress. Phase 23 added, not yet planned.
-22 total phases shipped across 10 milestones. 302 tests passing.
-Next step: `/gsd-plan-phase 23`
+Milestone v11.0 complete. Phase 23 shipped 2026-06-18.
+23 total phases shipped across 11 milestones. 400 tests passing.
+Next step: Start next milestone.
 
 Progress: [████████████████████] 100%
 
@@ -58,7 +58,7 @@ Progress: [████████████████████] 100%
 - Phase 21 added: Per-Player Pack Selection Redesign — inline Shared/Custom toggle on player row, Custom navigates to /packs for that player's pack config, remove inline Alert/Modal pickers for packs and difficulty
 - Phase 21 completed 2026-06-13; v9.0 archived
 - Phase 22 added and completed: Undo Last Answer — snapshot pre-mark game state, add undoLastMark() + unmarkAsked(), show '↩ Undo last mark' link on turn screen until next question selected
-- Phase 23 added: Web Pack Downloading — Service Worker (stale-while-revalidate pack index, precache app shell) + IndexedDB (durable pack body storage, checksum-based invalidation); web app works offline after first visit
+- Phase 23 added and completed: Web Pack Downloading — Service Worker (stale-while-revalidate pack index, precache app shell) + IndexedDB (durable pack body storage, checksum-based invalidation); web app works offline after first visit; explicit "Download for offline" button per pack in packs/index.tsx
 - **v8.0 UX changes:** packMode removed from packStore; setup.tsx segmented control removed; per-player pack chip always visible alongside difficulty chip; allPlayersCustom bypass skips CONF-01 shared pack requirement
 - **v9.0 UX changes:** setup.tsx two-chip row (pack+difficulty) replaced with single Shared/Custom toggle chip; difficulty chip removed entirely; handleRevertToShared now also clears difficultyPreference; /packs/index.tsx gains per-player mode via targetPlayerId param with per-player title, pack/combo selection, and Back-only footer
 

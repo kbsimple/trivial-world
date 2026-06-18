@@ -12,7 +12,7 @@
 - ✅ **v8.0 Pack Selection UX Overhaul** — Phase 20 (shipped 2026-06-13)
 - ✅ **v9.0 Per-Player Pack Selection Redesign** — Phase 21 (shipped 2026-06-13)
 - ✅ **v10.0 Undo Last Answer** — Phase 22 (shipped 2026-06-13)
-- 🔄 **v11.0 Web Pack Downloading** — Phase 23 (in progress)
+- ✅ **v11.0 Web Pack Downloading** — Phase 23 (shipped 2026-06-18)
 
 ## Phases
 
@@ -115,7 +115,8 @@ Archive: `.planning/milestones/v9.0-*`
 
 </details>
 
-## v11.0 Web Pack Downloading (Phase 23) — IN PROGRESS
+<details>
+<summary>✅ v11.0 Web Pack Downloading (Phase 23) — SHIPPED 2026-06-18</summary>
 
 ### Phase 23: Web Pack Downloading
 
@@ -126,12 +127,16 @@ Archive: `.planning/milestones/v9.0-*`
 **Plans:** 6 plans
 
 Plans:
-- [ ] 23-01-PLAN.md — Create packCache.ts + packCache.web.ts: Platform shim + idb-keyval IDB adapter
-- [ ] 23-02-PLAN.md — Service Worker layer: sw-template.js, build-sw.mjs, index.html registration, package.json deps
-- [ ] 23-03-PLAN.md — Wire IDB into questionProvider.ts (IDB-first fetch) and packIndex.ts (offline fallback)
-- [ ] 23-04-PLAN.md — Add offlinePackIds + downloadPackForOffline + refreshOfflinePackIds to packStore
-- [ ] 23-05-PLAN.md — packs/index.tsx: Download button + Downloaded badge per pack row (web only)
-- [ ] 23-06-PLAN.md — Tests: packCache.web.test.ts, packStore downloadPackForOffline, questionProvider IDB hit
+- [x] 23-01-PLAN.md — Create packCache.ts + packCache.web.ts: Platform shim + idb-keyval IDB adapter
+- [x] 23-02-PLAN.md — Service Worker layer: sw-template.js, build-sw.mjs, index.html registration, package.json deps
+- [x] 23-03-PLAN.md — Wire IDB into questionProvider.ts (IDB-first fetch) and packIndex.ts (offline fallback)
+- [x] 23-04-PLAN.md — Add offlinePackIds + downloadPackForOffline + refreshOfflinePackIds to packStore
+- [x] 23-05-PLAN.md — packs/index.tsx: Download button + Downloaded badge per pack row (web only)
+- [x] 23-06-PLAN.md — Tests: packCache.web.test.ts, packStore downloadPackForOffline, questionProvider IDB hit
+
+Archive: `.planning/milestones/v11.0-*`
+
+</details>
 
 ---
 
@@ -179,7 +184,7 @@ Plans:
 | 20. Pack Selection UX Overhaul | v8.0 | 2/2 | Complete | 2026-06-13 |
 | 21. Per-Player Pack Selection Redesign | v9.0 | 2/2 | Complete | 2026-06-13 |
 | 22. Undo Last Answer | v10.0 | 1/1 | Complete | 2026-06-13 |
-| 23. Web Pack Downloading | v11.0 | 0/6 | In Progress | — |
+| 23. Web Pack Downloading | v11.0 | 6/6 | Complete | 2026-06-18 |
 
 ---
 
@@ -194,3 +199,4 @@ Plans:
 *v8.0 shipped: 2026-06-13*
 *v9.0 shipped: 2026-06-13*
 *v10.0 shipped: 2026-06-13*
+*v11.0 shipped: 2026-06-18*

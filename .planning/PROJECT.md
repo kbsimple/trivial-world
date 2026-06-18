@@ -84,8 +84,7 @@ Enable in-person social trivia gameplay where the app supports (not replaces) hu
 | Real-time leaderboards | Not needed for in-person play |
 | In-app purchases | Free-to-play model |
 | Cloud AI for generation | Dev-only Ollama (D-01) |
-| IndexedDB persistence | Session-only storage for web (D-02) |
-| Service worker caching | Deferred |
+| IndexedDB persistence (game state) | Session-only for game state; pack bodies use IndexedDB (Phase 23) |
 | Time limits per question | Conductor controls pacing (D-04) |
 | Custom win condition | Fixed at 6+1 categories |
 | Difficulty selection on web | Native-only for per-player difficulty (web uses bundled pool) |
