@@ -45,6 +45,9 @@ export default function PackSelectionScreen() {
     setEnabledCategories,
     setEnabledDifficulties,
     clearDownloadError,
+    offlinePackIds,
+    downloadPackForOffline,
+    refreshOfflinePackIds,
   } = usePackStore();
 
   // Local state
@@ -82,6 +85,13 @@ export default function PackSelectionScreen() {
 
     // Refresh downloaded packs from database
     refreshDownloadedPacks();
+  }, []);
+
+  // Web only: hydrate offlinePackIds from IndexedDB on mount
+  useEffect(() => {
+    if (Platform.OS === 'web') {
+      refreshOfflinePackIds();
+    }
   }, []);
 
   // Load downloaded pack versions from WatermelonDB (D-14)
@@ -145,6 +155,15 @@ export default function PackSelectionScreen() {
     } catch (error) {
       // Error handled by store and alert above
       console.error('Download failed:', error);
+    }
+  };
+
+  const handleDownloadForOffline = async (pack: PackIndexEntry) => {
+    errorPackRef.current = pack;
+    try {
+      await downloadPackForOffline(pack);
+    } catch (error) {
+      console.error('Offline download failed:', error);
     }
   };
 
@@ -272,12 +291,12 @@ export default function PackSelectionScreen() {
       </Text>
 
       {/* Download progress (D-10) */}
-      {isDownloading && selectedPack && (
+      {isDownloading && (selectedPack || Platform.OS === 'web') && (
         <DownloadProgress
-          packName={selectedPack.name}
+          packName={selectedPack?.name ?? 'Pack'}
           progress={downloadProgress}
           bytesWritten={downloadBytesWritten}
-          bytesTotal={selectedPack.size}
+          bytesTotal={selectedPack?.size ?? 0}
         />
       )}
 
@@ -309,20 +328,44 @@ export default function PackSelectionScreen() {
         data={availablePacks}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => {
-          const isDownloaded = downloadedPackIds.includes(item.id) || Platform.OS === 'web';
+          const isNativeDownloaded = downloadedPackIds.includes(item.id);
+          const isOfflineOnWeb = Platform.OS === 'web' && offlinePackIds.includes(item.id);
+          // Native: use WatermelonDB download status; Web: treat as "available" for selection
+          const isDownloaded = isNativeDownloaded || Platform.OS === 'web';
           const isSelected = selectedPackIds.includes(item.id);
           return (
-            <PackCard
-              pack={item}
-              isDownloaded={downloadedPackIds.includes(item.id)}
-              hasUpdate={checkHasUpdateAvailable(item)}
-              isActive={hasSelection ? isSelected : activePackId === item.id}
-              onPress={
-                isDownloaded
-                  ? () => togglePackSelection(item.id)
-                  : () => handlePackPress(item)
-              }
-            />
+            <View>
+              <PackCard
+                pack={item}
+                isDownloaded={isNativeDownloaded}
+                hasUpdate={checkHasUpdateAvailable(item)}
+                isActive={hasSelection ? isSelected : activePackId === item.id}
+                onPress={
+                  isDownloaded
+                    ? () => togglePackSelection(item.id)
+                    : () => handlePackPress(item)
+                }
+              />
+              {Platform.OS === 'web' && (
+                <View style={styles.webOfflineRow}>
+                  {isOfflineOnWeb ? (
+                    <Text style={[styles.downloadedBadge, { color: theme.color?.val as string }]}>
+                      Downloaded
+                    </Text>
+                  ) : (
+                    <Pressable
+                      onPress={() => handleDownloadForOffline(item)}
+                      disabled={isDownloading}
+                      style={styles.downloadButton}
+                    >
+                      <Text style={[styles.downloadButtonText, { color: theme.color?.val as string }]}>
+                        {isDownloading ? 'Downloading...' : 'Download for offline'}
+                      </Text>
+                    </Pressable>
+                  )}
+                </View>
+              )}
+            </View>
           );
         }}
         contentContainerStyle={styles.list}
@@ -518,5 +561,24 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     opacity: 0.55,
     letterSpacing: 0.5,
+  },
+  webOfflineRow: {
+    paddingHorizontal: 16,
+    paddingBottom: 8,
+    alignItems: 'flex-start',
+  },
+  downloadButton: {
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+  },
+  downloadButtonText: {
+    fontSize: 13,
+    opacity: 0.7,
+    textDecorationLine: 'underline',
+  },
+  downloadedBadge: {
+    fontSize: 12,
+    opacity: 0.55,
+    fontStyle: 'italic',
   },
 });
