@@ -1,4 +1,5 @@
 import { PackIndexEntrySchema, PackIndexEntry } from '@trivial-world/types';
+import { Platform } from 'react-native';
 import { GENERATOR_PACK_INDEX_URL } from '../constants/packConfig';
 
 /**
@@ -58,8 +59,22 @@ export async function fetchPackIndex(): Promise<PackIndexEntry[]> {
       }
     }
 
+    // Cache to IDB for offline use (web only — noop shim on native)
+    if (Platform.OS === 'web') {
+      const { setCachedPackIndex } = await import('./packCache.web');
+      await setCachedPackIndex(validPacks);
+    }
     return validPacks;
   } catch (error) {
+    // Offline fallback: serve IDB-cached index (web only)
+    if (Platform.OS === 'web') {
+      const { getCachedPackIndex } = await import('./packCache.web');
+      const cached = await getCachedPackIndex();
+      if (cached) {
+        console.warn('fetchPackIndex: offline — serving cached pack index from IDB');
+        return cached;
+      }
+    }
     console.error('Error fetching pack index:', error);
     throw error;
   }
