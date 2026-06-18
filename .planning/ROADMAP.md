@@ -12,6 +12,7 @@
 - ✅ **v8.0 Pack Selection UX Overhaul** — Phase 20 (shipped 2026-06-13)
 - ✅ **v9.0 Per-Player Pack Selection Redesign** — Phase 21 (shipped 2026-06-13)
 - ✅ **v10.0 Undo Last Answer** — Phase 22 (shipped 2026-06-13)
+- 🔄 **v11.0 Web Pack Downloading** — Phase 23 (in progress)
 
 ## Phases
 
@@ -114,6 +115,18 @@ Archive: `.planning/milestones/v9.0-*`
 
 </details>
 
+## v11.0 Web Pack Downloading (Phase 23) — IN PROGRESS
+
+### Phase 23: Web Pack Downloading
+
+**Goal:** Make the web app work offline after first visit by implementing Service Worker (stale-while-revalidate for pack index, precache for app shell) + IndexedDB (durable pack body storage). Pack bodies are stored by checksum so updates are detected without invalidating unchanged packs. The `questionProvider.ts` web path checks IndexedDB before fetching; `packIndex.ts` serves the cached index when offline.
+
+**Depends on:** Phase 22 (Undo Last Answer)
+
+**Plans:** TBD
+
+---
+
 <details>
 <summary>✅ v10.0 Undo Last Answer (Phase 22) — SHIPPED 2026-06-13</summary>
 
@@ -158,6 +171,7 @@ Plans:
 | 20. Pack Selection UX Overhaul | v8.0 | 2/2 | Complete | 2026-06-13 |
 | 21. Per-Player Pack Selection Redesign | v9.0 | 2/2 | Complete | 2026-06-13 |
 | 22. Undo Last Answer | v10.0 | 1/1 | Complete | 2026-06-13 |
+| 23. Web Pack Downloading | v11.0 | 0/? | Planned | — |
 
 ---
 
