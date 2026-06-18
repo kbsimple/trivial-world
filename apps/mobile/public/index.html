@@ -258,5 +258,16 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
+    <script type="module">
+      import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/7.4.0/workbox-window.prod.mjs';
+      if ('serviceWorker' in navigator) {
+        const wb = new Workbox('/sw.js');
+        // Silent update: when new SW is waiting, skip waiting immediately
+        wb.addEventListener('waiting', () => wb.messageSkipWaiting());
+        // Reload on controlling to pick up new cached assets
+        wb.addEventListener('controlling', () => window.location.reload());
+        wb.register();
+      }
+    </script>
 </body>
 </html>
