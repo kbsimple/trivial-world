@@ -732,6 +732,30 @@ describe('usePackStore', () => {
 
       expect(usePackStore.getState().downloadError).toBe('HTTP 404');
     });
+
+    it('retry after failure — clears downloadError and succeeds on second call', async () => {
+      const entry = createMockPackEntry({ id: 'test-pack-id', checksum: 'new-checksum' });
+
+      // First call fails
+      global.fetch = vi.fn().mockRejectedValue(new Error('Network failed'));
+      await expect(
+        usePackStore.getState().downloadPackForOffline(entry)
+      ).rejects.toThrow('Network failed');
+      expect(usePackStore.getState().downloadError).toBe('Network failed');
+
+      // Simulate user tapping Retry: store clears error before retry call
+      usePackStore.getState().clearDownloadError();
+      expect(usePackStore.getState().downloadError).toBeNull();
+
+      // Second call (the retry) succeeds
+      global.fetch = makeFetchMock(validQuestionsJson);
+      await usePackStore.getState().downloadPackForOffline(entry);
+
+      expect(usePackStore.getState().isDownloading).toBe(false);
+      expect(usePackStore.getState().downloadError).toBeNull();
+      expect(usePackStore.getState().downloadProgress).toBe(100);
+      expect(setCachedPackQuestions).toHaveBeenCalledWith('test-pack-id', expect.any(Array));
+    });
   });
 
   describe('deleteCombo', () => {

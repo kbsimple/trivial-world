@@ -133,7 +133,11 @@ export default function PackSelectionScreen() {
             errorPackRef.current = null;
           }},
           { text: 'Retry', onPress: () => {
-            if (packToRetry) handleDownload(packToRetry);
+            if (packToRetry) {
+              Platform.OS === 'web'
+                ? handleDownloadForOffline(packToRetry)
+                : handleDownload(packToRetry);
+            }
           }},
         ]
       );
