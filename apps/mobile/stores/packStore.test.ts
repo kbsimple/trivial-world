@@ -45,6 +45,16 @@ vi.mock('../services/packCache', () => ({
   setCachedPackIndex: vi.fn(),
 }));
 
+// Mock packCache.web directly (used in downloadPackForOffline dynamic import)
+vi.mock('../services/packCache.web', () => ({
+  getCachedPackChecksum: vi.fn(),
+  setCachedPackQuestions: vi.fn(),
+  setCachedPackChecksum: vi.fn(),
+  getOfflinePackIds: vi.fn(),
+  requestPersistentStorage: vi.fn(),
+}));
+
+
 import { fetchPackIndex } from '../services/packIndex';
 import {
   downloadPackWithProgress,
@@ -52,6 +62,13 @@ import {
   setActivePack,
 } from '../services/packDownloader';
 import { getOfflinePackIds, setCachedPackIndex } from '../services/packCache';
+import {
+  getCachedPackChecksum,
+  setCachedPackQuestions,
+  setCachedPackChecksum as setCachedPackChecksumWeb,
+  getOfflinePackIds as getOfflinePackIdsWeb,
+  requestPersistentStorage,
+} from '../services/packCache.web';
 
 // Import after mocks are set up
 import { usePackStore } from './packStore';
@@ -573,6 +590,147 @@ describe('usePackStore', () => {
 
       // Should resolve without throwing despite IDB failure
       await expect(usePackStore.getState().fetchAvailablePacks()).resolves.toBeUndefined();
+    });
+  });
+
+  describe('downloadPackForOffline', () => {
+    function makeFetchMock(text: string): typeof fetch {
+      const encoder = new TextEncoder();
+      const bytes = encoder.encode(text);
+      const stream = new ReadableStream({
+        start(controller) {
+          controller.enqueue(bytes);
+          controller.close();
+        },
+      });
+      return vi.fn().mockResolvedValue({
+        ok: true,
+        body: stream,
+      } as unknown as Response);
+    }
+
+    // Build 20 minimal valid questions (schema requires >= 20, IDs must be URL-safe lowercase)
+    const makeQuestion = (n: number) => ({
+      id: `question-${String(n).padStart(3, '0')}`,
+      category: 'blue' as const,
+      questionText: `This is question number ${n} — what is the correct answer?`,
+      answerText: `Answer ${n}`,
+      difficulty: 'easy' as const,
+    });
+    const validQuestionsJson = JSON.stringify({
+      metadata: {
+        id: '123e4567-e89b-12d3-a456-426614174000',
+        name: 'Test Pack For Offline',
+        description: 'A test pack',
+        version: '1.0.0',
+        author: 'Test Author',
+        createdAt: '2026-01-01T00:00:00.000Z',
+        updatedAt: '2026-01-01T00:00:00.000Z',
+        totalQuestions: 20,
+        categoryCounts: { blue: 20, pink: 0, yellow: 0, purple: 0, green: 0, orange: 0 },
+        checksum: 'a'.repeat(64),
+        schemaVersion: '1.0.0',
+        contentEncoding: 'identity',
+        size: 5000,
+      },
+      questions: Array.from({ length: 20 }, (_, i) => makeQuestion(i + 1)),
+    });
+
+    beforeEach(() => {
+      vi.mocked(getCachedPackChecksum).mockResolvedValue(null);
+      vi.mocked(setCachedPackQuestions).mockResolvedValue(undefined);
+      vi.mocked(setCachedPackChecksumWeb).mockResolvedValue(undefined);
+      vi.mocked(getOfflinePackIdsWeb).mockResolvedValue(['test-pack-id']);
+      vi.mocked(requestPersistentStorage).mockResolvedValue(true);
+      global.fetch = makeFetchMock(validQuestionsJson);
+    });
+
+    it('sets isDownloading true at start and false on success', async () => {
+      const entry = createMockPackEntry({ id: 'test-pack-id', checksum: 'new-checksum' });
+
+      await usePackStore.getState().downloadPackForOffline(entry);
+
+      expect(usePackStore.getState().isDownloading).toBe(false);
+    });
+
+    it('skips re-download when storedChecksum === entry.checksum', async () => {
+      const entry = createMockPackEntry({ id: 'test-pack-id', checksum: 'same-checksum' });
+      vi.mocked(getCachedPackChecksum).mockResolvedValue('same-checksum');
+
+      await usePackStore.getState().downloadPackForOffline(entry);
+
+      expect(global.fetch).not.toHaveBeenCalled();
+      expect(usePackStore.getState().isDownloading).toBe(false);
+      expect(usePackStore.getState().downloadProgress).toBe(100);
+    });
+
+    it('fetches and stores pack when checksum differs', async () => {
+      const entry = createMockPackEntry({ id: 'test-pack-id', checksum: 'new-checksum' });
+      vi.mocked(getCachedPackChecksum).mockResolvedValue('old-checksum');
+
+      await usePackStore.getState().downloadPackForOffline(entry);
+
+      expect(global.fetch).toHaveBeenCalledWith(entry.downloadUrl);
+      expect(setCachedPackQuestions).toHaveBeenCalled();
+      expect(setCachedPackChecksumWeb).toHaveBeenCalledWith('test-pack-id', 'new-checksum');
+    });
+
+    it('calls requestPersistentStorage after successful IDB write', async () => {
+      const entry = createMockPackEntry({ id: 'test-pack-id', checksum: 'new-checksum' });
+
+      await usePackStore.getState().downloadPackForOffline(entry);
+
+      expect(requestPersistentStorage).toHaveBeenCalledOnce();
+    });
+
+    it('refreshes offlinePackIds after successful download', async () => {
+      const entry = createMockPackEntry({ id: 'test-pack-id', checksum: 'new-checksum' });
+      vi.mocked(getOfflinePackIdsWeb).mockResolvedValue(['test-pack-id']);
+
+      await usePackStore.getState().downloadPackForOffline(entry);
+
+      expect(usePackStore.getState().offlinePackIds).toEqual(['test-pack-id']);
+      expect(usePackStore.getState().downloadProgress).toBe(100);
+      expect(usePackStore.getState().isDownloading).toBe(false);
+    });
+
+    it('sets downloadError and re-throws on network failure', async () => {
+      const entry = createMockPackEntry({ id: 'test-pack-id', checksum: 'new-checksum' });
+      global.fetch = vi.fn().mockRejectedValue(new Error('Network failed'));
+
+      await expect(
+        usePackStore.getState().downloadPackForOffline(entry)
+      ).rejects.toThrow('Network failed');
+
+      const state = usePackStore.getState();
+      expect(state.downloadError).toBe('Network failed');
+      expect(state.isDownloading).toBe(false);
+      expect(state.downloadProgress).toBe(0);
+      expect(state.downloadBytesWritten).toBe(0);
+    });
+
+    it('sets downloadError on pack validation failure', async () => {
+      const entry = createMockPackEntry({ id: 'test-pack-id', checksum: 'new-checksum' });
+      // Provide invalid pack JSON (missing required fields) to trigger schema validation failure
+      const invalidJson = JSON.stringify({ metadata: { id: 'not-a-uuid' }, questions: [] });
+      global.fetch = makeFetchMock(invalidJson);
+
+      await expect(
+        usePackStore.getState().downloadPackForOffline(entry)
+      ).rejects.toThrow('Pack validation failed');
+
+      expect(usePackStore.getState().downloadError).toBe('Pack validation failed');
+    });
+
+    it('sets downloadError on HTTP failure', async () => {
+      const entry = createMockPackEntry({ id: 'test-pack-id', checksum: 'new-checksum' });
+      global.fetch = vi.fn().mockResolvedValue({ ok: false, status: 404 } as unknown as Response);
+
+      await expect(
+        usePackStore.getState().downloadPackForOffline(entry)
+      ).rejects.toThrow('HTTP 404');
+
+      expect(usePackStore.getState().downloadError).toBe('HTTP 404');
     });
   });
 
