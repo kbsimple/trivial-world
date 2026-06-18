@@ -2,9 +2,10 @@ import { Platform } from 'react-native';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { platformStorage } from '../services/platformStorage';
-import { PackIndexEntry, Category, Difficulty, PackCombo } from '@trivial-world/types';
+import { PackIndexEntry, Category, Difficulty, PackCombo, QuestionPackSchema } from '@trivial-world/types';
 import { fetchPackIndex } from '../services/packIndex';
 import { downloadPackWithProgress, getDownloadedPackIds, setActivePack } from '../services/packDownloader';
+import { getOfflinePackIds, setCachedPackIndex } from '../services/packCache';
 import { usePlayerStore } from './playerStore';
 
 /**
@@ -35,10 +36,15 @@ interface PackState {
   downloadBytesWritten: number; // Actual bytes downloaded
   downloadError: string | null;
 
+  // Web-only: IDs of packs cached in IndexedDB (separate from native downloadedPackIds)
+  offlinePackIds: string[];
+
   // Actions
   fetchAvailablePacks: () => Promise<void>;
   downloadPack: (entry: PackIndexEntry) => Promise<void>;
+  downloadPackForOffline: (entry: PackIndexEntry) => Promise<void>;
   refreshDownloadedPacks: () => Promise<void>;
+  refreshOfflinePackIds: () => Promise<void>;
   selectPack: (packId: string) => Promise<void>;
   selectPackList: (packIds: string[]) => Promise<void>;
   createCombo: (name: string, packIds: string[]) => void;
@@ -66,12 +72,17 @@ export const usePackStore = create<PackState>()(
       downloadProgress: 0,
       downloadBytesWritten: 0,
       downloadError: null,
+      offlinePackIds: [],
 
       fetchAvailablePacks: async () => {
         set({ isLoading: true });
         try {
           const packs = await fetchPackIndex();
           set({ availablePacks: packs, isLoading: false });
+          // Cache index to IDB for offline use (fire-and-forget — noop on native)
+          setCachedPackIndex(packs).catch(err =>
+            console.warn('fetchAvailablePacks: failed to cache pack index:', err)
+          );
         } catch (error) {
           console.error('Failed to fetch pack index:', error);
           set({ isLoading: false });
@@ -106,10 +117,86 @@ export const usePackStore = create<PackState>()(
         }
       },
 
+      downloadPackForOffline: async (entry: PackIndexEntry) => {
+        set({ isDownloading: true, downloadProgress: 0, downloadBytesWritten: 0, downloadError: null });
+        try {
+          const {
+            getCachedPackChecksum,
+            setCachedPackQuestions,
+            setCachedPackChecksum,
+            getOfflinePackIds: getIDBOfflineIds,
+            requestPersistentStorage,
+          } = await import('../services/packCache.web');
+
+          // Skip re-download if checksum unchanged
+          const storedChecksum = await getCachedPackChecksum(entry.id);
+          if (storedChecksum === entry.checksum) {
+            set({ isDownloading: false, downloadProgress: 100 });
+            return;
+          }
+
+          // Streaming fetch with progress reporting
+          const res = await fetch(entry.downloadUrl);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const reader = res.body!.getReader();
+          const chunks: Uint8Array[] = [];
+          let bytesWritten = 0;
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            chunks.push(value);
+            bytesWritten += value.length;
+            set({
+              downloadBytesWritten: bytesWritten,
+              downloadProgress: entry.size > 0
+                ? Math.round((bytesWritten / entry.size) * 100)
+                : 0,
+            });
+          }
+
+          // Decode + parse + validate
+          const text = new TextDecoder().decode(
+            chunks.reduce((acc, c) => {
+              const r = new Uint8Array(acc.length + c.length);
+              r.set(acc);
+              r.set(c, acc.length);
+              return r;
+            }, new Uint8Array(0))
+          );
+          const result = QuestionPackSchema.safeParse(JSON.parse(text));
+          if (!result.success) throw new Error('Pack validation failed');
+
+          // Store in IndexedDB
+          await setCachedPackQuestions(entry.id, result.data.questions);
+          await setCachedPackChecksum(entry.id, entry.checksum);
+
+          // Request persistent storage on first download
+          await requestPersistentStorage();
+
+          // Refresh offline pack IDs
+          const offlineIds = await getIDBOfflineIds();
+          set({ offlinePackIds: offlineIds, isDownloading: false, downloadProgress: 100 });
+        } catch (error) {
+          const errorMessage = error instanceof Error ? error.message : 'Download failed';
+          set({
+            isDownloading: false,
+            downloadProgress: 0,
+            downloadBytesWritten: 0,
+            downloadError: errorMessage,
+          });
+          throw error;
+        }
+      },
+
       refreshDownloadedPacks: async () => {
         if (Platform.OS === 'web') return;
         const downloadedIds = await getDownloadedPackIds();
         set({ downloadedPackIds: downloadedIds });
+      },
+
+      refreshOfflinePackIds: async () => {
+        const offlineIds = await getOfflinePackIds();
+        set({ offlinePackIds: offlineIds });
       },
 
       selectPack: async (packId: string) => {
@@ -170,6 +257,7 @@ export const usePackStore = create<PackState>()(
       storage: createJSONStorage(() => platformStorage),
       partialize: (state) => ({
         downloadedPackIds: state.downloadedPackIds,
+        offlinePackIds: state.offlinePackIds,
         activePackId: state.activePackId,
         activePackIdList: state.activePackIdList,
         enabledCategories: state.enabledCategories,
