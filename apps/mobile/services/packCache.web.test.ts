@@ -41,13 +41,18 @@ const mockCreateStore = createStore as ReturnType<typeof vi.fn>;
 
 describe('packCache.web — idb-keyval IDB implementation', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
-    // Reset to defaults after clearing
+    // Reset call history and implementations for the IDB operation mocks.
+    // Do NOT clear mockCreateStore — it is called at module load time and
+    // its call history would be lost if cleared in beforeEach.
+    mockGet.mockReset();
+    mockSet.mockReset();
+    mockDel.mockReset();
+    mockKeys.mockReset();
+    // Restore default resolved values after reset
     mockGet.mockResolvedValue(undefined);
     mockSet.mockResolvedValue(undefined);
     mockDel.mockResolvedValue(undefined);
     mockKeys.mockResolvedValue([]);
-    mockCreateStore.mockReturnValue('mock-store');
   });
 
   describe('createStore initialization', () => {
