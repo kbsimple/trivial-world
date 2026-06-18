@@ -40,11 +40,9 @@ vi.mock('../services/packDownloader', () => ({
 }));
 
 // Mock packCache service (platform shim for IDB)
-const mockGetOfflinePackIds = vi.fn();
-const mockSetCachedPackIndex = vi.fn();
 vi.mock('../services/packCache', () => ({
-  getOfflinePackIds: mockGetOfflinePackIds,
-  setCachedPackIndex: mockSetCachedPackIndex,
+  getOfflinePackIds: vi.fn(),
+  setCachedPackIndex: vi.fn(),
 }));
 
 import { fetchPackIndex } from '../services/packIndex';
@@ -53,6 +51,7 @@ import {
   getDownloadedPackIds,
   setActivePack,
 } from '../services/packDownloader';
+import { getOfflinePackIds, setCachedPackIndex } from '../services/packCache';
 
 // Import after mocks are set up
 import { usePackStore } from './packStore';
@@ -86,9 +85,9 @@ describe('usePackStore', () => {
     vi.clearAllMocks();
     // Reset storage
     Object.keys(mockAsyncStorage).forEach((key) => delete mockAsyncStorage[key]);
-    // Reset packCache mocks
-    mockGetOfflinePackIds.mockReset();
-    mockSetCachedPackIndex.mockReset();
+    // Default packCache mock implementations (no-op, returns resolved Promise)
+    vi.mocked(setCachedPackIndex).mockResolvedValue(undefined);
+    vi.mocked(getOfflinePackIds).mockResolvedValue([]);
   });
 
   afterEach(() => {
@@ -538,17 +537,17 @@ describe('usePackStore', () => {
 
   describe('refreshOfflinePackIds', () => {
     it('calls getOfflinePackIds and updates offlinePackIds state', async () => {
-      mockGetOfflinePackIds.mockResolvedValue(['pack-a', 'pack-b']);
+      vi.mocked(getOfflinePackIds).mockResolvedValue(['pack-a', 'pack-b']);
 
       await usePackStore.getState().refreshOfflinePackIds();
 
-      expect(mockGetOfflinePackIds).toHaveBeenCalledOnce();
+      expect(getOfflinePackIds).toHaveBeenCalledOnce();
       expect(usePackStore.getState().offlinePackIds).toEqual(['pack-a', 'pack-b']);
     });
 
     it('sets offlinePackIds to empty array when IDB is empty', async () => {
       usePackStore.setState({ offlinePackIds: ['stale-pack'] });
-      mockGetOfflinePackIds.mockResolvedValue([]);
+      vi.mocked(getOfflinePackIds).mockResolvedValue([]);
 
       await usePackStore.getState().refreshOfflinePackIds();
 
@@ -560,17 +559,17 @@ describe('usePackStore', () => {
     it('calls setCachedPackIndex fire-and-forget after storing packs', async () => {
       const mockPacks = [createMockPackEntry()];
       vi.mocked(fetchPackIndex).mockResolvedValue(mockPacks);
-      mockSetCachedPackIndex.mockResolvedValue(undefined);
+      vi.mocked(setCachedPackIndex).mockResolvedValue(undefined);
 
       await usePackStore.getState().fetchAvailablePacks();
 
-      expect(mockSetCachedPackIndex).toHaveBeenCalledWith(mockPacks);
+      expect(setCachedPackIndex).toHaveBeenCalledWith(mockPacks);
     });
 
     it('does not throw when setCachedPackIndex rejects', async () => {
       const mockPacks = [createMockPackEntry()];
       vi.mocked(fetchPackIndex).mockResolvedValue(mockPacks);
-      mockSetCachedPackIndex.mockRejectedValue(new Error('IDB write failed'));
+      vi.mocked(setCachedPackIndex).mockRejectedValue(new Error('IDB write failed'));
 
       // Should resolve without throwing despite IDB failure
       await expect(usePackStore.getState().fetchAvailablePacks()).resolves.toBeUndefined();

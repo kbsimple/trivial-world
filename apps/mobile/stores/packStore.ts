@@ -5,6 +5,7 @@ import { platformStorage } from '../services/platformStorage';
 import { PackIndexEntry, Category, Difficulty, PackCombo } from '@trivial-world/types';
 import { fetchPackIndex } from '../services/packIndex';
 import { downloadPackWithProgress, getDownloadedPackIds, setActivePack } from '../services/packDownloader';
+import { getOfflinePackIds, setCachedPackIndex } from '../services/packCache';
 import { usePlayerStore } from './playerStore';
 
 /**
@@ -35,10 +36,15 @@ interface PackState {
   downloadBytesWritten: number; // Actual bytes downloaded
   downloadError: string | null;
 
+  // Web-only: IDs of packs cached in IndexedDB (separate from native downloadedPackIds)
+  offlinePackIds: string[];
+
   // Actions
   fetchAvailablePacks: () => Promise<void>;
   downloadPack: (entry: PackIndexEntry) => Promise<void>;
+  downloadPackForOffline: (entry: PackIndexEntry) => Promise<void>;
   refreshDownloadedPacks: () => Promise<void>;
+  refreshOfflinePackIds: () => Promise<void>;
   selectPack: (packId: string) => Promise<void>;
   selectPackList: (packIds: string[]) => Promise<void>;
   createCombo: (name: string, packIds: string[]) => void;
@@ -66,12 +72,17 @@ export const usePackStore = create<PackState>()(
       downloadProgress: 0,
       downloadBytesWritten: 0,
       downloadError: null,
+      offlinePackIds: [],
 
       fetchAvailablePacks: async () => {
         set({ isLoading: true });
         try {
           const packs = await fetchPackIndex();
           set({ availablePacks: packs, isLoading: false });
+          // Cache index to IDB for offline use (fire-and-forget — noop on native)
+          setCachedPackIndex(packs).catch(err =>
+            console.warn('fetchAvailablePacks: failed to cache pack index:', err)
+          );
         } catch (error) {
           console.error('Failed to fetch pack index:', error);
           set({ isLoading: false });
@@ -106,10 +117,20 @@ export const usePackStore = create<PackState>()(
         }
       },
 
+      downloadPackForOffline: async (_entry: PackIndexEntry) => {
+        // Implementation added in Task 2
+        throw new Error('downloadPackForOffline not yet implemented');
+      },
+
       refreshDownloadedPacks: async () => {
         if (Platform.OS === 'web') return;
         const downloadedIds = await getDownloadedPackIds();
         set({ downloadedPackIds: downloadedIds });
+      },
+
+      refreshOfflinePackIds: async () => {
+        const offlineIds = await getOfflinePackIds();
+        set({ offlinePackIds: offlineIds });
       },
 
       selectPack: async (packId: string) => {
@@ -170,6 +191,7 @@ export const usePackStore = create<PackState>()(
       storage: createJSONStorage(() => platformStorage),
       partialize: (state) => ({
         downloadedPackIds: state.downloadedPackIds,
+        offlinePackIds: state.offlinePackIds,
         activePackId: state.activePackId,
         activePackIdList: state.activePackIdList,
         enabledCategories: state.enabledCategories,
