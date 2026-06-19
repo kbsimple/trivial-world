@@ -67,9 +67,9 @@ export const useQuestionStore = create<QuestionState>()(
 
       selectQuestion: async (category: PlayerColor, packIds?: string[], difficulty?: Difficulty) => {
         if (Platform.OS === 'web') {
-          const { activePackId } = usePackStore.getState();
+          const { activePackId, enabledDifficulties } = usePackStore.getState();
           const resolvedPackIds = packIds ?? (activePackId ? [activePackId] : undefined);
-          const question = await getNextQuestion(category, get().askedQuestionIds, resolvedPackIds, difficulty);
+          const question = await getNextQuestion(category, get().askedQuestionIds, resolvedPackIds, difficulty, enabledDifficulties);
           if (question) {
             set({ currentQuestion: question, currentCategory: category });
           }

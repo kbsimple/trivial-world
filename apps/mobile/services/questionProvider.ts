@@ -57,10 +57,11 @@ export async function getNextQuestion(
   category: PlayerColor,
   excludeIds: string[],
   packIds?: string[],
-  difficulty?: Difficulty
+  difficulty?: Difficulty,
+  enabledDifficulties?: Difficulty[] | null
 ): Promise<Question | null> {
   if (Platform.OS === 'web') {
-    return getNextQuestionFromBundle(playerColorToCategory(category), excludeIds, packIds, difficulty);
+    return getNextQuestionFromBundle(playerColorToCategory(category), excludeIds, packIds, difficulty, enabledDifficulties);
   }
   return getNextQuestionFromDatabase(category, excludeIds, difficulty);
 }
@@ -89,7 +90,8 @@ async function getNextQuestionFromBundle(
   category: Category,
   excludeIds: string[],
   packIds?: string[],
-  difficulty?: Difficulty
+  difficulty?: Difficulty,
+  enabledDifficulties?: Difficulty[] | null
 ): Promise<Question | null> {
   // Use pack-specific questions if available, otherwise fall back to bundled data
   let pool: Question[];
@@ -102,8 +104,6 @@ async function getNextQuestionFromBundle(
   }
 
   // D-06: Per-player difficulty takes precedence; fallback to game-level enabledDifficulties
-  const { usePackStore } = await import('../stores/packStore');
-  const { enabledDifficulties } = usePackStore.getState();
   const effectiveDifficulties: Difficulty[] | null =
     difficulty != null
       ? [difficulty]
