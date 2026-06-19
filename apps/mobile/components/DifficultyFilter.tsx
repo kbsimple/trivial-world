@@ -17,6 +17,12 @@ const DIFFICULTY_LABELS: Record<Difficulty, string> = {
   hard: 'Hard',
 };
 
+const DIFFICULTY_COLORS: Record<Difficulty, string> = {
+  easy: '#4caf50',
+  medium: '#ff9800',
+  hard: '#f44336',
+};
+
 /**
  * Difficulty filter component
  * Per D-06: Difficulty filtering as optional pre-game setting
@@ -52,7 +58,7 @@ export function DifficultyFilter({
               style={[
                 styles.difficultyButton,
                 {
-                  backgroundColor: isEnabled ? '#228b22' : 'rgba(255, 255, 255, 0.2)',
+                  backgroundColor: isEnabled ? DIFFICULTY_COLORS[difficulty] : 'rgba(255, 255, 255, 0.2)',
                   opacity: isEnabled ? 1 : 0.5,
                 },
               ]}

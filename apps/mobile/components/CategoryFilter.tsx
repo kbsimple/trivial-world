@@ -36,7 +36,7 @@ export function CategoryFilter({
   return (
     <View style={styles.container}>
       <Text style={[styles.label, { color: theme.color?.val as string }]}>
-        Select Categories
+        Categories
       </Text>
 
       {/* Category toggles */}
