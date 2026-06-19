@@ -61,14 +61,14 @@ export function PackCard({
 
         {/* Downloaded indicator */}
         {isDownloaded && !hasUpdate && (
-          <Text style={[styles.downloadedText, { color: SEMANTIC_COLORS.success }]}>
+          <Text style={[styles.downloadedText, { color: SEMANTIC_COLORS.selected }]}>
             Downloaded
           </Text>
         )}
 
         {/* Active indicator */}
         {isActive && (
-          <Text style={[styles.activeText, { color: SEMANTIC_COLORS.success }]}>
+          <Text style={[styles.activeText, { color: SEMANTIC_COLORS.selected }]}>
             Active
           </Text>
         )}
@@ -77,7 +77,7 @@ export function PackCard({
       {/* Select button */}
       {onSelect && (
         <Pressable
-          style={[styles.selectButton, { backgroundColor: SEMANTIC_COLORS.success }]}
+          style={[styles.selectButton, { backgroundColor: SEMANTIC_COLORS.selected }]}
           onPress={onSelect}
         >
           <Text style={styles.selectButtonText}>Select</Text>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
   activeContainer: {
     borderWidth: 2,
-    borderColor: SEMANTIC_COLORS.success,
+    borderColor: SEMANTIC_COLORS.selected,
   },
   infoContainer: {
     flex: 1,

@@ -79,6 +79,8 @@ export const SEMANTIC_COLORS = {
   success: '#e5191e',
   /** Correct answer color (green) - for Correct button and answer reveal */
   correct: '#228b22',
+  /** Selected state color (electric blue) - for pack selection border/label */
+  selected: '#0066ff',
   /** Error color (red) - for incorrect answers, destructive actions */
   error: '#dc143c',
   /** Remove/warning color (coral) - for remove buttons, warnings */
