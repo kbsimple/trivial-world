@@ -133,7 +133,7 @@ export default function SetupScreen() {
             ? `${packName}  Change ›`
             : allPlayersCustom
               ? 'All players have custom packs'
-              : 'Select a pack ›'}
+              : '+ Select Pack'}
         </Text>
       </Pressable>
 
