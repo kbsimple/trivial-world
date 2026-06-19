@@ -194,7 +194,7 @@ export default function SetupScreen() {
       <Pressable
         style={[
           styles.startButton,
-          { backgroundColor: canStart ? SEMANTIC_COLORS.success : 'rgba(255,255,255,0.1)' },
+          { backgroundColor: canStart ? SEMANTIC_COLORS.selected : 'rgba(255,255,255,0.1)' },
         ]}
         onPress={handleStartGame}
         disabled={!canStart}
