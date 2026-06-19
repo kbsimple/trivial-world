@@ -303,6 +303,30 @@
       "downloadUrl": "https://trivial-world.netlify.app/packs/nba-basketball-2020s-8a547a65.json",
       "checksum": "0eb41458bb91162e8d59c944f73a9df9644c4cde835df07f3e215e59d9a5ad5b",
       "size": 26921
+    },
+    {
+      "id": "fc00d001-f00d-4ea7-a11e-c00kf00dpack",
+      "name": "Food Cuisines",
+      "description": "120 questions about world food cuisines — covering geography, culture, history, cooking techniques, ingredients, and iconic dishes from around the globe.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 120,
+      "categoryCounts": { "blue": 20, "pink": 20, "yellow": 20, "purple": 20, "green": 20, "orange": 20 },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/food-cuisines-fc00d001.json",
+      "checksum": "e64c4f1023b71362bc1c30964587e4ffda57be1f350bc795eb9a8bc43ebc2e23",
+      "size": 56145
+    },
+    {
+      "id": "v1d30001-game-4e27-b335-mkwmcbspack1",
+      "name": "Video Games (MKW, Minecraft, BSs)",
+      "description": "120 questions about Mario Kart World (Nintendo Switch 2), Minecraft, and Brawl Stars — covering characters, maps, mechanics, lore, history, and competitive play.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 120,
+      "categoryCounts": { "blue": 20, "pink": 20, "yellow": 20, "purple": 20, "green": 20, "orange": 20 },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/video-games-mkw-mc-bs-v1d30001.json",
+      "checksum": "e1e7ab8e16dc8fa4dba186f8bd5f86d53289b05f70c17511bfdbc1bac9dc7b1e",
+      "size": 43625
     }
   ]
 }

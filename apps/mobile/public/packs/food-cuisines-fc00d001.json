@@ -1,0 +1,941 @@
+{
+  "metadata": {
+    "id": "fc00d001-f00d-4ea7-a11e-c00kf00dpack",
+    "name": "Food Cuisines",
+    "description": "120 questions about world food cuisines — covering geography, culture, history, cooking techniques, ingredients, and iconic dishes from around the globe.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-19T00:00:00.000Z",
+    "updatedAt": "2026-06-19T00:00:00.000Z",
+    "categoryCounts": { "blue": 20, "pink": 20, "yellow": 20, "purple": 20, "green": 20, "orange": 20 },
+    "totalQuestions": 120,
+    "checksum": "e64c4f1023b71362bc1c30964587e4ffda57be1f350bc795eb9a8bc43ebc2e23",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 56145
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Which country is the birthplace of sushi?",
+      "answerText": "Japan",
+      "tidbits": "Modern nigiri sushi as we know it was developed in Edo (now Tokyo) in the early 19th century — it was originally fast street food, not a restaurant dish."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Pad Thai, som tum, and khao man gai are all staple dishes of which Southeast Asian country?",
+      "answerText": "Thailand",
+      "tidbits": "The Thai government has run a 'Thai SELECT' certification program since 2002 to authenticate Thai restaurants abroad and protect the cuisine's reputation."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Which Italian city is the home of Neapolitan pizza?",
+      "answerText": "Naples",
+      "tidbits": "Neapolitan pizza earned UNESCO Intangible Cultural Heritage status in 2017, recognizing the city's centuries-old pizza-making tradition."
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Kimchi, bulgogi, and bibimbap are iconic dishes from which country?",
+      "answerText": "South Korea"
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Which North African country is famous for its couscous and tagine dishes?",
+      "answerText": "Morocco",
+      "tidbits": "Morocco, Algeria, Mauritania, and Tunisia jointly won UNESCO recognition for couscous as part of their shared culinary heritage in 2020."
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Borscht is a beetroot soup strongly associated with which Eastern European country?",
+      "answerText": "Ukraine"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In which country would you find the famous Tsukiji (and now Toyosu) fish market, one of the largest in the world?",
+      "answerText": "Japan",
+      "tidbits": "The Toyosu Market, which replaced Tsukiji in 2018, handles over 480 species of seafood and processes around 2,000 tonnes of fish per day."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which city in Spain is world-famous for being the birthplace of the pintxos bar-snack culture?",
+      "answerText": "San Sebastián (Donostia)",
+      "tidbits": "San Sebastián has more Michelin stars per capita than almost any other city in the world, earning its reputation as a global gastronomic capital."
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Feijoada, a hearty black bean and pork stew, is considered the national dish of which South American country?",
+      "answerText": "Brazil"
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The spice trade route through which ocean strait, connecting the Red Sea to the Indian Ocean, made Yemeni port cities wealthy hubs of culinary exchange?",
+      "answerText": "Bab-el-Mandeb Strait"
+    },
+    {
+      "id": "blue-011",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Pho originates from which region of Vietnam — north or south?",
+      "answerText": "North (Hanoi)",
+      "tidbits": "Northern pho uses a clearer, more delicate broth and thinner noodles, while southern pho (popularized in Ho Chi Minh City) tends to be sweeter with more garnishes."
+    },
+    {
+      "id": "blue-012",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which island nation is famous for its 'Nasi Lemak' — coconut rice served with sambal, anchovies, peanuts, and boiled egg?",
+      "answerText": "Malaysia"
+    },
+    {
+      "id": "blue-013",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The French culinary region of Lyon is sometimes called the 'gastronomic capital of the world' — which river flows through it?",
+      "answerText": "Rhône (and Saône)",
+      "tidbits": "Lyon's bouchon restaurants are a UNESCO-recognised tradition serving hearty local fare; the city has produced culinary legends including Paul Bocuse."
+    },
+    {
+      "id": "blue-014",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which South American country is the world's largest producer of coffee beans?",
+      "answerText": "Brazil"
+    },
+    {
+      "id": "blue-015",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Injera, a spongy sourdough flatbread, is the staple starch of which East African country's cuisine?",
+      "answerText": "Ethiopia",
+      "tidbits": "Injera is made from teff — a tiny ancient grain native to the Ethiopian highlands — and it doubles as both plate and utensil in traditional Ethiopian dining."
+    },
+    {
+      "id": "blue-016",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which Indian state is considered the home of biryani, dal baati churma, and ghewar?",
+      "answerText": "Rajasthan"
+    },
+    {
+      "id": "blue-017",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "The 'Triangle of Parma' refers to three DOP-protected Italian foods produced in the Emilia-Romagna region. Name any two of the three.",
+      "answerText": "Prosciutto di Parma, Parmigiano-Reggiano, Culatello di Zibello",
+      "tidbits": "DOP (Denominazione di Origine Protetta) means the product must be made in a specific area using traditional methods — it's the EU's strictest food origin certification."
+    },
+    {
+      "id": "blue-018",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "The culinary tradition called 'Kaiseki' originated in which specific ancient Japanese city?",
+      "answerText": "Kyoto",
+      "tidbits": "Kaiseki evolved from the simple meal served alongside the Japanese tea ceremony; it is now a multi-course haute cuisine that can feature 15 or more meticulously presented dishes."
+    },
+    {
+      "id": "blue-019",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Which tiny archipelago nation in the Pacific — comprising just 21 square kilometres — lends its name to the Nauru phosphate-driven diet shift, used as a case study in food geography?",
+      "answerText": "Nauru"
+    },
+    {
+      "id": "blue-020",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Fermented shark meat known as 'hákarl' is a traditional delicacy in which North Atlantic island nation?",
+      "answerText": "Iceland",
+      "tidbits": "Hákarl is made from Greenlandic shark buried underground for up to three months to remove toxins — its flesh is poisonous when fresh due to high urea content."
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which celebrity chef is famous for the phrase 'Bam!' and 'Kick it up a notch!' on his cooking shows?",
+      "answerText": "Emeril Lagasse",
+      "tidbits": "Emeril Lagasse hosted multiple shows on Food Network including 'Emeril Live,' which debuted in 1997 and became one of the channel's longest-running programs."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which British cooking competition show, set in a tent, crowns a 'Star Baker' each week before naming its overall winner?",
+      "answerText": "The Great British Bake Off"
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Chef Gordon Ramsay is famous for which reality TV show where he visits struggling restaurants to turn them around?",
+      "answerText": "Kitchen Nightmares",
+      "tidbits": "The US version of Kitchen Nightmares ran for seven seasons; its viral moments — including the 'Amy's Baking Company' episode — have been watched hundreds of millions of times online."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "In the Pixar film 'Ratatouille,' what kind of dish does Remy cook that wins over the famously harsh food critic Anton Ego?",
+      "answerText": "Ratatouille (Provençal vegetable dish)"
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which cooking show, hosted by Padma Lakshmi, holds the record for the most Emmy nominations of any food reality show?",
+      "answerText": "Top Chef",
+      "tidbits": "Top Chef has aired for more than 20 seasons since 2006 and has launched the careers of chefs including Richard Blais, Stephanie Izard, and Kristen Kish."
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which YouTube channel, created by brothers who review food from around the world while traveling, is one of the most-watched food channels globally?",
+      "answerText": "Best Ever Food Review Show"
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What is the name of the food critic in the movie 'Ratatouille' who writes for the publication 'Gusteau's'?",
+      "answerText": "Anton Ego"
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "On MasterChef US, which celebrity chef judge is known for his signature 'MasterChef apron' reveal and catchphrase 'This. Is. MasterChef'?",
+      "answerText": "Gordon Ramsay",
+      "tidbits": "Gordon Ramsay holds six Michelin stars across his restaurant empire and has appeared in more than 15 food-related television series worldwide."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Netflix's 'Chef's Table' format — focused on a single world-class chef per episode — was created by which documentary filmmaker?",
+      "answerText": "David Gelb",
+      "tidbits": "David Gelb first gained recognition with his 2011 documentary 'Jiro Dreams of Sushi' before developing the more expansive Chef's Table series for Netflix."
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which anime series follows the culinary battles of protagonist Soma Yukihira at the elite Totsuki Culinary Academy?",
+      "answerText": "Food Wars! (Shokugeki no Soma)",
+      "tidbits": "Food Wars! is notable for its dramatic 'foodgasm' reactions — characters experience fantastical visions when tasting exceptional food, a trope that became a defining feature of food-themed anime."
+    },
+    {
+      "id": "pink-011",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Food influencer Zach Choi ASMR is best known for videos featuring what style of eating content that helped pioneer food ASMR on YouTube?",
+      "answerText": "Silent ASMR mukbang eating videos"
+    },
+    {
+      "id": "pink-012",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which celebrity chef wrote the cookbook 'Jerusalem' with Yotam Ottolenghi and is known for championing Middle Eastern cuisine?",
+      "answerText": "Sami Tamimi",
+      "tidbits": "Yotam Ottolenghi and Sami Tamimi grew up on opposite sides of Jerusalem — one Israeli, one Palestinian — making their collaboration symbolically powerful as well as culinarily celebrated."
+    },
+    {
+      "id": "pink-013",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "The Korean food trend 'mukbang' — eating large amounts of food on camera — originated on which streaming platform?",
+      "answerText": "AfreecaTV",
+      "tidbits": "Mukbang literally means 'eating broadcast' in Korean; the trend exploded globally around 2015–2016 as creators migrated to YouTube where some now earn millions per year."
+    },
+    {
+      "id": "pink-014",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "In the HBO series 'The Bear,' the main character Carmy returns to Chicago to run what type of family food business?",
+      "answerText": "An Italian beef sandwich shop",
+      "tidbits": "The Bear was praised by professional chefs for its hyper-realistic portrayal of kitchen culture, including accurate depictions of culinary school techniques and restaurant service stress."
+    },
+    {
+      "id": "pink-015",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which TikTok-viral dish trend from 2021 involved baking feta cheese in the oven with tomatoes and olive oil, originating from Finland?",
+      "answerText": "Baked feta pasta",
+      "tidbits": "The dish caused a feta shortage in Finland and then several other countries after the recipe went viral — Finnish food blogger Jenni Häyrinen is credited with popularizing the trend."
+    },
+    {
+      "id": "pink-016",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Joël Robuchon, sometimes called 'Chef of the Century,' held the world record for the most Michelin stars of any chef. What was the peak total?",
+      "answerText": "32 Michelin stars",
+      "tidbits": "Joël Robuchon retired at age 50 at the height of his career, then returned 15 years later to open L'Atelier restaurants worldwide, accumulating more stars than any chef in history."
+    },
+    {
+      "id": "pink-017",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which Japanese anime film by Studio Ghibli features a magical bathhouse where the protagonist's parents are turned into pigs after eating food meant for the spirits?",
+      "answerText": "Spirited Away"
+    },
+    {
+      "id": "pink-018",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "The late Anthony Bourdain's groundbreaking food travel book, published in 2000, that launched his media career was titled what?",
+      "answerText": "Kitchen Confidential"
+    },
+    {
+      "id": "pink-019",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which streaming show, produced by David Chang, follows him eating and discussing culture through food in cities around the world on Netflix?",
+      "answerText": "Ugly Delicious",
+      "tidbits": "Ugly Delicious challenged the idea of culinary 'authenticity,' arguing that dishes evolve through migration and cultural exchange and that no single version is definitively 'correct.'"
+    },
+    {
+      "id": "pink-020",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "In the manga and anime 'Toriko,' the protagonist hunts fantastical creatures for their meat. What is the name of the ultimate ingredient he pursues for most of the series?",
+      "answerText": "Acacia's Full Course Menu (specifically GOD)",
+      "tidbits": "Toriko is classified as a shonen food fantasy series — it imagines a world where chefs and hunters work together to secure the most powerful ingredients, with each food granting near-magical abilities."
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Which ancient civilization is credited with developing the first recorded beer recipe, inscribed on a clay tablet?",
+      "answerText": "Sumerians (ancient Mesopotamia)",
+      "tidbits": "The 'Hymn to Ninkasi,' a Sumerian poem from around 1800 BCE, doubles as a beer recipe — it describes the process of making beer from bread (bappir) and barley."
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Which spice, more valuable than gold by weight in the Middle Ages, was the primary driver of European exploration to Asia in the 15th and 16th centuries?",
+      "answerText": "Black pepper (or spices generally)",
+      "tidbits": "Peppercorns were so valuable in medieval Europe they were sometimes used as currency — Attila the Hun demanded 3,000 pounds of pepper as ransom for the city of Rome in 408 CE."
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Which French chef, who died in 1935, is widely considered the 'king of chefs and chef of kings' for modernizing classical French cuisine?",
+      "answerText": "Auguste Escoffier",
+      "tidbits": "Escoffier's 1903 book 'Le Guide Culinaire' codified French classical cooking and is still used as a culinary reference; he also invented dishes like Peach Melba and Pêche Dame Blanche."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "The Columbian Exchange, which began after 1492, introduced which nightshade fruit — now central to Italian cuisine — from the Americas to Europe?",
+      "answerText": "Tomato"
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Chocolate was originally consumed as a drink by which ancient Mesoamerican civilization before Europeans encountered it?",
+      "answerText": "Aztecs (and Maya)",
+      "tidbits": "The Aztec cacao drink 'xocolātl' was bitter, frothy, and often spiced with chili — it bore little resemblance to modern sweet chocolate; sugar was added only after Europeans adopted it."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Which 18th-century French chemist is credited with popularizing the potato as food in Europe by sneaking samples for people to steal?",
+      "answerText": "Antoine-Augustin Parmentier",
+      "tidbits": "Parmentier planted a potato field near Paris and posted guards during the day — deliberately removing them at night so curious locals would steal the 'forbidden' crop, sparking widespread adoption."
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "The word 'sandwich' is named after a British nobleman who reportedly ate meat tucked between bread slices so he wouldn't have to leave his card table. What was his title?",
+      "answerText": "Earl of Sandwich (John Montagu, 4th Earl of Sandwich)"
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which trade route, operating roughly from the 2nd century BCE to the 15th century CE, connected East Asian, South Asian, and Mediterranean food cultures through the exchange of spices, silk, and foodstuffs?",
+      "answerText": "The Silk Road",
+      "tidbits": "The Silk Road carried not just silk and spices but also foods like peaches, grapes, and pomegranates westward, while wheat, wine, and olive oil moved eastward."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which European country's cuisine was fundamentally altered by the 'Potato Famine' of the 1840s, causing over one million deaths and mass emigration?",
+      "answerText": "Ireland",
+      "tidbits": "Ireland's reliance on a single potato variety — the Irish Lumper — made its entire crop vulnerable to Phytophthora infestans (late blight); genetic diversity in crops was the lesson taken by modern agriculture."
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which ancient Roman sauce, made from fermented fish intestines, was so popular it was traded across the Roman Empire and is considered an ancestor of Worcestershire sauce?",
+      "answerText": "Garum",
+      "tidbits": "Roman garum factories (cetariae) have been found as far apart as Spain and North Africa; the concentrated fermented fish sauce was the umami backbone of Roman cooking for centuries."
+    },
+    {
+      "id": "yellow-011",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "The 'nutmeg wars' of the 17th century were fought largely between the Dutch and the British over control of which remote island group?",
+      "answerText": "The Banda Islands (in the Moluccas/Spice Islands)",
+      "tidbits": "The Dutch VOC massacred the indigenous Bandanese population and enslaved survivors to control the nutmeg monopoly — at one point they traded Manhattan (then New Amsterdam) to England for Run Island."
+    },
+    {
+      "id": "yellow-012",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What cooking technique, first formally described in the 1970s by French chefs and scientists, involves sealing food in vacuum bags and cooking at precisely controlled low temperatures in a water bath?",
+      "answerText": "Sous vide",
+      "tidbits": "Sous vide was pioneered by chef Georges Pralus and scientist Bruno Goussault independently; Pralus used it to cook foie gras while Goussault studied the food safety and texture science behind the method."
+    },
+    {
+      "id": "yellow-013",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "The 'Hundred Year Egg' (pidan) — a traditional preserved egg delicacy — is associated with which country's culinary history?",
+      "answerText": "China",
+      "tidbits": "Century eggs are made by preserving duck, chicken, or quail eggs in a mixture of clay, ash, salt, quicklime, and rice hulls for weeks to months — not actually a century — causing dramatic color and texture changes."
+    },
+    {
+      "id": "yellow-014",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which culinary movement, launched in France in the 1970s by chefs like Paul Bocuse and Michel Guérard, emphasized lighter sauces and fresh ingredients as a reaction against heavy classical cuisine?",
+      "answerText": "Nouvelle Cuisine"
+    },
+    {
+      "id": "yellow-015",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Napoleon Bonaparte is said to have popularized which chicken dish, first cooked after his victory at the 1800 Battle of Marengo, using ingredients foraged from the battlefield?",
+      "answerText": "Chicken Marengo",
+      "tidbits": "According to legend, Napoleon's cook Dunand scavenged a local farm after the battle and created the dish from a chicken, tomatoes, crayfish, eggs, and brandy — Napoleon demanded it after every subsequent victory."
+    },
+    {
+      "id": "yellow-016",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Which French chef published 'La Varenne Cuisinier' in 1651, a cookbook considered the first major break from medieval cooking and the foundation of modern French cuisine?",
+      "answerText": "François Pierre de la Varenne",
+      "tidbits": "La Varenne introduced the use of roux (butter and flour) to thicken sauces, replacing the medieval practice of thickening with bread — a fundamental technique still central to French cooking."
+    },
+    {
+      "id": "yellow-017",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What is the name of the ancient Egyptian fermentation vessel, found in tomb paintings dating to 3000 BCE, used for brewing a thick, cloudy beer drunk through a filtering straw?",
+      "answerText": "Heqet jar (or beer jug / heqet vessel)"
+    },
+    {
+      "id": "yellow-018",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "The 'Apicius' — the oldest surviving Roman cookbook, compiled around the 4th or 5th century CE — is named after a real Roman gourmand who lived during which emperor's reign?",
+      "answerText": "Emperor Tiberius (Marcus Gavius Apicius lived under Tiberius)",
+      "tidbits": "The historical Apicius was so devoted to fine eating that, according to Roman sources, when he calculated he had only 10 million sesterces left — enough to eat well for only a few years — he poisoned himself rather than face a reduced diet."
+    },
+    {
+      "id": "yellow-019",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "The 1905 'Beef Trust' antitrust case in the United States was brought against five major meatpacking companies collectively known by what nickname?",
+      "answerText": "The Big Five (or the Beef Trust)",
+      "tidbits": "The Supreme Court's ruling in Swift & Co. v. United States established the 'stream of commerce' doctrine — a landmark decision that expanded federal authority to regulate interstate trade."
+    },
+    {
+      "id": "yellow-020",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Which 1906 Upton Sinclair novel, set in Chicago's meatpacking district, shocked the American public with its portrayal of unsanitary food production and directly led to the Pure Food and Drug Act?",
+      "answerText": "The Jungle",
+      "tidbits": "Sinclair wrote The Jungle to expose the exploitation of immigrant workers, but the public's outrage focused almost entirely on the food safety revelations — he famously said he aimed for the public's heart but hit its stomach."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the term for the high-end culinary art of decorative sugar work — pulling, blowing, and casting sugar into sculptures and showpieces?",
+      "answerText": "Sugar art / pulled sugar sculpture",
+      "tidbits": "Pulled sugar is heated to around 160°C (320°F), then manipulated by hand like blown glass — the technique creates translucent, jewel-like petals and ribbons used to decorate competition-level desserts."
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What artistic technique — borrowed from Japanese lacquerware — involves coating food layers with edible gold or silver leaf?",
+      "answerText": "Gilding / edible gold leaf application"
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "The painting 'The Kitchen Maid' by Johannes Vermeer, depicting a woman pouring milk, is more commonly known by what shorter name?",
+      "answerText": "The Milkmaid",
+      "tidbits": "Vermeer's 'The Milkmaid' (c. 1658–1661) is celebrated not just as a domestic scene but as a masterwork of light; the stream of milk from the jug is considered one of the most perfectly rendered details in Dutch Golden Age painting."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the name of the plating technique where sauce is spread in an elegant arc across the plate using the back of a spoon or a specialized tool?",
+      "answerText": "Quenelle technique / sauce smear (or swoosh)",
+      "tidbits": "Modern fine dining plating was heavily influenced by nouvelle cuisine chefs in the 1970s who moved away from silver service domes toward painterly individual plates that doubled as visual compositions."
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "The elaborate Japanese art of fruit and vegetable carving — often featuring intricate flowers and animals — is known by what name?",
+      "answerText": "Mukimono"
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Which Dutch Golden Age still-life painting genre featured lavish arrangements of food, flowers, and luxury objects as a meditation on wealth and mortality?",
+      "answerText": "Vanitas (still life / vanitas painting)",
+      "tidbits": "Vanitas paintings often included symbolic foods — half-eaten bread or overripe fruit signified the passage of time and the inevitability of decay, reminding wealthy Dutch viewers that material goods were temporary."
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the culinary term for the practice of painting chocolate molds or cocoa butter onto surfaces to create decorative colored chocolate shells?",
+      "answerText": "Cocoa butter airbrushing / painting chocolate"
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Italian artist Giuseppe Arcimboldo is famous for 16th-century portraits composed entirely of what unusual subject matter?",
+      "answerText": "Fruits, vegetables, flowers, and food",
+      "tidbits": "Arcimboldo's series 'The Four Seasons' (c. 1563) features faces assembled from seasonal produce — 'Summer' is made of cucumbers, cherries, corn, and figs; 'Winter' from gnarled wood and mushrooms."
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "The Michelin Guide uses a symbol system where restaurants earn one, two, or three stars. What symbol represents a restaurant 'worth a special journey'?",
+      "answerText": "Three Michelin stars",
+      "tidbits": "The Michelin Guide began in 1900 as a free road guide for French motorists — its restaurant ratings were introduced in 1926 as a way to recommend establishments worth driving to, thereby encouraging more road trips (and tire purchases)."
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Bento box culture in Japan has elevated everyday lunch into an art form. What is the name of the playful style of bento decoration that features food shaped and arranged to look like anime characters?",
+      "answerText": "Kyaraben (character bento)",
+      "tidbits": "Kyaraben became a competitive art form in Japan with national competitions; elaborate creations can take several hours to assemble and feature beloved characters from Hello Kitty to Studio Ghibli films."
+    },
+    {
+      "id": "purple-011",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which American artist, famous for pop art, created large-scale paintings of Campbell's Soup Cans in 1962 that elevated commercial food packaging into high art?",
+      "answerText": "Andy Warhol",
+      "tidbits": "Andy Warhol said he ate Campbell's tomato soup for lunch almost every day for 20 years, making the subject autobiographical; the 32-canvas series sold as a set for $1,000 in 1962 and is now priceless."
+    },
+    {
+      "id": "purple-012",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What is the professional culinary term for the art of cutting garnishes and vegetables into perfectly uniform, matchstick-sized strips approximately 3mm by 3mm by 6cm?",
+      "answerText": "Julienne",
+      "tidbits": "Precise knife cuts are fundamental to classical French cooking; a properly julienned vegetable not only looks elegant but cooks more evenly because all pieces are identical in size."
+    },
+    {
+      "id": "purple-013",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Cake sculpting — carving cakes into hyper-realistic shapes such as sneakers, handbags, or even full human faces — is associated with which popular television competition?",
+      "answerText": "Cake Boss (or Cake Masters / various competition shows)",
+      "tidbits": "The hyper-realistic cake trend was propelled by shows like Cake Boss and Ace of Cakes, which spawned a global fondant sculpture movement with artists like Sylvester Staline and Debbie Brown."
+    },
+    {
+      "id": "purple-014",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Trompe l'oeil — a French term meaning 'deceive the eye' — is applied in pastry art to create what type of optical illusion desserts?",
+      "answerText": "Hyper-realistic fake objects made of edible materials",
+      "tidbits": "Pastry chefs create trompe l'oeil desserts that appear to be rocks, wood, or everyday objects but are made entirely of chocolate, marzipan, or sugar — the effect fools the viewer until they take a bite."
+    },
+    {
+      "id": "purple-015",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "The 'Last Supper' painting by Leonardo da Vinci — depicting Jesus and the apostles at a meal — has been analyzed for what the table holds. What food can be seen on the plates in some restoration interpretations?",
+      "answerText": "Eel (grilled) with orange slices",
+      "tidbits": "Art historian John Variano argued in 2008 that the dishes depicted are eel garnished with orange slices — a dish popular in Renaissance Milan — rather than bread or fish as traditionally assumed."
+    },
+    {
+      "id": "purple-016",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "The Japanese concept of 'Moritsuke' refers to the art of arranging food on a dish. How many principal styles of arrangement does traditional Moritsuke recognize?",
+      "answerText": "Five principal styles",
+      "tidbits": "The five Moritsuke styles — yamamori (mountain), hiramori (flat), tawaramori (barrel), sugimori (cedar) and yosemori (gathered) — each convey different aesthetic moods and are matched to specific ingredients and seasons."
+    },
+    {
+      "id": "purple-017",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "French pastry chef Cédric Grolet became famous for sculpting what type of hyper-realistic objects from chocolate and mousse that went viral on Instagram?",
+      "answerText": "Trompe l'oeil fruit sculptures"
+    },
+    {
+      "id": "purple-018",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "The Baroque still-life painter Clara Peeters is credited with including what unusual artistic innovation — a kind of self-portrait — hidden within the reflective surfaces of her food paintings?",
+      "answerText": "Self-portraits reflected in metallic objects (tazze, cups)",
+      "tidbits": "In her 'Still Life with Flowers, Goblets, Dried Fruit and Pretzels' (1611), Peeters painted herself reflected seven times in a single gilded cup — a feat of micro-painting skill and one of art history's earliest layered self-portraits."
+    },
+    {
+      "id": "purple-019",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Which Danish-Icelandic artist created a 1994 installation called 'Beauty,' and is also known for food-related participatory art involving 100 guests eating moss, lichen, and local Scandinavian ingredients in gallery spaces?",
+      "answerText": "Olafur Eliasson"
+    },
+    {
+      "id": "purple-020",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "The 'San'in' style of food presentation — emphasizing negative space and rusticity — contrasts with 'Kanto' style. Both are regional traditions within what overarching Japanese culinary plating philosophy?",
+      "answerText": "Kaiseki plating (Moritsuke / traditional Japanese food aesthetics)"
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the chemical compound responsible for the hot, burning sensation when you eat chili peppers?",
+      "answerText": "Capsaicin",
+      "tidbits": "Capsaicin binds to the TRPV1 receptor — the same receptor that detects actual heat above 43°C — which is why eating chili genuinely triggers the sensation of burning even at room temperature."
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What process converts grape juice into wine through the action of yeast consuming sugars and producing alcohol?",
+      "answerText": "Fermentation",
+      "tidbits": "Alcoholic fermentation was understood thousands of years before yeast was identified — Louis Pasteur confirmed yeast's role only in 1857, radically improving the reliability of wine and beer production."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What macronutrient — found abundantly in meat, fish, eggs, and legumes — is essential for building and repairing muscle tissue?",
+      "answerText": "Protein"
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What cooking process — applying dry heat above 140°C — creates the browned, flavorful crust on seared meats by triggering a reaction between amino acids and sugars?",
+      "answerText": "Maillard reaction",
+      "tidbits": "The Maillard reaction is named after French chemist Louis-Camille Maillard who first described it in 1912; it produces hundreds of distinct flavor compounds and is why bread crust, seared steak, and roasted coffee all share a 'browned' complexity."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What type of bacteria, used in the production of yogurt, converts lactose (milk sugar) into lactic acid?",
+      "answerText": "Lactobacillus (and Streptococcus thermophilus)"
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Which vitamin — found in citrus fruits — prevents scurvy, a disease that caused many sailor deaths during the Age of Exploration?",
+      "answerText": "Vitamin C (ascorbic acid)",
+      "tidbits": "Scottish physician James Lind conducted one of history's first clinical trials in 1747, proving that citrus fruits cured scurvy by comparing six remedies on 12 sailors — it took the British Navy 48 more years to act on his findings."
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What is the name of the food preservation process, developed by Louis Pasteur, that uses controlled heating to kill harmful bacteria in liquids like milk and juice?",
+      "answerText": "Pasteurization"
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Molecular gastronomy chef Ferran Adrià made which restaurant in Catalonia, Spain, world-famous for its avant-garde cuisine featuring olive oil 'caviar' and liquid nitrogen ice cream?",
+      "answerText": "elBulli",
+      "tidbits": "elBulli was awarded three Michelin stars and ranked number one on The World's 50 Best Restaurants list four consecutive times; Adrià closed it voluntarily in 2011 to convert it into a foundation and culinary think tank."
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What chemical process — involving acids, enzymes, or salt — is responsible for 'ceviche' 'cooking' raw fish without heat?",
+      "answerText": "Denaturation (acid denaturation by citric acid / lime juice)",
+      "tidbits": "Lime juice's citric acid uncoils (denatures) fish proteins, changing the texture from translucent and soft to opaque and firm — the same visual and textural changes as heat cooking, but without killing all pathogens, so freshness is critical."
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the Scoville scale used to measure?",
+      "answerText": "The heat (spiciness) of chili peppers",
+      "tidbits": "The Scoville scale was created by pharmacist Wilbur Scoville in 1912; pure capsaicin registers 16 million SHU (Scoville Heat Units), while the world's hottest pepper — Pepper X — exceeds 3 million SHU."
+    },
+    {
+      "id": "green-011",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the term for the culinary science technique where a liquid is transformed into small spheres with a liquid interior and gel membrane, pioneered at elBulli?",
+      "answerText": "Spherification",
+      "tidbits": "Basic spherification uses sodium alginate and calcium chloride — the alginate-coated liquid forms a gel skin on contact with calcium; Ferran Adrià and his team spent years perfecting olive oil spheres, mango 'caviar,' and other variations."
+    },
+    {
+      "id": "green-012",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Gluten — the protein network that gives bread its elastic structure — is formed when two proteins in wheat flour combine. What are those two proteins?",
+      "answerText": "Glutenin and gliadin",
+      "tidbits": "When flour is hydrated and kneaded, glutenin and gliadin cross-link into gluten strands that trap carbon dioxide from yeast, allowing bread to rise — bread with more gluten development has chewier texture."
+    },
+    {
+      "id": "green-013",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the fifth basic taste, identified in 1908 by Japanese chemist Kikunae Ikeda, that describes the savory, mouth-coating sensation found in foods like soy sauce, parmesan, and tomatoes?",
+      "answerText": "Umami",
+      "tidbits": "Ikeda isolated glutamate from kombu seaweed and named the taste 'umami' (旨味) — meaning 'pleasant savory taste' in Japanese; he then commercialized it as monosodium glutamate (MSG), still one of the world's most widely used flavor enhancers."
+    },
+    {
+      "id": "green-014",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Which enzyme in pineapple (and papaya) breaks down proteins so effectively that it can tenderize meat — and also prevents gelatin from setting?",
+      "answerText": "Bromelain (pineapple) / Papain (papaya)"
+    },
+    {
+      "id": "green-015",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is the name of the process by which olive oil goes rancid — a chemical reaction between lipids and oxygen that produces off-flavors?",
+      "answerText": "Oxidative rancidity (lipid oxidation)",
+      "tidbits": "Extra-virgin olive oil contains natural antioxidants like polyphenols and tocopherols that slow rancidity — this is why high-quality EVOO stores better than refined oils and why dark glass bottles are recommended."
+    },
+    {
+      "id": "green-016",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In food science, what is the specific term for the temperature range between 4°C and 60°C where bacterial growth in food is most rapid?",
+      "answerText": "The temperature danger zone (or bacterial growth zone)"
+    },
+    {
+      "id": "green-017",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the technical name for the starch gelatinization process that occurs when rice or potato starch is cooked and then cooled, producing a resistant starch that functions as a prebiotic fiber?",
+      "answerText": "Retrogradation (starch retrogradation)",
+      "tidbits": "When cooked and cooled rice is reheated as fried rice, the retrograded starch is more resistant to digestion — this is why cooled-then-fried rice has a lower glycemic index than freshly cooked rice."
+    },
+    {
+      "id": "green-018",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "Transglutaminase — used in molecular gastronomy to 'glue' proteins together — is nicknamed what by chefs?",
+      "answerText": "Meat glue",
+      "tidbits": "Transglutaminase is a naturally occurring enzyme (also produced commercially from bacteria) that bonds glutamine and lysine residues between proteins — chefs use it to form unusual shapes like a whole prawn reconstituted from shrimp pieces."
+    },
+    {
+      "id": "green-019",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the specific scientific name for the microbial culture — a mixture of bacteria and yeasts — used to ferment milk into kefir?",
+      "answerText": "Kefir grains (containing Lactobacillus, Lactococcus, and Saccharomyces species in a polysaccharide matrix called kefiran)"
+    },
+    {
+      "id": "green-020",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "The 'Protein Digestibility-Corrected Amino Acid Score' (PDCAAS) is the gold standard for measuring protein quality. Which food has a perfect PDCAAS score of 1.0?",
+      "answerText": "Whey protein (and whole egg, casein, soy protein isolate)",
+      "tidbits": "PDCAAS was adopted by the FDA and WHO in 1993 to replace the older protein efficiency ratio method; it measures both how completely a protein is digested and whether it provides all essential amino acids in sufficient quantities."
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Competitive eating champion Takeru Kobayashi became famous for dominating which annual hot dog eating contest held on July 4th in New York?",
+      "answerText": "Nathan's Famous Hot Dog Eating Contest (Coney Island)",
+      "tidbits": "Kobayashi broke the world record in 2001 by eating 50 hot dogs in 12 minutes — more than doubling the previous record of 25.125 dogs; he revolutionized the sport by developing the 'Solomon Method' of dunking the bun in water."
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Major League Eating (MLE) recognizes which American as the top-ranked competitive eater for most of the 2010s, known for eating 74 hot dogs in 10 minutes?",
+      "answerText": "Joey Chestnut",
+      "tidbits": "Joey Chestnut has won the Nathan's Hot Dog Contest over 15 times; he has also set world records for eating corned beef hash, deep-fried asparagus, and poutine — competitive eating's most decorated athlete."
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Iron Chef — the Japanese culinary competition show that inspired multiple international versions — originated in which country?",
+      "answerText": "Japan",
+      "tidbits": "The original Iron Chef (Ryori no Tetsujin) aired on Fuji TV from 1993 to 1999; its dramatic staging — a flamboyant chairman, secret ingredients revealed from beneath a dome — made it a global cult phenomenon."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What name is given to the culinary competition format where a 'challenger' chef battles a resident 'Iron Chef' to create dishes using a secret theme ingredient in exactly one hour?",
+      "answerText": "Iron Chef format (Battle format)",
+      "tidbits": "Each Iron Chef battle requires both chefs to create a full multi-course menu — typically 4–5 dishes — incorporating the secret ingredient into every course, scored on taste, presentation, and originality."
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Gatorade — one of the most famous sports-branded beverages in history — was originally developed for which US college football team?",
+      "answerText": "University of Florida Gators",
+      "tidbits": "Gatorade was created in 1965 by researchers at the University of Florida to help their football team (the Gators) maintain electrolytes in the intense heat; the first batch reportedly tasted terrible but the performance benefits were clear."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Which fast-food chain became one of the first major sponsors of the FIFA World Cup, with 'official restaurant' status that remains controversial in food culture?",
+      "answerText": "McDonald's"
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "The World Series of competitive pizza-making is held annually in which Italian city?",
+      "answerText": "Naples (Pizza World Championship / Campionato Mondiale della Pizza in Parma)"
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In esports culture, which energy drink brand — featuring a silver and blue can — became so synonymous with gaming that it sponsors the majority of top esports teams globally?",
+      "answerText": "Red Bull",
+      "tidbits": "Red Bull's esports sponsorships include their own Red Bull Gaming team and partnerships with events like Red Bull Kumite (Street Fighter) and Red Bull Wololo (Age of Empires) — they've embedded food and energy brand identity into competitive gaming."
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "The International Federation of Competitive Eating officially recognizes eating contests as a sport. What is the world record (as of 2024) for the number of chicken wings eaten in 30 minutes?",
+      "answerText": "Approximately 409 chicken wings (held by Molly Schuyler)",
+      "tidbits": "Molly Schuyler set the chicken wing record while weighing under 130 lbs — she is renowned for demolishing records held by much larger competitors, including eating three 72-oz steaks in under 20 minutes total."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which annual food competition, held in New Mexico, determines the world's best red and green chili dishes and crowns a 'Chili Champion'?",
+      "answerText": "Terlingua International Chili Championship (or World Championship Chili Cook-off)",
+      "tidbits": "The Terlingua championship, held since 1967 in the West Texas desert, has strict rules: no beans allowed in competition chili, reflecting the fierce regional debate about authentic Texas-style chili con carne."
+    },
+    {
+      "id": "orange-011",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In the 2023 documentary world, which competitive eating star known as 'The Beard' gained mainstream celebrity and faced controversy about whether competitive eating degrades food culture?",
+      "answerText": "Matt Stonie",
+      "tidbits": "Matt Stonie defeated Joey Chestnut at the 2015 Nathan's contest — one of the biggest upsets in competitive eating — eating 62 hot dogs to Chestnut's 60, ending a nine-year consecutive winning streak."
+    },
+    {
+      "id": "orange-012",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "The Bocuse d'Or — often called the 'culinary Olympics' — is a prestigious international cooking competition held every two years in which city?",
+      "answerText": "Lyon, France",
+      "tidbits": "The Bocuse d'Or was founded by Paul Bocuse in 1987; each national team has 5 hours and 35 minutes to create a platter and a plate dish — the competition is judged on taste, technique, creativity, and plating artistry."
+    },
+    {
+      "id": "orange-013",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which annual eating contest at the Wisconsin State Fair features deep-fried butter on a stick as one of its novelty competition foods?",
+      "answerText": "Wisconsin State Fair Cream Puff Eating Contest (or state fair novelty eating contests)",
+      "tidbits": "Deep-fried butter — sometimes called 'Fried Butter on a Stick' — was popularized at the Texas State Fair; the fairground food competition circuit has become its own subculture of culinary creativity and extremity."
+    },
+    {
+      "id": "orange-014",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "The 'GrubHub' and 'DoorDash' food delivery apps grew significantly during which global event that changed competitive eaters' content strategy toward home delivery challenges?",
+      "answerText": "COVID-19 pandemic (2020–2021)"
+    },
+    {
+      "id": "orange-015",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Which NFL team's stadium is famous for 'The Beast' — a 5-pound barbecue bacon cheeseburger challenge item featured on ESPN's stadium food countdown?",
+      "answerText": "Carolina Panthers / Bank of America Stadium"
+    },
+    {
+      "id": "orange-016",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "The Eating World Records organization separately tracks 'speed eating' and 'capacity eating.' What is the official term for eating a fixed large quantity as fast as possible (versus eating the maximum quantity in a fixed time)?",
+      "answerText": "Speed eating (timed fixed-quantity record)",
+      "tidbits": "Speed eating records include specific food items — like 'fastest to eat a pound of butter' or 'fastest to eat 3 lbs of ramen' — and are governed by strict rules about chewing, water use, and defined completion criteria."
+    },
+    {
+      "id": "orange-017",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "The World Gravy Wrestling Championship, held annually in Rossendale, England, requires competitors to wrestle in a paddling pool filled with what specific local product?",
+      "answerText": "Onion gravy"
+    },
+    {
+      "id": "orange-018",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "The Tokyo Game Show has historically featured food mascots and branded food tie-ins. Which JRPG franchise — known for its elaborate in-game cooking mechanics — collaborated with a major ramen company to produce limited-edition real ramen flavors?",
+      "answerText": "Monster Hunter (Nissin collaboration)"
+    },
+    {
+      "id": "orange-019",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "The 'Glutton Bowl' was a 2002 American televised eating competition that aired on Fox. Which network later acquired rights to competitive eating programming and now broadcasts Nathan's contest annually?",
+      "answerText": "ESPN"
+    },
+    {
+      "id": "orange-020",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In Japan's food competition culture, 'Oogui' refers to competitive big eating. Which Japanese TV program — airing since the 1990s — is credited with making competitive food challenges mainstream in Japanese pop culture?",
+      "answerText": "Densetsu no Kyojin (Gyōza Man) or 'Viking' challenge shows — specifically Kiki no Tabishoku (Food of Doom) / TV Tokyo challenge specials",
+      "tidbits": "Japanese TV 'oogui' culture predates American competitive eating by decades; programs featured challengers attempting to eat enormous restaurant portions for free meals and prize money, normalizing the spectacle of extreme eating on mainstream primetime."
+    }
+  ]
+}

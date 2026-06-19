@@ -1,0 +1,910 @@
+{
+  "metadata": {
+    "id": "v1d30001-game-4e27-b335-mkwmcbspack1",
+    "name": "Video Games (MKW, Minecraft, BSs)",
+    "description": "120 questions about Mario Kart World (Nintendo Switch 2), Minecraft, and Brawl Stars — covering characters, maps, mechanics, lore, history, and competitive play.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-19T00:00:00.000Z",
+    "updatedAt": "2026-06-19T00:00:00.000Z",
+    "categoryCounts": { "blue": 20, "pink": 20, "yellow": 20, "purple": 20, "green": 20, "orange": 20 },
+    "totalQuestions": 120,
+    "checksum": "e1e7ab8e16dc8fa4dba186f8bd5f86d53289b05f70c17511bfdbc1bac9dc7b1e",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 43625
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In Minecraft, what is the name of the fiery underworld dimension you can travel to by building a special portal?",
+      "answerText": "The Nether",
+      "tidbits": "The Nether was originally called 'The Slip' during early development. Its unique netherrack block burns forever once lit."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In Mario Kart World, what element allows drivers to travel underwater on certain track sections?",
+      "answerText": "Underwater driving"
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In Minecraft, what rare biome is covered entirely in giant mushrooms instead of trees?",
+      "answerText": "Mushroom Island (Mushroom Fields)"
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In Brawl Stars, which environment type is associated with the Gem Grab map 'Hard Rock Mine'?",
+      "answerText": "Mine / cave",
+      "tidbits": "Hard Rock Mine is one of Brawl Stars' original maps and remains a competitive staple for Gem Grab tournaments."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In Minecraft, which dimension contains the final boss of the game?",
+      "answerText": "The End",
+      "tidbits": "The End's central island is surrounded by an infinite void, and chorus fruit grows on the outer islands."
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Mario Kart World features open-world exploration between races. What is the large interconnected area between races called?",
+      "answerText": "The World (open world)"
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In Minecraft, what is the name of the deep underground biome introduced in the Caves & Cliffs update that is home to the Warden?",
+      "answerText": "The Deep Dark",
+      "tidbits": "The Deep Dark generates below Y=0 and features ancient cities — the only place you can find the Swift Sneak enchantment."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In Brawl Stars, what is the sandy, cactus-filled desert environment featured on several maps called in the game's art style?",
+      "answerText": "Showdown / Wild West desert"
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In Minecraft Java Edition, what specific Y-level was chosen as the new bedrock floor when the world depth was expanded in the Caves & Cliffs Part 2 update?",
+      "answerText": "Y = -64",
+      "tidbits": "The 1.18 update doubled the effective building height, expanding the world from Y=0–255 to Y=-64–320."
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In Minecraft, what cold biome features spruce trees, wolves, and frequent snowfall?",
+      "answerText": "Taiga"
+    },
+    {
+      "id": "blue-011",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Which Mario Kart World cup features courses set in locations inspired by real-world tropical islands?",
+      "answerText": "Banana Cup (accept any tropical/island cup name)",
+      "tidbits": "Mario Kart World introduced new world-travel-themed cups alongside the classic Mushroom, Flower, Star, and Special cups."
+    },
+    {
+      "id": "blue-012",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In Minecraft, which biome is required to spawn a Blue Orchid flower naturally?",
+      "answerText": "Swamp"
+    },
+    {
+      "id": "blue-013",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In Brawl Stars, the Brawl Ball map 'Backyard Bowl' is set in what kind of environment?",
+      "answerText": "Suburban backyard / grass field"
+    },
+    {
+      "id": "blue-014",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In Minecraft, what dimension can you only reach by defeating the Ender Dragon and then exploring far from the central island?",
+      "answerText": "The End (outer islands)",
+      "tidbits": "End Cities with their loot chests and Elytra wings only spawn on the outer End islands, reachable via the End gateway."
+    },
+    {
+      "id": "blue-015",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Mario Kart World includes a classic returning track set in a haunted mansion. What is the name of the iconic ghost-house course first introduced in Super Nintendo's Mario Kart?",
+      "answerText": "Ghost Valley (or Koopa Troopa Beach / Ghost House track)",
+      "tidbits": "The original SNES had Ghost Valley 1, 2, and 3. Haunted tracks have been a staple of every Mario Kart game since."
+    },
+    {
+      "id": "blue-016",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In Minecraft, what type of biome generates the tallest trees in the game — trees so large they have their own canopy layer?",
+      "answerText": "Jungle"
+    },
+    {
+      "id": "blue-017",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In Brawl Stars, the map environment used in Hot Zone mode often features which kind of terrain element that restricts movement?",
+      "answerText": "Walls / bushes"
+    },
+    {
+      "id": "blue-018",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "In Minecraft, what is the name of the biome variant featuring dark-colored oak trees, podzol ground, and giant mushrooms all together?",
+      "answerText": "Dark Forest (or Roofed Forest)"
+    },
+    {
+      "id": "blue-019",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "In Mario Kart World, what new movement ability lets karts stick to and drive along certain vertical surfaces on track walls?",
+      "answerText": "Wall-riding"
+    },
+    {
+      "id": "blue-020",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "In Minecraft, what is the name of the frozen biome variant that features icebergs and blue ice on the ocean surface?",
+      "answerText": "Frozen Ocean",
+      "tidbits": "Blue ice, found in frozen ocean icebergs, is one of the fastest surfaces in Minecraft — boats on blue ice move extremely quickly."
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What viral phrase, taken from a famous Minecraft parody song, became one of the most recognizable memes in gaming history?",
+      "answerText": "\"Creeper, Aw Man\"",
+      "tidbits": "The meme originates from the 2012 song 'Revenge' by CaptainSparklez. It saw a massive second wave of popularity in the late 2010s."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "In Mario Kart, what notorious item is infamous for destroying a first-place racer's lead, spawning countless memes and rage reactions?",
+      "answerText": "Blue Shell (Spiny Shell)",
+      "tidbits": "The Blue Shell was introduced in Mario Kart 64 in 1996. It can be blocked only by a Super Horn, which itself was added in Mario Kart 8 specifically as a counter."
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which YouTube/streaming personality is most famous for popularizing Minecraft on their channel with 'Let's Play' series starting around 2010–2012?",
+      "answerText": "PewDiePie (Felix Kjellberg)",
+      "tidbits": "PewDiePie's Minecraft series helped make him the most-subscribed individual YouTuber for years, and his 2019 return to Minecraft reignited a global interest in the game."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What popular Brawl Stars content creator is known for in-depth tier lists, guides, and being one of the game's most prominent YouTube voices?",
+      "answerText": "KairosTime (or OJ / CWA)"
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Minecraft has a beloved enemy mob whose creeping approach and explosion sound made it internet-famous. What is this mob called?",
+      "answerText": "Creeper"
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "A massive Minecraft event pits streamers and YouTubers against each other in skill-based minigame competitions. What is this event called?",
+      "answerText": "Minecraft Championship (MCC)",
+      "tidbits": "MCC was created by Noxcrew and Scott Smajor (Smajor1995). Events typically feature 10 teams of 4 competing in up to 9 minigames."
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which streamer popularized 'Dream SMP,' the Minecraft private server that spawned a massive narrative-driven content universe?",
+      "answerText": "Dream"
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "In 2020, a prominent Minecraft speedrunner was accused of manipulating their random seed drops. Who was the center of that controversy?",
+      "answerText": "Dream",
+      "tidbits": "A team of independent statisticians calculated that the probability of Dream's pearl and blaze drop rates occurring legitimately was roughly 1 in 7.5 trillion."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Which global gaming company publishes Brawl Stars and is also known for Clash of Clans and Clash Royale?",
+      "answerText": "Supercell"
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Mario Kart World was released alongside which new Nintendo gaming console?",
+      "answerText": "Nintendo Switch 2"
+    },
+    {
+      "id": "pink-011",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "What was the name of the Brawl Stars World Championship 2023 grand finals winning team?",
+      "answerText": "NAVI (Natus Vincere)"
+    },
+    {
+      "id": "pink-012",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "In Brawl Stars, what seasonal pass lets players earn exclusive skins, pins, and brawlers by playing the game and completing quests?",
+      "answerText": "Brawl Pass"
+    },
+    {
+      "id": "pink-013",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which famous Mario Kart track — originally from the SNES — is so beloved it has returned in nearly every Mario Kart game and is nicknamed 'Rainbow Road'?",
+      "answerText": "Rainbow Road"
+    },
+    {
+      "id": "pink-014",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What viral trend involved Minecraft players building massive pixel-art portraits, flags, or logos using colored blocks when viewed from above?",
+      "answerText": "Pixel art (Minecraft pixel art)",
+      "tidbits": "YouTube creators like Mumbo Jumbo and Grian helped popularize large-scale pixel art builds, which require careful color-block mapping from a bird's-eye view."
+    },
+    {
+      "id": "pink-015",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which Mario Kart World Nintendo Direct showcase announced the new open-world feature for the first time to the public?",
+      "answerText": "Nintendo Direct (Nintendo Switch 2 reveal / Mario Kart World Direct 2025)",
+      "tidbits": "The reveal of Mario Kart World alongside the Nintendo Switch 2 was one of the most-watched Nintendo Directs in company history."
+    },
+    {
+      "id": "pink-016",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Which Brawl Stars Brawler became an instant internet meme due to their cartoonishly over-the-top design and became a staple in fan art?",
+      "answerText": "El Primo"
+    },
+    {
+      "id": "pink-017",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "The Minecraft mob vote allows the community to vote for a new mob to be added to the game. At what annual event does this vote traditionally take place?",
+      "answerText": "Minecraft Live"
+    },
+    {
+      "id": "pink-018",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What Brawl Stars event challenges players to play as a squad of pre-selected brawlers and earn rewards based on win streaks?",
+      "answerText": "Club Wars (or Trophy Road push events)"
+    },
+    {
+      "id": "pink-019",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "Which YouTuber produced the iconic Minecraft parody 'Don't Mine at Night' (a parody of Katy Perry's 'Last Friday Night')?",
+      "answerText": "BebopVox (or TehRealBebopVox)"
+    },
+    {
+      "id": "pink-020",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "In Mario Kart, players in last place receive the most powerful items. What mechanic determines which items you receive based on your position?",
+      "answerText": "Item randomization / item boxes (rubber-band item system)"
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Who originally created Minecraft and is credited as its designer?",
+      "answerText": "Markus Persson (Notch)"
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year was the very first Mario Kart game released in Japan on the Super Nintendo?",
+      "answerText": "1992",
+      "tidbits": "Super Mario Kart launched August 27, 1992 in Japan. It was the first racing game to use Mode 7 graphics to simulate a 3D perspective."
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What company acquired Mojang — the developer of Minecraft — in 2014?",
+      "answerText": "Microsoft",
+      "tidbits": "Microsoft purchased Mojang for approximately $2.5 billion, one of the largest gaming acquisitions at the time."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "In what year was Brawl Stars officially released worldwide after its soft launch in certain regions?",
+      "answerText": "2018",
+      "tidbits": "Brawl Stars soft-launched in Canada in June 2017 before its global release on December 12, 2018."
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Minecraft went through a famous early-access period before its official 'full release' in November of what year?",
+      "answerText": "2011",
+      "tidbits": "Minecraft 1.0.0 officially launched on November 18, 2011 at MINECON in Las Vegas. Earlier alpha and beta stages had attracted millions of players already."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "How many mainline Mario Kart games existed before Mario Kart World was released on Nintendo Switch 2?",
+      "answerText": "9 (nine)",
+      "tidbits": "The series spans: Super Mario Kart (SNES), Mario Kart 64, Super Circuit (GBA), Double Dash!! (GCN), DS, Wii, 7 (3DS), 8 (Wii U), and 8 Deluxe (Switch)."
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In what city was Supercell (the developer of Brawl Stars) founded?",
+      "answerText": "Helsinki, Finland",
+      "tidbits": "Supercell was founded in 2010 and remains headquartered in Helsinki. Softbank and Tencent are among its major investors."
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "The 'Nether Update' was a major Minecraft overhaul of the Nether dimension. In which year was it released?",
+      "answerText": "2020",
+      "tidbits": "The Nether Update (Java 1.16) added new biomes like the Crimson Forest and Soul Sand Valley, along with Piglins and Hoglins."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Mario Kart 8 Deluxe was one of the best-selling games on Nintendo Switch. What gaming platform did the original Mario Kart 8 (not Deluxe) launch on?",
+      "answerText": "Wii U"
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "What was the name of the first public alpha version release of Minecraft that Notch made available for purchase in 2009?",
+      "answerText": "Classic (or Minecraft Classic / Survival Test / Alpha v1.0.0)",
+      "tidbits": "Notch released a free 'Classic' version in 2009 playable in a browser, with paid 'Survival Test' builds shortly after. The alpha formally began May 2009."
+    },
+    {
+      "id": "yellow-011",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Brawl Stars reached 100 million downloads in its first month after global launch. What mobile operating systems was it initially available on?",
+      "answerText": "iOS and Android"
+    },
+    {
+      "id": "yellow-012",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Which Mario Kart game was the first to introduce online multiplayer for the series?",
+      "answerText": "Mario Kart DS",
+      "tidbits": "Mario Kart DS (2005) used Nintendo Wi-Fi Connection, the company's first online service. It was a landmark moment in handheld online gaming."
+    },
+    {
+      "id": "yellow-013",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Minecraft's 'Caves & Cliffs' update was notable for being split into two separate releases. Part 1 released in 2021 — when did Part 2 release?",
+      "answerText": "November 2021 (Java 1.18)"
+    },
+    {
+      "id": "yellow-014",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What was Minecraft originally inspired by? Name the voxel-based game that influenced Notch's initial prototype.",
+      "answerText": "Infiniminer"
+    },
+    {
+      "id": "yellow-015",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Brawl Stars had a major visual and meta overhaul in 2020 dubbed 'Brawl Stars' biggest update.' What was the name of this content mega-drop?",
+      "answerText": "Brawlidays / Season 1 (or the introduction of Brawl Pass)",
+      "tidbits": "The December 2020 season pass update fundamentally changed Brawl Stars progression, replacing most gem-based systems with a battle-pass model."
+    },
+    {
+      "id": "yellow-016",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "Which Mario Kart game introduced antigravity driving, letting players drive on upside-down and vertical track sections?",
+      "answerText": "Mario Kart 8",
+      "tidbits": "Mario Kart 8's anti-gravity zones debuted in 2014 on Wii U. The mechanic returned in Mario Kart 8 Deluxe and was expanded in Mario Kart World."
+    },
+    {
+      "id": "yellow-017",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Minecraft is now the best-selling video game of all time. Approximately how many copies has it sold as of the mid-2020s?",
+      "answerText": "Over 300 million"
+    },
+    {
+      "id": "yellow-018",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What update introduced the Ender Dragon fight to Minecraft, giving players a true final boss for the first time?",
+      "answerText": "Beta 1.9 / The Adventure Update (2011)"
+    },
+    {
+      "id": "yellow-019",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "In what year did Supercell cancel its game 'Brawl Stars' predecessor project codenamed 'Smash Land'?",
+      "answerText": "2015",
+      "tidbits": "Supercell famously 'kills' projects that don't meet their internal standards before launch, and Smash Land was one such casualty before Brawl Stars emerged."
+    },
+    {
+      "id": "yellow-020",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Which Nintendo console was the very first to feature Mario Kart as a launch title alongside the system itself?",
+      "answerText": "None (no Mario Kart game was a launch title — accept 'none')",
+      "tidbits": "Mario Kart has never been a literal day-one launch title, though Mario Kart World launched very close to Nintendo Switch 2's release window."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Minecraft is famous for its distinctive art style. What term describes the cubic, blocky visual style all objects and characters use?",
+      "answerText": "Voxel / blocky / pixel art style"
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "In Brawl Stars, what art style describes the colorful, cartoon-like visuals featuring exaggerated proportions and bright colors?",
+      "answerText": "Cartoon / stylized / comic book style"
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Minecraft's default character skin is named Steve. What is the name of the female counterpart default skin?",
+      "answerText": "Alex",
+      "tidbits": "Alex was introduced in Java Edition 1.8 (2014). She has a slimmer arm model than Steve — distinguishable by the 3-pixel-wide arms versus Steve's 4-pixel arms."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Mario Kart World features which iconic Nintendo princess as a playable character known for her blonde hair and pink dress?",
+      "answerText": "Princess Peach"
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "In Brawl Stars, what rarity tier sits above Legendary rarity — introduced as an even higher tier for exclusive and special brawlers?",
+      "answerText": "Hypercharge (or Hyper Rare / the Hypercharge tier)",
+      "tidbits": "Hypercharges were added as a new power tier in 2023, giving existing Legendary brawlers an enhanced charged-up super ability."
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What is the name of the large green dinosaur who serves as a mount for Mario and is a recurring character in Mario Kart games?",
+      "answerText": "Yoshi"
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "In Minecraft, what is the default texture resolution (in pixels) for each block face in the standard Java Edition texture pack?",
+      "answerText": "16x16 pixels",
+      "tidbits": "Each block face uses a 16×16 pixel texture. Resource packs can increase this to 32×32, 64×64, 128×128, or even 512×512 for HD texture packs."
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Brawl Stars features animated shorts called 'Brawl-o-Vision' or story animations. What format are these character stories typically released in?",
+      "answerText": "Animated shorts / YouTube videos"
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Mario Kart World introduced new 'world' aesthetics for its tracks. What is the visual theme of the game's title card and main menu branding?",
+      "answerText": "Globe / world map / travel poster style"
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "In Minecraft, what large, dark, four-armed creature teleports around and becomes hostile when you look directly into its eyes?",
+      "answerText": "Enderman"
+    },
+    {
+      "id": "purple-011",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Brawl Stars brawler 'Crow' is legendary rarity. What distinctive visual element makes Crow recognizable — describe his silhouette feature.",
+      "answerText": "His dark feather/wing cape and poison-dagger weapons (sharp feathers)",
+      "tidbits": "Crow was one of the original Legendary brawlers at launch. His slim design and feathered aesthetic set him apart visually from tankier brawlers."
+    },
+    {
+      "id": "purple-012",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "In Minecraft, what is the signature color scheme of the Creeper mob's skin?",
+      "answerText": "Green / pixelated green pattern"
+    },
+    {
+      "id": "purple-013",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Mario Kart World features a new roster. Which beloved Nintendo princess — known for her teal dress, long red hair, and star-themed powers — appears as a playable racer?",
+      "answerText": "Rosalina"
+    },
+    {
+      "id": "purple-014",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "Minecraft's 'End' dimension features a unique block called End Stone and End Cities with Shulker enemies. What color are the Shulker boxes they drop?",
+      "answerText": "Purple (default undyed shulker box is purple)"
+    },
+    {
+      "id": "purple-015",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "In Brawl Stars, what is the color associated with the most basic and common brawler rarity level?",
+      "answerText": "Gray / white (Trophy Road / Common rarity)"
+    },
+    {
+      "id": "purple-016",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Which Mario Kart playable character is a golden-colored baby version of the Donkey Kong villain who drives tiny karts?",
+      "answerText": "Baby DK (Baby Donkey Kong)"
+    },
+    {
+      "id": "purple-017",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "In Minecraft, what color wool must you use to craft a bed that lets Steve or Alex sleep through the night?",
+      "answerText": "Any color (any wool color works)",
+      "tidbits": "Beds can be crafted from any of the 16 wool colors. The resulting bed color matches the wool used, making them a great decoration block too."
+    },
+    {
+      "id": "purple-018",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "In Brawl Stars, which original launch Thrower brawler lobs bundles of dynamite in an arc and has skins styled to look like he's throwing popcorn?",
+      "answerText": "Dynamike",
+      "tidbits": "Dynamike was one of the original launch brawlers and uses bundles of dynamite (styled as popcorn in some skins) thrown in an arc."
+    },
+    {
+      "id": "purple-019",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Mario Kart World features kart customization. What term describes the aerodynamic wing attachments that affect gliding performance?",
+      "answerText": "Glider / paraglider / kite"
+    },
+    {
+      "id": "purple-020",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "In Minecraft, players create large artistic builds visible from above. What is it called when players build a massive landscape recreation so detailed it represents an entire city, country, or famous location?",
+      "answerText": "Scale build / world build / terraforming project"
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "In Minecraft, what resource is used to power circuits, doors, pistons, and automated machines in the game?",
+      "answerText": "Redstone"
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "In Mario Kart World, how many racers compete in a standard Grand Prix race?",
+      "answerText": "24 racers",
+      "tidbits": "Mario Kart World expanded the field to 24 racers per race, up from the 12 in Mario Kart 8 Deluxe, making for far more chaotic races."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In Minecraft, what is the exact crafting recipe for a diamond sword (describe the grid layout)?",
+      "answerText": "2 diamonds stacked vertically + 1 stick below in the center column",
+      "tidbits": "All swords follow the same 3-cell column pattern: 2 material blocks on top, 1 stick at the bottom. The material determines the sword's durability and damage."
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In Brawl Stars, how many trophies must a player earn on a single brawler before that brawler's progression resets at the Trophy Road reset?",
+      "answerText": "500 trophies (trophies above 500 are reset seasonally)",
+      "tidbits": "Brawl Stars resets trophies above 500 per brawler at the end of each season, awarding Star Points as compensation for the reset."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In Minecraft Java Edition, what is the maximum signal strength a Redstone signal can carry before it needs a Repeater to boost it?",
+      "answerText": "15 blocks",
+      "tidbits": "Each block a redstone wire travels reduces signal strength by 1. At 0 it stops entirely, so a repeater must be placed every 15 blocks to sustain a signal."
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In Mario Kart World, what mechanic rewards players who perform a well-timed drift with a speed boost?",
+      "answerText": "Mini-Turbo (or Drift Boost)",
+      "tidbits": "Drift boosts have three levels in Mario Kart 8 Deluxe and World: blue sparks, orange sparks, and purple/ultra sparks — each progressively faster."
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In Brawl Stars, what happens to a player's gems when they are eliminated in Gem Grab mode?",
+      "answerText": "They drop all their gems on the ground for other players to collect"
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "In Minecraft, how many planks does a single log of wood produce when placed in the crafting grid?",
+      "answerText": "4 planks"
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In Minecraft, what specific combination of materials is needed to craft TNT?",
+      "answerText": "5 gunpowder + 4 sand (alternating in a 3x3 grid)",
+      "tidbits": "TNT in Minecraft has an explosion power of 4, the same as a creeper. An activated TNT block has a 4-second fuse before detonating."
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In Mario Kart World, how many Grand Prix cups are available at launch?",
+      "answerText": "12 cups (48 courses across 12 cups)",
+      "tidbits": "Mario Kart World launched with more courses than any previous entry, leveraging the open world to connect tracks across a single seamless map."
+    },
+    {
+      "id": "green-011",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In Brawl Stars, what is the name of the game mode where teams push an unlocked safe toward the enemy base?",
+      "answerText": "Heist"
+    },
+    {
+      "id": "green-012",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "In Minecraft, what tool is most efficient for mining stone and ores?",
+      "answerText": "Pickaxe"
+    },
+    {
+      "id": "green-013",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In Brawl Stars, what is the base health of the starting brawler Shelly at Power Level 1?",
+      "answerText": "2800 HP (approximately — accept 2600–3000 range given balance patches)"
+    },
+    {
+      "id": "green-014",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In Minecraft, what structure must you locate and activate using Eyes of Ender to reach the End dimension?",
+      "answerText": "Stronghold (specifically the End Portal inside it)"
+    },
+    {
+      "id": "green-015",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Mario Kart World uses real-time item physics — what happens when you drive over the spinning item box on the track?",
+      "answerText": "You receive a random item"
+    },
+    {
+      "id": "green-016",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In Minecraft, what is the tick rate of a standard Minecraft server, and how many ticks occur per second?",
+      "answerText": "20 ticks per second",
+      "tidbits": "Each game tick is 50ms. Redstone also runs on tick intervals — a single redstone tick equals 2 game ticks (100ms), explaining why redstone clocks are measured differently."
+    },
+    {
+      "id": "green-017",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "In Brawl Stars, how many players are on each team in the standard 3v3 game modes?",
+      "answerText": "3 players"
+    },
+    {
+      "id": "green-018",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In Mario Kart World, what item allows a racer to accelerate forward at high speed, knocking out competitors in their path?",
+      "answerText": "Bullet Bill"
+    },
+    {
+      "id": "green-019",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "In Minecraft, what is the maximum enchantment level for the Fortune enchantment, and what does Fortune III do to diamond ore drops?",
+      "answerText": "Fortune III (max level 3); it gives up to a 4x chance of additional diamond drops per ore",
+      "tidbits": "With Fortune III, a single diamond ore can drop up to 4 diamonds instead of 1, making it the most valuable enchantment for resource farming."
+    },
+    {
+      "id": "green-020",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "In Brawl Stars, what is the name of the game mode where players collect stars by eliminating opponents who each carry a bounty?",
+      "answerText": "Bounty"
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What is the term for completing a Minecraft speedrun by defeating the Ender Dragon as fast as possible from a fresh world?",
+      "answerText": "Any% speedrun"
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "In Mario Kart competitive play, what is the abbreviation for the time-attack solo mode where players race against their own best lap times?",
+      "answerText": "Time Trial (TT)"
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What website serves as the official leaderboard for Minecraft speedrunning records?",
+      "answerText": "Speedrun.com",
+      "tidbits": "Speedrun.com hosts moderated leaderboards for thousands of games. Minecraft Any% is consistently one of the most-contested categories on the site."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In Brawl Stars esports, what is the annual championship event where top regional teams compete for a world title?",
+      "answerText": "Brawl Stars World Championship"
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Minecraft Championship (MCC) features many minigames. What is the fan-favorite 'survival games'-style minigame where players fight to be the last team standing?",
+      "answerText": "Battle Box (or Sky Battle / Survival Games variant)",
+      "tidbits": "Battle Box is a fan-favorite MCC event where teams battle in a box arena. Sky Battle, introduced in MCC 20, pits teams on floating islands."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "What is the world record approximate time for a Minecraft Java Edition Random Seed Any% speedrun (as of 2025)?",
+      "answerText": "Under 10 minutes (approximately 7–9 minutes)",
+      "tidbits": "Top Minecraft speedrunners use blind travel, specific trade setups, and RNG manipulation techniques. Records continue to fall as the community optimizes routes."
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "In Mario Kart competitive play, what is the name of the online ranked mode where players earn points against global opponents?",
+      "answerText": "Online / VS Race / Grand Prix (online ranked mode)"
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In Brawl Stars, what ladder system is used to track a player's overall skill and progress across all brawlers?",
+      "answerText": "Trophy Road (total trophies)"
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In Minecraft speedrunning, what RNG-dependent trade allows players to skip searching for a Nether Fortress by getting Blaze Rods from Piglins?",
+      "answerText": "Piglin bartering / gold bartering (trading gold ingots for Ender Pearls, then killing Blazes for rods)",
+      "tidbits": "The 'bastionless' route uses Piglin bartering for ender pearls and finds a small Nether Fortress just for Blaze Rods, saving minutes over a full fortress clear."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Mario Kart World's online mode features bracket-style tournaments. What is the maximum number of players who can compete in a single online race?",
+      "answerText": "24 players"
+    },
+    {
+      "id": "orange-011",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In Brawl Stars competitive play, what is the Brawl Stars Championship qualifier format called where top players within a region earn spots to regional finals?",
+      "answerText": "Monthly Finals (Championship Monthly Challenge / Regional qualifiers)"
+    },
+    {
+      "id": "orange-012",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "In Brawl Stars ranked play, what is the highest rank tier a player can achieve?",
+      "answerText": "Masters (or Diamond/Elite — accept the highest named rank)"
+    },
+    {
+      "id": "orange-013",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What Minecraft Championship event first reached over 1 million concurrent viewers on Twitch, marking a milestone for the competitive community?",
+      "answerText": "MCC (exact event number varies — accept 'Minecraft Championship / MCC Pride event or MCC All Stars')"
+    },
+    {
+      "id": "orange-014",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In Mario Kart, what technique do competitive players use where they intentionally shake their controller or rapidly alternate direction to charge drift boosts faster?",
+      "answerText": "Snaking / drift technique"
+    },
+    {
+      "id": "orange-015",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "Which country has historically dominated Brawl Stars World Championship finals in the 2020s?",
+      "answerText": "South Korea (Korean teams / APAC region)"
+    },
+    {
+      "id": "orange-016",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In Minecraft speedrunning, what is the term for the 'no major glitches' category that allows standard gameplay optimizations but bans sequence-breaking exploits?",
+      "answerText": "NMG (No Major Glitches) or simply 'Any% NMG'",
+      "tidbits": "The NMG category prohibits things like duplication glitches and out-of-bounds exploits, but allows legitimate tricks like trading routes and end-to-portal routing."
+    },
+    {
+      "id": "orange-017",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "In Mario Kart World's Grand Prix, what score is needed to earn first place in a four-race cup?",
+      "answerText": "Most points / 1st place overall (60 points max across 4 races)",
+      "tidbits": "In Mario Kart 8 Deluxe and World, each race awards up to 15 points for 1st, down to 1 point for 12th. A perfect cup score would be 60 points."
+    },
+    {
+      "id": "orange-018",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In Brawl Stars, what metric determines seeding at the World Championship — total club trophies, individual player rank, or championship challenge wins?",
+      "answerText": "Championship Challenge wins (qualifying through Championship Challenge format)"
+    },
+    {
+      "id": "orange-019",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Minecraft speedrunning has a famous 'set seed' category alongside random seed. What advantage does a set seed run provide the runner?",
+      "answerText": "The world layout is predetermined / known in advance, allowing memorized routes"
+    },
+    {
+      "id": "orange-020",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In Mario Kart World, what is the name of the coveted item that, when used, destroys all nearby racers and items around the holder?",
+      "answerText": "Super Star (Invincibility Star) / or the Lightning item",
+      "tidbits": "The Super Star grants temporary invincibility and a speed boost, while Lightning shrinks all opponents simultaneously — both are powerful in race endings."
+    }
+  ]
+}
