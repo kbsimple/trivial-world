@@ -77,6 +77,8 @@ export const ANIMATION = {
 export const SEMANTIC_COLORS = {
   /** Success color (bold red) - for start/positive action buttons (Option A palette) */
   success: '#e5191e',
+  /** Correct answer color (green) - for Correct button and answer reveal */
+  correct: '#228b22',
   /** Error color (red) - for incorrect answers, destructive actions */
   error: '#dc143c',
   /** Remove/warning color (coral) - for remove buttons, warnings */

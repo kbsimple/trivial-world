@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     minHeight: 64, // Large tap target
   },
   correctButton: {
-    backgroundColor: SEMANTIC_COLORS.success,
+    backgroundColor: SEMANTIC_COLORS.correct,
   },
   incorrectButton: {
     backgroundColor: SEMANTIC_COLORS.error,
