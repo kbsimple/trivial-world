@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderRadius: 8,
-    minWidth: 140,
+    width: '47%',
   },
   categoryText: {
     fontSize: 16,

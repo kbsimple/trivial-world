@@ -69,10 +69,6 @@ export function DifficultyFilter({
         })}
       </View>
 
-      {/* Note: All selected by default */}
-      <Text style={[styles.hint, { color: theme.color?.val as string, opacity: 0.7 }]}>
-        All difficulties selected by default
-      </Text>
     </View>
   );
 }
