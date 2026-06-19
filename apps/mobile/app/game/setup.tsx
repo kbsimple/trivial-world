@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     fontSize: 11,
     fontWeight: '700',
     letterSpacing: 1.2,
-    color: 'rgba(255,255,255,0.45)',
+    color: SEMANTIC_COLORS.selected,
     marginBottom: 6,
   },
   sectionLabelSpaced: {
