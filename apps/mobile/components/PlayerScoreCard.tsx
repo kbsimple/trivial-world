@@ -31,7 +31,7 @@ export function PlayerScoreCard({ player, rank, isWinner }: PlayerScoreCardProps
         {
           backgroundColor: isWinner
             ? (theme.accent?.val as string || '#4CAF50')
-            : (theme.background?.val as string || '#1a1a2e'),
+            : (theme.background?.val as string || '#0d0d0d'),
           borderColor: isWinner ? (theme.accent?.val as string || '#4CAF50') : '#444',
         },
       ]}

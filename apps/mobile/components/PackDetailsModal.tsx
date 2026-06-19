@@ -3,6 +3,7 @@ import { useTheme } from 'tamagui';
 import { PackIndexEntry, PackMetadata, Category } from '@trivial-world/types';
 import { CATEGORY_COLORS, CATEGORY_NAMES, PLAYER_COLORS } from '../constants/categories';
 import type { PlayerColor } from '../constants/categories';
+import { SEMANTIC_COLORS } from '../constants/theme';
 
 interface PackDetailsModalProps {
   visible: boolean;
@@ -96,13 +97,13 @@ export function PackDetailsModal({
           {/* Actions */}
           <View style={styles.actions}>
             {!isDownloaded && onDownload && (
-              <Pressable style={[styles.actionButton, { backgroundColor: '#228b22' }]} onPress={onDownload}>
+              <Pressable style={[styles.actionButton, { backgroundColor: SEMANTIC_COLORS.success }]} onPress={onDownload}>
                 <Text style={styles.actionButtonText}>Download</Text>
               </Pressable>
             )}
 
             {isDownloaded && onSelect && (
-              <Pressable style={[styles.actionButton, { backgroundColor: '#228b22' }]} onPress={onSelect}>
+              <Pressable style={[styles.actionButton, { backgroundColor: SEMANTIC_COLORS.success }]} onPress={onSelect}>
                 <Text style={styles.actionButtonText}>Select Pack</Text>
               </Pressable>
             )}

@@ -13,8 +13,12 @@ const config = createTamagui({
   },
   themes: {
     dark: {
-      background: '#1a1a2e',
-      color: '#ffffff',
+      background: '#0d0d0d',
+      color: '#f0f0f0',
+      surface: '#1a1a1a',
+      border: '#2e2e2e',
+      accent: '#e5191e',
+      muted: '#6b6b6b',
       blueCategory: '#0066cc',
       pinkCategory: '#ff69b4',
       yellowCategory: '#ffd700',

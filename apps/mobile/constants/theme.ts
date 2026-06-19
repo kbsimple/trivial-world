@@ -75,12 +75,12 @@ export const ANIMATION = {
  * IN-02: Centralized colors for success, error, etc.
  */
 export const SEMANTIC_COLORS = {
-  /** Success color (green) - for correct answers, positive actions */
-  success: '#228b22',
+  /** Success color (bold red) - for start/positive action buttons (Option A palette) */
+  success: '#e5191e',
   /** Error color (red) - for incorrect answers, destructive actions */
   error: '#dc143c',
   /** Remove/warning color (coral) - for remove buttons, warnings */
   remove: '#ff6b6b',
   /** Overlay background (semi-transparent white) */
-  overlay: 'rgba(255,255,255,0.2)',
+  overlay: 'rgba(255,255,255,0.15)',
 } as const;
