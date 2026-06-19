@@ -25,7 +25,7 @@ export default function ResultsScreen() {
 
   const totalQuestions = questionNumber > 1 ? questionNumber - 1 : 0;
   const textColor = theme.color?.val as string || '#ffffff';
-  const bgColor = theme.background?.val as string || '#1a1a2e';
+  const bgColor = theme.background?.val as string || '#0d0d0d';
 
   const handleNewGame = () => {
     resetGame();
