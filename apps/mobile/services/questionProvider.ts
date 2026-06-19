@@ -101,16 +101,23 @@ async function getNextQuestionFromBundle(
     pool = ALL_QUESTIONS;
   }
 
-  // Per-player difficulty filter: if difficulty != null, restrict to that difficulty
+  // D-06: Per-player difficulty takes precedence; fallback to game-level enabledDifficulties
+  const { usePackStore } = await import('../stores/packStore');
+  const { enabledDifficulties } = usePackStore.getState();
+  const effectiveDifficulties: Difficulty[] | null =
+    difficulty != null
+      ? [difficulty]
+      : (enabledDifficulties && enabledDifficulties.length > 0 ? enabledDifficulties : null);
+
   const available = pool.filter(
     (q) => q.category === category && !excludeIds.includes(q.id)
-      && (difficulty != null ? q.difficulty === difficulty : true)
+      && (effectiveDifficulties != null ? effectiveDifficulties.includes(q.difficulty as Difficulty) : true)
   );
 
   if (available.length === 0) {
     const categoryQuestions = pool.filter(
       (q) => q.category === category
-        && (difficulty != null ? q.difficulty === difficulty : true)
+        && (effectiveDifficulties != null ? effectiveDifficulties.includes(q.difficulty as Difficulty) : true)
     );
     if (categoryQuestions.length === 0) return null;
 
