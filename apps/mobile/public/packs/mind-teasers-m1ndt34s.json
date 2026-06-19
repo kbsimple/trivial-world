@@ -1,0 +1,979 @@
+{
+  "metadata": {
+    "id": "m1ndt34s-1234-4abc-9def-m1ndp4ckv001",
+    "name": "Mind Teasers",
+    "description": "120 short riddles and lateral thinking puzzles that test logic, wordplay, pattern recognition, and creative reasoning — from classic brain teasers to surprising gotchas.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-19T00:00:00.000Z",
+    "updatedAt": "2026-06-19T00:00:00.000Z",
+    "categoryCounts": { "blue": 20, "pink": 20, "yellow": 20, "purple": 20, "green": 20, "orange": 20 },
+    "totalQuestions": 120,
+    "checksum": "c1b0bf9e0a2eb2fb30cff3c82574d6a9aebd4f390c0eb3b89a1a4156fe73b298",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 50388
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "I have cities but no houses, mountains but no trees, and water but no fish. What am I?",
+      "answerText": "A map",
+      "tidbits": "A map represents these features symbolically — it shows cities, mountains, and water as labels or drawings, not as real things."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "I have needles but cannot sew. I have branches but no leaves. I stand in the cold and never grow old. What am I?",
+      "answerText": "A pine tree",
+      "tidbits": "Pine needles aren't sewing needles, and pine branches bear needles rather than broad leaves — yet pines stay green year-round, giving the illusion of never aging."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "The more it dries, the wetter it gets. What is it?",
+      "answerText": "A towel",
+      "tidbits": "A towel's job is to dry things off, but in doing so it absorbs moisture and becomes wet itself."
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "I run around the entire yard but never move. What am I?",
+      "answerText": "A fence",
+      "tidbits": "A fence surrounds a yard and literally 'runs' (extends) around its perimeter without ever going anywhere."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "I fall in winter, spring, and summer, but never in autumn. What am I?",
+      "answerText": "Rain",
+      "tidbits": "This is a wordplay trick — rain falls in three of the four seasons, but 'autumn' never contains the word 'fall' — wait, it does in some places. The trick is that 'fall' is another name for autumn, so rain doesn't 'fall' in 'fall' by name."
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "I have borders but no fences, coasts but no beaches, and capitals but no buildings. What am I?",
+      "answerText": "A country on a map",
+      "tidbits": "These are all features of a country as depicted on a map — borders, coastlines, and capital city markers are all just symbols or lines."
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "I always point north, but I've never been to the North Pole. What am I?",
+      "answerText": "A compass needle",
+      "tidbits": "A compass needle aligns with Earth's magnetic field and points north, but of course the needle itself never travels anywhere."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "A man stands on one side of a river. His dog is on the other side. The man calls his dog and it crosses the river without getting wet and without using a bridge, boat, or tunnel. How?",
+      "answerText": "The river was frozen",
+      "tidbits": "The puzzle never says it's summer — a frozen river is solid enough to walk across without getting wet."
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "I travel the world but always stay in one corner. What am I?",
+      "answerText": "A stamp",
+      "tidbits": "A postage stamp is affixed to the corner of an envelope and travels the globe on letters, yet always stays stuck in that corner."
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Two explorers are walking through a desert. One faces east, the other faces west. Yet they can both see each other clearly. How?",
+      "answerText": "They are facing each other",
+      "tidbits": "If one faces east and the other faces west, they are standing back-to-back — but if they are facing each other, one faces east and the other faces west from their own perspective, but they look directly at each other."
+    },
+    {
+      "id": "blue-011",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "I have peaks that touch the sky, but I can fit in your pocket. What am I?",
+      "answerText": "A mountain range on a map",
+      "tidbits": "A folded map of a mountain range fits in your pocket, yet depicts peaks that rise to the clouds."
+    },
+    {
+      "id": "blue-012",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What can travel around the world without moving from its place?",
+      "answerText": "The sun",
+      "tidbits": "The sun appears to travel around the world each day — rising in the east and setting in the west — but it is actually the Earth rotating. The sun stays put."
+    },
+    {
+      "id": "blue-013",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "The ocean is ahead of me, the ocean is behind me, and ocean is to both sides. Yet I'm not in the water. Where am I?",
+      "answerText": "On an island",
+      "tidbits": "An island is a piece of land completely surrounded by water — you can stand on it and have ocean in every direction without being wet."
+    },
+    {
+      "id": "blue-014",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "I have eyes but cannot see, a mouth but cannot speak, and I'm full of life. What am I?",
+      "answerText": "A potato",
+      "tidbits": "Potato 'eyes' are the small buds from which new plants sprout. The potato's shape can suggest a mouth, and it is alive as a plant."
+    },
+    {
+      "id": "blue-015",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "You can see me in water but I never get wet. What am I?",
+      "answerText": "Your reflection",
+      "tidbits": "Your reflection appears on the surface of water, but it is just light bouncing back — no part of you actually touches the water."
+    },
+    {
+      "id": "blue-016",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "A woman shoots her husband, then holds him underwater for five minutes. An hour later they go out to dinner together. How?",
+      "answerText": "She photographed him",
+      "tidbits": "She's a photographer — she 'shot' his photo, then developed the film by holding it in water (a darkroom technique in old photography). No one was harmed."
+    },
+    {
+      "id": "blue-017",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "I cover the world but fit in a single glance. I show you everywhere without taking you there. What am I?",
+      "answerText": "A globe",
+      "tidbits": "A globe represents the entire world in miniature — you can see it all at once, but you're never actually transported anywhere."
+    },
+    {
+      "id": "blue-018",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "Two mountains face each other across a valley. Between them is nothing. What is nothing?",
+      "answerText": "A valley",
+      "tidbits": "The 'nothing' between two mountains — the low ground, the gap — is exactly what defines a valley. The absence of mountain IS the valley."
+    },
+    {
+      "id": "blue-019",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "I grow downward but am never planted. I have no roots but cling to stone. I drip but am never liquid. What am I?",
+      "answerText": "A stalactite",
+      "tidbits": "Stalactites form on cave ceilings from mineral-rich water dripping over centuries — they grow down, cling to rock, and are made of solid mineral deposits."
+    },
+    {
+      "id": "blue-020",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "I have a head and a tail, but no body. I can cross a river in one leap. What am I?",
+      "answerText": "A coin",
+      "tidbits": "Coins have a 'heads' and 'tails' side. To 'skip' a coin across water (stone skipping) is a real activity where a flat coin or stone crosses a river in hops."
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "I'm watched by millions every day, but I'm never on TV. I have subscribers but no mailbox. What am I?",
+      "answerText": "A YouTube channel",
+      "tidbits": "YouTube channels are watched by millions and people 'subscribe' digitally — no mailbox, no cable TV required."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "People follow me everywhere, but I've never left the screen. I post pictures but have no camera. What am I?",
+      "answerText": "A social media account",
+      "tidbits": "Social media followers 'follow' an account online — the account exists only digitally and posts content without a physical camera of its own."
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "I can be forwarded, shared, and liked, but I never leave the internet. I age instantly but live forever. What am I?",
+      "answerText": "A meme",
+      "tidbits": "Memes spread virally across social media — they 'go stale' quickly in internet culture but can resurface years later, making them ageless in a sense."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "I star in a movie, but I'm not an actor. I'm seen on every screen, but I'm not a show. What am I?",
+      "answerText": "A trailer",
+      "tidbits": "A movie trailer features clips from a film, plays before shows on every screen, but is not itself the full movie — it promotes the film."
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "I have a season finale, but I'm not a TV show. I come in episodes, but you watch all of them at once. What am I?",
+      "answerText": "A binge-watched streaming series",
+      "tidbits": "Streaming services like Netflix release whole seasons at once, enabling binge-watching — you get the season finale, but it's all available immediately."
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Thousands scream my name, but I can't hear them. I perform for millions without leaving a stage. What am I?",
+      "answerText": "A recorded concert film",
+      "tidbits": "A concert film captures a live performance — fans watch and cheer at home, but the artist in the recording can't hear the audience watching the replay."
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "I go viral without a fever. I spread without touch. What am I?",
+      "answerText": "A viral post",
+      "tidbits": "'Going viral' in internet culture means content spreads rapidly across social media — the word is borrowed from biology but nothing physical is transmitted."
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "I can make you laugh, cry, and scream — all in under two hours. I'm not a person, but I tell stories. People pay to see me in the dark. What am I?",
+      "answerText": "A movie",
+      "tidbits": "Films evoke powerful emotions through storytelling and are traditionally viewed in darkened movie theaters."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "I live in your pocket but perform for thousands. I record concerts but never clap. What am I?",
+      "answerText": "A smartphone",
+      "tidbits": "Smartphones fit in pockets, record concerts with video, and of course can't applaud — but they stream performances to thousands."
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "A pop star releases an album but nobody hears it on the day it drops. The next day, everyone knows every word. How?",
+      "answerText": "It leaked early",
+      "tidbits": "Album leaks happen when an album is shared online before its official release date — by the official drop day everyone has already heard it."
+    },
+    {
+      "id": "pink-011",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "I have a plot twist, but I'm not a novel. I have a villain, but I'm not a movie. I end every week with a cliffhanger. What am I?",
+      "answerText": "A TV series episode",
+      "tidbits": "Weekly TV dramas feature plot twists, antagonists, and cliffhanger endings designed to keep viewers tuned in the following week."
+    },
+    {
+      "id": "pink-012",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "I'm spoiled before I'm seen. I ruin something I've never touched. What am I?",
+      "answerText": "A spoiler",
+      "tidbits": "A plot spoiler reveals key story details before someone has watched or read it — ruining the surprise without the person having seen the content."
+    },
+    {
+      "id": "pink-013",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "I have millions of followers but I post without fingers. I never sleep but I'm not alive. What am I?",
+      "answerText": "A bot account",
+      "tidbits": "Automated bot accounts on social media post content around the clock without human hands — they accumulate followers but are not living beings."
+    },
+    {
+      "id": "pink-014",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "I can play a hero or a villain, but I'm always myself. I get paid to pretend. What am I?",
+      "answerText": "An actor",
+      "tidbits": "Actors portray any character while always remaining themselves — their craft is convincing pretense, and they're paid professionals."
+    },
+    {
+      "id": "pink-015",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Everyone sees me once, then forgets me. I'm gone after 24 hours. What am I?",
+      "answerText": "A social media story",
+      "tidbits": "Instagram and Snapchat 'Stories' disappear after 24 hours — seen briefly and then gone."
+    },
+    {
+      "id": "pink-016",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "I'm seen by billions but I'm not a face. I'm heard by millions but I have no voice. I live in a 3-minute loop. What am I?",
+      "answerText": "A music video",
+      "tidbits": "Music videos are visual media watched worldwide — they depict performers but are not themselves faces or voices; the audio track loops."
+    },
+    {
+      "id": "pink-017",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "A singer performs to 80,000 people. They all hear the same voice, but none of them hear the singer. How?",
+      "answerText": "The singer is lip-syncing to a recording",
+      "tidbits": "At large concerts or televised events, artists sometimes lip-sync to a pre-recorded track — the 80,000 fans hear the recording, not the live voice."
+    },
+    {
+      "id": "pink-018",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "I can be number one without being first. I rank without running a race. What am I?",
+      "answerText": "A chart-topping song",
+      "tidbits": "A song reaches number one on the charts by accumulating streams and sales — there's no literal race, and a brand-new release can immediately debut at the top."
+    },
+    {
+      "id": "pink-019",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "The more you cut me, the longer I get. What am I?",
+      "answerText": "A movie trailer",
+      "tidbits": "Film editors 'cut' footage together — the more cuts made in editing, the more dynamic and lengthier (up to a point) the trailer feels. Also, cutting in general filmmaking adds sequences."
+    },
+    {
+      "id": "pink-020",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "I never speak, yet I'm quoted everywhere. I never perform, yet I'm applauded. I live in a box, but I'm not trapped. What am I?",
+      "answerText": "A movie subtitle",
+      "tidbits": "Subtitles display spoken dialogue as text — they quote every word, accompany applauded performances, and appear in a text box on screen without being confined."
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What gets older every year but is only celebrated once a year?",
+      "answerText": "A birthday",
+      "tidbits": "Every year that passes adds another year to your age — yet we celebrate the anniversary of a birth just once per year."
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "I have hands but cannot clap. I tell you something every minute, but never speak. What am I?",
+      "answerText": "A clock",
+      "tidbits": "Clock 'hands' point to numbers to tell the time — they move but cannot clap, and communicate silently."
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "The more you have of it, the less you see. What is it?",
+      "answerText": "Darkness",
+      "tidbits": "The more darkness there is, the less visible everything becomes — darkness literally reduces sight."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What question can you never honestly answer 'yes' to?",
+      "answerText": "Are you asleep?",
+      "tidbits": "If you're truly asleep, you can't answer. If you're awake enough to answer, the answer must be 'no.' You can never honestly say 'yes' to this question."
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "I start every story and end every fairy tale. What am I?",
+      "answerText": "Once upon a time / happily ever after",
+      "tidbits": "Classic fairy tales open with 'Once upon a time' and close with 'happily ever after' — two phrases that bookend the genre."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What has a neck but no head, and wears a cap without a face?",
+      "answerText": "A bottle",
+      "tidbits": "A bottle has a neck (the narrow upper part), and a bottle cap seals it — no head, no face involved."
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "The ancient Sphinx asked: What walks on four legs in the morning, two at noon, and three in the evening?",
+      "answerText": "A human",
+      "tidbits": "This is the famous Sphinx's riddle from Greek mythology. Humans crawl (four limbs) as babies, walk upright (two legs) as adults, and use a cane (three supports) in old age."
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "I'm the child of water, but when water touches me, I die. What am I?",
+      "answerText": "Salt",
+      "tidbits": "Salt comes from the sea (child of water), but when water is added to a pile of salt, it dissolves — the salt structure is destroyed."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "A king, a queen, and their twin sons each had an apple. One apple was eaten. How many apples remain?",
+      "answerText": "Three",
+      "tidbits": "Four people, four apples — one apple is eaten. 4 minus 1 = 3 apples remain. Simple arithmetic hidden in royal dressing."
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "What was the largest number ever counted to, before history was written down?",
+      "answerText": "There is no such number — history was never 'not written'",
+      "tidbits": "This is a trick question. 'Before history was written' is a contradiction — by definition, prehistory has no written records, so no number was written down then either."
+    },
+    {
+      "id": "yellow-011",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "I was here before your grandparents were born, and I'll be here after your grandchildren die. But I'm made fresh every day. What am I?",
+      "answerText": "The sun",
+      "tidbits": "The sun is 4.6 billion years old — far older than any human lineage — yet every morning it 'rises fresh,' appearing anew in the sky."
+    },
+    {
+      "id": "yellow-012",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "There are three boxes. One says 'apples,' one says 'oranges,' one says 'apples and oranges.' All labels are wrong. You pull one item from the 'apples and oranges' box. What do you pull to identify all boxes?",
+      "answerText": "One item — whatever it is tells you all three",
+      "tidbits": "Since all labels are wrong, the 'apples and oranges' box is either pure apples or pure oranges. Pull one item: if it's an apple, that box is apples. The 'apples' box can't be apples, so it's oranges. The 'oranges' box gets the remaining label."
+    },
+    {
+      "id": "yellow-013",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "A rooster sits on top of a pointy barn roof and lays an egg. Which side does the egg roll down?",
+      "answerText": "Neither — roosters don't lay eggs",
+      "tidbits": "Only hens lay eggs. The question assumes something false, making all reasoning about which side the egg rolls irrelevant."
+    },
+    {
+      "id": "yellow-014",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "I grow shorter the longer I stand. What am I?",
+      "answerText": "A candle",
+      "tidbits": "A lit candle burns down over time — the longer it stands burning, the shorter it becomes."
+    },
+    {
+      "id": "yellow-015",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "If yesterday was two days after Monday, what day is today?",
+      "answerText": "Thursday",
+      "tidbits": "Two days after Monday is Wednesday. If yesterday was Wednesday, today is Thursday. Work backwards from the clue."
+    },
+    {
+      "id": "yellow-016",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "A knight in ancient times is captured and given a choice: be beheaded or walk through a magic door. He walks through. Why?",
+      "answerText": "He chose the door — the door is just a door, not magic",
+      "tidbits": "The magic is in the framing — a 'magic door' still opens. The prisoner wisely avoids the only certain death (beheading) by taking any other option."
+    },
+    {
+      "id": "yellow-017",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "I am taken from a mine and shut up in a wooden case. I'm never released yet I'm used by almost everyone. What am I?",
+      "answerText": "A pencil",
+      "tidbits": "Graphite is mined, then encased in wood to form a pencil — the graphite is trapped inside but used constantly when you write."
+    },
+    {
+      "id": "yellow-018",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "The more you have of me, the less of me there is. What am I?",
+      "answerText": "Time",
+      "tidbits": "Every moment of time you experience uses up more of your remaining lifespan — the more life you've lived, the less time you have left."
+    },
+    {
+      "id": "yellow-019",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "I'm lighter than a feather, but the strongest person in the world can't hold me for more than a few minutes. What am I?",
+      "answerText": "Your breath",
+      "tidbits": "Breath weighs almost nothing, yet no person — no matter how strong — can hold their breath indefinitely. Biology always wins."
+    },
+    {
+      "id": "yellow-020",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "A father has five sons. Each son has one sister. How many children does the father have?",
+      "answerText": "Six",
+      "tidbits": "Five sons and one sister — they all share the same one sister. So 5 sons + 1 daughter = 6 children total, not 10."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "I can paint a picture without a brush, and draw without a pencil. What am I?",
+      "answerText": "A camera",
+      "tidbits": "A camera 'paints with light' — capturing an image without brushes or pencils, yet producing a detailed picture."
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "I have pages but am not a book. I have pictures but am not a photo album. I tell stories but have almost no words. What am I?",
+      "answerText": "A comic book",
+      "tidbits": "Comic books use sequential illustrated panels to tell stories — they have pages and pictures but rely on images more than prose."
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "I can be red, blue, yellow, or any color, but I'm always clear. What am I?",
+      "answerText": "Light through a prism (or stained glass)",
+      "tidbits": "White light passing through a prism or glass reveals all colors — the light itself is 'clear' (colorless) but produces any color in the spectrum."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "I have a frame but hang on no wall. I have a lens but take no photo. What am I?",
+      "answerText": "Glasses (eyeglasses)",
+      "tidbits": "Eyeglasses have a frame and lenses, but they sit on your face rather than hanging on a wall, and they're for seeing rather than photography."
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "I'm born on a blank canvas and die the moment you stop me. What am I?",
+      "answerText": "A drawing in progress",
+      "tidbits": "A drawing comes into existence as you create it on a blank surface — and the moment you put down the pen, the creative act ceases."
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "You can hold me with no hands, and throw me without arms. What am I?",
+      "answerText": "Your voice",
+      "tidbits": "You 'hold' a note vocally and 'throw' (project) your voice — all without using hands or arms."
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What has one eye but cannot see?",
+      "answerText": "A needle",
+      "tidbits": "The hole in a sewing needle is called its 'eye' — but of course it cannot see anything."
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "I am always in front of an artist but behind a viewer. What am I?",
+      "answerText": "A canvas (the subject of a painting)",
+      "tidbits": "The canvas is in front of the painter while they work, but when the finished painting is displayed, the viewer stands in front of it — with the canvas facing them, the artist is conceptually behind."
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "I'm a shape with no sides and no corners, but I'm the most complete shape there is. What am I?",
+      "answerText": "A circle",
+      "tidbits": "A circle has no straight sides or corners — it is a continuous curve, yet is considered the most perfect and complete geometric shape."
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "An artist paints a picture of a woman. The woman has no sister, yet the woman in the picture IS her sister. Who is in the painting?",
+      "answerText": "The artist's sister",
+      "tidbits": "The artist is a woman painting her own sister — the painted woman (the subject) has no sister, but the painting depicts the artist's sister."
+    },
+    {
+      "id": "purple-011",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "I have color but no pigment. I have shape but no form. I exist only when light is just right. What am I?",
+      "answerText": "A rainbow",
+      "tidbits": "Rainbows are optical phenomena — they have vivid color but no pigment, an arch shape but no physical structure, and only appear when sunlight hits water droplets at the right angle."
+    },
+    {
+      "id": "purple-012",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "I can be framed on a wall but I'm not a painting. I repeat everything I see. What am I?",
+      "answerText": "A mirror",
+      "tidbits": "Mirrors can have decorative frames and hang on walls like art, but they reflect rather than depict — they show what's in front of them."
+    },
+    {
+      "id": "purple-013",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "The more you take from me, the bigger I become. What am I?",
+      "answerText": "A hole",
+      "tidbits": "Every bit of material you remove to make a hole increases the size of that hole — you're taking away, but the hole grows."
+    },
+    {
+      "id": "purple-014",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "I have two heads, two tails, and nothing in the middle. What am I?",
+      "answerText": "Two coins",
+      "tidbits": "Two coins, each with a head and a tail, placed next to each other — two heads, two tails, nothing between them."
+    },
+    {
+      "id": "purple-015",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "A sculptor's most famous work is invisible. Everyone agrees it's his masterpiece. What is it?",
+      "answerText": "The empty space around his statues",
+      "tidbits": "Many sculptors speak of 'carving away everything that is not the statue' — the negative space and absence of material is as intentional as the sculpture itself."
+    },
+    {
+      "id": "purple-016",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "I'm in every color but contain none of them. What am I?",
+      "answerText": "White light",
+      "tidbits": "White light (like sunlight) contains all wavelengths of visible color combined — yet white itself isn't one of the spectral colors. A prism reveals what white light holds."
+    },
+    {
+      "id": "purple-017",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "An animator draws a character that can do anything. But the one thing it can never do is exist. Why?",
+      "answerText": "It's fictional — it only exists as drawings",
+      "tidbits": "An animated character exists as lines and color on a page or screen — no matter how lifelike or powerful in the story, it cannot cross into physical reality."
+    },
+    {
+      "id": "purple-018",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "I grow when fed, and die when watered. What am I?",
+      "answerText": "Fire",
+      "tidbits": "Fire grows larger when fed fuel (wood, paper) but is extinguished by water — the opposite of living things."
+    },
+    {
+      "id": "purple-019",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "I have thousands of letters but only a handful of words. I speak every language but was never taught one. What am I?",
+      "answerText": "An alphabet",
+      "tidbits": "An alphabet contains all the individual letters (e.g., 26 in English) and from them all words are built — yet the alphabet itself encodes no language until arranged."
+    },
+    {
+      "id": "purple-020",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "I can be cut and shaped but I'm not food. I'm flat, but I can be a mountain. I'm silent, but I can roar. What am I?",
+      "answerText": "A piece of paper (in origami or illustration)",
+      "tidbits": "Paper can be cut and folded into any shape through origami or illustration — a flat sheet can depict a mountain, and the drawn roar of an animal reads as sound."
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "If there are 3 apples and you take away 2, how many apples do you have?",
+      "answerText": "Two",
+      "tidbits": "You took 2 apples, so you personally have 2. The question asks how many YOU have, not how many remain in the pile."
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "I'm always in front of you but can never be seen. What am I?",
+      "answerText": "The future",
+      "tidbits": "The future is always ahead of you in time — yet you can never literally see it until it becomes the present."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What has a thumb and four fingers but is not a hand?",
+      "answerText": "A glove",
+      "tidbits": "A glove is shaped exactly like a hand — thumb and four finger slots — but is not itself a hand."
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "How many months have 28 days?",
+      "answerText": "All twelve",
+      "tidbits": "Every month has at least 28 days. The trick is that the question asks which months have 28 days (not exactly 28) — all of them qualify."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "I have a head, a tail, and always land somewhere — but I'm not an animal. What am I?",
+      "answerText": "A coin",
+      "tidbits": "Coins have a 'heads' side and a 'tails' side, and when flipped they always land on one or the other."
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What comes once in a minute, twice in a moment, but never in a thousand years?",
+      "answerText": "The letter M",
+      "tidbits": "'Minute' has one M, 'moment' has two Ms, and 'a thousand years' has zero. It's a word/letter puzzle, not a time puzzle."
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "A computer programmer is told to go to the store and buy a loaf of bread, and if they have eggs, buy a dozen. They come back with 12 loaves of bread. Why?",
+      "answerText": "The store had eggs",
+      "tidbits": "The instruction 'if they have eggs, buy a dozen' was interpreted literally — if the store has eggs, buy a dozen (loaves of bread). Classic literal logic humor."
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What is 1 + 1 in binary?",
+      "answerText": "10",
+      "tidbits": "In binary (base-2), there are only digits 0 and 1. Adding 1 + 1 overflows to the next position: the result is '10' (which equals 2 in decimal)."
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "A bat and a ball cost $1.10 together. The bat costs $1.00 more than the ball. How much does the ball cost?",
+      "answerText": "5 cents",
+      "tidbits": "If the ball costs 5 cents, the bat costs $1.05 — that's exactly $1.00 more. Together: $1.05 + $0.05 = $1.10. The intuitive answer ($0.10) is wrong."
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "I have a start but no finish. I have a depth but no height. I run but never walk. What am I?",
+      "answerText": "A river",
+      "tidbits": "A river has a source (start) but flows until it merges — it runs continuously, has depth, and flows on the surface (no height gained)."
+    },
+    {
+      "id": "green-011",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Three light switches are outside a room. One controls the light inside. You can only enter the room once. How do you figure out which switch controls the light?",
+      "answerText": "Turn one on, wait, turn it off, turn another on, then enter",
+      "tidbits": "Turn switch A on, wait several minutes, turn it off. Turn switch B on. Enter: if the light is on it's B; if off but warm it's A; if off and cold it's C."
+    },
+    {
+      "id": "green-012",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "I speak every language but was never taught. I know everything ever written but have no memory. What am I?",
+      "answerText": "A search engine",
+      "tidbits": "Search engines index all web content in all languages and can retrieve any written information — yet they don't 'learn' or remember in a human sense."
+    },
+    {
+      "id": "green-013",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What number is next in this sequence? 1, 1, 2, 3, 5, 8, 13 …",
+      "answerText": "21",
+      "tidbits": "This is the Fibonacci sequence — each number is the sum of the two before it. 13 + 8 = 21."
+    },
+    {
+      "id": "green-014",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "You're in a race and you pass the person in second place. What place are you now in?",
+      "answerText": "Second place",
+      "tidbits": "You passed the person in second, so you took their position — second place. You didn't pass the person in first, so you can't be first."
+    },
+    {
+      "id": "green-015",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "A spaceship travels at the speed of light for one year. How old is it?",
+      "answerText": "One year older (for outside observers)",
+      "tidbits": "At the speed of light, time dilation means virtually no time passes inside the ship — but from outside observers, one year passes. Age is relative here."
+    },
+    {
+      "id": "green-016",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "I have infinite possibilities but I always produce the same output for the same input. I'm not a law of nature — but I follow rules absolutely. What am I?",
+      "answerText": "A computer function",
+      "tidbits": "A deterministic function in programming — given the same input, it always returns the same output, following defined rules with precision."
+    },
+    {
+      "id": "green-017",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "A snail is at the bottom of a 10-foot well. Each day it climbs 3 feet, each night it slides back 2 feet. How many days does it take to reach the top?",
+      "answerText": "Eight days",
+      "tidbits": "Net progress: 1 foot per day. After 7 days it's at 7 feet. On day 8 it climbs 3 feet, reaching 10 feet and exiting — it doesn't slide back because it's already out."
+    },
+    {
+      "id": "green-018",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "What is the next number: 2, 3, 5, 7, 11, 13 …?",
+      "answerText": "17",
+      "tidbits": "These are prime numbers — numbers divisible only by 1 and themselves. After 13, the next prime is 17."
+    },
+    {
+      "id": "green-019",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "I'm never the same twice, but I always look identical. I'm unique in the universe, yet mass-produced. What am I?",
+      "answerText": "A snowflake",
+      "tidbits": "Snowflakes form under unique temperature and humidity conditions, making each one structurally distinct — yet they all share the same hexagonal symmetry and look alike at a glance."
+    },
+    {
+      "id": "green-020",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "If a doctor gives you 3 pills and tells you to take one every half hour, how long until the pills are gone?",
+      "answerText": "One hour",
+      "tidbits": "Take pill 1 at time 0, pill 2 at 30 minutes, pill 3 at 60 minutes — that's 1 hour, not 1.5 hours. The first pill is taken immediately."
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "I have four suits but never get dressed. I have kings and queens but no castle. What am I?",
+      "answerText": "A deck of cards",
+      "tidbits": "A standard deck of playing cards has four suits (hearts, diamonds, clubs, spades) and face cards including kings and queens — no royalty or clothing involved."
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "In a game you can win without scoring. What game is it?",
+      "answerText": "Tic-tac-toe (when your opponent forfeits) or chess (forfeit or resignation)",
+      "tidbits": "In chess, a player can resign and concede the win to their opponent — the winner never needed to checkmate, so technically they 'won without scoring.'"
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "The more you use me, the smaller I get, but the game never ends. What am I?",
+      "answerText": "An eraser",
+      "tidbits": "Each use of an eraser wears it down — yet a pencil game or drafting session continues as long as needed."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "I can be thrown but not caught, rolled but not bounced. I decide fates. What am I?",
+      "answerText": "A die (dice)",
+      "tidbits": "Dice are thrown and rolled but don't bounce like balls — and the number they land on determines outcomes in countless games."
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What sport do you always play but can never win?",
+      "answerText": "Solitaire",
+      "tidbits": "Solitaire is a single-player card game — there's no opponent to beat. You either complete it or you don't; you can't 'win' in the competitive sense against someone else."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "You're last in a race but you pass the last-place runner. What position are you in now?",
+      "answerText": "Last place",
+      "tidbits": "If you were last and passed the last-place runner, you took their spot — which was last. Wait, this is a trick: if there was a runner behind you and you passed them, you move up. But if you were already last, there's no one behind you to pass."
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What runs around a soccer field but never moves?",
+      "answerText": "The boundary line",
+      "tidbits": "The boundary lines of a soccer pitch run all the way around the field, but they're painted on and never go anywhere."
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "A basketball player shoots from half court and scores. But the referee disallows it. No foul was called. Why?",
+      "answerText": "The buzzer had already sounded — the shot didn't count",
+      "tidbits": "If the shot was released after the game-ending buzzer, it doesn't count even if it goes in — the clock determines the shot's validity, not the ball's path."
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Two teams play five games. Each team wins exactly three games, but there are no ties. How?",
+      "answerText": "They played different opponents",
+      "tidbits": "The puzzle never says the two teams played each other. Team A won 3 of 5 games against other opponents, and Team B won 3 of 5 games against other opponents — no contradiction."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "In a tournament, 100 players compete in single-elimination. How many matches must be played to crown one champion?",
+      "answerText": "99 matches",
+      "tidbits": "In single-elimination, each match eliminates exactly one player. To reduce 100 players to 1 champion, 99 players must be eliminated — so exactly 99 matches."
+    },
+    {
+      "id": "orange-011",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "A chess player wins every match without ever capturing a single piece. How?",
+      "answerText": "The opponent resigned or was checkmated without captures",
+      "tidbits": "You can checkmate a king using only piece positioning (like a smothered mate or back-rank mate) without capturing — or the opponent resigns before any captures occur."
+    },
+    {
+      "id": "orange-012",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "I have no feet but I run. I have no mouth but I roar. I never stop moving. What am I?",
+      "answerText": "A river (or a race car engine)",
+      "tidbits": "A river runs continuously downstream, makes roaring sounds at rapids, and never truly stops — all without feet or a mouth."
+    },
+    {
+      "id": "orange-013",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What do you call a game where the loser always wins?",
+      "answerText": "Hot potato (or musical chairs / a drinking game with punishment)",
+      "tidbits": "In hot potato, being left holding the object when the music stops means you're 'out' — but some versions reward the last person standing; in others, losing means you 'win' a punishment or prize."
+    },
+    {
+      "id": "orange-014",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "An archer hits a bullseye every single shot. He shoots 100 times and never misses. But he still loses the competition. How?",
+      "answerText": "His opponent hit a higher-scoring ring on a different target",
+      "tidbits": "Or — the competition was judged on something other than accuracy (e.g., speed), or the bullseye on his target scores less than the outer ring on another target format."
+    },
+    {
+      "id": "orange-015",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What can you catch but not throw?",
+      "answerText": "A cold",
+      "tidbits": "You 'catch' a cold when you get sick — but there's nothing physical to throw. The word 'catch' works for both diseases and objects, but 'throw' only works for objects."
+    },
+    {
+      "id": "orange-016",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "A runner finishes a 10-kilometer race. Halfway through, she was last. At the finish line, she passed everyone who passed her. What place did she finish?",
+      "answerText": "Last place",
+      "tidbits": "If she was last at the halfway point, everyone who later passed her was already ahead of her. 'Passing everyone who passed her' just means she re-caught up to those who overtook her in the second half — she ends exactly where she was: last."
+    },
+    {
+      "id": "orange-017",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "A player rolls two dice. What is the most likely total?",
+      "answerText": "Seven",
+      "tidbits": "There are 36 possible dice combinations. Seven can be made 6 ways (1+6, 2+5, 3+4, 4+3, 5+2, 6+1) — more than any other total, giving it the highest probability."
+    },
+    {
+      "id": "orange-018",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "In a game of chance, you flip a fair coin 10 times and get heads every time. What are the odds the next flip is heads?",
+      "answerText": "50 percent",
+      "tidbits": "A fair coin has no memory. Each flip is an independent event — previous results have no bearing on the next flip. The odds are always 50/50."
+    },
+    {
+      "id": "orange-019",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "An unbeaten boxer loses a fight without the opponent landing a single punch. How?",
+      "answerText": "He lost by disqualification or forfeit",
+      "tidbits": "A boxer can lose by disqualification (breaking rules), by a corner throwing in the towel, or by failing to show up — without the opponent landing a punch."
+    },
+    {
+      "id": "orange-020",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "A game has two players. One always wins, one always loses. Yet both players always leave happy. What game is it?",
+      "answerText": "A cooperative game played as friendly practice (or a parent playing against a child)",
+      "tidbits": "When a parent lets a child win at a game — both the parent (happy to see the child's joy) and the child (thrilled to win) leave satisfied. The outcome is fixed but the experience is fulfilling for both."
+    }
+  ]
+}
