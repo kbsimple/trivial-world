@@ -114,7 +114,7 @@ export default function QuestionScreen() {
             ]}
             onPress={() => skipQuestion()}
           >
-            <Text style={styles.skipButtonText}>{answerRevealed ? 'Redo Question' : 'Skip Question'}</Text>
+            <Text style={styles.skipButtonText}>{answerRevealed ? 'Redo Turn' : 'Skip Question'}</Text>
           </Pressable>
         )}
 
