@@ -1,22 +1,22 @@
 #!/usr/bin/env node
 /**
- * Post-build Workbox manifest injection.
+ * Post-build Workbox SW generation.
  *
  * Run after `expo export --platform web` and after all cp commands.
- * Reads public/sw-template.js, injects precache manifest, writes dist/sw.js.
+ * Uses generateSW to produce a self-contained dist/sw.js with the
+ * precache manifest and runtime caching bundled in — no template file needed.
  *
  * dist/sw.js is generated — do not commit it to git.
  */
 
-import { injectManifest } from 'workbox-build';
+import { generateSW } from 'workbox-build';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(__dirname, '..');
 
-const { count, size, warnings } = await injectManifest({
-  swSrc: resolve(rootDir, 'public/sw-template.js'),
+const { count, size, warnings } = await generateSW({
   swDest: resolve(rootDir, 'dist/sw.js'),
   globDirectory: resolve(rootDir, 'dist'),
   globPatterns: [
@@ -27,11 +27,22 @@ const { count, size, warnings } = await injectManifest({
     'apple-touch-icon.png',
     'favicon.ico',
   ],
+  globIgnores: ['packs/**', 'api/**', 'statusz.json', '_redirects', '_headers'],
   // Metro produces content-hashed filenames — don't add revision query param
   dontCacheBustURLsMatching: /[0-9a-f]{8,}\./,
-  // Pack JSONs and API data go to IndexedDB (not SW Cache API)
-  globIgnores: ['packs/**', 'api/**', 'statusz.json', '_redirects', '_headers'],
   maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+  // SPA: serve index.html for all navigation requests
+  navigateFallback: '/index.html',
+  // Auto-activate new SW and claim open tabs immediately
+  skipWaiting: true,
+  clientsClaim: true,
+  runtimeCaching: [
+    {
+      urlPattern: /\/api\/v1\/packs\.json$/,
+      handler: 'StaleWhileRevalidate',
+      options: { cacheName: 'pack-index-cache' },
+    },
+  ],
 });
 
 if (warnings.length > 0) {
