@@ -130,13 +130,10 @@ export default function SetupScreen() {
           numberOfLines={1}
         >
           {packName
-            ? packName
+            ? `${packName}  Change ›`
             : allPlayersCustom
               ? 'All players have custom packs'
-              : 'Select a pack'}
-        </Text>
-        <Text style={[styles.rowChevron, { color: theme.color?.val as string }]}>
-          {packName ? 'Change ›' : '›'}
+              : 'Select a pack ›'}
         </Text>
       </Pressable>
 
@@ -230,24 +227,16 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     paddingVertical: 14,
     paddingHorizontal: 16,
     borderRadius: 8,
     borderWidth: 1,
     borderColor: 'rgba(255,255,255,0.18)',
-    gap: 8,
+    alignItems: 'center',
   },
   rowText: {
     fontSize: 17,
     fontWeight: '500',
-  },
-  rowChevron: {
-    fontSize: 14,
-    opacity: 0.55,
-    fontWeight: '600',
   },
   playerRowOuter: {
     marginBottom: 8,
