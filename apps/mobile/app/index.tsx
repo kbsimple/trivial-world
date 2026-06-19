@@ -108,7 +108,7 @@ export default function HomeScreen() {
   return (
     <View style={[styles.container, { backgroundColor: theme.background?.val as string }]}>
       {/* Title */}
-      <Text style={[styles.title, { color: theme.color?.val as string }]}>
+      <Text style={[styles.title, { color: SEMANTIC_COLORS.selected }]}>
         Trivial World
       </Text>
 

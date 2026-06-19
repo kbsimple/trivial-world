@@ -217,11 +217,11 @@ const styles = StyleSheet.create({
     paddingTop: 28,
   },
   sectionLabel: {
-    fontSize: 11,
+    fontSize: 13,
     fontWeight: '700',
-    letterSpacing: 1.2,
+    letterSpacing: 1.4,
     color: SEMANTIC_COLORS.selected,
-    marginBottom: 6,
+    marginBottom: 8,
   },
   sectionLabelSpaced: {
     marginTop: 24,

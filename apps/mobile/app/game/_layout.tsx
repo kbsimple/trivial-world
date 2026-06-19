@@ -6,6 +6,7 @@ import { PauseOverlay } from '../../components/PauseOverlay';
 import { useGameStore } from '../../stores/gameStore';
 import { usePlayerStore } from '../../stores/playerStore';
 import { useRouter } from 'expo-router';
+import { SEMANTIC_COLORS } from '../../constants/theme';
 
 /**
  * Game flow layout
@@ -57,6 +58,7 @@ export default function GameLayout() {
           headerTitle: 'Trivial World',
           headerStyle: { backgroundColor: theme.background?.val as string },
           headerTintColor: theme.color?.val as string,
+          headerTitleStyle: { color: SEMANTIC_COLORS.selected },
           headerLeft: () => (
             <Pressable onPress={() => setPauseOpen(true)} style={styles.pauseButton}>
               <Text style={[styles.pauseText, { color: theme.color?.val as string }]}>
