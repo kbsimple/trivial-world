@@ -96,6 +96,16 @@ describe('Pack JSON files (public/packs/*.json)', () => {
         expect(unique.size).toBe(ids.length);
       });
 
+      it('metadata.id is a valid RFC-4122 UUID', () => {
+        const pack = JSON.parse(readFileSync(fpath, 'utf8'));
+        const id: unknown = pack?.metadata?.id ?? pack?.id;
+        const uuidPattern = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$/;
+        expect(
+          typeof id === 'string' && uuidPattern.test(id),
+          `${filename} has invalid UUID in metadata.id: ${id}`
+        ).toBe(true);
+      });
+
       it('matches the pack index entry (totalQuestions, checksum in index)', () => {
         const index = loadIndex();
         const pack = JSON.parse(readFileSync(fpath, 'utf8'));

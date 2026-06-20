@@ -83,6 +83,16 @@ This project uses Get Shit Done (GSD) methodology.
 | Green | Tech, Space & Logic | AI, astronomy, apex predators |
 | Orange | Sports & Gaming | Pro sports, college sports, esports |
 
+## Pack IDs
+
+Every question pack must have a proper RFC-4122 UUID as its `metadata.id`. Generate one with:
+
+```
+node -e "const {randomUUID}=require('crypto');console.log(randomUUID())"
+```
+
+Short slugs (`fc00d001-f00d-…`) are **not** valid UUIDs even when they match the hyphen pattern — the UUID version nibble (position 15) must be `1`–`8` and the variant nibble (position 20) must be `8`, `9`, `a`, or `b`. The test suite validates every pack file at `services/packAssets.test.ts` ("metadata.id is a valid RFC-4122 UUID") and will fail on any non-conforming ID.
+
 ## Git Commit Author
 
 All commits must use:
