@@ -33,6 +33,8 @@ const { count, size, warnings } = await generateSW({
   maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
   // SPA: serve index.html for all navigation requests
   navigateFallback: '/index.html',
+  // Cache ID — bump this to orphan old Workbox caches on all clients
+  cacheId: 'tw-v2',
   // Auto-activate new SW and claim open tabs immediately
   skipWaiting: true,
   clientsClaim: true,
