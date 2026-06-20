@@ -227,7 +227,14 @@
       "author": "Trivial World Team",
       "version": "1.0.0",
       "totalQuestions": 60,
-      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
       "downloadUrl": "https://trivial-world.netlify.app/packs/applied-computer-science-6b2383e7.json",
       "checksum": "2dfe6dd673c64812a2cdc8d0046e006573b1627a34229cce9de88ad5aeb1deaf",
       "size": 28699
@@ -239,7 +246,14 @@
       "author": "Trivial World Team",
       "version": "1.0.0",
       "totalQuestions": 60,
-      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
       "downloadUrl": "https://trivial-world.netlify.app/packs/und-football-96-00-0c3ee36e.json",
       "checksum": "60d2e389c64ca6f053c38fb44fa43035492f68878addd3ce140664dbe0eb5b83",
       "size": 26845
@@ -251,7 +265,14 @@
       "author": "Trivial World Team",
       "version": "1.0.0",
       "totalQuestions": 60,
-      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
       "downloadUrl": "https://trivial-world.netlify.app/packs/thinking-howto-96d14293.json",
       "checksum": "44888ff70568e48f6bb445971331387b3603732e267003d03a8471b2dc48056f",
       "size": 31474
@@ -263,7 +284,14 @@
       "author": "Trivial World Team",
       "version": "1.0.0",
       "totalQuestions": 60,
-      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
       "downloadUrl": "https://trivial-world.netlify.app/packs/big-government-0da2ef60.json",
       "checksum": "e346ee55d936601217333a535c9feb511b607f36f7da67b8c29657a70b8a9279",
       "size": 32524
@@ -275,7 +303,14 @@
       "author": "Trivial World Team",
       "version": "1.0.0",
       "totalQuestions": 60,
-      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
       "downloadUrl": "https://trivial-world.netlify.app/packs/harry-potter-7ccccf32.json",
       "checksum": "26f79f2c72ca8c4fb6f6bfda7489fb1c903a334eef630acbd8ea42ef2c474062",
       "size": 24475
@@ -287,7 +322,14 @@
       "author": "Trivial World Team",
       "version": "1.0.0",
       "totalQuestions": 60,
-      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
       "downloadUrl": "https://trivial-world.netlify.app/packs/american-history-1800s-75e63a07.json",
       "checksum": "e740dd60dd7befcba1ce6a60130ed95f34e0fb213d84da717af5c389bb645ff6",
       "size": 28048
@@ -299,7 +341,14 @@
       "author": "Trivial World Team",
       "version": "1.0.0",
       "totalQuestions": 60,
-      "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+      "categoryCounts": {
+        "blue": 10,
+        "pink": 10,
+        "yellow": 10,
+        "purple": 10,
+        "green": 10,
+        "orange": 10
+      },
       "downloadUrl": "https://trivial-world.netlify.app/packs/nba-basketball-2020s-8a547a65.json",
       "checksum": "0eb41458bb91162e8d59c944f73a9df9644c4cde835df07f3e215e59d9a5ad5b",
       "size": 26921
@@ -311,7 +360,14 @@
       "author": "Trivial World Team",
       "version": "1.0.0",
       "totalQuestions": 120,
-      "categoryCounts": { "blue": 20, "pink": 20, "yellow": 20, "purple": 20, "green": 20, "orange": 20 },
+      "categoryCounts": {
+        "blue": 20,
+        "pink": 20,
+        "yellow": 20,
+        "purple": 20,
+        "green": 20,
+        "orange": 20
+      },
       "downloadUrl": "https://trivial-world.netlify.app/packs/food-cuisines-fc00d001.json",
       "checksum": "e64c4f1023b71362bc1c30964587e4ffda57be1f350bc795eb9a8bc43ebc2e23",
       "size": 56145
@@ -323,7 +379,14 @@
       "author": "Trivial World Team",
       "version": "1.0.0",
       "totalQuestions": 120,
-      "categoryCounts": { "blue": 20, "pink": 20, "yellow": 20, "purple": 20, "green": 20, "orange": 20 },
+      "categoryCounts": {
+        "blue": 20,
+        "pink": 20,
+        "yellow": 20,
+        "purple": 20,
+        "green": 20,
+        "orange": 20
+      },
       "downloadUrl": "https://trivial-world.netlify.app/packs/video-games-mkw-mc-bs-v1d30001.json",
       "checksum": "e1e7ab8e16dc8fa4dba186f8bd5f86d53289b05f70c17511bfdbc1bac9dc7b1e",
       "size": 43625
@@ -335,10 +398,36 @@
       "author": "Trivial World Team",
       "version": "1.0.0",
       "totalQuestions": 120,
-      "categoryCounts": { "blue": 20, "pink": 20, "yellow": 20, "purple": 20, "green": 20, "orange": 20 },
+      "categoryCounts": {
+        "blue": 20,
+        "pink": 20,
+        "yellow": 20,
+        "purple": 20,
+        "green": 20,
+        "orange": 20
+      },
       "downloadUrl": "https://trivial-world.netlify.app/packs/mind-teasers-m1ndt34s.json",
       "checksum": "c1b0bf9e0a2eb2fb30cff3c82574d6a9aebd4f390c0eb3b89a1a4156fe73b298",
       "size": 50388
+    },
+    {
+      "id": "25837339-83dc-41b7-9749-bd32cc1d8683",
+      "name": "Groaner Jokes",
+      "description": "120 puns and dad jokes — 20 per category — where the conductor reads the setup and players must deliver the punchline without laughing.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 120,
+      "categoryCounts": {
+        "blue": 20,
+        "pink": 20,
+        "yellow": 20,
+        "purple": 20,
+        "green": 20,
+        "orange": 20
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/groaner-jokes-25837339.json",
+      "checksum": "bec2cfa5e45ed0994b39cc9fc647c0eef1efaed3406f548f48893f6fbcfbae75",
+      "size": 47654
     }
   ]
 }

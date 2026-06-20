@@ -1,0 +1,986 @@
+{
+  "metadata": {
+    "id": "25837339-83dc-41b7-9749-bd32cc1d8683",
+    "name": "Groaner Jokes",
+    "description": "120 puns and dad jokes — 20 per category — where the conductor reads the setup and players must deliver the punchline without laughing. The more painful the groan, the better.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-06-19T00:00:00.000Z",
+    "updatedAt": "2026-06-19T00:00:00.000Z",
+    "categoryCounts": {
+      "blue": 20,
+      "pink": 20,
+      "yellow": 20,
+      "purple": 20,
+      "green": 20,
+      "orange": 20
+    },
+    "totalQuestions": 120,
+    "checksum": "bec2cfa5e45ed0994b39cc9fc647c0eef1efaed3406f548f48893f6fbcfbae75",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 47654
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What do you call a bear with no teeth?",
+      "answerText": "A gummy bear!",
+      "tidbits": "\"Gummy\" means toothless, but gummy bears are also the beloved gelatin candy. This bear lost its bite and accidentally became a snack."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Why did the scarecrow win an award?",
+      "answerText": "Because he was outstanding in his field!",
+      "tidbits": "\"Outstanding in his field\" is a compliment for excellence — but a scarecrow also literally stands out in a farmer's field. He never moved and somehow still won."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What do you call a fish without eyes?",
+      "answerText": "A fsh!",
+      "tidbits": "Spell \"fish\" and remove the letter I — you get \"fsh.\" No eyes, no I. It is the most literally correct pun in marine biology."
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Why can't you play poker in the jungle?",
+      "answerText": "Too many cheetahs!",
+      "tidbits": "\"Cheetahs\" sounds exactly like \"cheaters.\" Cheetahs also live on savannas, not jungles — so there are two mistakes happening here and nobody wins."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What did the Pacific Ocean say to the Atlantic?",
+      "answerText": "Nothing — it just waved!",
+      "tidbits": "Ocean water makes waves, and waving is also how you greet someone. The Pacific is an introvert who communicates through tides."
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What do you call an alligator in a vest?",
+      "answerText": "An investigator!",
+      "tidbits": "Sound it out: \"in-vest-igator.\" Put a vest on an alligator and it legally becomes a detective. The badge was already implied."
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What kind of shoes do frogs wear?",
+      "answerText": "Open-toad sandals!",
+      "tidbits": "\"Open-toed sandals\" becomes \"open-toad sandals.\" Frogs are related to toads, and apparently they prefer the breezy footwear option."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What do you call a sleeping dinosaur?",
+      "answerText": "A dino-snore!",
+      "tidbits": "\"Dinosaur\" plus \"snore\" equals \"dino-snore.\" Scientists have not found evidence that dinosaurs snored, but this theory is just as well-researched as some others."
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Why don't elephants use computers?",
+      "answerText": "Because they're afraid of the mouse!",
+      "tidbits": "Elephants are popularly (if incorrectly) said to fear mice. The computer mouse gave them an entirely new reason to avoid technology."
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Why did the tree go to the dentist?",
+      "answerText": "To get a root canal!",
+      "tidbits": "Trees have roots that grow underground, and a root canal is a dental procedure. The tree was in deep pain — specifically, root deep."
+    },
+    {
+      "id": "blue-011",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Why don't sharks eat clowns?",
+      "answerText": "Because they taste funny!",
+      "tidbits": "\"Taste funny\" means an unusual flavor — but \"funny\" also means amusing. The shark took one bite, laughed, and let the clown go."
+    },
+    {
+      "id": "blue-012",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What do you call a snowman with a six-pack?",
+      "answerText": "An abdominal snowman!",
+      "tidbits": "\"Abominable Snowman\" (the Yeti legend) becomes \"abdominal snowman.\" This one started working out in January and never stopped."
+    },
+    {
+      "id": "blue-013",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Why did the bicycle fall over?",
+      "answerText": "Because it was two-tired!",
+      "tidbits": "\"Two-tired\" sounds like \"too tired.\" A bicycle has two tires, so it is literally two-tired and emotionally exhausted."
+    },
+    {
+      "id": "blue-014",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What do you call a wet bear?",
+      "answerText": "A drizzly bear!",
+      "tidbits": "\"Grizzly bear\" becomes \"drizzly bear.\" A drizzle is light rain. This bear got caught in a shower and is having a very bad Monday."
+    },
+    {
+      "id": "blue-015",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Why do cows wear bells?",
+      "answerText": "Because their horns don't work!",
+      "tidbits": "A horn is both a musical instrument and the protrusion on a cow's head. The horns are built-in but apparently defective, so they switched to bells."
+    },
+    {
+      "id": "blue-016",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "What do you call a dog that does magic tricks?",
+      "answerText": "A Labra-cadabra-dor!",
+      "tidbits": "\"Labrador\" plus \"abracadabra\" equals \"Labra-cadabra-dor.\" The most talented retriever in the kennel. It makes your socks disappear permanently."
+    },
+    {
+      "id": "blue-017",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What do you call a cold wolf?",
+      "answerText": "A chilly dog!",
+      "tidbits": "\"Chilly dog\" sounds like \"chili dog\" — the hot dog topped with chili. This wolf is shivering and craving something warm, ironically."
+    },
+    {
+      "id": "blue-018",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "Why do birds fly south for winter?",
+      "answerText": "Because it's too far to walk!",
+      "tidbits": "The expected answer is \"because it's warmer\" — but the punchline is pure logistics. Wings are more efficient than legs over 2,000 miles, and the birds know it."
+    },
+    {
+      "id": "blue-019",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "What do you call a pile of cats?",
+      "answerText": "A meow-tain!",
+      "tidbits": "\"Mountain\" becomes \"meow-tain.\" Stack enough cats and you have geographic features. The elevation is very fluffy."
+    },
+    {
+      "id": "blue-020",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "Why don't mountains ever get cold?",
+      "answerText": "Because they wear snow caps!",
+      "tidbits": "Mountains wear \"snow caps\" on their peaks, and a cap is clothing that keeps your head warm. They have been dressed for winter since the Ice Age."
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Why did the actor fall through the floor?",
+      "answerText": "It was just a stage!",
+      "tidbits": "\"It's just a stage\" is what parents say about a child going through a phase. A stage is also the platform actors perform on. He fell through both meanings."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What do celebrities eat for breakfast?",
+      "answerText": "Fame-flakes!",
+      "tidbits": "\"Corn Flakes\" becomes \"Fame-flakes.\" A high-fiber cereal fortified with attention and endorsements. Part of a balanced ego."
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Why did the movie director go broke?",
+      "answerText": "He lost the plot!",
+      "tidbits": "\"Lost the plot\" means going off the rails — but a director who literally loses the screenplay also loses the plot of their film. Doubly bankrupt."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Why did the DJ break up with the playlist?",
+      "answerText": "They weren't on the same track!",
+      "tidbits": "\"Not on the same track\" means disagreeing — but a track is also a song on a playlist. The relationship had fundamental musical incompatibility from the start."
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What's a movie villain's favorite button on the remote?",
+      "answerText": "Pause — it gives him time to monologue!",
+      "tidbits": "Villains are famously known for long speeches right before the hero escapes. The pause button enables their worst habit. Heroes always use the time to escape."
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Why did the pop star go to school?",
+      "answerText": "To improve her notes!",
+      "tidbits": "Musical notes and notes on a test paper — the star was failing both academically and vocally. The reviews were brutal. She transferred to online learning."
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What do you call a comedian who tells jokes about pizza?",
+      "answerText": "A real cheesy comedian!",
+      "tidbits": "\"Cheesy\" means corny or low-quality humor — but cheese is also a pizza topping. The jokes were delivered at exactly the right temperature."
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Why did the influencer sit in the dark?",
+      "answerText": "She didn't want any more followers!",
+      "tidbits": "\"Followers\" are social media subscribers — but if someone is following you in the dark, it's a very different situation. She turned off the lights and the notifications."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What kind of music do balloons like?",
+      "answerText": "Pop!",
+      "tidbits": "Balloons pop when they burst, and pop is also a music genre. This is either a concert or a disaster — and the difference is only a sharp object away."
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Why can't country singers play hide and seek?",
+      "answerText": "Because good luck is always running!",
+      "tidbits": "Country songs are full of trucks leaving, luck running out, and things escaping. The game ends before it starts — someone's already left in a pickup."
+    },
+    {
+      "id": "pink-011",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What do you call a fish who stars in movies?",
+      "answerText": "A starfish!",
+      "tidbits": "Starfish (sea stars) are real marine animals — but a \"star fish\" is also a fish who is a movie star. Hollywood has dramatically expanded its casting."
+    },
+    {
+      "id": "pink-012",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Why did the music teacher break her pencil?",
+      "answerText": "She didn't want to take any more notes!",
+      "tidbits": "Taking notes means writing things down. Musical notes are the sounds in a song. She gave up on both simultaneously and had a very productive afternoon."
+    },
+    {
+      "id": "pink-013",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Why did the phone go to therapy?",
+      "answerText": "It had too many hang-ups!",
+      "tidbits": "A \"hang-up\" is a personal anxiety or fixation. It is also what you do when you end a phone call. The phone was deeply troubled and chronically disconnected."
+    },
+    {
+      "id": "pink-014",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What do you call a ghost who hosts a podcast?",
+      "answerText": "A boo-caster!",
+      "tidbits": "\"Broadcaster\" becomes \"boo-caster.\" Ghosts say \"boo,\" and this one has found a very niche audience in the paranormal podcast community."
+    },
+    {
+      "id": "pink-015",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Why do actors make terrible spies?",
+      "answerText": "Because they always break character!",
+      "tidbits": "Spies must maintain their cover identity at all times. Actors \"break character\" when they ruin a scene. This spy blew his cover laughing at the wrong moment."
+    },
+    {
+      "id": "pink-016",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "What did the streaming service say to the remote control?",
+      "answerText": "You really know how to press my buttons!",
+      "tidbits": "Pressing buttons controls a remote — but \"pressing someone's buttons\" also means provoking or annoying them. Their relationship is complicated and fully buffered."
+    },
+    {
+      "id": "pink-017",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "Why don't movies ever get cold?",
+      "answerText": "Because they always have a good cast!",
+      "tidbits": "A \"cast\" is the group of actors in a film — but a cast can also mean the plaster wrap on a broken limb that keeps you warm. The film was well-wrapped."
+    },
+    {
+      "id": "pink-018",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What do you call a sleeping musician?",
+      "answerText": "A rest note!",
+      "tidbits": "A rest in music notation is a period of silence — and resting means sleeping. This musician is completely in the zone and technically still performing."
+    },
+    {
+      "id": "pink-019",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "Why did the YouTube video break up with its thumbnail?",
+      "answerText": "It wasn't clickbait-ing anymore!",
+      "tidbits": "\"Clickbait\" refers to deceptive thumbnails or titles designed to get clicks — also, \"bait\" in fishing is what lures a catch. The thumbnail lost its appeal and its hook."
+    },
+    {
+      "id": "pink-020",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "What do you call a famous cat online?",
+      "answerText": "A mew-fluencer!",
+      "tidbits": "\"Influencer\" becomes \"mew-fluencer.\" \"Mew\" is the sound a cat makes. This feline has 4 million followers and a skincare sponsorship deal."
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Why don't mummies go on vacation?",
+      "answerText": "They're afraid they'll unwind!",
+      "tidbits": "Mummies are wrapped in bandages, so \"unwinding\" literally means their wrappings come off. It also means relaxing. Both outcomes are irreversible."
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What do you call a Roman emperor with a cold?",
+      "answerText": "Julius Sneezer!",
+      "tidbits": "\"Julius Caesar\" becomes \"Julius Sneezer.\" He conquered most of Europe but a common cold sent him to bed. Et tu, tissues?"
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Why did Julius Caesar cross the road?",
+      "answerText": "To get to the other Gaul!",
+      "tidbits": "\"Side\" becomes \"Gaul\" — the ancient region Caesar famously divided into three parts. He always knew exactly where he was going. And why."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What did Cleopatra say when she lost her makeup?",
+      "answerText": "I'm in de-Nile!",
+      "tidbits": "\"In denial\" becomes \"in de-Nile.\" Cleopatra ruled Egypt where the Nile River flows. She refused to believe her eyeliner was gone and simply applied more."
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What do you call a sleeping Viking?",
+      "answerText": "A Norse-napper!",
+      "tidbits": "\"Norse\" refers to Viking culture, and a \"napper\" is someone who takes naps. This Viking went on a raid and took a rest instead. Still counts."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Why didn't the caveman get the joke?",
+      "answerText": "It went over his Cro-Magnon head!",
+      "tidbits": "\"Over your head\" means you didn't understand something. Cro-Magnon humans were early Homo sapiens. The comedy of 30,000 BCE was admittedly ahead of its time."
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What do you call a famous archaeologist's dog?",
+      "answerText": "Indiana Bones!",
+      "tidbits": "\"Indiana Jones\" is the fictional archaeologist — \"Bones\" replaces \"Jones.\" Dogs have bones and love to dig. This dog has a very fulfilling career."
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What did the ancient Greek say after his workout?",
+      "answerText": "I'm Hercul-done!",
+      "tidbits": "\"Hercules\" plus \"I'm done\" equals \"Hercul-done.\" Hercules was the strongest hero in Greek mythology, and even he needed to cool down after leg day."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Why did Napoleon always carry a pen?",
+      "answerText": "In case he needed to draw a retreat!",
+      "tidbits": "\"Draw a retreat\" — ordering a military withdrawal and sketching a diagram. Napoleon had a habit of tactical retreats. He was prepared for both situations."
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Why did the Viking refuse to fight?",
+      "answerText": "He didn't have the Odin-ary courage!",
+      "tidbits": "\"Ordinary\" becomes \"Odin-ary.\" Odin is the chief Norse god. Lacking basic bravery is extremely embarrassing in Viking culture. He was reassigned to the longship kitchen."
+    },
+    {
+      "id": "yellow-011",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What did the Trojan Horse say to the city gates?",
+      "answerText": "I'm just horsing around — open up!",
+      "tidbits": "The Trojan Horse was the famous wooden horse full of Greek soldiers. \"Horsing around\" means joking. Troy really should have questioned the gift more carefully."
+    },
+    {
+      "id": "yellow-012",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Why was the medieval knight always tired?",
+      "answerText": "Because he had heavy metal fatigue!",
+      "tidbits": "\"Heavy metal fatigue\" is a real metallurgy term for when metal weakens under stress. Knights wore very heavy armor all day. The genre joke is a bonus."
+    },
+    {
+      "id": "yellow-013",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Why did the ancient Roman go to school?",
+      "answerText": "He wanted to be better versed in Latin!",
+      "tidbits": "\"Well-versed\" means knowledgeable. Latin verse is Roman poetry. He enrolled to study his own language, which seemed redundant but the grades were excellent."
+    },
+    {
+      "id": "yellow-014",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What's a pirate's favorite letter?",
+      "answerText": "You'd think it's R, but his true love is the C!",
+      "tidbits": "Pirates famously say \"Arrr!\" — suggesting the letter R. But a pirate's true love is the \"C\" (sea). They have sailed it their entire career. The letter R was jealous."
+    },
+    {
+      "id": "yellow-015",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Why did the ancient Egyptians build pyramids?",
+      "answerText": "Because they couldn't build circles!",
+      "tidbits": "Pyramids have a specific triangular profile with deep architectural purpose — but the punchline suggests the builders just hadn't considered other shapes. Ancient constraints."
+    },
+    {
+      "id": "yellow-016",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What do you call a Roman who skips leg day?",
+      "answerText": "A Julius Quadzilla!",
+      "tidbits": "\"Julius Caesar\" meets the legendary monster Godzilla via \"quads\" (quadriceps muscles). He conquered the ancient world but avoided the squat rack. History judges him."
+    },
+    {
+      "id": "yellow-017",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Why did the Pharaoh see a therapist?",
+      "answerText": "Too many buried feelings!",
+      "tidbits": "Pharaohs are buried in elaborate tombs with all their possessions. \"Burying your feelings\" means suppressing emotions. He had layers of both, sealed under 3,000 years of rock."
+    },
+    {
+      "id": "yellow-018",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "Why was the medieval sword always happy?",
+      "answerText": "Because it had a sharp wit!",
+      "tidbits": "A \"sharp wit\" means quick, clever humor — and a sword is literally sharp. This blade had excellent comedic timing and a very pointy delivery."
+    },
+    {
+      "id": "yellow-019",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "Why did the Greek philosopher cross the road?",
+      "answerText": "To examine life on the other side!",
+      "tidbits": "Socrates said \"the unexamined life is not worth living.\" Crossing the road to examine the other side is both a logical response and the least efficient form of philosophy."
+    },
+    {
+      "id": "yellow-020",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "What do you call a Norse god who loves coffee?",
+      "answerText": "Thor-midor roast!",
+      "tidbits": "\"Thor\" plus \"thermidor\" (a high-heat cooking method) plus \"roast\" (a coffee preparation). Thor wields lightning, which is basically high-heat — so the roast level checks out."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Why did the artist go to jail?",
+      "answerText": "Because he was framed!",
+      "tidbits": "\"Being framed\" means being set up for a crime you didn't commit — but paintings are also put in frames. The innocent canvas said nothing at trial."
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Why did the cartoonist get fired?",
+      "answerText": "He couldn't draw a conclusion!",
+      "tidbits": "\"Draw a conclusion\" means to reach a logical end — and drawing is what cartoonists do. He was incapable of finishing either a logical argument or a comic strip."
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Why did Van Gogh become a painter?",
+      "answerText": "Because he didn't have an ear for music!",
+      "tidbits": "Van Gogh famously cut off part of his own ear. \"No ear for music\" means tone-deaf. He chose painting for entirely sensible reasons."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What did one paintbrush say to the other?",
+      "answerText": "I really get a stroke out of this!",
+      "tidbits": "A brush stroke is how paint is applied — and \"getting a stroke\" can mean having a great time or a medical event. The brushes were enthusiastic either way."
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Why did the pencil break up with the eraser?",
+      "answerText": "Because the eraser kept rubbing it the wrong way!",
+      "tidbits": "\"Rubbing someone the wrong way\" means irritating them — and erasers work by rubbing marks away. This was an incompatible relationship from the very first line."
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What do you call an art thief who only steals clocks?",
+      "answerText": "A master of timepieces!",
+      "tidbits": "\"Masterpiece\" (a great work of art) becomes \"master of timepieces.\" A timepiece is a clock. This criminal has very specific taste and an excellent alibi."
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Why did the watercolor cry?",
+      "answerText": "Because it couldn't hold it together!",
+      "tidbits": "Watercolors are known for bleeding and blending when wet — they literally cannot hold their shape. \"Can't hold it together\" also means falling apart emotionally. Very relatable medium."
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What did Picasso say when he was cold?",
+      "answerText": "I'm having a blue period!",
+      "tidbits": "Picasso's Blue Period (1901–1904) featured paintings mostly in blue tones, associated with sadness. Being cold also makes you feel blue. He was miserable and incredibly productive."
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Why do artists make great bakers?",
+      "answerText": "They know how to use a glaze!",
+      "tidbits": "A glaze in baking is a shiny coating on pastries — a glaze in painting is a thin transparent layer of color. Artists have cross-disciplinary skills nobody expected."
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What do you call a sketch that tells jokes?",
+      "answerText": "A comic!",
+      "tidbits": "A \"comic\" is both a sketch-based cartoon strip and a comedian who tells jokes. This art form has been doing double duty all along and billing for both."
+    },
+    {
+      "id": "purple-011",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Why did the art museum go out of business?",
+      "answerText": "It had too many drawbacks!",
+      "tidbits": "\"Drawback\" means a disadvantage or flaw — and drawing is what artists do. The museum was losing on every level. The gift shop was the only profitable exhibit."
+    },
+    {
+      "id": "purple-012",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What do you call an animated movie about laundry?",
+      "answerText": "A spin-off!",
+      "tidbits": "A \"spin-off\" is a media franchise extension based on an original work — clothes in a washing machine also spin. This animated laundry saga reportedly has three sequels."
+    },
+    {
+      "id": "purple-013",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Why did the sculptor go on a diet?",
+      "answerText": "She had a lot on her plate and kept chipping away at it!",
+      "tidbits": "\"A lot on your plate\" means being overwhelmed. Sculptors chip away at stone. She was managing both simultaneously with the dedication of a true artist."
+    },
+    {
+      "id": "purple-014",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Why did the art student fail the test?",
+      "answerText": "She just couldn't get the picture!",
+      "tidbits": "\"Get the picture\" means to understand something. Understanding a painting is also what art criticism requires. She failed both the test and the gallery critique."
+    },
+    {
+      "id": "purple-015",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Why are cartoons always so happy?",
+      "answerText": "Because they draw their own smiles!",
+      "tidbits": "Cartoon characters are literally drawn — including their expressions. They have complete control over their emotional state and have chosen perpetual joy. Smart."
+    },
+    {
+      "id": "purple-016",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "What do you call a bear in a Cubist painting?",
+      "answerText": "A Cubist!",
+      "tidbits": "Cubism is the famous abstract art style invented by Picasso and Braque. A bear painted in Cubism would have 47 noses from 12 different angles and be unfathomable."
+    },
+    {
+      "id": "purple-017",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "Why did the comic book villain become a chef?",
+      "answerText": "He wanted to take over the world — one dish at a time!",
+      "tidbits": "Classic villain world domination meets culinary ambition. The restaurant empire strategy is underrated. He started with a food truck and now controls three time zones."
+    },
+    {
+      "id": "purple-018",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Why couldn't the artist finish the painting?",
+      "answerText": "She kept drawing a blank!",
+      "tidbits": "\"Drawing a blank\" means being unable to think of something — and drawing is literally what the artist does. The canvas and the mind were equally empty."
+    },
+    {
+      "id": "purple-019",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "What do you call a cartoonist who is also a locksmith?",
+      "answerText": "Someone who really draws the line!",
+      "tidbits": "\"Drawing the line\" means setting a limit or boundary — and artists draw lines as their primary activity. The locksmith side of the business handles all the key art."
+    },
+    {
+      "id": "purple-020",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "Why do painters always win arguments?",
+      "answerText": "Because they always make their point!",
+      "tidbits": "\"Making your point\" means proving your argument — and a painter uses a pointy brush to apply paint. This artist is both persuasive and well-equipped."
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Why did the computer go to the doctor?",
+      "answerText": "Because it had a virus!",
+      "tidbits": "Computer viruses are malicious software programs — biological viruses make you sick. The computer sneezed binary code and had to take the week off."
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What do you call a fish that knows how to code?",
+      "answerText": "A Python!",
+      "tidbits": "Python is one of the most popular programming languages. It is also a large snake, not a fish — but the pun works better this way. The fish graduated top of its class."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What's an astronaut's favorite key on the keyboard?",
+      "answerText": "The space bar!",
+      "tidbits": "The space bar is the longest key on a keyboard, used to create spaces between words — and space is where astronauts work. It is the most cosmically important key."
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Why don't scientists trust atoms?",
+      "answerText": "Because they make up everything!",
+      "tidbits": "Atoms are the building blocks of all matter — they literally make up everything in the universe. \"Making things up\" also means lying. Atoms are the universe's biggest fibbers."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Why did the programmer quit his job?",
+      "answerText": "He didn't get arrays!",
+      "tidbits": "\"Didn't get any raises\" sounds like \"didn't get arrays.\" An array is a fundamental data structure in programming. He asked for a salary increase and received a variable instead."
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What did the WiFi say to the laptop?",
+      "answerText": "I feel a strong connection!",
+      "tidbits": "WiFi and laptops connect wirelessly — and \"feeling a connection\" is what you say when you bond with someone. This is a love story measured entirely in megabits."
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Why did the math teacher go to the beach?",
+      "answerText": "To work on some tangents!",
+      "tidbits": "A tangent in math is a line that touches a curve at one point — going \"off on a tangent\" means digressing wildly. The teacher was doing both while building a sand fortress."
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Why was the math book always stressed?",
+      "answerText": "Because it had too many problems!",
+      "tidbits": "A math book is full of practice problems — and having \"too many problems\" means your life is difficult. The book sought therapy and found it had imaginary solutions."
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Why don't robots ever panic?",
+      "answerText": "They always keep their cool-ant!",
+      "tidbits": "Coolant is the fluid that keeps machines from overheating. \"Keeping your cool\" means staying calm under pressure. Robots are chemically chilled and emotionally unflappable."
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Why did the biologist break up with the physicist?",
+      "answerText": "Because there was no chemistry!",
+      "tidbits": "\"No chemistry\" describes romantic incompatibility — and Chemistry is the science that sits between biology and physics. The irony was noted by everyone except them."
+    },
+    {
+      "id": "green-011",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What do you call an astronaut's favorite chocolate?",
+      "answerText": "A Mars bar!",
+      "tidbits": "Mars bars are a popular chocolate candy. Mars is also the fourth planet from the Sun, a destination for future crewed missions. The candy is the closest most of us will get."
+    },
+    {
+      "id": "green-012",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Why did the electrician get in trouble?",
+      "answerText": "He was always making light of serious situations!",
+      "tidbits": "\"Making light of\" means treating something serious as a joke. Electricians literally make light by wiring circuits and installing fixtures. His humor was consistently well-lit."
+    },
+    {
+      "id": "green-013",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Why did the cell phone need glasses?",
+      "answerText": "It lost all its contacts!",
+      "tidbits": "\"Losing contacts\" on a phone means your address book was deleted — contact lenses are worn when you have bad eyesight. The phone is now both near-sighted and friendless."
+    },
+    {
+      "id": "green-014",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "Why did the astronomer get arrested?",
+      "answerText": "He was caught mooning everyone!",
+      "tidbits": "\"Mooning\" someone is a slang term for showing your backside as a prank — an astronomer also studies the moon professionally. The charges were confusing for everyone involved."
+    },
+    {
+      "id": "green-015",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "What did one tectonic plate say to the other when they collided?",
+      "answerText": "My fault!",
+      "tidbits": "Geological faults are the fracture zones where tectonic plates meet and cause earthquakes. \"My fault\" also means \"I'm to blame.\" This is the most self-aware plate in geology."
+    },
+    {
+      "id": "green-016",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Why did the chemistry teacher take up gardening?",
+      "answerText": "She had a natural reaction to it!",
+      "tidbits": "A \"natural reaction\" means an instinctive response — in chemistry, reactions are the core subject. Her enthusiasm was entirely organic."
+    },
+    {
+      "id": "green-017",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What do you call a number that can't sit still?",
+      "answerText": "A roamin' numeral!",
+      "tidbits": "\"Roman numeral\" (I, V, X, L, C) becomes \"roamin' numeral.\" Roman numerals are an ancient numbering system — but this one just can't stop moving around the number line."
+    },
+    {
+      "id": "green-018",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Why did the sun go to school?",
+      "answerText": "To get a little brighter!",
+      "tidbits": "\"Brighter\" can mean more intelligent or more luminous. The sun enrolled in kindergarten and was already overqualified. It still asked great questions about nuclear fusion."
+    },
+    {
+      "id": "green-019",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "What did the ocean say to the beach?",
+      "answerText": "Nothing. It just waved. Then sent a shore message!",
+      "tidbits": "Waves are the ocean's greeting, and \"shore\" sounds like \"sure.\" A \"shore message\" replaces a \"sure message.\" The ocean communicates exclusively through geological puns."
+    },
+    {
+      "id": "green-020",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "Why did the comet get a speeding ticket?",
+      "answerText": "It was caught in a meteor shower!",
+      "tidbits": "A meteor shower is when debris burns up in Earth's atmosphere — but \"shower\" also suggests being doused in something. The comet was going 70,000 mph in a 65,000 mph zone."
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Why did the football coach go to the bank?",
+      "answerText": "To get his quarterback!",
+      "tidbits": "A quarterback is the key position in American football — and getting your \"quarter back\" means reclaiming 25 cents. The coach negotiated a very specific refund."
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What do basketball players eat for breakfast?",
+      "answerText": "Three-point meals!",
+      "tidbits": "A three-point shot is the highest-scoring regular play in basketball — \"three-point meal\" replaces \"three-course meal.\" The athlete is optimizing every aspect of game day."
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Why did the golfer bring extra pants?",
+      "answerText": "In case he got a hole in one!",
+      "tidbits": "A \"hole in one\" is when a golfer sinks the ball with a single shot — it's rare and celebrated. Pants with a hole in them are ruined. He packed spares for both outcomes."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Why can't Cinderella play soccer?",
+      "answerText": "Because she always runs away from the ball!",
+      "tidbits": "Cinderella runs away from the royal ball at midnight. In soccer, staying with the ball is essential. She is constitutionally unable to commit and her cleats were glass."
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Why did the gym close down?",
+      "answerText": "It just didn't work out!",
+      "tidbits": "\"Work out\" means to exercise at the gym — it also means to succeed or resolve well. The gym failed on both counts at exactly the same time."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Why did the baseball team go to the library?",
+      "answerText": "To improve their pitching!",
+      "tidbits": "\"Pitching\" a business idea means presenting it persuasively — a pitcher also throws the ball in baseball. The outfield is now surprisingly well-read and articulate."
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Why did the soccer player bring string to the game?",
+      "answerText": "To tie the score!",
+      "tidbits": "\"Tie the score\" means to equalize in a match — and tying something requires string or rope. She came prepared for both athletic and practical contingencies."
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What do you call a karate champion who mops floors?",
+      "answerText": "Bruce Clean!",
+      "tidbits": "\"Bruce Lee\" becomes \"Bruce Clean.\" Bruce Lee is the legendary martial artist. This version has identical moves but a completely different job description and uniform."
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Why did the hockey player go to the dentist?",
+      "answerText": "He wanted to improve his face-off!",
+      "tidbits": "A face-off is how play starts in hockey — players face each other and the puck drops between them. The dentist assessed the teeth and agreed a better face was needed overall."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What do you call a lazy athlete?",
+      "answerText": "A sports couch potato!",
+      "tidbits": "A couch potato is someone who lies on the couch doing nothing. This athlete has merged the lifestyle with the sport. They are training for the horizontal sprint."
+    },
+    {
+      "id": "orange-011",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Why did the video game villain go to therapy?",
+      "answerText": "He had too many final boss issues!",
+      "tidbits": "\"Boss issues\" means problems with authority figures. In video games, the final boss is the ultimate obstacle. He has been defeated 500 times and has complex feelings about it."
+    },
+    {
+      "id": "orange-012",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Why did the swimmer bring a towel to school?",
+      "answerText": "She heard the teacher was going to give a pop quiz — and she wanted to dry off from the drills!",
+      "tidbits": "A \"pop quiz\" is a surprise test — and this swimmer confused schoolwork with swim practice. She trained for both and was prepared for neither."
+    },
+    {
+      "id": "orange-013",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What do you call a running back who also knits?",
+      "answerText": "A yarn gainer!",
+      "tidbits": "A \"yardage gain\" is when a player moves forward in football — \"yard\" becomes \"yarn.\" This running back has excellent stats and is working on a very long scarf."
+    },
+    {
+      "id": "orange-014",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Why don't skeletons play sports?",
+      "answerText": "Because they have no body to play with!",
+      "tidbits": "\"No body to play with\" sounds like \"nobody to play with.\" Skeletons literally have no body — just bones. They were cut from the team on purely anatomical grounds."
+    },
+    {
+      "id": "orange-015",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What's a swimmer's favorite subject in school?",
+      "answerText": "Pool-itics!",
+      "tidbits": "\"Politics\" becomes \"Pool-itics.\" This swimmer cares deeply about governance but only within aquatic environments. They ran for class president on a platform of better lane ropes."
+    },
+    {
+      "id": "orange-016",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Why did the tennis player get sent home from school?",
+      "answerText": "He had too many faults!",
+      "tidbits": "In tennis, a \"fault\" is when a serve doesn't land in the correct area — having \"too many faults\" in school means making too many mistakes. He was suspended from both simultaneously."
+    },
+    {
+      "id": "orange-017",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "What do you call a video game character who becomes a chef?",
+      "answerText": "A level-headed cook!",
+      "tidbits": "\"Leveling up\" is how characters grow in video games — a \"level-headed\" person is calm and rational. This character maxed out the cooking skill tree and opened a restaurant."
+    },
+    {
+      "id": "orange-018",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "Why did the basketball player go to the bank?",
+      "answerText": "He heard they had great interest in assists!",
+      "tidbits": "\"Interest\" is what banks charge on loans — an \"assist\" in basketball is when you help a teammate score. The bank confirmed they mostly prefer deposits. The player was disappointed."
+    },
+    {
+      "id": "orange-019",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "Why did the bowling pins go on strike?",
+      "answerText": "Because they were tired of being knocked around!",
+      "tidbits": "A \"strike\" in bowling is knocking all pins down in one throw — going on strike also means refusing to work as a protest. The pins organized and nobody blamed them."
+    },
+    {
+      "id": "orange-020",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "What do you call a sprinter who also makes coffee?",
+      "answerText": "A fast espresso-o athlete!",
+      "tidbits": "Espresso is the fast concentrated coffee shot — a sprinter is the fastest human athlete. This person gets everything done in under 10 seconds and then immediately needs another cup."
+    }
+  ]
+}
