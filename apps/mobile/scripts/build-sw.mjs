@@ -33,8 +33,10 @@ const { count, size, warnings } = await generateSW({
   maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
   // SPA: serve index.html for all navigation requests
   navigateFallback: '/index.html',
+  // Let /statusz pass through to the network so Netlify's rewrite to statusz.json works
+  navigateFallbackDenylist: [/^\/statusz$/],
   // Cache ID — bump this to orphan old Workbox caches on all clients
-  cacheId: 'tw-v2',
+  cacheId: 'tw-v3',
   // Auto-activate new SW and claim open tabs immediately
   skipWaiting: true,
   clientsClaim: true,
