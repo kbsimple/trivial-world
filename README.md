@@ -12,16 +12,17 @@ Trivial World enables in-person social trivia gameplay where one person acts as 
 
 - **Game Conductor Model**: One person reads questions, everyone plays together
 - **6 Trivia Categories**: Adapted from Trivial Pursuit for modern interests
-- **Custom Question Packs**: AI-powered question generation via web app
+- **Custom Question Packs**: Generate packs in Claude chat with `/tw-add-pack` — no Ollama needed
 - **Offline-First**: No network required for core gameplay
-- **Built-in Default Pack**: 120 questions included, ready to play
+- **Growing Pack Library**: 20+ packs available at [trivial-world.netlify.app](https://trivial-world.netlify.app)
 
 ## Prerequisites
 
 - **Node.js** 18+
 - **pnpm** 9.0+ (`npm install -g pnpm`)
 - **Expo CLI** (installed automatically)
-- **Ollama** (optional, for AI question generation)
+- **Claude Code** (optional, for generating question packs via `/tw-add-pack`)
+- **Ollama** (optional, for the standalone generator web app only)
 
 ## Installation
 
@@ -71,8 +72,8 @@ The generator app will start at `http://localhost:3000`.
 
 1. **Open the app** on your mobile device
 2. **Select a question pack** from the pack selection screen
-   - The built-in "Default Pack" contains 120 questions across all categories
-   - Download additional packs from the generator web app
+   - 20+ packs are available — the Starter Pack is included by default
+   - Add more packs at any time with `/tw-add-pack` in Claude Code
 3. **Add participants** — Enter names for each player (minimum 1 player)
 4. **Tap "Start Game"** to begin
 
@@ -104,43 +105,57 @@ Collect all 6 category wedges to win! Wedges are earned by answering questions c
 
 ## Creating Custom Question Packs
 
-### Prerequisites
+The fastest way to add a pack is with the `tw-add-pack` Claude skill — no external tools or Ollama required. Claude generates questions directly in chat, you review and approve them, and the skill installs and deploys the pack automatically.
 
-- **Ollama** installed and running (`ollama serve`)
-- **Language model** pulled (`ollama pull llama3.2` or similar)
+### Using the `tw-add-pack` skill (recommended)
 
-### Steps
+In a Claude Code session at the repo root:
 
-1. **Start the generator app** (`cd apps/generator && pnpm dev`)
-2. **Open** `http://localhost:3000` in your browser
-3. **Enter pack metadata**:
-   - Pack name, description, author
-   - Select categories to include
-   - Set difficulty levels
-4. **Generate questions**:
-   - Enter a topic or question prompt
-   - Click "Generate" — the AI creates questions
-   - Review each question for accuracy
-   - Edit or approve as needed
-5. **Export the pack**:
-   - Minimum 20 approved questions required
-   - Click "Download Pack" to get a JSON file
-6. **Load into mobile app**:
-   - Host the JSON file on a web server
-   - Enter the pack URL in the mobile app's pack selection screen
+```
+/tw-add-pack
+```
 
-### Question Pack Format
+Claude will ask for a topic, pack name, author, which categories to include, and how many questions per category. It then:
 
-Question packs are JSON files following this structure:
+1. Generates all questions in chat for your review
+2. Applies any corrections you request
+3. Builds the pack JSON with a proper UUID, checksum, and metadata
+4. Installs it to `apps/mobile/public/packs/`
+5. Updates the pack index at `apps/mobile/public/api/v1/packs.json`
+6. Commits and pushes — Netlify deploys in ~1 minute
+
+**To install a pre-made pack JSON file:**
+
+```
+/tw-add-pack path/to/mypack.json
+```
+
+The skill validates the file and runs the install/deploy steps.
+
+### Question pack format
+
+Pack files follow this structure:
 
 ```json
 {
-  "id": "pack-uuid",
-  "name": "My Custom Pack",
-  "version": "1.0.0",
+  "metadata": {
+    "id": "<RFC-4122 UUID>",
+    "name": "My Custom Pack",
+    "description": "One-sentence description.",
+    "version": "1.0.0",
+    "author": "Author Name",
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z",
+    "categoryCounts": { "blue": 10, "pink": 10, "yellow": 10, "purple": 10, "green": 10, "orange": 10 },
+    "totalQuestions": 60,
+    "checksum": "<sha256 of serialized questions array>",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 0
+  },
   "questions": [
     {
-      "id": "q1",
+      "id": "blue-001",
       "category": "blue",
       "questionText": "What is the capital of France?",
       "answerText": "Paris",
@@ -148,6 +163,21 @@ Question packs are JSON files following this structure:
     }
   ]
 }
+```
+
+Valid `difficulty` values: `"easy"`, `"medium"`, `"hard"`.
+
+### Generator web app (offline/batch alternative)
+
+A standalone Next.js generator app lives at `apps/generator`. It uses Ollama for AI generation and is useful for batch workflows outside of Claude sessions.
+
+```bash
+# Requires Ollama running locally
+ollama serve
+ollama pull llama3.2
+
+cd apps/generator && pnpm dev
+# Open http://localhost:3000
 ```
 
 ## Project Structure
