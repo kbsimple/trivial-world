@@ -428,6 +428,25 @@
       "downloadUrl": "https://trivial-world.netlify.app/packs/groaner-jokes-25837339.json",
       "checksum": "bec2cfa5e45ed0994b39cc9fc647c0eef1efaed3406f548f48893f6fbcfbae75",
       "size": 47654
+    },
+    {
+      "id": "597a6b21-26c6-4622-a53f-3a566b708d7f",
+      "name": "Who Said It — Life Wisdom",
+      "description": "120 multiple-choice quotes from history's greatest minds — philosophers, scientists, artists, athletes, and leaders. Read the quote; name the source.",
+      "author": "Trivial World Team",
+      "version": "1.0.0",
+      "totalQuestions": 120,
+      "categoryCounts": {
+        "blue": 20,
+        "pink": 20,
+        "yellow": 20,
+        "purple": 20,
+        "green": 20,
+        "orange": 20
+      },
+      "downloadUrl": "https://trivial-world.netlify.app/packs/who-said-it-life-wisdom-597a6b21.json",
+      "checksum": "7422de7727be8e4224531d398c051c78f2ee893ac53779b294c89eb7e575dbd6",
+      "size": 76640
     }
   ]
 }

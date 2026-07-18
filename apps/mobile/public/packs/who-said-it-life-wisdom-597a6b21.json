@@ -1,0 +1,1826 @@
+{
+  "metadata": {
+    "id": "597a6b21-26c6-4622-a53f-3a566b708d7f",
+    "name": "Who Said It — Life Wisdom",
+    "description": "120 multiple-choice quotes from history's greatest minds — philosophers, scientists, artists, athletes, and leaders. Read the quote; name the source. 20 questions per category, all difficulties.",
+    "version": "1.0.0",
+    "author": "Trivial World Team",
+    "createdAt": "2026-07-18T00:00:00.000Z",
+    "updatedAt": "2026-07-18T00:00:00.000Z",
+    "categoryCounts": {
+      "blue": 20,
+      "pink": 20,
+      "yellow": 20,
+      "purple": 20,
+      "green": 20,
+      "orange": 20
+    },
+    "totalQuestions": 120,
+    "checksum": "7422de7727be8e4224531d398c051c78f2ee893ac53779b294c89eb7e575dbd6",
+    "schemaVersion": "1.0.0",
+    "contentEncoding": "identity",
+    "size": 76640
+  },
+  "questions": [
+    {
+      "id": "blue-001",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "\"In every walk with nature, one receives far more than he seeks.\" — Who said this?",
+      "answerText": "John Muir",
+      "choices": [
+        "Henry David Thoreau",
+        "John Muir",
+        "Ralph Waldo Emerson",
+        "Walt Whitman"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Muir wrote this in an 1875 letter. Known as the Father of the National Parks, he co-founded the Sierra Club and led the campaign to protect Yosemite Valley."
+    },
+    {
+      "id": "blue-002",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "\"Not all those who wander are lost.\" — Who said this?",
+      "answerText": "J.R.R. Tolkien",
+      "choices": [
+        "J.R.R. Tolkien",
+        "C.S. Lewis",
+        "Jack Kerouac",
+        "Robert Louis Stevenson"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "This line appears in a poem about Aragorn in The Fellowship of the Ring (1954). Tolkien embedded it to show that purposeful wandering has its own wisdom."
+    },
+    {
+      "id": "blue-003",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "\"Look deep into nature, and then you will understand everything better.\" — Who said this?",
+      "answerText": "Albert Einstein",
+      "choices": [
+        "Charles Darwin",
+        "Carl Sagan",
+        "Albert Einstein",
+        "Richard Feynman"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Einstein said this in 1951. Despite being a theoretical physicist, he often wrote about nature as the deepest teacher of truth."
+    },
+    {
+      "id": "blue-004",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "\"The world is a book, and those who do not travel read only one page.\" — Who said this?",
+      "answerText": "Saint Augustine",
+      "choices": [
+        "Voltaire",
+        "Marco Polo",
+        "Benjamin Franklin",
+        "Saint Augustine"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Augustine of Hippo (354–430 AD) wrote this. The 5th-century theologian and philosopher is one of history's most prolific thinkers — and apparently a strong advocate for travel."
+    },
+    {
+      "id": "blue-005",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "\"To travel is to live.\" — Who said this?",
+      "answerText": "Hans Christian Andersen",
+      "choices": [
+        "Victor Hugo",
+        "Hans Christian Andersen",
+        "Jules Verne",
+        "Mark Twain"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "The Danish author of The Little Mermaid and The Ugly Duckling wrote this in his autobiography 'The Fairy Tale of My Life' (1855). He was an obsessive traveler across Europe."
+    },
+    {
+      "id": "blue-006",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "\"Earth provides enough to satisfy every man's needs, but not every man's greed.\" — Who said this?",
+      "answerText": "Mahatma Gandhi",
+      "choices": [
+        "Mahatma Gandhi",
+        "Nelson Mandela",
+        "Martin Luther King Jr.",
+        "Jawaharlal Nehru"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Gandhi said this during India's independence movement, emphasizing his philosophy of simple living. It remains one of the most cited environmental and ethical quotes."
+    },
+    {
+      "id": "blue-007",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "\"I am not afraid of storms, for I am learning how to sail my ship.\" — Who said this?",
+      "answerText": "Louisa May Alcott",
+      "choices": [
+        "Jane Austen",
+        "Charlotte Brontë",
+        "Emily Brontë",
+        "Louisa May Alcott"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Jo March says this in Little Women (1868). Alcott wrote it as life advice through her protagonist — she herself faced poverty, gender discrimination, and chronic illness."
+    },
+    {
+      "id": "blue-008",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "\"The sea, once it casts its spell, holds one in its net of wonder forever.\" — Who said this?",
+      "answerText": "Jacques Cousteau",
+      "choices": [
+        "Ernest Hemingway",
+        "Jacques Cousteau",
+        "Herman Melville",
+        "Jules Verne"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Cousteau (1910–1997), the legendary French oceanographer, co-invented the Aqua-Lung and dedicated his life to making the ocean accessible and known to the world."
+    },
+    {
+      "id": "blue-009",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "\"Adopt the pace of nature: her secret is patience.\" — Who said this?",
+      "answerText": "Ralph Waldo Emerson",
+      "choices": [
+        "Ralph Waldo Emerson",
+        "Henry David Thoreau",
+        "William Wordsworth",
+        "John Keats"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Emerson wrote this in his journals. His philosophy of Transcendentalism placed nature at the center of human spiritual development, influencing a generation of American thinkers."
+    },
+    {
+      "id": "blue-010",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "\"We need the tonic of wildness.\" — Who said this?",
+      "answerText": "Henry David Thoreau",
+      "choices": [
+        "Ralph Waldo Emerson",
+        "Walt Whitman",
+        "Henry David Thoreau",
+        "John Muir"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Thoreau wrote this in Walden (1854). He argued that wilderness was essential for human health and renewal — predating the conservation movement by decades."
+    },
+    {
+      "id": "blue-011",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "\"One touch of nature makes the whole world kin.\" — Who said this?",
+      "answerText": "William Shakespeare",
+      "choices": [
+        "Francis Bacon",
+        "Christopher Marlowe",
+        "Ben Jonson",
+        "William Shakespeare"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Ulysses speaks this line in Troilus and Cressida (Act 3, Scene 3). Shakespeare used it to suggest that shared human nature and the natural world connect all people across differences."
+    },
+    {
+      "id": "blue-012",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "\"A nation that destroys its soils destroys itself.\" — Who said this?",
+      "answerText": "Franklin D. Roosevelt",
+      "choices": [
+        "Theodore Roosevelt",
+        "Franklin D. Roosevelt",
+        "Abraham Lincoln",
+        "Woodrow Wilson"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "FDR wrote this in a 1937 letter urging governors to pass uniform soil conservation laws. His New Deal era created the Civilian Conservation Corps and dozens of environmental programs."
+    },
+    {
+      "id": "blue-013",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "\"Nature does not hurry, yet everything is accomplished.\" — Who said this?",
+      "answerText": "Lao Tzu",
+      "choices": [
+        "Confucius",
+        "Lao Tzu",
+        "Sun Tzu",
+        "Zhuangzi"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "This reflects the Taoist principle of wu wei (effortless action) from the Tao Te Ching. Lao Tzu taught that the most powerful forces in nature work without apparent striving."
+    },
+    {
+      "id": "blue-014",
+      "category": "blue",
+      "difficulty": "easy",
+      "questionText": "\"Look up at the stars and not down at your feet.\" — Who said this?",
+      "answerText": "Stephen Hawking",
+      "choices": [
+        "Carl Sagan",
+        "Neil deGrasse Tyson",
+        "Stephen Hawking",
+        "Edwin Hubble"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Hawking said this during a 2008 MIT commencement address. He offered it as life advice drawn from his own experience living with ALS for over 50 years while still reaching for the cosmos."
+    },
+    {
+      "id": "blue-015",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "\"What makes the desert beautiful is that somewhere it hides a well.\" — Who said this?",
+      "answerText": "Antoine de Saint-Exupéry",
+      "choices": [
+        "Albert Camus",
+        "Antoine de Saint-Exupéry",
+        "André Gide",
+        "Marcel Proust"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "The Little Prince says this in Chapter 24 of Saint-Exupéry's 1943 novella. The author was a French aviator and writer who disappeared over the Mediterranean during World War II."
+    },
+    {
+      "id": "blue-016",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "\"The poetry of the earth is never dead.\" — Who said this?",
+      "answerText": "John Keats",
+      "choices": [
+        "William Blake",
+        "Percy Bysshe Shelley",
+        "John Keats",
+        "William Wordsworth"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Keats wrote this in his sonnet 'On the Grasshopper and Cricket' (1816). He argued that nature produces eternal beauty regardless of the season — even in winter, life goes on beneath the surface."
+    },
+    {
+      "id": "blue-017",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "\"Travel brings power and love back into your life.\" — Who said this?",
+      "answerText": "Rumi",
+      "choices": [
+        "Omar Khayyam",
+        "Hafez",
+        "Ibn Battuta",
+        "Rumi"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Jalal ad-Din Rumi (1207–1273), the Persian Sufi poet, wrote extensively about the journey as a metaphor for spiritual awakening. He is the best-selling poet in the United States today."
+    },
+    {
+      "id": "blue-018",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "\"Conservation is a state of harmony between men and land.\" — Who said this?",
+      "answerText": "Aldo Leopold",
+      "choices": [
+        "John Muir",
+        "Henry David Thoreau",
+        "Aldo Leopold",
+        "Rachel Carson"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Leopold wrote this in A Sand County Almanac (1949). The wildlife ecologist and forester is widely considered the father of the modern conservation movement and the field of wildlife ecology."
+    },
+    {
+      "id": "blue-019",
+      "category": "blue",
+      "difficulty": "hard",
+      "questionText": "\"The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.\" — Who said this?",
+      "answerText": "Marcel Proust",
+      "choices": [
+        "Marcel Proust",
+        "André Gide",
+        "Gustave Flaubert",
+        "Émile Zola"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Proust wrote this in In Search of Lost Time (c. 1920). His insight that perception — not destination — defines discovery became one of travel literature's most quoted philosophical statements."
+    },
+    {
+      "id": "blue-020",
+      "category": "blue",
+      "difficulty": "medium",
+      "questionText": "\"For my part, I travel not to go anywhere, but to go. I travel for travel's sake.\" — Who said this?",
+      "answerText": "Robert Louis Stevenson",
+      "choices": [
+        "Mark Twain",
+        "Robert Louis Stevenson",
+        "Jules Verne",
+        "Joseph Conrad"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Stevenson wrote this in Travels with a Donkey in the Cévennes (1879). The author of Treasure Island and Strange Case of Dr Jekyll and Mr Hyde was a lifelong restless traveler."
+    },
+    {
+      "id": "pink-001",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "\"Be yourself; everyone else is already taken.\" — Who said this?",
+      "answerText": "Oscar Wilde",
+      "choices": [
+        "George Bernard Shaw",
+        "Mark Twain",
+        "Oscar Wilde",
+        "G.K. Chesterton"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "This is widely attributed to Wilde, the Irish poet and playwright (1854–1900), whose wit made him one of history's most quoted figures. Wilde's aphorisms were his art form as much as his plays."
+    },
+    {
+      "id": "pink-002",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "\"Life is what happens when you're busy making other plans.\" — Who said this?",
+      "answerText": "John Lennon",
+      "choices": [
+        "John Lennon",
+        "Paul McCartney",
+        "Bob Dylan",
+        "Elton John"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Lennon wrote this in 'Beautiful Boy (Darling Boy)' (1980) on the Double Fantasy album, his final album before his death. He wrote it as a message to his young son Sean."
+    },
+    {
+      "id": "pink-003",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "\"The only way to do great work is to love what you do.\" — Who said this?",
+      "answerText": "Steve Jobs",
+      "choices": [
+        "Bill Gates",
+        "Steve Jobs",
+        "Elon Musk",
+        "Jeff Bezos"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Jobs said this in his 2005 Stanford commencement address, one of the most-watched speeches in history. He had been diagnosed with pancreatic cancer the year before and considered it a message about urgency."
+    },
+    {
+      "id": "pink-004",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "\"It always seems impossible until it's done.\" — Who said this?",
+      "answerText": "Nelson Mandela",
+      "choices": [
+        "Desmond Tutu",
+        "Nelson Mandela",
+        "Kofi Annan",
+        "Chinua Achebe"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Mandela, who spent 27 years in prison before becoming South Africa's first democratically elected president, said this about dismantling apartheid — once considered an impossible goal."
+    },
+    {
+      "id": "pink-005",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "\"The most important thing is to enjoy your life — to be happy — it's all that matters.\" — Who said this?",
+      "answerText": "Audrey Hepburn",
+      "choices": [
+        "Audrey Hepburn",
+        "Marilyn Monroe",
+        "Grace Kelly",
+        "Sophia Loren"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Hepburn, the Oscar- and Tony-winning actress, spent her final years as a UNICEF Goodwill Ambassador. She said her greatest role was the work she did for children in need around the world."
+    },
+    {
+      "id": "pink-006",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "\"Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.\" — Who said this?",
+      "answerText": "Martin Luther King Jr.",
+      "choices": [
+        "Mahatma Gandhi",
+        "Nelson Mandela",
+        "Barack Obama",
+        "Martin Luther King Jr."
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "King wrote this in Strength to Love (1963). At its core is his conviction that the only answer to cycles of hatred and violence is an active, determined love — not passivity."
+    },
+    {
+      "id": "pink-007",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "\"People will forget what you said, people will forget what you did, but people will never forget how you made them feel.\" — Who said this?",
+      "answerText": "Maya Angelou",
+      "choices": [
+        "Oprah Winfrey",
+        "Toni Morrison",
+        "Maya Angelou",
+        "Michelle Obama"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Angelou, poet and civil rights activist, said this about the lasting power of emotional impact over words or deeds. She emphasized emotional intelligence long before it became a common concept."
+    },
+    {
+      "id": "pink-008",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "\"Success is not final, failure is not fatal: it is the courage to continue that counts.\" — Who said this?",
+      "answerText": "Winston Churchill",
+      "choices": [
+        "Winston Churchill",
+        "Franklin D. Roosevelt",
+        "Harry Truman",
+        "Dwight Eisenhower"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Widely attributed to Churchill, this quote reflects the resilience he demanded of Britain during World War II. Churchill himself survived multiple political failures before becoming Prime Minister at age 65."
+    },
+    {
+      "id": "pink-009",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "\"The future belongs to those who believe in the beauty of their dreams.\" — Who said this?",
+      "answerText": "Eleanor Roosevelt",
+      "choices": [
+        "Hillary Clinton",
+        "Eleanor Roosevelt",
+        "Amelia Earhart",
+        "Harriet Tubman"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Eleanor Roosevelt, First Lady and later UN delegate, was one of history's most active advocates for human rights. She helped draft the Universal Declaration of Human Rights in 1948."
+    },
+    {
+      "id": "pink-010",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "\"All our dreams can come true, if we have the courage to pursue them.\" — Who said this?",
+      "answerText": "Walt Disney",
+      "choices": [
+        "Walt Disney",
+        "Jim Henson",
+        "Fred Rogers",
+        "Steven Spielberg"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Disney said this about the founding of Disneyland, which many told him was an impossible idea. He was rejected by 302 banks before finding financing — and the park opened in 1955."
+    },
+    {
+      "id": "pink-011",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "\"Vulnerability is not weakness; it's our greatest measure of courage.\" — Who said this?",
+      "answerText": "Brené Brown",
+      "choices": [
+        "Brené Brown",
+        "Oprah Winfrey",
+        "Sheryl Sandberg",
+        "Glennon Doyle"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Brown is a research professor at the University of Houston who spent years studying shame and resilience. Her 2010 TED Talk became one of the most-viewed in the platform's history."
+    },
+    {
+      "id": "pink-012",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "\"No matter what people tell you, words and ideas can change the world.\" — Who said this?",
+      "answerText": "Robin Williams",
+      "choices": [
+        "Tom Hanks",
+        "Jim Carrey",
+        "Robin Williams",
+        "Steven Spielberg"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Williams said this as Mr. Keating in Dead Poets Society (1989) and echoed it in interviews throughout his life. He believed comedy and language were among the most powerful tools for human change."
+    },
+    {
+      "id": "pink-013",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "\"It is impossible to live without failing at something, unless you live so cautiously that you might as well not have lived at all.\" — Who said this?",
+      "answerText": "J.K. Rowling",
+      "choices": [
+        "J.K. Rowling",
+        "Stephenie Meyer",
+        "Philip Pullman",
+        "Neil Gaiman"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Rowling said this in her 2008 Harvard commencement address. Before Harry Potter was published, she was a single mother on welfare who had been rejected by 12 publishers."
+    },
+    {
+      "id": "pink-014",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "\"Success isn't about how much money you make; it's about the difference you make in people's lives.\" — Who said this?",
+      "answerText": "Michelle Obama",
+      "choices": [
+        "Hillary Clinton",
+        "Oprah Winfrey",
+        "Michelle Obama",
+        "Condoleezza Rice"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Michelle Obama said this in a campaign speech and returned to the idea in her memoir Becoming (2018). She became one of the most popular First Ladies in American history, known for her Let's Move initiative."
+    },
+    {
+      "id": "pink-015",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "\"The greatest thing we can do is to help somebody know that they're loved and capable of loving.\" — Who said this?",
+      "answerText": "Fred Rogers",
+      "choices": [
+        "Bob Ross",
+        "Fred Rogers",
+        "Jim Henson",
+        "Bob Hope"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Rogers hosted Mister Rogers' Neighborhood for 33 years, speaking directly to children about their emotional lives. He was ordained as a Presbyterian minister but saw his TV show as his ministry."
+    },
+    {
+      "id": "pink-016",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "\"Turn your wounds into wisdom.\" — Who said this?",
+      "answerText": "Oprah Winfrey",
+      "choices": [
+        "Maya Angelou",
+        "Oprah Winfrey",
+        "Iyanla Vanzant",
+        "Brené Brown"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Winfrey, who overcame childhood poverty and abuse to become one of the world's most influential media figures, said this about using personal hardship as fuel rather than as an anchor."
+    },
+    {
+      "id": "pink-017",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "\"If you have some power, then your job is to empower somebody else.\" — Who said this?",
+      "answerText": "Toni Morrison",
+      "choices": [
+        "Alice Walker",
+        "Maya Angelou",
+        "Toni Morrison",
+        "Zora Neale Hurston"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Morrison (1931–2019) won the Nobel Prize in Literature in 1993. As an editor at Random House, she actively used her platform to publish and champion Black authors who might otherwise have been overlooked."
+    },
+    {
+      "id": "pink-018",
+      "category": "pink",
+      "difficulty": "medium",
+      "questionText": "\"The purpose of our lives is to be happy.\" — Who said this?",
+      "answerText": "Dalai Lama XIV",
+      "choices": [
+        "Thich Nhat Hanh",
+        "Pope Francis",
+        "Dalai Lama XIV",
+        "Desmond Tutu"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Tenzin Gyatso, the 14th Dalai Lama, has said this in many forms across decades of teaching. He co-authored The Book of Joy (2016) with Archbishop Desmond Tutu, exploring how to find happiness amid suffering."
+    },
+    {
+      "id": "pink-019",
+      "category": "pink",
+      "difficulty": "hard",
+      "questionText": "\"A man is a success if he gets up in the morning and goes to bed at night and in between does what he wants to do.\" — Who said this?",
+      "answerText": "Bob Dylan",
+      "choices": [
+        "Bob Dylan",
+        "Bob Marley",
+        "Bruce Springsteen",
+        "Tom Waits"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Dylan, who won the Nobel Prize in Literature in 2016, said this about the nature of success. He defines it entirely in terms of autonomy — doing what you want — not achievement or recognition."
+    },
+    {
+      "id": "pink-020",
+      "category": "pink",
+      "difficulty": "easy",
+      "questionText": "\"The truth is, everyone is going to hurt you. You just got to find the ones worth suffering for.\" — Who said this?",
+      "answerText": "Bob Marley",
+      "choices": [
+        "Bob Marley",
+        "John Lennon",
+        "Jimi Hendrix",
+        "Jimmy Cliff"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Marley (1945–1981) packed his life with wisdom about love, resilience, and human connection. He sold over 75 million records and remains one of the best-selling musicians in history."
+    },
+    {
+      "id": "yellow-001",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "\"We are what we repeatedly do. Excellence, then, is not an act, but a habit.\" — Who said this?",
+      "answerText": "Aristotle",
+      "choices": [
+        "Plato",
+        "Aristotle",
+        "Socrates",
+        "Epicurus"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "This is a paraphrase of Aristotle's Nicomachean Ethics by philosopher Will Durant. Aristotle argued that virtuous character is built through practice — not born or decided, but cultivated daily."
+    },
+    {
+      "id": "yellow-002",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "\"The unexamined life is not worth living.\" — Who said this?",
+      "answerText": "Socrates",
+      "choices": [
+        "Plato",
+        "Aristotle",
+        "Socrates",
+        "Epictetus"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Socrates said this at his own trial, as recorded in Plato's Apology. He chose death over giving up philosophy — an act that made this line one of history's most powerful statements about intellectual integrity."
+    },
+    {
+      "id": "yellow-003",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "\"It does not matter how slowly you go as long as you do not stop.\" — Who said this?",
+      "answerText": "Confucius",
+      "choices": [
+        "Confucius",
+        "Lao Tzu",
+        "Sun Tzu",
+        "Mencius"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Confucius (551–479 BC) emphasized persistence over speed throughout his teachings. His Analects collected his philosophical conversations and became the foundation of Confucianism."
+    },
+    {
+      "id": "yellow-004",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "\"You have power over your mind, not outside events. Realize this, and you will find strength.\" — Who said this?",
+      "answerText": "Marcus Aurelius",
+      "choices": [
+        "Seneca",
+        "Epictetus",
+        "Marcus Aurelius",
+        "Cicero"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Marcus Aurelius was Roman Emperor from 161 to 180 AD, and his private journal — Meditations — was never intended for publication. It remains one of history's most remarkable documents of Stoic self-discipline."
+    },
+    {
+      "id": "yellow-005",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "\"An investment in knowledge pays the best interest.\" — Who said this?",
+      "answerText": "Benjamin Franklin",
+      "choices": [
+        "Benjamin Franklin",
+        "Thomas Jefferson",
+        "John Adams",
+        "Alexander Hamilton"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Franklin (1706–1790) was largely self-educated and became one of history's greatest polymaths — inventor, diplomat, writer, and Founding Father. He founded the first public library in America."
+    },
+    {
+      "id": "yellow-006",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "\"In the midst of chaos, there is also opportunity.\" — Who said this?",
+      "answerText": "Sun Tzu",
+      "choices": [
+        "Confucius",
+        "Lao Tzu",
+        "Miyamoto Musashi",
+        "Sun Tzu"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Sun Tzu wrote The Art of War around 500 BC. The book is still studied in military academies, business schools, and sports programs worldwide — its insights on strategy remain startlingly applicable."
+    },
+    {
+      "id": "yellow-007",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "\"Luck is what happens when preparation meets opportunity.\" — Who said this?",
+      "answerText": "Seneca",
+      "choices": [
+        "Cicero",
+        "Seneca",
+        "Marcus Aurelius",
+        "Epictetus"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Lucius Annaeus Seneca (4 BC – 65 AD) was a Stoic philosopher, playwright, and statesman in Rome. He wrote extensively about fortune, time, and how we choose to live — themes as relevant today as in ancient Rome."
+    },
+    {
+      "id": "yellow-008",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "\"Give me six hours to chop down a tree and I will spend the first four sharpening the axe.\" — Who said this?",
+      "answerText": "Abraham Lincoln",
+      "choices": [
+        "Abraham Lincoln",
+        "Ulysses S. Grant",
+        "Theodore Roosevelt",
+        "Andrew Jackson"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Lincoln (1809–1865) grew up splitting fence rails on the frontier. This quote about preparation over action reflects his deliberate nature — he was famous for taking time to think before speaking or deciding."
+    },
+    {
+      "id": "yellow-009",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "\"Judge a man by his questions rather than by his answers.\" — Who said this?",
+      "answerText": "Voltaire",
+      "choices": [
+        "Voltaire",
+        "Montesquieu",
+        "Jean-Jacques Rousseau",
+        "Denis Diderot"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Voltaire (1694–1778), French Enlightenment writer and philosopher, was famous for using sharp questions to expose hypocrisy. He spent much of his life in exile for criticizing the church and aristocracy."
+    },
+    {
+      "id": "yellow-010",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "\"Simplicity is the ultimate sophistication.\" — Who said this?",
+      "answerText": "Leonardo da Vinci",
+      "choices": [
+        "Michelangelo",
+        "Raphael",
+        "Leonardo da Vinci",
+        "Donatello"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Da Vinci (1452–1519) wrote this in his notebooks. He filled over 13,000 pages with ideas, sketches, and observations — but also believed that mastery reveals itself in elegant, uncomplicated solutions."
+    },
+    {
+      "id": "yellow-011",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "\"Make the best use of what is in your power, and take the rest as it happens.\" — Who said this?",
+      "answerText": "Epictetus",
+      "choices": [
+        "Epictetus",
+        "Seneca",
+        "Zeno of Citium",
+        "Marcus Aurelius"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Epictetus (50–135 AD) was born a slave and became one of the most influential Stoic philosophers. His Enchiridion (Handbook) is a guide to focusing on what you can control and releasing what you cannot."
+    },
+    {
+      "id": "yellow-012",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "\"All of humanity's problems stem from man's inability to sit quietly in a room alone.\" — Who said this?",
+      "answerText": "Blaise Pascal",
+      "choices": [
+        "René Descartes",
+        "Blaise Pascal",
+        "Montaigne",
+        "Francis Bacon"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Pascal wrote this in Pensées (c. 1660). The French mathematician and physicist who invented an early calculator also spent years grappling with spiritual emptiness and the human need for distraction."
+    },
+    {
+      "id": "yellow-013",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "\"The only constant in life is change.\" — Who said this?",
+      "answerText": "Heraclitus",
+      "choices": [
+        "Heraclitus",
+        "Socrates",
+        "Parmenides",
+        "Thales"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Heraclitus (c. 535–475 BC) argued that the universe is in constant flux, famously saying you can't step into the same river twice. His idea that change is the fundamental nature of reality predates modern physics."
+    },
+    {
+      "id": "yellow-014",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "\"Impossible is a word found only in the dictionary of fools.\" — Who said this?",
+      "answerText": "Napoleon Bonaparte",
+      "choices": [
+        "Julius Caesar",
+        "Frederick the Great",
+        "Napoleon Bonaparte",
+        "Alexander the Great"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Napoleon (1769–1821) rose from Corsican obscurity to conquer most of Europe. Whether or not he literally said this exact line, it reflects his documented belief that willpower and audacity could overcome any obstacle."
+    },
+    {
+      "id": "yellow-015",
+      "category": "yellow",
+      "difficulty": "easy",
+      "questionText": "\"Let food be thy medicine and medicine be thy food.\" — Who said this?",
+      "answerText": "Hippocrates",
+      "choices": [
+        "Hippocrates",
+        "Galen",
+        "Avicenna",
+        "Paracelsus"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Hippocrates (460–370 BC) is called the Father of Medicine. He argued that diet, lifestyle, and environment — not supernatural forces — determined health. His Hippocratic Oath still guides medical ethics today."
+    },
+    {
+      "id": "yellow-016",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "\"I find that the harder I work, the more luck I seem to have.\" — Who said this?",
+      "answerText": "Thomas Jefferson",
+      "choices": [
+        "Benjamin Franklin",
+        "George Washington",
+        "Thomas Jefferson",
+        "John Adams"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Jefferson, principal author of the Declaration of Independence, was a tireless worker — farmer, architect, inventor, and statesman. He often wrote about the relationship between effort and fortune."
+    },
+    {
+      "id": "yellow-017",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "\"He who has a why to live can bear almost any how.\" — Who said this?",
+      "answerText": "Friedrich Nietzsche",
+      "choices": [
+        "Friedrich Nietzsche",
+        "Arthur Schopenhauer",
+        "Søren Kierkegaard",
+        "Georg Hegel"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Nietzsche wrote this in Twilight of the Idols (1889). Viktor Frankl later cited it as the central insight of his Holocaust survival experience and the foundation of his logotherapy — finding meaning as the will to live."
+    },
+    {
+      "id": "yellow-018",
+      "category": "yellow",
+      "difficulty": "hard",
+      "questionText": "\"It is better to be feared than loved, if you cannot be both.\" — Who said this?",
+      "answerText": "Niccolò Machiavelli",
+      "choices": [
+        "Julius Caesar",
+        "Cardinal Richelieu",
+        "Thomas Hobbes",
+        "Niccolò Machiavelli"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Machiavelli wrote this in The Prince (1532), a handbook for rulers that shocked Renaissance Europe with its cold realism. He advised rulers to be effective, not moral — separating political and personal ethics."
+    },
+    {
+      "id": "yellow-019",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "\"The measure of a man is what he does with power.\" — Who said this?",
+      "answerText": "Plato",
+      "choices": [
+        "Plato",
+        "Aristotle",
+        "Socrates",
+        "Pericles"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Plato, student of Socrates and teacher of Aristotle, wrote extensively about justice, virtue, and the ideal state in The Republic. He believed power reveals character rather than creates it."
+    },
+    {
+      "id": "yellow-020",
+      "category": "yellow",
+      "difficulty": "medium",
+      "questionText": "\"If you have a garden and a library, you have everything you need.\" — Who said this?",
+      "answerText": "Cicero",
+      "choices": [
+        "Seneca",
+        "Marcus Aurelius",
+        "Cicero",
+        "Pliny the Elder"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Cicero (106–43 BC), Rome's greatest orator, wrote this in a letter. He believed the good life required both active engagement with the world (the garden) and the wisdom of accumulated knowledge (the library)."
+    },
+    {
+      "id": "purple-001",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "\"Every child is an artist. The problem is how to remain an artist once we grow up.\" — Who said this?",
+      "answerText": "Pablo Picasso",
+      "choices": [
+        "Henri Matisse",
+        "Pablo Picasso",
+        "Salvador Dalí",
+        "Paul Gauguin"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Picasso (1881–1973) co-founded Cubism and remained creatively prolific into his nineties. He believed that formal training could suppress the intuitive, experimental spirit that children use naturally."
+    },
+    {
+      "id": "purple-002",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "\"I would rather die of passion than of boredom.\" — Who said this?",
+      "answerText": "Vincent van Gogh",
+      "choices": [
+        "Paul Gauguin",
+        "Henri de Toulouse-Lautrec",
+        "Vincent van Gogh",
+        "Georges Seurat"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Van Gogh (1853–1890) wrote this in a letter to his brother Theo. He produced over 2,100 artworks in just over a decade, driven by an intensity that also led to his mental suffering."
+    },
+    {
+      "id": "purple-003",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "\"No bird soars too high if he soars with his own wings.\" — Who said this?",
+      "answerText": "William Blake",
+      "choices": [
+        "William Blake",
+        "William Wordsworth",
+        "Samuel Taylor Coleridge",
+        "Percy Bysshe Shelley"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Blake (1757–1827) wrote this in The Marriage of Heaven and Hell (c. 1790). The visionary poet, painter, and printmaker believed the imagination was the divine faculty that could carry human beings beyond all limits."
+    },
+    {
+      "id": "purple-004",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "\"The two most important days in your life are the day you are born and the day you find out why.\" — Who said this?",
+      "answerText": "Mark Twain",
+      "choices": [
+        "Mark Twain",
+        "Walt Whitman",
+        "Edgar Allan Poe",
+        "Nathaniel Hawthorne"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Widely attributed to Twain (1835–1910), though the original source is debated. Twain was famous for distilling profound wisdom into deceptively simple sentences."
+    },
+    {
+      "id": "purple-005",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "\"There is nothing noble in being superior to your fellow man; true nobility is being superior to your former self.\" — Who said this?",
+      "answerText": "Ernest Hemingway",
+      "choices": [
+        "F. Scott Fitzgerald",
+        "Ernest Hemingway",
+        "John Steinbeck",
+        "William Faulkner"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Widely attributed to Hemingway, this quote reflects his belief in self-mastery. He won the Nobel Prize in Literature in 1954 and described his writing style as the 'iceberg theory' — most of the meaning lies below the surface."
+    },
+    {
+      "id": "purple-006",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "\"You cannot find peace by avoiding life.\" — Who said this?",
+      "answerText": "Virginia Woolf",
+      "choices": [
+        "Virginia Woolf",
+        "Simone de Beauvoir",
+        "Gertrude Stein",
+        "Anaïs Nin"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Woolf (1882–1941) pioneered the stream-of-consciousness narrative in novels like Mrs Dalloway and To the Lighthouse. Her essays and letters reveal a sharp mind grappling with the full weight of being alive."
+    },
+    {
+      "id": "purple-007",
+      "category": "purple",
+      "difficulty": "easy",
+      "questionText": "\"Keep your face always toward the sunshine, and shadows will fall behind you.\" — Who said this?",
+      "answerText": "Walt Whitman",
+      "choices": [
+        "Ralph Waldo Emerson",
+        "Henry David Thoreau",
+        "Walt Whitman",
+        "Emily Dickinson"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Whitman (1819–1892) wrote Leaves of Grass, which he revised throughout his life. His poetry celebrated democracy, nature, and the body — and was condemned as obscene when first published."
+    },
+    {
+      "id": "purple-008",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "\"Forever is composed of nows.\" — Who said this?",
+      "answerText": "Emily Dickinson",
+      "choices": [
+        "Emily Dickinson",
+        "Christina Rossetti",
+        "Elizabeth Barrett Browning",
+        "Louisa May Alcott"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Dickinson (1830–1886) published fewer than a dozen poems in her lifetime, yet she wrote nearly 1,800. This line reflects her preoccupation with time, eternity, and the profound weight of the present moment."
+    },
+    {
+      "id": "purple-009",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "\"Everyone thinks of changing the world, but no one thinks of changing himself.\" — Who said this?",
+      "answerText": "Leo Tolstoy",
+      "choices": [
+        "Fyodor Dostoevsky",
+        "Leo Tolstoy",
+        "Anton Chekhov",
+        "Ivan Turgenev"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Tolstoy (1828–1910) wrote War and Peace and Anna Karenina — two of the greatest novels ever written. Later in life he abandoned his aristocratic wealth and preached a gospel of radical self-reform and nonviolence."
+    },
+    {
+      "id": "purple-010",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "\"Not everything that is faced can be changed, but nothing can be changed until it is faced.\" — Who said this?",
+      "answerText": "James Baldwin",
+      "choices": [
+        "Ralph Ellison",
+        "Langston Hughes",
+        "James Baldwin",
+        "Richard Wright"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Baldwin (1924–1987) was one of America's most prophetic voices on race, identity, and justice. He wrote Go Tell It on the Mountain, The Fire Next Time, and numerous essays confronting the deep roots of American inequality."
+    },
+    {
+      "id": "purple-011",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "\"In the midst of winter, I found there was, within me, an invincible summer.\" — Who said this?",
+      "answerText": "Albert Camus",
+      "choices": [
+        "Jean-Paul Sartre",
+        "Albert Camus",
+        "Simone de Beauvoir",
+        "Samuel Beckett"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Camus (1913–1960) won the Nobel Prize in Literature in 1957 for his work exploring the absurdity of existence. This line from Return to Tipasa is his declaration that inner resilience can outlast any external hardship."
+    },
+    {
+      "id": "purple-012",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "\"Life shrinks or expands in proportion to one's courage.\" — Who said this?",
+      "answerText": "Anaïs Nin",
+      "choices": [
+        "Gertrude Stein",
+        "Virginia Woolf",
+        "Simone de Beauvoir",
+        "Anaïs Nin"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Nin (1903–1977) is known for her extensive diaries spanning over 60 years and her groundbreaking fiction. She believed courage — particularly the courage to live authentically — determined the richness of a life."
+    },
+    {
+      "id": "purple-013",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "\"The only journey is the one within.\" — Who said this?",
+      "answerText": "Rainer Maria Rilke",
+      "choices": [
+        "Hermann Hesse",
+        "Rainer Maria Rilke",
+        "Franz Kafka",
+        "Thomas Mann"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Rilke (1875–1926) wrote Letters to a Young Poet — advice to a struggling artist that became one of the most treasured guides to the creative life. He believed art required deep inward work before outward expression."
+    },
+    {
+      "id": "purple-014",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "\"Your children are not your children. They are the sons and daughters of Life's longing for itself.\" — Who said this?",
+      "answerText": "Khalil Gibran",
+      "choices": [
+        "Khalil Gibran",
+        "Omar Khayyam",
+        "Rumi",
+        "Hafez"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Gibran (1883–1931) wrote The Prophet (1923), a book of philosophical essays on life's essential experiences. This passage on children has comforted — and challenged — parents across many generations and cultures."
+    },
+    {
+      "id": "purple-015",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "\"Only those who will risk going too far can possibly find out how far one can go.\" — Who said this?",
+      "answerText": "T.S. Eliot",
+      "choices": [
+        "W.B. Yeats",
+        "T.S. Eliot",
+        "Ezra Pound",
+        "e.e. cummings"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Eliot (1888–1965) won the Nobel Prize in Literature in 1948. He wrote this as a preface to Transit of Venus (1931) by Harry Crosby — a statement about both creative and personal daring."
+    },
+    {
+      "id": "purple-016",
+      "category": "purple",
+      "difficulty": "medium",
+      "questionText": "\"At the end of the day, we can endure much more than we think we can.\" — Who said this?",
+      "answerText": "Frida Kahlo",
+      "choices": [
+        "Frida Kahlo",
+        "Georgia O'Keeffe",
+        "Mary Cassatt",
+        "Berthe Morisot"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Kahlo (1907–1954) survived a devastating bus accident at 18 that left her in pain for the rest of her life. She painted mostly self-portraits, turning her suffering into some of the 20th century's most powerful art."
+    },
+    {
+      "id": "purple-017",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "\"Whatever you can do, or dream you can, begin it. Boldness has genius, power, and magic in it.\" — Who said this?",
+      "answerText": "Johann Wolfgang von Goethe",
+      "choices": [
+        "Friedrich Schiller",
+        "Johann Wolfgang von Goethe",
+        "Heinrich Heine",
+        "Ludwig van Beethoven"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "This is from a translation of Goethe's Faust by John Anster (1835). Goethe (1749–1832) wrote Faust over 60 years, completing it just before his death — the ultimate emblem of beginning and persisting."
+    },
+    {
+      "id": "purple-018",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "\"So we beat on, boats against the current, borne back ceaselessly into the past.\" — Who said this?",
+      "answerText": "F. Scott Fitzgerald",
+      "choices": [
+        "Ernest Hemingway",
+        "F. Scott Fitzgerald",
+        "John Steinbeck",
+        "Theodore Dreiser"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "This is the final line of The Great Gatsby (1925). Fitzgerald (1896–1940) wrote it about the American Dream's seductive pull and the impossibility of escaping one's own history."
+    },
+    {
+      "id": "purple-019",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "\"Pain and suffering are always inevitable for a large intelligence and a deep heart.\" — Who said this?",
+      "answerText": "Fyodor Dostoevsky",
+      "choices": [
+        "Leo Tolstoy",
+        "Anton Chekhov",
+        "Fyodor Dostoevsky",
+        "Ivan Turgenev"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Dostoevsky (1821–1881) wrote this in Crime and Punishment (1866). He drew on his own experience — imprisonment in Siberia and execution narrowly avoided — to understand how suffering can deepen a person's humanity."
+    },
+    {
+      "id": "purple-020",
+      "category": "purple",
+      "difficulty": "hard",
+      "questionText": "\"Whatever good or bad fortune may come our way we can always give it meaning and transform it into something of value.\" — Who said this?",
+      "answerText": "Hermann Hesse",
+      "choices": [
+        "Hermann Hesse",
+        "Franz Kafka",
+        "Thomas Mann",
+        "Robert Musil"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Hesse (1877–1962) won the Nobel Prize in Literature in 1946. His novels Siddhartha and Steppenwolf explore the search for self-knowledge and meaning — themes he drew from his own periods of crisis and renewal."
+    },
+    {
+      "id": "green-001",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "\"I would rather have questions that can't be answered than answers that can't be questioned.\" — Who said this?",
+      "answerText": "Richard Feynman",
+      "choices": [
+        "Carl Sagan",
+        "Richard Feynman",
+        "Neil deGrasse Tyson",
+        "Michio Kaku"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Feynman (1918–1988) won the Nobel Prize in Physics in 1965 and was famous for making complex science accessible. He distrusted authority and dogma — in science and everywhere else."
+    },
+    {
+      "id": "green-002",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "\"The cosmos is within us. We are made of star-stuff. We are a way for the universe to know itself.\" — Who said this?",
+      "answerText": "Carl Sagan",
+      "choices": [
+        "Carl Sagan",
+        "Stephen Hawking",
+        "Edwin Hubble",
+        "Neil deGrasse Tyson"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Sagan (1934–1996) said this in Cosmos: A Personal Voyage (1980). It reflects the scientific fact that the atoms in our bodies were forged in the cores of ancient stars — we are literally made of the universe."
+    },
+    {
+      "id": "green-003",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "\"Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.\" — Who said this?",
+      "answerText": "Marie Curie",
+      "choices": [
+        "Rosalind Franklin",
+        "Lise Meitner",
+        "Marie Curie",
+        "Ada Lovelace"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Curie (1867–1934) was the first woman to win a Nobel Prize and the only person to win in two different sciences (Physics and Chemistry). She faced enormous gender discrimination and overcame it through relentless intellectual courage."
+    },
+    {
+      "id": "green-004",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "\"It is not the strongest of the species that survives, nor the most intelligent; it is the one most adaptable to change.\" — Who said this?",
+      "answerText": "Charles Darwin",
+      "choices": [
+        "Charles Darwin",
+        "Gregor Mendel",
+        "Alfred Russel Wallace",
+        "Thomas Huxley"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "This is a paraphrase of Darwin's ideas from On the Origin of Species (1859), popularized by a 1963 business professor. Darwin's theory of natural selection showed adaptation — not raw strength — as the key to survival."
+    },
+    {
+      "id": "green-005",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "\"The present is theirs; the future, for which I really worked, is mine.\" — Who said this?",
+      "answerText": "Nikola Tesla",
+      "choices": [
+        "Thomas Edison",
+        "George Westinghouse",
+        "Michael Faraday",
+        "Nikola Tesla"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Tesla (1856–1943) said this about his rival Thomas Edison during the War of Currents. Tesla's AC power system ultimately became the global standard — proving him right about the future, if not the present."
+    },
+    {
+      "id": "green-006",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "\"Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.\" — Who said this?",
+      "answerText": "Albert Einstein",
+      "choices": [
+        "Albert Einstein",
+        "Max Planck",
+        "Niels Bohr",
+        "Werner Heisenberg"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Einstein said this in a 1929 Saturday Evening Post interview. The man who invented the Theory of Relativity believed his biggest breakthroughs came from thought experiments — imagination, not calculation, first."
+    },
+    {
+      "id": "green-007",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "\"If I have seen further, it is by standing on the shoulders of giants.\" — Who said this?",
+      "answerText": "Isaac Newton",
+      "choices": [
+        "Galileo Galilei",
+        "René Descartes",
+        "Francis Bacon",
+        "Isaac Newton"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Newton wrote this in a 1675 letter to Robert Hooke. Ironically, historians believe it may have been a subtle insult at Hooke, who was short-statured. Newton built on Kepler, Galileo, and Descartes to develop his laws of motion and gravity."
+    },
+    {
+      "id": "green-008",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "\"The good thing about science is that it's true whether or not you believe in it.\" — Who said this?",
+      "answerText": "Neil deGrasse Tyson",
+      "choices": [
+        "Bill Nye",
+        "Carl Sagan",
+        "Neil deGrasse Tyson",
+        "Michio Kaku"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Tyson, astrophysicist and director of the Hayden Planetarium, said this as a pointed defense of empiricism. He has made it his mission to make science accessible and to push back against the politicization of facts."
+    },
+    {
+      "id": "green-009",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "\"The more I study, the more insatiable do I feel my genius for it to be.\" — Who said this?",
+      "answerText": "Ada Lovelace",
+      "choices": [
+        "Ada Lovelace",
+        "Mary Somerville",
+        "Caroline Herschel",
+        "Émilie du Châtelet"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Lovelace (1815–1852), daughter of Lord Byron, wrote the first algorithm intended for a machine — making her the world's first computer programmer. She said this about mathematics, which she studied obsessively."
+    },
+    {
+      "id": "green-010",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "\"The good life is one inspired by love and guided by knowledge.\" — Who said this?",
+      "answerText": "Bertrand Russell",
+      "choices": [
+        "Bertrand Russell",
+        "Alfred North Whitehead",
+        "Ludwig Wittgenstein",
+        "G.E. Moore"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Russell (1872–1970) won the Nobel Prize in Literature in 1950 for his philosophical writings. He held that love and knowledge were the twin engines of human flourishing, and spent his life defending both against dogma."
+    },
+    {
+      "id": "green-011",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "\"You cannot teach a man anything; you can only help him discover it in himself.\" — Who said this?",
+      "answerText": "Galileo Galilei",
+      "choices": [
+        "Leonardo da Vinci",
+        "Nicolaus Copernicus",
+        "Johannes Kepler",
+        "Galileo Galilei"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Galileo (1564–1642) was forced to recant his support of heliocentrism under threat of torture. His insight about teaching suggests that understanding cannot be imposed — only uncovered from within."
+    },
+    {
+      "id": "green-012",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "\"Genius is one percent inspiration, ninety-nine percent perspiration.\" — Who said this?",
+      "answerText": "Thomas Edison",
+      "choices": [
+        "Thomas Edison",
+        "Nikola Tesla",
+        "Alexander Graham Bell",
+        "Guglielmo Marconi"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Edison (1847–1931) held over 1,000 patents. He famously tested thousands of materials before finding a working lightbulb filament — a perfect embodiment of his conviction that genius is mostly hard work."
+    },
+    {
+      "id": "green-013",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "\"We can only see a short distance ahead, but we can see plenty there that needs to be done.\" — Who said this?",
+      "answerText": "Alan Turing",
+      "choices": [
+        "John von Neumann",
+        "Alan Turing",
+        "Claude Shannon",
+        "Norbert Wiener"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Turing (1912–1954) wrote this in 'Computing Machinery and Intelligence' (1950), the paper in which he proposed what became the Turing Test. He is widely considered the father of theoretical computer science and AI."
+    },
+    {
+      "id": "green-014",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "\"Cogito, ergo sum.\" (I think, therefore I am.) — Who said this?",
+      "answerText": "René Descartes",
+      "choices": [
+        "René Descartes",
+        "Blaise Pascal",
+        "Francis Bacon",
+        "Baruch Spinoza"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Descartes wrote this in Discourse on the Method (1637) as the one truth he could not doubt. By stripping away every assumption, he found that the very act of doubting proved a thinker existed."
+    },
+    {
+      "id": "green-015",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "\"Science and everyday life cannot and should not be separated.\" — Who said this?",
+      "answerText": "Rosalind Franklin",
+      "choices": [
+        "Marie Curie",
+        "Lise Meitner",
+        "Barbara McClintock",
+        "Rosalind Franklin"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Franklin (1920–1958) wrote this in a letter to her father at age 17. Her X-ray crystallography images of DNA were critical evidence for the double-helix structure — work for which Watson and Crick received the Nobel Prize without crediting her."
+    },
+    {
+      "id": "green-016",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "\"Science cannot solve the ultimate mystery of nature because we ourselves are part of the mystery we are trying to solve.\" — Who said this?",
+      "answerText": "Max Planck",
+      "choices": [
+        "Albert Einstein",
+        "Max Planck",
+        "Werner Heisenberg",
+        "Niels Bohr"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Planck (1858–1947) originated quantum theory, discovering that energy is emitted in discrete packets he called quanta. His insight that the observer cannot be separated from the system predates similar ideas in quantum mechanics."
+    },
+    {
+      "id": "green-017",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "\"Chance favors the prepared mind.\" — Who said this?",
+      "answerText": "Louis Pasteur",
+      "choices": [
+        "Louis Pasteur",
+        "Alexander Fleming",
+        "Edward Jenner",
+        "Robert Koch"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Pasteur (1822–1895) said this in a lecture at the University of Lille in 1854. He developed the germ theory of disease, the rabies vaccine, and the pasteurization process — each 'lucky' discovery born from years of preparation."
+    },
+    {
+      "id": "green-018",
+      "category": "green",
+      "difficulty": "easy",
+      "questionText": "\"Knowledge is power.\" — Who said this?",
+      "answerText": "Francis Bacon",
+      "choices": [
+        "Francis Bacon",
+        "Thomas Hobbes",
+        "John Locke",
+        "René Descartes"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Bacon wrote this in Meditationes Sacrae (1597). As the architect of the scientific method, he argued that systematic knowledge of nature would give humanity power over disease, poverty, and the limitations of the natural world."
+    },
+    {
+      "id": "green-019",
+      "category": "green",
+      "difficulty": "medium",
+      "questionText": "\"Give me a lever long enough and a fulcrum on which to place it, and I shall move the world.\" — Who said this?",
+      "answerText": "Archimedes",
+      "choices": [
+        "Archimedes",
+        "Euclid",
+        "Pythagoras",
+        "Hero of Alexandria"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Archimedes of Syracuse (c. 287–212 BC) discovered the principle of the lever and made fundamental advances in mathematics. He said this to illustrate that physical forces, when properly applied, have no theoretical limit."
+    },
+    {
+      "id": "green-020",
+      "category": "green",
+      "difficulty": "hard",
+      "questionText": "\"The first gulp from the glass of natural sciences will turn you into an atheist, but at the bottom of the glass God is waiting for you.\" — Who said this?",
+      "answerText": "Werner Heisenberg",
+      "choices": [
+        "Niels Bohr",
+        "Albert Einstein",
+        "Max Planck",
+        "Werner Heisenberg"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Heisenberg (1901–1976) developed the uncertainty principle, a cornerstone of quantum mechanics. The father of a physical law about unknowability believed that science taken to its depths circles back to awe and mystery."
+    },
+    {
+      "id": "orange-001",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "\"Float like a butterfly, sting like a bee. The hands can't hit what the eyes can't see.\" — Who said this?",
+      "answerText": "Muhammad Ali",
+      "choices": [
+        "Muhammad Ali",
+        "Joe Frazier",
+        "George Foreman",
+        "Sugar Ray Leonard"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Ali (1942–2016) said this before his 1964 fight against Sonny Liston. He was not only the greatest heavyweight boxer of all time but also one of history's most eloquent athletes and social advocates."
+    },
+    {
+      "id": "orange-002",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "\"I can accept failure, everyone fails at something. But I can't accept not trying.\" — Who said this?",
+      "answerText": "Michael Jordan",
+      "choices": [
+        "Kobe Bryant",
+        "LeBron James",
+        "Michael Jordan",
+        "Magic Johnson"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Jordan was cut from his high school varsity basketball team as a sophomore. He used that rejection as fuel throughout his career — winning 6 NBA titles and redefining what competitive excellence looks like."
+    },
+    {
+      "id": "orange-003",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "\"You miss 100% of the shots you don't take.\" — Who said this?",
+      "answerText": "Wayne Gretzky",
+      "choices": [
+        "Wayne Gretzky",
+        "Bobby Orr",
+        "Mario Lemieux",
+        "Mark Messier"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Gretzky, 'The Great One,' holds virtually every significant NHL scoring record. He scored more goals (894) than any other player has even accumulated total points. He said this about risk and participation in sport and life."
+    },
+    {
+      "id": "orange-004",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "\"Winning isn't everything, but wanting to win is.\" — Who said this?",
+      "answerText": "Vince Lombardi",
+      "choices": [
+        "Bill Walsh",
+        "Vince Lombardi",
+        "Bear Bryant",
+        "Tom Landry"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Lombardi coached the Green Bay Packers to five NFL championships including the first two Super Bowls. The Super Bowl trophy is named after him. This quote is often misattributed to him as 'winning isn't everything, it's the only thing' — a harder version he disputed."
+    },
+    {
+      "id": "orange-005",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "\"Every strike brings me closer to the next home run.\" — Who said this?",
+      "answerText": "Babe Ruth",
+      "choices": [
+        "Babe Ruth",
+        "Hank Aaron",
+        "Willie Mays",
+        "Lou Gehrig"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Ruth (1895–1948) hit 714 career home runs — a record that stood for 39 years. He also led the majors in strikeouts for much of his career. His insight: failure and success are two sides of the same aggressive approach."
+    },
+    {
+      "id": "orange-006",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "\"Success is a journey, not a destination. The doing is often more important than the outcome.\" — Who said this?",
+      "answerText": "Arthur Ashe",
+      "choices": [
+        "Arthur Ashe",
+        "Billie Jean King",
+        "Jimmy Connors",
+        "John McEnroe"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Ashe (1943–1993) was the first Black man to win Wimbledon, the US Open, and the Australian Open. Off the court, he was a tireless activist for racial equality and AIDS awareness, having contracted HIV through a blood transfusion."
+    },
+    {
+      "id": "orange-007",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "\"I really think a champion is defined not by their wins but by how they can recover when they fall.\" — Who said this?",
+      "answerText": "Serena Williams",
+      "choices": [
+        "Venus Williams",
+        "Martina Navratilova",
+        "Steffi Graf",
+        "Serena Williams"
+      ],
+      "correctChoiceIndex": 3,
+      "tidbits": "Williams won 23 Grand Slam singles titles — the most in the Open Era. She returned to competitive tennis after life-threatening postpartum complications in 2017, embodying this principle firsthand."
+    },
+    {
+      "id": "orange-008",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "\"Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing.\" — Who said this?",
+      "answerText": "Pelé",
+      "choices": [
+        "Pelé",
+        "Diego Maradona",
+        "Johan Cruyff",
+        "Ronaldo"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Pelé (1940–2022) won three FIFA World Cups with Brazil — still the most by any player — and scored over 1,200 career goals. He is widely regarded as the greatest footballer of all time."
+    },
+    {
+      "id": "orange-009",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "\"Success comes from knowing that you did your best to become the best that you are capable of becoming.\" — Who said this?",
+      "answerText": "John Wooden",
+      "choices": [
+        "Pat Riley",
+        "Phil Jackson",
+        "John Wooden",
+        "Red Auerbach"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Wooden coached UCLA to 10 NCAA basketball championships, including seven in a row (1967–1973). He never talked about winning — only about effort and character. His 'Pyramid of Success' is studied in leadership programs worldwide."
+    },
+    {
+      "id": "orange-010",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "\"The battles that count aren't the ones for gold medals. The struggles within yourself — the invisible battles inside all of us — that's where it's at.\" — Who said this?",
+      "answerText": "Jesse Owens",
+      "choices": [
+        "Jesse Owens",
+        "Jim Thorpe",
+        "Carl Lewis",
+        "Jackie Robinson"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Owens won four gold medals at the 1936 Berlin Olympics, directly under Hitler's gaze. He later said the greatest battles he fought were against poverty, racism, and self-doubt — not other athletes."
+    },
+    {
+      "id": "orange-011",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "\"Champions keep playing until they get it right.\" — Who said this?",
+      "answerText": "Billie Jean King",
+      "choices": [
+        "Martina Navratilova",
+        "Billie Jean King",
+        "Chris Evert",
+        "Tracy Austin"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "King won 39 Grand Slam titles across singles, doubles, and mixed doubles. In 1973, she beat Bobby Riggs 6-4, 6-3, 6-3 in the 'Battle of the Sexes' — a match watched by 90 million people worldwide."
+    },
+    {
+      "id": "orange-012",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "\"The most important thing is to try and inspire people so that they can be great in whatever they want to do.\" — Who said this?",
+      "answerText": "Kobe Bryant",
+      "choices": [
+        "Kobe Bryant",
+        "LeBron James",
+        "Shaquille O'Neal",
+        "Kevin Durant"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Bryant (1978–2020) won five NBA championships and was known for the 'Mamba Mentality' — his obsessive dedication to improvement. Late in his career he became as passionate about mentoring others as competing."
+    },
+    {
+      "id": "orange-013",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "\"Today is victory over yourself of yesterday; tomorrow is your victory over lesser men.\" — Who said this?",
+      "answerText": "Miyamoto Musashi",
+      "choices": [
+        "Miyamoto Musashi",
+        "Sun Tzu",
+        "Takeda Shingen",
+        "Tokugawa Ieyasu"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Musashi (c. 1584–1645) was an undefeated Japanese swordsman who fought over 60 duels without a loss. He wrote The Book of Five Rings at the end of his life — still required reading in Japanese business schools."
+    },
+    {
+      "id": "orange-014",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "\"It ain't over 'til it's over.\" — Who said this?",
+      "answerText": "Yogi Berra",
+      "choices": [
+        "Casey Stengel",
+        "Yogi Berra",
+        "Mickey Mantle",
+        "Joe DiMaggio"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Berra (1925–2015) said this during the 1973 pennant race when his New York Mets were 9.5 games out of first place in July — and then won the division. His 'Yogi-isms' are beloved for being accidentally profound."
+    },
+    {
+      "id": "orange-015",
+      "category": "orange",
+      "difficulty": "easy",
+      "questionText": "\"Everyone has a plan 'till they get punched in the mouth.\" — Who said this?",
+      "answerText": "Mike Tyson",
+      "choices": [
+        "Muhammad Ali",
+        "Mike Tyson",
+        "George Foreman",
+        "Evander Holyfield"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Tyson said this before his 1997 fight with Evander Holyfield. It became one of sport's most quoted lines about how adversity and unexpected challenges force adaptation — in the ring and in life."
+    },
+    {
+      "id": "orange-016",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "\"I'm not the next Usain Bolt or Michael Phelps. I'm the first Simone Biles.\" — Who said this?",
+      "answerText": "Simone Biles",
+      "choices": [
+        "Simone Biles",
+        "Nadia Comaneci",
+        "Gabby Douglas",
+        "Aly Raisman"
+      ],
+      "correctChoiceIndex": 0,
+      "tidbits": "Biles has 37 World and Olympic medals — the most decorated gymnast of all time. Her declaration is a lesson in not measuring yourself against others but creating your own standard of excellence."
+    },
+    {
+      "id": "orange-017",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "\"A life is not important except in the impact it has on other lives.\" — Who said this?",
+      "answerText": "Jackie Robinson",
+      "choices": [
+        "Jesse Owens",
+        "Jackie Robinson",
+        "Willie Mays",
+        "Hank Aaron"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Robinson (1919–1972) broke Major League Baseball's color barrier in 1947. He endured relentless hatred with enormous dignity — and used his platform to advocate for civil rights far beyond baseball."
+    },
+    {
+      "id": "orange-018",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "\"There is no way around the hard work. Embrace it.\" — Who said this?",
+      "answerText": "Roger Federer",
+      "choices": [
+        "Rafael Nadal",
+        "Novak Djokovic",
+        "Roger Federer",
+        "Andre Agassi"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Federer won 20 Grand Slam singles titles and is widely considered the most elegant player in tennis history. His 2024 Dartmouth commencement address about failure and hard work went viral across the sports world."
+    },
+    {
+      "id": "orange-019",
+      "category": "orange",
+      "difficulty": "medium",
+      "questionText": "\"Never underestimate the power of dreams and the influence of the human spirit.\" — Who said this?",
+      "answerText": "Wilma Rudolph",
+      "choices": [
+        "Florence Griffith Joyner",
+        "Wilma Rudolph",
+        "Mary Decker",
+        "Joan Benoit"
+      ],
+      "correctChoiceIndex": 1,
+      "tidbits": "Rudolph (1940–1994) was born prematurely, the 20th of 22 children, and suffered from polio, scarlet fever, and a leg deformity. She became the fastest woman in the world, winning three gold medals at the 1960 Rome Olympics."
+    },
+    {
+      "id": "orange-020",
+      "category": "orange",
+      "difficulty": "hard",
+      "questionText": "\"Excellence is the gradual result of always striving to do better.\" — Who said this?",
+      "answerText": "Pat Riley",
+      "choices": [
+        "Phil Jackson",
+        "Red Auerbach",
+        "Pat Riley",
+        "Gregg Popovich"
+      ],
+      "correctChoiceIndex": 2,
+      "tidbits": "Riley coached teams to five NBA championships across four decades — with the Los Angeles Lakers, Miami Heat, and New York Knicks. He coined the term 'three-peat' and wrote The Winner Within about building team culture."
+    }
+  ]
+}
