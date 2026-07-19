@@ -105,6 +105,7 @@ From Phase 21 code review (21-REVIEW.md):
 | 260615-nf7 | Fix F-01: deleteCombo now clears stale comboId from playerStore | 2026-06-15 | 5829d31 | [260615-nf7-fix-f01-delete-combo-stale-comboId](./quick/260615-nf7-fix-f01-delete-combo-stale-comboId/) |
 | 260615-tj6 | Fix F-03: combos.tsx ScrollView + map() so Back button is always reachable | 2026-06-15 | 95aaa35 | [260615-tj6-fix-f03-combos-no-scrollview](./quick/260615-tj6-fix-f03-combos-no-scrollview/) |
 | 260619-af | Apply Option A Newspaper/Editorial color scheme (near-black bg, off-white text, red accent) | 2026-06-19 | 190d3d4 | [260619-af-option-a-color-scheme](./quick/260619-af-option-a-color-scheme/) |
+| 260718 | Tap MC option to reveal answer — behind optional onChoicePress prop (single-line rollback) | 2026-07-18 | 8e7d1db | [260718-tap-mc-reveal](./quick/260718-tap-mc-reveal/) |
 
 ### Blockers/Concerns
 
