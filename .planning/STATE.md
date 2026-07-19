@@ -4,14 +4,14 @@ milestone: v12.0
 milestone_name: Web-Only Collapse
 status: active
 last_updated: "2026-07-18T00:00:00.000Z"
-stopped_at: "Completed 24-01-PLAN.md"
+stopped_at: "Completed 24-02-PLAN.md"
 resume_file: null
 progress:
   total_phases: 1
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
-  percent: 33
+  completed_plans: 2
+  percent: 67
 ---
 
 # Project State
@@ -28,9 +28,10 @@ See: .planning/PROJECT.md (updated 2026-06-13)
 Milestone v12.0 (Web-Only Collapse) started 2026-07-18. Phase 24 added: remove native Android/iOS build path, collapse to web/PWA-only.
 23 total phases shipped across 11 milestones. 447 tests passing.
 Plan 24-01 complete: native-only artifacts deleted (database/, packDownloader.ts, platformStorage.native.ts, __mocks__/{watermelondb,async-storage}.ts, android icon assets, empty dist-ios/); native config stripped from app.config.js / package.json / metro.config.js / babel.config.js; RN mock flipped to Platform.OS='web'. Defer pnpm install + full test/tsc/build:web gate to 24-03.
-Next step: /gsd-execute-phase 24 (plan 24-02 — collapse remaining Platform.OS branches)
+Plan 24-02 complete: every Platform.OS conditional in production source collapsed to the web path as the sole path (services/packCache.ts, packIndex.ts, questionProvider.ts; stores/packStore.ts, questionStore.ts; utils/haptics.ts; components/PauseOverlay.tsx; app/index.tsx, _layout.tsx, game/_layout.tsx, game/setup.tsx, packs/index.tsx, packs/combos.tsx). packStore rewired from deleted packDownloader to the packCache web IDB API. All dynamic @nozbe/watermelondb imports and database/ imports removed from production source. tsc error lines dropped 28 → 8 (all remaining in test files — 24-03 scope). Service web-path tests pass (34/34).
+Next step: /gsd-execute-phase 24 (plan 24-03 — rewrite native-path tests + run full gate: vitest / tsc / build:web)
 
-Progress: [██████░░░░░░░░░░░░░░] 33%
+Progress: [████████████████░░░░] 67%
 
 ## Performance Metrics
 
@@ -76,6 +77,7 @@ Progress: [██████░░░░░░░░░░░░░░] 33%
 - effectiveDifficulties pattern: per-player difficulty overrides game-level; null falls back
 - **Pack Combos (v6.0):** packId ↔ comboId mutual exclusion at player level; playerPackIdLists drives multi-pack question pooling at runtime; savedCombos + activeComboId persisted in packStore
 - **Per-Player Pack Mode (v7.0 → v8.0):** packMode removed in v8.0; setup screen now shows per-player pack chip always (not gated by a toggle); allPlayersCustom bypass in gameStore.startGame() skips CONF-01 if every player has a non-null packId or comboId
+- **Web-only collapse (v12.0 / Phase 24):** production source contains zero Platform.OS conditionals, zero dynamic @nozbe/watermelondb imports, zero database/ imports; packCache.ts is a thin re-export of packCache.web.ts IDB API; packStore.downloadPack delegates to downloadPackForOffline; pack-name lookups resolve from in-memory availablePacks (not WatermelonDB)
 
 ### Pending Todos
 
