@@ -51,16 +51,12 @@ The app runs at http://localhost:8081 (Expo web). Production build: `pnpm build:
 
 ### Deploying to Netlify
 
-The mobile app is a static, installable PWA that Netlify can host for free. The included `apps/mobile/netlify.toml` already configures the build command (`pnpm install && pnpm build`), the publish directory (`dist`), and Node 20 — so you don't need to set those yourself. The build also copies `_redirects` (SPA routing) and `manifest.webmanifest` (PWA) into `dist/`, and Netlify reads `_redirects` automatically. No prior Netlify experience is assumed.
+The mobile app is a static PWA. The included `apps/mobile/netlify.toml` configures the build for you.
 
-1. **Create a Netlify account** at https://app.netlify.com/signup (free — sign in with email, GitHub, GitLab, or Bitbucket).
-2. **Push this project to a Git repo** on GitHub, GitLab, or Bitbucket if you haven't already.
-3. In the Netlify dashboard, click **Add a new site** → **Import an existing project** → choose your Git provider → select your repo.
-4. In the deploy settings, set **Base directory** to `apps/mobile`. (Netlify chroots here and reads the `netlify.toml`, so **Build command** and **Publish directory** fill in automatically — leave them as `pnpm install && pnpm build` and `dist`.)
-5. Click **Deploy site**. The first build takes a few minutes. When it finishes you get a URL like `https://<random-name>.netlify.app`.
-6. Every future push to your default branch rebuilds and deploys automatically. Branch deploys and deploy previews for PRs are on by default.
-
-What you get: SPA routing (every unknown path falls back to `index.html`, so `/game/setup` etc. work on refresh), an offline Service Worker (`sw.js` precaches the app shell; pack bodies cache in IndexedDB), and the option to add a custom domain later under **Site settings → Domain management** (Netlify provisions HTTPS automatically).
+1. Push this project to a GitHub/GitLab/Bitbucket repo.
+2. In Netlify, **Add a new site → Import an existing project** and pick your repo.
+3. Set **Base directory** to `apps/mobile` (the rest fills in from `netlify.toml`).
+4. Click **Deploy site**. You get a `https://<random-name>.netlify.app` URL, and every push to your default branch redeploys automatically.
 
 ## How to Play
 
