@@ -118,7 +118,7 @@ export function QuestionCard({
 
             const choiceContent = () => (
               <>
-                <Text style={[styles.choiceLabel, revealed && isCorrect && styles.choiceLabelCorrect, isTappedWrong && styles.choiceLabelCorrect]}>
+                <Text style={[styles.choiceLabel, revealed && isCorrect && styles.choiceTextCorrect, isTappedWrong && styles.choiceTextCorrect]}>
                   {CHOICE_LABELS[index]}
                 </Text>
                 <Text style={[styles.choiceText, revealed && isCorrect && styles.choiceTextCorrect, isTappedWrong && styles.choiceTextCorrect]}>
@@ -233,9 +233,6 @@ const styles = StyleSheet.create({
     color: '#aaa',
     width: 22,
     textAlign: 'center',
-  },
-  choiceLabelCorrect: {
-    color: '#7dde8f',
   },
   choiceText: {
     fontSize: 16,
