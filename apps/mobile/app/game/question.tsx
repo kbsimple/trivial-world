@@ -34,6 +34,7 @@ export default function QuestionScreen() {
   } = useGameStore();
   const { players } = usePlayerStore();
   const [submitted, setSubmitted] = useState(false);
+  const [tappedChoiceIndex, setTappedChoiceIndex] = useState<number | undefined>(undefined);
 
   const currentPlayer = players[currentPlayerIndex];
   const category = currentCategory || currentQuestion?.category || 'blue';
@@ -83,7 +84,8 @@ export default function QuestionScreen() {
             answerText={currentQuestion.answerText}
             difficulty={currentQuestion.difficulty}
             tidbits={currentQuestion.tidbits}
-            onChoicePress={answerRevealed || submitted ? undefined : revealAnswer}
+            onChoicePress={answerRevealed || submitted ? undefined : (index) => { setTappedChoiceIndex(index); revealAnswer(); }}
+            tappedChoiceIndex={tappedChoiceIndex}
           />
         ) : null}
 

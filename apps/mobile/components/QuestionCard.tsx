@@ -36,7 +36,8 @@ interface QuestionCardProps {
   answerText?: string;
   difficulty?: Difficulty;
   tidbits?: string;
-  onChoicePress?: () => void;
+  onChoicePress?: (index: number) => void;
+  tappedChoiceIndex?: number;
 }
 
 /**
@@ -63,6 +64,7 @@ export function QuestionCard({
   difficulty,
   tidbits,
   onChoicePress,
+  tappedChoiceIndex,
 }: QuestionCardProps) {
   const theme = useTheme();
 
@@ -105,18 +107,21 @@ export function QuestionCard({
         <View style={styles.choicesContainer}>
           {resolvedChoices!.map((choice, index) => {
             const isCorrect = index === resolvedCorrectIndex;
+            const isTappedWrong = revealed && !isCorrect && index === tappedChoiceIndex;
             const revealedInlineStyle = revealed
               ? isCorrect
                 ? { backgroundColor: '#16a34a', borderWidth: 2, borderColor: '#22c55e' }
-                : { borderWidth: 2, borderColor: '#333', opacity: 0.4 }
+                : isTappedWrong
+                  ? { backgroundColor: '#dc2626', borderWidth: 2, borderColor: '#ef4444' }
+                  : { borderWidth: 2, borderColor: '#333', opacity: 0.4 }
               : undefined;
 
-            const choiceContent = (pressed?: boolean) => (
+            const choiceContent = () => (
               <>
-                <Text style={[styles.choiceLabel, revealed && isCorrect && styles.choiceLabelCorrect]}>
+                <Text style={[styles.choiceLabel, revealed && isCorrect && styles.choiceLabelCorrect, isTappedWrong && styles.choiceLabelCorrect]}>
                   {CHOICE_LABELS[index]}
                 </Text>
-                <Text style={[styles.choiceText, revealed && isCorrect && styles.choiceTextCorrect]}>
+                <Text style={[styles.choiceText, revealed && isCorrect && styles.choiceTextCorrect, isTappedWrong && styles.choiceTextCorrect]}>
                   {choice}
                 </Text>
               </>
@@ -129,10 +134,9 @@ export function QuestionCard({
                   style={({ pressed }) => [
                     styles.choiceRow,
                     styles.choiceDefault,
-                    revealedInlineStyle,
                     { opacity: pressed ? 0.7 : 1 },
                   ]}
-                  onPress={onChoicePress}
+                  onPress={() => onChoicePress(index)}
                 >
                   {choiceContent()}
                 </Pressable>
