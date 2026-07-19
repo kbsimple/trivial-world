@@ -1,11 +1,14 @@
 /**
- * Tests for fetchPackIndex IDB write-through and offline fallback (Plan 23-03, Task 2)
+ * Tests for fetchPackIndex IDB write-through and offline fallback (Plan 23-03, Task 2).
  *
- * Strategy: mock fetch, packCache.web (dynamic import), Platform.OS to exercise:
+ * Strategy: mock fetch + packCache.web (IDB) to exercise:
  *   1. On success: setCachedPackIndex is called with validated packs
- *   2. On failure + web + IDB cache: returns cached packs without throwing
- *   3. On failure + web + no IDB cache: rethrows original error
- *   4. On failure + native: rethrows original error (native path unchanged)
+ *   2. On failure + IDB cache: returns cached packs without throwing
+ *   3. On failure + no IDB cache: rethrows original error
+ *
+ * (Phase 24-02 collapse: the former Platform.OS native-path assertions were
+ * removed — the native branch was deleted in 24-01 and the IDB write-through /
+ * offline fallback is now the sole code path.)
  */
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
@@ -105,19 +108,6 @@ describe('fetchPackIndex (IDB write-through and offline fallback)', () => {
 
       expect(result).toEqual([mockPackEntry]);
     });
-
-    it('does not call setCachedPackIndex on native platform', async () => {
-      mockPlatform.OS = 'ios';
-      const responseData = { packs: [mockPackEntry] };
-      vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
-        ok: true,
-        json: vi.fn().mockResolvedValue(responseData),
-      }));
-
-      await fetchPackIndex();
-
-      expect(mockSetCachedPackIndex).not.toHaveBeenCalled();
-    });
   });
 
   describe('failure path — offline fallback (web)', () => {
@@ -145,23 +135,6 @@ describe('fetchPackIndex (IDB write-through and offline fallback)', () => {
       mockGetCachedPackIndex.mockResolvedValue(null);
 
       await expect(fetchPackIndex()).rejects.toThrow('Network error');
-    });
-
-    it('throws original error on native platform when fetch fails', async () => {
-      mockPlatform.OS = 'ios';
-      const networkError = new Error('Network error');
-      vi.stubGlobal('fetch', vi.fn().mockRejectedValue(networkError));
-
-      await expect(fetchPackIndex()).rejects.toThrow('Network error');
-    });
-
-    it('does not call getCachedPackIndex on native platform', async () => {
-      mockPlatform.OS = 'ios';
-      vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Network error')));
-
-      await expect(fetchPackIndex()).rejects.toThrow();
-
-      expect(mockGetCachedPackIndex).not.toHaveBeenCalled();
     });
   });
 });

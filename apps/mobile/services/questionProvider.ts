@@ -1,4 +1,3 @@
-import { Platform } from 'react-native';
 import { Category, Difficulty, Question } from '@trivial-world/types';
 import { ALL_QUESTIONS, getQuestionsByCategory } from '../data/questions';
 import { PlayerColor } from '../constants/categories';
@@ -29,13 +28,12 @@ async function fetchWebPackQuestions(packId: string): Promise<Question[] | null>
 }
 
 /**
- * Question provider abstraction per D-07
- * - Mobile: WatermelonDB with pack downloads
- * - Web: Bundled default pack questions per D-08
+ * Question provider abstraction per D-07.
  *
- * This module provides a platform-aware question retrieval interface:
- * - Mobile queries WatermelonDB for questions from active pack
- * - Web uses bundled questions from default pack
+ * Web/PWA-only (Phase 24-02 collapse): the IDB-first web path is the sole
+ * implementation. The WatermelonDB native path was removed in 24-01; the
+ * former web-only branches in getNextQuestion / getQuestionsForCategory
+ * are inlined as the only path.
  */
 
 /**
@@ -50,7 +48,7 @@ function playerColorToCategory(color: PlayerColor): Category {
  * Get next question for a category, excluding already-asked questions
  * @param category - The category to get a question from
  * @param excludeIds - Array of question IDs to exclude (already asked)
- * @param packIds - Pack IDs to source questions from (web: fetches pack JSONs and pools; native: handled by caller)
+ * @param packIds - Pack IDs to source questions from (fetched on demand and pooled)
  * @returns A random unasked question, or null if none available
  */
 export async function getNextQuestion(
@@ -60,10 +58,7 @@ export async function getNextQuestion(
   difficulty?: Difficulty,
   enabledDifficulties?: Difficulty[] | null
 ): Promise<Question | null> {
-  if (Platform.OS === 'web') {
-    return getNextQuestionFromBundle(playerColorToCategory(category), excludeIds, packIds, difficulty, enabledDifficulties);
-  }
-  return getNextQuestionFromDatabase(category, excludeIds, difficulty);
+  return getNextQuestionFromBundle(playerColorToCategory(category), excludeIds, packIds, difficulty, enabledDifficulties);
 }
 
 /**
@@ -74,16 +69,13 @@ export async function getNextQuestion(
 export async function getQuestionsForCategory(
   category: PlayerColor
 ): Promise<Question[]> {
-  if (Platform.OS === 'web') {
-    return getQuestionsByCategory(playerColorToCategory(category));
-  }
-  return getQuestionsFromDatabase(category);
+  return getQuestionsByCategory(playerColorToCategory(category));
 }
 
-// --- Platform-specific implementations ---
+// --- Implementation ---
 
 /**
- * Web: Get question from selected packs (fetched on demand) or bundled fallback per D-08
+ * Get question from selected packs (fetched on demand) or bundled fallback per D-08
  * Pools questions from all packIds when multiple packs are provided (multi-pack combo support)
  */
 async function getNextQuestionFromBundle(
@@ -127,171 +119,4 @@ async function getNextQuestionFromBundle(
   }
 
   return available[Math.floor(Math.random() * available.length)];
-}
-
-/**
- * Mobile: Get question from WatermelonDB per D-07
- * This imports database dynamically to avoid web bundling issues
- */
-async function getNextQuestionFromDatabase(
-  category: PlayerColor,
-  excludeIds: string[],
-  difficulty?: Difficulty
-): Promise<Question | null> {
-  // Dynamic import to avoid bundling database on web
-  const { getDatabase } = await import('../database');
-  const { Q } = await import('@nozbe/watermelondb');
-  const { usePackStore } = await import('../stores/packStore');
-
-  const database = getDatabase();
-  const { activePackId, enabledCategories, enabledDifficulties } = usePackStore.getState();
-
-  if (!activePackId) {
-    logger.error('No active pack selected');
-    return null;
-  }
-
-  // D-05: Check if category is enabled
-  if (enabledCategories && !enabledCategories.includes(category as Category)) {
-    logger.warn(`Category ${category} is disabled`);
-    return null;
-  }
-
-  try {
-    // Get active pack from WatermelonDB
-    const packs = await database.get('question_packs')
-      .query(Q.where('pack_id', activePackId))
-      .fetch();
-
-    if (packs.length === 0) {
-      logger.error('Active pack not found in database');
-      return null;
-    }
-
-    // Build query for available questions
-    // D-06: Apply category and difficulty filters, exclude asked questions
-    const query = database.get('questions')
-      .query(
-        Q.where('question_pack_id', packs[0].id),
-        Q.where('category', category),
-        Q.where('asked_at', null)
-      );
-
-    interface QuestionRecord {
-      id: string;
-      questionId: string;
-      category: Category;
-      questionText: string;
-      answerText: string;
-      difficulty?: Difficulty;
-      askedAt: string | null;
-    }
-
-    const rawQuestions = await query.fetch();
-    const questions = rawQuestions.map(q => ({
-      id: (q as unknown as QuestionRecord).questionId,
-      category: (q as unknown as QuestionRecord).category,
-      questionText: (q as unknown as QuestionRecord).questionText,
-      answerText: (q as unknown as QuestionRecord).answerText,
-      difficulty: (q as unknown as QuestionRecord).difficulty,
-      askedAt: (q as unknown as QuestionRecord).askedAt,
-    }));
-
-    // D-06: Per-player difficulty takes precedence; fallback to game-level enabledDifficulties
-    const effectiveDifficulties: Difficulty[] | null =
-      difficulty != null
-        ? [difficulty]
-        : (enabledDifficulties && enabledDifficulties.length > 0 ? enabledDifficulties : null);
-
-    const filteredQuestions = effectiveDifficulties
-      ? questions.filter(q => {
-          const qDifficulty = q.difficulty;
-          return qDifficulty && effectiveDifficulties.includes(qDifficulty as Difficulty);
-        })
-      : questions;
-
-    // Exclude already asked questions (passed as excludeIds)
-    const availableQuestions = filteredQuestions.filter(q => !excludeIds.includes(q.id));
-
-    // If all questions exhausted, warn and return null
-    if (availableQuestions.length === 0) {
-      logger.warn(`All questions exhausted for category ${category}`);
-      return null;
-    }
-
-    // Random selection from available questions
-    const selected = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
-
-    // Convert to Question type for UI
-    const question: Question = {
-      id: selected.id,
-      category: selected.category,
-      questionText: selected.questionText,
-      answerText: selected.answerText,
-      difficulty: selected.difficulty,
-    };
-
-    return question;
-  } catch (error) {
-    logger.error('Error selecting question from database:', error);
-    return null;
-  }
-}
-
-/**
- * Mobile: Get all questions for category from database
- */
-async function getQuestionsFromDatabase(category: PlayerColor): Promise<Question[]> {
-  const { getDatabase } = await import('../database');
-  const { Q } = await import('@nozbe/watermelondb');
-  const { usePackStore } = await import('../stores/packStore');
-
-  const database = getDatabase();
-  const { activePackId } = usePackStore.getState();
-
-  if (!activePackId) {
-    logger.error('No active pack selected');
-    return [];
-  }
-
-  try {
-    const packs = await database.get('question_packs')
-      .query(Q.where('pack_id', activePackId))
-      .fetch();
-
-    if (packs.length === 0) {
-      logger.error('Active pack not found in database');
-      return [];
-    }
-
-    interface QuestionRecord {
-      id: string;
-      questionId: string;
-      category: Category;
-      questionText: string;
-      answerText: string;
-      difficulty?: Difficulty;
-    }
-
-    const rawQuestions = await database.get('questions')
-      .query(
-        Q.where('question_pack_id', packs[0].id),
-        Q.where('category', category)
-      )
-      .fetch();
-
-    return rawQuestions.map((q) => {
-      const record = q as unknown as QuestionRecord;
-      return {
-        id: record.questionId,
-        category: record.category,
-        questionText: record.questionText,
-        answerText: record.answerText,
-        difficulty: record.difficulty,
-      };
-    });
-  } catch (error) {
-    logger.error('Error fetching questions from database:', error);
-    return [];
-  }
 }
