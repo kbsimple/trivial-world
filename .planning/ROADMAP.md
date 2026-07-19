@@ -153,7 +153,7 @@ Archive: `.planning/milestones/v11.0-*`
 **Plans:** 3 plans
 
 Plans:
-- [ ] 24-01-PLAN.md — Delete native-only files/dirs/assets; strip native config from app.config.js, package.json, metro.config.js, babel.config.js; flip RN mock to Platform.OS = 'web'
+- [x] 24-01-PLAN.md — Delete native-only files/dirs/assets; strip native config from app.config.js, package.json, metro.config.js, babel.config.js; flip RN mock to Platform.OS = 'web' — completed 2026-07-18
 - [ ] 24-02-PLAN.md — Collapse Platform.OS branches to web-only across stores/services/UI; remove dynamic WatermelonDB imports; re-wire packStore to packCache web API
 - [ ] 24-03-PLAN.md — Rewrite native-path tests for web path; update README to web/PWA-only; run phase gates (vitest, tsc, build:web)
 
@@ -206,7 +206,7 @@ Plans:
 | 21. Per-Player Pack Selection Redesign | v9.0 | 2/2 | Complete | 2026-06-13 |
 | 22. Undo Last Answer | v10.0 | 1/1 | Complete | 2026-06-13 |
 | 23. Web Pack Downloading | v11.0 | 6/6 | Complete | 2026-06-18 |
-| 24. Remove Native Android/iOS Build Path | v12.0 | 0/? | Planned | — |
+| 24. Remove Native Android/iOS Build Path | v12.0 | 1/3 | In Progress | — |
 
 ---
 

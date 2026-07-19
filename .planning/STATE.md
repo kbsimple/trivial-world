@@ -4,14 +4,14 @@ milestone: v12.0
 milestone_name: Web-Only Collapse
 status: active
 last_updated: "2026-07-18T00:00:00.000Z"
-stopped_at: null
+stopped_at: "Completed 24-01-PLAN.md"
 resume_file: null
 progress:
   total_phases: 1
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  total_plans: 3
+  completed_plans: 1
+  percent: 33
 ---
 
 # Project State
@@ -27,9 +27,10 @@ See: .planning/PROJECT.md (updated 2026-06-13)
 
 Milestone v12.0 (Web-Only Collapse) started 2026-07-18. Phase 24 added: remove native Android/iOS build path, collapse to web/PWA-only.
 23 total phases shipped across 11 milestones. 447 tests passing.
-Next step: /gsd-plan-phase 24
+Plan 24-01 complete: native-only artifacts deleted (database/, packDownloader.ts, platformStorage.native.ts, __mocks__/{watermelondb,async-storage}.ts, android icon assets, empty dist-ios/); native config stripped from app.config.js / package.json / metro.config.js / babel.config.js; RN mock flipped to Platform.OS='web'. Defer pnpm install + full test/tsc/build:web gate to 24-03.
+Next step: /gsd-execute-phase 24 (plan 24-02 — collapse remaining Platform.OS branches)
 
-Progress: [░░░░░░░░░░░░░░░░░░░░] 0%
+Progress: [██████░░░░░░░░░░░░░░] 33%
 
 ## Performance Metrics
 
