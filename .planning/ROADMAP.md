@@ -13,7 +13,7 @@
 - ✅ **v9.0 Per-Player Pack Selection Redesign** — Phase 21 (shipped 2026-06-13)
 - ✅ **v10.0 Undo Last Answer** — Phase 22 (shipped 2026-06-13)
 - ✅ **v11.0 Web Pack Downloading** — Phase 23 (shipped 2026-06-18)
-- 🚧 **v12.0 Web-Only Collapse** — Phase 24 (in progress)
+- ✅ **v12.0 Web-Only Collapse** — Phase 24 (shipped 2026-07-18)
 
 ## Phases
 
@@ -142,7 +142,7 @@ Archive: `.planning/milestones/v11.0-*`
 ---
 
 <details>
-<summary>🚧 v12.0 Web-Only Collapse (Phase 24) — IN PROGRESS</summary>
+<summary>✅ v12.0 Web-Only Collapse (Phase 24) — SHIPPED 2026-07-18</summary>
 
 ### Phase 24: Remove Native Android/iOS Build Path — Collapse to Web/PWA-only
 
@@ -155,7 +155,7 @@ Archive: `.planning/milestones/v11.0-*`
 Plans:
 - [x] 24-01-PLAN.md — Delete native-only files/dirs/assets; strip native config from app.config.js, package.json, metro.config.js, babel.config.js; flip RN mock to Platform.OS = 'web' — completed 2026-07-18
 - [x] 24-02-PLAN.md — Collapse Platform.OS branches to web-only across stores/services/UI; remove dynamic WatermelonDB imports; re-wire packStore to packCache web API — completed 2026-07-18
-- [ ] 24-03-PLAN.md — Rewrite native-path tests for web path; update README to web/PWA-only; run phase gates (vitest, tsc, build:web)
+- [x] 24-03-PLAN.md — Rewrite native-path tests for web path; update README to web/PWA-only; run phase gates (vitest, tsc, build:web) — completed 2026-07-18
 
 </details>
 
@@ -206,7 +206,7 @@ Plans:
 | 21. Per-Player Pack Selection Redesign | v9.0 | 2/2 | Complete | 2026-06-13 |
 | 22. Undo Last Answer | v10.0 | 1/1 | Complete | 2026-06-13 |
 | 23. Web Pack Downloading | v11.0 | 6/6 | Complete | 2026-06-18 |
-| 24. Remove Native Android/iOS Build Path | v12.0 | 2/3 | In Progress | — |
+| 24. Remove Native Android/iOS Build Path | v12.0 | 3/3 | Complete | 2026-07-18 |
 
 ---
 
@@ -223,3 +223,4 @@ Plans:
 *v10.0 shipped: 2026-06-13*
 *v11.0 shipped: 2026-06-18*
 *v12.0 added: 2026-07-18*
+*v12.0 shipped: 2026-07-18*

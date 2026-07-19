@@ -4,14 +4,14 @@ milestone: v12.0
 milestone_name: Web-Only Collapse
 status: active
 last_updated: "2026-07-18T00:00:00.000Z"
-stopped_at: "Completed 24-02-PLAN.md"
+stopped_at: "Completed 24-03-PLAN.md"
 resume_file: null
 progress:
   total_phases: 1
   completed_phases: 0
   total_plans: 3
-  completed_plans: 2
-  percent: 67
+  completed_plans: 3
+  percent: 100
 ---
 
 # Project State
@@ -21,23 +21,24 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-13)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** v12.0 Web-Only Collapse — Phase 24, ready to plan.
+**Current focus:** v12.0 Web-Only Collapse — Phase 24 complete; milestone ready to close.
 
 ## Current Position
 
 Milestone v12.0 (Web-Only Collapse) started 2026-07-18. Phase 24 added: remove native Android/iOS build path, collapse to web/PWA-only.
-23 total phases shipped across 11 milestones. 447 tests passing.
+23 total phases shipped across 11 milestones. 433 tests passing.
 Plan 24-01 complete: native-only artifacts deleted (database/, packDownloader.ts, platformStorage.native.ts, __mocks__/{watermelondb,async-storage}.ts, android icon assets, empty dist-ios/); native config stripped from app.config.js / package.json / metro.config.js / babel.config.js; RN mock flipped to Platform.OS='web'. Defer pnpm install + full test/tsc/build:web gate to 24-03.
 Plan 24-02 complete: every Platform.OS conditional in production source collapsed to the web path as the sole path (services/packCache.ts, packIndex.ts, questionProvider.ts; stores/packStore.ts, questionStore.ts; utils/haptics.ts; components/PauseOverlay.tsx; app/index.tsx, _layout.tsx, game/_layout.tsx, game/setup.tsx, packs/index.tsx, packs/combos.tsx). packStore rewired from deleted packDownloader to the packCache web IDB API. All dynamic @nozbe/watermelondb imports and database/ imports removed from production source. tsc error lines dropped 28 → 8 (all remaining in test files — 24-03 scope). Service web-path tests pass (34/34).
-Next step: /gsd-execute-phase 24 (plan 24-03 — rewrite native-path tests + run full gate: vitest / tsc / build:web)
+Plan 24-03 complete: rewrote stores/packStore.test.ts and stores/questionStore.test.ts for the web path (mock the post-24-02 packCache shim + questionProvider; assert zustand persist on sessionStorage); deleted the stale async-storage mock from playerStore.test.ts and gameStore.test.ts; updated README to web/PWA-only (no iOS/Android, no WatermelonDB, no database/ in Project Structure; Storage: IndexedDB idb-keyval + sessionStorage); pruned 11 packages from pnpm-lock.yaml via pnpm install; fixed two pre-existing test-data type mismatches (packCache.web.test.ts category literal, packIndex.web.test.ts mockPackEntry shape). Phase gates all green: vitest 433/433, tsc --noEmit exit 0, pnpm build:web exit 0 (dist/ produced). Phase 24 / v12.0 milestone complete.
+Next step: close v12.0 milestone; roadmap Phase 25+ (none currently planned).
 
-Progress: [████████████████░░░░] 67%
+Progress: [████████████████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 47
+- Total plans completed: 48
 - v1.0: 10 plans (~65 min execution)
 - v2.0: 11 plans (~48 hours)
 - v3.0 + v4.0 + v5.0: combined ~1 day execution
