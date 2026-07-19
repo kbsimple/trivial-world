@@ -62,18 +62,6 @@ The mobile app is a static, installable PWA that Netlify can host for free. The 
 
 What you get: SPA routing (every unknown path falls back to `index.html`, so `/game/setup` etc. work on refresh), an offline Service Worker (`sw.js` precaches the app shell; pack bodies cache in IndexedDB), and the option to add a custom domain later under **Site settings → Domain management** (Netlify provisions HTTPS automatically).
 
-### Question Generator Web App
-
-```bash
-# Navigate to generator app
-cd apps/generator
-
-# Start Next.js development server
-pnpm dev
-```
-
-The generator app will start at `http://localhost:3000`.
-
 ## How to Play
 
 ### Starting a Game
