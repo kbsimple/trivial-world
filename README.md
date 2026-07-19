@@ -2,7 +2,7 @@
 
 **Play Now: [trivial-world.netlify.app →](https://trivial-world.netlify.app)**
 
-A mobile trivia game for in-person social play, with a web-based question generator for creating custom question packs.
+A web/PWA trivia game for in-person social play, with a web-based question generator for creating custom question packs.
 
 ## Overview
 
@@ -13,7 +13,7 @@ Trivial World enables in-person social trivia gameplay where one person acts as 
 - **Game Conductor Model**: One person reads questions, everyone plays together
 - **6 Trivia Categories**: Adapted from Trivial Pursuit for modern interests
 - **Custom Question Packs**: Generate packs in Claude chat with `/tw-add-pack` — no Ollama needed
-- **Offline-First**: No network required for core gameplay
+- **Offline-First PWA**: No network required for core gameplay after first load
 - **Growing Pack Library**: 20+ packs available at [trivial-world.netlify.app](https://trivial-world.netlify.app)
 
 ## Prerequisites
@@ -37,22 +37,17 @@ pnpm install
 
 ## Running the Apps
 
-### Mobile App (iOS/Android)
+### Mobile App (Web/PWA)
 
 ```bash
 # Navigate to mobile app
 cd apps/mobile
 
-# Start Expo development server
+# Start Expo web dev server
 pnpm start
-
-# Or run on specific platform:
-pnpm ios      # iOS Simulator
-pnpm android  # Android Emulator
-pnpm web      # Web browser (limited features)
 ```
 
-The mobile app will start at `http://localhost:8081` (Expo default).
+The app runs at http://localhost:8081 (Expo web). Production build: `pnpm build:web`.
 
 ### Question Generator Web App
 
@@ -185,11 +180,10 @@ cd apps/generator && pnpm dev
 ```
 trivial-world/
 ├── apps/
-│   ├── mobile/           # Expo React Native app
+│   ├── mobile/           # Expo web/PWA app (web-only — native build path removed in v12.0)
 │   │   ├── app/          # Screens (Expo Router)
 │   │   ├── components/   # Reusable UI components
 │   │   ├── stores/       # Zustand state management
-│   │   ├── database/     # WatermelonDB models & migrations
 │   │   └── constants/    # Theme, categories, colors
 │   │
 │   └── generator/        # Next.js web app for AI question generation
@@ -227,10 +221,10 @@ pnpm test         # Run generator tests
 
 ## Tech Stack
 
-- **Mobile**: Expo SDK 56, React Native 0.85, React 19
+- **Mobile (Web/PWA)**: Expo SDK 56, React Native 0.85 (web export), React 19
 - **Web**: Next.js 16, React 19, Tailwind CSS
 - **State**: Zustand 5 with persist middleware
-- **Database**: WatermelonDB (offline-first)
+- **Storage**: IndexedDB (idb-keyval) + sessionStorage (offline-first web)
 - **UI**: Tamagui 2.x (mobile), Tailwind (web)
 - **Animations**: react-native-reanimated 3.x
 - **AI**: Ollama with Vercel AI SDK

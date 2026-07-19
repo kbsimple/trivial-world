@@ -54,18 +54,15 @@ const mockSetCachedPackIndex = vi.mocked(setCachedPackIndex);
 const mockGetCachedPackIndex = vi.mocked(getCachedPackIndex);
 
 const mockPackEntry: PackIndexEntry = {
-  id: 'pack-uuid-1',
+  id: '11111111-1111-1111-1111-111111111111',
   name: 'Test Pack',
-  description: 'A test pack',
+  author: 'Test Author',
   version: '1.0.0',
-  questionCount: 100,
-  categories: ['blue', 'green'],
-  difficulty: 'medium',
+  totalQuestions: 100,
+  categoryCounts: { blue: 50, pink: 0, yellow: 0, purple: 0, green: 50, orange: 0 },
   downloadUrl: 'https://example.com/packs/pack-uuid-1.json',
   checksum: 'abc123',
-  tags: [],
-  createdAt: '2024-01-01T00:00:00.000Z',
-  updatedAt: '2024-01-01T00:00:00.000Z',
+  size: 1024,
 };
 
 describe('fetchPackIndex (IDB write-through and offline fallback)', () => {

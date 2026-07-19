@@ -87,7 +87,7 @@ describe('packCache.web — idb-keyval IDB implementation', () => {
   describe('setCachedPackQuestions', () => {
     it('calls set with correct key: pack:{packId}', async () => {
       const questions = [
-        { id: 'q1', category: 'blue', questionText: 'Q?', answerText: 'A' },
+        { id: 'q1', category: 'blue' as const, questionText: 'Q?', answerText: 'A' },
       ];
       await setCachedPackQuestions('my-pack', questions);
       expect(mockSet).toHaveBeenCalledWith('pack:my-pack', questions, 'mock-store');
