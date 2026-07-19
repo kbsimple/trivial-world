@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, ScrollView, Pressable, StyleSheet, Alert, TextInput, Platform } from 'react-native';
+import { View, Text, ScrollView, Pressable, StyleSheet, Alert, TextInput } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from 'tamagui';
 import { usePackStore } from '../../stores/packStore';
@@ -15,15 +15,15 @@ export default function CombosScreen() {
   const router = useRouter();
   const theme = useTheme();
 
-  const { savedCombos, availablePacks, downloadedPackIds, createCombo, deleteCombo } = usePackStore();
+  const { savedCombos, availablePacks, createCombo, deleteCombo } = usePackStore();
 
   const [name, setName] = useState('');
   const [selectedPackIds, setSelectedPackIds] = useState<string[]>([]);
 
-  // Pitfall 4: only downloaded packs can be combined on native
-  const selectablePacks = availablePacks.filter(
-    (p) => downloadedPackIds.includes(p.id) || Platform.OS === 'web'
-  );
+  // Web/PWA-only: all available packs are selectable for combos (download is
+  // optional). The former native-only "downloaded packs" filter was removed
+  // in 24-01; downloadedPackIds is always [] after the collapse.
+  const selectablePacks = availablePacks;
 
   const togglePack = (packId: string) => {
     setSelectedPackIds((prev) =>

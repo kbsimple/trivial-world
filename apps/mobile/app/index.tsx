@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'expo-router';
-import { View, Text, Pressable, StyleSheet, Platform } from 'react-native';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
 import { useGameStore } from '../stores/gameStore';
 import { usePlayerStore } from '../stores/playerStore';
 import { usePackStore } from '../stores/packStore';
-import type { QuestionPackModel } from '../database/models';
 import { SEMANTIC_COLORS } from '../constants/theme';
 
 /**
@@ -29,56 +28,32 @@ export default function HomeScreen() {
   const players = usePlayerStore((state) => state.players);
   const resetPlayers = usePlayerStore((state) => state.resetPlayers);
   const activePackId = usePackStore((state) => state.activePackId);
+  const availablePacks = usePackStore((state) => state.availablePacks);
   const [activePackName, setActivePackName] = useState<string | null>(null);
 
-  // D-09: Web skips pack selection, navigates directly to setup
+  // D-09: Web skips pack selection, navigates directly to setup.
   // Deferred with setTimeout so the Stack navigator in _layout.tsx finishes
   // mounting before we call router.replace (React runs child effects before parents,
   // so without the defer the navigator isn't registered yet and Expo Router throws).
   useEffect(() => {
-    if (Platform.OS === 'web') {
-      const id = setTimeout(() => router.replace('/game/setup'), 0);
-      return () => clearTimeout(id);
-    }
+    const id = setTimeout(() => router.replace('/game/setup'), 0);
+    return () => clearTimeout(id);
   }, []);
 
   // D-02: Game resumable if in progress and has players
   // IN-05: Explicit check for active game phases
   const hasActiveGame = ['rolling', 'moving', 'answering', 'scoring'].includes(phase) && players.length > 0;
 
-  // Load active pack name on mount
+  // Load active pack name — resolve from the in-memory availablePacks index
+  // (web/PWA-only after Phase 24-02 collapse; the WatermelonDB lookup was removed).
   useEffect(() => {
-    let cancelled = false;
-
-    const loadPackName = async () => {
-      if (activePackId) {
-        try {
-          const { getDatabase } = await import('../database');
-          const { Q } = await import('@nozbe/watermelondb');
-          const database = getDatabase();
-          const packs = await database.get<QuestionPackModel>('question_packs')
-            .query(Q.where('pack_id', activePackId))
-            .fetch();
-          if (!cancelled && packs.length > 0) {
-            setActivePackName(packs[0].name);
-          }
-        } catch (error) {
-          if (!cancelled) {
-            console.error('Error loading pack name:', error);
-          }
-        }
-      } else {
-        if (!cancelled) {
-          setActivePackName(null);
-        }
-      }
-    };
-    loadPackName();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [activePackId]);
+    if (!activePackId) {
+      setActivePackName(null);
+      return;
+    }
+    const fromIndex = availablePacks.find((p) => p.id === activePackId);
+    setActivePackName(fromIndex ? fromIndex.name : null);
+  }, [activePackId, availablePacks]);
 
   const handleResumeGame = () => {
     // Navigate based on current phase

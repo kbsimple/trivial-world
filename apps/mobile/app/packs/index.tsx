@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { View, Text, FlatList, Pressable, ActivityIndicator, StyleSheet, Alert, Platform, LayoutAnimation } from 'react-native';
+import { View, Text, FlatList, Pressable, ActivityIndicator, StyleSheet, Alert, LayoutAnimation } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { usePlayerStore } from '../../stores/playerStore';
 import { useTheme } from 'tamagui';
@@ -36,8 +36,6 @@ export default function PackSelectionScreen() {
     downloadBytesWritten,
     downloadError,
     fetchAvailablePacks,
-    downloadPack,
-    refreshDownloadedPacks,
     selectPack,
     selectPackList,
     savedCombos,
@@ -82,41 +80,19 @@ export default function PackSelectionScreen() {
       console.error('Failed to fetch pack index:', error);
       Alert.alert('Error', 'Failed to load available packs. Please try again.');
     });
-
-    // Refresh downloaded packs from database
-    refreshDownloadedPacks();
   }, []);
 
-  // Web only: hydrate offlinePackIds from IndexedDB on mount
+  // Hydrate offlinePackIds from IndexedDB on mount (web/PWA-only after 24-02 collapse)
   useEffect(() => {
-    if (Platform.OS === 'web') {
-      refreshOfflinePackIds();
-    }
+    refreshOfflinePackIds();
   }, []);
 
-  // Load downloaded pack versions from WatermelonDB (D-14)
+  // D-14: On web/PWA there is no WatermelonDB-downloaded pack version to
+  // compare against, so downloadedPackVersions stays empty and
+  // checkHasUpdateAvailable always returns false. The former native
+  // WatermelonDB version-load was removed in 24-01.
   useEffect(() => {
-    const loadDownloadedVersions = async () => {
-      if (Platform.OS === 'web' || downloadedPackIds.length === 0) {
-        setDownloadedPackVersions({});
-        return;
-      }
-
-      try {
-        const { getDatabase } = await import('../../database');
-        const database = getDatabase();
-        const packs = await database.get('question_packs').query().fetch();
-        const versions: Record<string, string> = {};
-        for (const pack of packs) {
-          const p = pack as any;
-          versions[p.packId] = p.version;
-        }
-        setDownloadedPackVersions(versions);
-      } catch (error) {
-        console.error('Error loading downloaded versions:', error);
-      }
-    };
-    loadDownloadedVersions();
+    setDownloadedPackVersions({});
   }, [downloadedPackIds]);
 
   // Show download error alert (D-11)
@@ -134,9 +110,7 @@ export default function PackSelectionScreen() {
           }},
           { text: 'Retry', onPress: () => {
             if (packToRetry) {
-              Platform.OS === 'web'
-                ? handleDownloadForOffline(packToRetry)
-                : handleDownload(packToRetry);
+              handleDownloadForOffline(packToRetry);
             }
           }},
         ]
@@ -147,19 +121,6 @@ export default function PackSelectionScreen() {
   const handlePackPress = (pack: PackIndexEntry) => {
     setSelectedPack(pack);
     setModalVisible(true);
-  };
-
-  const handleDownload = async (pack: PackIndexEntry) => {
-    setModalVisible(false);
-    // WR-01: Store pack reference for retry
-    errorPackRef.current = pack;
-    try {
-      await downloadPack(pack);
-      Alert.alert('Success', `${pack.name} downloaded successfully!`);
-    } catch (error) {
-      // Error handled by store and alert above
-      console.error('Download failed:', error);
-    }
   };
 
   const handleDownloadForOffline = async (pack: PackIndexEntry) => {
@@ -295,7 +256,7 @@ export default function PackSelectionScreen() {
       </Text>
 
       {/* Download progress (D-10) */}
-      {isDownloading && (selectedPack || Platform.OS === 'web') && (
+      {isDownloading && (
         <DownloadProgress
           packName={selectedPack?.name ?? 'Pack'}
           progress={downloadProgress}
@@ -332,16 +293,17 @@ export default function PackSelectionScreen() {
         data={availablePacks}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => {
-          const isNativeDownloaded = downloadedPackIds.includes(item.id);
-          const isOfflineOnWeb = Platform.OS === 'web' && offlinePackIds.includes(item.id);
-          // Native: use WatermelonDB download status; Web: treat as "available" for selection
-          const isDownloaded = isNativeDownloaded || Platform.OS === 'web';
+          const isOffline = offlinePackIds.includes(item.id);
+          // Web/PWA-only: packs are always "available" for selection (download is
+          // optional, for offline use). The former native WatermelonDB download
+          // status branch was removed in 24-01.
+          const isDownloaded = true;
           const isSelected = selectedPackIds.includes(item.id);
           return (
             <View>
               <PackCard
                 pack={item}
-                isDownloaded={isNativeDownloaded}
+                isDownloaded={downloadedPackIds.includes(item.id)}
                 hasUpdate={checkHasUpdateAvailable(item)}
                 isActive={hasSelection ? isSelected : activePackId === item.id}
                 onPress={
@@ -350,25 +312,23 @@ export default function PackSelectionScreen() {
                     : () => handlePackPress(item)
                 }
               />
-              {Platform.OS === 'web' && (
-                <View style={styles.webOfflineRow}>
-                  {isOfflineOnWeb ? (
-                    <Text style={[styles.downloadedBadge, { color: theme.color?.val as string }]}>
-                      Downloaded
+              <View style={styles.webOfflineRow}>
+                {isOffline ? (
+                  <Text style={[styles.downloadedBadge, { color: theme.color?.val as string }]}>
+                    Downloaded
+                  </Text>
+                ) : (
+                  <Pressable
+                    onPress={() => handleDownloadForOffline(item)}
+                    disabled={isDownloading}
+                    style={styles.downloadButton}
+                  >
+                    <Text style={[styles.downloadButtonText, { color: theme.color?.val as string }]}>
+                      {isDownloading ? 'Downloading...' : 'Download for offline'}
                     </Text>
-                  ) : (
-                    <Pressable
-                      onPress={() => handleDownloadForOffline(item)}
-                      disabled={isDownloading}
-                      style={styles.downloadButton}
-                    >
-                      <Text style={[styles.downloadButtonText, { color: theme.color?.val as string }]}>
-                        {isDownloading ? 'Downloading...' : 'Download for offline'}
-                      </Text>
-                    </Pressable>
-                  )}
-                </View>
-              )}
+                  </Pressable>
+                )}
+              </View>
             </View>
           );
         }}
@@ -386,13 +346,9 @@ export default function PackSelectionScreen() {
         pack={selectedPack}
         isDownloaded={selectedPack ? downloadedPackIds.includes(selectedPack.id) : false}
         onClose={() => setModalVisible(false)}
-        onDownload={
-          selectedPack && !downloadedPackIds.includes(selectedPack.id) && Platform.OS !== 'web'
-            ? () => handleDownload(selectedPack)
-            : undefined
-        }
+        onDownload={undefined}
         onSelect={
-          selectedPack && (downloadedPackIds.includes(selectedPack.id) || Platform.OS === 'web')
+          selectedPack
             ? () => handleSelectPack(selectedPack.id)
             : undefined
         }

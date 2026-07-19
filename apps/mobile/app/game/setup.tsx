@@ -7,7 +7,6 @@ import { useGameStore } from '../../stores/gameStore';
 import { usePackStore } from '../../stores/packStore';
 import { CATEGORY_COLORS } from '../../constants/categories';
 import type { PlayerColor } from '../../constants/categories';
-import type { QuestionPackModel } from '../../database/models';
 import { SEMANTIC_COLORS } from '../../constants/theme';
 
 /**
@@ -38,41 +37,15 @@ export default function SetupScreen() {
   const canStart =
     players.length > 0 && (!!activePackId || allPlayersCustom);
 
-  // Load pack name — check the in-memory index first (web-safe), then WatermelonDB
+  // Load pack name — resolve from the in-memory availablePacks index
+  // (web/PWA-only after Phase 24-02 collapse; the WatermelonDB fallback was removed).
   useEffect(() => {
-    let cancelled = false;
-
     if (!activePackId) {
       setPackName(null);
       return;
     }
-
     const fromIndex = availablePacks.find((p) => p.id === activePackId);
-    if (fromIndex) {
-      setPackName(fromIndex.name);
-      return;
-    }
-
-    const loadPackName = async () => {
-      try {
-        const { getDatabase } = await import('../../database');
-        const { Q } = await import('@nozbe/watermelondb');
-        const database = getDatabase();
-        const packs = await database.get<QuestionPackModel>('question_packs')
-          .query(Q.where('pack_id', activePackId))
-          .fetch();
-        if (!cancelled && packs.length > 0) {
-          setPackName(packs[0].name);
-        }
-      } catch (error) {
-        if (!cancelled) {
-          console.error('Error loading pack name:', error);
-        }
-      }
-    };
-    loadPackName();
-
-    return () => { cancelled = true; };
+    setPackName(fromIndex ? fromIndex.name : null);
   }, [activePackId, availablePacks]);
 
   const handleAddPlayer = () => {

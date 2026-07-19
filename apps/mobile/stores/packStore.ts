@@ -1,11 +1,16 @@
-import { Platform } from 'react-native';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { platformStorage } from '../services/platformStorage';
 import { PackIndexEntry, Category, Difficulty, PackCombo, QuestionPackSchema } from '@trivial-world/types';
 import { fetchPackIndex } from '../services/packIndex';
-import { downloadPackWithProgress, getDownloadedPackIds, setActivePack } from '../services/packDownloader';
-import { getOfflinePackIds, setCachedPackIndex } from '../services/packCache';
+import {
+  getCachedPackChecksum,
+  setCachedPackQuestions,
+  setCachedPackChecksum,
+  setCachedPackIndex,
+  getOfflinePackIds,
+  requestPersistentStorage,
+} from '../services/packCache';
 import { usePlayerStore } from './playerStore';
 
 /**
@@ -91,43 +96,14 @@ export const usePackStore = create<PackState>()(
       },
 
       downloadPack: async (entry: PackIndexEntry) => {
-        set({ isDownloading: true, downloadProgress: 0, downloadBytesWritten: 0, downloadError: null });
-        try {
-          await downloadPackWithProgress(entry, (progress) => {
-            set({ downloadProgress: progress.percent, downloadBytesWritten: progress.bytesWritten });
-          });
-
-          // Refresh downloaded pack IDs
-          const downloadedIds = await getDownloadedPackIds();
-          set({
-            downloadedPackIds: downloadedIds,
-            isDownloading: false,
-            downloadProgress: 100,
-          });
-        } catch (error) {
-          // D-11: Store error for retry UI
-          const errorMessage = error instanceof Error ? error.message : 'Download failed';
-          set({
-            isDownloading: false,
-            downloadProgress: 0,
-            downloadBytesWritten: 0,
-            downloadError: errorMessage,
-          });
-          throw error;
-        }
+        // Web/PWA-only (Phase 24-02 collapse): delegates to the IDB offline
+        // download path — the former native downloader was deleted in 24-01.
+        await get().downloadPackForOffline(entry);
       },
 
       downloadPackForOffline: async (entry: PackIndexEntry) => {
         set({ isDownloading: true, downloadProgress: 0, downloadBytesWritten: 0, downloadError: null });
         try {
-          const {
-            getCachedPackChecksum,
-            setCachedPackQuestions,
-            setCachedPackChecksum,
-            getOfflinePackIds: getIDBOfflineIds,
-            requestPersistentStorage,
-          } = await import('../services/packCache.web');
-
           // Skip re-download if checksum unchanged
           const storedChecksum = await getCachedPackChecksum(entry.id);
           if (storedChecksum === entry.checksum) {
@@ -174,7 +150,7 @@ export const usePackStore = create<PackState>()(
           await requestPersistentStorage();
 
           // Refresh offline pack IDs
-          const offlineIds = await getIDBOfflineIds();
+          const offlineIds = await getOfflinePackIds();
           set({ offlinePackIds: offlineIds, isDownloading: false, downloadProgress: 100 });
         } catch (error) {
           const errorMessage = error instanceof Error ? error.message : 'Download failed';
@@ -189,9 +165,12 @@ export const usePackStore = create<PackState>()(
       },
 
       refreshDownloadedPacks: async () => {
-        if (Platform.OS === 'web') return;
-        const downloadedIds = await getDownloadedPackIds();
-        set({ downloadedPackIds: downloadedIds });
+        // Web/PWA-only (Phase 24-02 collapse): the native WatermelonDB
+        // downloadedPackIds list no longer exists. On web, offline pack
+        // availability is surfaced via refreshOfflinePackIds (IDB-backed).
+        // This function is retained as a no-op for callers that still
+        // reference it; downloadedPackIds stays [].
+        return;
       },
 
       refreshOfflinePackIds: async () => {
@@ -200,17 +179,11 @@ export const usePackStore = create<PackState>()(
       },
 
       selectPack: async (packId: string) => {
-        if (Platform.OS !== 'web') {
-          await setActivePack(packId);
-        }
         set({ activePackId: packId, activePackIdList: null });
       },
 
       selectPackList: async (packIds: string[]) => {
         if (packIds.length === 0) return;
-        if (Platform.OS !== 'web') {
-          await setActivePack(packIds[0]);
-        }
         set({ activePackId: packIds[0], activePackIdList: packIds, activeComboId: null });
       },
 

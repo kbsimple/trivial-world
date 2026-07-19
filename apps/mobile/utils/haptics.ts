@@ -1,32 +1,32 @@
-import { Platform } from 'react-native';
+/**
+ * Haptics — web/PWA-only no-ops (Phase 24-02 collapse).
+ *
+ * expo-haptics has no effect on web (per D-10). The former web-only no-op
+ * branches are inlined as the only path; the native expo-haptics calls were
+ * removed when the native build path was deleted in 24-01.
+ *
+ * The exported function signatures are preserved so callers can stay unchanged.
+ */
 import * as Haptics from 'expo-haptics';
 
 /**
- * Platform-aware haptic impact
- * Calls expo-haptics on mobile, no-op on web (per D-10)
+ * No-op haptic impact (web has no haptics per D-10).
  *
- * @param style - The impact feedback style (Light, Medium, Heavy)
+ * @param _style - The impact feedback style (ignored on web)
  */
 export async function impactAsync(
-  style: Haptics.ImpactFeedbackStyle = Haptics.ImpactFeedbackStyle.Medium
+  _style: Haptics.ImpactFeedbackStyle = Haptics.ImpactFeedbackStyle.Medium
 ): Promise<void> {
-  if (Platform.OS === 'web') {
-    return; // No haptics on web per D-10
-  }
-  await Haptics.impactAsync(style);
+  return;
 }
 
 /**
- * Platform-aware haptic notification
- * Calls expo-haptics on mobile, no-op on web (per D-10)
+ * No-op haptic notification (web has no haptics per D-10).
  *
- * @param type - The notification feedback type (Success, Warning, Error)
+ * @param _type - The notification feedback type (ignored on web)
  */
 export async function notificationAsync(
-  type: Haptics.NotificationFeedbackType = Haptics.NotificationFeedbackType.Success
+  _type: Haptics.NotificationFeedbackType = Haptics.NotificationFeedbackType.Success
 ): Promise<void> {
-  if (Platform.OS === 'web') {
-    return; // No haptics on web per D-10
-  }
-  await Haptics.notificationAsync(type);
+  return;
 }

@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
-import { useState, useEffect } from 'react';
-import { BackHandler, Platform, Pressable, Text, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { Pressable, Text, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
 import { PauseOverlay } from '../../components/PauseOverlay';
 import { useGameStore } from '../../stores/gameStore';
@@ -23,7 +23,6 @@ export default function GameLayout() {
   const [pauseOpen, setPauseOpen] = useState(false);
   const router = useRouter();
   const theme = useTheme();
-  const phase = useGameStore((state) => state.phase);
   const resetPlayers = usePlayerStore((state) => state.resetPlayers);
   const resetGame = useGameStore((state) => state.resetGame);
 
@@ -37,19 +36,6 @@ export default function GameLayout() {
     setPauseOpen(false);
   };
 
-  // D-03: Back button confirmation during active game (Android only)
-  useEffect(() => {
-    if (Platform.OS === 'web') return;
-    const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-      if (phase !== 'setup' && phase !== 'finished') {
-        setPauseOpen(true);
-        return true;
-      }
-      return false;
-    });
-    return () => backHandler.remove();
-  }, [phase]);
-
   return (
     <>
       <Stack
@@ -62,7 +48,7 @@ export default function GameLayout() {
           headerLeft: () => (
             <Pressable onPress={() => setPauseOpen(true)} style={styles.pauseButton}>
               <Text style={[styles.pauseText, { color: theme.color?.val as string }]}>
-                {Platform.OS === 'web' ? '☰' : 'Pause'}
+                ☰
               </Text>
             </Pressable>
           ),

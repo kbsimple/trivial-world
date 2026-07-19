@@ -1,15 +1,14 @@
-import { Platform } from 'react-native';
 import { Modal, View, Pressable, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import { Sheet, YStack, Button, Text as TText, H2 } from 'tamagui';
 
 /**
- * PauseOverlay
- *
- * Web: dropdown menu anchored to the top-left header button (☰).
- * Native: bottom sheet with Resume/End Game options.
+ * PauseOverlay — web/PWA-only dropdown (Phase 24-02 collapse).
  *
  * Per D-03: Pause button in header shows overlay with Resume Game
  * and End Game options — explicit control for intentional breaks.
+ *
+ * The former native Sheet bottom-sheet branch was removed when the native
+ * build path was deleted in 24-01; the web dropdown (Modal anchored to the
+ * top-left header button) is the sole implementation.
  */
 interface PauseOverlayProps {
   open: boolean;
@@ -19,74 +18,31 @@ interface PauseOverlayProps {
 }
 
 export function PauseOverlay({ open, onOpenChange, onResume, onNewGame }: PauseOverlayProps) {
-  if (Platform.OS === 'web') {
-    if (!open) return null;
-    return (
-      <Modal transparent visible={open} onRequestClose={() => onOpenChange(false)}>
-        <TouchableWithoutFeedback onPress={() => onOpenChange(false)}>
-          <View style={styles.backdrop}>
-            <TouchableWithoutFeedback>
-              <View style={styles.dropdown}>
-                <Pressable
-                  style={({ pressed }) => [styles.menuItem, pressed && styles.menuItemPressed]}
-                  onPress={() => { onOpenChange(false); onResume(); }}
-                >
-                  <Text style={styles.menuItemText}>Resume Game</Text>
-                </Pressable>
-                <View style={styles.separator} />
-                <Pressable
-                  style={({ pressed }) => [styles.menuItemSuccess, pressed && styles.menuItemPressed]}
-                  onPress={() => { onOpenChange(false); onNewGame(); }}
-                >
-                  <Text style={styles.menuItemTextSuccess}>New Game</Text>
-                </Pressable>
-              </View>
-            </TouchableWithoutFeedback>
-          </View>
-        </TouchableWithoutFeedback>
-      </Modal>
-    );
-  }
-
+  if (!open) return null;
   return (
-    <Sheet
-      open={open}
-      onOpenChange={onOpenChange}
-      snapPoints={[50]}
-      dismissOnSnapToBottom
-      modal
-    >
-      <Sheet.Overlay />
-      <Sheet.Frame padding="$4" gap="$3">
-        <Sheet.Handle />
-        <YStack gap="$4" alignItems="center">
-          <H2>Game Paused</H2>
-          <TText color="$gray11">Choose an option to continue</TText>
-          <YStack gap="$2" width="100%">
-            <Button
-              size="$4"
-              theme="green"
-              onPress={() => {
-                onOpenChange(false);
-                onResume();
-              }}
-            >
-              Resume Game
-            </Button>
-            <Button
-              size="$4"
-              theme="green"
-              onPress={() => {
-                onOpenChange(false);
-                onNewGame();
-              }}
-            >
-              New Game
-            </Button>
-          </YStack>
-        </YStack>
-      </Sheet.Frame>
-    </Sheet>
+    <Modal transparent visible={open} onRequestClose={() => onOpenChange(false)}>
+      <TouchableWithoutFeedback onPress={() => onOpenChange(false)}>
+        <View style={styles.backdrop}>
+          <TouchableWithoutFeedback>
+            <View style={styles.dropdown}>
+              <Pressable
+                style={({ pressed }) => [styles.menuItem, pressed && styles.menuItemPressed]}
+                onPress={() => { onOpenChange(false); onResume(); }}
+              >
+                <Text style={styles.menuItemText}>Resume Game</Text>
+              </Pressable>
+              <View style={styles.separator} />
+              <Pressable
+                style={({ pressed }) => [styles.menuItemSuccess, pressed && styles.menuItemPressed]}
+                onPress={() => { onOpenChange(false); onNewGame(); }}
+              >
+                <Text style={styles.menuItemTextSuccess}>New Game</Text>
+              </Pressable>
+            </View>
+          </TouchableWithoutFeedback>
+        </View>
+      </TouchableWithoutFeedback>
+    </Modal>
   );
 }
 
