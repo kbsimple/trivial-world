@@ -1,5 +1,6 @@
 /**
- * Expo configuration for Trivial World mobile app
+ * Expo configuration for Trivial World web/PWA app
+ * (web-only — native iOS/Android build path removed in Phase 24)
  *
  * Plugins configured for mobile-only features:
  * - expo-haptics: Mobile-only haptic feedback (no-op on web)
@@ -12,19 +13,6 @@ module.exports = {
   orientation: 'portrait',
   icon: './assets/icon.png',
   userInterfaceStyle: 'dark',
-  ios: {
-    supportsTablet: false,
-    bundleIdentifier: 'com.trivialworld.app',
-  },
-  android: {
-    adaptiveIcon: {
-      backgroundColor: '#1a1a2e',
-      foregroundImage: './assets/android-icon-foreground.png',
-      backgroundImage: './assets/android-icon-background.png',
-      monochromeImage: './assets/android-icon-monochrome.png',
-    },
-    package: 'com.trivialworld.app',
-  },
   web: {
     favicon: './assets/favicon.png',
     output: 'single',
