@@ -51,11 +51,7 @@ The app runs at http://localhost:8081 (Expo web). Production build: `pnpm build:
 
 ### Deploying to Netlify
 
-The mobile app is a static site (installable PWA). `pnpm build:web` outputs everything to `apps/mobile/dist/`, which Netlify can host for free. The included `apps/mobile/netlify.toml` already configures the build command (`pnpm install && pnpm build`), the publish directory (`dist`), and Node 20 — so you don't need to configure those yourself. The build also copies `_redirects` (SPA routing) and `manifest.webmanifest` (PWA) into `dist/`, and Netlify reads `_redirects` automatically.
-
-Pick one of the two paths below. No prior Netlify experience is assumed.
-
-#### Option A — Connect a Git repo (recommended; auto-deploys on every push)
+The mobile app is a static, installable PWA that Netlify can host for free. The included `apps/mobile/netlify.toml` already configures the build command (`pnpm install && pnpm build`), the publish directory (`dist`), and Node 20 — so you don't need to set those yourself. The build also copies `_redirects` (SPA routing) and `manifest.webmanifest` (PWA) into `dist/`, and Netlify reads `_redirects` automatically. No prior Netlify experience is assumed.
 
 1. **Create a Netlify account** at https://app.netlify.com/signup (free — sign in with email, GitHub, GitLab, or Bitbucket).
 2. **Push this project to a Git repo** on GitHub, GitLab, or Bitbucket if you haven't already.
@@ -64,24 +60,7 @@ Pick one of the two paths below. No prior Netlify experience is assumed.
 5. Click **Deploy site**. The first build takes a few minutes. When it finishes you get a URL like `https://<random-name>.netlify.app`.
 6. Every future push to your default branch rebuilds and deploys automatically. Branch deploys and deploy previews for PRs are on by default.
 
-#### Option B — Drag and drop (no Git; fastest to try)
-
-1. **Build locally** from the repo root:
-   ```bash
-   pnpm install
-   cd apps/mobile && pnpm build:web
-   ```
-   This produces `apps/mobile/dist/`.
-2. **Create a Netlify account** at https://app.netlify.com/signup.
-3. In the dashboard, click **Add a new site** → **Deploy manually** (or drag-and-drop).
-4. **Drag the `apps/mobile/dist` folder** onto the page. Your site is live immediately at a `https://<random-name>.netlify.app` URL.
-5. To update later, rebuild and drag the `dist` folder again.
-
-#### What you get
-
-- **SPA routing:** `_redirects` falls every unknown path back to `index.html` (so `/game/setup` etc. work on refresh), with a `/statusz` proxy for the live pack-health endpoint.
-- **Offline PWA:** `sw.js` (Service Worker) precaches the app shell, so the game works offline after the first visit. Pack bodies are cached in IndexedDB.
-- **Custom domain:** add one later under **Site settings → Domain management**. Netlify provisions HTTPS automatically.
+What you get: SPA routing (every unknown path falls back to `index.html`, so `/game/setup` etc. work on refresh), an offline Service Worker (`sw.js` precaches the app shell; pack bodies cache in IndexedDB), and the option to add a custom domain later under **Site settings → Domain management** (Netlify provisions HTTPS automatically).
 
 ### Question Generator Web App
 
