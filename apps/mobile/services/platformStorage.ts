@@ -1,9 +1,9 @@
 /**
- * Platform-specific storage for web
- * Uses sessionStorage for session-only persistence (D-06)
+ * Storage adapter for the web/PWA app.
+ * Uses sessionStorage for session-only persistence (D-06).
  *
- * NOTE: This file is used ONLY on web. React Native uses platformStorage.native.ts
- * which imports AsyncStorage. This separation prevents bundling native modules on web.
+ * This is the sole storage adapter after the v12.0 native build-path removal
+ * (the former platformStorage.native.ts / AsyncStorage path was deleted).
  */
 export const platformStorage = {
   getItem: async (name: string): Promise<string | null> => {
