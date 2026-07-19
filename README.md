@@ -10,13 +10,14 @@ A web/PWA trivia game for in-person social play, with a web-based question gener
 
 ### Overview
 
-Trivial World enables in-person social trivia gameplay where one person acts as the **game conductor**, reading questions aloud from the app while participants play together. The app handles die rolls, move choices, question management, and scoring — players engage in a shared physical space around the mobile device.
+Trivial World enables in-person social trivia gameplay where one person acts as the **game conductor**, reading questions aloud from the app while participants play together. The app handles category selection, question management, and scoring — players engage in a shared physical space around the mobile device.
 
 ### Features
 
 - **Game Conductor Model**: One person reads questions, everyone plays together
 - **6 Trivia Categories**: Adapted from Trivial Pursuit for modern interests
 - **Custom Question Packs**: Generate packs in Claude chat with `/tw-add-pack` — no Ollama needed
+- **Per-Player Packs**: Play from a shared pack, or let each player pick their own pack or combo
 - **Offline-First PWA**: No network required for core gameplay after first load
 - **Growing Pack Library**: 20+ packs available at [trivial-world.netlify.app](https://trivial-world.netlify.app)
 
@@ -28,19 +29,19 @@ Trivial World enables in-person social trivia gameplay where one person acts as 
 2. **Select a question pack** from the pack selection screen
    - 20+ packs are available — the Starter Pack is included by default
    - Add more packs at any time with `/tw-add-pack` in Claude Code
-3. **Add participants** — Enter names for each player (minimum 1 player)
+   - Choose **Shared** (all players use the same pack) or **Custom** (each player picks their own pack or combo)
+3. **Add participants** — Enter names for each player (1–6 players)
 4. **Tap "Start Game"** to begin
 
 #### Game Flow
 
 The game follows a turn-based structure:
 
-1. **Roll the die** — The current player taps to roll
-2. **Choose a move** — Select from available board positions based on the roll
-3. **Answer a question** — The conductor reads the question aloud from the selected category
-4. **Mark correct/incorrect** — The conductor marks the player's answer
-5. **Score wedges** — Correct answers in center positions earn category wedges
-6. **Next turn** — Play passes to the next player
+1. **Choose a category**
+2. **Answer a question**
+3. **If correct, continue. If incorrect, move to the next player.**
+4. **Once all categories are covered, answer the final question in a category chosen by the opponents.**
+5. **If this question is answered, the game is over.**
 
 #### Categories
 
@@ -55,7 +56,7 @@ The game follows a turn-based structure:
 
 #### Winning
 
-Collect all 6 category wedges to win! Wedges are earned by answering questions correctly in center positions on the board.
+Complete all of your pack's categories to enter the Championship Round, then answer one championship question correctly to win. Progress is shown as colored category dots — there is no board or wedge collection.
 
 ---
 
