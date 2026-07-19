@@ -83,6 +83,7 @@ export default function QuestionScreen() {
             answerText={currentQuestion.answerText}
             difficulty={currentQuestion.difficulty}
             tidbits={currentQuestion.tidbits}
+            onChoicePress={answerRevealed || submitted ? undefined : revealAnswer}
           />
         ) : null}
 

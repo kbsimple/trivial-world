@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { useTheme } from 'tamagui';
 import { PlayerColor } from '../constants/categories';
 import { CategoryBadge } from './CategoryBadge';
@@ -36,6 +36,7 @@ interface QuestionCardProps {
   answerText?: string;
   difficulty?: Difficulty;
   tidbits?: string;
+  onChoicePress?: () => void;
 }
 
 /**
@@ -61,6 +62,7 @@ export function QuestionCard({
   answerText,
   difficulty,
   tidbits,
+  onChoicePress,
 }: QuestionCardProps) {
   const theme = useTheme();
 
@@ -109,14 +111,37 @@ export function QuestionCard({
                 : { borderWidth: 2, borderColor: '#333', opacity: 0.4 }
               : undefined;
 
-            return (
-              <View key={index} style={[styles.choiceRow, styles.choiceDefault, revealedInlineStyle]}>
+            const choiceContent = (pressed?: boolean) => (
+              <>
                 <Text style={[styles.choiceLabel, revealed && isCorrect && styles.choiceLabelCorrect]}>
                   {CHOICE_LABELS[index]}
                 </Text>
                 <Text style={[styles.choiceText, revealed && isCorrect && styles.choiceTextCorrect]}>
                   {choice}
                 </Text>
+              </>
+            );
+
+            if (!revealed && onChoicePress) {
+              return (
+                <Pressable
+                  key={index}
+                  style={({ pressed }) => [
+                    styles.choiceRow,
+                    styles.choiceDefault,
+                    revealedInlineStyle,
+                    { opacity: pressed ? 0.7 : 1 },
+                  ]}
+                  onPress={onChoicePress}
+                >
+                  {choiceContent()}
+                </Pressable>
+              );
+            }
+
+            return (
+              <View key={index} style={[styles.choiceRow, styles.choiceDefault, revealedInlineStyle]}>
+                {choiceContent()}
               </View>
             );
           })}
