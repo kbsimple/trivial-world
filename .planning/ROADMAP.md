@@ -13,6 +13,7 @@
 - ✅ **v9.0 Per-Player Pack Selection Redesign** — Phase 21 (shipped 2026-06-13)
 - ✅ **v10.0 Undo Last Answer** — Phase 22 (shipped 2026-06-13)
 - ✅ **v11.0 Web Pack Downloading** — Phase 23 (shipped 2026-06-18)
+- 🚧 **v12.0 Web-Only Collapse** — Phase 24 (in progress)
 
 ## Phases
 
@@ -141,6 +142,24 @@ Archive: `.planning/milestones/v11.0-*`
 ---
 
 <details>
+<summary>🚧 v12.0 Web-Only Collapse (Phase 24) — IN PROGRESS</summary>
+
+### Phase 24: Remove Native Android/iOS Build Path — Collapse to Web/PWA-only
+
+**Goal:** Remove the native (Android/iOS) build path and the WatermelonDB native database layer, collapsing the app to a single web/PWA target. Delete the `database/` directory, `packDownloader.ts`, native platform extensions (`.native.ts`), and the `Platform.OS` branches across stores/services/UI that gated native vs web. Remove the `@nozbe/watermelondb` and `@react-native-async-storage/async-storage` dependencies, the android/ios blocks from `app.config.js`, the `android`/`ios` npm scripts, android icon assets, and the empty `dist-ios/`. Simplify `metro.config.js` (drop the native-mock resolver) and `babel.config.js` (drop WatermelonDB decorator plugins). Rewrite the native-path tests (`questionStore.test.ts`, `packStore.test.ts`) to cover the web path; update `__mocks__/react-native.ts` to `Platform.OS = 'web'`. Update README to reflect web/PWA-only deployment. Gates: full test suite green, `tsc --noEmit` clean, `pnpm build:web` succeeds.
+
+**Depends on:** Phase 23 (Web Pack Downloading) — the web pack cache (IndexedDB + idb-keyval) is the sole persistence layer after native removal.
+
+**Plans:** 0 plans (not planned yet)
+
+Plans:
+- _(to be planned via `/gsd-plan-phase 24`)_
+
+</details>
+
+---
+
+<details>
 <summary>✅ v10.0 Undo Last Answer (Phase 22) — SHIPPED 2026-06-13</summary>
 
 ### Phase 22: Undo Last Answer
@@ -185,6 +204,7 @@ Plans:
 | 21. Per-Player Pack Selection Redesign | v9.0 | 2/2 | Complete | 2026-06-13 |
 | 22. Undo Last Answer | v10.0 | 1/1 | Complete | 2026-06-13 |
 | 23. Web Pack Downloading | v11.0 | 6/6 | Complete | 2026-06-18 |
+| 24. Remove Native Android/iOS Build Path | v12.0 | 0/? | Planned | — |
 
 ---
 
@@ -200,3 +220,4 @@ Plans:
 *v9.0 shipped: 2026-06-13*
 *v10.0 shipped: 2026-06-13*
 *v11.0 shipped: 2026-06-18*
+*v12.0 added: 2026-07-18*
