@@ -1,5 +1,32 @@
 # Milestones
 
+## v12.0: Web-Only Collapse — Completed 2026-07-18
+
+**Goal:** Remove the native (Android/iOS) build path and the WatermelonDB native database layer; collapse the app to a single web/PWA target.
+
+**Shipped (Phase 24):**
+- Deleted `database/` (WatermelonDB), `services/packDownloader.ts`, `services/platformStorage.native.ts`, android icon assets, empty `dist-ios/`
+- Removed `@nozbe/watermelondb` + `@react-native-async-storage/async-storage`; stripped ios/android from `app.config.js` and npm scripts; simplified `metro.config.js` + `babel.config.js`
+- Collapsed every `Platform.OS` branch to the web path (zero conditionals remain in production source); re-wired `packStore` → `packCache` IDB shim; `questionProvider` IDB-first; pack names from in-memory `availablePacks`
+- Re-wrote native-path tests for the web path; `__mocks__/react-native.ts` → `Platform.OS = 'web'`; README web/PWA-only
+- Gates: vitest 433/433, `tsc --noEmit` 0 errors, `pnpm build:web` → `dist/` with Service Worker
+
+**Key Decisions:**
+- IDB (idb-keyval) + sessionStorage are the sole persistence layers (Phase 23 SW + IDB layer intact, unchanged)
+- `packCache.ts` is a thin re-export shim over `packCache.web.ts` — stores import the canonical shim, not `packCache.web` directly
+- `packStore.downloadPack` delegates to `downloadPackForOffline`; `refreshDownloadedPacks` is a no-op; `selectPack`/`selectPackList` dropped `setActivePack` (activePackId persists via zustand `partialize`)
+
+**Tech Debt (non-blocking, pre-existing):**
+- `availablePacks` not auto-populated at boot → blank pack name on PWA reload until user visits `/packs` (pre-24-02 web branch behavior; out of v12.0 scope)
+- LOW: dead `checkHasUpdateAvailable` / `setDownloadedPackVersions` in `app/packs/index.tsx` (documented intended collapse pattern)
+- Deferred: optional manual PWA smoke test (build:web sw.js precache is the automated proxy)
+
+**Duration:** 1 phase, 3 plans, ~35 min execution
+
+Audit: `.planning/v12.0-MILESTONE-AUDIT.md` — passed (17/17 must-haves, integration 5/5)
+
+---
+
 ## v7.0: Per-Player Pack Customization — Completed 2026-06-13
 
 **Goal:** Top-level Shared/Custom pack mode toggle on game setup screen

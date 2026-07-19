@@ -8,14 +8,32 @@ Trivial World is a mobile trivia game for in-person social play, with a CLI-base
 
 Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
 
-## Current State: v7.0 Complete
+## Current State: v12.0 Complete — Web/PWA-Only
 
-**Shipped:** 2026-06-13
-**Phases:** 1–19 (19 phases across 7 milestones)
-**Tech stack:** Expo SDK 55 + React Native 0.83, Zustand 5.x, WatermelonDB, Tamagui 2.x, Expo Router
-**Tests:** 288 passing
+**Shipped:** 2026-07-18
+**Phases:** 1–24 (24 phases across 12 milestones)
+**Tech stack:** Expo SDK 56 + React Native 0.85 (web export), Zustand 5.x, IndexedDB (idb-keyval) + sessionStorage, Tamagui 2.x, Expo Router, Service Worker (offline PWA)
+**Tests:** 433 passing
 
-### What's Working
+### v12.0 — Web-Only Collapse (Phase 24)
+
+Removed the native (Android/iOS) build path and the WatermelonDB native database layer, collapsing the app to a single web/PWA target:
+
+- Deleted `database/` (WatermelonDB models/migrations/schema), `services/packDownloader.ts`, `services/platformStorage.native.ts`, android icon assets, empty `dist-ios/`
+- Removed `@nozbe/watermelondb` + `@react-native-async-storage/async-storage` deps; stripped ios/android blocks from `app.config.js` and android/ios npm scripts; simplified `metro.config.js` + `babel.config.js` (dropped native-mock resolver + decorator plugins)
+- Collapsed every `Platform.OS` branch to the web path as the only path across stores/services/UI (zero `Platform.OS` conditionals remain in production source)
+- Re-wired `packStore` to the `packCache` IDB shim; `questionProvider` is IDB-first; pack names resolve from in-memory `availablePacks`
+- Re-wrote native-path tests for the web path; `__mocks__/react-native.ts` → `Platform.OS = 'web'`; README reflects web/PWA-only
+- Gates: vitest 433/433, `tsc --noEmit` 0 errors, `pnpm build:web` produces `dist/` with Service Worker (precaches app shell)
+
+### Next Milestone Goals
+
+None planned. v12.0 closes the Web-Only Collapse. Candidate follow-up (pre-existing, out of v12.0 scope): auto-populate `availablePacks` at boot so the pack name resolves on PWA reload without visiting `/packs`.
+
+<details>
+<summary>Prior state: v7.0 Complete (2026-06-13) — archived at v12.0 close</summary>
+
+### What's Working (v7.0 snapshot)
 
 - Full game loop: setup → category selection → question → scoring → championship → win
 - Per-player pack + difficulty configuration (native only; web uses bundled pool)
@@ -28,15 +46,17 @@ Enable in-person social trivia gameplay where the app supports (not replaces) hu
 - AI question generation via Ollama (local dev only)
 - 12 question packs with terse (1-2 sentence) tidbits
 
-### Known Technical Debt
+### Known Technical Debt (v7.0 snapshot — some resolved in v8.0–v12.0)
 
-- `questionProvider.getNextQuestionFromDatabase` is dead code on mobile with two latent bugs (drops tidbits, ignores packId) — safe today, risky if refactored
+- `questionProvider.getNextQuestionFromDatabase` is dead code on mobile with two latent bugs (drops tidbits, ignores packId) — removed in v12.0 (native path deleted)
 - Starter pack `trivial-world-starter-7f3a9c2e.json` has zero tidbits content
 - `effectiveDifficulties` derivation logic duplicated in `questionStore.ts` and `questionProvider.ts`
-- F-01: deleteCombo leaves stale player.comboId in playerStore (Phase 18 review)
-- F-02: resetAskedQuestions loop leaves activePackId corrupted on throw (Phase 18 review)
-- F-03: combos.tsx has no ScrollView — Back button unreachable with many combos (Phase 18 review)
+- F-01: deleteCombo leaves stale player.comboId in playerStore (Phase 18 review) — fixed 260615-nf7
+- F-02: resetAskedQuestions loop leaves activePackId corrupted on throw (Phase 18 review) — fixed 260615-hb8
+- F-03: combos.tsx has no ScrollView — Back button unreachable with many combos (Phase 18 review) — fixed 260615-tj6
 - Cosmetic: playerSourceRow label shows "Pack: …" for combo sources (Phase 19)
+
+</details>
 
 ---
 
