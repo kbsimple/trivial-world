@@ -8,7 +8,7 @@ stopped_at: "Completed 24-03-PLAN.md"
 resume_file: null
 progress:
   total_phases: 1
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 3
   completed_plans: 3
   percent: 100
