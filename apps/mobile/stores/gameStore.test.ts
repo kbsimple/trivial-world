@@ -45,14 +45,8 @@ vi.mock('./packStore', () => ({
   },
 }));
 
-vi.mock('@react-native-async-storage/async-storage', () => ({
-  default: {
-    getItem: vi.fn(() => Promise.resolve(null)),
-    setItem: vi.fn(() => Promise.resolve()),
-    removeItem: vi.fn(() => Promise.resolve()),
-  },
-}));
-
+// Web/PWA-only (Phase 24-03): platformStorage uses sessionStorage (provided by
+// vitest's jsdom env) — no AsyncStorage mock needed.
 import { useQuestionStore } from './questionStore';
 import { usePlayerStore } from './playerStore';
 import { usePackStore } from './packStore';

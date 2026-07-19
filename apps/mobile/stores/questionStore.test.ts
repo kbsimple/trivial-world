@@ -1,52 +1,15 @@
 /**
- * Tests for questionStore
- * Tests question selection, asked tracking, and category filtering
+ * Tests for questionStore — web/PWA-only path (Phase 24-03 rewrite).
+ *
+ * Tests question selection (via the IDB-backed questionProvider), asked-question
+ * tracking (in-memory array persisted via platformStorage), and category
+ * filtering. The WatermelonDB asked_at path was removed in 24-01; the web
+ * branch is the sole implementation (24-02).
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
-// Mock dependencies before importing the store
-const mockQuestions: Array<{
-  id: string;
-  questionPackId: string;
-  questionId: string;
-  category: string;
-  questionText: string;
-  answerText: string;
-  difficulty?: string;
-  askedAt: number | null;
-  markAsAsked: () => Promise<void>;
-  update: (fn: (q: any) => void) => Promise<void>;
-}> = [];
-
-const mockPacks: Array<{ id: string; packId: string }> = [];
-
-let mockDatabaseQueryShouldReturn: any[] = [];
-let mockPackQueryShouldReturn: any[] = [];
-
-// Mock database module
-vi.mock('../database', () => ({
-  getDatabase: vi.fn(() => ({
-    get: vi.fn((tableName: string) => ({
-      query: vi.fn(() => ({
-        fetch: vi.fn(async () => {
-          if (tableName === 'questions') {
-            return mockDatabaseQueryShouldReturn;
-          }
-          if (tableName === 'question_packs') {
-            return mockPackQueryShouldReturn;
-          }
-          return [];
-        }),
-      })),
-    })),
-    write: vi.fn(async (fn) => {
-      await fn();
-    }),
-  })),
-}));
-
-// Mock packStore
+// Mock packStore (questionStore reads activePackId / enabledDifficulties from it)
 vi.mock('./packStore', () => ({
   usePackStore: {
     getState: vi.fn(() => ({
@@ -57,75 +20,43 @@ vi.mock('./packStore', () => ({
   },
 }));
 
-// Mock AsyncStorage
-vi.mock('@react-native-async-storage/async-storage', () => ({
-  default: {
-    getItem: vi.fn(() => Promise.resolve(null)),
-    setItem: vi.fn(() => Promise.resolve()),
-    removeItem: vi.fn(() => Promise.resolve()),
-  },
+// Mock questionProvider — the IDB-first web path. The store delegates
+// question selection to getNextQuestion; we control its return value.
+vi.mock('../services/questionProvider', () => ({
+  getNextQuestion: vi.fn(),
 }));
 
-// Import after mocks are set up
 import { useQuestionStore } from './questionStore';
+import { usePackStore } from './packStore';
+import { getNextQuestion } from '../services/questionProvider';
+import type { Question } from '@trivial-world/types';
 
-/**
- * Helper to create a mock question model
- */
-function createMockQuestion(
-  id: string,
-  category: string = 'blue',
-  difficulty: string = 'medium',
-  askedAt: number | null = null
-) {
+function createMockQuestion(id: string, category: string = 'blue'): Question {
   return {
-    id: `db-${id}`,
-    questionPackId: 'pack-db-id',
-    questionId: id,
-    category,
+    id,
+    category: category as any,
     questionText: `Test question ${id}`,
     answerText: `Test answer ${id}`,
-    difficulty,
-    askedAt,
-    markAsAsked: vi.fn(async () => {
-      const q = mockQuestions.find(q => q.questionId === id);
-      if (q) {
-        q.askedAt = Date.now();
-      }
-    }),
-    update: vi.fn(async (fn: (q: any) => void) => {
-      const q = mockQuestions.find(q => q.questionId === id);
-      if (q) {
-        fn(q);
-      }
-    }),
+    difficulty: 'medium',
   };
 }
 
-/**
- * Helper to create a mock pack model
- */
-function createMockPack(packId: string, dbId: string = 'pack-db-id') {
-  return {
-    id: dbId,
-    packId,
-  };
-}
-
-describe('questionStore', () => {
+describe('questionStore (web/PWA-only path)', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockQuestions.length = 0;
-    mockPacks.length = 0;
-    mockDatabaseQueryShouldReturn = [];
-    mockPackQueryShouldReturn = [];
-
+    vi.mocked(getNextQuestion).mockResolvedValue(null);
     // Reset store state
     useQuestionStore.setState({
       currentQuestion: null,
       currentCategory: null,
       askedQuestionIds: [],
     });
+    // Reset packStore mock to default
+    vi.mocked(usePackStore.getState).mockReturnValue({
+      activePackId: 'test-pack-uuid',
+      enabledCategories: null,
+      enabledDifficulties: null,
+    } as any);
   });
 
   afterEach(() => {
@@ -133,311 +64,231 @@ describe('questionStore', () => {
   });
 
   describe('selectQuestion', () => {
-    it('returns null when no active pack is selected', async () => {
-      const { usePackStore } = await import('./packStore');
-      vi.mocked(usePackStore.getState).mockReturnValue({
-        activePackId: null,
-        enabledCategories: null,
-        enabledDifficulties: null,
-      } as any);
+    it('returns null and does not set currentQuestion when provider returns null', async () => {
+      vi.mocked(getNextQuestion).mockResolvedValue(null);
 
       const result = await useQuestionStore.getState().selectQuestion('blue');
 
       expect(result).toBeNull();
+      expect(useQuestionStore.getState().currentQuestion).toBeNull();
+      expect(useQuestionStore.getState().currentCategory).toBeNull();
     });
 
-    it('returns null when category is disabled', async () => {
-      const { usePackStore } = await import('./packStore');
-      vi.mocked(usePackStore.getState).mockReturnValue({
-        activePackId: 'test-pack-uuid',
-        enabledCategories: ['pink', 'yellow'], // blue is disabled
-        enabledDifficulties: null,
-      } as any);
+    it('returns the question and sets currentQuestion/currentCategory when provider returns one', async () => {
+      const q = createMockQuestion('q-1', 'blue');
+      vi.mocked(getNextQuestion).mockResolvedValue(q);
 
       const result = await useQuestionStore.getState().selectQuestion('blue');
 
-      expect(result).toBeNull();
+      expect(result).toBe(q);
+      expect(useQuestionStore.getState().currentQuestion).toBe(q);
+      expect(useQuestionStore.getState().currentCategory).toBe('blue');
     });
 
-    it('returns null when pack is not found in database', async () => {
-      mockPackQueryShouldReturn = []; // No packs found
+    it('forwards category, askedQuestionIds, packIds, and difficulty to getNextQuestion', async () => {
+      const q = createMockQuestion('q-1', 'green');
+      vi.mocked(getNextQuestion).mockResolvedValue(q);
+      useQuestionStore.setState({ askedQuestionIds: ['q-prev'] });
 
-      const result = await useQuestionStore.getState().selectQuestion('blue');
+      await useQuestionStore.getState().selectQuestion('green', ['pack-A'], 'hard');
 
-      expect(result).toBeNull();
+      expect(getNextQuestion).toHaveBeenCalledWith(
+        'green',
+        ['q-prev'],
+        ['pack-A'],
+        'hard',
+        null // enabledDifficulties from packStore mock
+      );
     });
 
-    it('returns null when no questions available for category', async () => {
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-      mockDatabaseQueryShouldReturn = []; // No questions
+    it('resolves packIds from activePackId when none are passed explicitly', async () => {
+      vi.mocked(getNextQuestion).mockResolvedValue(null);
 
-      const result = await useQuestionStore.getState().selectQuestion('blue');
+      await useQuestionStore.getState().selectQuestion('blue');
 
-      expect(result).toBeNull();
+      // packIds defaults to [activePackId] from packStore
+      expect(getNextQuestion).toHaveBeenCalledWith('blue', [], ['test-pack-uuid'], undefined, null);
     });
 
-    it('returns null when all questions in category have been asked', async () => {
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-      mockDatabaseQueryShouldReturn = []; // Query filters asked_at: null, so asked questions not returned
-
-      const result = await useQuestionStore.getState().selectQuestion('blue');
-
-      expect(result).toBeNull();
-    });
-
-    it('selects a question from available pool', async () => {
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-      mockDatabaseQueryShouldReturn = [
-        createMockQuestion('q-1', 'blue', 'medium', null),
-        createMockQuestion('q-2', 'blue', 'medium', null),
-      ];
-
-      const result = await useQuestionStore.getState().selectQuestion('blue');
-
-      expect(result).not.toBeNull();
-      expect(result?.category).toBe('blue');
-      expect(['q-1', 'q-2']).toContain(result?.id);
-    });
-
-    it('updates currentQuestion and currentCategory state', async () => {
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-      mockDatabaseQueryShouldReturn = [
-        createMockQuestion('q-1', 'pink', 'easy', null),
-      ];
-
-      await useQuestionStore.getState().selectQuestion('pink');
-
-      const state = useQuestionStore.getState();
-      expect(state.currentQuestion).not.toBeNull();
-      expect(state.currentQuestion?.id).toBe('q-1');
-      expect(state.currentCategory).toBe('pink');
-    });
-
-    it('filters by difficulty when enabledDifficulties is set', async () => {
-      const { usePackStore } = await import('./packStore');
+    it('forwards enabledDifficulties from packStore when no per-call difficulty is given', async () => {
       vi.mocked(usePackStore.getState).mockReturnValue({
         activePackId: 'test-pack-uuid',
         enabledCategories: null,
-        enabledDifficulties: ['hard'], // Only hard questions
+        enabledDifficulties: ['hard'],
       } as any);
+      vi.mocked(getNextQuestion).mockResolvedValue(null);
 
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-      mockDatabaseQueryShouldReturn = [
-        createMockQuestion('q-1', 'green', 'easy', null),
-        createMockQuestion('q-2', 'green', 'medium', null),
-        createMockQuestion('q-3', 'green', 'hard', null),
-      ];
+      await useQuestionStore.getState().selectQuestion('blue');
 
-      const result = await useQuestionStore.getState().selectQuestion('green');
-
-      // Only q-3 is hard difficulty
-      expect(result).not.toBeNull();
-      expect(result?.id).toBe('q-3');
-    });
-
-    it('returns null when no questions match difficulty filter', async () => {
-      const { usePackStore } = await import('./packStore');
-      vi.mocked(usePackStore.getState).mockReturnValue({
-        activePackId: 'test-pack-uuid',
-        enabledCategories: null,
-        enabledDifficulties: ['hard'], // Only hard questions
-      } as any);
-
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-      mockDatabaseQueryShouldReturn = [
-        createMockQuestion('q-1', 'orange', 'easy', null),
-        createMockQuestion('q-2', 'orange', 'medium', null),
-      ];
-
-      const result = await useQuestionStore.getState().selectQuestion('orange');
-
-      expect(result).toBeNull();
-    });
-
-    it('selects question for each category independently', async () => {
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-
-      // Test blue category
-      mockDatabaseQueryShouldReturn = [
-        createMockQuestion('q-blue', 'blue', 'medium', null),
-      ];
-      let result = await useQuestionStore.getState().selectQuestion('blue');
-      expect(result?.category).toBe('blue');
-
-      // Test yellow category
-      mockDatabaseQueryShouldReturn = [
-        createMockQuestion('q-yellow', 'yellow', 'medium', null),
-      ];
-      result = await useQuestionStore.getState().selectQuestion('yellow');
-      expect(result?.category).toBe('yellow');
+      expect(getNextQuestion).toHaveBeenCalledWith('blue', [], ['test-pack-uuid'], undefined, ['hard']);
     });
 
     it('handles all six categories', async () => {
       const categories = ['blue', 'pink', 'yellow', 'purple', 'green', 'orange'] as const;
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-
       for (const category of categories) {
-        mockDatabaseQueryShouldReturn = [
-          createMockQuestion(`q-${category}`, category, 'medium', null),
-        ];
+        const q = createMockQuestion(`q-${category}`, category);
+        vi.mocked(getNextQuestion).mockResolvedValue(q);
+
         const result = await useQuestionStore.getState().selectQuestion(category);
+
+        expect(result).not.toBeNull();
         expect(result?.category).toBe(category);
+        expect(useQuestionStore.getState().currentCategory).toBe(category);
       }
     });
-  });
 
-  describe('markAsked', () => {
-    it('marks a question as asked in database', async () => {
-      const mockQ = createMockQuestion('q-to-mark', 'blue', 'medium', null);
-      mockDatabaseQueryShouldReturn = [mockQ];
-
-      await useQuestionStore.getState().markAsked('q-to-mark');
-
-      expect(mockQ.markAsAsked).toHaveBeenCalled();
-    });
-
-    it('handles question not found gracefully', async () => {
-      mockDatabaseQueryShouldReturn = []; // Question not in database
-
-      // Should not throw
-      await expect(
-        useQuestionStore.getState().markAsked('non-existent')
-      ).resolves.not.toThrow();
-    });
-  });
-
-  describe('resetAskedQuestions', () => {
-    it('does nothing when no active pack', async () => {
-      const { usePackStore } = await import('./packStore');
+    it('returns null when no active pack is selected (provider gets undefined packIds)', async () => {
       vi.mocked(usePackStore.getState).mockReturnValue({
         activePackId: null,
         enabledCategories: null,
         enabledDifficulties: null,
       } as any);
+      vi.mocked(getNextQuestion).mockResolvedValue(null);
 
-      // Should not throw
-      await expect(
-        useQuestionStore.getState().resetAskedQuestions()
-      ).resolves.not.toThrow();
+      const result = await useQuestionStore.getState().selectQuestion('blue');
+
+      expect(result).toBeNull();
+      // packIds is undefined when activePackId is null
+      expect(getNextQuestion).toHaveBeenCalledWith('blue', [], undefined, undefined, null);
+    });
+  });
+
+  describe('markAsked (web path — in-memory askedQuestionIds array)', () => {
+    it('appends the question id to askedQuestionIds and returns true', async () => {
+      const result = await useQuestionStore.getState().markAsked('q-1');
+
+      expect(result).toBe(true);
+      expect(useQuestionStore.getState().askedQuestionIds).toEqual(['q-1']);
     });
 
-    it('resets asked_at for all questions in active pack', async () => {
-      const mockQ1 = createMockQuestion('q-1', 'blue', 'medium', Date.now());
-      const mockQ2 = createMockQuestion('q-2', 'pink', 'easy', Date.now());
-      const mockQ3 = createMockQuestion('q-3', 'yellow', 'hard', null);
+    it('appends to an existing asked list', async () => {
+      useQuestionStore.setState({ askedQuestionIds: ['q-prev'] });
 
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-      mockDatabaseQueryShouldReturn = [mockQ1, mockQ2, mockQ3];
+      await useQuestionStore.getState().markAsked('q-new');
 
-      await useQuestionStore.getState().resetAskedQuestions();
-
-      // All questions should have their update method called
-      expect(mockQ1.update).toHaveBeenCalled();
-      expect(mockQ2.update).toHaveBeenCalled();
-      expect(mockQ3.update).toHaveBeenCalled();
+      expect(useQuestionStore.getState().askedQuestionIds).toEqual(['q-prev', 'q-new']);
     });
 
-    it('handles empty pack gracefully', async () => {
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-      mockDatabaseQueryShouldReturn = []; // No questions
+    it('is idempotent across multiple calls — appends each call', async () => {
+      await useQuestionStore.getState().markAsked('q-1');
+      await useQuestionStore.getState().markAsked('q-2');
+      await useQuestionStore.getState().markAsked('q-3');
 
-      // Should not throw
-      await expect(
-        useQuestionStore.getState().resetAskedQuestions()
-      ).resolves.not.toThrow();
+      expect(useQuestionStore.getState().askedQuestionIds).toEqual(['q-1', 'q-2', 'q-3']);
     });
   });
 
   describe('unmarkAsked', () => {
-    it('is present as a function in the store', () => {
-      expect(typeof useQuestionStore.getState().unmarkAsked).toBe('function');
+    it('removes the question id from askedQuestionIds', async () => {
+      useQuestionStore.setState({ askedQuestionIds: ['q-1', 'q-2', 'q-3'] });
+
+      await useQuestionStore.getState().unmarkAsked('q-2');
+
+      expect(useQuestionStore.getState().askedQuestionIds).toEqual(['q-1', 'q-3']);
     });
 
-    it('calls update on the matching question record', async () => {
-      const mockQ = createMockQuestion('q-to-unmark', 'blue', 'medium', Date.now());
-      mockDatabaseQueryShouldReturn = [mockQ];
+    it('is a no-op when the id is not present', async () => {
+      useQuestionStore.setState({ askedQuestionIds: ['q-1', 'q-2'] });
 
-      await useQuestionStore.getState().unmarkAsked('q-to-unmark');
+      await useQuestionStore.getState().unmarkAsked('not-present');
 
-      expect(mockQ.update).toHaveBeenCalled();
+      expect(useQuestionStore.getState().askedQuestionIds).toEqual(['q-1', 'q-2']);
     });
 
-    it('passes a callback to update that sets askedAt to null', async () => {
-      const mockQ = createMockQuestion('q-to-unmark', 'blue', 'medium', Date.now());
-      let capturedCallback: ((q: any) => void) | undefined;
-      mockQ.update = vi.fn(async (fn: (q: any) => void) => {
-        capturedCallback = fn;
-      });
-      mockDatabaseQueryShouldReturn = [mockQ];
+    it('handles an empty askedQuestionIds array gracefully', async () => {
+      useQuestionStore.setState({ askedQuestionIds: [] });
 
-      await useQuestionStore.getState().unmarkAsked('q-to-unmark');
+      await expect(useQuestionStore.getState().unmarkAsked('q-1')).resolves.not.toThrow();
 
-      expect(capturedCallback).toBeDefined();
-      const record = { askedAt: 12345 as number | null };
-      capturedCallback!(record);
-      expect(record.askedAt).toBeNull();
-    });
-
-    it('handles question not found gracefully', async () => {
-      mockDatabaseQueryShouldReturn = [];
-
-      await expect(
-        useQuestionStore.getState().unmarkAsked('non-existent')
-      ).resolves.not.toThrow();
+      expect(useQuestionStore.getState().askedQuestionIds).toEqual([]);
     });
   });
 
-  describe('question exhaustion handling', () => {
-    it('returns null when all questions in category are exhausted', async () => {
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-      // All questions have been asked (askedAt is set)
-      // The query filters for asked_at: null, so this returns empty
-      mockDatabaseQueryShouldReturn = [];
+  describe('resetAskedQuestions', () => {
+    it('clears askedQuestionIds to an empty array', async () => {
+      useQuestionStore.setState({ askedQuestionIds: ['q-1', 'q-2', 'q-3'] });
+
+      await useQuestionStore.getState().resetAskedQuestions();
+
+      expect(useQuestionStore.getState().askedQuestionIds).toEqual([]);
+    });
+
+    it('is safe to call when askedQuestionIds is already empty', async () => {
+      useQuestionStore.setState({ askedQuestionIds: [] });
+
+      await useQuestionStore.getState().resetAskedQuestions();
+
+      expect(useQuestionStore.getState().askedQuestionIds).toEqual([]);
+    });
+
+    it('does not affect currentQuestion / currentCategory', async () => {
+      const q = createMockQuestion('q-keep', 'blue');
+      useQuestionStore.setState({
+        currentQuestion: q,
+        currentCategory: 'blue',
+        askedQuestionIds: ['q-keep'],
+      });
+
+      await useQuestionStore.getState().resetAskedQuestions();
+
+      expect(useQuestionStore.getState().currentQuestion).toBe(q);
+      expect(useQuestionStore.getState().currentCategory).toBe('blue');
+    });
+  });
+
+  describe('question exhaustion + recovery', () => {
+    it('returns null when provider returns null (exhausted)', async () => {
+      vi.mocked(getNextQuestion).mockResolvedValue(null);
 
       const result = await useQuestionStore.getState().selectQuestion('purple');
 
       expect(result).toBeNull();
     });
 
-    it('allows selection after resetAskedQuestions', async () => {
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
+    it('allows selection again after resetAskedQuestions clears the asked list', async () => {
+      // First call: exhausted (provider returns null)
+      useQuestionStore.setState({ askedQuestionIds: ['q-used'] });
+      vi.mocked(getNextQuestion).mockResolvedValue(null);
 
-      // First, simulate exhausted category
-      mockDatabaseQueryShouldReturn = [];
       let result = await useQuestionStore.getState().selectQuestion('green');
       expect(result).toBeNull();
 
-      // Reset the questions
-      mockDatabaseQueryShouldReturn = [
-        createMockQuestion('q-recovered', 'green', 'medium', null),
-      ];
+      // Reset asked list
       await useQuestionStore.getState().resetAskedQuestions();
+      expect(useQuestionStore.getState().askedQuestionIds).toEqual([]);
 
-      // Now should be able to select again
+      // Second call: provider now returns a question
+      const recovered = createMockQuestion('q-recovered', 'green');
+      vi.mocked(getNextQuestion).mockResolvedValue(recovered);
+
       result = await useQuestionStore.getState().selectQuestion('green');
-      expect(result).not.toBeNull();
-      expect(result?.id).toBe('q-recovered');
+      expect(result).toBe(recovered);
+      expect(useQuestionStore.getState().currentQuestion).toBe(recovered);
     });
   });
 
-  describe('store persistence', () => {
-    it('persists currentQuestion and currentCategory', async () => {
-      mockPackQueryShouldReturn = [createMockPack('test-pack-uuid')];
-      mockDatabaseQueryShouldReturn = [
-        createMockQuestion('q-persist', 'orange', 'hard', null),
-      ];
+  describe('store persistence (web platformStorage / sessionStorage)', () => {
+    it('partializes currentQuestion, currentCategory, and askedQuestionIds', () => {
+      const q = createMockQuestion('q-persist', 'orange');
+      useQuestionStore.setState({
+        currentQuestion: q,
+        currentCategory: 'orange',
+        askedQuestionIds: ['q-persist'],
+      });
 
-      await useQuestionStore.getState().selectQuestion('orange');
-
-      const state = useQuestionStore.getState();
-      expect(state.currentQuestion).not.toBeNull();
-      expect(state.currentCategory).toBe('orange');
+      const raw = sessionStorage.getItem('trivial-world-questions');
+      expect(raw).toBeTruthy();
+      const parsed = JSON.parse(raw!);
+      expect(parsed.state.currentQuestion).toEqual(q);
+      expect(parsed.state.currentCategory).toBe('orange');
+      expect(parsed.state.askedQuestionIds).toEqual(['q-persist']);
     });
 
-    it('initial state has null currentQuestion and currentCategory', () => {
-      const freshStore = useQuestionStore.getState();
-      expect(freshStore.currentQuestion).toBeNull();
-      expect(freshStore.currentCategory).toBeNull();
+    it('initial state has null currentQuestion and currentCategory and empty askedQuestionIds', () => {
+      const fresh = useQuestionStore.getState();
+      expect(fresh.currentQuestion).toBeNull();
+      expect(fresh.currentCategory).toBeNull();
+      expect(fresh.askedQuestionIds).toEqual([]);
     });
   });
 });

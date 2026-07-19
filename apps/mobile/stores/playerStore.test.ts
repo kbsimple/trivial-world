@@ -11,16 +11,8 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { PLAYER_COLORS } from '../constants/categories';
 import type { PlayerColor } from '../constants/categories';
 
-// Mock AsyncStorage to avoid actual storage operations
-vi.mock('@react-native-async-storage/async-storage', () => ({
-  default: {
-    getItem: vi.fn(() => Promise.resolve(null)),
-    setItem: vi.fn(() => Promise.resolve()),
-    removeItem: vi.fn(() => Promise.resolve()),
-  },
-}));
-
-// Import store after mocking AsyncStorage
+// Web/PWA-only (Phase 24-03): platformStorage uses sessionStorage (provided by
+// vitest's jsdom env) — no AsyncStorage mock needed.
 import { usePlayerStore } from './playerStore';
 
 // Helper to get fresh store state
