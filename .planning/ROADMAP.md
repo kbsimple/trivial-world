@@ -150,10 +150,12 @@ Archive: `.planning/milestones/v11.0-*`
 
 **Depends on:** Phase 23 (Web Pack Downloading) — the web pack cache (IndexedDB + idb-keyval) is the sole persistence layer after native removal.
 
-**Plans:** 0 plans (not planned yet)
+**Plans:** 3 plans
 
 Plans:
-- _(to be planned via `/gsd-plan-phase 24`)_
+- [ ] 24-01-PLAN.md — Delete native-only files/dirs/assets; strip native config from app.config.js, package.json, metro.config.js, babel.config.js; flip RN mock to Platform.OS = 'web'
+- [ ] 24-02-PLAN.md — Collapse Platform.OS branches to web-only across stores/services/UI; remove dynamic WatermelonDB imports; re-wire packStore to packCache web API
+- [ ] 24-03-PLAN.md — Rewrite native-path tests for web path; update README to web/PWA-only; run phase gates (vitest, tsc, build:web)
 
 </details>
 
