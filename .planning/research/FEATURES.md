@@ -1,269 +1,169 @@
-# Feature Research
+# Feature Landscape: v13.0 Game History & Question Feedback Backend
 
-**Domain:** PWA Web Deployment for Mobile-First Trivia Game
-**Researched:** 2026-06-09
-**Confidence:** HIGH (official documentation, multiple verified sources)
+**Domain:** Casual in-person trivia PWA, adding a stateful backend (game recording, question feedback, admin review, LLM batch review)
+**Researched:** 2026-11-14
+**Overall confidence:** MEDIUM. Findings come from training knowledge of Jackbox, Kahoot, Heads Up, Trivia Crack and common moderation-queue tooling. No live web verification was done in this pass. Items marked LOW need validation.
 
-## Feature Landscape
+## Identity Recommendation (one answer)
 
-### Table Stakes (Users Expect These)
+**Recommend: anonymous, install-scoped device ID (random UUID generated client-side, stored in IndexedDB). No login in v13.0. Defer Google sign-in.**
 
-Features users assume exist for a PWA. Missing these = app cannot be installed or feels broken.
+| Criterion | Anonymous device ID | Optional Google sign-in | Fully anonymous (no ID) |
+|-----------|--------------------|-------------------------|--------------------------|
+| User expectation | Invisible. Matches Jackbox/Heads Up/Kahoot guest play, where no one expects a login to start a party game. | Accepted only if optional and never on the path to starting a game. | Fine for users, but weak for the operator. |
+| Friction | Zero | Adds a prompt, consent screen and a "why?" question. It conflicts with the "no accounts" constraint. | Zero |
+| Privacy (GDPR/children) | Pseudonymous ID is still personal data under GDPR in theory, but it holds no name or email. Player names are local free text and should NOT be uploaded (or should be hashed or dropped). Children play, so sending no PII is the safest posture (COPPA/GDPR-K). | Collects email and profile, which brings a privacy policy, deletion flow and age gating. | Best |
+| Value delivered | Rate-limiting, dedupe of feedback per device, abuse control, "my device's history". No cross-device history. | Cross-device history. But the conductor is a rotating role at a party and the value is low. | No dedupe. Spam and abuse are hard to throttle. |
+| Implementation ease | Easy: UUID in IDB plus a header or body field. | Hard: OAuth, session or JWT, account linking, merge. | Easiest, but no abuse control. |
 
-| Feature | Why Expected | Complexity | Notes |
-|---------|--------------|------------|-------|
-| Web App Manifest | Required for PWA installability — browsers check for this | LOW | JSON file with name, icons (192px and 512px), start_url, display mode |
-| HTTPS Deployment | Required for service workers and PWA installation | LOW | Netlify provides by default |
-| Installable on Mobile | Users expect "Add to Home Screen" to work | LOW | Manifest + icons + HTTPS triggers install prompt |
-| Proper Icons (192px, 512px) | Browsers require specific sizes for installability | LOW | Must include both sizes; maskable icons recommended for Android |
-| Basic Offline Support | Users expect cached app to load without network | MEDIUM | Service worker with appropriate caching strategy |
-| Mobile-Responsive Layout | PWA on phone must display correctly | LOW | Already mobile-first in existing app |
+Why: the stated value of the backend is operator-side (question quality, game analytics), not user-side. The device ID is enough for dedupe and rate limits. Cross-device history is a differentiator nobody asked for. Leave a nullable `account_id` column and an API versioning hook so sign-in can be added later without a data migration. Keep player names local-only (store player index and a slot label, not names). The ID must be resettable ("clear history" clears it) to keep it defensible under GDPR.
 
-### Differentiators (Competitive Advantage)
+## Table Stakes
 
-Features that improve the experience beyond basic PWA requirements.
+| Feature | Why Expected | Complexity | Dependencies on existing |
+|---------|--------------|------------|--------------------------|
+| Anonymous device ID generation and persistence | Prerequisite for dedupe and rate limits | Low | idb-keyval already in the app |
+| Per-game summary record (start/end time, player count, winner, packs/difficulty, championship reached, completed vs abandoned) | Core of "record games played" | Med | Hooks into game store start/win. The `packMode`, `playerPackIds`, `playerDifficulties` snapshots already exist. |
+| Per-question outcome record (question id, pack id and version, category, difficulty, correct/incorrect, order in game) | Needed for stats and feedback context | Med | Mark-correct/incorrect and undo. Undo MUST rewrite or remove the outcome, or stats are corrupted. |
+| Client-generated game ID (UUID) and idempotent upload | Offline retries must not duplicate | Low-Med | Generated at game start |
+| Offline outbox in IndexedDB with retry and backoff, flush on online/app-open/game-end | Offline-first is a hard constraint. Gameplay never blocks on the network. | Med | Existing IDB layer and service worker. Background Sync is not available on iOS Safari, so flush on app open and `online` events. |
+| Fire-and-forget semantics (no spinner, no blocking, silent failure) | "Eyes-up" flow | Low | |
+| Stable question identity (pack id plus question id, plus content hash or pack version) | Feedback and stats must map to the right text after pack edits | Med | Pack JSON schema. Check that question IDs are stable across pack regenerations. |
+| Flag button on the reveal/answer screen (not the question screen) | Reasons are clearer once the answer is visible. Not mid-read. | Low | Reveal screen with tidbits already exists |
+| Reason taxonomy, single tap, optional note | Standard in feedback tools | Low | |
+| Brief non-blocking confirmation (toast or "Flagged" state on the button) | Prevents double submits and gives assurance | Low | |
+| Dedupe: one open flag per device per question per reason, and local "already flagged" state | Prevents spam and duplicates | Low-Med | Server unique constraint (device, question, reason) |
+| Feedback queued offline in the same outbox | Same constraint as games | Low (reuses outbox) | |
+| Admin page protected by auth (single shared secret or basic admin login, not player accounts) | Must not be public | Low-Med | Netlify hosting. Depends on backend choice. |
+| Queue view: filter by status (open/resolved/dismissed), reason, pack | Basic triage | Med | |
+| Aggregate per question: flag count, reason breakdown, latest note | Triage by volume | Med | |
+| Question detail: text, options, answer, tidbits, pack, plus stats (times asked, % correct, flag count) | Context for deciding | Med | Needs outcome data |
+| Resolve / dismiss with a resolution note and timestamp | Closes the loop and keeps an audit trail | Low | |
+| Programmatic export of open feedback (JSONL) behind an API key | The LLM review feature | Med | |
+| Batch decision apply endpoint, idempotent, validated against a schema | The LLM review feature | Med | Zod schemas in `packages/types` |
+
+### Reason taxonomy (recommended)
+
+Keep it to 6 or fewer. A long list is slow to use and breaks the flow.
+
+| Code | Label | Notes |
+|------|-------|-------|
+| `wrong_answer` | Answer is wrong | Highest priority in triage |
+| `ambiguous` | Unclear or multiple valid answers | |
+| `outdated` | Out of date | Common in sports, tech and streaming |
+| `typo` | Typo or grammar | Low severity |
+| `offensive` | Offensive or inappropriate | Auto-escalate, children play |
+| `too_hard` / `too_easy` | Wrong difficulty | Could be inferred from outcome stats, so treat as optional |
+| `other` | Other (note required) | |
+
+Optional free-text note: max about 280 chars, sanitized, never rendered unescaped in admin.
+
+### Flag button placement (preserves eyes-up)
+
+- Put a small secondary icon on the reveal screen, after the conductor has marked or is about to mark the answer. It must not compete with the correct/incorrect buttons (keep distance and visual weight low).
+- Tap opens a bottom sheet with reason chips. One tap on a reason submits with no required note. "Add note" is optional inside the sheet.
+- Do not show anything during question reading. Do not interrupt turn flow. Flagging must not change game state.
+- Alternative (LOW confidence on UX preference): a flag button available after the game on a recap screen. This would break context, so the reveal screen is better.
+
+## Differentiators
 
 | Feature | Value Proposition | Complexity | Notes |
 |---------|-------------------|------------|-------|
-| Maskable Icons (Android) | Adaptive icons that look native on Android home screen | LOW | Additional icon variant with safe zone padding |
-| App Shell Caching | Instant load of UI shell even on slow networks | MEDIUM | Cache-first for static assets, network-first for HTML |
-| iOS-Specific Meta Tags | Better splash screens and status bar integration on iOS | LOW | apple-mobile-web-app-capable, theme-color, touch icons |
-| Install Prompt Handling | Custom "Install App" button instead of browser default | MEDIUM | Intercept beforeinstallprompt event for better UX |
-| Session Storage Persistence | Game state survives tab refresh during play | MEDIUM | Already in scope: session-only storage, not IndexedDB |
-| Share Intent Handling | Launch from share sheet with pack data | HIGH | Deferred — requires deep link handling |
+| In-app game history screen (list of past games on this device) | Gives users a visible payoff for the backend | Med | Can be built from local data only, with no server read. Optional for v13.0. |
+| Per-question difficulty calibration (observed % correct vs labeled difficulty, flagged when mismatched) | Data-driven pack quality, feeds the generator pipeline | Med | Needs enough samples. Show n, and hide below a minimum such as 20. |
+| Auto-escalation: question with N flags or any `offensive` flag is auto-hidden or pinned | Safety for a children-adjacent audience | Med | Needs a client-visible "retired question" list, so it touches the pack pipeline. |
+| Retire/disable list pushed into pack distribution (retired IDs excluded from draws) | Closes the loop from review to gameplay | High | Touches pack publish, the IDB cache and service worker caching. Defer or phase it. |
+| LLM decision schema with proposed fix (keep / edit / retire) and rationale, human-in-the-loop apply | Fast triage at scale | Med-High | See below |
+| Stats dashboard: games per day, completion rate, popular packs, category correct rates | Operator insight | Med | |
+| Admin bulk actions (resolve all for a question, multi-select) | Speed | Low-Med | |
+| Admin "apply suggested edit to pack file" via a PR or CLI export | Ties into the existing CLI generate/review pipeline | High | |
 
-### Anti-Features (Commonly Requested, Often Problematic)
+## LLM Batch Review Design (recommended)
 
-Features that seem good for PWAs but create problems for this use case.
+**Export:** JSONL, one question per line (grouped by question, not per feedback item), so the LLM sees all complaints about a question together. Cap at a configurable batch size (for example 50 lines).
 
-| Feature | Why Requested | Why Problematic | Alternative |
-|---------|---------------|-----------------|-------------|
-| Aggressive Offline Caching | "Works offline" sounds essential | Service worker bugs can brick the app; updates require all tabs closed; complex debugging | Cache shell only; rely on session storage for game state |
-| Precaching All Questions | "Load everything for offline play" | Bundle size explosion; precaching 30+ seconds on slow connections; defeats lazy-loading | Keep existing lazy-load approach; cache pack JSON after selection |
-| IndexedDB for Game State | "Persistent game saves" | iOS clears after 7 days of inactivity; quota limits unpredictable; overkill for session-only | Session storage as documented in PROJECT.md |
-| Background Sync | "Sync packs in background" | Safari doesn't support; only Chromium browsers; adds complexity | Manual refresh button; explicit user action |
-| Push Notifications | "Notify players about updates" | Requires user permission (high rejection rate); iOS Web Push requires install first; not useful for in-person game | Not applicable to social gameplay model |
-| Full Offline Mode | "Play without any network" | Question packs need download; AI generator requires Ollama local | Online-first for pack loading; cached pack for gameplay |
+```json
+{"question_ref":"<packId>:<questionId>","content_hash":"sha256:...",
+ "pack":"...","category":"green","difficulty":"hard",
+ "question":"...","options":["..."],"answer":"...","tidbits":"...",
+ "feedback":[{"id":"fb_1","reason":"wrong_answer","note":"...","created_at":"..."}],
+ "stats":{"times_asked":42,"pct_correct":0.12,"flag_count":3}}
+```
+
+**Decision schema** (one JSON object per line, Zod-validated, shared in `packages/types`):
+
+```json
+{"question_ref":"...","content_hash":"sha256:...",
+ "decision":"keep|edit|retire",
+ "feedback_ids":["fb_1"],
+ "proposed":{"question":"...","answer":"...","tidbits":"..."},
+ "rationale":"...","confidence":0.0}
+```
+
+Rules:
+- `content_hash` must match the current question at apply time, otherwise reject as stale (optimistic concurrency). This prevents applying decisions to a question that was edited meanwhile.
+- Idempotency: a `batch_id` plus per-decision key (`question_ref` plus `feedback_ids`). Re-applying the same batch is a no-op. Return per-item results (applied, skipped, stale, invalid).
+- Human-in-the-loop: the API only records decisions as `proposed` by default. A human approves in the admin page (or via an explicit `auto_apply` flag restricted to `keep`/`dismiss`). `edit` and `retire` should require human approval at first. Retire is the riskiest decision.
+- Applying an `edit` updates feedback status to `resolved`, stores the proposed text and rationale as an audit record, and emits a patch for the pack pipeline. It does not mutate shipped pack files directly.
+- Dry-run mode (`?dry_run=true`) validates and reports without writing.
+- Auth: separate API key (bearer token) from the admin session. Scope it to export and decisions only.
+- Treat feedback notes as untrusted input (prompt-injection risk). Delimit them in the export and tell the reviewer prompt to treat notes as data.
+
+## Anti-Features
+
+| Anti-Feature | Why Avoid | What to Do Instead |
+|--------------|-----------|-------------------|
+| Mandatory login or login-gated flagging | Violates the no-accounts constraint and kills party flow | Anonymous device ID |
+| Uploading player names | PII risk, children, no value to the operator | Upload player count and slot index only |
+| Blocking gameplay on sync, or showing sync errors mid-game | Breaks offline-first and eyes-up | Silent outbox with retry |
+| Required note or long form for feedback | Nobody types during a party | Single-tap reasons, note optional |
+| Flagging mid-question read | Interrupts the conductor | Reveal screen only |
+| Real-time leaderboards or public global rankings | Out of scope. Would also encourage cheating and need identity. | Private per-device history only |
+| LLM auto-editing or auto-retiring questions without review | Hallucinated "fixes" would corrupt packs | Propose, human approves |
+| Public feedback or admin endpoints without rate limiting | Spam and abuse | Per-device and per-IP rate limits, size caps |
+| Using client time as a source of truth | Clock skew from offline devices | Store client timestamp but also record server received_at |
+| Per-keystroke or per-event analytics tracking | Privacy, scope creep | Record only the game summary and outcomes at game end |
+| Social features (share results, friend lists) | Needs accounts | Out of scope |
 
 ## Feature Dependencies
 
 ```
-[PWA Manifest]
-    └──requires──> [Icons (192px, 512px)]
-    └──requires──> [HTTPS Deployment]
-
-[Service Worker]
-    └──requires──> [HTTPS Deployment]
-    └──conflicts──> [Session-Only Storage] (if caching aggressively)
-
-[Install Prompt Handling]
-    └──requires──> [PWA Manifest]
-    └──requires──> [Service Worker]
-    └──requires──> [HTTPS Deployment]
-
-[iOS Meta Tags]
-    └──requires──> [Touch Icon (180px)]
-    └──requires──> [Splash Screen Images] (optional)
-
-[Session Storage Persistence]
-    └──conflicts──> [IndexedDB Offline Cache] (choose one approach)
+Device ID ──> Game upload (idempotent via client gameId) ──> Outcome stats
+Device ID ──> Feedback submit (dedupe, rate limit)
+Offline outbox ──> Game upload, Feedback submit
+Stable question identity (+ content hash) ──> Outcomes, Feedback, LLM stale-check
+Undo handling in outcome capture ──> Correct stats
+Outcome stats ──> Admin question detail, Difficulty calibration
+Feedback aggregation ──> Admin queue ──> LLM export ──> Decision apply (human approval)
+Admin auth ──> Admin queue; API key auth ──> LLM export/apply
+Decision apply ──> (later) Retire list in pack distribution
 ```
 
-### Dependency Notes
+## MVP Recommendation
 
-- **PWA Manifest requires Icons:** Browsers reject installation without both 192px and 512px icons. These must be generated from existing app icons.
-- **Service Worker requires HTTPS:** Netlify provides this by default. Service workers are disabled in development (localhost exemption).
-- **Service Worker conflicts with Session-Only Storage goal:** If SW caches aggressively, it undermines the session-only simplicity. Cache shell only, not game state.
-- **Install Prompt Handling requires all PWA basics:** Before customizing the install prompt, all installability criteria must be met (manifest, SW, HTTPS, engagement heuristics).
-- **iOS Meta Tags require iOS-specific assets:** Apple has unique requirements (180px touch icon, splash screens per device). Optional but improves iOS experience significantly.
+Prioritize, in this order:
+1. Backend plus anonymous device ID, stable question identity, shared Zod schemas.
+2. Offline outbox and idempotent game and outcome upload (including undo correctness).
+3. Feedback button, reasons, dedupe, confirmation (reuses the outbox).
+4. Admin queue with filters, per-question aggregates and stats, resolve/dismiss.
+5. LLM export (JSONL) and decision apply with content-hash stale check, idempotency, and human approval.
 
-## Platform-Specific Considerations
+Defer:
+- In-app history screen: nice but not needed for operator value. Could be a small add-on from local data.
+- Difficulty calibration: needs data volume first. Collect outcomes now, display later.
+- Retire list distributed to clients: High complexity and touches the pack pipeline. Phase after the review loop works.
+- Google sign-in and cross-device history: only revisit if users ask for it.
 
-### Android (Chrome)
+## Phase Flags
 
-| Requirement | Status | Notes |
-|-------------|--------|-------|
-| Manifest with icons | Required | 192px and 512px minimum |
-| Service worker | Required | For installability |
-| HTTPS | Required | Netlify provides |
-| Install prompt | Auto-triggered | After engagement heuristics (30s view, click) |
-| Maskable icons | Recommended | Adaptive icon support |
+- Outbox/sync and undo-consistent outcome capture: most likely to need deeper research (iOS Safari lacks Background Sync, IDB eviction, retry semantics).
+- Admin auth and API key scheme: depends on the hosting choice from STACK research.
+- Question identity stability across pack regeneration: verify in the existing pack schema before the schema design.
+- LLM export/apply: standard patterns, little research needed beyond schema design.
 
-### iOS (Safari 16.4+)
+## Sources (all LOW to MEDIUM, from general knowledge; not live-verified)
 
-| Requirement | Status | Notes |
-|-------------|--------|-------|
-| Manifest with icons | Required | Same as Android |
-| Service worker | Required | For installability |
-| HTTPS | Required | Netlify provides |
-| Install prompt | Manual | User must use Share → Add to Home Screen |
-| Touch icon (180px) | Recommended | apple-touch-icon meta tag |
-| apple-mobile-web-app-capable | Recommended | Enables standalone mode |
-| Background Sync | NOT SUPPORTED | Must design fallbacks |
-| IndexedDB | UNRELIABLE | Cleared after 7 days inactive |
-
-### iOS (Safari 16.3 and earlier)
-
-| Requirement | Status | Notes |
-|-------------|--------|-------|
-| PWA Installation | Safari only | Chrome/Firefox cannot install PWAs |
-| Web Push | NOT SUPPORTED | N/A for this app |
-| Storage | UNRELIABLE | High risk of data loss |
-
-## Service Worker Strategy
-
-### Recommended Approach: Shell-Only Caching
-
-**What to cache:**
-- HTML shell (index.html) — network-first with 3-5s timeout
-- Versioned static assets (hashed JS/CSS) — cache-first (hash invalidates)
-- Fonts — cache-first with long expiry
-- Core images (logo, icons) — cache-first
-
-**What NOT to cache:**
-- API responses — network-only
-- Question pack JSON — network-first (may want latest)
-- Game state — session storage, not SW cache
-
-### Expiration Configuration
-
-```javascript
-// Recommended Workbox configuration
-new CacheFirst({
-  cacheName: 'static-assets',
-  plugins: [
-    new ExpirationPlugin({
-      maxEntries: 100,
-      maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
-    })
-  ]
-})
-```
-
-### Anti-Pattern to Avoid
-
-**Precaching everything:** This causes 30+ second delays on mid-range phones over 3G. Only precache the shell; use runtime caching for everything else.
-
-## Netlify Deployment Configuration
-
-### Required netlify.toml
-
-```toml
-[build]
-  command = "npx expo export --platform web"
-  publish = "dist"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/_expo/static/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-```
-
-### Critical Note: Build Output Directory
-
-Expo SDK 55 changed the output directory from `web-build` to `dist`. Many tutorials still reference the old directory. Use:
-- Build command: `npx expo export --platform web`
-- Publish directory: `dist`
-
-## MVP Definition
-
-### Launch With (v3.0 — Web Deployment)
-
-Minimum viable web deployment — what's needed to deploy and be installable.
-
-- [x] Manifest file with required fields — Without this, app cannot be installed
-- [x] Icons at 192px and 512px — Required by browser installability checks
-- [x] HTTPS deployment via Netlify — Required for service workers
-- [x] Service worker for shell caching — Prevents blank screen on reload; caches static assets
-- [x] Mobile-responsive web layout — Already achieved via Expo web export
-- [x] Netlify redirects for SPA routing — Prevents 404 on direct route access
-- [x] Session-only storage — No IndexedDB complexity; simpler than full offline
-
-### Add After Validation (v3.x)
-
-Features to add once basic web deployment works.
-
-- [ ] Maskable icon for Android — Improves home screen appearance
-- [ ] iOS-specific meta tags — Better iOS integration (apple-mobile-web-app-capable, etc.)
-- [ ] iOS touch icon (180px) — Required for iOS Add to Home Screen
-- [ ] Custom install prompt UX — Intercept beforeinstallprompt for better user flow
-- [ ] Cache versioning with cleanup — Prevent old cache accumulation
-
-### Future Consideration (v4+)
-
-Features to defer until web deployment proves stable.
-
-- [ ] iOS splash screen images — Per-device images for launch screen; many variants
-- [ ] Share intent handling — Launch with pack data from share
-- [ ] Offline pack caching — Download once, play offline with that pack
-- [ ] Lighthouse PWA score >90 — Quality metric, not essential for launch
-
-## Feature Prioritization Matrix
-
-| Feature | User Value | Implementation Cost | Priority |
-|---------|------------|---------------------|----------|
-| Manifest + Icons | HIGH | LOW | P1 |
-| HTTPS (Netlify) | HIGH | LOW | P1 |
-| Service Worker (shell only) | HIGH | MEDIUM | P1 |
-| SPA Redirects | HIGH | LOW | P1 |
-| Session Storage | HIGH | LOW | P1 |
-| Maskable Icons | MEDIUM | LOW | P2 |
-| iOS Meta Tags | MEDIUM | LOW | P2 |
-| Custom Install Prompt | MEDIUM | MEDIUM | P2 |
-| iOS Touch Icon | MEDIUM | LOW | P2 |
-| iOS Splash Screens | LOW | HIGH | P3 |
-| Full Offline Mode | LOW | HIGH | P3 |
-| Background Sync | LOW | HIGH | P3 |
-| Push Notifications | NONE | HIGH | Exclude |
-
-**Priority key:**
-- P1: Must have for launch (web app must be installable and functional)
-- P2: Should have, improves experience significantly
-- P3: Nice to have, future consideration
-- Exclude: Not applicable or actively harmful
-
-## Dependency on Existing Features
-
-This web deployment milestone depends on the following already-built features from v1.0 and v2.0:
-
-| Existing Feature | Web Dependency | Notes |
-|------------------|----------------|-------|
-| Mobile game (Expo) | HIGH | Web export requires working mobile app |
-| Pack selection UI | MEDIUM | Must render correctly in web browser |
-| Question generator (Ollama) | LOW | Generator stays dev-only; production is static export |
-| Built-in default pack | HIGH | Must load in web environment |
-| Game state management | MEDIUM | Session storage must work in browser context |
-| Expo Router navigation | HIGH | Must work with static export routing |
-
-### Web-Specific Adjustments Needed
-
-1. **Navigation:** Verify Expo Router works with static export (no dynamic routes without generateStaticParams)
-2. **Storage:** Replace WatermelonDB with session storage for web (already planned per PROJECT.md)
-3. **Haptics:** expo-haptics not available on web — graceful degradation needed
-4. **Screen Orientation:** expo-screen-orientation not applicable on web — ignore or conditional
-
-## Sources
-
-- [Expo PWA Documentation](https://docs.expo.dev/guides/progressive-web-apps/) — Official Expo PWA setup guide (HIGH confidence)
-- [web.dev Install Criteria](https://web.dev/articles/install-criteria) — Browser installability requirements (HIGH confidence)
-- [MDN Making PWAs Installable](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable) — PWA manifest requirements (HIGH confidence)
-- [Expo Web Hosting Providers](https://expo-expo.mintlify.app/deployment/hosting-providers) — Netlify deployment configuration (HIGH confidence)
-- [Expo Static Rendering](https://docs.expo.dev/router/web/static-rendering/) — Static export documentation (HIGH confidence)
-- [PWA 2025 Field Guide](https://gothar.com/en/insights/pwa-2025) — Anti-patterns and production considerations (MEDIUM confidence)
-- [Netlify Redirects Documentation](https://docs.netlify.com/manage/routing/redirects/rewrites-proxies/) — SPA routing configuration (HIGH confidence)
-
----
-*Feature research for: PWA Web Deployment*
-*Researched: 2026-06-09*
+- General patterns from Jackbox, Kahoot guest play, Heads Up, Trivia Crack (no-login casual play, optional accounts for persistence).
+- General content-moderation and bug-triage queue patterns (status/reason filters, aggregation, resolution notes).
+- Offline outbox pattern with idempotency keys (standard PWA practice).
+- GDPR/COPPA general guidance on pseudonymous identifiers (not legal advice; confirm before launch).
