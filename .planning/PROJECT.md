@@ -8,6 +8,21 @@ Trivial World is a mobile trivia game for in-person social play, with a CLI-base
 
 Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
 
+## Current Milestone: v13.0 Game History & Question Feedback Backend
+
+**Goal:** Add a stateful backend that records games played and collects question feedback for human (admin page) and programmatic (LLM batch) review — without compromising offline-first gameplay.
+
+**Target features:**
+- Backend service + database (hosting chosen via research)
+- Game recording: per-game summary (times, player count, winner, packs/difficulty, championship) + per-question outcomes (question asked, correct/incorrect)
+- Offline-safe sync: results queue locally and upload when online; gameplay never blocks on network
+- Question feedback: conductor flags a question during play (reason + optional note)
+- Admin review page: protected queue of flagged questions with question stats; resolve/dismiss
+- Programmatic review API: export open feedback with question context in an LLM-friendly format; apply batch decisions back
+- Identity model (anonymous vs optional login) recommended by research on user expectations + implementation ease
+
+**Key context:** Offline-first and no-forced-accounts remain hard constraints. Google-auth todo is in scope only if research recommends it.
+
 ## Current State: v12.0 Complete — Web/PWA-Only
 
 **Shipped:** 2026-07-18
@@ -28,7 +43,7 @@ Removed the native (Android/iOS) build path and the WatermelonDB native database
 
 ### Next Milestone Goals
 
-None planned. v12.0 closes the Web-Only Collapse. Candidate follow-up (pre-existing, out of v12.0 scope): auto-populate `availablePacks` at boot so the pack name resolves on PWA reload without visiting `/packs`.
+v13.0 started 2026-11-14 (see Current Milestone above). v12.0 closed the Web-Only Collapse. Candidate follow-up (pre-existing, out of v12.0 scope): auto-populate `availablePacks` at boot so the pack name resolves on PWA reload without visiting `/packs`.
 
 <details>
 <summary>Prior state: v7.0 Complete (2026-06-13) — archived at v12.0 close</summary>
@@ -87,6 +102,14 @@ None planned. v12.0 closes the Web-Only Collapse. Candidate follow-up (pre-exist
 - ✓ Shared Pack vs Custom Per Player toggle with packMode persistence — v7.0
 - ✓ clearPlayerPackSources on mode switch: Custom→Shared clears all player overrides — v7.0
 
+### Active (v13.0)
+
+- [ ] Backend records completed games (summary + per-question outcomes)
+- [ ] Offline-queued sync of game results
+- [ ] Conductor can submit feedback on a question
+- [ ] Admin page to review flagged questions
+- [ ] Programmatic/LLM batch review of feedback
+
 ### Active (Deferred from v3.0)
 
 - [ ] WEBG-02: Session storage persists game state during browser session (no IndexedDB)
@@ -101,7 +124,7 @@ None planned. v12.0 closes the Web-Only Collapse. Candidate follow-up (pre-exist
 |---------|--------|
 | Online multiplayer (remote play) | In-person only — breaks core social value |
 | User accounts/authentication | Friction kills social gameplay |
-| Real-time leaderboards | Not needed for in-person play |
+| Real-time leaderboards | Not needed for in-person play (game history is recorded in v13.0, but no live leaderboards) |
 | In-app purchases | Free-to-play model |
 | Cloud AI for generation | Dev-only Ollama (D-01) |
 | IndexedDB persistence (game state) | Session-only for game state; pack bodies use IndexedDB (Phase 23) |
@@ -163,5 +186,22 @@ None planned. v12.0 closes the Web-Only Collapse. Candidate follow-up (pre-exist
 - **Simplicity:** Low friction to start playing — minimal setup
 - **Offline-first:** No network dependency for core gameplay
 
+## Evolution
+
+This document evolves at phase transitions and milestone boundaries.
+
+**After each phase transition** (via `/gsd-transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd:complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state
+
 ---
-*Last updated: 2026-06-13 after v7.0 milestone*
+*Last updated: 2026-11-14 — v13.0 milestone started*
