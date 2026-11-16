@@ -2,6 +2,7 @@
 created: 2026-06-14T17:18:00Z
 title: Multi-user registration and login via identity providers
 area: auth
+resolves_phase: 28
 files: []
 ---
 
