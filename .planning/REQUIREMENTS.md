@@ -100,13 +100,51 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (filled by roadmapper) | | |
+| BACK-01 | Phase 25 | Pending |
+| BACK-02 | Phase 25 | Pending |
+| BACK-03 | Phase 25 | Pending |
+| BACK-04 | Phase 25 | Pending |
+| BACK-05 | Phase 25 | Pending |
+| BACK-06 | Phase 25 | Pending |
+| BACK-07 | Phase 25 | Pending |
+| REC-01 | Phase 26 | Pending |
+| REC-02 | Phase 26 | Pending |
+| REC-03 | Phase 26 | Pending |
+| REC-04 | Phase 26 | Pending |
+| REC-05 | Phase 26 | Pending |
+| REC-06 | Phase 26 | Pending |
+| SYNC-01 | Phase 26 | Pending |
+| SYNC-02 | Phase 26 | Pending |
+| SYNC-03 | Phase 26 | Pending |
+| SYNC-04 | Phase 26 | Pending |
+| SYNC-05 | Phase 26 | Pending |
+| ACCT-01 | Phase 26 | Pending |
+| ACCT-02 | Phase 28 | Pending |
+| ACCT-03 | Phase 28 | Pending |
+| ACCT-04 | Phase 28 | Pending |
+| ACCT-05 | Phase 28 | Pending |
+| ACCT-06 | Phase 28 | Pending |
+| FDBK-01 | Phase 27 | Pending |
+| FDBK-02 | Phase 27 | Pending |
+| FDBK-03 | Phase 27 | Pending |
+| FDBK-04 | Phase 27 | Pending |
+| FDBK-05 | Phase 27 | Pending |
+| ADMN-01 | Phase 29 | Pending |
+| ADMN-02 | Phase 29 | Pending |
+| ADMN-03 | Phase 29 | Pending |
+| ADMN-04 | Phase 29 | Pending |
+| ADMN-05 | Phase 29 | Pending |
+| REVW-01 | Phase 30 | Pending |
+| REVW-02 | Phase 30 | Pending |
+| REVW-03 | Phase 30 | Pending |
+| REVW-04 | Phase 30 | Pending |
+| REVW-05 | Phase 30 | Pending |
 
 **Coverage:**
 - v13.0 requirements: 39 total
-- Mapped to phases: 0
-- Unmapped: 39
+- Mapped to phases: 39
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-11-14*
-*Last updated: 2026-11-14 after initial definition*
+*Last updated: 2026-11-14 after roadmap creation*

@@ -2,11 +2,11 @@
 gsd_state_version: 1.0
 milestone: v13.0
 milestone_name: Game History & Question Feedback Backend
-status: planning
+status: ready_to_plan
 last_updated: "2026-11-15T06:02:51.402Z"
 last_activity: 2026-11-15
 progress:
-  total_phases: 0
+  total_phases: 6
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -20,14 +20,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-11-14)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** v12.0 Web-Only Collapse — Phase 24 complete; milestone ready to close.
+**Current focus:** v13.0 Game History & Question Feedback Backend — Phase 25 (Backend Foundation & Contracts)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 25 of 30 (Backend Foundation & Contracts)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-11-15 — Milestone v13.0 started
+Status: Ready to plan
+Last activity: 2026-11-14 — v13.0 roadmap created (Phases 25–30)
+
+Progress: [░░░░░░░░░░] 0% (0/6 phases)
 
 ## Performance Metrics
 
@@ -58,6 +60,7 @@ Last activity: 2026-11-15 — Milestone v13.0 started
 - Phase 22 added and completed: Undo Last Answer — snapshot pre-mark game state, add undoLastMark() + unmarkAsked(), show '↩ Undo last mark' link on turn screen until next question selected
 - Phase 23 added and completed: Web Pack Downloading — Service Worker (stale-while-revalidate pack index, precache app shell) + IndexedDB (durable pack body storage, checksum-based invalidation); web app works offline after first visit; explicit "Download for offline" button per pack in packs/index.tsx
 - Phase 24 added (v12.0): Remove native Android/iOS build path — collapse to web/PWA-only. Delete database/ (WatermelonDB), packDownloader.ts, native platform extensions, Platform.OS native branches across stores/services/UI; remove @nozbe/watermelondb + async-storage deps, android/ios config + scripts, android icons, dist-ios/. Rewrite native-path tests for the web path. Gates: tests green, tsc clean, web build succeeds.
+- Phases 25–30 added (v13.0): backend foundation, client outbox/recording, question feedback, optional Google sign-in + history, admin review, LLM batch review
 - **v8.0 UX changes:** packMode removed from packStore; setup.tsx segmented control removed; per-player pack chip always visible alongside difficulty chip; allPlayersCustom bypass skips CONF-01 shared pack requirement
 - **v9.0 UX changes:** setup.tsx two-chip row (pack+difficulty) replaced with single Shared/Custom toggle chip; difficulty chip removed entirely; handleRevertToShared now also clears difficultyPreference; /packs/index.tsx gains per-player mode via targetPlayerId param with per-player title, pack/combo selection, and Back-only footer
 

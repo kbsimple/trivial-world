@@ -14,8 +14,100 @@
 - ✅ **v10.0 Undo Last Answer** — Phase 22 (shipped 2026-06-13)
 - ✅ **v11.0 Web Pack Downloading** — Phase 23 (shipped 2026-06-18)
 - ✅ **v12.0 Web-Only Collapse** — Phase 24 (shipped 2026-07-18)
+- 🚧 **v13.0 Game History & Question Feedback Backend** — Phases 25–30 (in progress)
 
 ## Phases
+
+### 🚧 v13.0 Game History & Question Feedback Backend (Phases 25–30) — IN PROGRESS
+
+- [ ] **Phase 25: Backend Foundation & Contracts** - Same-origin `/api/v2/*` Netlify Functions + Postgres, shared Zod contracts, migrations, rate limiting, secret scan
+- [ ] **Phase 26: Client Outbox & Game Recording** - Offline-safe IndexedDB outbox and undo-correct recording of finished/abandoned games with anonymous install ID
+- [ ] **Phase 27: Question Feedback** - Conductor flags a question from the answer-reveal screen; feedback queued and deduplicated
+- [ ] **Phase 28: Google Sign-In & Game History** - Optional Google sign-in, claim guest games, cross-device "My Games" screen, identity reset
+- [ ] **Phase 29: Admin Review Page** - Token-gated `/admin` queue of flagged questions with stats and resolve/dismiss
+- [ ] **Phase 30: LLM Batch Review & Pack Round-Trip** - Review export/apply API with human approval and `pnpm apply-reviews` CLI
+
+### Phase Details
+
+### Phase 25: Backend Foundation & Contracts
+**Goal**: A secure, migrated, same-origin backend exists that validates and stores game and feedback payloads without disturbing the static site, and the default test gate stays hermetic
+**Depends on**: Phase 24
+**Requirements**: BACK-01, BACK-02, BACK-03, BACK-04, BACK-05, BACK-06, BACK-07
+**Success Criteria** (what must be TRUE):
+  1. A deploy preview answers curl requests at `/api/v2/*` while `/api/v1/packs.json` and SPA deep links still work
+  2. Valid game-record and feedback payloads are accepted idempotently; invalid, unknown-field, or oversized payloads are rejected, and bursts are rate limited
+  3. Schema migrations apply automatically on deploy and a deploy preview never writes to the production database
+  4. `/statusz` shows database reachability next to pack health
+  5. CI fails when a server secret appears in `dist/`, and `npx vitest run` passes without a live database (DB integration tests run via a separate script)
+**Plans**: TBD
+**Research flag**: yes (Netlify functions/migrations wiring in the two-site monorepo, Drizzle rc adapter vs SQL fallback, Node version, rate-limit layout; run deploy-preview spike first)
+
+### Phase 26: Client Outbox & Game Recording
+**Goal**: Every finished or meaningfully abandoned game is recorded exactly once and uploaded in the background, with gameplay never waiting on the network
+**Depends on**: Phase 25
+**Requirements**: ACCT-01, REC-01, REC-02, REC-03, REC-04, REC-05, REC-06, SYNC-01, SYNC-02, SYNC-03, SYNC-04, SYNC-05
+**Success Criteria** (what must be TRUE):
+  1. A full game played offline has no errors or delays, and its record uploads automatically once the device is back online
+  2. After undoing marks (including from the win screen), the stored game and per-question outcomes match the final game state
+  3. A game abandoned after at least 3 answers is recorded as `abandoned` on next launch after ~6h idle; shorter abandoned games are discarded
+  4. Retries and reconnects never create duplicate games, and the server record contains seat indexes only (no player names) plus a server `received_at`
+  5. Permanently rejected items stop retrying, the local queue is size-capped, and the Service Worker never caches `/api/v2/*`
+  6. Each install has an anonymous install ID attached to uploads
+**Plans**: TBD
+**Research flag**: yes (iOS Safari IDB eviction, `navigator.locks` fallback, finalize-vs-undo lifecycle)
+
+### Phase 27: Question Feedback
+**Goal**: Conductors can flag a bad question during play without disrupting the game, and flags reach the server reliably
+**Depends on**: Phase 26
+**Requirements**: FDBK-01, FDBK-02, FDBK-03, FDBK-04, FDBK-05
+**Success Criteria** (what must be TRUE):
+  1. A flag control appears only on the answer-reveal screen, never while the question is being read
+  2. Conductor picks a reason (note required for "other"), sees a non-blocking confirmation, and the question shows as already flagged with game state unchanged
+  3. Feedback submitted offline uploads later, and repeat flags for the same question and reason from one install appear once on the server
+  4. A stored flag keeps the question/answer text and content hash as they were when flagged, even after the pack is edited
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 28: Google Sign-In & Game History
+**Goal**: Conductors can optionally sign in with Google to keep their game history across devices, while guests continue to play fully
+**Depends on**: Phase 27
+**Requirements**: ACCT-02, ACCT-03, ACCT-04, ACCT-05, ACCT-06
+**Success Criteria** (what must be TRUE):
+  1. A guest can play an entire game without ever seeing a required sign-in; Google sign-in is an optional action
+  2. After signing in, the session survives a browser refresh and the conductor can sign out
+  3. On first sign-in, games and feedback previously recorded under the install ID appear under the account
+  4. A signed-in conductor sees a "My Games" screen (date, players, winner seat, packs, duration, status) that shows the same history on another device
+  5. "Clear history / reset identity" signs the conductor out and starts a new install ID
+**Plans**: TBD
+**UI hint**: yes
+**Research flag**: yes (provider/library choice on Netlify, Google ID token verification, session handling, account linking)
+
+### Phase 29: Admin Review Page
+**Goal**: The maintainer can review flagged questions in a protected admin page and resolve or dismiss them
+**Depends on**: Phase 27
+**Requirements**: ADMN-01, ADMN-02, ADMN-03, ADMN-04, ADMN-05
+**Success Criteria** (what must be TRUE):
+  1. Visiting `/admin` shows only an unlock prompt until a valid admin token is entered; admin API calls without the token are rejected server-side
+  2. Admin sees flagged questions grouped per question version and can filter by status, reason, and pack
+  3. Question detail shows question, options, answer, tidbits, flag count, reason breakdown, notes, times asked, and % correct
+  4. Admin can resolve or dismiss a flagged question with an audit note
+  5. Admin responses are never cached, and user-supplied notes display as escaped text
+**Plans**: TBD
+**UI hint**: yes
+**Research flag**: yes (Expo Router route splitting, SW precache exclusion for `/admin`)
+
+### Phase 30: LLM Batch Review & Pack Round-Trip
+**Goal**: A script or LLM can review open feedback in bulk, with human approval gating every change that reaches the packs
+**Depends on**: Phase 29
+**Requirements**: REVW-01, REVW-02, REVW-03, REVW-04, REVW-05
+**Success Criteria** (what must be TRUE):
+  1. With the review token, a script exports open feedback as per-question JSONL including context, stats, content hash, and notes marked as untrusted data
+  2. A script submits batch decisions; repeats are idempotent, stale decisions are rejected by content hash, and per-item results are returned
+  3. A dry-run shows what would happen without saving anything
+  4. LLM `edit`/`retire` decisions appear as `proposed` in the admin page and take effect only after admin approval
+  5. `pnpm apply-reviews` turns approved decisions into schema-valid pack JSON changes (checksum, version, index updated) for human git review, and the server never writes pack files
+**Plans**: TBD
+**Research flag**: yes (prompt-injection hygiene for export format, pack-patch semantics for checksum/version/index)
 
 <details>
 <summary>✅ v1.0 Core Gameplay (Phases 1–5) — SHIPPED 2026-06-08</summary>
@@ -209,6 +301,12 @@ Plans:
 | 22. Undo Last Answer | v10.0 | 1/1 | Complete | 2026-06-13 |
 | 23. Web Pack Downloading | v11.0 | 6/6 | Complete | 2026-06-18 |
 | 24. Remove Native Android/iOS Build Path | v12.0 | 3/3 | Complete | 2026-07-18 |
+| 25. Backend Foundation & Contracts | v13.0 | 0/TBD | Not started | - |
+| 26. Client Outbox & Game Recording | v13.0 | 0/TBD | Not started | - |
+| 27. Question Feedback | v13.0 | 0/TBD | Not started | - |
+| 28. Google Sign-In & Game History | v13.0 | 0/TBD | Not started | - |
+| 29. Admin Review Page | v13.0 | 0/TBD | Not started | - |
+| 30. LLM Batch Review & Pack Round-Trip | v13.0 | 0/TBD | Not started | - |
 
 ---
 
@@ -226,3 +324,4 @@ Plans:
 *v11.0 shipped: 2026-06-18*
 *v12.0 added: 2026-07-18*
 *v12.0 shipped: 2026-07-18*
+*v13.0 added: 2026-11-14*
