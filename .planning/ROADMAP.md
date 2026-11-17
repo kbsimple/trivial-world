@@ -39,7 +39,18 @@
   3. Schema migrations apply automatically on deploy and a deploy preview never writes to the production database
   4. `/statusz` shows database reachability next to pack health
   5. CI fails when a server secret appears in `dist/`, and `npx vitest run` passes without a live database (DB integration tests run via a separate script)
-**Plans**: TBD
+**Plans**: 9 plans (6 waves)
+
+Plans:
+- [ ] 25-01-PLAN.md — Spike A: pre-flight (credit plan, site settings, package audit), user-approved netlify link, packages/api scaffold, spike functions, Node 22
+- [ ] 25-02-PLAN.md — Spike B: user-approved push/draft PR; prove routing, migrations dir, Drizzle rc.5 txn, preview isolation, 429 on a live preview; record Spike Decisions
+- [ ] 25-03-PLAN.md — Shared strict Zod contracts (game record, feedback, review export/decisions) + root vitest projects + test:integration + repo port
+- [ ] 25-04-PLAN.md — HTTP layer: body cap/413, 400 issue summary, idempotent 201/200 ingest + health handlers, in-memory repo (hermetic)
+- [ ] 25-05-PLAN.md — v13 schema migration (text+CHECK, nullable account_id), lazy DB client, Postgres repo, real-Postgres integration suite, hermetic guard
+- [ ] 25-06-PLAN.md — check-secrets.mjs build gate, smoke-api.mjs, tw-backend-setup executable skill
+- [ ] 25-07-PLAN.md — Wire ingest (single rate rule) / health / statusz functions, composition root + D-15 disable switch, _redirects/_headers, remove spike
+- [ ] 25-08-PLAN.md — Full local gates, user-approved push, preview smoke + [BLOCKING] live preview-DB migration/write verification
+- [ ] 25-09-PLAN.md — User-approved production promotion, [BLOCKING] production DB + /statusz checks, post-production preview isolation proof
 **Research flag**: yes (Netlify functions/migrations wiring in the two-site monorepo, Drizzle rc adapter vs SQL fallback, Node version, rate-limit layout; run deploy-preview spike first)
 
 ### Phase 26: Client Outbox & Game Recording

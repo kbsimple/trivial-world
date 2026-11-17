@@ -343,12 +343,12 @@ Content hash must be computed by the client from the same algorithm as `services
 | A8 | slopcheck not run; package postinstall scripts not inspected | Audit | Low; docs-cited |
 | A9 | Self-fetching `/statusz.json` from inside the statusz function works (no function claims it) | Pitfall 4 | Use included_files instead |
 
-## Open Questions
+## Open Questions (RESOLVED by plans 25-01/25-02 spike)
 
-1. **Do functions in `apps/mobile/netlify/functions` see `NETLIFY_DB_URL` on previews pointing at the branch DB?** Spike: log connection host (not credentials) via `/api/v2/health` debug in preview vs prod; compare with `netlify database status --branch`.
-2. **Is the netlify-db adapter's WebSocket/HTTP path OK for multi-statement transactions in a function?** Spike: run the three-table transaction on a preview and a forced-failure rollback.
-3. **What does `netlify link` target?** The repo is unlinked and the root `netlify.toml` is shared by two sites; the user must pick/create the game site and confirm base dir `apps/mobile` is set in UI (outward-facing).
-4. **Netlify Database on the user's plan** (credit-based, compute 48 CU/mo, sleeps after 5 min idle => first request after idle has cold-start latency; `/statusz` `down` probe needs a timeout of ~3-5 s).
+1. **Do functions in `apps/mobile/netlify/functions` see `NETLIFY_DB_URL` on previews pointing at the branch DB?** Spike: log connection host (not credentials) via `/api/v2/health` debug in preview vs prod; compare with `netlify database status --branch`. **RESOLVED BY:** 25-01 Task 4 (spikeHealth returns `dbHostFingerprint`) + 25-02 Task 3 step 1 (preview vs production branch comparison, production query); recorded as `PREVIEW_DB_ISOLATION`; re-proven after production exists in 25-09 Task 2 step 5.
+2. **Is the netlify-db adapter's WebSocket/HTTP path OK for multi-statement transactions in a function?** Spike: run the three-table transaction on a preview and a forced-failure rollback. **RESOLVED BY:** 25-01 Task 4 (spike-probe commit/rollback modes) + 25-02 Task 2 step 5; recorded as `DRIZZLE` / `DB_TRANSACTION_OK`; enforced locally by the 25-05 Task 2 rollback integration test.
+3. **What does `netlify link` target?** The repo is unlinked and the root `netlify.toml` is shared by two sites; the user must pick/create the game site and confirm base dir `apps/mobile` is set in UI (outward-facing). **RESOLVED BY:** 25-01 Task 1 (read-only site listing with base/package_path/functions_dir) + 25-01 Task 2 (user selects site id; blocking-human) + 25-01 Task 3 (`netlify link --id`); recorded as `SITE_ID` / `SITE_BASE_DIR` / `FUNCTIONS_DIR_EFFECTIVE` in 25-02 Task 2.
+4. **Netlify Database on the user's plan** (credit-based, compute 48 CU/mo, sleeps after 5 min idle => first request after idle has cold-start latency; `/statusz` `down` probe needs a timeout of ~3-5 s). **RESOLVED BY:** 25-01 Task 1 (account plan check) + 25-01 Task 2 (user confirms credit-based plan or stop-plan); cold-start latency handled by the 3 s probe timeout in 25-04 Task 2 (health) and 25-07 Task 1 (statusz).
 
 ## Environment Availability
 
