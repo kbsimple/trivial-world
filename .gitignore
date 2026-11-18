@@ -49,3 +49,6 @@ coverage/
 playwright-report/
 test-results/
 apps/mobile/node_modules
+
+# Netlify CLI
+.netlify/
