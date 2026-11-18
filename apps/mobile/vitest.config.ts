@@ -12,6 +12,9 @@ export default defineConfig({
       // react-native/index.js uses Flow's `import typeof *` which Rollup cannot
       // parse. Redirect to a minimal stub so stores that import Platform can run.
       'react-native': resolve(__dirname, '__mocks__/react-native.ts'),
+      // packages/types/dist is untracked; resolve to source so a fresh checkout
+      // runs tests without building. tsc and Netlify still use dist.
+      '@trivial-world/types': resolve(__dirname, '../../packages/types/src/index.ts'),
     },
   },
 });
