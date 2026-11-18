@@ -10,9 +10,9 @@
 
 ### Backend Foundation (BACK)
 
-- [x] **BACK-01**: Backend API is served same-origin from the game site under `/api/v2/*` (Netlify Functions + Netlify Database/Postgres) without breaking the static `/api/v1/packs.json` index or the SPA catch-all
+- [ ] **BACK-01**: Backend API is served same-origin from the game site under `/api/v2/*` (Netlify Functions + Netlify Database/Postgres) without breaking the static `/api/v1/packs.json` index or the SPA catch-all
 - [ ] **BACK-02**: Request/response contracts (game record, feedback, review export, review decisions) are shared Zod schemas in `packages/types`, `.strict()`, size-capped, with a `schemaVersion`
-- [x] **BACK-03**: Database schema is managed by versioned migrations applied on deploy; deploy previews never write to the production database
+- [ ] **BACK-03**: Database schema is managed by versioned migrations applied on deploy; deploy previews never write to the production database
 - [ ] **BACK-04**: Public write endpoints reject invalid/oversized payloads and are rate limited
 - [ ] **BACK-05**: `/statusz` reports backend/database reachability alongside existing pack health
 - [ ] **BACK-06**: CI fails if a server secret appears in the built client bundle (`dist/`)
@@ -100,9 +100,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BACK-01 | Phase 25 | Complete |
+| BACK-01 | Phase 25 | Pending |
 | BACK-02 | Phase 25 | Pending |
-| BACK-03 | Phase 25 | Complete |
+| BACK-03 | Phase 25 | Pending |
 | BACK-04 | Phase 25 | Pending |
 | BACK-05 | Phase 25 | Pending |
 | BACK-06 | Phase 25 | Pending |
