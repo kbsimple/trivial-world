@@ -16,6 +16,7 @@
     "@tamagui/core": "^2.1.0",
     "@tamagui/font-inter": "^2.1.0",
     "@tamagui/static": "^2.1.0",
+    "@trivial-world/api": "workspace:*",
     "@trivial-world/types": "workspace:*",
     "expo": "~56.0.9",
     "expo-haptics": "~56.0.3",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@netlify/functions": "6.1.1",
     "@tamagui/babel-plugin": "^2.1.0",
     "@types/react": "~19.2.2",
     "@types/semver": "^7.7.1",

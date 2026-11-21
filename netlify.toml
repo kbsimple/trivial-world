@@ -15,29 +15,34 @@
 
 [build]
   # Build both apps with Turborepo
-  command = "pnpm install && pnpm build"
+  command = "pnpm install && pnpm --filter @trivial-world/types build && pnpm build"
   # REQUIRED: Set publish directory in Netlify UI per site:
   #   trivial-world-game site      → publish = "apps/mobile/dist"
   #   trivial-world-generator site → publish = "apps/generator/out"
   # (Cannot be set here because this toml is shared by both sites.)
 
 [build.environment]
-  # Node version for build (20 LTS)
-  NODE_VERSION = "20"
+  # Node 22 required by @netlify/database (engines >=22.12)
+  NODE_VERSION = "22"
   # Skip Next.js plugin - game site uses Expo, not Next.js
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
+# Netlify Functions (only the game site uses functions; generator is static)
+[functions]
+  node_bundler = "esbuild"
+  directory = "apps/mobile/netlify/functions"
+
 # Production context (main branch)
 [context.production]
-  command = "pnpm install && pnpm build"
+  command = "pnpm install && pnpm --filter @trivial-world/types build && pnpm build"
 
 # Deploy preview context (pull requests)
 [context.deploy-preview]
-  command = "pnpm install && pnpm build"
+  command = "pnpm install && pnpm --filter @trivial-world/types build && pnpm build"
 
 # Branch deploy context (other branches)
 [context.branch-deploy]
-  command = "pnpm install && pnpm build"
+  command = "pnpm install && pnpm --filter @trivial-world/types build && pnpm build"
 
 # Security headers for all routes
 [[headers]]

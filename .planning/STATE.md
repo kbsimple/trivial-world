@@ -1,38 +1,35 @@
 ---
 gsd_state_version: 1.0
-milestone: v12.0
-milestone_name: Web-Only Collapse
-status: active
-last_updated: "2026-07-18T00:00:00.000Z"
-stopped_at: "Completed 24-03-PLAN.md"
-resume_file: null
+milestone: v13.0
+milestone_name: Game History & Question Feedback Backend
+status: executing
+last_updated: "2026-11-18T06:07:40.366Z"
+last_activity: 2026-11-18
 progress:
-  total_phases: 1
-  completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
-  percent: 100
+  total_phases: 10
+  completed_phases: 3
+  total_plans: 18
+  completed_plans: 11
+  percent: 30
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-13)
+See: .planning/PROJECT.md (updated 2026-11-14)
 
 **Core value:** Enable in-person social trivia gameplay where the app supports (not replaces) human interaction — the game conductor reads questions aloud and players move together.
-**Current focus:** v12.0 Web-Only Collapse — Phase 24 complete; milestone ready to close.
+**Current focus:** Phase 25 — Backend Foundation & Contracts
 
 ## Current Position
 
-Milestone v12.0 (Web-Only Collapse) started 2026-07-18. Phase 24 added: remove native Android/iOS build path, collapse to web/PWA-only.
-23 total phases shipped across 11 milestones. 433 tests passing.
-Plan 24-01 complete: native-only artifacts deleted (database/, packDownloader.ts, platformStorage.native.ts, __mocks__/{watermelondb,async-storage}.ts, android icon assets, empty dist-ios/); native config stripped from app.config.js / package.json / metro.config.js / babel.config.js; RN mock flipped to Platform.OS='web'. Defer pnpm install + full test/tsc/build:web gate to 24-03.
-Plan 24-02 complete: every Platform.OS conditional in production source collapsed to the web path as the sole path (services/packCache.ts, packIndex.ts, questionProvider.ts; stores/packStore.ts, questionStore.ts; utils/haptics.ts; components/PauseOverlay.tsx; app/index.tsx, _layout.tsx, game/_layout.tsx, game/setup.tsx, packs/index.tsx, packs/combos.tsx). packStore rewired from deleted packDownloader to the packCache web IDB API. All dynamic @nozbe/watermelondb imports and database/ imports removed from production source. tsc error lines dropped 28 → 8 (all remaining in test files — 24-03 scope). Service web-path tests pass (34/34).
-Plan 24-03 complete: rewrote stores/packStore.test.ts and stores/questionStore.test.ts for the web path (mock the post-24-02 packCache shim + questionProvider; assert zustand persist on sessionStorage); deleted the stale async-storage mock from playerStore.test.ts and gameStore.test.ts; updated README to web/PWA-only (no iOS/Android, no WatermelonDB, no database/ in Project Structure; Storage: IndexedDB idb-keyval + sessionStorage); pruned 11 packages from pnpm-lock.yaml via pnpm install; fixed two pre-existing test-data type mismatches (packCache.web.test.ts category literal, packIndex.web.test.ts mockPackEntry shape). Phase gates all green: vitest 433/433, tsc --noEmit exit 0, pnpm build:web exit 0 (dist/ produced). Phase 24 / v12.0 milestone complete.
-Next step: close v12.0 milestone; roadmap Phase 25+ (none currently planned).
+Phase: 25 (Backend Foundation & Contracts) — EXECUTING
+Plan: 2 of 9
+Status: Ready to execute
+Last activity: 2026-11-18
 
-Progress: [████████████████████] 100%
+Progress: [██████░░░░] 61%
 
 ## Performance Metrics
 
@@ -63,6 +60,7 @@ Progress: [████████████████████] 100%
 - Phase 22 added and completed: Undo Last Answer — snapshot pre-mark game state, add undoLastMark() + unmarkAsked(), show '↩ Undo last mark' link on turn screen until next question selected
 - Phase 23 added and completed: Web Pack Downloading — Service Worker (stale-while-revalidate pack index, precache app shell) + IndexedDB (durable pack body storage, checksum-based invalidation); web app works offline after first visit; explicit "Download for offline" button per pack in packs/index.tsx
 - Phase 24 added (v12.0): Remove native Android/iOS build path — collapse to web/PWA-only. Delete database/ (WatermelonDB), packDownloader.ts, native platform extensions, Platform.OS native branches across stores/services/UI; remove @nozbe/watermelondb + async-storage deps, android/ios config + scripts, android icons, dist-ios/. Rewrite native-path tests for the web path. Gates: tests green, tsc clean, web build succeeds.
+- Phases 25–30 added (v13.0): backend foundation, client outbox/recording, question feedback, optional Google sign-in + history, admin review, LLM batch review
 - **v8.0 UX changes:** packMode removed from packStore; setup.tsx segmented control removed; per-player pack chip always visible alongside difficulty chip; allPlayersCustom bypass skips CONF-01 shared pack requirement
 - **v9.0 UX changes:** setup.tsx two-chip row (pack+difficulty) replaced with single Shared/Custom toggle chip; difficulty chip removed entirely; handleRevertToShared now also clears difficultyPreference; /packs/index.tsx gains per-player mode via targetPlayerId param with per-player title, pack/combo selection, and Back-only footer
 

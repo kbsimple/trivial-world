@@ -1,0 +1,31 @@
+{
+  "name": "@trivial-world/api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:integration": "vitest run -c vitest.integration.config.ts",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "@netlify/database": "2.0.3",
+    "@neondatabase/serverless": "^1.1.0",
+    "@trivial-world/types": "workspace:*",
+    "drizzle-orm": "1.0.0-rc.5",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@netlify/database-dev": "1.0.2",
+    "@types/node": "^22",
+    "@types/pg": "^8",
+    "drizzle-kit": "1.0.0-rc.5",
+    "pg": "^8",
+    "typescript": "~6.0.3",
+    "vitest": "^3.2.6"
+  }
+}
