@@ -44,7 +44,7 @@
 Plans:
 - [x] 25-01-PLAN.md — Spike A: pre-flight (credit plan, site settings, package audit), user-approved netlify link, packages/api scaffold, spike functions, Node 22
 - [ ] 25-02-PLAN.md — Spike B: user-approved push/draft PR; prove routing, migrations dir, Drizzle rc.5 txn, preview isolation, 429 on a live preview; record Spike Decisions
-- [ ] 25-03-PLAN.md — Shared strict Zod contracts (game record, feedback, review export/decisions) + root vitest projects + test:integration + repo port
+- [x] 25-03-PLAN.md — Shared strict Zod contracts (game record, feedback, review export/decisions) + root vitest projects + test:integration + repo port
 - [ ] 25-04-PLAN.md — HTTP layer: body cap/413, 400 issue summary, idempotent 201/200 ingest + health handlers, in-memory repo (hermetic)
 - [ ] 25-05-PLAN.md — v13 schema migration (text+CHECK, nullable account_id), lazy DB client, Postgres repo, real-Postgres integration suite, hermetic guard
 - [ ] 25-06-PLAN.md — check-secrets.mjs build gate, smoke-api.mjs, tw-backend-setup executable skill
@@ -312,7 +312,7 @@ Plans:
 | 22. Undo Last Answer | v10.0 | 1/1 | Complete | 2026-06-13 |
 | 23. Web Pack Downloading | v11.0 | 6/6 | Complete | 2026-06-18 |
 | 24. Remove Native Android/iOS Build Path | v12.0 | 3/3 | Complete | 2026-07-18 |
-| 25. Backend Foundation & Contracts | v13.0 | 1/9 | In Progress|  |
+| 25. Backend Foundation & Contracts | v13.0 | 2/9 | In Progress|  |
 | 26. Client Outbox & Game Recording | v13.0 | 0/TBD | Not started | - |
 | 27. Question Feedback | v13.0 | 0/TBD | Not started | - |
 | 28. Google Sign-In & Game History | v13.0 | 0/TBD | Not started | - |

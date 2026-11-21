@@ -52,3 +52,4 @@ apps/mobile/node_modules
 
 # Netlify CLI
 .netlify/
+.claude/worktrees/
